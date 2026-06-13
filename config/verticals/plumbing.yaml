@@ -1,0 +1,16 @@
+name: plumbing
+display_name: "Plumbing"
+
+search_terms:
+  - "plumber"
+  - "plumbing contractor"
+  - "emergency plumber"
+
+primary_keyword: "emergency plumber"
+
+mock_noun: "Plumbing"
+mock_suffixes: ["Plumbing", "Plumbing & Drain", "Rooter", "Plumbing Services", "& Sons", "Plumbing Co.", "Drain Experts"]
+
+# scoring_overrides:
+#   thresholds:
+#     review_count_target: 50

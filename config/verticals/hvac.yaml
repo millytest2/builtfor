@@ -1,0 +1,20 @@
+name: hvac
+display_name: "HVAC / Air Conditioning"
+
+# Google Places text-search terms (each run per geo area, deduped by place_id)
+search_terms:
+  - "HVAC contractor"
+  - "air conditioning repair"
+  - "heating and cooling"
+
+# Main keyword we check local ranking for in the Audit Engine (Item 2)
+primary_keyword: "ac repair"
+
+# Hints for the mock data source (used only with --source mock)
+mock_noun: "HVAC"
+mock_suffixes: ["Heating & Air", "HVAC", "Air Conditioning", "Mechanical", "& Sons", "Heating & Cooling", "Climate Control"]
+
+# Optional per-vertical scoring tweaks (merged over config/scoring.yaml)
+# scoring_overrides:
+#   thresholds:
+#     review_count_target: 50

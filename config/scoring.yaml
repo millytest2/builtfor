@@ -1,0 +1,22 @@
+# Presence-score weights + thresholds.
+# presence_score (0-100) = how BROKEN/weak a business's online presence is.
+# Higher score = higher-priority prospect for us.
+# Verticals can override any of these via `scoring_overrides:` in their yaml.
+
+weights:
+  no_website: 30        # no website at all
+  low_reviews: 25       # few Google reviews (scaled to target)
+  low_rating: 12        # rating below "good" threshold
+  few_photos: 11        # few/no photos on GBP
+  incomplete_gbp: 10    # missing hours/categories
+  stale_reviews: 12     # no recent reviews
+
+thresholds:
+  review_count_target: 40   # >= this many reviews => 0 volume points
+  review_count_low: 15      # below this => flagged as a problem
+  rating_good: 4.5          # at/above => no rating penalty
+  rating_floor: 3.5         # at/below => full rating penalty
+  photos_min: 5             # below this => few_photos problem
+  review_recency_days: 60   # latest review older than this => stale
+  priority_high: 60
+  priority_medium: 35

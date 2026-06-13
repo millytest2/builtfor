@@ -1,0 +1,19 @@
+# SWAP THIS to your real target metro. `areas` are the cities/suburbs we iterate
+# over for each search term to get full coverage. lat/lng/radius bias the live
+# Google Places search toward this area.
+
+name: example_metro
+display_name: "Phoenix, AZ"     # <-- change me
+
+location_bias:
+  lat: 33.4484
+  lng: -112.0740
+  radius_m: 40000
+
+areas:
+  - "Phoenix, AZ"
+  - "Scottsdale, AZ"
+  - "Tempe, AZ"
+  - "Mesa, AZ"
+  - "Glendale, AZ"
+  - "Chandler, AZ"
