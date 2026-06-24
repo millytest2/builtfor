@@ -1,0 +1,32 @@
+# Nationwide "off the major-metro radar" rotation. Secondary/tertiary towns
+# (~10k-80k) across regions where the guru crowd doesn't bother. Add/remove
+# freely — the lead-finder iterates each area per search term.
+#
+# This is a STARTER batch. The US is effectively unlimited supply at the
+# "no website" filter; work a batch, then swap in the next.
+
+name: secondary_towns
+display_name: "US secondary markets (off-radar batch 1)"
+
+# No single lat/lng for a nationwide list; live search uses the area strings.
+areas:
+  - "Cookeville, TN"
+  - "Sedalia, MO"
+  - "Marshalltown, IA"
+  - "Cape Girardeau, MO"
+  - "Hattiesburg, MS"
+  - "Meridian, MS"
+  - "Dalton, GA"
+  - "Valdosta, GA"
+  - "Kokomo, IN"
+  - "Sandusky, OH"
+  - "Altoona, PA"
+  - "Jonesboro, AR"
+  - "Texarkana, AR"
+  - "Bartlesville, OK"
+  - "Grand Island, NE"
+  - "Rapid City, SD"
+  - "Pocatello, ID"
+  - "Elko, NV"
+  - "Farmington, NM"
+  - "Klamath Falls, OR"

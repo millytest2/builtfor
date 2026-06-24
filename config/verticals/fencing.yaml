@@ -1,0 +1,12 @@
+name: fencing
+display_name: "Fencing Contractors"
+
+search_terms:
+  - "fence company"
+  - "fence installation"
+  - "fence contractor"
+
+primary_keyword: "fence installation"
+
+mock_noun: "Fence"
+mock_suffixes: ["Fence", "Fence Co.", "Fencing", "Fence & Rail", "& Sons Fencing", "Fence Builders"]

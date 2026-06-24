@@ -1,0 +1,12 @@
+name: septic
+display_name: "Septic Services"
+
+search_terms:
+  - "septic tank pumping"
+  - "septic service"
+  - "septic system installation"
+
+primary_keyword: "septic pumping"
+
+mock_noun: "Septic"
+mock_suffixes: ["Septic", "Septic Services", "Septic & Excavating", "Pumping Service", "& Sons Septic", "Septic Systems"]

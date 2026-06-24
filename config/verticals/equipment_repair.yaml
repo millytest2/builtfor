@@ -1,0 +1,12 @@
+name: equipment_repair
+display_name: "Small Engine & Equipment Repair"
+
+search_terms:
+  - "small engine repair"
+  - "lawn mower repair"
+  - "equipment repair shop"
+
+primary_keyword: "small engine repair"
+
+mock_noun: "Repair"
+mock_suffixes: ["Small Engine Repair", "Equipment Repair", "Mower & Saw", "Power Equipment", "& Sons Repair", "Outdoor Power"]

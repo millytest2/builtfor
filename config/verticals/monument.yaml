@@ -1,0 +1,12 @@
+name: monument
+display_name: "Monument & Headstone Companies"
+
+search_terms:
+  - "monument company"
+  - "headstones and grave markers"
+  - "memorial monuments"
+
+primary_keyword: "headstones"
+
+mock_noun: "Monument"
+mock_suffixes: ["Monument Co.", "Monuments", "Memorial Co.", "Granite & Memorials", "& Sons Monuments", "Memorial Works"]

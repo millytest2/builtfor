@@ -1,0 +1,12 @@
+name: tree_service
+display_name: "Tree Services"
+
+search_terms:
+  - "tree service"
+  - "tree removal"
+  - "tree trimming"
+
+primary_keyword: "tree removal"
+
+mock_noun: "Tree"
+mock_suffixes: ["Tree Service", "Tree Care", "Tree & Stump", "Tree Experts", "& Sons Tree Service", "Arbor Care"]
