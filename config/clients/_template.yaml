@@ -1,0 +1,45 @@
+# Per-client engagement config. Copy to <business_slug>.yaml at sale time.
+# This file + docs/service_delivery.md = everything a deliverer needs.
+
+business:
+  name: ""
+  google_query: ""          # "Name, City ST" — exactly what finds them on Maps
+  owner_name: ""
+  owner_phone: ""
+  owner_email: ""
+
+engagement:
+  package: "A"              # A = Profile Rescue | B = Full Visibility Fix
+  price: 0
+  paid: ""                  # deposit/paid-in-full/date
+  sold_on: ""
+  due_by: ""
+  deliverer: ""             # who's executing (Miles / Daniel / VA name)
+
+intake:
+  gbp_manager_invite_sent: false     # client adds our email as GBP Manager
+  photos_received: false             # 10-15 photos (or IG/FB permission)
+  services_list: []                  # what they want more of, in their words
+  hours: ""
+  service_area: ""
+  anything_to_avoid: ""              # e.g. "don't mention old location"
+
+package_b:                           # only if package B
+  domain: ""                         # theirs, or we provision
+  directory_logins_via: ""           # password manager entry name
+  booking_tool: ""                   # calendly/square/none -> contact form
+
+artifacts:                           # filled during delivery
+  before_report: ""                  # output/audits/<slug>.html (day 1)
+  after_report: ""
+  review_link: ""
+  review_qr_card: ""
+  site_url: ""
+
+done_check:                          # mirror of Definition of Done
+  gbp_grade_a: false
+  photos_15_plus: false
+  review_kit_delivered: false
+  before_after_sent: false
+  website_grade_b: false             # package B only
+  followup_day3_sent: false
