@@ -1,0 +1,32 @@
+# Branding + CTA for generated audit reports. Edit freely — no code changes needed.
+
+brand:
+  company: "Built for Main Street"
+  tagline: "Get Found. Get Called. Get Paid."
+  website: "builtformainstreet.com"
+  contact_name: "Miles"
+  contact_phone: ""        # <-- add your outreach number
+  contact_email: "milestipton10@gmail.com"
+
+cta:
+  headline: "Want this fixed by next week?"
+  body: >-
+    Everything flagged in this report is fixable in a few days — one flat price,
+    no contracts, no retainer. You get a before/after report showing exactly
+    what changed. If you don't see the difference, don't pay us again. Simple.
+  button_text: "Text or call {contact_phone}"
+
+# What each problem is roughly costing them — shown next to failed checks.
+# Plain-language, defensible claims only.
+cost_lines:
+  no_website: "Customers who Google you find nothing — most pick a competitor with a site."
+  weak_gbp: "An incomplete Google profile ranks below complete ones in map results."
+  few_photos: "Profiles with photos get significantly more direction requests and calls."
+  low_reviews: "Customers compare review counts before calling. Fewer reviews = fewer calls."
+  low_rating: "Every star matters — most customers filter out businesses under 4 stars."
+  stale_reviews: "No recent reviews reads as 'maybe closed' to both customers and Google."
+  no_click_to_call: "Mobile visitors who can't tap-to-call rarely dial a number by hand."
+  no_lead_capture: "Visitors with no way to book or message you leave and don't come back."
+  slow_site: "Slow pages lose visitors before they load — especially on phones."
+  not_mobile: "Most local searches happen on a phone. A non-mobile site turns them away."
+  no_https: "Browsers mark your site 'Not secure' — customers see the warning."

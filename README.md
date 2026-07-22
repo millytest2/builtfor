@@ -5,15 +5,17 @@
 Productized local-business growth service. Everything here is **config-driven and
 clone-per-client** — no bespoke builds. Swap a config file, redeploy, done.
 
-## Offer ladder
-1. **Base** — GBP optimization, local visibility, social posting (~$299–499/mo)
-2. **Website** — AI-built lead-capture site (click-to-call + booking + missed-call-text-back
-   from day one). $500–1,500 one-time + $99–199/mo care plan.
-3. **Expansion** — solve the real bottleneck with a custom AI workflow (+$300–700/mo).
-   Always one of five: missed calls, no lead follow-up, no reviews, manual booking,
-   repetitive admin.
+## The offer (v2 — current)
+**Local visibility gap-fixing, productized.** Not "we build websites" — we find the
+gaps costing a business calls, trust, and customers, then fix them fast:
+GBP optimization, listing consistency, AI-search visibility, local SEO, trust
+signals, and a high-converting site/landing page *when needed*.
 
-Target blended ~$700–800/mo. Cap at 12–15 clients → $10k/mo → stop selling.
+**Execution loop:** sell one $300–800 fix → deliver in days → capture before/after
+proof (the audit report, run twice) → repeat → referrals. Target $3k/mo, then $10k/mo.
+
+Primary targets right now: **barbershops & local service businesses with weak/missing
+websites; restaurants & cafés with obvious GBP issues.**
 
 ---
 
@@ -36,7 +38,18 @@ python -m src.leadfinder.run --vertical hvac --geo example_metro --source google
 
 Output → `output/leads_<vertical>_<geo>.csv` (open in Google Sheets / Excel).
 
-### Item 2 — Audit Engine  🔜 (next)
+### Item 2 — Audit Engine  ✅ (runs today; needs GOOGLE_PLACES_API_KEY)
+Business in → graded HTML report out. Checks GBP (photos, hours, phone, website
+link, description), reviews (count, rating, recency), and the live website
+(HTTPS, mobile, tap-to-call, lead capture, speed). Branding/CTA in `config/audit.yaml`.
+
+```bash
+python -m src.audit.run --business "Joe's Barbershop, Sedalia MO"
+# -> output/audits/joe_s_barbershop.html  (print to PDF from the browser)
+```
+
+Three uses, one engine: free outreach hook → Tier-1 deliverable → run it again
+after the work for **before/after proof**.
 
 ---
 

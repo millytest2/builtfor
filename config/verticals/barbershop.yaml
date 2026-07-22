@@ -1,0 +1,23 @@
+name: barbershop
+display_name: "Barbershops"
+
+search_terms:
+  - "barbershop"
+  - "barber"
+  - "men's haircut"
+
+primary_keyword: "barbershop near me"
+
+mock_noun: "Barber"
+mock_suffixes: ["Barbershop", "Barber Co.", "Cuts", "Fades", "Barber Lounge", "Chop Shop"]
+
+# Barbers book on their phone/Instagram; a missing site still matters but GBP
+# quality and reviews drive walk-ins. Slightly rebalance:
+scoring_overrides:
+  weights:
+    no_website: 24
+    few_photos: 14
+    incomplete_gbp: 14
+  thresholds:
+    review_count_target: 60   # barbershops accumulate reviews fast; bar is higher
+    review_count_low: 25

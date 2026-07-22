@@ -1,5 +1,14 @@
 # Targeting strategy — the anti-guru, blue-ocean play
 
+> **Update (offer v2):** primary categories are now **barbershops + local service
+> businesses with weak/missing websites**, and **restaurants/cafés with obvious GBP
+> issues** — sold as a one-time $300–800 gap-fix with before/after proof. The
+> two-axis logic below still holds: work these categories in *secondary towns*,
+> not guru-saturated metros. The off-radar trades (septic, fencing, tree, etc.)
+> remain live as the high-ticket expansion pool. Restaurant/café pulls confirm the
+> nuance: they're rarely "broken" outright — the sellable gap is the *medium band*
+> (photos, hours, stale reviews), which is exactly the $300–800 fix.
+
 Geo: **United States, nationwide** — but deliberately *not* where the crowd is.
 The whole edge is going where the YouTube/agency-guru herd isn't.
 

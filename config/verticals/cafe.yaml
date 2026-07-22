@@ -1,0 +1,25 @@
+name: cafe
+display_name: "Cafés & Coffee Shops"
+
+search_terms:
+  - "coffee shop"
+  - "cafe"
+  - "espresso bar"
+
+primary_keyword: "coffee near me"
+
+mock_noun: "Coffee"
+mock_suffixes: ["Coffee", "Coffee Co.", "Cafe", "Roasters", "Espresso Bar", "Coffee House"]
+
+scoring_overrides:
+  weights:
+    no_website: 12
+    low_reviews: 18
+    low_rating: 16
+    few_photos: 20
+    incomplete_gbp: 20
+    stale_reviews: 14
+  thresholds:
+    review_count_target: 100
+    review_count_low: 30
+    photos_min: 10

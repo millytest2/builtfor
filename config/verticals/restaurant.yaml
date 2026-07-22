@@ -1,0 +1,27 @@
+name: restaurant
+display_name: "Restaurants"
+
+search_terms:
+  - "restaurant"
+  - "family restaurant"
+  - "diner"
+
+primary_keyword: "restaurants near me"
+
+mock_noun: "Kitchen"
+mock_suffixes: ["Grill", "Diner", "Kitchen", "Cafe & Grill", "Family Restaurant", "Eatery"]
+
+# Restaurants live and die on GBP (photos, hours, menu, reviews) — a missing
+# website matters less than a broken profile. Rebalance toward GBP signals:
+scoring_overrides:
+  weights:
+    no_website: 12
+    low_reviews: 18
+    low_rating: 16
+    few_photos: 20
+    incomplete_gbp: 20
+    stale_reviews: 14
+  thresholds:
+    review_count_target: 150   # restaurants rack up reviews; the bar is much higher
+    review_count_low: 50
+    photos_min: 10
