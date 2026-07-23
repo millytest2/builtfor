@@ -3,7 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Beyond Limits — Coach K. Personal training, nutrition, and mindset coaching in the New York area and online.">
+<meta name="description" content="Beyond Limits — Coach K. Certified master trainer, nutritionist & life coach. Group and 1:1 personal training in the New York area, online coaching nationwide. Book a free 15-minute consultation.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#0C0C0D">
+<link rel="canonical" href="https://REPLACE-WITH-DOMAIN.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Beyond Limits — Coach K | NYC Personal Training, Nutrition & Mindset">
+<meta property="og:description" content="Body and mind, trained as one system. Group & 1:1 coaching across NYC — and online, anywhere. Book a free 15-minute consult.">
+<meta property="og:url" content="https://REPLACE-WITH-DOMAIN.com/">
+<meta property="og:image" content="https://REPLACE-WITH-DOMAIN.com/assets/og-cover.jpg">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Beyond Limits — Coach K | NYC Personal Training">
+<meta name="twitter:description" content="Training, nutrition, and mindset in one system. NYC + online. Free 15-min consult.">
+<meta name="twitter:image" content="https://REPLACE-WITH-DOMAIN.com/assets/og-cover.jpg">
 <title>Beyond Limits — Coach K | NYC Personal Training</title>
 <style>
   :root{
@@ -67,6 +80,10 @@
   .duo{ background:var(--surface); overflow:hidden; position:relative; }
   .duo .fill{ position:absolute; inset:0; background:radial-gradient(130% 100% at 72% 18%,rgba(255,77,24,.16),transparent 58%),linear-gradient(200deg,#1f1f22 0%,#141416 46%,#0f0f11 100%); }
   .duo .fill::after{ content:""; position:absolute; inset:0; background:radial-gradient(80% 60% at 50% 120%,rgba(255,77,24,.10),transparent 60%); }
+  /* MEDIA SLOTS — drop an <img> or <video> as the first child of any .duo and it
+     auto-crops to the frame with an on-brand grade. The .fill stays as fallback. */
+  .duo > img, .duo > video{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:2; filter:grayscale(.22) contrast(1.06) brightness(.94); }
+  .duo::after{ content:""; position:absolute; inset:0; z-index:3; pointer-events:none; background:radial-gradient(120% 90% at 70% 15%,rgba(255,77,24,.10),transparent 55%); }
   .hero-in{ position:relative; z-index:2; width:100%; }
   .hero .meta-top{ display:flex; gap:26px; flex-wrap:wrap; font-family:var(--fmono); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); margin-bottom:26px; }
   .hero .meta-top b{ color:var(--ink); font-weight:500; }
@@ -310,6 +327,19 @@
 </head>
 <body>
 <div class="page">
+  <!-- ═══════════════════════════════════════════════════════════════════
+       ADDING PHOTOS & VIDEOS (for Daniel / Coach K)
+       Every media frame is a <div class="duo" data-asset="…">.
+       To fill one, add an <img> or <video> as its FIRST child:
+
+         <img src="assets/coach-hero.jpg" alt="Coach K coaching a client in NYC">
+         <video src="assets/hero-loop.mp4" autoplay muted loop playsinline></video>
+
+       Media auto-crops to the frame (object-fit: cover) and gets the brand
+       grade automatically. Keep the <div class="fill"> — it's the fallback
+       while a slot is empty. Slot list: hero (4:5 vertical), portrait (4:5),
+       and 8 before/after frames (3:4) in the results reel.
+       ═══════════════════════════════════════════════════════════════════ -->
   <nav class="nav" id="nav">
     <div class="wrap shift nav-in">
       <div class="brand"><span class="s"></span> Beyond Limits <small>COACH&nbsp;K</small></div>
@@ -326,7 +356,7 @@
   <!-- HERO -->
   <header class="hero" data-sec="01">
     <div class="hero-media">
-      <div class="duo"><div class="fill"></div></div>
+      <div class="duo" data-asset="HERO — Coach K mid-session, vertical, photo or muted looping video"><div class="fill"></div></div>
     </div>
     <div class="wrap shift hero-in">
       <div class="meta-top">
@@ -464,10 +494,10 @@
     <div class="wrap shift">
       <div class="reel-head rv"><span></span><span class="reel-hint">Drag / swipe →</span></div>
       <div class="reel">
-        <div class="ba"><div class="imgs"><div class="duo"><div class="fill"></div></div><div class="duo"><div class="fill"></div></div></div><div class="m"><strong>Marcus · 12 weeks</strong><span>Down 28 lbs, first pull-up, off two meds.</span></div></div>
-        <div class="ba"><div class="imgs"><div class="duo"><div class="fill"></div></div><div class="duo"><div class="fill"></div></div></div><div class="m"><strong>Denise · 6 months</strong><span>Lost 40 lbs, rebuilt her energy &amp; confidence.</span></div></div>
-        <div class="ba"><div class="imgs"><div class="duo"><div class="fill"></div></div><div class="duo"><div class="fill"></div></div></div><div class="m"><strong>Andre · 16 weeks</strong><span>Added visible muscle, dialed in nutrition for good.</span></div></div>
-        <div class="ba"><div class="imgs"><div class="duo"><div class="fill"></div></div><div class="duo"><div class="fill"></div></div></div><div class="m"><strong>Priya · 20 weeks</strong><span>From zero routine to training 5×/week.</span></div></div>
+        <div class="ba"><div class="imgs"><div class="duo" data-asset="marcus-before 3:4"><div class="fill"></div></div><div class="duo" data-asset="marcus-after 3:4"><div class="fill"></div></div></div><div class="m"><strong>Marcus · 12 weeks</strong><span>Down 28 lbs, first pull-up, off two meds.</span></div></div>
+        <div class="ba"><div class="imgs"><div class="duo" data-asset="denise-before 3:4"><div class="fill"></div></div><div class="duo" data-asset="denise-after 3:4"><div class="fill"></div></div></div><div class="m"><strong>Denise · 6 months</strong><span>Lost 40 lbs, rebuilt her energy &amp; confidence.</span></div></div>
+        <div class="ba"><div class="imgs"><div class="duo" data-asset="andre-before 3:4"><div class="fill"></div></div><div class="duo" data-asset="andre-after 3:4"><div class="fill"></div></div></div><div class="m"><strong>Andre · 16 weeks</strong><span>Added visible muscle, dialed in nutrition for good.</span></div></div>
+        <div class="ba"><div class="imgs"><div class="duo" data-asset="priya-before 3:4"><div class="fill"></div></div><div class="duo" data-asset="priya-after 3:4"><div class="fill"></div></div></div><div class="m"><strong>Priya · 20 weeks</strong><span>From zero routine to training 5×/week.</span></div></div>
       </div>
     </div>
   </section>
@@ -483,7 +513,7 @@
   <!-- STORY -->
   <section class="blk" id="story" data-sec="04">
     <div class="wrap shift story">
-      <div class="duo rv"><div class="fill"></div></div>
+      <div class="duo rv" data-asset="PORTRAIT — Coach K, confident, 4:5"><div class="fill"></div></div>
       <div class="rv d1">
         <div class="kick">Meet Coach K</div>
         <h2 style="margin-top:16px;">One coach. Three disciplines. All in your corner.</h2>
@@ -580,6 +610,48 @@
       <div class="done" id="mDone" style="display:none;"><div class="c">✓</div><h3>Check your inbox</h3><p>Your Starter Kit is on the way. When you're ready for the full plan, book a free consult.</p></div>
     </div>
   </div>
+
+  <!-- SEO / GEO / AEO: structured data for search + answer engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["LocalBusiness", "SportsActivityLocation"],
+        "@id": "#beyondlimits",
+        "name": "Beyond Limits Coaching",
+        "description": "Personal training, nutrition, and mindset coaching by Coach K — in-person group and 1:1 sessions across the New York area, and online coaching nationwide.",
+        "areaServed": [
+          { "@type": "City", "name": "New York" },
+          { "@type": "Country", "name": "United States" }
+        ],
+        "geo": { "@type": "GeoCoordinates", "latitude": 40.7128, "longitude": -74.0060 },
+        "address": { "@type": "PostalAddress", "addressLocality": "New York", "addressRegion": "NY", "addressCountry": "US" },
+        "priceRange": "$$",
+        "founder": {
+          "@type": "Person",
+          "name": "Coach K",
+          "jobTitle": "Certified Master Trainer, Nutritionist & Life Coach",
+          "sameAs": ["https://www.instagram.com/beyond_limits_ceo/"]
+        },
+        "makesOffer": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Group Training", "description": "Small-group personal training sessions in the New York area with coach-led form and weekly programming." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "1:1 Transformation Coaching", "description": "Custom training, personalized nutrition with weekly check-ins, and mindset coaching — in person in NYC or online." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Online Coaching", "description": "App-based workouts, video form checks, nutrition guidance, and direct coach messaging, available nationwide." } }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "Do I need to be in New York to train with Coach K?", "acceptedAnswer": { "@type": "Answer", "text": "No. Group and in-person 1:1 sessions run across the NYC area, and online coaching is fully remote — the same custom training, nutrition, and mindset system from anywhere in the country." } },
+          { "@type": "Question", "name": "Is Beyond Limits coaching suitable for total beginners?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every plan starts where you are, with no experience or equipment assumptions. The free 15-minute consultation is for finding the right starting point together." } },
+          { "@type": "Question", "name": "What is included besides workouts?", "acceptedAnswer": { "@type": "Answer", "text": "Every 1:1 program combines custom training, a personalized nutrition plan with weekly check-ins, and mindset and life coaching — the three pillars of the Beyond Limits Method: Train, Fuel, Focus." } },
+          { "@type": "Question", "name": "How much does personal training with Coach K cost?", "acceptedAnswer": { "@type": "Answer", "text": "Pricing depends on the format (group, 1:1, or online) and coaching frequency. Book a free 15-minute consultation to get exact numbers and a plan — no pressure." } }
+        ]
+      }
+    ]
+  }
+  </script>
 
   <script>
     (function(){
