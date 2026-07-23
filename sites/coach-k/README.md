@@ -17,3 +17,11 @@ nutrition, and mindset coaching, NYC + online. No build step, no dependencies.
 - Testimonials + transformation names — replace with real, permissioned client stories.
 - CTA links (`#book`) — point at a real booking link (Calendly etc.).
 - Popup form — wire to an email service (currently front-end demo only).
+
+## Placeholder AI imagery (interim)
+
+The hero and portrait slots currently reference Higgsfield-generated concept
+shots (dark, ember-lit gym photography) hosted on Higgsfield's CDN. These are
+for the PITCH only. Before launch: download them into `assets/`, repoint the
+`<img src>` to the local files, and ultimately replace with real photos/video
+of Coach K (the #1 conversion factor per the research).
