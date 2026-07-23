@@ -85,7 +85,10 @@
   .duo > img, .duo > video{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:2; filter:grayscale(.22) contrast(1.06) brightness(.94); }
   .duo::after{ content:""; position:absolute; inset:0; z-index:3; pointer-events:none; background:radial-gradient(120% 90% at 70% 15%,rgba(255,77,24,.10),transparent 55%); }
   .hero-in{ position:relative; z-index:2; width:100%; }
-  .hero .meta-top{ display:flex; gap:14px 30px; flex-wrap:wrap; font-family:var(--fmono); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); margin-bottom:44px; }
+  .hero .meta-top{ display:flex; gap:16px 26px; flex-wrap:wrap; align-items:center; font-family:var(--fmono); font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); margin-bottom:44px; }
+  .hero .meta-top span{ display:inline-flex; align-items:center; gap:16px; }
+  .hero .meta-top span::before{ content:""; width:5px; height:5px; background:var(--ember); transform:skewX(-12deg); flex:none; }
+  .hero .meta-top span:first-child::before{ display:none; }
   .hero .meta-top b{ color:var(--ink); font-weight:500; }
   .hero h1{ font-family:var(--fdisp); font-weight:700; text-transform:uppercase; font-size:clamp(42px,11.5vw,168px); line-height:.9; letter-spacing:-.02em; margin:0 0 44px; }
   .hero h1 .ln{ display:block; overflow:hidden; }
@@ -96,11 +99,6 @@
   .hero .sub{ display:flex; align-items:flex-end; justify-content:space-between; gap:30px; flex-wrap:wrap; }
   .hero .sub p{ max-width:34ch; color:var(--ink-dim); font-size:clamp(16px,2vw,19px); margin:0; }
   .hero .cta{ display:flex; gap:14px; flex-wrap:wrap; }
-  .scrollcue{ font-family:var(--fmono); font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); margin-top:46px; display:inline-flex; align-items:center; gap:10px; }
-  .scrollcue .ln2{ width:40px; height:1px; background:var(--muted); position:relative; overflow:hidden; }
-  .scrollcue .ln2::after{ content:""; position:absolute; inset:0; background:var(--ember); animation:sweep 2.4s var(--ease) infinite; }
-  @keyframes sweep{ 0%{transform:translateX(-100%);} 60%,100%{transform:translateX(100%);} }
-  @media (prefers-reduced-motion: reduce){ .scrollcue .ln2::after{ animation:none; } }
 
   /* marquee */
   .marq{ border-top:1px solid var(--line); border-bottom:1px solid var(--line); overflow:hidden; background:var(--ember); }
@@ -274,7 +272,6 @@
     .hero .meta-top{ gap:12px 22px; margin-bottom:32px; font-size:10px; letter-spacing:.1em; }
     .hero h1{ margin-bottom:32px; }
     .hero .sub{ flex-direction:column; align-items:stretch; gap:28px; }
-    .scrollcue{ margin-top:36px; }
     .hero .sub p{ max-width:38ch; }
     .hero .cta{ width:100%; }
     .hero .cta .btn{ flex:1 1 46%; justify-content:center; padding:15px 16px; }
@@ -355,10 +352,10 @@
     </div>
     <div class="wrap shift hero-in">
       <div class="meta-top">
-        <span>[ <b>Est.</b> New York ]</span>
-        <span>[ <b>Certified</b> Master Trainer ]</span>
-        <span>[ <b>Nutrition</b> + Mindset ]</span>
-        <span>[ <b>In-Person</b> &amp; Online ]</span>
+        <span><b>Est.</b> New York</span>
+        <span><b>Certified</b> Master Trainer</span>
+        <span><b>Nutrition</b> + Mindset</span>
+        <span><b>In-Person</b> &amp; Online</span>
       </div>
       <h1>
         <span class="ln"><span>Beyond</span></span>
@@ -371,7 +368,6 @@
           <a href="#coaching" class="btn btn-line">The Programs</a>
         </div>
       </div>
-      <span class="scrollcue">Scroll <span class="ln2"></span></span>
     </div>
   </header>
 
@@ -562,14 +558,14 @@
       <h2 style="margin-top:20px;">Start with<br><em>one call.</em></h2>
       <p>A free 15-minute consultation. Goals, a plan, and whether we're a fit — no pressure.</p>
       <a href="#book" class="btn btn-fill">Book a Free Consult <span class="a">→</span></a>
-      <p class="fine">Or reach out — Instagram @beyond_limits_ceo</p>
+      <p class="fine">Or reach out — <a href="https://www.instagram.com/beyond_limits_ceo/" target="_blank" rel="noopener" style="color:#fff;">Instagram @beyond_limits_ceo</a></p>
     </div>
   </section>
 
   <footer class="foot">
     <div class="wrap shift foot-in">
       <div class="brand"><span class="s"></span> Beyond Limits <small>COACH K</small></div>
-      <div class="soc"><a href="#book">Book</a><a href="#coaching">Coaching</a><a href="#">Instagram</a></div>
+      <div class="soc"><a href="#book">Book</a><a href="#coaching">Coaching</a><a href="https://www.instagram.com/beyond_limits_ceo/" target="_blank" rel="noopener">Instagram</a></div>
       <div class="fine">© 2026 Beyond Limits Coaching · Coach K · New York, NY — 40.7128° N / 74.0060° W — Training · Nutrition · Mindset</div>
     </div>
   </footer>
