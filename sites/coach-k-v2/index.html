@@ -9,9 +9,14 @@
 <link rel="canonical" href="https://REPLACE-WITH-DOMAIN.com/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Beyond Limits — Coach K | NYC Personal Training, Nutrition & Mindset">
-<meta property="og:description" content="Body and mind, trained as one system. Group & 1:1 coaching across NYC — and online, anywhere.">
+<meta property="og:description" content="Body and mind, trained as one system. Group & 1:1 coaching across NYC — and online, anywhere. Book a free 15-minute consult.">
+<meta property="og:url" content="https://REPLACE-WITH-DOMAIN.com/">
 <meta property="og:image" content="https://REPLACE-WITH-DOMAIN.com/assets/og-cover.jpg">
+<meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Beyond Limits — Coach K | NYC Personal Training">
+<meta name="twitter:description" content="Training, nutrition, and mindset in one system. NYC + online. Free 15-min consult.">
+<meta name="twitter:image" content="https://REPLACE-WITH-DOMAIN.com/assets/og-cover.jpg">
 <title>Beyond Limits — Coach K | NYC Personal Training</title>
 <style>
   :root{
@@ -69,13 +74,22 @@
   @media (prefers-reduced-motion:reduce){ .rv{opacity:1;transform:none;transition:none;} }
 
   /* HERO */
-  .hero{ position:relative; min-height:90vh; display:flex; align-items:center; padding:80px 0; overflow:hidden; }
-  .hero .glow{ position:absolute; z-index:0; border-radius:50%; filter:blur(70px); pointer-events:none; }
-  .hero .glow.g1{ width:60vw; height:60vw; max-width:780px; max-height:780px; right:-10%; top:-14%; background:radial-gradient(circle,rgba(255,77,24,.30),transparent 66%); animation:drift1 18s var(--ease) infinite alternate; }
-  .hero .glow.g2{ width:44vw; height:44vw; max-width:560px; max-height:560px; left:-12%; bottom:-18%; background:radial-gradient(circle,rgba(255,122,69,.14),transparent 64%); animation:drift2 22s var(--ease) infinite alternate; }
-  @keyframes drift1{ to{ transform:translate(-6%,8%) scale(1.08);} }
-  @keyframes drift2{ to{ transform:translate(8%,-6%) scale(1.1);} }
-  @media (prefers-reduced-motion:reduce){ .hero .glow{ animation:none; } }
+  .hero{ position:relative; min-height:92vh; display:flex; align-items:center; padding:80px 0; overflow:hidden; }
+  .hero-bg{ position:absolute; inset:0; z-index:0; overflow:hidden; }
+  /* optional Higgsfield background video (loads on deploy; sandbox CSP hides it, aurora shows instead) */
+  .hero-bg video{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:.5; filter:contrast(1.06) saturate(1.05); }
+  /* flowy animated aurora — works everywhere */
+  .aurora{ position:absolute; inset:-25%; filter:blur(64px); z-index:0; }
+  .aurora b{ position:absolute; display:block; border-radius:50%; mix-blend-mode:screen; }
+  .aurora .b1{ width:48vw; height:48vw; background:radial-gradient(circle,rgba(255,77,24,.55),transparent 62%); left:42%; top:-8%; animation:fl1 17s ease-in-out infinite alternate; }
+  .aurora .b2{ width:40vw; height:40vw; background:radial-gradient(circle,rgba(255,122,69,.40),transparent 60%); left:64%; top:24%; animation:fl2 21s ease-in-out infinite alternate; }
+  .aurora .b3{ width:34vw; height:34vw; background:radial-gradient(circle,rgba(150,42,14,.55),transparent 58%); left:30%; top:34%; animation:fl3 25s ease-in-out infinite alternate; }
+  @keyframes fl1{ to{ transform:translate(-16%,14%) scale(1.18); } }
+  @keyframes fl2{ to{ transform:translate(12%,-10%) scale(1.14); } }
+  @keyframes fl3{ to{ transform:translate(10%,-14%) scale(1.22); } }
+  .hero-bg .scrim{ position:absolute; inset:0; background:linear-gradient(90deg,var(--bg) 30%,rgba(11,11,12,.4) 66%,transparent 92%),linear-gradient(0deg,var(--bg) 5%,transparent 48%); }
+  .hero-bg .grain{ position:absolute; inset:0; opacity:.5; background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23g)' opacity='0.08'/></svg>"); }
+  @media (prefers-reduced-motion:reduce){ .aurora b{ animation:none; } }
   .hero-grid{ position:relative; z-index:2; display:grid; grid-template-columns:1.35fr .65fr; gap:60px; align-items:center; width:100%; }
   .hero h1{ font-family:var(--fdisp); font-weight:700; text-transform:uppercase; font-size:clamp(52px,9.6vw,132px); line-height:.9; letter-spacing:-.025em; margin:20px 0 30px; }
   .hero h1 em{ font-style:normal; color:var(--ember); }
@@ -290,8 +304,13 @@
 
   <!-- HERO -->
   <header class="hero">
-    <div class="glow g1"></div>
-    <div class="glow g2"></div>
+    <div class="hero-bg">
+      <!-- HIGGSFIELD VIDEO SLOT: set src on deploy — abstract ember/energy loop, no identifiable people -->
+      <video id="heroVid" autoplay muted loop playsinline preload="none"></video>
+      <div class="aurora"><b class="b1"></b><b class="b2"></b><b class="b3"></b></div>
+      <div class="grain"></div>
+      <div class="scrim"></div>
+    </div>
     <div class="wrap hero-grid">
       <div class="rv">
         <span class="kick">Personal Training · Nutrition · Mindset</span>
@@ -522,9 +541,45 @@
     </div>
   </div>
 
+  <!-- SEO / GEO / AEO: structured data for search + answer engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["LocalBusiness", "SportsActivityLocation"],
+        "@id": "#beyondlimits",
+        "name": "Beyond Limits Coaching",
+        "description": "Personal training, nutrition, and mindset coaching by Coach K — in-person group and 1:1 sessions across the New York area, and online coaching nationwide.",
+        "areaServed": [ { "@type": "City", "name": "New York" }, { "@type": "Country", "name": "United States" } ],
+        "geo": { "@type": "GeoCoordinates", "latitude": 40.7128, "longitude": -74.0060 },
+        "address": { "@type": "PostalAddress", "addressLocality": "New York", "addressRegion": "NY", "addressCountry": "US" },
+        "priceRange": "$$",
+        "founder": { "@type": "Person", "name": "Coach K", "jobTitle": "Certified Master Trainer, Nutritionist & Life Coach", "sameAs": ["https://www.instagram.com/beyond_limits_ceo/"] },
+        "sameAs": ["https://www.instagram.com/beyond_limits_ceo/"],
+        "makesOffer": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Group Training", "description": "Small-group personal training sessions in the New York area with coach-led form and weekly programming." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "1:1 Transformation Coaching", "description": "Custom training, personalized nutrition with weekly check-ins, and mindset coaching — in person in NYC or online." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Online Coaching", "description": "App-based workouts, video form checks, nutrition guidance, and direct coach messaging, available nationwide." } }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "Do I need to be in New York to train with Coach K?", "acceptedAnswer": { "@type": "Answer", "text": "No. Group and in-person 1:1 sessions run across the NYC area, and online coaching is fully remote — the same custom training, nutrition, and mindset system from anywhere in the country." } },
+          { "@type": "Question", "name": "Is Beyond Limits coaching suitable for total beginners?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every plan starts where you are, with no experience or equipment assumptions. The free 15-minute consultation is for finding the right starting point together." } },
+          { "@type": "Question", "name": "What is included besides workouts?", "acceptedAnswer": { "@type": "Answer", "text": "Every 1:1 program combines custom training, a personalized nutrition plan with weekly check-ins, and mindset and life coaching — the three pillars of the Beyond Limits Method: Train, Fuel, Focus." } },
+          { "@type": "Question", "name": "How much does personal training with Coach K cost?", "acceptedAnswer": { "@type": "Answer", "text": "Pricing depends on the format (group, 1:1, or online) and coaching frequency. Book a free 15-minute consultation to get exact numbers and a plan — no pressure." } }
+        ]
+      }
+    ]
+  }
+  </script>
+
   <script>
     (function(){
       var reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+      var hv=document.getElementById('heroVid'); if(hv && !hv.getAttribute('src')){ hv.style.display='none'; }
       var nav=document.getElementById('nav'), prog=document.getElementById('prog');
       function onScroll(){
         var y=window.scrollY||document.documentElement.scrollTop;
