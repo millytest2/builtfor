@@ -32,7 +32,7 @@
   html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
   @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
   body{margin:0;}
-  .page{ background:var(--bg); color:var(--ink); font-family:var(--fbody); font-size:17px; line-height:1.6; -webkit-font-smoothing:antialiased; position:relative; overflow-x:hidden; }
+  .page{ background:var(--bg); color:var(--ink); font-family:var(--fbody); font-size:17px; line-height:1.6; -webkit-font-smoothing:antialiased; position:relative; overflow-x:clip; }
   .page::before{ content:""; position:fixed; inset:0; z-index:1; pointer-events:none; opacity:.05; background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>"); }
   ::selection{ background:var(--ember); color:#fff; }
   .wrap{ max-width:var(--wrap); margin:0 auto; padding:0 30px; position:relative; z-index:2; }
@@ -105,6 +105,17 @@
   .spec-panel .sr .v em{ font-style:normal; color:var(--ember); }
   @media (max-width:900px){ .hero-grid{ grid-template-columns:1fr; gap:40px; } .spec-panel{ max-width:420px; } }
   @media (max-width:600px){ .hero{ min-height:auto; padding:60px 0 48px; } }
+  /* reassurance row (classic PT trust, modern styling) */
+  .reassure{ display:flex; gap:14px 26px; flex-wrap:wrap; margin-top:26px; }
+  .reassure span{ font-family:var(--fmono); font-size:11px; letter-spacing:.05em; text-transform:uppercase; color:var(--ink-dim); display:inline-flex; align-items:center; gap:9px; }
+  .reassure span::before{ content:""; width:14px; height:14px; flex:none; border-radius:50%; background:var(--ember-soft); border:1px solid var(--ember); background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FF4D18' stroke-width='3'><path d='M5 12l4 4L19 7'/></svg>"); background-repeat:no-repeat; background-position:center; background-size:9px; }
+
+  /* credentials strip */
+  .creds{ display:flex; align-items:center; gap:24px; padding:22px 0; flex-wrap:wrap; }
+  .creds-lab{ font-family:var(--fmono); font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); white-space:nowrap; }
+  .pills{ display:flex; gap:10px; flex-wrap:wrap; }
+  .pill{ font-family:var(--fmono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-dim); border:1px solid var(--line); border-radius:30px; padding:9px 15px; transition:border-color .2s,color .2s; }
+  .pill:hover{ border-color:var(--ember); color:var(--ink); }
 
   /* marquee */
   .marq{ border-top:1px solid var(--line); border-bottom:1px solid var(--line); overflow:hidden; background:var(--ember); }
@@ -320,6 +331,11 @@
           <a href="#book" class="btn btn-fill">Book a Free Consult <span class="a">→</span></a>
           <a href="#coaching" class="btn btn-line">See the Programs</a>
         </div>
+        <div class="reassure">
+          <span>Free 15-min consult</span>
+          <span>Beginner-friendly</span>
+          <span>No lock-in</span>
+        </div>
       </div>
       <div class="spec-panel rv d1">
         <div class="sh"><span>Coach K</span><span>NYC ⟶ Online</span></div>
@@ -337,6 +353,20 @@
       <span>Master Trainer <i>✦</i> Nutritionist <i>✦</i> Life Coach <i>✦</i> Group Training <i>✦</i> Online Coaching <i>✦</i> NYC &amp; Nationwide <i>✦</i></span>
     </div>
   </div>
+
+  <!-- CREDENTIALS STRIP (classic trust badges, modern pills) -->
+  <section style="border-bottom:1px solid var(--line);">
+    <div class="wrap creds rv">
+      <span class="creds-lab">Certified &amp; Trusted</span>
+      <div class="pills">
+        <span class="pill">Certified Master Trainer</span>
+        <span class="pill">Nutritionist</span>
+        <span class="pill">Life Coach</span>
+        <span class="pill">Group &amp; Online</span>
+        <span class="pill">NYC Based</span>
+      </div>
+    </div>
+  </section>
 
   <!-- STATS -->
   <section class="blk" style="padding-top:clamp(40px,5vw,64px);padding-bottom:0;">
