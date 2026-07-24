@@ -43,6 +43,20 @@ python -m src.leadfinder.run --vertical hvac --geo example_metro --source google
 
 Output → `output/leads_<vertical>_<geo>.csv` (open in Google Sheets / Excel).
 
+### Website Starter Kit  ✅ (the delivery accelerator for "Get Found")
+One command turns a client — or just a lead's name — into a full website kit:
+tailored copy, JSON-LD schema (SEO/AEO/GEO), a paste-into-Emergent build brief, and
+a **real sendable mockup HTML** (the "quick example" the sales script promises).
+Pulls live Google data (address, phone, rating) when the key is set; hides weak
+reviews automatically.
+```bash
+# Pre-sale mockup to text a lead:
+python -m src.website.build --business "Ace Fence Company, Muncie IN" --vertical fencing
+# From a signed client's file:
+python -m src.website.build --client config/clients/ace_fence.yaml
+# -> output/websites/<slug>/{mockup.html, build_brief.md, copy.md, schema.json}
+```
+
 ### Item 5 — Client Ops / Retainer Tracker  ✅
 One command shows active clients, MRR, one-time booked, progress to your $10k goal,
 and which retainers are due for a maintenance touch. Each client is one YAML file
