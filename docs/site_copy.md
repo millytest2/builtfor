@@ -1,50 +1,59 @@
-# builtformainstreet.com — homepage copy (offer v2)
+# builtformainstreet.com — homepage copy (website-first offer)
 
-Drop-in copy aligned to the current offer. One page, one CTA, zero agency-speak.
-(I can't fetch the live site from this environment — paste current copy for a diff review.)
+Drop-in copy aligned to the current offer. One page, one primary CTA, no agency-speak.
+(I can't fetch the live site from this environment — paste the current copy and I'll
+diff it against this.)
 
 ---
 
 ## Hero
-**Your customers are looking for you. What are they finding?**
+**A website that actually gets you called.**
 
-Most local businesses have gaps online they never see — a Google profile missing
-photos or hours, reviews gone quiet, a website that doesn't work on phones, wrong
-info floating around the directories. Customers notice. So does Google.
+Most local businesses either have no website, or one that just sits there. We build
+you a simple, fast site that shows up on Google — and even in ChatGPT — and turns
+searchers into phone calls. One flat price. Live in days.
 
-We find the gaps, fix them in days, and show you exactly what changed.
-
-**[Get your free report card]** ← the only CTA, repeated down the page
+**[See a free example for your business]** ← primary CTA, repeated down the page
 
 ---
 
-## How it works (3 steps)
-1. **Free report card.** We grade your Google profile, reviews, and website —
-   the same things your customers silently check. You keep the report either way.
-2. **One flat fix. $300–800, no contracts.** We fix what's broken: your Google
-   listing, photos, business info everywhere it appears, reviews setup, and your
-   site or landing page if it needs it. Done in days, not months.
-3. **Before & after, in writing.** You get a report showing exactly what changed.
-   If you can't see the difference, we haven't done our job.
+## The three things we do
+**1. Get Found — we build your website. $500–800.**
+Fast, mobile, click-to-call, built to rank in Google and get recommended by AI search
+(SEO + AEO + GEO). Optional $99–199/mo and we keep it maintained and current.
+
+**2. Get Called — we fix your online presence.**
+Wrong hours? One review? A Google profile you've never touched? We claim it, complete
+it, get you reviews, and make your info match everywhere customers look.
+
+**3. Get Paid — we help you scale (when you're ready).**
+Once you're set up, we can add the smart stuff: texting back missed calls, following
+up with leads, online booking. Only if and when it makes sense for you.
+
+## How it works
+1. **Free example, no catch.** Tell us your business — we send a mockup and a quick
+   report on what's helping or hurting you online. Yours to keep either way.
+2. **One flat price. No contracts.** You approve it, we build it, you go live in days.
+3. **We prove it.** You get a before/after so you can see exactly what changed.
 
 ## Who it's for
-Independent businesses that live on local customers — barbershops, restaurants,
-cafés, and the trades. If your phone matters more than your Instagram, that's you.
+Independent local businesses that live on their phone ringing — trades, barbershops,
+restaurants, cafés, shops. If word-of-mouth matters more than going viral, that's you.
 
-## Why us (trust block)
-No retainers. No 12-month contracts. No jargon. We're two people who fix things
-and prove it — not an agency that sends invoices and slideshows.
+## Why us
+No retainers you can't cancel. No jargon. No 40-slide strategy decks. Two people who
+build the thing, make it work, and show you the difference. That's it.
 
 ## Footer CTA
-**Curious what your report card says?** It's free, it takes us a day, and it's
-yours to keep even if we never talk again. **[Get your free report card]**
+**Want to see what yours could look like?** Free, takes us a day, no obligation.
+**[See a free example]** · Text or call Miles: **310-606-9788**
 
 ---
 
 ### Notes
-- "Free report card" = the Audit Engine output. The site CTA, the cold call, and
-  the deliverable are now the same artifact. One machine, three doors.
-- Keep pricing visible ($300–800 flat). It disarms the "agency retainer" fear and
-  pre-qualifies.
-- Add before/after screenshots as clients accumulate — that section becomes the
-  homepage's spine over time.
+- Primary CTA = "free example" (a mockup + the audit report). Same artifact powers the
+  cold call and the close. One machine, one message everywhere.
+- Keep the $500–800 visible — it disarms "expensive agency" fear and pre-qualifies.
+- As clients land, the homepage's spine becomes before/after screenshots + short quotes.
+- "AEO/GEO / recommended by AI search" is a genuine differentiator — lead with it lightly;
+  it's what makes you sound current without sounding like an AI-hype guy.

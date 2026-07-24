@@ -5,17 +5,22 @@
 Productized local-business growth service. Everything here is **config-driven and
 clone-per-client** — no bespoke builds. Swap a config file, redeploy, done.
 
-## The offer (v2 — current)
-**Local visibility gap-fixing, productized.** Not "we build websites" — we find the
-gaps costing a business calls, trust, and customers, then fix them fast:
-GBP optimization, listing consistency, AI-search visibility, local SEO, trust
-signals, and a high-converting site/landing page *when needed*.
+## The offer (current)
+Not a marketing agency. Not "AI automation." We make a local business **easy to find,
+trust, and reach — and prove it.** Three things, mapped to the tagline:
 
-**Execution loop:** sell one $300–800 fix → deliver in days → capture before/after
-proof (the audit report, run twice) → repeat → referrals. Target $3k/mo, then $10k/mo.
+1. **Get Found — Website Build.** No website (or a dead one) → a fast, high-converting
+   SEO/AEO/GEO site. **$500–800 one-time + $99–199/mo** upkeep. *This is the wedge.*
+2. **Get Called — Full Visibility Fix.** Broken Google presence (one review, wrong info,
+   unmanaged GBP) → claimed, completed, reviews + listings synced. **$300–800.**
+3. **Get Paid — AI Systems.** Existing client ready to scale → missed-call text-back,
+   follow-up, booking. **+$300–700/mo.** The expansion, once trust exists.
 
-Primary targets right now: **barbershops & local service businesses with weak/missing
-websites; restaurants & cafés with obvious GBP issues.**
+**Execution loop:** find no-website leads → call with the script → send the audit as
+proof → build/fix in days → before/after → retainer → expand. Target $3k → $10k → $20k/mo.
+
+Full playbook: `docs/service_delivery.md`. Lead-finding: `docs/lead_finding.md`.
+Site copy: `docs/site_copy.md`. Targeting: `docs/targeting.md`.
 
 ---
 
@@ -37,6 +42,15 @@ python -m src.leadfinder.run --vertical hvac --geo example_metro --source google
 ```
 
 Output → `output/leads_<vertical>_<geo>.csv` (open in Google Sheets / Excel).
+
+### Item 5 — Client Ops / Retainer Tracker  ✅
+One command shows active clients, MRR, one-time booked, progress to your $10k goal,
+and which retainers are due for a maintenance touch. Each client is one YAML file
+(`config/clients/<slug>.yaml`, copied from `_template.yaml`) that doubles as delivery
+intake and recurring tracking.
+```bash
+python -m src.clientops.roster            # roster + MRR + maintenance-due
+```
 
 ### Item 2 — Audit Engine  ✅ (runs today; needs GOOGLE_PLACES_API_KEY)
 Business in → graded HTML report out. Checks GBP (photos, hours, phone, website

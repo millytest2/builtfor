@@ -1,0 +1,27 @@
+# Batch 2 of off-radar US markets. Use when batch 1 is worked dry.
+# Same idea: secondary/tertiary towns (~10k-80k) the guru crowd ignores.
+
+name: secondary_towns_2
+display_name: "US secondary markets (off-radar batch 2)"
+
+areas:
+  - "Muncie, IN"
+  - "Owensboro, KY"
+  - "Florence, AL"
+  - "Tupelo, MS"
+  - "Rome, GA"
+  - "Anderson, SC"
+  - "Salisbury, MD"
+  - "Chillicothe, OH"
+  - "Findlay, OH"
+  - "Manhattan, KS"
+  - "Hutchinson, KS"
+  - "Stillwater, OK"
+  - "Sherman, TX"
+  - "Victoria, TX"
+  - "Roswell, NM"
+  - "Great Falls, MT"
+  - "Twin Falls, ID"
+  - "Casper, WY"
+  - "Grand Junction, CO"
+  - "Yakima, WA"

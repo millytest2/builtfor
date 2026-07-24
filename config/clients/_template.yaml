@@ -1,5 +1,6 @@
-# Per-client engagement config. Copy to <business_slug>.yaml at sale time.
-# This file + docs/service_delivery.md = everything a deliverer needs.
+# Per-client record. Copy to <business_slug>.yaml at sale time. This one file is
+# the single source of truth: intake for delivery + recurring tracking for ops.
+# Files starting with "_" (like this template) are ignored by the roster tool.
 
 business:
   name: ""
@@ -7,39 +8,53 @@ business:
   owner_name: ""
   owner_phone: ""
   owner_email: ""
+  vertical: ""              # barbershop / restaurant / septic / ...
 
 engagement:
-  package: "A"              # A = Profile Rescue | B = Full Visibility Fix
-  price: 0
-  paid: ""                  # deposit/paid-in-full/date
-  sold_on: ""
-  due_by: ""
-  deliverer: ""             # who's executing (Miles / Daniel / VA name)
+  # package: website | visibility | ai_systems  (the three things we do)
+  package: "website"
+  status: "lead"           # lead | sold | delivering | active | paused | churned
+  price_onetime: 0         # website build or one-time fix fee
+  monthly_fee: 0           # maintenance / retainer (0 if none)
+  paid: ""                 # deposit / paid-in-full / date
+  sold_on: ""              # YYYY-MM-DD
+  due_by: ""               # delivery deadline
+  started: ""              # YYYY-MM-DD recurring started (for MRR)
+  deliverer: ""            # Miles / Daniel / VA
+  next_check: ""           # YYYY-MM-DD next monthly maintenance touch
 
 intake:
-  gbp_manager_invite_sent: false     # client adds our email as GBP Manager
-  photos_received: false             # 10-15 photos (or IG/FB permission)
-  services_list: []                  # what they want more of, in their words
+  services_list: []        # what they want more of, in their words
   hours: ""
   service_area: ""
-  anything_to_avoid: ""              # e.g. "don't mention old location"
+  photos_received: false
+  gbp_manager_invite_sent: false     # client adds our email as GBP Manager
+  domain: ""               # theirs or we provision
+  logins_via: ""           # password-manager entry name (never store here)
+  anything_to_avoid: ""
 
-package_b:                           # only if package B
-  domain: ""                         # theirs, or we provision
-  directory_logins_via: ""           # password manager entry name
-  booking_tool: ""                   # calendly/square/none -> contact form
+# WEBSITE package specifics
+website:
+  builder: ""              # emergent / webild / replit / manus
+  live_url: ""
+  seo_aeo_geo_done: false  # title/meta, LocalBusiness schema, AI-answer check
+  click_to_call: false
+  booking_or_form: false
+  reviews_embedded: false
 
-artifacts:                           # filled during delivery
-  before_report: ""                  # output/audits/<slug>.html (day 1)
+# VISIBILITY package specifics (the owner.com-style cleanup)
+visibility:
+  gbp_completed: false
+  listings_synced: false   # Apple/Bing/Yelp/Facebook match
+  review_kit_delivered: false
+
+artifacts:
+  before_report: ""        # output/audits/<slug>.html (day 1 baseline)
   after_report: ""
   review_link: ""
-  review_qr_card: ""
-  site_url: ""
 
-done_check:                          # mirror of Definition of Done
-  gbp_grade_a: false
-  photos_15_plus: false
-  review_kit_delivered: false
+done_check:                # objective definition of done (see service_delivery.md)
   before_after_sent: false
-  website_grade_b: false             # package B only
-  followup_day3_sent: false
+  gbp_grade_a: false
+  website_grade_b: false   # website package only
+  followup_sent: false

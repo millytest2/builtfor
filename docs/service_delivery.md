@@ -1,85 +1,117 @@
 # The Service & How We Deliver It
 
-## What the customer is actually buying (say it this way)
-> **"When a local customer looks for you, they'll find you, trust what they see,
-> and be able to reach you in one tap. We fix the gaps in days, and we prove it
-> with a before/after report."**
+## What we are (working definition)
+Not a marketing agency. Not "AI automation." We're the people who **make a local
+business easy to find, easy to trust, and easy to reach** — and we prove it.
+Think of it as a **repair + upkeep service for a business's online presence**,
+priced like a job, not a subscription-you-can't-cancel.
 
-Not "marketing." Not a retainer. A **fixed-scope repair job on their online
-presence** — like a contractor, which is language these owners respect. The audit
-report card *is* the scope: every red ✕ is a line item; delivery = turning them
-green; the re-run audit = the receipt.
+Everything maps to the tagline:
 
-## The two packages
+| | Package | Buyer | Price | The promise |
+|---|---|---|---|---|
+| **Get Found** | 1. Website Build | No website (or a dead one) | $500–800 one-time + $99–199/mo upkeep | A fast, high-converting site that ranks in Google *and* AI answers |
+| **Get Called** | 2. Full Visibility Fix | Has a presence but it's broken | $300–800 one-time (+ optional retainer) | Google profile, reviews & listings cleaned up so they show up and get chosen |
+| **Get Paid** | 3. AI Systems | Existing client, ready to scale | +$300–700/mo | Missed-call text-back, follow-up, booking — the expansion, once trust exists |
 
-### Package A — Google Profile Rescue · $300–400 · 2 days
-For businesses whose GBP is the problem (most restaurants/cafés, many barbershops).
-1. Baseline audit (BEFORE snapshot — save the HTML + JSON)
-2. Claim/verify the Google Business Profile if unclaimed
-3. Complete every field: hours, phone, categories (primary + secondary), service
-   list, attributes, business description (AI-drafted, owner-approved)
-4. Photos: get 10–15 from the owner (or their Instagram/Facebook, with permission);
-   AI-enhance if needed; upload with sensible names
-5. Review system: generate their Google review link, print-ready QR card PDF,
-   and a 2-line SMS template they send to past customers ("first push" = owner
-   texts their last 20 happy customers, day one)
-6. Seed 3–5 Q&A entries on the profile; publish 1 first post
-7. AFTER snapshot: re-run audit → send before/after + the review kit
+**The wedge is the Website Build.** It's the easiest to sell (leads with no website
+are trivial to find and the pitch is obvious) and it puts us *inside* the business,
+which is what unlocks packages 2 and 3. Land with #1, expand into #2 and #3.
 
-### Package B — Full Visibility Fix · $500–800 · 3–5 days
-Everything in A, plus:
-8. Listing consistency: correct name/address/phone/hours on the majors —
-   Apple Maps, Bing Places, Yelp, Facebook, Nextdoor (manual; ~1 hr with logins)
-9. One-page high-converting site or landing page (AI-built: Webild/Replit/Claude
-   Code from a template) — tap-to-call, contact/booking form, hours, services,
-   reviews embedded, photos. Connect their domain or provision one.
-10. Basic local SEO on the page: title/meta, LocalBusiness schema, NAP match
-11. AI-search visibility check: ask ChatGPT/Gemini/Google AI about the business
-    before & after; the fixes above are what those engines read
+---
 
-**Upsell later, never bundled now:** review engine, missed-call text-back,
-booking automation. That's the second sale, once trust exists.
+## Package 1 — Website Build ("Get Found")  ·  $500 / $800 + $99–199/mo
+For a business with no website or a broken/abandoned one.
 
-## The delivery pipeline (every client, no exceptions)
+**What "SEO / AEO / GEO" means (so you can say it plainly):**
+- **SEO** — ranks in normal Google search ("plumber near me")
+- **AEO** — Answer Engine Optimization: shows up in Google's AI Overview / featured answers
+- **GEO** — Generative Engine Optimization: gets cited by ChatGPT, Gemini, Perplexity
+  when someone asks them for a local recommendation. This is the *new* thing almost
+  no competitor is doing, and it's mostly clean structured data + clear copy.
+
+**Delivery (2–4 days), built with an AI site builder (Emergent / Webild / Replit):**
+1. BEFORE audit (baseline snapshot) — `python -m src.audit.run`
+2. Intake: logo, photos, services, hours, service area, phone, domain
+3. Build one page (or 3–5) from our template: hero with the outcome, services,
+   reviews embedded, photos, hours, map
+4. Wire lead capture: **tap-to-call**, contact/booking form, click-to-text
+5. SEO/AEO/GEO pass: title/meta, `LocalBusiness` + `FAQPage` schema, NAP that
+   matches Google exactly, clear Q&A copy the AI engines can quote
+6. Connect their domain (or provision one), verify HTTPS + mobile
+7. AFTER audit → send before/after + the live link
+8. **$500** = single high-converting page; **$800** = multi-page + booking + review embed
+
+**The monthly retainer ($99–199) is real, not fluff.** Track it in the client file
+(`monthly_fee`, `next_check`). Each month: uptime check, small edits (hours, photos,
+seasonal offers), keep NAP synced with Google, re-run the audit, send a one-line
+"here's what we did" note. That note is why they keep paying.
+
+## Package 2 — Full Visibility Fix ("Get Called")  ·  $300–800
+For a business with a real presence problem: one review, wrong hours, unclaimed or
+mismanaged Google profile. (Tools like **owner.com** help here for restaurants.)
+This is the audit-driven cleanup — see the checklist that follows.
+
+1. Claim/verify GBP; complete every field (hours, categories, services, description)
+2. Photos: 10–15 up; AI-enhance if needed
+3. Reviews: generate their Google review link + printable QR card + "text your last
+   20 happy customers" SMS template (first-push, day one)
+4. Listings: match name/address/phone/hours on Apple, Bing, Yelp, Facebook, Nextdoor
+5. Seed Q&A, publish a first post
+6. AFTER audit → before/after report. **Done = GBP section grades A.**
+
+## Package 3 — AI Systems ("Get Paid")  ·  +$300–700/mo
+Only sold to an existing, happy client. Once we manage their presence, we already
+have the access and trust to add: **missed-call text-back, lead follow-up nurture,
+review-request automation, booking automation.** Built config-per-client (this repo's
+Item 4). This is where Claude Code does the heavy lifting and margins are highest.
+
+---
+
+## The pipeline (every client, no exceptions)
 | Day | Step | Tool |
 |---|---|---|
-| 0 | Sale on the phone → send intake form, collect 50% or full | script + payment link |
-| 0 | Intake: GBP manager invite, photos, service list, hours | `config/clients/<name>.yaml` |
-| 1 | BEFORE audit snapshot (save HTML + JSON) | `python -m src.audit.run --business "..." --json` |
-| 1–2 | Work the checklist (A) / +3–5 (B) | checklist above |
+| 0 | Sale on the phone → intake form, collect 50% or full | script + payment link |
+| 0 | Create `config/clients/<slug>.yaml` from `_template.yaml` | the client file |
+| 1 | BEFORE audit snapshot (save HTML) | `python -m src.audit.run --business "..."` |
+| 1–4 | Build/fix per package checklist | Emergent/Webild + GBP |
 | 2–5 | AFTER audit snapshot | same command |
-| — | Send before/after report + review kit + invoice balance | email/SMS |
-| +3 | Follow-up: "seen more calls yet?" → ask for a Google review + 1 referral | SMS |
+| — | Send before/after + live link + invoice balance | email/SMS |
+| +3 | "Seeing more calls yet?" → ask for a review + 1 referral | SMS |
+| monthly | Maintenance touch + re-audit + 1-line update | `roster.py` reminds you |
 
-**Definition of done (objective, non-negotiable):**
-- GBP section grade **A** (≥90) in the AFTER audit
-- 15+ photos live, hours set, description set, review link delivered
-- Package B: Website section ≥ **B**, all listings matching, page live on their domain
-- BEFORE and AFTER reports delivered to the client
+**Definition of done (objective):** AFTER audit meets the bar (GBP grade A; website
+package also needs Website section ≥ B), before/after delivered, review kit handed over.
+If the AFTER report isn't green, the job isn't done. The report is the product.
 
-## If you hand this to someone else (VA / Daniel / future hire)
-This whole service is **a checklist + one command**, which means a careful
-non-expert can run delivery end-to-end. The handoff kit is:
+## Tracking the money
+`python -m src.clientops.roster` reads all client files and shows active clients,
+**MRR**, one-time booked, progress toward your $10k/mo goal, and which retainers are
+**due for a maintenance check**. That's the "keep track of it" system — one command.
 
-1. **This document** — the packages, pipeline, definition of done
-2. **The intake config** — `config/clients/_template.yaml`, filled per client;
-   it's the single source of truth for the engagement
-3. **The audit tool** — they run BEFORE/AFTER; the report tells them what to fix
-   and proves when they're done. They never need judgment about *what* to do,
-   only execution of *how*.
-4. **Access:** client adds `builtformainstreet@...` as GBP **Manager** (never
-   owner-transfer); directory logins via the intake form; no client passwords
-   stored anywhere except a shared password manager
-5. **Escalation rule:** anything outside the checklist (suspended GBP, domain
-   disputes, angry-review cleanup) goes to Miles — it's not in scope
+## If you hand delivery to someone else (Daniel / VA / hire)
+The service is deliberately **a checklist + two commands**, so a careful non-expert
+can run it. Handoff kit:
+1. This document (packages, pipeline, definition of done)
+2. The client's filled `config/clients/<slug>.yaml` — the single source of truth
+3. The audit command (BEFORE/AFTER) — tells them what to fix and proves when done
+4. Access: client adds our email as GBP **Manager** (never ownership); site-builder
+   and directory logins via a shared password manager, never stored in the repo
+5. Escalation: anything off-checklist (suspended GBP, domain dispute, bad-review
+   cleanup) → Miles. Not in scope for a delegated job.
 
-**Quality bar for a delegated job:** the AFTER audit meets Definition of Done,
-and the client got both reports. If the AFTER report isn't green, the job isn't
-done — no exceptions, because the report is the product.
+Quality bar for delegated work = the AFTER audit is green and both reports were sent.
+Same standard the client sees, so incentives line up by construction.
 
-## Why this stays near-zero marginal cost
-- Audit: automated (one command)
-- Description/posts/Q&A/SMS templates: AI-drafted from the intake config
-- Website: AI-built from a reusable template, config-swapped per client
-- Human time per client: ~2–4 hrs (A) / ~4–8 hrs (B) — at $300–800 that's
-  $75–150+/hr effective, and it drops as templates harden.
+## Why this scales to $5–20k/mo without killing you
+- Finding leads: automated (`leadfinder`)
+- Grading/proof: automated (`audit`)
+- Site build: AI builder from a reusable template, config-swapped
+- Retainer tracking: automated (`roster`)
+- Your time: ~2–8 hrs/client to deliver, then ~15 min/mo per retainer
+- Math to $10k/mo: e.g. **15 sites at avg $650 one-time + 15 retainers at ~$130/mo
+  = ~$1,950 recurring**, so recurring alone won't hit $10k — the model is
+  **one-time cash funds the month, retainers + package-2/3 expansion build the base.**
+  Realistic $10k/mo mix: ~8 active retainers (~$1k) + 6–8 new builds/mo (~$4–5k) +
+  2–3 AI-system clients (~$1.5k) + visibility fixes. Sell builds steadily, convert
+  the best into retainers and AI systems.
