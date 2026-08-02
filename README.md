@@ -10,7 +10,7 @@ Not a marketing agency. Not "AI automation." We make a local business **easy to 
 trust, and reach — and prove it.** Three things, mapped to the tagline:
 
 1. **Get Found — Website Build.** No website (or a dead one) → a fast, high-converting
-   SEO/AEO/GEO site. **$500–800 one-time + $99–199/mo** upkeep. *This is the wedge.*
+   SEO/AEO/GEO site. **$400–700 one-time + $99–199/mo** upkeep. *This is the wedge.*
 2. **Get Called — Full Visibility Fix.** Broken Google presence (one review, wrong info,
    unmanaged GBP) → claimed, completed, reviews + listings synced. **$300–800.**
 3. **Get Paid — AI Systems.** Existing client ready to scale → missed-call text-back,

@@ -18,7 +18,7 @@ searchers into phone calls. One flat price. Live in days.
 ---
 
 ## The three things we do
-**1. Get Found — we build your website. $500–800.**
+**1. Get Found — we build your website. $400–700.**
 Fast, mobile, click-to-call, built to rank in Google and get recommended by AI search
 (SEO + AEO + GEO). Optional $99–199/mo and we keep it maintained and current.
 
@@ -53,7 +53,7 @@ build the thing, make it work, and show you the difference. That's it.
 ### Notes
 - Primary CTA = "free example" (a mockup + the audit report). Same artifact powers the
   cold call and the close. One machine, one message everywhere.
-- Keep the $500–800 visible — it disarms "expensive agency" fear and pre-qualifies.
+- Keep the $400–700 visible — it disarms "expensive agency" fear and pre-qualifies.
 - As clients land, the homepage's spine becomes before/after screenshots + short quotes.
 - "AEO/GEO / recommended by AI search" is a genuine differentiator — lead with it lightly;
   it's what makes you sound current without sounding like an AI-hype guy.

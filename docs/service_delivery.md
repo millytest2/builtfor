@@ -10,7 +10,7 @@ Everything maps to the tagline:
 
 | | Package | Buyer | Price | The promise |
 |---|---|---|---|---|
-| **Get Found** | 1. Website Build | No website (or a dead one) | $500–800 one-time + $99–199/mo upkeep | A fast, high-converting site that ranks in Google *and* AI answers |
+| **Get Found** | 1. Website Build | No website (or a dead one) | $400–700 one-time + $99–199/mo upkeep | A fast, high-converting site that ranks in Google *and* AI answers |
 | **Get Called** | 2. Full Visibility Fix | Has a presence but it's broken | $300–800 one-time (+ optional retainer) | Google profile, reviews & listings cleaned up so they show up and get chosen |
 | **Get Paid** | 3. AI Systems | Existing client, ready to scale | +$300–700/mo | Missed-call text-back, follow-up, booking — the expansion, once trust exists |
 
@@ -20,7 +20,7 @@ which is what unlocks packages 2 and 3. Land with #1, expand into #2 and #3.
 
 ---
 
-## Package 1 — Website Build ("Get Found")  ·  $500 / $800 + $99–199/mo
+## Package 1 — Website Build ("Get Found")  ·  $400 / $700 + $99–199/mo
 For a business with no website or a broken/abandoned one.
 
 **What "SEO / AEO / GEO" means (so you can say it plainly):**
@@ -40,7 +40,7 @@ For a business with no website or a broken/abandoned one.
    matches Google exactly, clear Q&A copy the AI engines can quote
 6. Connect their domain (or provision one), verify HTTPS + mobile
 7. AFTER audit → send before/after + the live link
-8. **$500** = single high-converting page; **$800** = multi-page + booking + review embed
+8. **$400** = single high-converting page; **$700** = multi-page + booking + review embed
 
 **The monthly retainer ($99–199) is real, not fluff.** Track it in the client file
 (`monthly_fee`, `next_check`). Each month: uptime check, small edits (hours, photos,

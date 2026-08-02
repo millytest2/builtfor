@@ -27,6 +27,8 @@ def main(argv=None):
     ap.add_argument("--source", default="mock", choices=["mock", "google_places"])
     ap.add_argument("--limit", type=int, default=50)
     ap.add_argument("--out", default=None)
+    ap.add_argument("--force", action="store_true",
+                    help="allow overwriting a bigger existing sheet with fewer leads")
     args = ap.parse_args(argv)
 
     vertical = config.load_vertical(args.vertical)
@@ -40,7 +42,7 @@ def main(argv=None):
     score_leads(leads, scoring)
 
     out = args.out or f"output/leads_{args.vertical}_{args.geo}.csv"
-    export_csv(leads, out)
+    export_csv(leads, out, force=args.force)
 
     bands = Counter(l.priority for l in leads)
     print(f"\nFound {len(leads)} leads -> {out}")

@@ -42,9 +42,9 @@ Tokens auto-fill from the lead CSV: `{{name}}`, `{{business}}`, `{{trade}}`,
 
 **The offer (a step, not a pitch):**
 > "Here's all I'd suggest — let me build you a quick site. Looks good on a phone,
-> click-to-call so it actually rings you, shows up on Google. It's like five, eight
-> hundred bucks one time, not some monthly agency thing. You see it first — like it, we
-> go live; don't, no hard feelings, you've lost nothing. Fair?"
+> click-to-call so it actually rings you, shows up on Google. It's like four, maybe
+> seven hundred bucks one time, not some monthly agency thing. You see it first — like
+> it, we go live; don't, no hard feelings, you've lost nothing. Fair?"
 
 **Micro-close:**
 > "Cool — best email or number to send you a quick mockup? And real quick, what's the
@@ -64,7 +64,7 @@ For leads that already have a site/profile but weak reviews or bad info:
 ---
 
 ## Objections (stay relaxed — you're not attached to the outcome)
-- **"How much?"** → "Five to eight hundred one time for the site, and it's built to
+- **"How much?"** → "Four to seven hundred one time for the site, and it's built to
   actually bring you calls — not just sit there. Let me show you something first; if the
   number doesn't make sense we both walk, no problem."
 - **"Is there a monthly?"** → "Only if you want us to keep it maintained — like a
