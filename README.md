@@ -57,6 +57,18 @@ python -m src.website.build --client config/clients/ace_fence.yaml
 # -> output/websites/<slug>/{mockup.html, build_brief.md, copy.md, schema.json}
 ```
 
+### AI Systems — Missed-Call Text-Back  ✅ (the "Get Paid" expansion)
+Turns every missed call into a captured lead: customer calls → no answer → auto
+text-back → AI receptionist captures the job → owner gets an instant lead alert.
+Highest-margin, stickiest recurring product (+$300–700/mo). Config-per-client.
+```bash
+python -m src.aisystems.missed_call.simulate            # visual phone-mockup demo
+python -m src.aisystems.missed_call.simulate --interactive   # text it yourself
+```
+Deploy via n8n (no-code) or the included Twilio Flask webhook. Full guide:
+`docs/ai_systems.md`. Runs on a keyless template brain; uses Claude when
+`ANTHROPIC_API_KEY` is set.
+
 ### Item 5 — Client Ops / Retainer Tracker  ✅
 One command shows active clients, MRR, one-time booked, progress to your $10k goal,
 and which retainers are due for a maintenance touch. Each client is one YAML file

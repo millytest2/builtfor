@@ -58,3 +58,15 @@ done_check:                # objective definition of done (see service_delivery.
   gbp_grade_a: false
   website_grade_b: false   # website package only
   followup_sent: false
+
+# AI SYSTEMS package - missed-call text-back (the "Get Paid" expansion, +$300-700/mo)
+ai_missed_call:
+  enabled: false
+  twilio_number: ""        # the Twilio number that forwards to the owner
+  model: "claude-haiku-4-5"  # cheap + fast for high-volume SMS; bump to sonnet/opus if needed
+  # Overrides for the receptionist (falls back to business/intake fields above):
+  # business_name, owner_first, owner_phone, services, hours, service_area
+  demo_customer:           # only used by the simulator
+    - "hi, do you have any availability this week?"
+    - "it's Sam, I'm over in the north end"
+    - "afternoons work best for me"

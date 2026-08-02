@@ -1,2 +1,8 @@
 PyYAML>=6.0
 requests>=2.31
+anthropic>=0.40        # AI systems brain (missed-call text-back, etc.)
+
+# Optional — only needed to self-host the Twilio missed-call webhook
+# (n8n is the no-code alternative; see docs/ai_systems.md):
+#   flask>=3.0
+#   twilio>=9.0
