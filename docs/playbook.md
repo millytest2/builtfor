@@ -55,6 +55,65 @@ literally cannot find them by searching. They only exist as a Maps pin. Google P
 data lists them *and* confirms who has no website. That's our unfair advantage, and it's
 already automated.
 
+## 3b. Channel strategy — how not to be call #16
+
+**Assume every obvious prospect gets 15 pitches a day.** In that world you do not win
+by writing a better cold call. You win by **not being a cold call.** Cold calling is the
+most crowded, lowest-trust channel there is — it should be our *filler*, not our engine.
+
+**Our own evidence:** client #1 came from Daniel's network. Zero competition, zero
+objection-handling, closed fast. Not one sale has come from the 206-lead cold list yet.
+That is data, not luck — weight the channels accordingly.
+
+### The channel ladder (work top-down, always)
+
+| # | Channel | Competition | Why it works |
+|---|---|---|---|
+| 1 | **Referrals from existing clients** | None | They're pre-sold. Ask every client for 2. |
+| 2 | **Warm network** (friends, family, past colleagues, gym, church, sports league) | None | Proven — this is how we got client #1 |
+| 3 | **Channel partners** | Very low | One relationship = many warm intros. Highest leverage on the board. |
+| 4 | **In-person walk-ins** | Almost none | They get 15 *calls* a day and ~0 visits. A human at the counter is unignorable. |
+| 5 | **Work-first outreach** (send the finished mockup unasked) | Low | It isn't a pitch, it's a gift. Nobody else does free work upfront. |
+| 6 | **Plain cold calls** | Brutal | Off-radar towns only, and only to fill dead time. |
+
+### Channel partners — the biggest unexploited lever
+Find people who **already have trust with 30–100 of our target businesses** and no
+competing offer. One good partnership beats a thousand dials:
+
+- Equipment/supply dealers (septic tanks, fencing material, tree gear, mowers)
+- Bookkeepers and CPAs who serve trades
+- Insurance agents (commercial liability for contractors)
+- Trade associations, contractor licensing boards, local chambers, BNI chapters
+- Trade schools and apprenticeship programs
+- Commercial real estate / property managers who hire contractors
+
+The offer to them: **free audits for their people, and a referral fee** (10–20% of the
+one-time, or first month of recurring). They look generous, we get warm intros.
+
+### Why "work-first" beats any script
+We can do something no competitor can be bothered to do: **build the thing before we
+ask for anything.** The website kit produces a real mockup in under a minute; the audit
+engine produces a real report card. Sending those unrequested converts the interaction
+from *pitch* to *gift*, and it's unforgeable proof we actually looked at their business.
+
+> "Hey — I build sites for {trade} guys around {area}. Noticed you didn't have one, so I
+> went ahead and made you an example: {link}. No charge, no catch — yours to look at.
+> If you like it I'll make it real for four hundred bucks. If not, no worries at all."
+
+That is not call #16. That is the only person who showed up with something in hand.
+
+### The saturation test — apply it before working any list
+If **all four** are true, expect to be call #16 and go find a different list:
+1. The category is on every guru's starter list (dentist, med spa, chiro, realtor, gym)
+2. The business is in a top-25 metro
+3. They already have a website *and* 100+ reviews (someone is already paid to help them)
+4. They have a listed email on their site (they're on every scraper's list)
+
+**Inverse:** obscure trade + small town + no website + no scrapeable email = almost
+nobody is reaching them, because they're genuinely hard to find. Our leadfinder already
+surfaces exactly that profile — a business with no website is invisible to the scrapers
+our competitors buy lists from.
+
 ## 4. What's built (verified working)
 
 | Tool | Command | What it does |
@@ -116,17 +175,33 @@ objections yourself before you hand it to anyone.
 
 ## 7. Step by step
 
-### Week 1 — Get one paying client
-**Miles:** rotate the Google Places API key (it's been pasted in chat). Run a fresh pull
-for 2 trade categories in 5 towns. Generate 10 audits + 5 website mockups off the top of
-the list. Add your number to `config/audit.yaml` (done) and confirm the Calendly link
-works on mobile.
-**Daniel:** learn the script cold — the opener, the "I get everything by referral"
-rebuttal, and the price answer. Nothing else.
-**Both:** 20 dials each, every day, before noon. Lead with the audit ("I looked you up
-before I called — you don't have a website / your Google listing says X").
-**Target: 1 paying client.** Discount it if you have to. You need a case study more than
-you need the money.
+### ✅ DONE — Client #1 (personal trainer, via Daniel's network, $400)
+Proved: we can sell and deliver a website. **Two lessons, both important.**
+1. **It came from the warm network, not the cold list.** Weight the channel ladder above
+   accordingly — warm first, cold as filler.
+2. **No recurring was attached.** $400 booked, **$0 MRR**. A one-time build is a job, not
+   a business. Every future deal ships with a care-plan conversation attached.
+
+### Week 1 — Convert client #1 into a machine, and work the warm list
+**Miles:** rotate the Google Places API key (it was pasted in chat). Run the audit on
+client #1 to create a baseline you can diff in 30 days. Verify his site has tap-to-call
+and a form — if not, fix it free and tell him (that's the retainer setup). Grab a
+testimonial + screenshots for the homepage.
+**Daniel:** write down **every person you know** who owns a business or knows people who
+do — that list just produced 100% of our revenue. Go back to client #1 and ask for **two
+referrals** to other trainers/gym owners.
+**Both:** list 10 **channel partners** in your own area (supply houses, CPAs, insurance
+agents, chamber, BNI) and contact 3.
+**Target: care plan attached to client #1 + 2 warm intros in the pipe.**
+
+### Weeks 2–4 — Warm first, work-first second
+**Daniel:** work the warm/referral list. Ten real conversations beats 200 dials.
+**Miles:** pre-build mockups for the top 20 no-website leads. Send them **unrequested**
+with the work-first message. That's a different channel from cold calling even though
+it uses the same list.
+**Both:** one in-person day. Print the audit report card, walk into 10 trade shops in
+your own town. Nobody else is doing this and it converts far above the phone.
+**Target: 3–4 total clients, at least one with recurring attached.**
 
 ### Weeks 2–4 — Prove the delivery
 **Miles:** deliver client #1 end-to-end using `docs/service_delivery.md`. BEFORE audit →

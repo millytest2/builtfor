@@ -1,0 +1,53 @@
+# CLIENT #1 — first paying client (via Daniel's network, personal trainer)
+# TODO: fill in the real name/contact and rename this file to <slug>.yaml
+
+business:
+  name: "Personal Trainer (client #1)"      # <-- real business name
+  google_query: ""                          # "Name, City ST" — needed for audits
+  owner_name: ""
+  owner_phone: ""
+  owner_email: ""
+  vertical: "personal_trainer"
+
+engagement:
+  package: "website"
+  status: "active"          # delivered
+  price_onetime: 400        # $200 each to Miles + Daniel
+  monthly_fee: 0            # <-- THE GAP. No care plan attached. See below.
+  paid: "paid-in-full"
+  sold_on: ""
+  started: ""
+  deliverer: "Miles + Daniel"
+  next_check: ""            # <-- set a date; a monthly touch is how the upsell happens
+  source: "daniel_network"  # warm referral, NOT the cold list — track this
+
+intake:
+  services_list: []
+  hours: ""
+  service_area: ""
+  photos_received: true
+  domain: ""
+
+website:
+  builder: ""               # emergent / webild / replit
+  live_url: ""              # <-- the case study link; you need this
+  seo_aeo_geo_done: false
+  click_to_call: false      # <-- verify; if missing, fix it (free) and tell him
+  booking_or_form: false
+  reviews_embedded: false
+
+artifacts:
+  before_report: ""         # run the audit NOW to create a baseline you can diff later
+  after_report: ""
+
+done_check:
+  before_after_sent: false  # <-- do this; it's what earns the referral + the retainer
+  followup_sent: false
+
+# NEXT ACTIONS ON THIS CLIENT (highest ROI work available right now):
+#  1. Run the audit on him -> gives you a baseline + something to show in 30 days
+#  2. Attach a care plan ($99-149/mo) once he sees traffic/calls
+#  3. Ask for 2 referrals to other trainers/gym owners — warm beats cold every time
+#  4. Get a testimonial + before/after screenshots for the homepage
+ai_missed_call:
+  enabled: false            # PTs live on missed calls/DMs — real candidate later
