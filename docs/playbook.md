@@ -55,6 +55,48 @@ literally cannot find them by searching. They only exist as a Maps pin. Google P
 data lists them *and* confirms who has no website. That's our unfair advantage, and it's
 already automated.
 
+## 2b. Pricing architecture — how the monthly actually happens
+
+**Never quote a website price on its own.** The moment you say "a website for $400" you
+have created a one-time transaction in their head, and everything after is an upsell
+fighting an anchor you set yourself. That's how client #1 ended up $400 / $0 MRR.
+
+Quote one offer with two components, and make the monthly the *cheaper* path:
+
+| Option | Price | What they get |
+|---|---|---|
+| Website only | **$600 one-time** | Site, they own it, no support. *Deliberately the worse deal.* |
+| **Growth Plan** (default) | **$400 setup + $349/mo** | Site + hosting + Google management + reviews + missed-call capture + monthly report. **First month included.** |
+
+Four things make the monthly stick:
+1. **Bundled from the first sentence** — nothing to upsell later, it was never separate.
+2. **We host it.** If they own the hosting, the monthly is a favor they can cancel. If we
+   host, it's the utility bill. Structural, not persuasive.
+3. **The monthly is what makes the site work.** "The site is the storefront; the monthly
+   is what brings people through the door."
+4. **Inverted discount** — the plan costs *less* upfront than buying the site outright.
+
+**Put a tracking number on every site** (Twilio, ~$1.50/mo, forwards to their cell).
+It proves the site works ("23 calls last month"), it surfaces missed calls (which sells
+the AI upgrade as a fact, not a pitch), and it's sticky. Keep their real number as the
+primary on the Google listing for NAP consistency; the tracking number goes on the site.
+
+### The monthly add-on menu — what stacks on top of $349
+
+Sell one at a time, when the data says they need it. Never present the whole menu.
+
+| Add-on | Price | The trigger that sells it |
+|---|---|---|
+| **Missed-call text-back** *(built)* | +$200–400/mo | "You missed 14 calls last month." |
+| **Quote/estimate follow-up** | +$200–300/mo | Trades send 20 estimates and chase none. Pure found money. |
+| **Database reactivation** | +$200/mo or $500 one-off | Septic is due every 3–5 yrs; HVAC every season. They already own the list. |
+| **Review engine** | +$150–250/mo | Every one of our leads has <10 reviews. |
+| **Booking / scheduling** | +$200–300/mo | Only when they ask — most trades don't want it. |
+
+**Best two for trades: missed-call and quote follow-up.** Both are money the business
+already earned and lost. Reactivation is the easiest first "wow" — texting their old
+customer list produces booked jobs in days, which justifies everything else.
+
 ## 3b. Channel strategy — how not to be call #16
 
 **Assume every obvious prospect gets 15 pitches a day.** In that world you do not win
@@ -133,7 +175,44 @@ site copy, and AI systems.
 **Not built yet:** monthly client proof report *(biggest gap — it's what keeps retainers
 alive)*, AI-search visibility tracker, review engine, follow-up nurture, booking.
 
-## 5. The number
+## 5. The number — $5k/mo, then decide
+
+**Primary goal: $5,000/mo, part-time, without it eating the life we're protecting.**
+This is a cash engine and a business education, not the main event. Everything is sized
+to that. Bigger numbers stay available later; they are not the target now.
+
+**$5k/mo is 15 clients on the Growth Plan.** That's it.
+
+| Path | Mix | Monthly |
+|---|---|---|
+| Recurring only | 15 × $349 | **$5,235** |
+| Faster, mixed | 10 × $349 + 2 add-ons ($300) + 2 builds/mo ($400) | **$4,890** |
+| Fewer clients | 8 × $349 + 5 add-ons avg $300 | **$4,292** |
+
+At 20 hrs/week each that's roughly **one to two new clients a month for a year.** Costs
+at this scale are small (hosting, Twilio, API, ~$200–400/mo total), so most of it is
+profit split two ways.
+
+**Why this goal is better than the $100k version:** 15 clients is a manageable book you
+can run part-time without hiring, without VAs, without a sales team. You learn pricing,
+sales, delivery, retention, and productization on a real P&L — and you keep the option to
+scale later from a base that already works. Chasing $200k first would force hiring and
+delegation before the model is proven.
+
+### Why we win even though "anyone can do this"
+True — the *service* is commoditized. We don't win on the service:
+1. **We show up with the work already done.** A finished mockup and a real report card
+   before we ask for anything. Almost nobody does free work upfront.
+2. **The competition is theoretical, not actual.** Fifteen-calls-a-day is what a dentist
+   in Dallas gets. Nobody is fighting over Gauldin's Pumping in Texarkana.
+3. **Niche depth compounds.** After 10 septic companies we know the business better than
+   any generalist web shop, and every asset is reusable.
+4. **Our tooling is a cost advantage.** Lead → audit → mockup takes us minutes and a
+   competitor hours. That funds a lower price at a better margin.
+5. **Retention.** Most competitors churn clients. Keeping them is the whole compounding
+   effect, and the monthly report is how we keep them.
+
+## 5b. The stretch number (only after $5k is stable)
 
 Goal: **~$100k each per year** = ~$200k combined = **~$19–20k/mo revenue, ~$16k/mo profit.**
 
