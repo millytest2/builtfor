@@ -1,0 +1,36 @@
+# LA metro — the WORKING parts of it, where trades actually operate.
+# Deliberately NOT Beverly Hills / Santa Monica / WeHo (guru-saturated, agency-
+# heavy, and the businesses there already have websites). These are the valley,
+# South Bay, Gateway Cities and high-desert pockets where a septic/fence/tree
+# outfit is still run off a phone and a truck.
+#
+# Why this list matters: in-person visits and warm referrals only work where you
+# physically are. A lead 2,000 miles away can never become a coffee.
+
+name: la_metro
+display_name: "Los Angeles metro (working areas)"
+
+location_bias:
+  lat: 34.0522
+  lng: -118.2437
+  radius_m: 60000
+
+areas:
+  - "Van Nuys, CA"
+  - "Sun Valley, CA"
+  - "Pacoima, CA"
+  - "Sylmar, CA"
+  - "Canoga Park, CA"
+  - "Santa Clarita, CA"
+  - "Torrance, CA"
+  - "Gardena, CA"
+  - "Carson, CA"
+  - "Long Beach, CA"
+  - "San Pedro, CA"
+  - "Whittier, CA"
+  - "Downey, CA"
+  - "Norwalk, CA"
+  - "El Monte, CA"
+  - "Pomona, CA"
+  - "Simi Valley, CA"
+  - "Palmdale, CA"
