@@ -66,6 +66,17 @@ def fit_score(row: dict) -> float:
     return round(score, 1)
 
 
+def metro(address: str) -> str:
+    """'123 Main St, Valdosta, GA 31601, USA' -> 'Valdosta, GA' (zip stripped so
+    multiple zips in one town cluster together)."""
+    parts = [p.strip() for p in (address or "").split(",")]
+    if len(parts) < 3:
+        return address or "?"
+    city = parts[-3]
+    state = parts[-2].split()[0] if parts[-2].split() else parts[-2]
+    return f"{city}, {state}"
+
+
 def load_rows(pattern: str) -> list:
     rows = []
     for f in glob.glob(pattern):
@@ -81,6 +92,8 @@ def main(argv=None):
     ap.add_argument("--top", type=int, default=10)
     ap.add_argument("--min-rating", type=float, default=4.0)
     ap.add_argument("--max-reviews", type=int, default=25)
+    ap.add_argument("--cluster", action="store_true",
+                    help="group by town and work the densest ones first")
     ap.add_argument("--out", default="output/shortlist.csv")
     args = ap.parse_args(argv)
 
@@ -106,6 +119,24 @@ def main(argv=None):
         picked.append(r)
 
     picked.sort(key=lambda r: r["fit_score"], reverse=True)
+
+    if args.cluster:
+        # Density beats individual fit. Ten calls into ONE town lets you say "I work
+        # with a couple other tree guys around here", enables referrals and in-person
+        # visits, and builds local reputation. Ten calls into ten states does none.
+        from collections import defaultdict
+        by_town = defaultdict(list)
+        for r in picked:
+            by_town[metro(r["address"])].append(r)
+        ranked = sorted(by_town.items(),
+                        key=lambda kv: (len(kv[1]), sum(x["fit_score"] for x in kv[1])),
+                        reverse=True)
+        print("Lead density by town (working one town beats scattering):")
+        for t, rs in ranked[:6]:
+            print(f"  {len(rs):>2}  {t}")
+        print()
+        picked = [r for _, rs in ranked for r in rs]
+
     picked = picked[: args.top]
 
     out = Path(args.out)
@@ -120,11 +151,13 @@ def main(argv=None):
             w.writerow(r)
 
     print(f"Shortlist: {len(picked)} leads worth calling -> {out}\n")
-    print(f"{'#':>2} {'fit':>4} {'name':32s} {'phone':16s} {'★':>4} {'rev':>4}  category")
-    print("-" * 84)
+    print(f"{'#':>2} {'fit':>4} {'name':30s} {'phone':16s} {'★':>4} {'rev':>4} "
+          f"{'town':18s} category")
+    print("-" * 100)
     for i, r in enumerate(picked, 1):
-        print(f"{i:>2} {r['fit_score']:>4} {r['name'][:32]:32s} {r['phone']:16s} "
-              f"{r['google_rating']:>4} {r['review_count']:>4}  {r['category']}")
+        print(f"{i:>2} {r['fit_score']:>4} {r['name'][:30]:30s} {r['phone']:16s} "
+              f"{r['google_rating']:>4} {r['review_count']:>4} "
+              f"{metro(r['address'])[:18]:18s} {r['category']}")
     return picked
 
 
