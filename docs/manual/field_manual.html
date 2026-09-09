@@ -1,0 +1,430 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Built for Main Street — Field Manual</title>
+<style>
+  @page { size: letter; margin: 0.6in 0.7in; }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;color:#15181c;
+    font-size:10.2pt;line-height:1.4;background:#fff}
+  h1,h2,h3{margin:0}
+  .cover{page-break-after:always;padding-top:1.6in}
+  .cover .kicker{font-size:9pt;letter-spacing:.22em;text-transform:uppercase;color:#7a7f87}
+  .cover h1{font-size:44pt;line-height:.95;letter-spacing:-.02em;margin:10px 0 6px}
+  .cover .tag{font-size:13pt;color:#c25708;font-weight:600;letter-spacing:.01em}
+  .cover .rule{height:3px;background:#15181c;margin:26px 0 22px;width:100%}
+  .cover .lede{font-size:12pt;line-height:1.5;max-width:5.2in;color:#33383f}
+  .cover .foot{margin-top:1.5in;font-size:9.5pt;color:#7a7f87;border-top:1px solid #d8d5cf;padding-top:10px}
+  .cover .toc{margin-top:34px;font-size:10pt}
+  .cover .toc div{padding:5px 0;border-bottom:1px solid #e6e3dd;display:flex;justify-content:space-between}
+  .cover .toc b{font-weight:600}
+
+  section{page-break-before:always}
+  h2{font-size:20pt;letter-spacing:-.01em;padding-bottom:6px;border-bottom:2px solid #15181c;
+    margin-bottom:4px}
+  .h2sub{font-size:9.5pt;color:#7a7f87;margin:0 0 16px}
+  h3{font-size:11.5pt;margin:15px 0 6px;color:#15181c}
+  h3.first{margin-top:6px}
+  p{margin:0 0 9px}
+  ul,ol{margin:0 0 10px;padding-left:17px}
+  li{margin-bottom:4px}
+  b,strong{font-weight:600}
+
+  table{width:100%;border-collapse:collapse;font-size:9.5pt;margin-bottom:14px}
+  th{text-align:left;font-size:8pt;letter-spacing:.09em;text-transform:uppercase;color:#7a7f87;
+    padding:5px 6px;border-bottom:1.5px solid #15181c}
+  td{padding:6px;border-bottom:1px solid #e6e3dd;vertical-align:top}
+  td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
+  tr.town td{background:#15181c;color:#fff;font-weight:600;font-size:9pt;letter-spacing:.06em;
+    text-transform:uppercase;padding:5px 6px;border:none}
+  .say{border-left:3px solid #c25708;background:#fbf2e8;padding:9px 11px;margin:0 0 11px;
+    font-size:10pt}
+  .say p{margin:0 0 6px} .say p:last-child{margin:0}
+  .note{font-size:9pt;color:#6d727a;font-style:italic;margin:-4px 0 11px}
+  .box{border:1px solid #cfccc5;padding:11px 13px;margin-bottom:12px}
+  .box h4{margin:0 0 6px;font-size:10.5pt}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .price{border:1.5px solid #15181c;padding:12px 14px;margin-bottom:12px}
+  .price .big{font-size:17pt;font-weight:600;letter-spacing:-.01em}
+  .price .lbl{font-size:8.5pt;letter-spacing:.1em;text-transform:uppercase;color:#7a7f87}
+  .obj{margin-bottom:11px;page-break-inside:avoid}
+  .obj .q{font-weight:600;margin-bottom:4px}
+  .obj .a{border-left:3px solid #c25708;padding-left:10px;margin:0}
+  .steps{counter-reset:s;list-style:none;padding:0}
+  .steps li{counter-increment:s;padding-left:26px;position:relative;margin-bottom:6px}
+  .steps li::before{content:counter(s);position:absolute;left:0;top:0;width:17px;height:17px;
+    background:#15181c;color:#fff;font-size:8.5pt;text-align:center;line-height:17px}
+  .callout{background:#15181c;color:#fff;padding:13px 15px;margin:14px 0}
+  .callout b{color:#f2a45f}
+  /* Keep atomic blocks whole so sections don't spill a few orphan lines onto a
+     near-empty page. Tables of leads may split, but never mid-row. */
+  .callout,.box,.say,.price,.obj{page-break-inside:avoid}
+  tr,li{page-break-inside:avoid}
+  h3{page-break-after:avoid}
+  h2{page-break-after:avoid}
+  .pgfoot{position:fixed;bottom:-0.35in;left:0;right:0;font-size:8pt;color:#9aa0a8;
+    display:flex;justify-content:space-between}
+</style></head><body>
+
+<div class="cover">
+  <div class="kicker">Field Manual · September 2026</div>
+  <h1>Built for<br>Main Street</h1>
+  <div class="tag">Get Found. Get Called. Get Paid.</div>
+  <div class="rule"></div>
+  <p class="lede">Everything in one place: what we sell, who we call, exactly what to say,
+  how to close, and how to deliver it. Written for Miles and Daniel. If you read one
+  document before picking up the phone, read this one.</p>
+  <div class="toc">
+    <div><b>1. What we're building</b><span>the offer, the price, the number</span></div>
+    <div><b>2. The 20 leads</b><span>verified, grouped by town</span></div>
+    <div><b>3. The script</b><span>opener through objections</span></div>
+    <div><b>4. The close</b><span>words, payment, what you can't skip</span></div>
+    <div><b>5. Delivery</b><span>five days, then every month</span></div>
+  </div>
+  <div class="foot">Miles · 310-606-9788 · hello@builtformainstreet.com · builtformainstreet.com</div>
+</div>
+
+<section>
+<h2>1. What we're building</h2>
+<p class="h2sub">The business in one page.</p>
+
+<h3 class="first">What we are</h3>
+<p>We're the <b>outsourced tech guy for local businesses too small to hire one.</b> Not a
+marketing agency, not "AI automation." Closest honest description: a repair-and-upkeep
+service for a business's online presence, priced like a job.</p>
+<p>Owner.com proved this model works and what it's worth — website plus optimization plus
+automation, bundled, $249–499/mo — but it only exists for restaurants. <b>Nobody built it
+for the trades.</b> That's the opening.</p>
+
+<h3>The three things we sell</h3>
+<table>
+  <tr><th>Layer</th><th>What it is</th><th>Price</th></tr>
+  <tr><td><b>1. Website</b></td><td>Fast, mobile, click-to-call, built to rank</td><td class="n">$400 setup</td></tr>
+  <tr><td><b>2. Optimization</b></td><td>Google profile, listings, reviews, visibility</td><td class="n">in the monthly</td></tr>
+  <tr><td><b>3. AI systems</b></td><td>Missed-call text-back, quote follow-up, reactivation</td><td class="n">+$200–400/mo each</td></tr>
+</table>
+
+<div class="grid2">
+  <div class="price"><div class="lbl">The default offer</div>
+    <div class="big">$400 + $349/mo</div>
+    <p style="margin:6px 0 0;font-size:9.5pt">Setup, then monthly. First month included.
+    No contract, cancel anytime.</p></div>
+  <div class="price"><div class="lbl">Website only</div>
+    <div class="big">$600 one-time</div>
+    <p style="margin:6px 0 0;font-size:9.5pt">They own it, no support. Deliberately the
+    worse deal — the plan costs <i>less</i> upfront.</p></div>
+</div>
+
+<div class="callout"><b>The rule that matters most:</b> never quote a website price on its
+own. The moment you say "$400 for a website" you've made it a one-time sale, and every
+recurring conversation after that is an upsell fighting your own anchor. Two numbers, one
+breath, every time.</div>
+
+<h3>Why the monthly sticks</h3>
+<ul>
+  <li><b>We host it.</b> If they own the hosting, the monthly is a favor. If we host, it's
+  the utility bill.</li>
+  <li><b>A tracking number on every site</b> (~$1.50/mo). It proves the site works — "23 calls
+  last month" — and it surfaces missed calls, which sells the AI upgrade as a fact, not a pitch.</li>
+  <li><b>The monthly report.</b> Without it you're charging for invisible work.</li>
+</ul>
+
+<h3>Who we call</h3>
+<p>Any local business that's <b>phone-dependent, good at their work, and invisible online.</b>
+Highest-ticket fits are the trades — septic, tree, fencing, plumbing, HVAC — because one
+extra job pays our fee for a year. Barbershops, cafés and trainers are fine for fast cash and
+case studies but won't carry $349/mo long-term.</p>
+<p><b>Skip:</b> dentists, med spas, chiropractors, realtors and gyms in big metros. They get
+fifteen identical calls a day.</p>
+
+<h3>Where the leads actually come from</h3>
+<table>
+  <tr><th>#</th><th>Channel</th><th>Competition</th></tr>
+  <tr><td class="n">1</td><td>Referrals from existing clients — ask every one for two</td><td>None</td></tr>
+  <tr><td class="n">2</td><td><b>Warm network</b> — this produced 100% of revenue so far</td><td>None</td></tr>
+  <tr><td class="n">3</td><td>Channel partners — supply houses, CPAs, insurance agents</td><td>Very low</td></tr>
+  <tr><td class="n">4</td><td>In-person walk-ins — they get 15 calls a day and zero visits</td><td>Almost none</td></tr>
+  <tr><td class="n">5</td><td>Work-first — send the finished mockup unasked</td><td>Low</td></tr>
+  <tr><td class="n">6</td><td>Plain cold calls — filler only</td><td>Brutal</td></tr>
+</table>
+
+<h3>The number</h3>
+<p><b>$5,000/mo = 15 clients on the Growth Plan.</b> That's one to two new clients a month for
+a year, at 20 hours a week between two people. No hiring, no VAs. Costs run about $300/mo.
+Bigger numbers stay available later — they are not the target now.</p>
+</section>
+
+<section>
+<h2>2. The 20 leads</h2>
+<p class="h2sub">Every one verified live: no website, 4.2★ or better, phone that rings, and a
+Google presence grading F. Work one town all the way through before moving on.</p>
+
+<table>
+  <tr><th>Business</th><th>Phone</th><th>Rating</th><th>Trade</th></tr>
+
+  <tr class="town"><td colspan="4">Valdosta, GA — 5 leads — start here</td></tr>
+  <tr><td>Cannon Tree Services</td><td class="n">(229) 270-8013</td><td class="n">5.0★ / 5</td><td>Tree</td></tr>
+  <tr><td>Optimum Construction</td><td class="n">(229) 630-3926</td><td class="n">4.6★ / 9</td><td>Tree</td></tr>
+  <tr><td>aHunter Septic Tank Service</td><td class="n">(229) 292-8625</td><td class="n">4.5★ / 8</td><td>Septic</td></tr>
+  <tr><td>A-1 Pumping Services</td><td class="n">(229) 247-7774</td><td class="n">4.7★ / 12</td><td>Septic</td></tr>
+  <tr><td>Strickland Emergency Tarping &amp; Tree</td><td class="n">(229) 262-8733</td><td class="n">4.2★ / 5</td><td>Tree</td></tr>
+
+  <tr class="town"><td colspan="4">Cookeville, TN — 4 leads</td></tr>
+  <tr><td>Arbor Medics</td><td class="n">(931) 261-1967</td><td class="n">5.0★ / 3</td><td>Tree</td></tr>
+  <tr><td><b>Farley Tree Service</b> — best single lead</td><td class="n">(931) 520-0114</td><td class="n">5.0★ / 22</td><td>Tree</td></tr>
+  <tr><td>Old Timers Tree Services</td><td class="n">(931) 537-2466</td><td class="n">4.8★ / 24</td><td>Tree</td></tr>
+  <tr><td>Tommie Curtis Septic Tank</td><td class="n">(931) 520-4558</td><td class="n">4.4★ / 7</td><td>Septic</td></tr>
+
+  <tr class="town"><td colspan="4">Jonesboro, AR — 4 leads</td></tr>
+  <tr><td>Bo Nuckles Septic Tank</td><td class="n">(870) 935-6990</td><td class="n">5.0★ / 6</td><td>Septic</td></tr>
+  <tr><td>NEA Customs</td><td class="n">(505) 215-4429</td><td class="n">5.0★ / 3</td><td>Fencing</td></tr>
+  <tr><td>Harris Septic &amp; Plumbing</td><td class="n">(870) 932-7396</td><td class="n">4.4★ / 18</td><td>Septic</td></tr>
+  <tr><td>A K Fence &amp; Repair</td><td class="n">(870) 530-0650</td><td class="n">4.2★ / 6</td><td>Fencing</td></tr>
+
+  <tr class="town"><td colspan="4">Texarkana, AR — 3 leads</td></tr>
+  <tr><td>Evenflow Plumbing</td><td class="n">(870) 571-3186</td><td class="n">4.8★ / 23</td><td>Plumbing</td></tr>
+  <tr><td>Adams Drain &amp; Sewer Services</td><td class="n">(870) 772-4735</td><td class="n">4.3★ / 6</td><td>Septic</td></tr>
+  <tr><td>French's Quality Welding</td><td class="n">(903) 244-1994</td><td class="n">4.3★ / 8</td><td>Fencing</td></tr>
+
+  <tr class="town"><td colspan="4">North Hollywood, CA — 3 leads — your backyard, go in person</td></tr>
+  <tr><td>US Gate Supply</td><td class="n">(818) 765-3636</td><td class="n">5.0★ / 7</td><td>Gates</td></tr>
+  <tr><td>911 Fence &amp; Gates Repair</td><td class="n">(747) 215-5385</td><td class="n">5.0★ / 3</td><td>Fencing</td></tr>
+  <tr><td>Wesco Vinyl Fencing</td><td class="n">(818) 350-5420</td><td class="n">4.3★ / 4</td><td>Fencing</td></tr>
+
+  <tr class="town"><td colspan="4">Kokomo, IN — 1 lead</td></tr>
+  <tr><td>Jim's Construction LLC</td><td class="n">(765) 210-7549</td><td class="n">5.0★ / 12</td><td>Fencing</td></tr>
+</table>
+
+<div class="box"><h4>Three worth knowing before you dial</h4>
+<ul style="margin-bottom:0">
+  <li><b>Farley Tree Service</b> — 22 five-star reviews and no website at all. The hard part
+  of their business is already done. Best lead on the sheet.</li>
+  <li><b>Strickland Emergency Tarping</b> — "emergency" is in the name. Storm work is pure
+  urgency, so the missed-call system sells itself here.</li>
+  <li><b>North Hollywood's three</b> — close enough to drive to. In-person is the least
+  competitive channel available to you.</li>
+</ul></div>
+</section>
+
+<section>
+<h2>3. The script</h2>
+<p class="h2sub">Direction, not a recital. The energy comes from the find, not the sale.</p>
+
+<h3 class="first">Before you dial</h3>
+<ul>
+  <li><b>Slow down.</b> Cold calls fail on speed, not words.</li>
+  <li><b>Statements, not questions.</b> Drop your pitch at the end of sentences.</li>
+  <li><b>Smile on the opener.</b> They hear it. Use their name twice, max.</li>
+  <li><b>After you name the problem, shut up.</b> Let the silence do the work.</li>
+  <li><b>Don't be attached.</b> There are 700 more on the list. That's what makes you sound
+  confident instead of hungry.</li>
+</ul>
+
+<h3>Warm opener — your best channel</h3>
+<div class="say"><p>"Hey — random one. You know I've been building websites and doing the
+Google stuff for local businesses? I looked up your shop and honestly you're killing it on
+reviews but there's basically nothing online. Want me to just make you something and show
+you? No charge to look."</p></div>
+<p class="note">If it's a referral, always lead with the name: "Dave over at [Business] gave
+me your number — said you might be the guy to talk to."</p>
+
+<h3>Cold opener — honesty as pattern interrupt</h3>
+<div class="say"><p>"Hey, is this [Name]? I'll be straight with you, this is kind of a cold
+call. You can hang up on me if you want. Gimme twenty seconds and then tell me to get lost?"</p>
+<p>"Appreciate it. So it's me and my buddy, we build websites for [trade] guys. I was actually
+looking you up before I called — you've got a <b>five-star rating</b> and no website at all.
+So if somebody Googles '[trade] in [town]' right now, they're not finding you. They're finding
+the other guys. Did you know it was like that, or...?"</p></div>
+<p class="note">Then stop talking. This is where the call becomes a conversation.</p>
+
+<h3>Work-first — text or email, no call</h3>
+<div class="say"><p>"Hey [Name] — I build sites for [trade] companies around [town]. Noticed
+you didn't have one so I went ahead and made you an example: [link]. No charge, no catch, it's
+yours to look at. If you like it I'll make it real. If not, no worries at all. — Miles"</p></div>
+
+<h3>Discovery — this is what makes you human</h3>
+<p>Ask three or four. Actually listen. Write down their words; you'll use them in the close.</p>
+<ul>
+  <li>"How long you been doing this?"</li>
+  <li>"How do people find you right now — mostly word of mouth?"</li>
+  <li>"What kind of work do you actually <i>want</i> more of?" — <b>this becomes the headline</b></li>
+  <li>"When someone calls and you're up a tree, what happens to that call?" — <b>sets up the AI upsell</b></li>
+  <li>"Busy season coming up?"</li>
+</ul>
+
+<h3>The offer</h3>
+<div class="say"><p>"It's four hundred to get you set up — that's the site, your Google profile
+fixed up, click-to-call so it rings your cell, all of it. Then it's three forty-nine a month
+and we keep the whole thing running. <b>First month's included</b>, so nothing else comes out
+until day thirty. Sound fair?"</p></div>
+</section>
+
+<section>
+<h2>3b. Objections</h2>
+<p class="h2sub">The ones you'll actually hear, in rough order of frequency.</p>
+
+<div class="obj"><div class="q">"I get all my work by word of mouth."</div>
+<p class="a">"Honestly that's the best kind of customer you can get — I'm not knocking it. But
+even your referrals Google you before they call, just to make sure you're real. Right now
+there's nothing to find. So you're losing the ones who weren't a hundred percent sold — and
+you never even know it happened."</p></div>
+
+<div class="obj"><div class="q">"My nephew is going to build me one."</div>
+<p class="a">"Ha — honestly that's how half of them start. And it usually gets to about eighty
+percent and stalls out because he's busy with his own stuff, right? No shade to him. The
+difference is mine's done this week and somebody's actually maintaining it. If he gets to it
+first, great, genuinely."</p></div>
+
+<div class="obj"><div class="q">"Is there a monthly? I don't want another subscription."</div>
+<p class="a">"Totally get it. Yeah — three forty-nine, cancel any time, no contract. Covers
+hosting, updates, your Google, reviews. If you'd rather just buy the site outright I'll do six
+hundred, but then when your hours change or you want a photo swapped, that's on you. Most guys
+don't want that headache."</p></div>
+
+<div class="obj"><div class="q">"I'm booked solid, I don't need more work."</div>
+<p class="a">"That's a good problem. Then it's less about more jobs and more about <i>better</i>
+ones — showing up online lets you be pickier and charge more instead of taking whatever comes
+in. And when you do have a slow month, it's already there working."</p></div>
+
+<div class="obj"><div class="q">"I tried this before and it didn't work."</div>
+<p class="a">"Yeah, what happened? ... That's frustrating, and honestly pretty common. That's
+why I do it different — you see the thing before you pay, and if it's not making a difference
+you cancel. No contract. I'd rather earn it every month."</p></div>
+
+<div class="obj"><div class="q">"How much?" (asked early, before value)</div>
+<p class="a">"Depends what you need, but way less than you'd think — four to six hundred to get
+going. Let me show you what I'd actually build first, then the number makes sense or it
+doesn't. Fair?"</p></div>
+
+<div class="obj"><div class="q">"I already have a website."</div>
+<p class="a">"Nice — is it actually bringing you calls? ... Yeah, that's the difference. A site
+that just sits there isn't the same as one built to make the phone ring. Two minutes, no
+charge, let me show you what I mean."</p></div>
+
+<div class="obj"><div class="q">"I'm too busy / not interested."</div>
+<p class="a">"No worries at all, I'll be quick — want me to just text you what I found so you
+can look when you've got a sec? Worst case you delete it."</p></div>
+
+<div class="obj"><div class="q">"Send me some info."</div>
+<p class="a">"Sure — what's the best email? And real quick so I'm not sending you junk: is it
+more that you want more jobs, or more that you want to look legit when people check you out?"</p></div>
+
+<div class="obj"><div class="q">"I need to think about it."</div>
+<p class="a">"Course. What's the part you'd be thinking about — the money, or whether it'll
+actually work?" <i>(It's always one of those two. Now handle the real one.)</i></p></div>
+
+<div class="obj"><div class="q">"Can you do it cheaper?"</div>
+<p class="a">"I can't really go under four — that's already lean. What I <i>can</i> do is start
+you on the single-page version and add pages later as you need them. That keep it workable?"</p></div>
+
+<div class="obj"><div class="q">"How do I know you're legit?"</div>
+<p class="a">"Ha, fair question. No — it's literally me and my buddy, we're in LA. I'll text you
+my cell right now, and here's a site I built for a client. You can call me anytime, you'll get
+me."</p></div>
+
+<div class="obj"><div class="q">"What's the contract? Am I locked in?"</div>
+<p class="a">"No contract. Month to month, cancel whenever. If I'm not earning it you shouldn't
+be paying it."</p></div>
+</section>
+
+<section>
+<h2>4. The close</h2>
+<p class="h2sub">The moment they say anything like yes, stop selling. Pitching past the yes is
+the number one mistake.</p>
+
+<h3 class="first">The words</h3>
+<div class="say"><p>"Cool — let's just do it. I'll text you a payment link right now for the
+four hundred, and while I've got you let me grab a few things so I can start today."</p></div>
+
+<p><b>If they hesitate on paying now:</b></p>
+<div class="say"><p>"No problem — two hundred to start and two hundred when you see it live.
+Either way works."</p></div>
+
+<p><b>For a real skeptic</b> (use sparingly, but it closes them):</p>
+<div class="say"><p>"Tell you what — let me build the real thing this week. You look at it, and
+if you like it you pay me then. If you don't, I've lost an afternoon, no hard feelings."</p></div>
+
+<h3>Nine things you can't hang up without</h3>
+<ol class="steps">
+  <li><b>Payment sent</b> or scheduled</li>
+  <li>Business name <b>exactly</b> as they want it shown</li>
+  <li>Services to lead with, <b>in their words</b></li>
+  <li>Hours and service area</li>
+  <li><b>Photos</b> — "text me 10–15 pics of your trucks and jobs" <i>(biggest cause of delay)</i></li>
+  <li>Domain — do they own one, and do they have the login?</li>
+  <li>Google access — "I'll send a request to manage your listing, just hit accept"</li>
+  <li>A <b>specific</b> delivery date</li>
+  <li>The next call booked</li>
+</ol>
+
+<h3>Getting paid</h3>
+<p>Two <b>Stripe Payment Links</b>, created once and reused forever. Text the setup link while
+they're still on the phone — people who "pay later" often don't. Collecting while they're warm
+is the single biggest close-rate lever you have.</p>
+<table>
+  <tr><th>Link</th><th>Amount</th><th>When it runs</th></tr>
+  <tr><td>Setup</td><td class="n">$400</td><td>on the call</td></tr>
+  <tr><td>Growth Plan (subscription)</td><td class="n">$349/mo</td><td>starts day 31</td></tr>
+  <tr><td>Deposit option</td><td class="n">$200 / $200</td><td>now / on delivery</td></tr>
+</table>
+<div class="callout">Square or PayPal are fine for the setup fee, but <b>the monthly has to be
+a real subscription</b> you never have to chase. Chasing an invoice every month will kill you
+faster than anything else in this business.</div>
+</section>
+
+<section>
+<h2>5. Delivery</h2>
+<p class="h2sub">Five days to live, then fifteen minutes a month. Same process every time —
+that's what makes it something you can eventually hand to someone else.</p>
+
+<h3 class="first">The first five days</h3>
+<table>
+  <tr><th>Day</th><th>What happens</th></tr>
+  <tr><td class="n">0</td><td>Receipt and a "here's what happens next" text. Create their client
+  file. <b>Run the BEFORE audit</b> — this is the baseline everything gets measured against.</td></tr>
+  <tr><td class="n">1–2</td><td>Build the site from the generated brief. Request access to their
+  Google Business Profile as <b>Manager</b> (never ask for ownership).</td></tr>
+  <tr><td class="n">3–4</td><td>Send the live preview link and <b>ask for changes.</b> People need
+  to feel ownership of it — a client who requested two tweaks is far less likely to churn.</td></tr>
+  <tr><td class="n">5</td><td>Go live. Send the AFTER audit next to the BEFORE. <b>This side-by-side
+  is what earns the retainer</b> — it's proof, not a claim.</td></tr>
+  <tr><td class="n">5</td><td><b>Ask for the referral</b> while they're happy: "Who else around here
+  needs this?" Highest-yield question in the whole business.</td></tr>
+</table>
+
+<h3>What "done" means (non-negotiable)</h3>
+<ul>
+  <li>Google profile section grades <b>A</b> on the AFTER audit</li>
+  <li>15+ photos live, hours set, description written</li>
+  <li>Site has <b>tap-to-call</b> and a working contact form</li>
+  <li>Tracking number installed and forwarding</li>
+  <li>BEFORE and AFTER both delivered to the client</li>
+</ul>
+<p class="note">If the AFTER report isn't green, the job isn't done. The report is the product.</p>
+
+<h3>Every month after</h3>
+<ul>
+  <li>Uptime check, backups, any content or hours updates</li>
+  <li>Google profile post, photo refresh, respond to any reviews</li>
+  <li>Review requests going out</li>
+  <li><b>The monthly report</b> — calls, clicks, reviews, what changed</li>
+  <li>One line of commentary: "you got 23 calls, you missed 14 of them" <i>(that sentence sells
+  the next add-on without you pitching anything)</i></li>
+</ul>
+
+<h3>The add-on ladder</h3>
+<p>Sell one at a time, when the data says they need it. Never present the whole menu.</p>
+<table>
+  <tr><th>Add-on</th><th>Price</th><th>What triggers the sale</th></tr>
+  <tr><td>Missed-call text-back</td><td class="n">+$200–400</td><td>"You missed 14 calls last month."</td></tr>
+  <tr><td>Quote / estimate follow-up</td><td class="n">+$200–300</td><td>They send 20 estimates and chase none.</td></tr>
+  <tr><td>Database reactivation</td><td class="n">+$200</td><td>Septic is due every 3–5 years. They own the list.</td></tr>
+  <tr><td>Review engine</td><td class="n">+$150–250</td><td>Every lead here has under 25 reviews.</td></tr>
+  <tr><td>Booking</td><td class="n">+$200–300</td><td>Only when they ask for it.</td></tr>
+</table>
+
+<div class="callout">The honest bottom line: this is all built, tested, and unproven. The price
+has never been said out loud to a stranger. <b>Say "four hundred to get set up, then three
+forty-nine a month" to five people this week</b> — their reactions will teach you more than
+any further planning.</div>
+</section>
+
+</body></html>
