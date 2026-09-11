@@ -1,0 +1,514 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Built for Main Street — Operating Manual</title>
+<style>
+  @page { size: letter; margin: 0.58in 0.68in; }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;color:#15181c;
+    font-size:10.1pt;line-height:1.4;background:#fff}
+  h1,h2,h3,h4{margin:0}
+  .cover{page-break-after:always;padding-top:1.1in}
+  .kicker{font-size:9pt;letter-spacing:.22em;text-transform:uppercase;color:#7a7f87}
+  .cover h1{font-size:38pt;line-height:.95;letter-spacing:-.02em;margin:10px 0 8px}
+  .cover .tag{font-size:12.5pt;color:#0f6b57;font-weight:600}
+  .rule{height:3px;background:#15181c;margin:22px 0 18px}
+  .cover .lede{font-size:11.5pt;line-height:1.5;max-width:5.3in;color:#33383f}
+  .toc{margin-top:28px;font-size:10pt}
+  .toc div{padding:4.5px 0;border-bottom:1px solid #e6e3dd;display:flex;justify-content:space-between}
+  .cover .foot{margin-top:.7in;font-size:9.5pt;color:#7a7f87;border-top:1px solid #d8d5cf;padding-top:10px}
+  section{page-break-before:always}
+  h2{font-size:19pt;letter-spacing:-.01em;padding-bottom:6px;border-bottom:2px solid #15181c;margin-bottom:4px}
+  .h2sub{font-size:9.5pt;color:#7a7f87;margin:0 0 14px}
+  h3{font-size:11.5pt;margin:14px 0 6px} h3.first{margin-top:4px}
+  p{margin:0 0 8px} ul,ol{margin:0 0 9px;padding-left:17px} li{margin-bottom:3.5px}
+  table{width:100%;border-collapse:collapse;font-size:9.4pt;margin-bottom:12px}
+  th{text-align:left;font-size:8pt;letter-spacing:.09em;text-transform:uppercase;color:#7a7f87;
+    padding:5px 6px;border-bottom:1.5px solid #15181c}
+  td{padding:5.5px 6px;border-bottom:1px solid #e6e3dd;vertical-align:top}
+  td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
+  tr.grp td{background:#15181c;color:#fff;font-weight:600;font-size:8.8pt;letter-spacing:.06em;
+    text-transform:uppercase;padding:5px 6px;border:none}
+  tr.hot td{background:#eef6f3}
+  .say{border-left:3px solid #0f6b57;background:#eef6f3;padding:9px 11px;margin:0 0 10px;font-size:9.9pt}
+  .say p{margin:0 0 6px} .say p:last-child{margin:0}
+  .note{font-size:8.9pt;color:#6d727a;font-style:italic;margin:-3px 0 10px}
+  .box{border:1px solid #cfccc5;padding:10px 12px;margin-bottom:11px}
+  .box h4{margin:0 0 6px;font-size:10.4pt}
+  .no{border:1px solid #d9c3c3;background:#fcf5f5;padding:10px 12px;margin-bottom:11px}
+  .no h4{margin:0 0 6px;font-size:10.4pt;color:#8f2d2d}
+  .warn{border-left:4px solid #b8791b;background:#fdf6ea;padding:10px 12px;margin-bottom:11px}
+  .warn h4{margin:0 0 5px;font-size:10.4pt;color:#8a5a10}
+  .rung{border:1.5px solid #15181c;padding:11px 13px;margin-bottom:10px}
+  .rung.main{border-color:#0f6b57;border-width:2.5px}
+  .rung .lbl{font-size:8.4pt;letter-spacing:.1em;text-transform:uppercase;color:#7a7f87}
+  .rung .big{font-size:15pt;font-weight:600;letter-spacing:-.01em;margin:1px 0}
+  .rung .who{font-size:9pt;color:#5c616a}
+  .callout{background:#15181c;color:#fff;padding:12px 14px;margin:12px 0}
+  .callout b{color:#61c9ac}
+  .steps{counter-reset:s;list-style:none;padding:0}
+  .steps li{counter-increment:s;padding-left:25px;position:relative;margin-bottom:5px}
+  .steps li::before{content:counter(s);position:absolute;left:0;top:0;width:17px;height:17px;
+    background:#0f6b57;color:#fff;font-size:8.4pt;text-align:center;line-height:17px}
+  .callout,.box,.no,.warn,.say,.rung{page-break-inside:avoid}
+  tr,li{page-break-inside:avoid} h2,h3{page-break-after:avoid}
+</style></head><body>
+
+<div class="cover">
+  <div class="kicker">Operating Manual · Final · September 2026</div>
+  <h1>Built for<br>Main Street</h1>
+  <div class="tag">Get Found. Get Called. Get Paid.</div>
+  <div class="rule"></div>
+  <p class="lede">Four rungs, three pitches, forty real leads. The ladder is built so the
+  cheap, fast sale and the $2,000 sale use the same machine and the same words — and so the
+  monthly is part of the deal from the first sentence instead of an upsell you have to fight
+  for later.</p>
+  <div class="toc">
+    <div><b>1. The service ladder</b><span>four rungs, and who's on each</span></div>
+    <div><b>2. Rung 1 — Starter Site</b><span>$500 · cash this week</span></div>
+    <div><b>3. Rung 2 — Booking Build</b><span>$1,500–2,500 · the engine</span></div>
+    <div><b>4. Rung 3 — Growth Systems</b><span>+$200–400/mo · the asset</span></div>
+    <div><b>5. The three pitches</b><span>match the pitch to the gap</span></div>
+    <div><b>6. Objections &amp; the close</b><span>including payment</span></div>
+    <div><b>7. List A — 20 quick-cash leads</b><span>16 drivable</span></div>
+    <div><b>8. List B — 20 career leads</b><span>UPath-aligned</span></div>
+    <div><b>9. The next seven days</b><span>who does what</span></div>
+  </div>
+  <div class="foot">Miles · 310-606-9788 · hello@builtformainstreet.com · builtformainstreet.com</div>
+</div>
+
+<section>
+<h2>1. The service ladder</h2>
+<p class="h2sub">One machine, four rungs. Each rung has a different buyer, a different price,
+and a specific trigger that moves them up.</p>
+
+<div class="rung" style="border-style:dashed">
+  <div class="lbl">Rung 0 — not a product, the door</div>
+  <div class="big">The Free Report Card — $0</div>
+  <div class="who">The audit. Graded A–F on their Google profile, reviews, and website.
+  Costs nothing, takes one command, and opens every conversation on this page.</div>
+</div>
+
+<div class="rung">
+  <div class="lbl">Rung 1 — cash this week</div>
+  <div class="big">Starter Site — $500 + $149/mo</div>
+  <div class="who">Any local business with no website. One call or one walk-in. 2–4 days to
+  build. Light monthly: hosting, edits, Google upkeep.</div>
+</div>
+
+<div class="rung main">
+  <div class="lbl">Rung 2 — the revenue engine</div>
+  <div class="big">Client-Booking Build — $1,500–2,500 + $349/mo</div>
+  <div class="who">Owner-led businesses where one client is worth $1,500–25,000. Site, message,
+  proof, booking flow, follow-up, tracking. 14 days, two phases.</div>
+</div>
+
+<div class="rung">
+  <div class="lbl">Rung 3 — the asset</div>
+  <div class="big">Growth Systems — +$200–400/mo each</div>
+  <div class="who">Missed-call text-back, quote follow-up, database reactivation, review engine.
+  Sold one at a time, only when the data proves they need it.</div>
+</div>
+
+<div class="callout"><b>The one rule that makes the ladder work:</b> never quote a site price on
+its own. Two numbers in one breath — "five hundred to get set up, then a hundred forty-nine a
+month" — so the monthly is part of the deal, not a thing you have to sell twice. Client #1
+became $400 with $0 recurring because that sentence came out wrong.</div>
+
+<h3>The monthly is different per rung — this was wrong before</h3>
+<p>A gate shop that paid $500 for a site will not pay $349/mo, and pretending otherwise just
+loses the recurring entirely. <b>$149/mo for Rung 1, $349/mo for Rung 2.</b> Same work,
+different depth, priced to what the client can actually carry.</p>
+
+<h3>Which list goes on which rung</h3>
+<table>
+  <tr><th>Lead list</th><th>Rung</th><th>Why</th></tr>
+  <tr><td><b>List A</b> — SFV gate shops, high-review tree services</td><td class="n">1</td>
+    <td>No website at all. Obvious gap, fast yes, some are a drive away.</td></tr>
+  <tr><td><b>List B</b> — career coaches, admissions consultants, tutoring</td><td class="n">2</td>
+    <td>One client is worth $1,500–25,000. They have a site; they have no booking path.</td></tr>
+  <tr><td>Anyone on either list, 30 days later</td><td class="n">3</td>
+    <td>Once the tracking number shows missed calls, the add-on sells itself.</td></tr>
+</table>
+
+<h3>Why the monthly sticks</h3>
+<ul>
+  <li><b>We host it.</b> If they own the hosting, the monthly is a favor they cancel. If we
+  host, it's the utility bill.</li>
+  <li><b>A tracking number on every site</b> (~$1.50/mo) — proves the site works ("23 calls
+  last month") and surfaces missed calls, which is how Rung 3 sells itself.</li>
+  <li><b>The monthly report.</b> Without it you're charging for invisible work.</li>
+</ul>
+
+<h3>$10k/mo, mixed across rungs</h3>
+<table>
+  <tr><th>Line</th><th>Volume</th><th>Monthly</th></tr>
+  <tr><td>Rung 2 booking builds</td><td class="n">4 × $2,000</td><td class="n">$8,000</td></tr>
+  <tr><td>Rung 2 care plans</td><td class="n">5 × $349</td><td class="n">$1,745</td></tr>
+  <tr><td>Rung 1 sites + care</td><td class="n">2 × $500 + 6 × $149</td><td class="n">$1,894</td></tr>
+  <tr><td><b>Total</b></td><td></td><td class="n"><b>~$11,600</b></td></tr>
+</table>
+<p class="note">Four Rung-2 builds a month is one a week. Under a $400-only model the same
+number needed 25 sales a month, which was never happening part-time.</p>
+</section>
+
+<section>
+<h2>2. Rung 1 — Starter Site · $500</h2>
+<p class="h2sub">Built for speed. This is the rung you use this week.</p>
+
+<div class="box"><h4>What they get</h4>
+<ul style="margin-bottom:0">
+  <li>One high-converting page (or up to 3), mobile-first, fast</li>
+  <li><b>Tap-to-call</b> and a contact form that actually routes to them</li>
+  <li>Services, hours, service area, photos, reviews pulled in</li>
+  <li>Google Business Profile cleaned up — hours, categories, description, photos</li>
+  <li>Title/meta and LocalBusiness schema so it can be found</li>
+  <li>Tracking number installed</li>
+</ul></div>
+
+<div class="no"><h4>Not included at this price</h4>
+<ul style="margin-bottom:0">
+  <li>No message/positioning work — that's Rung 2</li>
+  <li>No booking system, no follow-up sequences, no automations</li>
+  <li>One revision round</li>
+  <li>Max 3 pages</li>
+</ul></div>
+
+<table>
+  <tr><th>Day</th><th>What happens</th></tr>
+  <tr><td class="n">0</td><td>Paid. 15-minute intake. "Text me 10 photos."</td></tr>
+  <tr><td class="n">1–2</td><td>Build. Google profile fixed.</td></tr>
+  <tr><td class="n">3</td><td>Preview. One revision round.</td></tr>
+  <tr><td class="n">4</td><td>Live. Send BEFORE/AFTER report cards. <b>Ask for a referral.</b></td></tr>
+  <tr><td class="n">30</td><td>First report. Mention the calls. Offer Rung 3 if the data supports it.</td></tr>
+</table>
+
+<div class="callout"><b>Walk-in version, for List A:</b> print the report card, drive to the shop,
+ask for the owner. <i>"I pulled up your Google — you've got 54 five-star reviews and no
+website. I already built you an example. Want to see it?"</i> They get fifteen calls a day and
+zero visits. A human at the counter is unignorable.</div>
+</section>
+
+<section>
+<h2>3. Rung 2 — Booking Build · $1,500–2,500</h2>
+<p class="h2sub">14 days, two phases. Seven was a promise that breaks on the first client
+who's slow with photos.</p>
+
+<div class="warn"><h4>Why not 7 days</h4>
+<p style="margin:0">The build is ~12–15 hours, which fits in a week. Every <i>dependency</i>
+doesn't: intake answers, photos, testimonials, logo files, domain login, Google access, message
+approval, a revision round. <b>Photos alone routinely take a week.</b> Plus message work needs
+a night of thought, and four builds a month can't run as four non-overlapping sprints
+part-time. Agencies quote 6–12 weeks — 14 days still stuns people, and it lets you
+over-deliver instead of apologize.</p></div>
+
+<table>
+  <tr><th>Phase</th><th>Days</th><th>What lands</th></tr>
+  <tr><td><b>1 — Live &amp; bookable</b></td><td class="n">1–7</td><td>Message approved, core
+    site live, one booking flow working. <b>They can start using it.</b></td></tr>
+  <tr><td><b>2 — Converting</b></td><td class="n">8–14</td><td>Proof placed, follow-up wired,
+    tracking installed, search basics, walkthrough call.</td></tr>
+</table>
+
+<div class="box"><h4>What's included</h4>
+<ol class="steps" style="margin-bottom:0">
+  <li><b>Core site</b>, up to 5 pages — who it's for, what they get, why them</li>
+  <li><b>Message sharpening</b> — one positioning pass, written up as a doc they keep</li>
+  <li><b>Proof organized</b> — testimonials, results, portfolio, credentials, placed properly</li>
+  <li><b>One booking or application flow</b> — a real calendar, not a contact form</li>
+  <li><b>Follow-up</b> — one email or SMS sequence, three messages</li>
+  <li><b>Tracking</b> — call tracking number + booking/form events</li>
+  <li><b>Search basics</b> — title/meta, LocalBusiness + FAQ schema, Google profile aligned</li>
+</ol></div>
+
+<div class="no"><h4>Not included — say it out loud on the call</h4>
+<ul style="margin-bottom:0">
+  <li>No SEO retainer, no paid ads, no content calendar, no social posting</li>
+  <li>No logo or brand identity design</li>
+  <li>One booking flow, not three. One sequence, not a funnel.</li>
+  <li><b>Two revision rounds</b>, then it ships</li>
+</ul></div>
+
+<p><b>Day one starts when their materials arrive</b>, not when they pay. Say it on the call,
+put it in the invoice.</p>
+
+<table>
+  <tr><th>Price</th><th>When</th></tr>
+  <tr><td class="n">$1,500</td><td>Solo operator, one service, one booking flow, 3–5 pages</td></tr>
+  <tr><td class="n">$2,500</td><td>Multiple services/locations, heavier proof work, two flows</td></tr>
+</table>
+<p class="note">Start everyone at $1,500 until three people say yes without flinching, then
+move to $2,000. Only their faces can answer that question.</p>
+</section>
+
+<section>
+<h2>4. Rung 3 — Growth Systems</h2>
+<p class="h2sub">The highest-margin, stickiest thing you sell. Never present the menu — sell
+one, when the data names it.</p>
+
+<table>
+  <tr><th>System</th><th>Price</th><th>The trigger that sells it</th></tr>
+  <tr class="hot"><td><b>Missed-call text-back</b> <i>(built)</i></td><td class="n">+$200–400/mo</td>
+    <td>"You got 23 calls last month and missed 14 of them."</td></tr>
+  <tr><td>Quote / estimate follow-up</td><td class="n">+$200–300/mo</td>
+    <td>They send 20 estimates a month and chase zero.</td></tr>
+  <tr><td>Database reactivation</td><td class="n">+$200/mo or $500 once</td>
+    <td>Gate maintenance, septic pumping, annual tune-ups. They own the list.</td></tr>
+  <tr><td>Review engine</td><td class="n">+$150–250/mo</td>
+    <td>Most of List A has under 10 reviews.</td></tr>
+  <tr><td>Booking automation</td><td class="n">+$200–300/mo</td><td>Only when they ask.</td></tr>
+</table>
+
+<p><b>Why this rung is the actual business:</b> a website is a portable artifact — they can take
+it and leave. An automation is wired into their operations; switching it off breaks something
+they now depend on. One is a purchase, the other is a dependency, and dependencies are what
+recurring revenue is made of.</p>
+
+<div class="callout">Delivery cost is a few dollars a month (Twilio ~$1.50 + fractions of a cent
+per AI reply) against $200–400/mo. <b>It runs itself and the margin is ~95%.</b> Demo it with
+<b>python -m src.aisystems.missed_call.simulate</b> — it renders a phone mockup of the whole
+text conversation. Text that mockup to a client and ask "want this on your line?"</div>
+
+<h3>The upsell sequence, per client</h3>
+<ol class="steps">
+  <li>Day 30: first monthly report. One line: "you missed 14 calls."</li>
+  <li>Text the missed-call phone mockup. Say nothing else.</li>
+  <li>They ask what it costs. Quote it. Done.</li>
+  <li>Ninety days later, if quotes are their bottleneck, offer follow-up. One at a time.</li>
+</ol>
+</section>
+
+<section>
+<h2>5. The three pitches</h2>
+<p class="h2sub">Same structure every time — <b>name real proof, then name the gap.</b> What
+changes is which gap.</p>
+
+<h3 class="first">Pitch A — no website at all (most of List A)</h3>
+<div class="say"><p>"Hey, is this [Name]? I'll be straight with you, this is kind of a cold
+call — you can hang up if you want. Gimme twenty seconds and then tell me to get lost?"</p>
+<p>"So it's me and my buddy, we build sites for [trade] guys. I looked you up before I called
+— you've got a <b>five-star rating and no website at all.</b> So if somebody Googles '[trade]
+near me' right now, they're finding the other guys. Did you know it was like that, or...?"</p></div>
+<p class="note">Then stop talking. Let the silence sit. That's where it becomes a conversation.</p>
+
+<h3>Pitch B — dominant on Maps, absent from the web (the sleepers)</h3>
+<p>For the ones with 50–150 reviews and no site. <b>These are not invisible — they're winning
+on Google Maps and completely missing from the rest of the internet.</b> Different problem,
+much easier sell, because they already believe in being found.</p>
+<div class="say"><p>"You've got <b>a hundred and fifty-two five-star reviews</b> — that's more
+than anybody else around here. And when I clicked through to learn more, there was nowhere to
+go. You're winning on the map and invisible everywhere else. That's a half-finished job, and
+it's a cheap fix."</p></div>
+<p class="note">Flattering, factual, and it frames the purchase as finishing something they
+already built — not starting something new.</p>
+
+<h3>Pitch C — has a site, no way to book (all of List B)</h3>
+<div class="say"><p>"You're clearly good at this — I can see the results you're getting for
+students. But when a parent finds you, there's no clear way to understand your process or
+actually book a consult. They get a contact form and silence. I can fix that in two weeks."</p></div>
+
+<div class="box"><h4>The 30-second qualification test — use it on List B before calling</h4>
+<ol class="steps" style="margin-bottom:0">
+  <li>Open their site on your <b>phone</b>. Fast? Readable?</li>
+  <li>Can you tell in 10 seconds <b>who it's for and what it costs</b>?</li>
+  <li><b>Real booking link</b> — a calendar — or just a form?</li>
+  <li>Is their <b>proof visible</b>, or buried?</li>
+  <li>Is the <b>owner the decision-maker</b>? Solo or 2–3 people.</li>
+</ol></div>
+<p class="note">Two or more failures = live target. Passes all five = move on, you'll waste
+the call.</p>
+</section>
+
+<section>
+<h2>6. Objections &amp; the close</h2>
+<p class="h2sub">The eight you'll actually hear, then how to take the money.</p>
+
+<p><b>"I get all my work by word of mouth."</b><br>
+"Honestly that's the best kind of customer you can get — I'm not knocking it. But even your
+referrals Google you before they call, just to make sure you're real. Right now there's nothing
+to find. So you're losing the ones who weren't a hundred percent sold, and you never even know
+it happened."</p>
+
+<p><b>"My nephew is going to build me one."</b><br>
+"Ha — honestly that's how half of them start. And it gets to about eighty percent and stalls
+because he's busy with his own stuff, right? No shade to him. Difference is mine's done this
+week and somebody's actually maintaining it. If he gets to it first, great, genuinely."</p>
+
+<p><b>"Is there a monthly? I don't want another subscription."</b><br>
+"Totally get it. It's [149/349], cancel any time, no contract — hosting, updates, your Google,
+reviews. If you'd rather just buy it outright I'll do that, but then when your hours change
+that's on you. Most guys don't want the headache."</p>
+
+<p><b>"I'm booked solid, I don't need more work."</b><br>
+"Good problem. Then it's less about more jobs and more about <i>better</i> ones — being easy to
+find lets you be pickier and charge more instead of taking whatever comes in."</p>
+
+<p><b>"I tried this before and it didn't work."</b><br>
+"Yeah, what happened? ... That's frustrating, and pretty common. That's why you see the thing
+before you pay, and if it's not making a difference you cancel. No contract."</p>
+
+<p><b>"I need to think about it."</b><br>
+"Course. What's the part you'd be thinking about — the money, or whether it'll actually work?"
+<i>It's always one of those two. Now handle the real one.</i></p>
+
+<p><b>"How much?" (asked early)</b><br>
+"Way less than you'd think — [five hundred / fifteen hundred]. Let me show you what I'd
+actually build first, then the number makes sense or it doesn't. Fair?"</p>
+
+<p><b>"How do I know you're legit?"</b><br>
+"Fair question. It's literally me and my buddy, we're in LA. I'll text you my cell right now,
+and here's a site I built for a client."</p>
+
+<h3>The close — stop selling the moment they say yes</h3>
+<div class="say"><p>"Cool — let's just do it. I'll text you a payment link right now, and while
+I've got you let me grab a few things so I can start today."</p></div>
+<p><b>Hesitant?</b> "Half now, half when it's live. Either way works."<br>
+<b>Real skeptic?</b> "Let me build the real thing this week. You look at it, and if you like it
+you pay me then."</p>
+
+<div class="box"><h4>Nine things you can't hang up without</h4>
+<ol class="steps" style="margin-bottom:0">
+  <li><b>Payment sent</b> or scheduled</li>
+  <li>Business name exactly as they want it shown</li>
+  <li>Services to lead with — <b>in their words</b></li>
+  <li>Hours and service area</li>
+  <li><b>Photos</b> — "text me 10–15 pics" <i>(biggest cause of delay)</i></li>
+  <li>Domain — own one? login?</li>
+  <li>Google access — "I'll send a request, hit accept"</li>
+  <li>A specific delivery date</li>
+  <li>The next call booked</li>
+</ol></div>
+
+<div class="callout"><b>Payment:</b> three Stripe Payment Links, made once —
+<b>$500 setup</b>, <b>$1,500 build</b>, and the <b>monthly subscription</b>. Text the link while
+they're still on the phone; people who "pay later" often don't. Square or PayPal are fine for
+one-time fees, but <b>the monthly must be a real subscription</b> — chasing an invoice every
+month will kill you faster than anything else in this business.</div>
+</section>
+
+<section>
+<h2>7. List A — 20 quick-cash leads</h2>
+<p class="h2sub">All no website, all with phones, all verified. <b>Rung 1, $500.</b> The first
+16 are within a short drive of each other in the San Fernando Valley.</p>
+
+<table>
+  <tr><th>#</th><th>Business</th><th>Phone</th><th>Rating</th><th>Town</th></tr>
+  <tr class="grp"><td colspan="5">San Fernando Valley — gate, fence &amp; ironwork · drivable in one afternoon</td></tr>
+  <tr class="hot"><td class="n">1</td><td><b>Electric Gate Repair Services</b> — best on the list</td><td class="n">(818) 274-3850</td><td class="n">4.8★ / 54</td><td>Encino</td></tr>
+  <tr class="hot"><td class="n">2</td><td><b>Exotic Iron Works</b></td><td class="n">(818) 768-1572</td><td class="n">5.0★ / 21</td><td>Sun Valley</td></tr>
+  <tr class="hot"><td class="n">3</td><td><b>Electric Gate Installation LA</b></td><td class="n">(323) 601-5074</td><td class="n">4.9★ / 17</td><td>Van Nuys</td></tr>
+  <tr><td class="n">4</td><td>US Gate Supply</td><td class="n">(818) 765-3636</td><td class="n">5.0★ / 7</td><td>North Hollywood</td></tr>
+  <tr><td class="n">5</td><td>Expert Gate Repair</td><td class="n">(818) 900-7909</td><td class="n">5.0★ / 4</td><td>Pacoima</td></tr>
+  <tr><td class="n">6</td><td>911 Fence &amp; Gates Repair</td><td class="n">(747) 215-5385</td><td class="n">5.0★ / 3</td><td>North Hollywood</td></tr>
+  <tr><td class="n">7</td><td>Gates Service &amp; Repair Pacoima</td><td class="n">(818) 450-3339</td><td class="n">5.0★ / 3</td><td>Pacoima</td></tr>
+  <tr><td class="n">8</td><td>Electric Gate Repair Service</td><td class="n">(818) 975-2825</td><td class="n">5.0★ / 3</td><td>Arleta</td></tr>
+  <tr><td class="n">9</td><td>Integrity Driveway Gate Repair</td><td class="n">(818) 975-2941</td><td class="n">5.0★ / 3</td><td>Sylmar</td></tr>
+  <tr><td class="n">10</td><td>AAA Automatic Gate Repair</td><td class="n">(818) 875-5855</td><td class="n">5.0★ / 3</td><td>Sylmar</td></tr>
+  <tr><td class="n">11</td><td>Integrity Electric Driveway Gate</td><td class="n">(818) 975-2771</td><td class="n">5.0★ / 2</td><td>Pacoima</td></tr>
+  <tr><td class="n">12</td><td>Utopia Gates &amp; Fences</td><td class="n">(818) 581-3031</td><td class="n">4.5★ / 2</td><td>North Hollywood</td></tr>
+  <tr><td class="n">13</td><td>Wesco Vinyl Fencing</td><td class="n">(818) 350-5420</td><td class="n">4.3★ / 4</td><td>North Hollywood</td></tr>
+  <tr><td class="n">14</td><td>Zeus Ironworks</td><td class="n">(818) 518-0246</td><td class="n">3.9★ / 7</td><td>Sun Valley</td></tr>
+  <tr><td class="n">15</td><td>Five Star Fence</td><td class="n">(818) 890-0500</td><td class="n">3.7★ / 6</td><td>Pacoima</td></tr>
+  <tr><td class="n">16</td><td>Frank's Iron Work</td><td class="n">(818) 314-4532</td><td class="n">3.7★ / 3</td><td>Pacoima</td></tr>
+  <tr class="grp"><td colspan="5">The sleepers — huge review counts, zero website · use Pitch B</td></tr>
+  <tr class="hot"><td class="n">17</td><td><b>CHAVO Tree Service</b> — 152 five-star reviews</td><td class="n">(706) 229-2360</td><td class="n">5.0★ / 152</td><td>Dalton, GA</td></tr>
+  <tr class="hot"><td class="n">18</td><td><b>Apex Tree Works</b></td><td class="n">(601) 550-8526</td><td class="n">5.0★ / 134</td><td>Hattiesburg, MS</td></tr>
+  <tr><td class="n">19</td><td>All About Tree Service</td><td class="n">(601) 550-3024</td><td class="n">5.0★ / 65</td><td>Petal, MS</td></tr>
+  <tr><td class="n">20</td><td>Gromek Tree Service</td><td class="n">(765) 803-0370</td><td class="n">5.0★ / 65</td><td>Kokomo, IN</td></tr>
+</table>
+
+<div class="callout"><b>Numbers 17–20 are the best leads on this page and the scoring almost
+hid them.</b> A business with 152 five-star reviews and no website isn't invisible — it's
+<i>dominant on Maps and absent from the web.</i> Provably busy, provably liked, provably has
+money, and already sold on the value of being found. Use Pitch B, and try $1,500 on them
+rather than $500.</div>
+</section>
+
+<section>
+<h2>8. List B — 20 career leads</h2>
+<p class="h2sub"><b>Rung 2, $1,500–2,500.</b> Admissions consulting runs $5,000–25,000 per
+family — a $2,000 build isn't a decision at that level. And every call teaches you the market
+UPath lives in.</p>
+
+<div class="warn"><h4>What is and isn't verified</h4>
+<p style="margin:0">These are real businesses confirmed to be in the right category and market.
+<b>Their website quality is NOT verified</b> — third-party sites can't be opened from the
+research environment and the Places key is returning PERMISSION_DENIED. <b>Target list, not a
+qualified list.</b> Run the 30-second test on each. Expect about half to fail out — still far
+faster than sourcing cold.</p></div>
+
+<table>
+  <tr><th>#</th><th>Target</th><th>Type</th><th>Why it's here</th></tr>
+  <tr class="grp"><td colspan="4">Career coaches &amp; résumé writers — solo, fastest decisions</td></tr>
+  <tr><td class="n">1</td><td>Thomas Career Consulting</td><td>Coach</td><td>Solo; entertainment/tech/healthcare niche</td></tr>
+  <tr><td class="n">2</td><td>KTS Career Coaching</td><td>Coach</td><td>Solo, 25+ yrs, LA</td></tr>
+  <tr><td class="n">3</td><td>Legacy Careers LLC</td><td>Coach</td><td>LA; entertainment, tech, aerospace</td></tr>
+  <tr><td class="n">4</td><td>Lindsey Levine Resume &amp; Interview Prep</td><td>Résumé</td><td>Explicitly a single-member firm</td></tr>
+  <tr><td class="n">5</td><td>Red Pen Wench</td><td>Résumé</td><td>Small practice, est. 2014</td></tr>
+  <tr><td class="n">6</td><td>Market-Connections</td><td>Résumé</td><td>Established LA practice</td></tr>
+  <tr><td class="n">7</td><td>Standout Resume</td><td>Résumé</td><td>LA, small team</td></tr>
+  <tr><td class="n">8</td><td>Shine Bright Resume Services</td><td>Résumé</td><td>LA, solo-scale</td></tr>
+  <tr class="grp"><td colspan="4">Admissions &amp; college counseling — $5k–25k engagements</td></tr>
+  <tr><td class="n">9</td><td>The College Curators</td><td>Admissions</td><td>LA boutique</td></tr>
+  <tr><td class="n">10</td><td>Magellan College Counseling</td><td>Admissions</td><td>Independent counselors, LA + remote</td></tr>
+  <tr><td class="n">11</td><td>Helping Hand College Guidance</td><td>Admissions</td><td>Small practice, publishes rates</td></tr>
+  <tr><td class="n">12</td><td>Oriel Admissions</td><td>Admissions</td><td>LA boutique</td></tr>
+  <tr class="hot"><td class="n">13</td><td><b>IECA directory — LA filter</b></td><td>Admissions</td><td><b>2,800+ vetted members, searchable by city. Best single source on this page.</b></td></tr>
+  <tr><td class="n">14</td><td>IECA directory — Ventura / Orange County</td><td>Admissions</td><td>Adjacent markets, same method</td></tr>
+  <tr class="grp"><td colspan="4">Tutoring &amp; test prep — storefront, the tool can find these</td></tr>
+  <tr><td class="n">15</td><td>The End Result Tutoring</td><td>Tutoring</td><td>Van Nuys + Sherman Oaks, independent since 1992</td></tr>
+  <tr><td class="n">16</td><td>Learning Period</td><td>Tutoring</td><td>San Fernando Valley, in-home</td></tr>
+  <tr><td class="n">17</td><td>Perfect Score Academy</td><td>Test prep</td><td>Local independent</td></tr>
+  <tr><td class="n">18</td><td>Elite Prep Northridge</td><td>Test prep</td><td>Local branch, owner-operated</td></tr>
+  <tr class="grp"><td colspan="4">Run the machine on these (needs the Places key restored)</td></tr>
+  <tr><td class="n">19</td><td>Trade &amp; vocational schools — LA metro</td><td>Career training</td><td>High ticket, on Maps, config written</td></tr>
+  <tr><td class="n">20</td><td>Driving &amp; music schools — LA metro</td><td>Education</td><td>Volume category, on Maps, config written</td></tr>
+</table>
+
+<h3>Other directories that replace the API for this sector</h3>
+<table>
+  <tr><th>Directory</th><th>Who's in it</th></tr>
+  <tr><td>NACAC</td><td>College admission counseling professionals</td></tr>
+  <tr><td>PARW/CC · NRWA</td><td>Certified professional résumé writers — heavily solo</td></tr>
+  <tr><td>ICF</td><td>Credentialed coaches, filterable by niche and city</td></tr>
+  <tr><td>NCDA</td><td>Career development professionals</td></tr>
+</table>
+</section>
+
+<section>
+<h2>9. The next seven days</h2>
+<p class="h2sub">Two lists, two motions, running in parallel.</p>
+
+<h3 class="first">Miles</h3>
+<ol class="steps">
+  <li><b>Make the three Stripe links.</b> $500, $1,500, and the monthly subscription. Twenty
+  minutes, and it's the difference between a yes and "I'll send you something later."</li>
+  <li><b>Restore the Places key</b> (currently PERMISSION_DENIED), then run tutoring, trade
+  schools and remodeling in LA. Configs are already written.</li>
+  <li><b>Pre-build mockups</b> for List A #1–5 so the first calls are work-first, not cold.</li>
+  <li><b>Drive the Valley one afternoon.</b> Sixteen shops, printed report cards, ask for the
+  owner.</li>
+</ol>
+
+<h3>Daniel</h3>
+<ol class="steps">
+  <li><b>Write the warm list</b> — every business owner you both know. That list produced 100%
+  of revenue so far and has never been written down.</li>
+  <li><b>Call List A #17–20</b> with Pitch B. Huge review counts, no website, easiest yes on
+  the page.</li>
+  <li><b>Mine the IECA directory</b> — LA filter, 20 names, run the 30-second test on each.</li>
+</ol>
+
+<h3>Both</h3>
+<ol class="steps">
+  <li><b>Go back to client #1</b> (the trainer). Testimonial, screenshots, live URL, referral
+  ask, then offer the $149/mo. That client should produce your next two.</li>
+  <li><b>Say the price out loud to five strangers.</b> "Five hundred to get set up, then a
+  hundred forty-nine a month."</li>
+</ol>
+
+<div class="callout">Everything in this manual is built, tested, and <b>unproven</b>. The price
+has still never been said out loud to a stranger. The next real milestone isn't a feature or a
+better plan — <b>it's the first person who isn't a friend of Daniel's handing you money.</b>
+Forty leads, three pitches, and a payment link. Go get it.</div>
+</section>
+
+</body></html>
