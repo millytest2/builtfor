@@ -1,0 +1,14 @@
+name: remodeling
+display_name: "Remodeling & Custom Builders"
+
+# The bridge between both models: mechanically findable like a trade, but one
+# kitchen is $30,000+. A remodeler can pay $2,500 without blinking.
+search_terms:
+  - "kitchen and bath remodeling"
+  - "general contractor remodel"
+  - "home remodeling contractor"
+
+primary_keyword: "kitchen remodel"
+
+mock_noun: "Remodeling"
+mock_suffixes: ["Remodeling", "Construction", "Builders", "Design Build", "Renovations"]

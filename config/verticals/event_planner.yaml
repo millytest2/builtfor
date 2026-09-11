@@ -1,0 +1,14 @@
+name: event_planner
+display_name: "Wedding & Event Planners"
+
+# One event is worth $2,000-10,000. Owner-led, referral-driven, and the booking
+# path is usually a DM.
+search_terms:
+  - "wedding planner"
+  - "event planner"
+  - "event coordinator"
+
+primary_keyword: "wedding planner"
+
+mock_noun: "Events"
+mock_suffixes: ["Events", "Event Co.", "Weddings", "Celebrations", "Event Design"]

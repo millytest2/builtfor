@@ -1,0 +1,14 @@
+name: tutoring
+display_name: "Tutoring & Test Prep"
+
+# $2,000-5,000 per family, parents are motivated buyers, and this is the closest
+# adjacency to UPath — every conversation teaches the education market.
+search_terms:
+  - "tutoring center"
+  - "test prep SAT ACT"
+  - "private tutor"
+
+primary_keyword: "tutoring near me"
+
+mock_noun: "Learning"
+mock_suffixes: ["Tutoring", "Learning Center", "Test Prep", "Academics", "Academy"]

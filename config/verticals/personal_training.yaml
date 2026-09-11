@@ -1,0 +1,14 @@
+name: personal_training
+display_name: "Personal Trainers & Private Studios"
+
+# A retained client is worth $1,500-5,000/yr. This is where client #1 came from,
+# so the warm network already overlaps this category.
+search_terms:
+  - "personal trainer"
+  - "private personal training studio"
+  - "strength coach"
+
+primary_keyword: "personal trainer near me"
+
+mock_noun: "Fitness"
+mock_suffixes: ["Fitness", "Training", "Performance", "Strength Co.", "Athletics"]

@@ -1,0 +1,14 @@
+name: photographer
+display_name: "Wedding & Portrait Photographers"
+
+# Premium people-business: one client is worth $2,000-5,000, the owner IS the
+# business, and a huge share run on Instagram with no real booking path.
+search_terms:
+  - "wedding photographer"
+  - "portrait photographer"
+  - "photography studio"
+
+primary_keyword: "wedding photographer"
+
+mock_noun: "Photography"
+mock_suffixes: ["Photography", "Photo Studio", "Photo Co.", "Images", "Studios", "Portraits"]

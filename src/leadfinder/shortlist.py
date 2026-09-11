@@ -22,14 +22,24 @@ import csv
 import glob
 from pathlib import Path
 
-# Trades where one job is worth enough to fund our fee, and the phone is the
-# lifeline. Urgency-driven ones score higher — missed calls hurt more.
+# What one customer is worth to them — which is what actually sets how much they
+# can pay us, far more than their revenue does. 5 = a single client is worth
+# $5k+; 3 = $1.5-5k; 2 = a few hundred; 0 = too thin to carry a real fee.
 TICKET = {
+    # Premium people-businesses: owner-led, one client worth $1.5-5k+
+    "remodeling": 5, "interior_design": 5, "event_planner": 4,
+    "photographer": 4, "tutoring": 4, "personal_training": 3,
+    # Trades: mechanically easy to find, but low customer value
     "septic": 3, "tree_service": 3, "plumbing": 3, "hvac": 3,
     "fencing": 2, "excavation": 3, "monument": 1, "equipment_repair": 1,
     "barbershop": 0, "restaurant": 0, "cafe": 0,
 }
 URGENT = {"septic", "plumbing", "hvac", "tree_service"}
+# Categories where reviews are PROOF SOMEONE PAID a large sum — a photographer
+# with 40 reviews and no website has a mountain of proof and nowhere to book.
+# For these, a high review count is a reason to call, not a reason to skip.
+PROOF_DRIVEN = {"remodeling", "interior_design", "event_planner",
+                "photographer", "tutoring", "personal_training"}
 
 
 def _int(v, default=0):
@@ -55,12 +65,14 @@ def fit_score(row: dict) -> float:
     # Quality of the underlying business — the single most important factor.
     if rating is not None:
         score += min(35.0, max(0.0, (rating - 3.5) * 23))   # 4.0->11, 4.5->23, 5.0->35
-    # Invisible despite being good: the gap we close.
-    score += 25.0 if reviews <= 10 else (15.0 if reviews <= 25 else 5.0)
-    # Established enough to have real revenue. Among equally-invisible 5-star
-    # shops, the one with 10 reviews is a safer payer than the one with 3.
-    score += min(10.0, reviews * 0.8)
-    # Can they afford us / does the phone matter?
+    if cat in PROOF_DRIVEN:
+        # Reviews = proof people already pay them real money. More is better.
+        score += min(25.0, reviews * 1.2)
+    else:
+        # Invisible despite being good: the gap we close.
+        score += 25.0 if reviews <= 10 else (15.0 if reviews <= 25 else 5.0)
+        score += min(10.0, reviews * 0.8)
+    # What one customer is worth to them — the real driver of what they can pay.
     score += TICKET.get(cat, 0) * 5
     score += 10.0 if cat in URGENT else 0.0
     return round(score, 1)
@@ -108,8 +120,11 @@ def main(argv=None):
         reviews = _int(r.get("review_count"))
         if rating is None or rating < args.min_rating:
             continue                            # good at the work, or skip
-        if reviews < 3 or reviews > args.max_reviews:
-            continue                            # real, but invisible
+        # Proof-driven premium categories have no upper review limit — lots of
+        # reviews there means lots of paid clients and nowhere to book them.
+        cap = 10**6 if r.get("category") in PROOF_DRIVEN else args.max_reviews
+        if reviews < 3 or reviews > cap:
+            continue                            # real, but no booking path
         if TICKET.get(r.get("category", ""), 0) < 2:
             continue                            # must afford us
         if r["phone"] in seen:

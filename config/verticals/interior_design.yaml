@@ -1,0 +1,14 @@
+name: interior_design
+display_name: "Interior Designers"
+
+# Projects run $5,000-50,000. Visual business, owner-led, and portfolio/booking
+# is exactly what a site should do for them.
+search_terms:
+  - "interior designer"
+  - "interior design studio"
+  - "home staging design"
+
+primary_keyword: "interior designer"
+
+mock_noun: "Design"
+mock_suffixes: ["Interiors", "Design Studio", "Interior Design", "Design Co.", "Spaces"]
