@@ -110,6 +110,12 @@ def main(argv=None):
     ap.add_argument("--max-reviews", type=int, default=25)
     ap.add_argument("--cluster", action="store_true",
                     help="group by town and work the densest ones first")
+    ap.add_argument("--quick-cash", action="store_true",
+                    help="fast $400-600 starter-site closes: drop the ticket-size gate "
+                         "(anyone working can afford $500) and keep only businesses that "
+                         "are provably operating and reachable")
+    ap.add_argument("--state", default=None,
+                    help='restrict to one state, e.g. "CA" — for drivable, walk-in leads')
     ap.add_argument("--out", default="output/shortlist.csv")
     args = ap.parse_args(argv)
 
@@ -120,8 +126,25 @@ def main(argv=None):
             continue
         if not (r.get("phone") or "").strip():  # must be callable
             continue
+        if args.state and f", {args.state} " not in (r.get("address") or ""):
+            continue                            # drivable-only mode
         rating = _float(r.get("google_rating"))
         reviews = _int(r.get("review_count"))
+        if args.quick_cash:
+            # A $500 site is affordable to anyone who's actually working, so the
+            # only gates are: provably operating (2+ reviews), not a business whose
+            # real problem is their service (3.5+ stars), and reachable.
+            if reviews < 2 or rating is None or rating < 3.5:
+                continue
+            # Rank by PROOF, not invisibility. For a fast close, a shop with 54
+            # reviews and no website is the best lead in the set, not the worst —
+            # it's provably busy, provably liked, and provably has money.
+            r["fit_score"] = round(min(60.0, reviews * 1.6) + (rating - 3.5) * 26, 1)
+            if r["phone"] in seen:
+                continue
+            seen.add(r["phone"])
+            picked.append(r)
+            continue
         if rating is None or rating < args.min_rating:
             continue                            # good at the work, or skip
         # Proof-driven premium categories have no upper review limit — lots of
