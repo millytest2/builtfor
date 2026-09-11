@@ -1,0 +1,11 @@
+name: driving_school
+display_name: "Driving Schools"
+
+search_terms:
+  - "driving school"
+  - "drivers ed"
+
+primary_keyword: "driving school"
+
+mock_noun: "Driving"
+mock_suffixes: ["Driving School", "Driving Academy", "Traffic School"]

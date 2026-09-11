@@ -1,0 +1,12 @@
+name: auto_repair
+display_name: "Auto Repair Shops"
+
+search_terms:
+  - "auto repair shop"
+  - "mechanic"
+  - "transmission repair"
+
+primary_keyword: "auto repair"
+
+mock_noun: "Auto"
+mock_suffixes: ["Auto Repair", "Automotive", "Garage", "Motors"]

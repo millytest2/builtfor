@@ -1,0 +1,12 @@
+name: music_school
+display_name: "Music & Arts Schools"
+
+search_terms:
+  - "music school"
+  - "music lessons studio"
+  - "art classes studio"
+
+primary_keyword: "music lessons"
+
+mock_noun: "Music"
+mock_suffixes: ["Music School", "Academy of Music", "Arts Studio", "Conservatory"]

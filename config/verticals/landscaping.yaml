@@ -1,0 +1,12 @@
+name: landscaping
+display_name: "Landscaping & Lawn Care"
+
+search_terms:
+  - "landscaping company"
+  - "lawn care service"
+  - "landscape design"
+
+primary_keyword: "landscaping"
+
+mock_noun: "Landscape"
+mock_suffixes: ["Landscaping", "Lawn Care", "Landscapes", "Grounds"]

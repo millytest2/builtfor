@@ -1,0 +1,12 @@
+name: trade_school
+display_name: "Trade & Vocational Schools"
+
+search_terms:
+  - "trade school"
+  - "vocational training school"
+  - "certification training program"
+
+primary_keyword: "trade school"
+
+mock_noun: "Training"
+mock_suffixes: ["Training Institute", "Trade School", "Academy", "Career Institute"]

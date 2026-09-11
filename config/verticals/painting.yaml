@@ -1,0 +1,12 @@
+name: painting
+display_name: "Painting Contractors"
+
+search_terms:
+  - "painting contractor"
+  - "house painter"
+  - "commercial painting"
+
+primary_keyword: "house painter"
+
+mock_noun: "Painting"
+mock_suffixes: ["Painting", "Painters", "Paint Co."]

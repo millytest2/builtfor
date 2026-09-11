@@ -1,0 +1,12 @@
+name: cleaning
+display_name: "Cleaning Services"
+
+search_terms:
+  - "house cleaning service"
+  - "commercial cleaning"
+  - "janitorial service"
+
+primary_keyword: "house cleaning"
+
+mock_noun: "Cleaning"
+mock_suffixes: ["Cleaning", "Cleaning Services", "Maids", "Janitorial"]

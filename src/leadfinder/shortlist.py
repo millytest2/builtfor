@@ -32,6 +32,9 @@ TICKET = {
     # Trades: mechanically easy to find, but low customer value
     "septic": 3, "tree_service": 3, "plumbing": 3, "hvac": 3,
     "fencing": 2, "excavation": 3, "monument": 1, "equipment_repair": 1,
+    "landscaping": 2, "painting": 3, "auto_repair": 2, "cleaning": 2,
+    # Career/education adjacent — UPath-aligned and listed on Google Maps
+    "trade_school": 4, "driving_school": 2, "music_school": 3,
     "barbershop": 0, "restaurant": 0, "cafe": 0,
 }
 URGENT = {"septic", "plumbing", "hvac", "tree_service"}
@@ -39,7 +42,8 @@ URGENT = {"septic", "plumbing", "hvac", "tree_service"}
 # with 40 reviews and no website has a mountain of proof and nowhere to book.
 # For these, a high review count is a reason to call, not a reason to skip.
 PROOF_DRIVEN = {"remodeling", "interior_design", "event_planner",
-                "photographer", "tutoring", "personal_training"}
+                "photographer", "tutoring", "personal_training",
+                "trade_school", "music_school"}
 
 
 def _int(v, default=0):
