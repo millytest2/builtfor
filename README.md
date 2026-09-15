@@ -1,5 +1,8 @@
 # Built for Main Street
 
+> **New here? Read [`docs/HANDOFF.md`](docs/HANDOFF.md) first** — it carries the full
+> context, current state, blockers, leads, script, and next actions.
+
 **Get Found. Get Called. Get Paid.**
 
 Productized local-business growth service. Everything here is **config-driven and
