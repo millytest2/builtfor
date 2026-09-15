@@ -1,0 +1,21 @@
+vertical,prospects_contacted,conversations,demos_or_mockups_sent,closed,avg_setup_price,hours_to_fulfill,kept_monthly_60d,second_problem_observed,do_i_like_these_owners,notes
+tree_service,,,,,,,,,,
+fencing_gates_ironwork,,,,,,,,,,
+septic_remote,,,,,,,,,,
+concrete_hardscape,,,,,,,,,,
+remodeling,,,,,,,,,,
+# HOW TO USE THIS
+# Fill one row per vertical as you work. After 5-10 STRANGER clients (not friends
+# of Daniel's) the winning column is usually obvious. Niche then - not now.
+#
+# The columns that actually decide it:
+#   conversations / prospects_contacted  -> how easy is it to get the owner on the phone
+#   closed / conversations               -> does the pitch land in this vertical
+#   avg_setup_price                      -> can they carry real money
+#   hours_to_fulfill                     -> is delivery repeatable or bespoke
+#   kept_monthly_60d                     -> THE most important column. Recurring is the business.
+#   second_problem_observed              -> missed calls / unclosed estimates / dormant customers
+#   do_i_like_these_owners               -> not soft. You will do this for years.
+#
+# The rule: niche around the REPEATED EXPENSIVE PROBLEM you discover, not around an
+# industry that sounded good in advance.

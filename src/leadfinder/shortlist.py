@@ -114,14 +114,21 @@ def main(argv=None):
                     help="fast $400-600 starter-site closes: drop the ticket-size gate "
                          "(anyone working can afford $500) and keep only businesses that "
                          "are provably operating and reachable")
+    ap.add_argument("--verticals", default=None,
+                    help="comma-separated allowlist, in PRIORITY ORDER, e.g. "
+                         "tree_service,septic,fencing — results are grouped and "
+                         "ordered by that priority, not by raw score")
     ap.add_argument("--state", default=None,
                     help='restrict to one state, e.g. "CA" — for drivable, walk-in leads')
     ap.add_argument("--out", default="output/shortlist.csv")
     args = ap.parse_args(argv)
 
     rows = load_rows(args.glob)
+    allow = [v.strip() for v in args.verticals.split(",")] if args.verticals else None
     picked, seen = [], set()
     for r in rows:
+        if allow and r.get("category") not in allow:
+            continue                            # stay in the priority verticals
         if r.get("website") != "(none)":       # must need offer #1
             continue
         if not (r.get("phone") or "").strip():  # must be callable
@@ -160,7 +167,12 @@ def main(argv=None):
         r["fit_score"] = fit_score(r)
         picked.append(r)
 
-    picked.sort(key=lambda r: r["fit_score"], reverse=True)
+    if allow:
+        # Priority order beats raw score: work vertical 1 to exhaustion before
+        # touching vertical 2. Focus is the point of naming three verticals.
+        picked.sort(key=lambda r: (allow.index(r["category"]), -r["fit_score"]))
+    else:
+        picked.sort(key=lambda r: r["fit_score"], reverse=True)
 
     if args.cluster:
         # Density beats individual fit. Ten calls into ONE town lets you say "I work
