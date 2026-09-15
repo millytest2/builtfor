@@ -1,42 +1,87 @@
-date,caller,business,vertical,town,phone,proof,channel,reached,ever_had_a_site,discovery_answer,price_said,outcome,objection,next_action,notes
-,,ArborGold Tree Care,tree_service,"Rochester, IN",(574) 933-3616,5.0 / 48,call,,,,,,,,
-,,Tip Top Tree,tree_service,"Sedalia, MO",(660) 221-3272,5.0 / 34,call,,,,,,,,
-,,Capital Tree Service,tree_service,"Cape Girardeau, MO",(573) 887-2159,4.9 / 29,call,,,,,,,,
-,,Farley Tree Service,tree_service,"Cookeville, TN",(931) 520-0114,5.0 / 22,call,,,,,,,,
-,,Weaver's Tree Care,tree_service,"Cape Girardeau, MO",(573) 837-3934,4.9 / 15,call,,,,,,,,
-,,Elevate Tree Care,tree_service,"Delphi, IN",(765) 606-5820,5.0 / 11,call,,,,,,,,
-,,Kelich Tree Service,tree_service,"Elwood, IN",(765) 416-2542,4.9 / 10,call,,,,,,,,
-,,B.L. Phippin & Son,septic_remote,"Salisbury, MD",(410) 430-3897,4.8 / 49,call,,,,,,,,
-,,I&G Septic Tank Cleaning,septic_remote,"Dalton, GA",(706) 229-2347,5.0 / 43,call,,,,,,,,
-,,Tison's Plumbing & Drain,septic_remote,"Valdosta, GA",(229) 877-3494,5.0 / 41,call,,,,,,,,
-,,W B Ray Septic Cleaning,septic_remote,"Texarkana, TX",(903) 559-2462,4.9 / 32,call,,,,,,,,
-,,Hall's Septic Tank Service,septic_remote,"Hahira, GA",(229) 251-4434,4.8 / 27,call,,,,,,,,
-,,American Outback Septic,septic_remote,"Pittsville, MD",(410) 546-1666,5.0 / 21,call,,,,,,,,
-,,Delaware Septic Service,septic_remote,"Gaston, IN",(765) 744-0862,4.9 / 16,call,,,,,,,,
-,,Action Septic Tank Services,septic_remote,"Stillwater, OK",(405) 334-6102,5.0 / 11,call,,,,,,,,
-,,Distel's Septic Service,septic_remote,"Tiffin, OH",(419) 448-0250,5.0 / 10,call,,,,,,,,
-,,Exotic Iron Works,fencing_gates_ironwork,"Sun Valley, CA",(818) 768-1572,5.0 / 21,walk-in,,,,,,,,
-,,Electric Gate Installation LA,fencing_gates_ironwork,"Van Nuys, CA",(323) 601-5074,4.9 / 17,walk-in,,,,,,,,
-,,C & C Fence LLC,fencing_gates_ironwork,"Rapid City, SD",(605) 342-8346,5.0 / 13,call,,,,,,,,
-,,Jim's Construction LLC,fencing_gates_ironwork,"Kokomo, IN",(765) 210-7549,5.0 / 12,call,,,,,,,,
+date,caller,lane,business,vertical,town,phone,proof,channel,ring_test,ever_had_a_site,discovery_answer,price_said,outcome,next_action,gap_or_notes
+,,0-WARM,Client #1 (trainer),personal_training,LA,via Daniel,"paid $400, no monthly",call,,,,,,,"testimonial + before/after + referrals + monthly, never asked"
+,,0-WARM,O'Connell Cuts (Ryan),barbershop,"Newbury Park, CA",(805) 559-5592,said interested 7 Jul 2026,call,,,,,,,"MARKED FOLLOW UP, never followed up. pitched $400. has a weak site + wants merch"
+,,0-WARM,Carmen's Barber Shop #2 (Graberial),barbershop,"Santa Clarita, CA",(661) 298-9933,'maybe down the line',text,,,,,,,"low ticket, one text only"
+,,A-IRON,Frank's Iron Work,fencing_gates_ironwork,"12676 Pierce St, Pacoima",(818) 314-4532,19 rev,walk-in,,,,,,,iron corridor - hit 5 in one afternoon
+,,A-IRON,Universal Iron Works,fencing_gates_ironwork,"12430 Montague St, Pacoima",(818) 990-8891,24 rev,walk-in,,,,,,,iron corridor - hit 5 in one afternoon
+,,A-IRON,G&P Iron Works,fencing_gates_ironwork,"9901 San Fernando Rd, Pacoima",walk in,11 rev,walk-in,,,,,,,iron corridor - hit 5 in one afternoon
+,,A-IRON,DC Iron & Metal Designs,fencing_gates_ironwork,"12433 Correnti St, Pacoima",(818) 477-7352,est 2001,walk-in,,,,,,,iron corridor - hit 5 in one afternoon
+,,A-IRON,Wrought Iron Projects,fencing_gates_ironwork,San Fernando Valley,(818) 747-9461,SFV,walk-in,,,,,,,iron corridor - hit 5 in one afternoon
+,,A-IRON,Signature Iron Works,fencing_gates_ironwork,"10949 Tuxford St #13, Sun Valley",(818) 482-8286,47 rev,walk-in,,,,,,,iron corridor - hit 5 in one afternoon
+,,A-IRON,Electric Gate Installation LA,fencing_gates_ironwork,Van Nuys,(323) 601-5074,17 rev,walk-in,,,,,,,iron corridor - hit 5 in one afternoon
+,,A-IRON,Exotic Iron Works,fencing_gates_ironwork,"11628 Sheldon St, Sun Valley",(818) 768-1572,115 yelp rev - ABOVE BAND,walk-in,,,,,,,iron corridor - hit 5 in one afternoon
+,,A-SFV,American Eagle Tree Service,tree_service,"Sylmar, CA",(818) 457-0891,44 rev,call,,,,,,,FREE WIX SUBDOMAIN jesusamericaneagle.wixsite.com + a 2nd abandoned one - BEST LEAD
+,,A-SFV,Royal Tree Service,tree_service,"Sunland, CA",(818) 477-7030,23 rev,call,,,,,,,
+,,A-SFV,Oscar Tree Service,tree_service,"Santa Clarita, CA",(661) 670-1434,16 rev,call,,,,,,,no site found anywhere
+,,A-SFV,Best Valley Tree Services,tree_service,"Sylmar, CA",(818) 949-8733,17 rev,call,,,,,,,has site + 866 number = buying leads
+,,A-SFV,JLG Landscaping & Tree,tree_service,"Santa Clarita, CA",(661) 251-4129,21 rev,call,,,,,,,duplicate yelp listings
+,,A-SFV,TSL Tree Service,tree_service,"Santa Clarita, CA",(661) 755-9530,37 rev,call,,,,,,,
+,,A-SFV,Dan Scully's Tree Services,tree_service,"2818 Orange Ave, La Crescenta",walk in,"12 rev, est 1974",call,,,,,,,walk in
+,,A-SFV,Ray's Tree & Brush Clearance,tree_service,"Los Angeles, CA",(323) 762-9324,LA 90016,call,,,,,,,"brush clearance is LA-mandated, seasonal urgency"
+,,A-SFV,Brian Walsh Brush Clearance,tree_service,"Los Angeles, CA",(323) 662-9062,25+ yrs,call,,,,,,,
+,,A-SFV,Alfha Fence,fencing_gates_ironwork,"Van Nuys, CA",(747) 291-0279,25 rev,call,,,,,,,on Thumbtack + Angi + Houzz = renting leads
+,,A-SFV,Al Ruiz Concrete,concrete_hardscape,"Burbank, CA",(818) 848-1522,14 rev,call,,,,,,,
+,,A-SFV,Messineo Masonry,concrete_hardscape,"Burbank, CA",(818) 767-1318,est 1986,call,,,,,,,
+,,B-NATL,ArborGold Tree Care,tree_service,"Rochester, IN",(574) 933-3616,5.0 / 48,call,,,,,,,
+,,B-NATL,Tip Top Tree,tree_service,"Sedalia, MO",(660) 221-3272,5.0 / 34,call,,,,,,,
+,,B-NATL,Capital Tree Service,tree_service,"Cape Girardeau, MO",(573) 887-2159,4.9 / 29,call,,,,,,,
+,,B-NATL,Farley Tree Service,tree_service,"Cookeville, TN",(931) 520-0114,5.0 / 22,call,,,,,,,
+,,B-NATL,Weaver's Tree Care,tree_service,"Cape Girardeau, MO",(573) 837-3934,4.9 / 15,call,,,,,,,
+,,B-NATL,Elevate Tree Care,tree_service,"Delphi, IN",(765) 606-5820,5.0 / 11,call,,,,,,,
+,,B-NATL,Kelich Tree Service,tree_service,"Elwood, IN",(765) 416-2542,4.9 / 10,call,,,,,,,
+,,B-NATL,B.L. Phippin & Son,septic_remote,"Salisbury, MD",(410) 430-3897,4.8 / 49,call,,,,,,,
+,,B-NATL,I&G Septic Tank Cleaning,septic_remote,"Dalton, GA",(706) 229-2347,5.0 / 43,call,,,,,,,
+,,B-NATL,Tison's Plumbing & Drain,septic_remote,"Valdosta, GA",(229) 877-3494,5.0 / 41,call,,,,,,,
+,,B-NATL,W B Ray Septic Cleaning,septic_remote,"Texarkana, TX",(903) 559-2462,4.9 / 32,call,,,,,,,
+,,B-NATL,Hall's Septic Tank Service,septic_remote,"Hahira, GA",(229) 251-4434,4.8 / 27,call,,,,,,,
+,,B-NATL,American Outback Septic,septic_remote,"Pittsville, MD",(410) 546-1666,5.0 / 21,call,,,,,,,
+,,B-NATL,Delaware Septic Service,septic_remote,"Gaston, IN",(765) 744-0862,4.9 / 16,call,,,,,,,
+,,B-NATL,Action Septic Tank Services,septic_remote,"Stillwater, OK",(405) 334-6102,5.0 / 11,call,,,,,,,
+,,B-NATL,Distel's Septic Service,septic_remote,"Tiffin, OH",(419) 448-0250,5.0 / 10,call,,,,,,,
+,,B-NATL,C & C Fence LLC,fencing_gates_ironwork,"Rapid City, SD",(605) 342-8346,5.0 / 13,call,,,,,,,
+,,B-NATL,Jim's Construction LLC,fencing_gates_ironwork,"Kokomo, IN",(765) 210-7549,5.0 / 12,call,,,,,,,
+,,C-SUBDOMAIN,Blanks Septic,septic_remote,"Palmetto, GA",(770) 969-7983,verify 10-49 rev,call,,,,,,,FREE WIXSITE SUBDOMAIN - want already proven
+,,C-SUBDOMAIN,A&W Septic Service,septic_remote,"Stewartsville, NJ",verify,verify 10-49 rev,call,,,,,,,FREE WIXSITE SUBDOMAIN - want already proven
+,,C-SUBDOMAIN,D and K Pumping,septic_remote,"Greeley, CO",verify,verify 10-49 rev,call,,,,,,,FREE WIXSITE SUBDOMAIN - want already proven
+,,C-SUBDOMAIN,A1 Septic Solution,septic_remote,"Bellingham/Lynden, WA",verify,verify 10-49 rev,call,,,,,,,FREE WIXSITE SUBDOMAIN - want already proven
+,,C-SUBDOMAIN,Everett's Septic Service,septic_remote,verify,verify,verify 10-49 rev,call,,,,,,,FREE WIXSITE SUBDOMAIN - want already proven
+,,C-SUBDOMAIN,Southern Exteriors Tree Service,tree_service,"Searcy, AR",verify,verify 10-49 rev,call,,,,,,,FREE WIXSITE SUBDOMAIN - want already proven
+,,C-SUBDOMAIN,Timberland Tree Company,tree_service,"Delaware, OH",verify,verify 10-49 rev,call,,,,,,,FREE WIXSITE SUBDOMAIN - want already proven
+,,C-SUBDOMAIN,Tennessee Roots LLC,tree_service,TN,verify,verify 10-49 rev,call,,,,,,,FREE WIXSITE SUBDOMAIN - want already proven
+,,C-SUBDOMAIN,Treeology Land & Tree Care,tree_service,"Pinellas County, FL",verify,verify 10-49 rev,call,,,,,,,FREE WIXSITE SUBDOMAIN - want already proven
+,,C-SUBDOMAIN,Hill's Tree Service,tree_service,Maryville,verify,verify 10-49 rev,call,,,,,,,FREE WIXSITE SUBDOMAIN - want already proven
+,,C-SUBDOMAIN,845TreePro LLC,tree_service,NY 845 area,verify,verify 10-49 rev,call,,,,,,,FREE WIXSITE SUBDOMAIN - want already proven
+,,C-SUBDOMAIN,AB Tree Service Inc,tree_service,verify,verify,verify 10-49 rev,call,,,,,,,FREE WIXSITE SUBDOMAIN - want already proven
+,,C-SUBDOMAIN,Tree Tenders LLC,tree_service,verify,verify,verify 10-49 rev,call,,,,,,,FREE WIXSITE SUBDOMAIN - want already proven
+,,C-SUBDOMAIN,Custom Gates Orlando,fencing_gates_ironwork,"Orlando, FL",verify,verify 10-49 rev,call,,,,,,,FREE GODADDYSITES SUBDOMAIN - want already proven
+,,C-SUBDOMAIN,LCI Welding,fencing_gates_ironwork,verify,verify,verify 10-49 rev,call,,,,,,,FREE GODADDYSITES SUBDOMAIN - want already proven
+,,C-SUBDOMAIN,Kenai Peninsula Fencing,fencing_gates_ironwork,"Kenai Peninsula, AK",verify,verify 10-49 rev,call,,,,,,,FREE GODADDYSITES SUBDOMAIN - want already proven
+,,C-SUBDOMAIN,Precision Fence and Gate,fencing_gates_ironwork,verify,verify,verify 10-49 rev,call,,,,,,,FREE GODADDYSITES SUBDOMAIN - want already proven
+,,C-SUBDOMAIN,American Farm Fence Co,fencing_gates_ironwork,verify,verify,verify 10-49 rev,call,,,,,,,FREE GODADDYSITES SUBDOMAIN - want already proven
+,,C-SUBDOMAIN,SE Fencing Inc,fencing_gates_ironwork,verify,verify,verify 10-49 rev,call,,,,,,,FREE GODADDYSITES SUBDOMAIN - want already proven
+,,C-SUBDOMAIN,Win Fencing & Services,fencing_gates_ironwork,verify,verify,verify 10-49 rev,call,,,,,,,FREE GODADDYSITES SUBDOMAIN - want already proven
+,,C-SUBDOMAIN,Gateway Professionals,fencing_gates_ironwork,"Orlando, FL",verify,verify 10-49 rev,call,,,,,,,FREE GODADDYSITES SUBDOMAIN - want already proven
 
 # ONE ROW PER DIAL. Not per lead - per dial. A voicemail is a row.
-# This is the only file that matters for the next 90 days. The repo is done; this is not.
+# This is the only file that matters. The repo has been done for weeks; this has not.
 #
+# lane      0-WARM        call these first, today
+#           A-IRON        Pacoima/Sun Valley iron corridor - WALK IN, 5 in one afternoon
+#           A-SFV         San Fernando + Santa Clarita valley, phone, drivable
+#           B-NATL        nationwide phone, the volume engine
+#           C-SUBDOMAIN   free wixsite/godaddysites subdomain - want already proven.
+#                         VERIFY review count is 10-49 and get a direct phone first.
 # caller            Miles | Daniel
-# channel           call | walk-in | text | voicemail
-# reached           owner | gatekeeper | voicemail | no-answer | disconnected
-# ever_had_a_site   had_one_bad  <- best lead you will get, want is proven
-#                   never_got_around  <- live lead, inertia not refusal
-#                   dont_need  <- hang up politely, do not burn 20 minutes
-# discovery_answer  their words. tree: what happens to the phone when crews are out.
-#                   gates: estimates/month and who follows up. septic: tanks pumped ever.
-#                   THIS IS RUNG 3. Write it down verbatim.
-# price_said        Y | N  <- the single most important column in the file.
-#                   Track how many dials it takes before the price is said to a stranger.
-#                   As of the last handoff that number was ZERO, all time.
+# ring_test         call their line twice before pitching. log: 2/2 answered,
+#                   1/2, 0/2. 0/2 or 1/2 IS the opening line of the call.
+# ever_had_a_site   had_one_bad (best) | never_got_around (live) | dont_need (hang up)
+# discovery_answer  verbatim. this is the Revenue Recovery sale, 60 days later.
+#                   always ask the Thumbtack/Angi question: what do you pay per lead?
+# price_said        Y | N. the most important column. all-time count as of 15 Sep 2026: 1.
 # outcome           booked | callback | mockup-sent | no | DQ | no-contact
 #
-# WEEKLY ROLL-UP -> docs/vertical_scoreboard.csv
 # Target: 40 dials/week combined. 20 Miles, 20 Daniel.
-# Trades answer 6:30-8am and 4-6pm LOCAL time. Start Pacific, work east.
+# Trades answer 6:30-8am and 4-6pm LOCAL. Nationwide = 4 usable windows a day,
+# not 2. Start Pacific, work east.
+# Refill the list: run the search operators in HANDOFF.md section 5. Supply is unlimited.
+# Roll up monthly -> docs/vertical_scoreboard.csv
