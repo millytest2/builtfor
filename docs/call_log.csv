@@ -1,0 +1,42 @@
+date,caller,business,vertical,town,phone,proof,channel,reached,ever_had_a_site,discovery_answer,price_said,outcome,objection,next_action,notes
+,,ArborGold Tree Care,tree_service,"Rochester, IN",(574) 933-3616,5.0 / 48,call,,,,,,,,
+,,Tip Top Tree,tree_service,"Sedalia, MO",(660) 221-3272,5.0 / 34,call,,,,,,,,
+,,Capital Tree Service,tree_service,"Cape Girardeau, MO",(573) 887-2159,4.9 / 29,call,,,,,,,,
+,,Farley Tree Service,tree_service,"Cookeville, TN",(931) 520-0114,5.0 / 22,call,,,,,,,,
+,,Weaver's Tree Care,tree_service,"Cape Girardeau, MO",(573) 837-3934,4.9 / 15,call,,,,,,,,
+,,Elevate Tree Care,tree_service,"Delphi, IN",(765) 606-5820,5.0 / 11,call,,,,,,,,
+,,Kelich Tree Service,tree_service,"Elwood, IN",(765) 416-2542,4.9 / 10,call,,,,,,,,
+,,B.L. Phippin & Son,septic_remote,"Salisbury, MD",(410) 430-3897,4.8 / 49,call,,,,,,,,
+,,I&G Septic Tank Cleaning,septic_remote,"Dalton, GA",(706) 229-2347,5.0 / 43,call,,,,,,,,
+,,Tison's Plumbing & Drain,septic_remote,"Valdosta, GA",(229) 877-3494,5.0 / 41,call,,,,,,,,
+,,W B Ray Septic Cleaning,septic_remote,"Texarkana, TX",(903) 559-2462,4.9 / 32,call,,,,,,,,
+,,Hall's Septic Tank Service,septic_remote,"Hahira, GA",(229) 251-4434,4.8 / 27,call,,,,,,,,
+,,American Outback Septic,septic_remote,"Pittsville, MD",(410) 546-1666,5.0 / 21,call,,,,,,,,
+,,Delaware Septic Service,septic_remote,"Gaston, IN",(765) 744-0862,4.9 / 16,call,,,,,,,,
+,,Action Septic Tank Services,septic_remote,"Stillwater, OK",(405) 334-6102,5.0 / 11,call,,,,,,,,
+,,Distel's Septic Service,septic_remote,"Tiffin, OH",(419) 448-0250,5.0 / 10,call,,,,,,,,
+,,Exotic Iron Works,fencing_gates_ironwork,"Sun Valley, CA",(818) 768-1572,5.0 / 21,walk-in,,,,,,,,
+,,Electric Gate Installation LA,fencing_gates_ironwork,"Van Nuys, CA",(323) 601-5074,4.9 / 17,walk-in,,,,,,,,
+,,C & C Fence LLC,fencing_gates_ironwork,"Rapid City, SD",(605) 342-8346,5.0 / 13,call,,,,,,,,
+,,Jim's Construction LLC,fencing_gates_ironwork,"Kokomo, IN",(765) 210-7549,5.0 / 12,call,,,,,,,,
+
+# ONE ROW PER DIAL. Not per lead - per dial. A voicemail is a row.
+# This is the only file that matters for the next 90 days. The repo is done; this is not.
+#
+# caller            Miles | Daniel
+# channel           call | walk-in | text | voicemail
+# reached           owner | gatekeeper | voicemail | no-answer | disconnected
+# ever_had_a_site   had_one_bad  <- best lead you will get, want is proven
+#                   never_got_around  <- live lead, inertia not refusal
+#                   dont_need  <- hang up politely, do not burn 20 minutes
+# discovery_answer  their words. tree: what happens to the phone when crews are out.
+#                   gates: estimates/month and who follows up. septic: tanks pumped ever.
+#                   THIS IS RUNG 3. Write it down verbatim.
+# price_said        Y | N  <- the single most important column in the file.
+#                   Track how many dials it takes before the price is said to a stranger.
+#                   As of the last handoff that number was ZERO, all time.
+# outcome           booked | callback | mockup-sent | no | DQ | no-contact
+#
+# WEEKLY ROLL-UP -> docs/vertical_scoreboard.csv
+# Target: 40 dials/week combined. 20 Miles, 20 Daniel.
+# Trades answer 6:30-8am and 4-6pm LOCAL time. Start Pacific, work east.

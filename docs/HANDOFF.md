@@ -52,13 +52,13 @@ payment for job #1 and it's still sitting there.
 | Rung | Offer | Buyer |
 |---|---|---|
 | 0 | **Free report card** — $0 | Not a product. The door. One command. |
-| 1 | **Starter Site** — $500 + $149/mo | No website at all. One call or walk-in. 4 days. |
+| 1 | **Starter Site** — $500 + $99/mo | No website at all. One call or walk-in. 4 days. |
 | 2 | **Booking Build** — $1,500–2,500 + $349/mo | One job worth $2,000+. 14 days, two phases. |
 | 3 | **Growth Systems** — +$200–400/mo each | Existing clients, sold on evidence only. |
 
 **Non-negotiable rules:**
 - **Never quote a site price alone.** Two numbers in one breath: "five hundred to
-  get set up, then a hundred forty-nine a month."
+  get set up, then ninety-nine a month."
 - **We host it** — that makes the monthly the utility bill, not a favor.
 - **Tracking number on every site** (~$1.50/mo). Proves the site works AND surfaces
   the data that sells Rung 3.
@@ -74,6 +74,38 @@ visible fix. Say "AI-powered" and you become the fifteenth caller that week.
 **Rung 3 order (never invent a custom AI project):** missed-inquiry recovery →
 estimate/quote follow-up → dormant-customer reactivation. One at a time, only when
 their own data names it.
+
+### The monthly: bundled, but nearly zero-touch (resolves a real contradiction)
+
+Two positions were in play and they cannot both be true:
+- *"Monthly on every site, never quote a price alone"* — correct on the **mechanic**.
+  An optional monthly is a monthly nobody buys. Client #1 proves it: quoted as
+  "a website for $400," and the recurring conversation was dead on arrival.
+- *"Don't force fake recurring, this becomes a maintenance agency"* — correct on the
+  **substance**. Google posting, review responses, directory cleanup and monthly SEO
+  tweaks across 30 clients is Social Hog with worse margins.
+
+**The resolution: bundle it, and make the monthly buy infrastructure, not labor.**
+
+| The $99/mo buys | The $99/mo does NOT buy |
+|---|---|
+| Hosting, SSL, domain pointing | Google Business Profile posting |
+| Uptime + security + backups | Review responses |
+| Tracking number + call log | Directory cleanup |
+| Form delivery stays working | Monthly SEO "tweaks" |
+| One small edit per month (hours, photo, service) | Content, social, reporting decks |
+
+Labor budget: **under 20 minutes per client per month.** If a care plan ever needs
+more than that, the plan is mispriced or the promise is wrong — fix the promise, not
+the hours.
+
+**Why $99 and not $149:** the monthly's job right now is to *survive the close*. Under
+$100 it reads as a utility bill and doesn't trigger a negotiation. **Raise to $149
+only when you can point at a tracking-number call log and say "this site produced 11
+calls last month."** Evidence buys the price increase; hope doesn't.
+
+Real recurring money later comes from Rung 3 systems that keep working for the
+customer, not from doing more chores for $99.
 
 ---
 
@@ -187,15 +219,21 @@ Regenerate any of them per `docs/manual/README.md` (headless Chrome → `--print
 
 ## 7. Blockers and caveats — read before trusting anything
 
-1. **The Google Places API key is DEAD** — returns `PERMISSION_DENIED`. No new leads
-   can be pulled until it's restored. Old key was rotated/disabled.
+1. **The Google Places API key is DEAD** — returns `PERMISSION_DENIED`. Old key was
+   rotated/disabled. **This is not a blocker to calling.** Google Maps in a browser
+   produces the same list by hand: search `tree service <town>`, sort by reviews,
+   open each listing, skip anything with a website link, copy name + phone + rating.
+   Thirty qualified leads in about thirty minutes — more than 90 days of dials needs.
+   Fix the key when convenient; never let it be the reason nobody got called.
 2. **Generated lead CSVs are gitignored and the container is ephemeral.** The lead
    lists exist only in the delivered PDFs and section 8 below. **Save those files.**
 3. **builtformainstreet.com was never viewable** — the research environment blocks
    outbound access to it and to all third-party sites. Every comment made about the
    site's copy came from text Miles pasted, never from the live site.
-4. **No Stripe links exist yet.** This is the biggest practical blocker: a yes cannot
-   be converted to money in under a minute.
+4. **No Stripe links exist yet.** A 20-minute chore, not a blocker — it only binds at
+   the moment someone says yes, and **no stranger has ever reached yes.** Do it this
+   week so it's never an excuse, then stop thinking about it. The actual constraint is
+   dials (see §10).
 5. **Nothing has been field-tested.** The delivery playbook has never been run. The
    missed-call engine has never touched a real phone. The audit has never been sent
    to a prospect. The mockup has never been sent cold.
@@ -305,18 +343,38 @@ job. Start Pacific, work east.
 
 ## 10. Next actions, in order
 
-1. **Make three Stripe Payment Links** — $500 setup, $1,500 build, monthly
-   subscription. 20 minutes. Biggest blocker; a yes is worthless without it.
-2. **Restore the Google Places API key**, then re-pull leads.
-3. **Client #1 (the trainer):** testimonial, screenshots, live URL, case study,
-   referral ask, and offer the $149/mo. That client should produce the next two.
-4. **Write the warm list** — every business owner both of you know. Zero cost,
-   never done, and it's the only channel that has produced revenue.
-5. **Call the 20 above** with the disqualifier question first.
-6. **Daniel picks a measurable number** — qualified contacts/week, appointments
-   booked/week, or warm intros/month. "Helping with BFMS" is not a role.
-7. **Log `docs/vertical_scoreboard.csv`** as you go. After 5–10 *stranger* clients
-   the winning column (especially `kept_monthly_60d`) picks the niche for you.
+**The one number that matters for 90 days: 40 dials/week combined (20 each).**
+Not revenue, not leads pulled, not features. Dials. Everything below either feeds
+that number or gets done in under an hour.
+
+**Under an hour each, this week:**
+1. **Three Stripe Payment Links** — `Starter Site Setup $500` (one-time),
+   `Booking Build Deposit $750` (one-time), `Care Plan $99/mo` (subscription).
+   20 minutes. Then stop thinking about payments.
+2. **The trainer (client #1)** — testimonial, screenshots, live URL, referral ask,
+   and the $99/mo. Highest-value hour available: it's already-earned money sitting
+   uncollected, and it converts a friend-of-Daniel sale into proof a stranger can see.
+3. **Write the warm list** — every business owner both of you know. Zero cost,
+   never done, and it's the only channel that has produced revenue to date.
+4. **Daniel picks a measurable number** — his half of the 40 dials, or qualified
+   contacts/week, or warm intros/month. "Helping with BFMS" is not a role.
+
+**Then, every week, until something sells:**
+5. **Call the 20 leads in §8**, disqualifier question first. Log every dial in
+   `docs/call_log.csv` — that file is the point of the next 90 days.
+6. **Walk into the two LA gate shops** (Exotic Iron Works, Electric Gate Installation
+   LA) with a mockup already built. In-person, not phone.
+7. **Roll up `call_log.csv` into `docs/vertical_scoreboard.csv`** monthly. After 5–10
+   *stranger* clients the winning column picks the niche for you.
+
+**The 90-day rule:** BFMS gets one target — **$5,000/mo without creating a job you
+hate.** Do not design the $30K machine before the $5K machine exists. Do not decide
+BFMS is a website company or a revenue-systems company; decide it's a company that
+fixes obvious expensive problems for good local businesses, and let 50 conversations
+name the problem.
+
+**The build freeze:** no new modules, configs, PDFs or docs until a stranger pays.
+The repo is not the constraint. It has been done for weeks.
 
 ---
 
