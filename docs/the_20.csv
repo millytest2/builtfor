@@ -1,0 +1,43 @@
+date,caller,tier,business,town,phone,vertical,reviews,gap_verified,platforms_present,ring_test,ever_had_a_site,discovery_answer,price_said,outcome,opener_note
+,,1-WARM,Client #1 (trainer),"Los Angeles, CA",via Daniel,personal_training,n/a,paid $400 / $0 MRR,n/a,,,,,,testimonial + before/after + 2 referrals + attach the $349 care plan
+,,1-WARM,O'Connell Cuts - Ryan,"Newbury Park, CA",(805) 559-5592,barbershop,n/a,weak site a client built; wants merch too,FB + Google,,,,,,"said interested 7 Jul 2026, marked FOLLOW UP, never called. 10 weeks cold."
+,,1-WARM,Carmen's Barber Shop #2 - Graberial,"Santa Clarita, CA",(661) 298-9933,barbershop,n/a,unknown,Google,,,,,,'maybe down the line'. low ticket - one text only
+,,2-VERIFIED,American Eagle Tree Service,"Sylmar, CA",(818) 457-0891,tree_service,44 yelp / 76 birdeye,FREE WIX SUBDOMAIN jesusamericaneagle.wixsite.com + a 2nd abandoned wix page,"Yelp, FB, Nextdoor, YP, Birdeye, Wix",,,,,,two half-built wix sites. 'you started this twice.' DRIVABLE - walk in.
+,,2-VERIFIED,Tennessee Roots LLC,"Paris, TN",(731) 333-3232,tree_service,43 FB (100% rec),FREE WIX SUBDOMAIN tnrootsllc.wixsite.com,"FB, Wix, Yelp",,,,,,"family owned, Henry County. best review proof on the list."
+,,2-VERIFIED,A1 Septic Solution,"Blaine / Bellingham, WA",(360) 739-0570,septic,VERIFY google,FREE WIX SUBDOMAIN a1septicsolutoin.wixsite.com (note the typo IN THE URL),"Wix, Yelp, BuildZoom, septic.com",,,,,,"Swendt family, Whatcom/Skagit/Snohomish, 24/7. the URL is misspelled - lead with that."
+,,2-VERIFIED,Blanks Septic LLC,"Palmetto, GA",(770) 969-7983,septic,VERIFY google,FREE WIX SUBDOMAIN blanksseptic.wixsite.com,"Wix, FB, Angi, YP, Manta, septic.com",,,,,,"50+ yrs family. Donnie founded it, son Josh runs it now. legacy angle is the hook."
+,,2-VERIFIED,A&W Septic Service,"Stewartsville, NJ",(908) 689-4114,septic,6 recommends,FREE WIX SUBDOMAIN awsepticservice.wixsite.com/WEBSITE - never renamed the default,"Wix, FB, Yelp, BlueBook, Alignable",,,,,,the URL literally ends in /website. they never finished setting it up.
+,,2-VERIFIED,845TreePro LLC,"Mountain Dale, NY",(845) 584-5319,tree_service,VERIFY google,FREE WIX SUBDOMAIN 845treepro.wixsite.com/WEBSITE-1 - default name,"Wix, Yelp",,,,,,"since 2017, Hudson Valley, open 24/7"
+,,2-VERIFIED,Southern Exteriors Tree Service,"Searcy, AR",(501) 230-3534,tree_service,~10 porch / 5.0 angi,FREE WIX SUBDOMAIN southernexteriors1.wixsite.com,"Wix, Angi, BBB, Porch",,,,,,"Steve & Heath Miller, licensed + insured"
+,,2-VERIFIED,Kenai Peninsula Fencing,"Soldotna, AK",(907) 741-7101,fencing_gates,13 FB (100% rec),FREE GODADDY SUBDOMAIN kenaipeninsulafencing.godaddysites.com,"GoDaddy, FB, BBB",,,,,,"Hunter Williams, ~10 yrs. builds moose-proof fences. high ticket, remote market, zero competition for us."
+,,2-VERIFIED,Expert Tree Care LLC,"Brownsburg, IN",(317) 935-3367,tree_service,7 birdeye - BELOW BAND,"NO WEBSITE AT ALL - only Nextdoor, Angi, BBB, FB, Birdeye","FB, Nextdoor, Angi, BBB, Birdeye",,,,,,"Terry Dickison (mgr), Erin Fanning (owner). low review count is the weak point - ask about volume first."
+,,2-VERIFIED,Oscar Tree Service,"Santa Clarita, CA",(661) 670-1434,tree_service,16 yelp,NO WEBSITE FOUND on any search,"Yelp, chamber listing only",,,,,,20+ yrs family owned. DRIVABLE - walk in.
+,,2-VERIFIED,Oklahoma Stump Grinding,"Tulsa, OK",(918) 734-6747,tree_service,VERIFY google,NO OWN SITE FOUND - yelp listing only,"Yelp, BBB",,,,,,8618 E 46th St. certified arborist.
+,,2-VERIFIED,Collins Septic Service,"Isom, KY",(606) 633-8627,septic,4 FB - BELOW BAND,NO WEBSITE - FB only. AND a duplicate Yelp listing marked CLOSED,"FB, Yelp x2, D&B, Yahoo",,,,,,"THE DUPLICATE CLOSED LISTING IS THE PITCH. customers searching them find 'CLOSED'. free fix, instant trust."
+,,2-VERIFIED,Heavenly Gates Fence Co,"Troy, NC",(910) 220-5965,fencing_gates,VERIFY google,NO WEBSITE - FB only. AND a Yelp listing marked CLOSED,"FB x2, Yelp, YP, DexKnows, Manta, BBB",,,,,,same closed-listing pitch. CONFIRM THEY ARE STILL TRADING before pitching. alt phone (910) 572-5315
+,,3-RECHECK,B.L. Phippin & Son,"Salisbury, MD",(410) 430-3897,septic,4.8 / 49 google,"no website (Places API, stale)",Google Maps,,,,,,"top of band. re-confirm listing, then call."
+,,3-RECHECK,ArborGold Tree Care,"Rochester, IN",(574) 933-3616,tree_service,5.0 / 48 google,"no website (Places API, stale)",Google Maps,,,,,,"top of band. re-confirm listing, then call."
+,,3-RECHECK,I&G Septic Tank Cleaning,"Dalton, GA",(706) 229-2347,septic,5.0 / 43 google,"no website (Places API, stale)",Google Maps,,,,,,"re-confirm listing, then call."
+,,3-RECHECK,Tison's Plumbing & Drain,"Valdosta, GA",(229) 877-3494,septic,5.0 / 41 google,"no website (Places API, stale)",Google Maps,,,,,,"re-confirm listing, then call."
+
+# THE 20 TO CALL RIGHT NOW. Verified Sep 2026 across Google, Yelp, Facebook,
+# Nextdoor, BBB, Angi, Thumbtack, Houzz, Birdeye and the business's own domain.
+#
+# tier  1-WARM      call first. these people already know you or already said yes-ish.
+#       2-VERIFIED  cold. gap confirmed by opening their actual site. phone confirmed.
+#       3-RECHECK   from the Places API pull (websiteUri empty = the RIGHT source)
+#                   but months old. re-confirm the Google listing before dialing.
+#
+# gap_verified   what you will actually say in the first 20 seconds. this is the
+#                whole reason the call works. never dial without one.
+# reviews        where it says VERIFY, check the GOOGLE count before dialing.
+#                yelp and google differ badly. the 10-49 band is a GOOGLE band.
+# ring_test      call the line twice at different times BEFORE pitching.
+#                log 2/2, 1/2, 0/2. anything under 2/2 is your opening line.
+# price_said     Y/N. all-time count as of 16 Sep 2026: 1.
+#
+# YIELD DATA from building this list (worth knowing before you trust any lead source):
+# ~45 businesses checked across 14 states. About 1 in 3 had no real custom domain.
+# Of those, MOST were on a free subdomain (wixsite/godaddysites), not nothing at all.
+# "No website at all" is a minority of the market now, not the majority the repo assumes.
+# The free-subdomain business is the better lead anyway: want is already proven.

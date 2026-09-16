@@ -371,6 +371,16 @@ platform change, or a promise made on a call that isn't on this table.
 
 ## 8. Leads — verified, and the ones that failed verification
 
+> **The working call list is `docs/the_20.csv`** — 20 leads verified Sep 2026 across
+> Google, Yelp, Facebook, Nextdoor, BBB, Angi, Thumbtack, Houzz, Birdeye and each
+> business's own domain. The script matched to them is `outreach/call_script_v3.md`.
+>
+> **Yield data from building it:** ~45 businesses checked across 14 states. **About 1
+> in 3 had no real custom domain, and most of those were on a free subdomain rather
+> than nothing at all.** "No website at all" is a minority of the market now, not the
+> majority this repo was built assuming. The free-subdomain business is the better
+> lead regardless: want is already proven.
+
 **Every row below carries a verdict. A row with no verdict is not a lead.**
 
 ### VERIFIED — call these
