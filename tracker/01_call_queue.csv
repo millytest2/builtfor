@@ -1,0 +1,49 @@
+#,call_by,tier,business,phone,town,tz,vertical,google_website_button,evidence,reviews,owner,listing_problems,ring_test,date_called,reached,ever_had_site,thumbtack_spend,discovery_notes,price_said,status,next_step,next_date,mockup_link,email
+1,Miles,WARM,Client #1 (trainer),via Daniel,Los Angeles CA,PT,personal_training,n/a,existing client,-,,"no testimonial, no case study, no monthly",,,,,,,,,testimonial + before/after + 2 referrals + attach $349,,,
+2,Miles,WARM,O'Connell Cuts,(805) 559-5592,Newbury Park CA,PT,barbershop,CHECK,he told you himself: a client built him a site,-,Ryan,,,,,,,,,,"CALL FIRST. 10 weeks stale, said interested 7 Jul",,,
+3,Daniel,WARM,Carmen's Barber Shop #2,(661) 298-9933,Santa Clarita CA,PT,barbershop,CHECK,unknown,-,Graberial,,,,,,,,,,"one text only, low ticket",,,
+4,Miles,A,Oscar Tree Service,(661) 670-1434,Santa Clarita CA,PT,tree_service,CHECK ON MAPS,no custom domain in any search; yelp + chamber listing only,16 yelp,,,,,,,,,,,DRIVABLE - walk in with a mockup,,,
+5,Miles,A,ArborGold Tree Care,(574) 933-3617,Rochester IN,ET,tree_service,CHECK ON MAPS,Places API said no site + no custom domain found; IG and FB only,40 birdeye,,phone differs from old pull (3616 vs 3617),,,,,,,,,best review proof on the list,,,arborgoldtreecare@gmail.com
+6,Daniel,A,Farley Tree Service,(931) 520-0114,Cookeville TN,CT,tree_service,CHECK ON MAPS,Places API said no site + no custom domain found,20 birdeye,,,,,,,,,,,"20 yrs, 4623 Shipley Rd",,,
+7,Miles,A,Weaver's Tree Care,(573) 837-3934,Cape Girardeau MO,CT,tree_service,CHECK ON MAPS,Places API said no site + no custom domain found; FB + Nextdoor only,16 birdeye,,,,,,,,,,,1952 Eden Cir,,,Swoop_jr@yahoo.com
+8,Daniel,A,Kelich Tree Service,(765) 416-2542,Elwood IN,ET,tree_service,CHECK ON MAPS,Places API said no site + no custom domain found; FB only,9 birdeye,Jay Kelich,below the 10-49 band,,,,,,,,,2035 N A St,,,jaykelich@gmail.com
+9,Miles,A,Expert Tree Care LLC,(317) 935-3367,Brownsburg IN,ET,tree_service,CHECK ON MAPS,no custom domain found; Nextdoor/Angi/BBB/FB/Birdeye only,7 birdeye,"Terry Dickison (mgr), Erin Fanning (owner)",below the band - ask job volume first,,,,,,,,,,,,
+10,Daniel,A,Oklahoma Stump Grinding,(918) 734-6747,Tulsa OK,CT,tree_service,CHECK ON MAPS,no custom domain found; yelp listing only,CHECK,,,,,,,,,,,"8618 E 46th St, certified arborist",,,
+11,Miles,A,Hall's Septic Tank Service,(229) 251-4434,Hahira GA,ET,septic,CHECK ON MAPS,Places API said no site + no custom domain found,CHECK,,,,,,,,,,,7909 Morven Rd. alt (229) 794-3359,,,
+12,Daniel,A,W B Ray Septic Cleaning,(903) 559-2462,Texarkana TX,CT,septic,CHECK ON MAPS,Places API said no site + no custom domain found,CHECK,,,,,,,,,,,open 24 hrs,,,
+13,Miles,A,I&G Septic Tank Cleaning,(706) 229-2347,Dalton GA,ET,septic,CHECK ON MAPS,Places API said no site + no custom domain found,CHECK,Ignacio Guijon,,,,,,,,,,1910 Valley Brook Dr. alt (762) 209-9058,,,
+14,Daniel,A,American Outback Septic,(410) 546-1666,Pittsville MD,ET,septic,CHECK ON MAPS,Places API said no site + no custom domain found; FB only,22 birdeye,,,,,,,,,,,"34265 Tingle Rd, 24/7",,,
+15,Miles,A,Delaware Septic Service,(765) 358-4702,Gaston IN,ET,septic,CHECK ON MAPS,Places API said no site + no custom domain found,CHECK,,PHONE DIFFERS from old pull (744-0862). use this one.,,,,,,,,,"since 1999, 10885 N County Rd 600 W",,,
+16,Daniel,A,Tison's Plumbing & Drain,(229) 877-3494,Valdosta GA,ET,septic,CHECK ON MAPS,Places API said no site + no custom domain found; FB only,CHECK,Dillan Tison,,,,,,,,,,432 E Park Ave. alt (229) 269-7169,,,
+17,Miles,B-BROKEN,B.L. Phippin & Son,(410) 430-3897,Salisbury MD,ET,septic,CHECK ON MAPS,no custom domain found,CHECK,,THREE different phone numbers live + one Yelp listing marked CLOSED,,,,,,,,,LEAD WITH THE LISTING MESS. 40+ yrs.,,,
+18,Daniel,B-BROKEN,Collins Septic Service,(606) 633-8627,Isom KY,ET,septic,CHECK ON MAPS,no custom domain found; FB only,4 FB - below band,,DUPLICATE YELP LISTING MARKED CLOSED,,,,,,,,,GIVE THE CLOSED-LISTING FIX AWAY FREE,,,
+19,Miles,B-BROKEN,Distel's Septic Service,(419) 448-0250,Tiffin OH,ET,septic,CHECK ON MAPS,Places API said no site + no custom domain found,CHECK,,TWO Yelp listings at DIFFERENT addresses (30 Ella St / 1903 W CR 52),,,,,,,,,duplicate listings split their reviews,,,
+20,Daniel,B-BROKEN,Heavenly Gates Fence Co,(910) 220-5965,Troy NC,ET,fencing_gates,CHECK ON MAPS,no custom domain found; FB only,CHECK,,A YELP LISTING SAYS CLOSED. confirm they still trade.,,,,,,,,,alt (910) 572-5315,,,
+
+# HOW THESE WERE VERIFIED - AND THE LIMIT ON THAT
+#
+# What was checked: for every business, a name search returning ONLY directory
+# listings (Yelp, FB, Nextdoor, BBB, Angi, Birdeye, YellowPages, Manta, D&B,
+# chamber) and NO custom domain of their own. Tier A also came out of the
+# Places API pull where websiteUri was empty, so two independent signals agree.
+#
+# What could NOT be checked: google.com, Google Maps and Google Business Profile
+# are blocked from the research environment. The GBP "Website" button is a
+# DIFFERENT FIELD from what a web search shows, and it is the field you are
+# looking at. They can disagree.
+#
+# SO: before you dial, open the Google Maps listing and look for the Website
+# button. Ten seconds. Fill google_website_button with:
+#     NONE      -> no Website button. this is the lead. dial it.
+#     FREE      -> button points at wixsite.com / godaddysites.com / business.site
+#                  / a facebook.com URL. still a great lead, different opener.
+#     REAL      -> points at their own domain. DROP IT, move to the next row.
+#
+# The only permanent fix is restoring the Google Places API key. websiteUri IS
+# the GBP website field, which is why that key is the only instrument that
+# answers this question at scale. Everything else is inference.
+#
+# tz  PT=Pacific CT=Central ET=Eastern. trades answer 6:30-8am and 4-6pm LOCAL.
+#     Sorted so you can work Pacific to Eastern in one sitting.
+# status  NEW / NO-ANSWER / VM-LEFT / CONVO / BOOKED / MOCKUP-SENT / SOLD / DQ / BURNT
+# price_said  Y/N. all-time count as of 16 Sep 2026: 1.
