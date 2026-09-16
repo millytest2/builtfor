@@ -72,24 +72,46 @@ recorded, no case study, no referral ask, no monthly offered. Still sitting ther
 
 One sentence, said out loud, to a stranger:
 
-> **"I'll build you a site that's actually yours, put a tracking number on it so you
-> can hear every call it brings in, and text people back automatically when you're
-> on a job and can't pick up. Five hundred to build it, two forty-nine a month. You
-> own the domain, you can cancel any time, and you don't pay the five hundred until
-> it's live and you've seen it."**
+> **"It's four hundred to get you set up — that's the site, your Google profile fixed
+> up, a tracking number so you can hear every call it brings in, click-to-call so it
+> rings your cell. Then three forty-nine a month and we keep the whole thing running.
+> First month's included, so nothing else comes out until day thirty. You can cancel
+> any time and the site's yours either way."**
 
-### The ladder (internal — the customer hears one offer, not four)
+If they want to buy it outright: **"Yeah, six hundred, you own it, you're on your own
+after. Most guys go the other way since it's cheaper to start and we keep it working."**
 
-| | Offer | Price | Who |
+### The ladder — using the playbook's inverted discount, which is better
+
+`docs/playbook.md` §2b already solved this and it beats a plain anchor-and-downsell.
+**Make the monthly the cheaper path, not the add-on:**
+
+| Option | Price | What they get |
+|---|---|---|
+| Website only | **$600 one-time** | Site, they own it, no support. **Deliberately the worse deal.** |
+| **Growth Plan** (default) | **$400 setup + $349/mo** | Site + hosting + Google profile + tracking number + missed-call text-back + reviews + monthly call log. **First month included.** |
+
+Four things make the monthly stick, and only one of them is persuasion:
+1. **Bundled from the first sentence.** There is nothing to upsell later because it was
+   never separate.
+2. **We host it.** If they own the hosting the monthly is a favor they can cancel. If we
+   host, it's the utility bill. Structural.
+3. **The monthly is what makes the site work.** "The site is the storefront; the monthly
+   is what brings people through the door."
+4. **Inverted discount.** The plan costs *less* upfront than buying the site outright,
+   so choosing the monthly is the cheap choice, not the expensive one.
+
+| | Offer | Price | When |
 |---|---|---|---|
-| **Door** | **The Ring Test** + live mockup | $0 | Everyone. See §6. |
-| **Lead** | **The Lead Line** — site + Google profile + tracking number + missed-call text-back + monthly call log | **$500 + $249/mo** | Default pitch. Always pitch this first. |
-| **Downsell** | **Starter Site** — site + Google profile + tracking number | **$500 + $99/mo** | When they flinch at $249. Never lose the monthly entirely. |
-| **Later** | **Revenue Recovery** — estimate follow-up, dormant reactivation | **$1,500–3,000 + $200–400/mo** | Existing clients only, on evidence from their own call log. |
+| Door | Ring Test + free mockup + audit report card | $0 | Everyone |
+| **Default** | **Growth Plan** | **$400 + $349/mo** | Every sale |
+| Alternative | Website only | $600 one-time | Only if they insist |
+| Fix | Visibility Fix (GBP, citations, reviews) | $397 | Presence is broken but a site exists |
+| Add-ons | missed-call → estimate follow-up → reactivation → review engine | +$200–400/mo each | One at a time, on their own data |
 
-**Anchor high, downsell. Never upsell.** The client #1 failure was quoting the
-cheapest thing first. "A website for $400" makes every later conversation an upsell
-fighting your own anchor. Pitch $249, fall back to $99, and the monthly survives.
+**Caveat: $349/mo has never been said to anyone.** Neither has $249. The price is a
+hypothesis either way, so use the structure the repo already reasoned through and let
+the call log settle the number.
 
 ### Why this is hard to compete with
 
@@ -191,6 +213,13 @@ So the real gaps, ranked by how fast they buy:
 | 4 | Genuinely no site | Rarer than assumed. Often inertia, sometimes refusal. | Google Maps by hand |
 | 5 | 100+ reviews, no site | **Skip.** Revealed preference. |
 
+**The disqualifier is not "has a website."** `docs/playbook.md` already has the better
+rule — the saturation test. Walk away only when **all four** are true: guru-saturated
+category, top-25 metro, **website AND 100+ reviews**, and a scrapeable email on the
+site. A website alone is not disqualifying; a *good* website is. A real custom domain
+with real pages and real reviews means someone is already being paid to help them, and
+you are competing rather than filling a gap.
+
 **The 10-second disqualifier, ask it every call:**
 > **"Have you ever had a website, or just never got around to it?"**
 
@@ -226,11 +255,30 @@ Go back with conversion case studies in hand.
 
 ---
 
-## 5. Prospecting: the search-operator engine (replaces the dead API)
+## 5. Prospecting: two sources, and neither one is optional
 
-The Google Places key returns `PERMISSION_DENIED`. **It doesn't matter.** A search
-engine finds better leads than the API ever did, because the API could only see
-"no website linked" and this sees "has a website and it's bad."
+### The trap that is documented in this repo and was walked into anyway
+
+`docs/targeting.md` carries a finding validated in June 2026:
+
+> "Searching septic / fence / monument in small towns returned **only businesses that
+> already have websites** — because organic search can't surface the ones without
+> sites. **Web search is not a lead source.** It finds the wrong half."
+
+That is correct and it is structural. A business with no website cannot appear in a
+search result, because there is nothing to index. **In Sep 2026 a research pass ignored
+this and produced 20 LA "leads" by web search. Every one had a website. 8 of 8
+spot-checked had real custom domains.** See §8.
+
+There are exactly two sources and they do different jobs:
+
+| Source | Finds | Status |
+|---|---|---|
+| **Google Places API** (`websiteUri` empty) | **No website at all.** The only definitive source. | **DEAD — key returns PERMISSION_DENIED. Restoring it is a top-3 task, not a nice-to-have.** |
+| **Search operators** (below) | **Has a website and it's embarrassing** — free subdomains only | Works, verified. A *supplement*, not a replacement. |
+| Google Maps by hand | Either, slowly | Always available, ~30 leads / 30 min |
+
+### The search operators — for the free-subdomain filter ONLY
 
 Run these. They work nationally and the supply is effectively unlimited:
 
@@ -251,9 +299,18 @@ Blanks Septic (Palmetto, (770) 969-7983), A&W Septic (Stewartsville NJ), D&K Pum
 Professionals, Kenai Peninsula Fencing, Custom Gates Orlando, LCI Welding, Precision
 Fence and Gate, American Farm Fence Co, SE Fencing, Win Fencing.
 
-**Qualify each in 60 seconds:** search the name, check Google/Yelp review count is
-10–49, confirm the owner's name and a direct phone, note one specific thing about
-their site that is broken or embarrassing. That note is the first sentence of the call.
+**Qualify each in 60 seconds, and record the verification:**
+1. **Google review count, not Yelp.** These differ badly and the band is a Google band.
+   Exotic Iron Works is 21 on Google and 115 on Yelp. Royal Tree is 23 on Yelp and 11
+   on Birdeye. A Yelp number is not a qualification.
+2. **Open the site.** A free subdomain or a dead page qualifies. A real custom domain
+   with real pages does not — that is a business whose gap you cannot point at before
+   speaking, which is the whole condition.
+3. Owner's name and a direct phone.
+4. One specific broken thing. That note is the first sentence of the call.
+
+**A lead with no verification is a name, not a lead.** Log the verification in
+`call_log.csv` or it did not happen.
 
 **The free-subdomain line is the strongest cold open available:**
 > "Your site's on a free Wix address — the one with wixsite in the middle. Someone
@@ -312,60 +369,74 @@ platform change, or a promise made on a call that isn't on this table.
 
 ---
 
-## 8. The 20 to call right now
+## 8. Leads — verified, and the ones that failed verification
 
-Verify each in 60 seconds before dialing — review counts move and listings go stale.
+**Every row below carries a verdict. A row with no verdict is not a lead.**
 
-### Stale and warm — call these first, today (from the Flip Doc)
-| Business | Contact | Why |
-|---|---|---|
-| **O'Connell Cuts** | **Ryan · (805) 559-5592** | Said "would be interested" on 7 Jul, marked FOLLOW UP, never followed up. Two months cold but he already said yes-ish to $400. Low ticket, but it's the warmest thing you own. |
-| Carmen's Barber Shop #2 | Graberial · (661) 298-9933 | "Maybe down the line." Worth one text. |
-| **Client #1, the trainer** | via Daniel | Testimonial, before/after, referral ask, and the monthly. **Highest-value hour available.** |
-
-### Lane A — Pacoima / Sun Valley iron corridor (walk in, one afternoon)
-| Business | Phone | Proof | Address |
-|---|---|---|---|
-| Frank's Iron Work | (818) 314-4532 | 19 rev | 12676 Pierce St, Pacoima |
-| Universal Iron Works | (818) 990-8891 | 24 rev | 12430 Montague St, Pacoima |
-| G&P Iron Works | — (walk in) | 11 rev | 9901 San Fernando Rd, Pacoima |
-| DC Iron & Metal Designs | (818) 477-7352 | est. 2001 | 12433 Correnti St, Pacoima |
-| Wrought Iron Projects | (818) 747-9461 | SFV | San Fernando Valley |
-| Signature Iron Works | (818) 482-8286 | 47 rev, has site | 10949 Tuxford St #13, Sun Valley |
-| Exotic Iron Works | (818) 768-1572 | 115 Yelp rev — **above band, deprioritize** | 11628 Sheldon St, Sun Valley |
-| Electric Gate Installation LA | (323) 601-5074 | 17 rev | Van Nuys |
-
-### Lane A — SFV / SCV tree and brush (phone, local)
-| Business | Phone | Proof | Town | Gap |
+### VERIFIED — call these
+| Business | Phone | Google rev | Gap (verified) | Lane |
 |---|---|---|---|---|
-| **American Eagle Tree Service** | **(818) 457-0891** | **44 rev** | Sylmar | **Free Wix subdomain, and a second abandoned one. Best single lead found.** |
-| Royal Tree Service | (818) 477-7030 | 23 rev | Sunland | — |
-| Oscar Tree Service | (661) 670-1434 | 16 rev | Santa Clarita | No site found at all |
-| Best Valley Tree Services | (818) 949-8733 | 17 rev | Sylmar | Has site + an 866 number = buying leads |
-| JLG Landscaping & Tree | (661) 251-4129 | 21 rev | Santa Clarita | Duplicate Yelp listings |
-| TSL Tree Service | (661) 755-9530 | 37 rev | Santa Clarita | — |
-| Dan Scully's Tree Services | walk in | 12 rev, est. 1974 | 2818 Orange Ave, La Crescenta | — |
-| Ray's Tree & Brush Clearance | (323) 762-9324 | LA 90016 | Los Angeles | Brush clearance is LA-mandated, seasonal urgency |
-| Brian Walsh Brush Clearance | (323) 662-9062 | 25+ yrs | LA 90027 | — |
-| Alfha Fence | (747) 291-0279 | 25 rev | Van Nuys | On Thumbtack + Angi + Houzz = renting leads |
-| Al Ruiz Concrete | (818) 848-1522 | 14 rev | Burbank | — |
-| Messineo Masonry | (818) 767-1318 | est. 1986 | Burbank | — |
+| **Client #1, the trainer** | via Daniel | — | Paid $400, no monthly, no testimonial, no referral ask | warm |
+| **O'Connell Cuts — Ryan** | (805) 559-5592 | — | Said "would be interested" 7 Jul 2026, marked FOLLOW UP, never called back. Has a weak site a client built, wants merch too. | warm |
+| **American Eagle Tree Service**, Sylmar | (818) 457-0891 | verify (44 Yelp / 76 Birdeye) | **Free Wix subdomain** `jesusamericaneagle.wixsite.com`, plus a second abandoned one | A |
+| Oscar Tree Service, Santa Clarita | (661) 670-1434 | verify (16 Yelp) | No site found on any search | A |
+| Carmen's Barber Shop #2 — Graberial | (661) 298-9933 | — | "Maybe down the line." Low ticket. One text, no more. | warm |
 
-### Lane B — nationwide phone (the v1 list, still good)
-Tree: ArborGold Tree Care (574) 933-3616 · Tip Top Tree (660) 221-3272 · Capital Tree
+**That is the whole verified list. Two cold names.** Everything else below failed.
+
+### FAILED VERIFICATION — do not call, they have real websites
+Spot-checked Sep 2026. Every one has a real custom domain with real pages, which means
+there is no gap to point at before speaking and the saturation test applies.
+
+| Business | Their actual site |
+|---|---|
+| Frank's Iron Work, Pacoima | franksironwork.com |
+| Universal Iron Works, Pacoima | universaliron.net *and* universaliron-works.com |
+| G&P Iron Works, Pacoima | gpironworksllc.com |
+| DC Iron & Metal Designs, Pacoima | losangelescustomgates.com |
+| Signature Iron Works, Sun Valley | signatureironworksinc.com |
+| Royal Tree Service, Sunland | royaltrees.net |
+| TSL Tree Service, Santa Clarita | tsltreeservice.com *and* tsltreeservicescv.com |
+| JLG Landscaping & Tree, Santa Clarita | jlgtrees.com (93 reviews on one listing) |
+| Best Valley Tree Services, Sylmar | bestvalleytrees.com |
+| Alfha Fence, Van Nuys | alfhafenceco.com |
+| Al Ruiz Concrete, Burbank | alruizconcrete.com |
+| Messineo Masonry, Burbank | messineomasonry.com |
+| Exotic Iron Works, Sun Valley | 115 Yelp reviews — fails the saturation test outright |
+| Electric Gate Installation LA | could not be confirmed as a distinct business at that number |
+
+**Why this whole list failed:** it was assembled by web search, which structurally
+returns businesses that have websites. See §5. This is the exact trap `targeting.md`
+documented in June.
+
+### UNVERIFIED — names only, verify before dialing
+Do not treat these as leads until Google review count and site status are checked.
+
+Lane A leftovers: Dan Scully's Tree Services (La Crescenta, est. 1974) · Ray's Tree &
+Brush Clearance (323) 762-9324 · Brian Walsh Brush Clearance (323) 662-9062 ·
+Wrought Iron Projects (818) 747-9461
+
+Lane B, the v1 Places API pull (these came from the *right* source — `websiteUri`
+empty — but the data is months old, so re-confirm the listing before dialing):
+Tree: ArborGold (574) 933-3616 · Tip Top Tree (660) 221-3272 · Capital Tree
 (573) 887-2159 · Farley Tree (931) 520-0114 · Weaver's Tree Care (573) 837-3934 ·
 Elevate Tree Care (765) 606-5820 · Kelich Tree (765) 416-2542
-Septic: B.L. Phippin & Son (410) 430-3897 · I&G Septic (706) 229-2347 · Tison's
-(229) 877-3494 · W B Ray Septic (903) 559-2462 · Hall's Septic (229) 251-4434 ·
-American Outback Septic (410) 546-1666 · Delaware Septic (765) 744-0862 · Action
-Septic (405) 334-6102 · Distel's Septic (419) 448-0250
+Septic: B.L. Phippin (410) 430-3897 · I&G Septic (706) 229-2347 · Tison's
+(229) 877-3494 · W B Ray (903) 559-2462 · Hall's Septic (229) 251-4434 · American
+Outback (410) 546-1666 · Delaware Septic (765) 744-0862 · Action Septic
+(405) 334-6102 · Distel's Septic (419) 448-0250
 Fence: C & C Fence (605) 342-8346 · Jim's Construction (765) 210-7549
-Free-subdomain finds: Blanks Septic (770) 969-7983 · A&W Septic (Stewartsville NJ) ·
-D&K Pumping (Greeley CO) · Southern Exteriors Tree (Searcy AR) · Timberland Tree
-(Delaware OH) · Tennessee Roots · Treeology (Pinellas FL) · Custom Gates Orlando ·
-LCI Welding · Kenai Peninsula Fencing
 
-**All of it goes in `docs/call_log.csv`. One row per dial.**
+Lane C, free-subdomain finds (nationwide, verify review count and get a direct phone):
+Blanks Septic (770) 969-7983 · A&W Septic (Stewartsville NJ) · D&K Pumping (Greeley CO)
+· A1 Septic Solution (WA) · Southern Exteriors Tree (Searcy AR) · Timberland Tree
+(Delaware OH) · Tennessee Roots · Treeology (Pinellas FL) · Hill's Tree Service ·
+845TreePro · Custom Gates Orlando · LCI Welding · Kenai Peninsula Fencing · Precision
+Fence and Gate · American Farm Fence · SE Fencing · Win Fencing · Gateway Professionals
+
+**The honest read: there are 2 verified cold leads and 3 warm ones. The 20 out-of-state
+Places rows are the best real inventory, and they are stale. Restoring the API key is
+how you get a call list again.**
 
 ---
 
@@ -427,40 +498,47 @@ Start Pacific, work east — nationwide means four usable windows a day, not two
 
 ## 10. The number ladder: $10K → $40K without a job you hate
 
-Blended monthly assumes ~40% take $249 and ~60% take $99.
+**Correction to an earlier version of this section.** It proposed 90 care clients at a
+blended $240/mo to reach $40K. `docs/playbook.md` §5b is right and that was wrong:
+**sixteen relationships, not fifty.** The way to $40K is not more clients, it is more
+revenue per client, because every client is a relationship, a support surface, and a
+churn risk. Ninety of anything is a call centre.
 
-| Target | Care clients | Blended | MRR | Builds/mo | Build price | Recovery projects/mo | Total | **Miles hrs/wk** | Team |
-|---|---|---|---|---|---|---|---|---|---|
-| **$10K** | 30 | $160 | $4,800 | 6 | $500 | ~0.8 | **~$9,800** | **~12** | build contractor |
-| **$20K** | 55 | $185 | $10,175 | 8 | $600 | 2 | **~$20,000** | **~15** | + part-time ops |
-| **$30K** | 75 | $210 | $15,750 | 10 | $750 | 2.5 | **~$30,000** | **~18** | + second closer |
-| **$40K** | 90 | $240 | $21,600 | 12 | $900 | 3 | **~$40,400** | **~20** | + automation contractor |
+Revenue per client is stacked, not flat: care plan, then one add-on, then a second.
 
-**Read the hours column. It barely moves.** That is the entire design. Four times the
-revenue for under twice the hours, and it only works because of three rules:
+| Target | Clients | Care @$349 | Add-ons | Builds/mo | Projects | Total | **Miles hrs/wk** |
+|---|---|---|---|---|---|---|---|
+| **$10K** | **15** | $5,235 | 6 × $300 | 5 × $500 | — | **~$9,500** | ~12 |
+| **$20K** | **25** | $8,725 | 14 × $325 | 6 × $600 | 1 × $2,000 | **~$18,900** | ~15 |
+| **$30K** | **33** | $11,517 | 22 × $350 | 8 × $700 | 2 × $2,000 | **~$28,800** | ~17 |
+| **$40K** | **40** | $13,960 | 30 × $350 | 8 × $900 | 3 × $2,000 | **~$37,700** | ~19 |
 
-1. **Price rises with proof, not with hours.** Every ten clients with a call log,
-   raise the build price and the blended monthly. The $10K→$40K jump is roughly half
-   price increase, half volume.
-2. **Delegate on a client-count trigger, not a mood.** Contractor at client 6 (not
-   before — you need to know the work; not after — you become the bottleneck). Ops
-   help at 25. Second closer at 50.
-3. **Care is batched to one day a month, forever.** The moment care becomes
-   interruptions, the model is dead and it's Social Hog again.
+Half the client count of the earlier model for the same money. That is the entire
+"without killing us" mechanism, and it rests on three rules:
 
-**Cost stack at $40K:** build contractor ~$3,000, ops ~$2,000, closer comp ~$4,000,
-infra and tools ~$800. **Net ~$30K/mo** split two ways.
+1. **Stack revenue on existing clients before adding new ones.** A client at $349 who
+   takes missed-call text-back is worth two clients at $349, with half the relationship
+   overhead and better retention. The add-on menu is in `playbook.md` §2b; sell one at a
+   time, only when their own call log names the problem.
+2. **Delegate on a client-count trigger, not a mood.** Build contractor at client 6.
+   Ops/VA at 15. Second closer at 25. `playbook.md` has the harder version of this
+   warning: *if you're still personally doing GBP cleanups at month 8, you've built
+   yourselves a job and you will cap around $8k.*
+3. **Care batched to one day a month, forever.**
 
-**Honest timeline.** 30 care clients means ~30 closes. At a 10% close rate on
-conversations and ~25% conversation rate on dials, that's ~1,200 dials. At 40
-dials/week combined that is **roughly 30 weeks to $10K**, faster if Lane A walk-ins
-and referrals close better than cold (they will). **$40K is a 2026–2027 number, not a
-90-day number.** Anyone promising faster is selling something.
+**Cost stack at $40K:** contractor ~$3,000, 2 VAs ~$2,500, closer comp ~$3,500, infra
+and tools ~$800. **Net ~$30K/mo** split two ways.
 
-**The 90-day target is $5,000/mo.** One number. Do not design the $40K machine before
-the $5K machine exists.
+**Honest timeline.** 15 clients is the $10K number and `playbook.md` sizes that at one
+to two closes each per month for a year. That is right. **$10K is a 2027 number at the
+current dial rate, which is six lifetime dials.** The 90-day target is $5,000/mo, which
+is 15 clients on the Growth Plan, which is the same 15. Get those and the rest is
+arithmetic.
 
----
+**The thing that is not built and blocks all of it:** `playbook.md` §8 lists the
+monthly client proof report as the biggest gap, because it is what stops churn on the
+care plans. At 15 clients that gap is survivable. At 40 it is the business. Build it
+before client 10, not after.
 
 ## 11. Designing it to be sellable (do this from client #1)
 
@@ -526,8 +604,8 @@ from text Miles pasted.
 **The one number: 40 dials/week combined (20 each).** Everything else is under an hour.
 
 **This week, all under an hour each:**
-1. Three Stripe Payment Links: `Starter Site $500` one-time, `Lead Line Care $249/mo`
-   subscription, `Starter Care $99/mo` subscription.
+1. Three Stripe Payment Links: `Growth Plan Setup $400` one-time, `Growth Plan
+   $349/mo` subscription, `Website Only $600` one-time.
 2. **Call Ryan at O'Connell Cuts.** Two months stale, marked FOLLOW UP, said he was
    interested. It is the warmest asset in this business and it has been sitting.
 3. **Client #1, the trainer:** testimonial, screenshots, live URL, referral ask, and
@@ -535,11 +613,20 @@ from text Miles pasted.
 4. Write the warm list. Every business owner both of you know.
 5. Daniel picks his number: his 20 dials, or qualified contacts/week, or intros/month.
 
+6. **Restore the Google Places API key.** Promoted from "not a blocker" to top-5.
+   Web search cannot find businesses without websites — that is structural, see §5 —
+   so without the key there is no way to generate no-website leads at volume. Google
+   Cloud Console, new key, `.env`, done.
+
 **Then weekly, until something sells:**
-6. Run the §5 search operators for 30 minutes → 20 fresh free-subdomain prospects.
-7. Ring Test every prospect before dialing. Log every dial in `docs/call_log.csv`.
-8. One afternoon in the Pacoima iron corridor. Five walk-ins, mockups pre-built.
-9. Roll `call_log.csv` into `vertical_scoreboard.csv` monthly.
+7. Re-pull leads with the restored key. Work `--no-website-only`, highest presence_score
+   first.
+8. Run the §5 search operators for 30 minutes as a *supplement* → free-subdomain
+   prospects. Verify Google review count and open the site before either goes in the log.
+9. Ring Test every prospect before dialing. Log every dial in `docs/call_log.csv`.
+10. Walk into ten trade shops in your own town with a printed audit report card.
+    `playbook.md` has been saying this since June and it has never been done.
+11. Roll `call_log.csv` into `vertical_scoreboard.csv` monthly.
 
 **Build freeze: no new modules, configs, PDFs or docs until a stranger pays.**
 
