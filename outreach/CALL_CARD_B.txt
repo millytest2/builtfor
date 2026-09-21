@@ -1,0 +1,114 @@
+======================================================================
+ CALL CARD B - "STOP RENTING LEADS"
+ For businesses already paying Thumbtack / Angi / HomeAdvisor.
+ They have PROVEN they pay for customers. That's the whole point.
+======================================================================
+
+FIND THEM (20 min = 60 leads)
+  site:thumbtack.com tree service <city>
+  site:thumbtack.com septic <city>
+  site:angi.com/companylist tree service <state>
+
+  If they're listed as a pro, THEY ARE PAYING. That's the
+  qualification. No guessing, no inference. Open the profile for the
+  phone number, review count, and years in business.
+
+WHAT THEY'RE PAYING (know these cold)
+  Thumbtack .......... $20-60/lead, $15-150 by trade
+  Angi ............... $15-85/lead + ~$300/yr + $300-1,500 deposit
+  Tree service ....... $25-85 per lead
+  Shared with ........ 3 to 8 competitors, same lead
+  Close rate ......... 10-15%
+  REAL COST PER JOB .. $150-400
+  Never reply ........ 70-75% of leads
+  FTC ordered HomeAdvisor to pay up to $7.2M in Jan 2023 for
+  misrepresenting how often leads convert.
+
+----------------------------------------------------------------------
+1. OPEN - ask a question, don't make a claim
+----------------------------------------------------------------------
+  "Hey, is this [Name]? Miles here, you don't know me - quick one
+   and then I'll let you go.
+
+   Are you still running leads through Thumbtack?"
+
+  (He'll answer. It's a shared grievance, not a pitch.)
+
+  "What are they charging you a lead these days?"
+
+  THEN SHUT UP. Whatever number he says is the rest of the
+  conversation - and HE said it, not you.
+
+----------------------------------------------------------------------
+2. DISQUALIFY
+----------------------------------------------------------------------
+  "Honestly - is it working out for you?"
+
+  "it's brutal / they're killing me"  -> best lead you'll get
+  "it's alright, gets me some work"   -> live, keep going
+  "yeah it's working great"           -> "Good, glad it's working
+                                         for you. Take care."
+                                         HANG UP. Same as booked solid.
+
+----------------------------------------------------------------------
+3. THE ARITHMETIC - his numbers, not yours
+----------------------------------------------------------------------
+  "Fifty a lead - and they send that same one to what, four other
+   guys? So realistically you're two, three hundred deep before one
+   actually books.
+
+   What I do is build you the version you own. Five hundred once,
+   then ninety-nine a month. That's less than two leads. And nobody
+   else gets it."
+
+  DO NOT PROMISE TO REPLACE THEIR LEAD VOLUME. The claim is
+  "cheaper, and you own it." Not "same number of jobs." Over-promise
+  here and you own their revenue when a slow month hits.
+
+----------------------------------------------------------------------
+4. CLOSE THE APPOINTMENT
+----------------------------------------------------------------------
+  "Let me just build you one first. Takes a day, costs you nothing,
+   hate it and you've lost nothing. Thursday morning, or is Friday
+   afternoon better?"
+
+  Then: "Best number? And what work do you actually want more of?"
+  TEXT IN 5 MIN. Yes = Stripe link before you hang up.
+
+----------------------------------------------------------------------
+OBJECTIONS
+----------------------------------------------------------------------
+"I already have a website."
+  "Most guys on Thumbtack do. Is it bringing you calls, or is
+   Thumbtack still doing all the work? ...Right. That's the gap."
+
+"Will this replace my Thumbtack leads?"
+  "Honestly, I don't know - I'd be lying if I said yes on a first
+   call. What I do know is it's ninety-nine a month instead of fifty
+   a lead, and you own it. Most guys run both for a while and then
+   decide."
+  -> This honest answer closes better than a promise. Use it.
+
+"How do I know it'll work?"
+  "You don't yet. That's why I build it first and you look at it
+   before you pay anything."
+
+"I'm locked into a contract with them."
+  "Most guys are, it's usually annual. When's it up? ...Good, then
+   let's have yours live before that renews."
+
+"How much?"
+  "Five hundred to build, ninety-nine a month, first month
+   included. Less than two of their leads."
+
+----------------------------------------------------------------------
+THE TEST YOU'RE RUNNING THIS WEEK
+----------------------------------------------------------------------
+  20 dials with THIS card vs your 25 dials on "you have no website."
+  Same guy, same week.
+
+  Log one thing: DID THEY STAY PAST 20 SECONDS?  >20s or <20s
+
+  That comparison is worth more than any plan. Nobody can hand it
+  to you. It only exists after the dials.
+======================================================================
