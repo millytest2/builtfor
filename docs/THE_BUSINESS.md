@@ -40,6 +40,92 @@ again:
 | You send estimates and nobody follows up | After 10 clients |
 | You have 2,000 old customers and never contact them | After 10 clients |
 
+### The three words
+
+> **"I build websites."**
+
+That's it. Don't dress it up.
+
+Everyone else calling that septic owner is saying "AI-powered growth systems" or
+"digital transformation" or "local marketing solutions." **More impressive means more
+suspicious.** A 55-year-old guy with a pump truck has been pitched by ten people using
+words he'd have to look up, and he's said no to all of them.
+
+"I build websites" is understood instantly, sounds like a trade instead of a scheme, and
+costs him nothing to evaluate. **The boringness is the moat.** Everything else — the
+Google profile, the hosting, the tracking number, the monthly — you explain in the next
+sentence, after he already knows what you are.
+
+Keep "local visibility utility" for your own head. Never say it to a customer.
+
+---
+
+## 1b. Why they haven't already done this
+
+You worried that if they wanted a website they'd have built one. Here's why eight years
+go by and it doesn't happen. **None of it is about money.**
+
+| The wall | What actually happens |
+|---|---|
+| **Writing the words** | This is the real blocker, and it's why they stall. He can rebuild a drain field blindfolded and cannot write three paragraphs about his own business. Blank page, cursor blinking, closes the laptop. |
+| **Four decisions before you start** | Domain, hosting, builder, business email. He doesn't know what any of those words mean and doesn't want to learn. |
+| **The photos** | He has 400 job photos on his phone, sideways, unsorted, mixed in with pictures of his kids. Picking eight is a two-hour job he keeps putting off. |
+| **It's never finished** | Hours change. A service gets added. His number changes. The guy who built it is gone or wants $150 to edit a phone number. |
+| **The nephew** | Somebody's kid started one in 2023. It's 80% done, stalled, and now it's awkward to bring up at Thanksgiving. |
+| **Google Business Profile is a maze** | Verification postcards, duplicate listings, suspended profiles, categories that don't match what he does. It's built for marketers, not for him. |
+
+**The one sentence that explains all of it:**
+
+> It's one more thing on a list that already has forty things on it — and it's the only
+> thing on that list he can't fix with his hands.
+
+Every other problem in his business he can solve himself or hire a guy for. This one he
+can't do and doesn't know who to trust with. So it sits.
+
+**That's your whole pitch.** You're not selling a website. You're removing the only item
+on his list that he's genuinely stuck on. Which is also why the monthly makes sense to
+him — the thing he's most afraid of is that it becomes his problem again in six months.
+
+---
+
+## 1c. Why you beat the other callers
+
+### First, the correction: they are not getting hundreds of calls
+
+You assumed these owners are buried in pitches. **They're not, and that's the whole
+reason the target list looks the way it does.**
+
+Fifteen-calls-a-day is what a **dentist in Dallas** gets. Or a med spa in Phoenix, or a
+roofer in Atlanta. Those are the categories every guru course teaches, in the top 25
+metros, and they're brutal.
+
+**A septic guy in Hahira, Georgia with no website is getting one or two of these calls a
+month.** Possibly fewer. Nobody is fighting over him, because he is genuinely hard to
+find — a business with no website is invisible to the scraped lead lists your competitors
+buy. That's not an accident in your list. It's the design.
+
+### Then, the seven things that actually separate you
+
+| # | What you do | What every other caller does |
+|---|---|---|
+| **1** | **Show up with the work already done.** "I already built you an example." | Asks for thirty minutes of his time |
+| **2** | **Have a specific fact about his business.** "I called twice, both went to voicemail." | Reads a script with his name merged into it |
+| **3** | **Say the price on the first call.** | Dodges to a "discovery call" |
+| **4** | **Small number.** $500 sounds like a job. | $3–5K plus a $500/mo retainer, which sounds like a program |
+| **5** | **He owns the domain and can cancel any month.** | Holds the domain, twelve-month contract |
+| **6** | **"It's literally me, I'm in LA."** | A company name he's never heard of |
+| **7** | **Promise a working front door, not leads.** | Promises growth, which he's heard before and didn't get |
+
+**Number 1 is the one that matters most.** Everything else is a tiebreaker. Almost nobody
+does free work before asking for anything, because it doesn't scale for an agency with
+staff — but it costs you thirty minutes with the generator. That's a structural advantage
+they can't copy without breaking their own economics.
+
+**And give something away on the call.** The CLOSED-listing fix, a duplicate listing, a
+wrong category on their Google profile. Tell them how to fix it and don't charge. You'll
+know within ten seconds whether you're talking to a buyer, and either way you did
+something useful.
+
 ---
 
 ## 2. Is there actually a market? The honest answer
@@ -190,7 +276,9 @@ highest-leverage task.**
 
 ## 5. What to say
 
-`outreach/SCRIPT.txt` — plain text, sits in a notepad window next to the call list.
+**`outreach/CALL_CARD.txt`** — one page, the whole call. This is the one you keep open
+next to the call list. `outreach/SCRIPT_FULL.txt` has all sixteen objections and the
+voicemail/text/email/walk-in versions for when you want them.
 
 The whole call in six moves:
 
