@@ -1,4 +1,11 @@
-# HANDOFF v2 — read this first
+# HANDOFF v2
+
+> **SUPERSEDED IN PART — read `docs/what_this_is.md` first.** As of 21 Sep 2026 Miles
+> has left Social Hog and is full time on this. That doc carries the current category,
+> the current offer ($600 + $149/mo, Google profile as a one-time setup inside the
+> build fee rather than monthly labour), the $5–10K model, and the skills curriculum.
+> Everything below is still accurate on targeting, prospecting, delivery and leads.
+> Where the two disagree on price or positioning, `what_this_is.md` wins.
 
 Written so this project can be picked up cold, with no access to the conversation
 that produced it. Supersedes v1. If you're a fresh session: read top to bottom

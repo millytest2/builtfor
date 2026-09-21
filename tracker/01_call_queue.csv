@@ -46,4 +46,8 @@
 # tz  PT=Pacific CT=Central ET=Eastern. trades answer 6:30-8am and 4-6pm LOCAL.
 #     Sorted so you can work Pacific to Eastern in one sitting.
 # status  NEW / NO-ANSWER / VM-LEFT / CONVO / BOOKED / MOCKUP-SENT / SOLD / DQ / BURNT
-# price_said  Y/N. all-time count as of 16 Sep 2026: 1.
+# price_said  Y/N. all-time count as of 21 Sep 2026: 1.
+#
+# OFFER (see docs/what_this_is.md): $600 + $149/mo, first month included.
+#   $800 + $149/mo for a bigger multi-page job. $900 once if they insist on
+#   owning it outright with no support. NEVER say the build price alone.
