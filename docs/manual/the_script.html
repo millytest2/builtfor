@@ -1,0 +1,498 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Built for Main Street — The Script</title>
+<style>
+  @page { size: letter; margin: 0.6in 0.7in; }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;color:#15181c;
+    font-size:10.2pt;line-height:1.45;background:#fff}
+  h1,h2,h3,h4{margin:0}
+  .cover{page-break-after:always;padding-top:1.4in}
+  .cover .kicker{font-size:9pt;letter-spacing:.22em;text-transform:uppercase;color:#7a7f87}
+  .cover h1{font-size:46pt;line-height:.93;letter-spacing:-.025em;margin:10px 0 8px}
+  .cover .tag{font-size:13pt;color:#c25708;font-weight:600}
+  .cover .rule{height:3px;background:#15181c;margin:26px 0 22px;width:100%}
+  .cover .lede{font-size:12pt;line-height:1.5;max-width:5.2in;color:#33383f}
+  .cover .foot{margin-top:1.1in;font-size:9.5pt;color:#7a7f87;border-top:1px solid #d8d5cf;padding-top:10px}
+  .cover .toc{margin-top:30px;font-size:10pt}
+  .cover .toc div{padding:5px 0;border-bottom:1px solid #e6e3dd;display:flex;justify-content:space-between}
+  .cover .toc b{font-weight:600}
+
+  section{page-break-before:always}
+  h2{font-size:20pt;letter-spacing:-.015em;padding-bottom:6px;border-bottom:2px solid #15181c;margin-bottom:4px}
+  .h2sub{font-size:9.5pt;color:#7a7f87;margin:0 0 16px}
+  h3{font-size:11.5pt;margin:16px 0 6px}
+  h3.first{margin-top:6px}
+  h4{font-size:10pt;margin:12px 0 5px;letter-spacing:.04em;text-transform:uppercase;color:#7a7f87}
+  p{margin:0 0 9px}
+  ul,ol{margin:0 0 10px;padding-left:17px} li{margin-bottom:4px}
+  b,strong{font-weight:600}
+  table{width:100%;border-collapse:collapse;font-size:9.5pt;margin-bottom:14px}
+  th{text-align:left;font-size:8pt;letter-spacing:.09em;text-transform:uppercase;color:#7a7f87;
+    padding:5px 6px;border-bottom:1.5px solid #15181c}
+  td{padding:6px;border-bottom:1px solid #e6e3dd;vertical-align:top}
+  .say{border-left:3px solid #c25708;background:#fbf2e8;padding:10px 12px;margin:0 0 11px;font-size:10.5pt;line-height:1.5}
+  .say p{margin:0 0 7px} .say p:last-child{margin:0}
+  .say .sd{display:block;font-size:8pt;letter-spacing:.1em;text-transform:uppercase;color:#a8742f;margin-bottom:5px}
+  .them{border-left:3px solid #b9b5ad;background:#f6f5f2;padding:8px 12px;margin:0 0 11px;font-size:10pt;color:#4a4f56}
+  .note{font-size:9pt;color:#6d727a;font-style:italic;margin:-3px 0 11px}
+  .box{border:1px solid #cfccc5;padding:11px 13px;margin-bottom:12px}
+  .box h4{margin:0 0 6px;font-size:10.5pt;text-transform:none;letter-spacing:0;color:#15181c}
+  .price{border:1.5px solid #15181c;padding:13px 15px;margin-bottom:12px}
+  .price .big{font-size:18pt;font-weight:600;letter-spacing:-.015em}
+  .price .lbl{font-size:8.5pt;letter-spacing:.1em;text-transform:uppercase;color:#7a7f87}
+  .obj{margin-bottom:13px;page-break-inside:avoid}
+  .obj .q{font-weight:600;margin-bottom:4px;font-size:10.5pt}
+  .obj .a{border-left:3px solid #c25708;padding-left:11px;margin:0 0 4px;line-height:1.5}
+  .obj .why{font-size:8.8pt;color:#7a7f87;font-style:italic;padding-left:11px;margin:0}
+  .steps{counter-reset:s;list-style:none;padding:0;margin:0 0 12px}
+  .steps li{counter-increment:s;padding-left:26px;position:relative;margin-bottom:6px}
+  .steps li::before{content:counter(s);position:absolute;left:0;top:1px;width:17px;height:17px;
+    background:#15181c;color:#fff;font-size:8.5pt;text-align:center;line-height:17px}
+  .callout{background:#15181c;color:#fff;padding:13px 15px;margin:14px 0}
+  .callout b{color:#f2a45f}
+  .stop{background:#c25708;color:#fff;padding:11px 14px;margin:12px 0;font-weight:600;font-size:11pt}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .card{border:1.5px solid #15181c;padding:12px 14px}
+  .card h4{margin:0 0 7px;font-size:9pt;color:#15181c}
+  .card p{font-size:9.5pt;margin:0 0 6px;line-height:1.45}
+  .callout,.box,.say,.them,.price,.obj,.card{page-break-inside:avoid}
+  tr,li{page-break-inside:avoid}
+  h2,h3{page-break-after:avoid}
+</style></head><body>
+
+<div class="cover">
+  <div class="kicker">The Script · September 2026</div>
+  <h1>Say This.<br>Then Stop<br>Talking.</h1>
+  <div class="tag">Built for Main Street</div>
+  <div class="rule"></div>
+  <p class="lede">The whole call, start to finish, in the words you'd actually use.
+  How to open so they don't hang up, how to find the money question, how to say two
+  numbers without flinching, and what to say to all sixteen versions of no.</p>
+  <p class="lede" style="margin-top:14px"><b>The goal of the call is a booked ten
+  minutes. Not a sale.</b> Everything here points at one sentence: <i>"You around
+  Thursday morning, or is Friday better?"</i></p>
+  <div class="toc">
+    <div><b>1. The ninety seconds before you dial</b><span>this writes your opener</span></div>
+    <div><b>2. The call, line by line</b><span>open, disqualify, observe, dig</span></div>
+    <div><b>3. Two numbers, one breath</b><span>the offer and the close</span></div>
+    <div><b>4. Every objection</b><span>sixteen of them, and why each answer works</span></div>
+    <div><b>5. Voicemail, text, walk&#8209;in</b><span>most of them won't pick up</span></div>
+    <div><b>6. The wall card</b><span>tear this page off</span></div>
+  </div>
+  <div class="foot">Miles · 310-606-9788 · hello@builtformainstreet.com<br>
+  Use with <b>tracker/01_call_queue.csv</b>. Never dial a row without a verified gap.</div>
+</div>
+
+<!-- ===================== 1 ===================== -->
+<section>
+<h2>1. The ninety seconds before you dial</h2>
+<p class="h2sub">Do these two things or the call has no opening line.</p>
+
+<h3 class="first">The Google check — ten seconds</h3>
+<p>Open the business on Google Maps. Look for the <b>Website</b> button. Mark the column:</p>
+<table>
+  <tr><th style="width:15%">You see</th><th style="width:38%">Means</th><th>Do</th></tr>
+  <tr><td><b>No button</b></td><td>Nothing to click. They're a pin on a map.</td><td><b>Dial it.</b> Use opener A.</td></tr>
+  <tr><td><b>wixsite.com</b><br><b>godaddysites.com</b><br><b>a facebook.com link</b></td><td>They tried. It's a free placeholder with somebody else's name in the address.</td><td><b>Dial it.</b> Use opener B. Often the better lead — they already wanted this.</td></tr>
+  <tr><td><b>Their own domain</b></td><td>Somebody's already being paid to help them.</td><td><b>Skip the row.</b> Next.</td></tr>
+</table>
+
+<h3>The Ring Test — ninety seconds</h3>
+<p>Before you pitch anybody, call their line <b>twice</b>, at two different times, and
+hang up when it answers or rolls to voicemail. Write down <b>2/2</b>, <b>1/2</b>, or
+<b>0/2</b>.</p>
+<p>About a third of calls to small trades go unanswered. If they missed yours, you now
+have the only opening line in this business that isn't a pitch. Nobody else does this.</p>
+
+<div class="callout">
+<b>Why it works:</b> every other caller that week opens by talking about themselves.
+You open with a fact about <i>their</i> business that they can verify in their own
+head while you're still talking. That's not a script. That's someone who actually
+looked.
+</div>
+
+<h3>When to call</h3>
+<p>Trades answer <b>6:30&ndash;8am</b> and <b>4&ndash;6pm local</b>. Midday they're on a
+job with a saw running. The list is sorted Pacific to Eastern on purpose — work west
+to east and you get four usable windows in a day instead of two.</p>
+
+<h3>How to sound</h3>
+<ul>
+<li><b>Slow down.</b> Cold calls die on speed, not on words. You are not in a hurry.</li>
+<li><b>Statements, not questions,</b> at the ends of sentences. Don't go up at the end.</li>
+<li><b>Smile on the opener.</b> They hear it. Genuinely.</li>
+<li><b>Use their name twice. Not five times.</b> Five is a telemarketer.</li>
+<li><b>After you name the problem, shut up.</b> Let it sit. The silence is doing work.</li>
+<li><b>Mean it when you say they've got nothing to lose.</b> That's the whole frame, and
+it only lands if it's true — which it is.</li>
+</ul>
+</section>
+
+<!-- ===================== 2 ===================== -->
+<section>
+<h2>2. The call, line by line</h2>
+<p class="h2sub">Four moves. Open, disqualify, observe, dig. Then you're at the close.</p>
+
+<h3 class="first">Move 1 &mdash; Open. Honesty is the pattern interrupt.</h3>
+<p>Everyone on this list gets called. What they never get is someone admitting it.</p>
+<div class="say"><span class="sd">If they missed your test calls</span>
+<p>"Hey — is this [Name]? Listen, I'll be straight with you, this is kind of a cold call.
+You can absolutely hang up on me.</p>
+<p>Before you do though — I actually tried you Tuesday afternoon and again this morning,
+and both times it went to voicemail. I'm not giving you a hard time, you were working.
+But can I tell you why I noticed? Twenty seconds and then you can tell me to get lost."</p></div>
+
+<div class="say"><span class="sd">If they picked up both times</span>
+<p>"Hey, is this [Name]? Straight up, this is a cold call, you can hang up on me.</p>
+<p>I'll say this though — I called you twice this week and you answered both times, which
+already puts you ahead of most guys I talk to. Gimme twenty seconds?"</p></div>
+<p class="note">Almost nobody hangs up on "you can hang up on me." Giving them the exit is what keeps them on.</p>
+
+<h3>Move 2 &mdash; Disqualify. One question, ten seconds.</h3>
+<div class="say"><p>"Quick one before anything else — have you ever had a website, or
+did you just never get around to it?"</p></div>
+<table>
+  <tr><th style="width:36%">They say</th><th style="width:24%">It means</th><th>You do</th></tr>
+  <tr><td>"Had one. Waste of money."</td><td><b>Best lead you'll get.</b> Want is proven, and somebody let them down.</td><td>Keep going. Hard.</td></tr>
+  <tr><td>"Been meaning to."</td><td>Live lead. Inertia, not refusal.</td><td>Keep going.</td></tr>
+  <tr><td>"That's it right there" <i>(the Wix page)</i></td><td>They think they have one.</td><td>Opener B.</td></tr>
+  <tr><td><b>"Don't need one. Booked solid."</b></td><td>A real no.</td><td><b>Get off the phone politely.</b></td></tr>
+</table>
+<div class="say"><span class="sd">How to leave on a no</span>
+<p>"Fair enough — that's a good problem to have. Appreciate you picking up. Take care."</p></div>
+<p class="note">Do not spend twenty minutes on a no. There are forty more names and your only scarce resource is dials.</p>
+
+<h3>Move 3 &mdash; The observation. Then stop talking.</h3>
+<p>Pick the one that matches what you saw. Say it. Then be quiet until they speak.</p>
+
+<h4>Opener A &mdash; no website at all</h4>
+<div class="say">
+<p>"So I looked you up before I called. You've got [forty] five-star reviews, twenty
+years in — people clearly like what you do.</p>
+<p>And then I went to click through and actually learn more about you, and there was
+nowhere to go. You're crushing it on Google Maps and you're basically invisible
+everywhere else. Did you know it looked like that, or...?"</p></div>
+
+<h4>Opener B &mdash; a free Wix or GoDaddy page</h4>
+<div class="say">
+<p>"So I looked you up first. Forty-three five-star reviews, people love you.</p>
+<p>But your website's on one of those free Wix addresses — the one with the word
+<i>wixsite</i> sitting in the middle of it. So somebody put real effort into building
+that, and then Wix went and put their own name on your front door. Did you know that's
+what customers are seeing?"</p></div>
+<p class="note">If the address still ends in the default "/website" or "/mysite": <i>"...and the address actually still ends in the word 'website'. That's the placeholder it ships with. Looks like it got started and then real work got in the way — which, honestly, fair."</i></p>
+
+<h4>Opener C &mdash; a duplicate listing that says CLOSED</h4>
+<p>This is the strongest opener in the book. Use it when you've got it.</p>
+<div class="say">
+<p>"Before I called I looked you up, and I found something you'll want to know about
+whether or not we ever talk again.</p>
+<p>You've got two listings out there, and one of them says <b>CLOSED</b>. So some of the
+people searching for you right now are being told you went out of business.</p>
+<p>... Yeah. I can tell you exactly how to fix that. Takes about ten minutes and I'm not
+charging you for it."</p></div>
+<div class="stop">Give that fix away. Free. It buys the rest of the call outright, and it's the single most honest thing you'll do all week.</div>
+
+<h3>Move 4 &mdash; One question. Write the answer down word for word.</h3>
+<p>This is the sale you make sixty days from now. Do not skip it.</p>
+<table>
+  <tr><th style="width:26%">Who</th><th>Ask</th></tr>
+  <tr><td><b>Tree</b></td><td>"When everybody's out on a job, what happens to the phone?"</td></tr>
+  <tr><td><b>Septic</b></td><td>"How many tanks have you pumped over the years?" <i>(that's their reactivation list)</i></td></tr>
+  <tr><td><b>Fence / gates</b></td><td>"How many estimates go out in a month — and who chases the ones that don't come back?"</td></tr>
+  <tr><td><b>Anyone on Thumbtack or Angi</b></td><td><b>"What are you paying per lead on Thumbtack right now?"</b></td></tr>
+</table>
+<div class="callout">
+That last one is the most valuable question in this document. Most of these businesses
+are already buying leads at <b>$50 to $100 each, shared with two competitors.</b> When
+they tell you the number, <b>they just justified your price in their own words.</b>
+Write it down. You'll use it in four minutes.
+</div>
+</section>
+
+<!-- ===================== 3 ===================== -->
+<section>
+<h2>3. Two numbers, one breath</h2>
+<p class="h2sub">Then the close, which is not the sale.</p>
+
+<h3 class="first">The transition &mdash; hand their own story back to them</h3>
+<div class="say">
+<p>"Okay so — you've been doing this twenty-two years, you're five stars, and
+you're getting most of your work off word of mouth.</p>
+<p>Honestly that's kind of the perfect setup, because the hard part's already done.
+You're good at the work and people like you. You're just invisible to anybody who
+doesn't already know you."</p></div>
+<p class="note">Never argue with word of mouth. Agree with it, then widen it.</p>
+
+<h3>The offer</h3>
+<div class="stop">Never say a website price on its own. The second "four hundred for a website" leaves your mouth, you've made a one-time transaction in their head, and every monthly conversation after that is you arguing with your own number.</div>
+<div class="say"><span class="sd">Say this in one breath. Do not pause in the middle.</span>
+<p>"It's <b>four hundred to get you set up</b> — that's the site, your Google profile
+cleaned up, a tracking number so you can actually hear what it's bringing in,
+click-to-call so it rings your cell, all of it.</p>
+<p>Then it's <b>three forty-nine a month</b> and we keep the whole thing running.
+<b>First month's included</b>, so nothing else comes out until day thirty.</p>
+<p>You can cancel any time, and the site's yours either way. Sound fair?"</p></div>
+
+<div class="grid2">
+  <div class="price"><div class="lbl">The default</div>
+    <div class="big">$400 + $349/mo</div>
+    <p style="margin:6px 0 0;font-size:9.5pt">Site, Google profile, tracking number,
+    hosting, backups, one change a month, and a monthly note telling them how many
+    calls it made. <b>First month included.</b></p></div>
+  <div class="price"><div class="lbl">If they insist</div>
+    <div class="big">$600 once</div>
+    <p style="margin:6px 0 0;font-size:9.5pt">Site only. They own it, they're on their
+    own after. <b>Deliberately the worse deal.</b> It exists to make the first one
+    look smart. Offer it honestly; don't push it.</p></div>
+</div>
+
+<div class="say"><span class="sd">If they ask to just buy it outright</span>
+<p>"Yeah, I can do that — six hundred, you own it, you're on your own after.
+Honestly most guys go the other way since it's cheaper to start and we actually keep
+it working. But either's fine with me, genuinely."</p></div>
+<p class="note">"Either's fine with me" has to be true when you say it. If it isn't, they hear it.</p>
+
+<h3>The close &mdash; and this is the whole call</h3>
+<div class="say">
+<p>"Here's all I'd actually suggest. Let me just build you a real example first. Takes
+me a day, costs you nothing, and if you hate it you've lost nothing but the ten minutes.</p>
+<p>Then I'll walk you through it. <b>You around Thursday morning, or is Friday
+afternoon better?</b>"</p></div>
+<p>Three reasons that works: the appointment is to look at <b>their own thing</b>, it's
+only <b>ten minutes</b>, and you gave <b>two specific times</b> instead of the dead end
+that is "when works for you?"</p>
+
+<h3>Lock it down before you hang up</h3>
+<div class="say">
+<p>"Perfect — Thursday at nine. This the best number for you?</p>
+<p>And real quick, so the example isn't generic — what kind of work do you actually
+<i>want</i> more of?"</p></div>
+<p><b>Text them inside five minutes, while you're still their most recent call:</b></p>
+<div class="say"><p>"Miles here — good talking to you. Thursday 9am, I'll have that
+example ready for you. 310-606-9788"</p></div>
+
+<div class="callout">
+<b>When they say yes:</b> text the Stripe setup link while you're still on the phone.
+Not later, not tonight. <b>Now.</b> A yes you can't collect in sixty seconds is a yes
+that cools down by Tuesday.
+</div>
+</section>
+
+<!-- ===================== 4 ===================== -->
+<section>
+<h2>4. Every objection</h2>
+<p class="h2sub">Sixteen of them. Each one routes back to Thursday or Friday.</p>
+
+<div class="obj"><div class="q">"How much?" — asked early, before you've shown anything</div>
+<p class="a">"Four hundred to get going, three forty-nine a month after that, and the
+first month's included. But let me show you the actual thing first — then the number
+either makes sense or it doesn't. <b>Thursday or Friday?</b>"</p>
+<p class="why">Never dodge the price. Dodging makes it sound worse than it is. Answer it flat, then move.</p></div>
+
+<div class="obj"><div class="q">"That monthly's steep."</div>
+<p class="a">"What are you paying Thumbtack per lead right now? ... Okay — so this is
+about four leads' worth a month. Except you own it, and it doesn't get sent to two
+other guys at the same time."</p>
+<p class="why">This is why you asked the Thumbtack question. You're not defending a price, you're comparing it to one they already hate.</p></div>
+
+<div class="obj"><div class="q">"Is there a contract?"</div>
+<p class="a">"Nope. Month to month, cancel whenever you want. If I'm not earning it
+you shouldn't be paying it."</p>
+<p class="why">Say it fast and without qualifiers. Any hesitation here reads as fine print.</p></div>
+
+<div class="obj"><div class="q">"Word of mouth is all I need."</div>
+<p class="a">"Honestly? Best customers there are. I'm not knocking it.<br>
+But here's the thing — even your referrals Google you before they call. They're just
+checking you're real. Right now there's nothing for them to find. So you're losing the
+ones who weren't a hundred percent sold yet, and you never even find out it happened."</p>
+<p class="why">Agree first, completely and sincerely. Then name the leak they can't see. Never make them defend their referrals.</p></div>
+
+<div class="obj"><div class="q">"I'm booked solid."</div>
+<p class="a">"That's a good problem. Then honestly it's less about <i>more</i> jobs and
+more about <i>better</i> ones. Being easy to find lets you be picky instead of taking
+whatever comes in. And when you do hit a slow month, it's already sitting there working."</p>
+<p class="why">If they push back a second time, they mean it. Thank them and go.</p></div>
+
+<div class="obj"><div class="q">"I got burned by a marketing guy."</div>
+<p class="a">"Yeah — what happened? ... <i>[listen, all the way through, this is real
+information]</i><br>
+That's frustrating, and honestly it's pretty common. That's exactly why I do it the
+other way round — you see the thing before you pay, the domain's in your name, and you
+can cancel any month. I'd rather earn it."</p>
+<p class="why">This objection is a gift. Let them tell the whole story. The person who got burned and stayed on the phone is buying.</p></div>
+
+<div class="obj"><div class="q">"I already have a website."</div>
+<p class="a">"You do — is it actually bringing you calls? ... <i>[if no]</i><br>
+Yeah, that's the difference. A site that just sits there isn't the same as one built to
+make the phone ring. Two minutes, no charge — let me just show you what I mean."</p></div>
+
+<div class="obj"><div class="q">"My nephew's building me one."</div>
+<p class="a">"Ha — that's how half of them start, genuinely. And it usually gets to about
+eighty percent and then stalls out because he's busy with his own stuff, right?
+<i>[laugh]</i> No shade to him at all. Difference is mine's done in two weeks and
+somebody's actually maintaining it. If he gets there first, great — I mean that."</p>
+<p class="why">Never insult the nephew. You'll lose. Be warm about him and let the timeline do the work.</p></div>
+
+<div class="obj"><div class="q">"Just send me some info."</div>
+<p class="a">"I'll do you one better — I'll just build the actual thing. What's the best
+email? ... And <b>Thursday or Friday</b> to walk through it?"</p>
+<p class="why">"Send me info" is a polite no. Converting it into a real artifact and a real time is the only way past it.</p></div>
+
+<div class="obj"><div class="q">"I'm too busy right now."</div>
+<p class="a">"Totally get it — that's actually why I'm asking about Thursday and not
+right now. <b>Morning or afternoon?</b>"</p></div>
+
+<div class="obj"><div class="q">"Is this AI? Is this a scam?"</div>
+<p class="a">"Ha — fair question. No, it's literally me and my buddy Daniel, we're in LA.
+I'll text you my cell right now, and here's a site I built for a client. You can call me
+any time and you'll get me."</p>
+<p class="why">Then actually text the cell before you hang up. Doing the thing beats saying the thing.</p></div>
+
+<div class="obj"><div class="q">"I need to think about it."</div>
+<p class="a">"Course. What's the part you'd be thinking about — the money, or whether
+it'll actually work?"</p>
+<p class="why">It's always one of those two. Get them to say which and you're handling the real objection instead of the polite one.</p></div>
+
+<div class="obj"><div class="q">"I need to talk to my wife / my partner."</div>
+<p class="a">"Makes sense. Want me to send the example over so you've got something to
+actually show her, instead of trying to describe it? I'll check back Thursday."</p></div>
+
+<div class="obj"><div class="q">"Can you do it cheaper?"</div>
+<p class="a">"I can't really go under four — that's already pretty lean for what's in it.
+What I <i>can</i> do is start you on the single-page version and add pages later as you
+need them. That work?"</p>
+<p class="why">Never discount the monthly. Reduce the scope instead. Discounting the monthly tells them the monthly was made up.</p></div>
+
+<div class="obj"><div class="q">"What happens if I stop paying?"</div>
+<p class="a">"You keep the site and you keep the domain — it's in your name from day
+one. I send you the files and we shake hands. The only thing that stops is me
+maintaining it."</p>
+<p class="why">This is your real edge. Most local shops hold the domain hostage. Say this part slowly.</p></div>
+
+<div class="obj"><div class="q">Silence. They just... don't say anything.</div>
+<p class="a">"...Too much all at once?"</p>
+<p class="why">Then wait. Do not fill it. Whoever talks first loses, and you've got nothing to lose by waiting.</p></div>
+
+<div class="callout">
+Every answer above ends by pointing at the same place: <b>a ten-minute look at
+something you already built for them.</b> You are never closing the sale on this call.
+You're closing the appointment. That's a much easier thing to say out loud, which is
+exactly why it works.
+</div>
+</section>
+
+<!-- ===================== 5 ===================== -->
+<section>
+<h2>5. Voicemail, text, and walking in</h2>
+<p class="h2sub">Most of them won't pick up. That's normal, and it isn't a wasted dial.</p>
+
+<h3 class="first">Voicemail &mdash; then text within five minutes</h3>
+<div class="say"><span class="sd">Voicemail</span>
+<p>"Hey [Name], it's Miles, 310-606-9788. I build simple sites for tree guys around
+[area]. Noticed your site's on one of those free Wix addresses and figured you'd want
+to know what that looks like to a customer. Not a sales thing — I'll just text you an
+example. Talk soon."</p></div>
+<div class="say"><span class="sd">Text, five minutes later</span>
+<p>"Hey [Name], Miles here — just left you a voicemail. Made a quick example of what
+your site could look like: [link]. Click-to-call so it rings your phone. No pressure at
+all, just tell me what you think."</p></div>
+<p class="note">The voicemail alone gets ignored. The voicemail plus a text with an actual link is a different thing entirely. Always both.</p>
+
+<h3>Email, if that's what they asked for</h3>
+<div class="say"><span class="sd">Subject: quick thing about [Business] on Google</span>
+<p>"Hey [Name] — I'm local, me and my buddy build simple sites for tree companies
+around [area].</p>
+<p>Looked you up: forty five-star reviews and your site's on a free Wix address, so when
+somebody searches "tree service [town]" — or asks ChatGPT for a recommendation — your
+competitors are getting that call instead of you.</p>
+<p>Put together a quick example of what yours could look like, click-to-call built in:
+[link]. Like it, we make it real. Don't, no worries at all.</p>
+<p>— Miles · 310-606-9788"</p></div>
+
+<h3>Walking in &mdash; build the mockup first</h3>
+<p>They get fifteen calls a day and roughly zero visits. A person at the counter with
+something on their phone is unignorable in a way no call ever is.</p>
+<div class="say">
+<p>"Hey — are you the owner? I'm Miles, I'm local, over in [area].</p>
+<p>I pulled you up before I came by. Twenty-four five-star reviews and a website from
+2019. I actually already built you an example — mind if I show you on my phone real
+quick? Two minutes."</p></div>
+<p class="note">Bring the mockup already built. Turning up empty-handed makes it a cold call with travel time.</p>
+
+<h3>What counts as a good day</h3>
+<table>
+  <tr><th>Number</th><th>What good looks like</th></tr>
+  <tr><td><b>Dials</b></td><td>20 each per week. 40 combined. This is the only number that matters right now.</td></tr>
+  <tr><td><b>Pickups</b></td><td>About 1 in 4. Most are voicemail. Expected.</td></tr>
+  <tr><td><b>Price said out loud</b></td><td>Every real conversation. <b>All-time count as of today: one.</b></td></tr>
+  <tr><td><b>Booked</b></td><td>1&ndash;2 a week gets you there. That's it.</td></tr>
+</table>
+<div class="callout">
+Log every dial, including the voicemails, and give every single row a
+<b>next step and a next date.</b> The last call log had a live lead sitting in it for
+ten weeks because nobody wrote down a date. <b>That's the whole reason this business
+has one client.</b>
+</div>
+</section>
+
+<!-- ===================== 6 ===================== -->
+<section>
+<h2>6. The wall card</h2>
+<p class="h2sub">Tear this off. Tape it where you dial.</p>
+
+<div class="card" style="margin-bottom:14px">
+<h4>Before the dial</h4>
+<p><b>1.</b> Google Maps → Website button? None or free = dial. Real domain = skip.<br>
+<b>2.</b> Ring Test — call twice, write 2/2, 1/2 or 0/2.<br>
+<b>3.</b> Know the one specific thing that's broken before you speak.</p>
+</div>
+
+<div class="grid2">
+<div class="card"><h4>1 · Open</h4>
+<p>"I'll be straight with you, this is kind of a cold call. You can hang up on me.
+Gimme twenty seconds?"</p>
+<p><i>+ if they missed your test calls:</i> "I tried you twice this week, both went to
+voicemail. Can I tell you why I noticed?"</p></div>
+
+<div class="card"><h4>2 · Disqualify</h4>
+<p>"Have you ever had a website, or just never got around to it?"</p>
+<p>"Had one, it was useless" → <b>best lead</b><br>
+"Been meaning to" → <b>live</b><br>
+"Booked solid, don't need one" → <b>get off the phone</b></p></div>
+
+<div class="card"><h4>3 · Observe, then shut up</h4>
+<p>"Forty five-star reviews, and I went to click through and there was nowhere to go."</p>
+<p><i>or</i> "Your site's on a free Wix address — Wix put their name on your front door."</p>
+<p><i>or</i> "One of your listings says CLOSED."</p></div>
+
+<div class="card"><h4>4 · Dig — one question</h4>
+<p>Tree: "When everyone's on a job, what happens to the phone?"</p>
+<p>Septic: "How many tanks have you pumped over the years?"</p>
+<p>Gates: "How many estimates go out a month, and who chases them?"</p>
+<p><b>Always: "What are you paying per lead on Thumbtack?"</b></p></div>
+
+<div class="card"><h4>5 · The offer — one breath</h4>
+<p>"Four hundred to get set up. Then three forty-nine a month and we keep it running.
+First month's included. Cancel any time, site's yours either way."</p>
+<p><i>If they insist:</i> "$600, you own it, you're on your own after."</p></div>
+
+<div class="card"><h4>6 · Close the appointment</h4>
+<p>"Let me build you a real example. Takes a day, costs you nothing.
+<b>Thursday morning, or is Friday afternoon better?</b>"</p>
+<p>Then: best number? what work do you want more of? <b>Text in 5 min.</b></p></div>
+</div>
+
+<div class="stop" style="margin-top:16px">Yes → text the Stripe link before you hang up. Every row gets a next step and a next date. Log the dial even when nobody picks up.</div>
+
+<div class="callout">
+<b>The only number that matters this quarter:</b> forty dials a week between the two of
+you. Not leads found. Not tools built. Not plans written. <b>Dials.</b>
+</div>
+
+<p style="margin-top:20px;font-size:9pt;color:#7a7f87;border-top:1px solid #d8d5cf;padding-top:10px">
+Built for Main Street · Miles 310-606-9788 · hello@builtformainstreet.com<br>
+Use with <b>tracker/01_call_queue.csv</b>. Regenerate this PDF per <b>docs/manual/README.md</b>.</p>
+</section>
+
+</body></html>
