@@ -3,32 +3,41 @@
  Goal: a booked 10 minutes. Not a sale.
 ======================================================================
 
-BEFORE YOU DIAL
-  Google Maps -> Website button?  none or wixsite = dial. real = skip.
-  Call them twice, different times. Note 2/2, 1/2, 0/2.
-  Know the ONE broken thing before you speak.
+BEFORE YOU DIAL - collect THREE FACTS, not a pitch
+  1. Call them twice at different times. Note 2/2, 1/2, 0/2.
+  2. Open their Google Maps listing. Look for: duplicate listings,
+     "CLOSED", wrong hours, no Website button.
+  3. Click whatever site they have. Dead? Free Wix? Nothing?
+
+  You are not calling to sell a website. You are calling to report
+  three things that are costing them money today.
 
 ----------------------------------------------------------------------
-1. OPEN - lead with the finding, not with yourself
+1. OPEN - report evidence, don't pitch
 ----------------------------------------------------------------------
-  "Hey, is this [Name]? - Miles here, you don't know me.
+  "Hey, is this [Name]? - Miles here, you don't know me, and I'll be
+   out of your hair in thirty seconds.
 
-   I'll be quick, I know you're working. I looked your business up
-   this morning and there's something on your Google listing you'd
-   probably want to know about. Twenty seconds and then I'll let you
-   go - that alright?"
+   I called you twice yesterday, once in the morning and once around
+   three. Both times it went to voicemail. I'm not complaining, I
+   know you were on a job.
+
+   But that's actually what I do for a living, so I went and checked
+   a couple other things on your business and found two more. Want
+   me to just tell you what they are?"
+
+  IF THEY ANSWERED BOTH TIMES (2/2):
+  "...you picked up both times, which honestly puts you ahead of
+   most guys I call. So the phone's not your problem. But I checked
+   two other things and those weren't as clean. Want me to tell you?"
 
   WHY THIS WORKS
-   - It's about him, not about you. No cold-call apology.
-   - You're asking permission to TELL him something, not to pitch.
-   - "I know you're working" is true at 7am and shows you get trades.
-   - "Then I'll let you go" gives the exit without planting the
-     hang-up the way "you can hang up on me" does.
-   - Twenty seconds is a real promise. Keep it and he gives you five
-     minutes.
-
-  First 3 seconds: he answers gruffly, mid-job, saw running. Normal.
-  Slow down. Smile. Say his name once.
+   - It's EVIDENCE, not a claim. He can't say "not interested" to a
+     fact about his own phone.
+   - You're not selling yet. You're reporting. "Want me to tell you"
+     costs him nothing to say yes to.
+   - "That's what I do for a living" explains why a stranger checked.
+   - "I found two more" is a curiosity gap. Hard to hang up on.
 
 ----------------------------------------------------------------------
 2. DISQUALIFY
@@ -42,22 +51,28 @@ BEFORE YOU DIAL
                           Appreciate you picking up." HANG UP.
 
 ----------------------------------------------------------------------
-3. THE OBSERVATION -- then SHUT UP
+3. THE THREE FINDINGS - deliver as a list, then SHUT UP
 ----------------------------------------------------------------------
-  NO SITE:
-  "You've got forty five-star reviews and when I went to click
-   through and learn more, there was nowhere to go. You're crushing
-   it on Maps and invisible everywhere else. Did you know that?"
+  "Okay so - three things.
 
-  FREE WIX PAGE:
-  "Your site's on a free Wix address - the one with 'wixsite' in the
-   middle. Somebody put real work into that and Wix put their name
-   on your front door. Did you know that's what customers see?"
+   One, I called twice and both went to voicemail. Every one of
+   those is somebody who wanted a [tree taken down] and called the
+   next guy instead.
 
-  LISTING SAYS CLOSED:
-  "One of your two listings says CLOSED. People searching for you
-   are being told you went out of business. I'll tell you how to fix
-   it, takes ten minutes, I'm not charging you for that."
+   Two, your Google listing [says CLOSED / has two entries splitting
+   your reviews / has the wrong hours on it].
+
+   Three, when I clicked through to learn more about you there was
+   nowhere to go.
+
+   Any of that news to you?"
+
+  THEN STOP. Let him pick which one bothers him. THAT is what you
+  sell him - not what you planned to sell him.
+
+  NOTE: you are NOT promising him more customers. You're telling him
+  the ones he already earned are falling through. That's a plumbing
+  problem, and plumbing problems get fixed.
 
 ----------------------------------------------------------------------
 4. ONE QUESTION - write the answer down word for word
@@ -117,9 +132,12 @@ THE FIVE OBJECTIONS YOU'LL ACTUALLY HEAR
 ----------------------------------------------------------------------
 IF YOU FORGET EVERYTHING ELSE
 ----------------------------------------------------------------------
-  Lead with what you found, not with who you are. Say the price out
-  loud. Say you already built them something. Offer two times.
-  Then stop talking.
+  Lead with EVIDENCE, not an offer. Three facts beat one opinion.
+  Say the price out loud. Say you already built them something.
+  Offer two times. Then stop talking.
+
+  SELL THE LEAK, NOT THE WEBSITE. A website is a nice-to-have and
+  they already decided against it. A missed call is a repair.
 
   Call 6:30-8am and 4-6pm LOCAL. 70 dials/week.
   Log every dial. Every row gets a next step and a next date.
