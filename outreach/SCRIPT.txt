@@ -183,34 +183,36 @@ OPENER C - A DUPLICATE LISTING THAT SAYS CLOSED
 ========================================================================
 
   *** NEVER SAY A WEBSITE PRICE ON ITS OWN. ***
-  The second "six hundred for a website" leaves your mouth, you've
+  The second "five hundred for a website" leaves your mouth, you've
   made a one-time transaction in their head, and every monthly
   conversation after that is you arguing with your own number.
 
 SAY THIS IN ONE BREATH. DO NOT PAUSE IN THE MIDDLE.
 
-  "It's six hundred to get you set up - that's the site, your Google
-   listing cleaned up so you show up on the map, click-to-call so it
-   rings your cell, a tracking number so you can actually hear what
-   it's bringing in, all of it.
+  "It's five hundred to get you set up - that's the site, your
+   Google listing cleaned up so you show up on the map,
+   click-to-call so it rings your cell, a tracking number so you can
+   actually hear what it's bringing in, all of it.
 
-   Then it's a hundred forty-nine a month and I keep the whole thing
-   running. First month's included, so nothing else comes out until
-   day thirty.
+   Then it's ninety-nine a month and I keep the whole thing running.
+   First month's included, so nothing else comes out until day
+   thirty.
 
    You can cancel any time, and the site's yours either way.
    Sound fair?"
 
-  THE DEFAULT:  $600 + $149/mo   (first month included)
-  BIGGER JOB:   $800 + $149/mo   (multi-page, more services)
+  THE DEFAULT:  $500 + $99/mo    (first month included)
   IF THEY
-   INSIST:      $900 once, they own it, on their own after
+   INSIST:      $800 once, they own it, on their own after
                 (deliberately the worse deal - it exists to make
                  the first one look smart)
 
+  RAISE TRIGGER: at client #10, new clients pay $750 + $149/mo.
+                 First ten are grandfathered forever.
+
 IF THEY ASK TO JUST BUY IT OUTRIGHT:
 
-  "Yeah, I can do that - nine hundred, you own it, you're on your
+  "Yeah, I can do that - eight hundred, you own it, you're on your
    own after. Honestly most guys go the other way since it's cheaper
    to start and I actually keep it working. But either's fine with
    me, genuinely."
@@ -258,8 +260,8 @@ TEXT THEM INSIDE FIVE MINUTES:
 ------------------------------------------------------------------------
 "HOW MUCH?" (asked early, before you've shown anything)
 
-  "Six hundred to get going, a hundred forty-nine a month after
-   that, and the first month's included. But let me show you the
+  "Five hundred to get going, ninety-nine a month after that, and
+   the first month's included. But let me show you the
    actual thing first - then the number either makes sense or it
    doesn't. Thursday or Friday?"
 
@@ -270,7 +272,7 @@ TEXT THEM INSIDE FIVE MINUTES:
 "THAT MONTHLY'S STEEP."
 
   "What are you paying Thumbtack per lead right now? ...Okay - so
-   this is about two leads' worth a month. Except you own it, and it
+   this is about one and a half leads' worth a month. Except you own it, and it
    doesn't get sent to two other guys at the same time."
 
   WHY: This is why you asked the Thumbtack question. You're not
@@ -387,7 +389,7 @@ TEXT THEM INSIDE FIVE MINUTES:
 ------------------------------------------------------------------------
 "CAN YOU DO IT CHEAPER?"
 
-  "I can't really go under six - that's already pretty lean for
+  "I can't really go under five - that's already pretty lean for
    what's in it. What I CAN do is start you on the single-page
    version and add pages later as you need them. That work?"
 
@@ -506,9 +508,9 @@ WALK-IN (build the mockup FIRST - they get 15 calls a day and 0 visits)
   4 DIG    "When everyone's on a job, what happens to the phone?"
            "What are you paying per lead on Thumbtack?"
 
-  5 OFFER  "Six hundred to get set up. Then a hundred forty-nine a
-            month and I keep it running. First month's included.
-            Cancel any time, site's yours either way."
+  5 OFFER  "Five hundred to get set up. Then ninety-nine a month and
+            I keep it running. First month's included. Cancel any
+            time, site's yours either way."
 
   6 CLOSE  "Let me build you a real example. Takes a day, costs you
             nothing. Thursday morning, or is Friday better?"
