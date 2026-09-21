@@ -1,5 +1,20 @@
 # Printable manuals (PDF sources)
 
+## Built for Main Street (the master doc)
+
+`bfms_final.html` is the whole business in one 15-page PDF: the front-desk category,
+the $500 + $99 offer, why they buy, why you beat other callers, the call script, all
+40 leads, delivery, payment, legal, and the 30-day plan.
+
+```bash
+/opt/pw-browsers/chromium-1194/chrome-linux/chrome --headless --disable-gpu --no-sandbox \
+  --no-pdf-header-footer \
+  --print-to-pdf=output/Built_for_Main_Street.pdf \
+  docs/manual/bfms_final.html
+```
+
+Leads live in section 5 and in `tracker/THE_40.csv`. Change one, change both.
+
 ## The Script
 
 `the_script.html` is the print source for the call script — the ninety seconds before

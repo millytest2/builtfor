@@ -9,17 +9,26 @@ BEFORE YOU DIAL
   Know the ONE broken thing before you speak.
 
 ----------------------------------------------------------------------
-1. OPEN
+1. OPEN - lead with the finding, not with yourself
 ----------------------------------------------------------------------
-  "Hey, is this [Name]? I'll be straight with you, this is kind of a
-   cold call - you can hang up on me.
+  "Hey, is this [Name]? - Miles here, you don't know me.
 
-   Before you do though, I tried you twice this week and both times
-   it went to voicemail. Not giving you a hard time, you were
-   working. Can I tell you why I noticed? Twenty seconds."
+   I'll be quick, I know you're working. I looked your business up
+   this morning and there's something on your Google listing you'd
+   probably want to know about. Twenty seconds and then I'll let you
+   go - that alright?"
 
-  (If they answered both times: "...you picked up both times, which
-   already puts you ahead of most guys I call. Gimme twenty seconds?")
+  WHY THIS WORKS
+   - It's about him, not about you. No cold-call apology.
+   - You're asking permission to TELL him something, not to pitch.
+   - "I know you're working" is true at 7am and shows you get trades.
+   - "Then I'll let you go" gives the exit without planting the
+     hang-up the way "you can hang up on me" does.
+   - Twenty seconds is a real promise. Keep it and he gives you five
+     minutes.
+
+  First 3 seconds: he answers gruffly, mid-job, saw running. Normal.
+  Slow down. Smile. Say his name once.
 
 ----------------------------------------------------------------------
 2. DISQUALIFY
@@ -108,8 +117,9 @@ THE FIVE OBJECTIONS YOU'LL ACTUALLY HEAR
 ----------------------------------------------------------------------
 IF YOU FORGET EVERYTHING ELSE
 ----------------------------------------------------------------------
-  Say you're cold calling. Say the price out loud. Say you already
-  built them something. Offer two times. Then stop talking.
+  Lead with what you found, not with who you are. Say the price out
+  loud. Say you already built them something. Offer two times.
+  Then stop talking.
 
   Call 6:30-8am and 4-6pm LOCAL. 70 dials/week.
   Log every dial. Every row gets a next step and a next date.
