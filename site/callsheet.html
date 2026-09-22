@@ -181,6 +181,7 @@
              'name_known','name_reply','status','notes'];
   var STATUSES = ['new','called','booked','dead'];
   var leads = [], selId = null, filter = 'all', db = null, coll = null, ready = false;
+  var serverSeen = Object.create(null);   // every id the server has ever sent us
 
   var $ = function(id){ return document.getElementById(id); };
   function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g, function(c){
@@ -566,9 +567,14 @@
         var incoming = snap.docs.map(function(d){
           var o = Object.assign(blank(), d.data()); o.id = d.id; return o;
         });
-        // keep whatever is being typed right now
-        var localOnly = leads.filter(function(l){ return !incoming.some(function(i){ return i.id===l.id; }); });
-        leads = incoming.concat(localOnly);
+        var here = Object.create(null);
+        incoming.forEach(function(d){ serverSeen[d.id] = 1; here[d.id] = 1; });
+        // Keep only rows this tab created that the server hasn't confirmed yet.
+        // A row the server HAS sent before and is now missing was deleted
+        // elsewhere, so it must go rather than linger as a ghost.
+        var pending = leads.filter(function(l){ return !serverSeen[l.id] && !here[l.id]; });
+        leads = incoming.concat(pending);
+        if(selId && !leads.some(function(l){ return l.id===selId; })) selId = null;
         if(!selId && leads.length) selId = visible()[0] && visible()[0].id;
         ready = true; banner(''); render();
       }, function(){ banner('Storage dropped out. Export your list before closing.'); });
