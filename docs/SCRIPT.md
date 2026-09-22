@@ -11,6 +11,29 @@ cold. They agree to look at a page about themselves.
 
 ---
 
+## 0. The rule that decides whether you get four seconds or forty
+
+**Never open with the word website. Never open with Google.**
+
+Every shop on this list gets called about both most weeks. They have learned to
+say no inside four seconds, and they are right to. The moment you say "I build
+websites" you are the fourth one this month and the call is over.
+
+**Open with the thing nobody else is calling them about.** When a customer asks
+ChatGPT or Gemini who to hire, those answers get built from data almost no local
+business has. The people cold-calling about websites are not mentioning it,
+because they are not doing it.
+
+| Never say first | Say instead |
+|---|---|
+| "I build websites for local businesses" | "I asked ChatGPT about your business and it said it has no information about that business." |
+| "I can fix your Google listing" | "I looked you up the way a customer would and found something odd." |
+| "Do you have a website?" | "Has anyone ever built you a website, or just never got around to it?" (later, as the disqualifier) |
+
+The website and the listing are what you sell. They are not what you lead with.
+
+---
+
 ## 1. Which channel, by business
 
 | Situation | Channel | Why |
@@ -160,8 +183,8 @@ trip a spam filter. One ask: can I send it.
 > listing itself is missing hours, services and categories. That's most of why
 > you're not turning up.
 >
-> Costs $900 to fix and takes two weeks. After that it's $79 a month to host,
-> and that's the whole thing. No retainer, nothing to manage.
+> Costs $800 to fix in your case and takes two weeks. After that it's $79 a
+> month to host, and that's the whole thing. No retainer, nothing to manage.
 >
 > Worth ten minutes on the phone? Thursday or Friday?
 >
@@ -215,6 +238,19 @@ of it and shut up.
 > Your reviews are great. That part's already working. Everything else is just
 > blank."
 
+### Scope it out loud, before you name a number
+
+> "Two quick things so I price this right. Is your Google listing claimed, do
+> you know? And how many different services do you want people finding you for?"
+
+| What you hear | What you quote |
+|---|---|
+| Listing already claimed and filled in, one or two services | **$500** — site only |
+| Listing a mess or never claimed, handful of services | **$800** — the usual, quote this by default |
+| Lots of services, several towns, or more than one location | **$1,000** |
+
+Say the number once, plainly, and never apologise for it.
+
 ### The fix, plainly
 
 > "What I'd do is claim the listing and fill it out properly, then build you a
@@ -223,7 +259,7 @@ of it and shut up.
 
 ### The two numbers, then stop
 
-> "Nine hundred to do it, paid once. Then seventy-nine a month to host it, same
+> "Eight hundred to do it, paid once. Then seventy-nine a month to host it, same
 > as a phone line.
 >
 > The site and the listing are yours, in your name. If you ever want to leave
@@ -238,12 +274,13 @@ of it and shut up.
 | "Let me think about it" | "Sure. What's the part you want to think about?" Then answer that, and only that. |
 | "Let me talk to my wife/partner" | "Makes sense. What do you think they'll ask?" Then arm them with the answer. |
 | "That's more than I thought" | "I can do seven hundred if you get me the photos inside a week. That's the lever I've got." |
+| "Why is it eight and not five?" | "Five is the site on its own. Eight is the site plus your listing claimed and filled out properly, which in your case is most of the problem." |
 | "Can you do it without the monthly?" | "The site has to live somewhere, so the hosting is real either way. Seventy-nine is what it costs me to keep it up and keep the listing current." |
 | "What if it doesn't work?" | "Then in three months you have a website and a fixed listing for nine hundred, which is still cheaper than most. And you'll be able to see the check run again every month, so you'll know either way." |
 
 ### Close it on the call
 
-> "Easiest thing is I send you a link right now, you put the nine hundred down,
+> "Easiest thing is I send you a link right now, you put the eight hundred down,
 > and I start on it tomorrow. Want me to text it to you?"
 
 Never "I'll send over a proposal." Send the payment link while they are still
@@ -274,7 +311,9 @@ are four auto body shops on one block of Branford Street. That is one trip.
 
 | They say | You say |
 |---|---|
-| **"How much?"** | "Nine hundred to fix it, then seventy-nine a month to host it. But look at the page first, then the number makes sense or it doesn't. Thursday or Friday?" |
+| **"I get these calls every week"** | "I know, and most of them are about websites. I'm calling about something else. Did you know ChatGPT says it has no information about your business? That's the bit nobody's mentioning." |
+| **"How much?"** | "Depends what you've already got — somewhere between five and a thousand, and most shops it's eight hundred. Then seventy-nine a month to host it. But look at the page first, then the number makes sense or it doesn't. Thursday or Friday?" |
+| **"Why is it a range?"** | "Because the work isn't the same for everyone. If your listing's already sorted there's less to do. I'll tell you the number on the call and it won't move after that." |
 | **"What's the monthly for?"** | "Hosting and your domain, same as a phone line. It's not a retainer and you're not buying my time. Cancel whenever and I hand you the files." |
 | **"Is this AI stuff?"** | "No. I fix your Google listing and build you a website. The only reason I mentioned ChatGPT is that's where people have started looking." |
 | **"All my work is insurance / contractors"** | "Best kind of work there is and I'm not replacing it. But even people who get referred to you look you up first to check you're real, and right now there isn't much to find. Ten minutes Thursday?" |

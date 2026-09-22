@@ -17,7 +17,7 @@ AI assistants can both actually read them. $800 to build, then $149/mo.
 | Stage | Offer | Price |
 |---|---|---|
 | The door | **Visibility Check** | Free |
-| The product | **The fix** | **$900 one-time** |
+| The product | **The fix** | **$500 – $1,000 once**, most jobs $800 |
 | Keeping it up | **Keep it live** | **$79/mo hosting** |
 
 The monthly is hosting, not a retainer. Cancel any time and the files are
@@ -29,6 +29,11 @@ top three. Only 1.2% get named by ChatGPT. Being good at traditional local
 search no longer carries over, and more than half the businesses winning
 Google's map pack are absent from AI answers entirely.
 (SOCi 2026 Local Visibility Index, 349,000+ locations across 2,751 brands.)
+
+**Lead with the check, never the website.** Every prospect gets cold-called
+about websites and about Google most weeks and hangs up in four seconds. Nobody
+is calling them about whether an assistant can find them. That is the only part
+of this pitch that is not already background noise.
 
 **Out of scope, deliberately:** social media, blog posts, ads, logos, rebrands,
 ghostwriting, chatbots talking to customers, anything replacing a person on the
@@ -44,6 +49,7 @@ payroll. AI goes behind the desk, never in front of the customer.
 | Lead finder, no API key | `python -m src.leadfinder.osm_find --where "..."` |
 | Service brief, print source | `docs/manual/service_brief.html` |
 | Outreach playbook, call + email | `docs/SCRIPT.md` · print source `docs/manual/call_script.html` |
+| Delivery runbook | `docs/DELIVERY.md` · `python -m src.delivery.pack --client ...` |
 
 ## The rest of the toolkit
 

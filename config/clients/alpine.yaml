@@ -1,0 +1,39 @@
+business: Alpine Auto Body
+slug: alpine
+owner: Mike
+phone: (818) 767-6841
+email: ''
+address: 11250 Tuxford St
+city: Sun Valley
+state: CA
+zip: ''
+trade: auto body and collision repair
+tier: 800
+primary_category: Auto body shop
+extra_categories:
+- Auto dent removal service
+- Car repair and maintenance service
+services:
+- Collision repair
+- Dent and scratch removal
+- Paint matching and refinishing
+- Bumper repair
+- Insurance claim work
+towns:
+- Sun Valley
+- North Hollywood
+- Burbank
+- Pacoima
+years: '18'
+hours: ''
+what_they_want_more_of: cash jobs, not just insurance work
+what_makes_them_different: They do the paint match in house instead of sending it
+  out.
+review_count: '21'
+rating: '5.0'
+listing_claimed: 'no'
+check_google_position: page 2
+check_chatgpt: not named
+check_gemini: not named
+check_claude: not named
+check_name_reply: no information about that business

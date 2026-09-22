@@ -40,6 +40,17 @@ separately. It is what is inside the build.
 > comes up. Usually that means building the site and fixing the Google listing,
 > because that's what everything reads."
 
+## The positioning problem, and the fix
+
+Every business on the list gets cold-called about **websites** and about
+**Google** most weeks. They hang up in four seconds and they are right to.
+Nobody is calling them about whether an assistant can find them.
+
+**So the website and the listing are what you sell. They are never what you
+lead with.** Lead with the check. The AI finding is the only part of this pitch
+that is not already background noise to them, and it is the reason the call
+lasts longer than four seconds.
+
 ## Explicitly out of scope
 
 Social media. Blog posts. Ads. Logos and rebrands. Ghostwriting. Chatbots that
@@ -58,10 +69,21 @@ against people with more staff.
 | | Offer | Price |
 |---|---|---|
 | The door | **Visibility Check** | Free |
-| The product | **The fix** | **$900 one-time** |
+| The product | **The fix** | **$500 – $1,000 one-time** |
 | Keeping it up | **Keep it live** | **$79/mo hosting** |
 
-**The fix, $900, paid once.** Google listing claimed, verified and fully filled
+**Scoped on the call, quoted once, and it does not move after that.**
+
+| Price | When | What's in it |
+|---|---|---|
+| **$500** | Listing already claimed and filled in, or they want it left alone | Site only |
+| **$800** | Listing a mess or never claimed, handful of services | **Quote this by default.** Site + listing done properly |
+| **$1,000** | Lots of services, several towns, or more than one location | The above plus a page per service and per town, review replies |
+
+$700 on the usual job if photos arrive inside a week. That is the only discount
+and it buys the one thing that actually delays delivery.
+
+**The fix, paid once.** Google listing claimed, verified and fully filled
 out, website linked on it, consistent name address and phone everywhere. A fast
 mobile site with a real page per service and per town, details and FAQs marked
 up the way search engines and assistants read them, real job photos. Two weeks
@@ -107,12 +129,16 @@ dropping it.
 not put it anywhere. Charging for hosting is not a service commitment, it is
 passing on a cost you are already carrying.
 
-### Why $900, not $500
+### Why a range and not one number
 
-Top of the stated range. Identical work, 80% more revenue, and $500 reads as
-"cheap website" where $900 reads as a project. It also leaves a real discount
-lever: **$700 if they get you photos inside a week.** That trades margin for
-speed, which is the one thing that actually slows delivery.
+Because the work genuinely is not the same for everyone, and pretending it is
+means either underquoting the hard ones or overquoting the easy ones. Quoting a
+range and then scoping it out loud on the call is how tradespeople quote each
+other, and they respect it.
+
+**Default to $800.** It is the honest middle, it is what most of these jobs
+are, and $500 exists mainly so the range has a floor that makes $800 sound
+reasonable.
 
 ### What is deliberately NOT in the offer
 
