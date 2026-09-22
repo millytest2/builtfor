@@ -192,7 +192,74 @@ trip a spam filter. One ask: can I send it.
 
 ---
 
-## 5. Walk-in, for the 18 in LA
+## 5. The second call — where the money happens
+
+First contact books ten minutes. **This** is the call that closes. Have the
+report open. Send it 24 hours before so they have seen it.
+
+### Recap, thirty seconds
+
+> "So, the page I sent. Did you get a chance to look?"
+
+Either answer is fine. If no, walk them through it. If yes, ask what they made
+of it and shut up.
+
+### Walk the page, not your service
+
+> "Three things on there. One, your Google listing has no website on it, so
+> there's nowhere for anyone to go. Two, the listing itself is missing hours,
+> services and categories, so Google doesn't really know what you do. Three,
+> there's nothing online that connects [gates] to [Sun Valley] and your name, so
+> when ChatGPT gets asked, it's got nothing to go on.
+>
+> Your reviews are great. That part's already working. Everything else is just
+> blank."
+
+### The fix, plainly
+
+> "What I'd do is claim the listing and fill it out properly, then build you a
+> site that's actually readable, with a page for each thing you want more of.
+> Takes two weeks from when you send me photos of your work."
+
+### The two numbers, then stop
+
+> "Nine hundred to do it, paid once. Then seventy-nine a month to host it, same
+> as a phone line.
+>
+> The site and the listing are yours, in your name. If you ever want to leave
+> you take the files with you."
+
+**Then say nothing.** Whoever talks first loses the next $200. Let it sit.
+
+### If they hesitate
+
+| They say | You say |
+|---|---|
+| "Let me think about it" | "Sure. What's the part you want to think about?" Then answer that, and only that. |
+| "Let me talk to my wife/partner" | "Makes sense. What do you think they'll ask?" Then arm them with the answer. |
+| "That's more than I thought" | "I can do seven hundred if you get me the photos inside a week. That's the lever I've got." |
+| "Can you do it without the monthly?" | "The site has to live somewhere, so the hosting is real either way. Seventy-nine is what it costs me to keep it up and keep the listing current." |
+| "What if it doesn't work?" | "Then in three months you have a website and a fixed listing for nine hundred, which is still cheaper than most. And you'll be able to see the check run again every month, so you'll know either way." |
+
+### Close it on the call
+
+> "Easiest thing is I send you a link right now, you put the nine hundred down,
+> and I start on it tomorrow. Want me to text it to you?"
+
+Never "I'll send over a proposal." Send the payment link while they are still
+on the phone. A yes that has to survive until evening usually does not.
+
+### Immediately after
+
+Text the payment link. Then one text listing exactly what you need from them:
+
+> Sent the link. When you get a sec, three things and I can start: 10-15 photos
+> of your best work, your business hours, and the list of services you want to
+> show. Text them over whenever.
+
+---
+
+## 6. Walk-in, for the 18 in LA
 
 > "Are you the owner? I'm Miles, I'm local, over in [area]. I looked you up
 > before I came by and found something odd. Can I show you on my phone real
@@ -203,7 +270,7 @@ are four auto body shops on one block of Branford Street. That is one trip.
 
 ---
 
-## 6. Objections. Every one goes back to the booking.
+## 7. Objections. Every one goes back to the booking.
 
 | They say | You say |
 |---|---|
@@ -222,7 +289,7 @@ are four auto body shops on one block of Branford Street. That is one trip.
 
 ---
 
-## 7. When to reach them
+## 8. When to reach them
 
 | Trade | When |
 |---|---|
@@ -236,7 +303,7 @@ straight down the list.
 
 ---
 
-## 8. What you are actually doing
+## 9. What you are actually doing
 
 Reading somebody one true sentence about their own business that they have never
 heard, then asking if they knew.
