@@ -344,3 +344,72 @@ like progress. This file is strategy, which is also not revenue. The next real
 milestone is unchanged: one stranger, who is not a friend of Daniel's, handing
 over money. Everything needed for that already exists. Go get it, then come back
 and automate the Leak Report.
+
+---
+
+## 13. Critique of this document
+
+Three things above are wrong or thin. Correcting them here rather than leaving
+them to be discovered on a live call.
+
+### The Leak Report method was partly unethical
+
+Section 6 said to submit a form and call "as a plausible customer." Two problems.
+Posing as a customer through a channel they pay per lead on, Google Local
+Services or Angi, charges them real money, often $75 to $150, to receive a fake
+inquiry. That is not a demonstration, it is taking money out of the pocket of
+someone you are about to ask to trust you. And doing it at volume is deceptive
+regardless of cost.
+
+**The corrected method, which proves the same thing:**
+
+- Call the **published** number only, never a paid ad number.
+- Use their **own website form**, never a paid lead channel.
+- Leave a real voicemail as yourself, with your real name and number, asking
+  about a real job you would actually pay for.
+- Disclose who you are the moment anyone responds.
+- Time the callback.
+
+A contractor who never calls back a named human who left a number has the exact
+problem you are selling against, and now you can say so with clean hands. The
+proof is identical. The method is defensible when they ask how you got it, and
+they will ask.
+
+### "AI receptionist" is a crowded category in 2026
+
+Every GoHighLevel reseller sells missed-call text-back. The technology is not the
+moat and never was. What is defensible: you are local and will drive out, you did
+the work before asking for anything, and you can show a specific document about
+their specific business. Sell the document and the person, never the stack.
+
+### Churn is underestimated
+
+Contractors cut discretionary spend the month work slows. At 15 clients, 4%
+monthly churn means replacing roughly seven a year just to stand still. The
+monthly recovered-revenue page is the whole defense, so it has to show a real
+number and go out on time every month, even when the number is bad. Especially
+when it is bad.
+
+---
+
+## 14. The service category
+
+Get this right, because it decides who you are compared against and therefore
+what you can charge.
+
+| | |
+|---|---|
+| **Category internally** | Lead response and recovery for local trades |
+| **Category to the customer** | "We answer the calls you miss" |
+| **Never say** | AI, automation, SEO, funnel, growth, digital transformation |
+| **Compared against** | An answering service, a receptionist, a missed job |
+| **Not compared against** | Web designers, marketing agencies, software |
+
+The last two rows are the point of the exercise. A website priced at $500 is
+compared against Wix and your nephew. Answering the phone is compared against a
+part-time receptionist at $2,800 a month, and against the $6,400 job that went to
+somebody else. Same work, same tooling, different shelf. The shelf is worth
+about 4x.
+
+The landing page in `site/` is built on this positioning: the hero is a document
+about their business, not a feature list, and the free Leak Report is the door.
