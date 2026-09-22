@@ -1,5 +1,10 @@
 # HANDOFF — read this first
 
+> **Pricing and targeting in this file are superseded by
+> [`STRATEGY_10K.md`](STRATEGY_10K.md).** Sections 3 (offer) and 4 (targeting)
+> reflect the old $500 model. The context, call script, objections, channel
+> ranking and the section 11 critique all still stand. Read both.
+
 Written so this project can be picked up cold, with no access to the conversation
 that produced it. If you're a fresh Claude session: read this file top to bottom
 before doing anything.

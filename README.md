@@ -1,6 +1,7 @@
 # Built for Main Street
 
-> **New here? Read [`docs/HANDOFF.md`](docs/HANDOFF.md) first** — it carries the full
+> **New here? Read [`docs/STRATEGY_10K.md`](docs/STRATEGY_10K.md) for the current
+> offer and targeting, then [`docs/HANDOFF.md`](docs/HANDOFF.md)** — it carries the full
 > context, current state, blockers, leads, script, and next actions.
 
 **Get Found. Get Called. Get Paid.**
