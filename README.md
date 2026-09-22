@@ -17,8 +17,12 @@ AI assistants can both actually read them. $800 to build, then $149/mo.
 | Stage | Offer | Price |
 |---|---|---|
 | The door | **Visibility Check** | Free |
-| The product | **Get found** | $800 + $149/mo |
-| Later, on evidence | **Get more out of it** | +$199/mo |
+| The product | **The fix** | **$900 one-time** |
+| Keeping it up | **Keep it live** | **$79/mo hosting** |
+
+The monthly is hosting, not a retainer. Cancel any time and the files are
+theirs. You have to host the site anyway, so charging for it passes on a cost
+you already carry rather than committing you to manage anything.
 
 **Why it works in 2026:** 35.9% of local business locations turn up in Google's
 top three. Only 1.2% get named by ChatGPT. Being good at traditional local
@@ -36,10 +40,10 @@ payroll. AI goes behind the desk, never in front of the customer.
 |---|---|
 | Landing page | `site/index.html` (published) |
 | Call sheet, the prospecting tool | `site/callsheet.html` (published) |
-| 86 researched prospects | `output/prospects_all.csv` |
+| **Top 50 prospects, ranked** | `output/top50_prospects.csv` (full pool of 86 in `prospects_all.csv`) |
 | Lead finder, no API key | `python -m src.leadfinder.osm_find --where "..."` |
 | Service brief, print source | `docs/manual/service_brief.html` |
-| Cold call script | `docs/SCRIPT.md` · print source `docs/manual/call_script.html` |
+| Outreach playbook, call + email | `docs/SCRIPT.md` · print source `docs/manual/call_script.html` |
 
 ## The rest of the toolkit
 

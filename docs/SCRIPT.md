@@ -1,26 +1,44 @@
-# THE SCRIPT
+# OUTBOUND PLAYBOOK
 
-For the 86 prospects in `output/prospects_all.csv`.
+For the 50 in `output/top50_prospects.csv`.
 
-**The one rule: never call before you have run the check.** The whole script is
-built on reading them something true and specific about their own business. With
-no findings you are just another guy selling websites, and you will sound like
-it. Twenty minutes of checking buys you a call worth having.
+**The one rule: never reach out before you have run the check.** Every word below
+is you reading them something true about their own business. Without findings
+you are a stranger selling websites and you will sound like one.
 
-**The goal of the call is ten booked minutes, not a sale.** Nobody buys on a cold
-call. They agree to look at a page about themselves.
+**The goal of first contact is ten booked minutes, not a sale.** Nobody buys
+cold. They agree to look at a page about themselves.
 
 ---
 
-## 1. The call
+## 1. Which channel, by business
+
+| Situation | Channel | Why |
+|---|---|---|
+| **Drivable** (18 of the 50 are in LA) | **Walk in** | Highest conversion by far. They get fifteen calls a day and roughly zero visits. |
+| **Has a website** with a contact form | **Email / form first**, call in 2 days | You can attach the proof. Their form is also a live test of whether anyone reads it. |
+| **No website, phone only** (45 of 50) | **Call**, then voicemail + text | No address published. There is no email to find. |
+| **Out of state** (32 of 50) | **Call in their time zone**, then text | Or email if you have an address. Never dial Indiana at 5am Pacific. |
+| **Front desk answers** (auto body, flooring, countertop showrooms) | **Email to reach the owner** | The counter person will not put a cold caller through. Email jumps them. |
+
+**Email's real job is delivering the report.** The call books the look, the email
+carries the proof. Use both on the same prospect, in that order, for anyone
+worth more than one attempt.
+
+Most of these 50 publish no email at all. That is not a research gap, it is what
+this market looks like: a shop that never built a website never set up an inbox.
+Phone is the channel. Collect the email on the call.
+
+---
+
+## 2. The call
 
 ### Open, twenty seconds
 
 > "Hey, is this [Name]? I'll be straight with you, this is a cold call. Give me
 > twenty seconds and then tell me to get lost if you want."
 
-Wait. Let them say fine. The honesty buys the next thirty seconds, and it stops
-you sounding like a script.
+Wait for them to say fine. The honesty buys the next thirty seconds.
 
 ### The observation. This is the whole call.
 
@@ -30,16 +48,13 @@ you sounding like a script.
 > Google had you on page two. ChatGPT named four other shops and never mentioned
 > you.
 >
-> Then I asked ChatGPT about you by name, [Business Name] in [Town]. It said it
+> Then I asked ChatGPT about you by name, [Business] in [Town]. It said it
 > doesn't have any information about that business.
 >
 > You've got [21] five-star reviews, so people clearly like the work. Did you
 > know it looked like that?"
 
-**Then stop talking.** Do not fill the silence. Do not explain. The question is
-the whole move and the next voice should be theirs.
-
-Bad news, bad news, then the compliment, then the question. The compliment
+**Then stop talking.** Bad news, bad news, compliment, question. The compliment
 before the question is what keeps it from landing as an insult about something
 they are proud of.
 
@@ -50,30 +65,19 @@ they are proud of.
 
 | They say | What it means |
 |---|---|
-| "Had one, it was useless" | **Best lead you will get.** They already paid and got let down. |
-| "Been meaning to" | **Live lead.** Inertia, not refusal. |
-| "My nephew is on it" | Live. It has stalled at 80%. It always has. |
-| "Don't need one, I'm booked solid" | Thank them and hang up. Do not spend twenty minutes. |
+| "Had one, it was useless" | **Best lead you will get.** Paid once, got let down. |
+| "Been meaning to" | Live lead. Inertia, not refusal. |
+| "My nephew is on it" | Live. It stalled at 80%. It always does. |
+| "Don't need one, booked solid" | Thank them and hang up. |
 
 ### One discovery question. Write the answer down.
 
 > "Right now, when somebody who has never met you needs [a gate / a bumper fixed
 > / a couch redone], how do they usually find you?"
 
-That answer is the whole rest of the relationship. If it is "word of mouth" or
-"honestly, they don't," you are in.
+If the answer is "word of mouth" or "honestly, they don't," you are in.
 
-By trade, if you want it sharper:
-
-| Trade | Ask |
-|---|---|
-| Auto body | "How much of your work is insurance versus people calling you direct?" |
-| Welding, metal fab | "Is most of your work contractors calling, or homeowners?" |
-| Upholstery, cabinetry | "Are you mostly working through designers and contractors, or direct?" |
-| Flooring, countertops | "Does anybody walk into the showroom who didn't already know about you?" |
-| Tree, pool, appliance | "When somebody new needs you, where are they finding you?" |
-
-### The close. Two specific times, never "when works for you."
+### The close. Two specific times.
 
 > "Here's all I'd suggest. I already wrote up what I found on one page. Let me
 > send it over, then call you back and walk you through it in ten minutes.
@@ -81,26 +85,21 @@ By trade, if you want it sharper:
 >
 > You around Thursday morning, or is Friday afternoon better?"
 
-Why it works: the meeting is to see **their own thing**, it is **ten minutes**,
-and you offered **two times** instead of an open question.
-
 ### Lock it
 
 > "Perfect, Thursday at nine. What's the best email to send the page to? And
 > real quick so I'm not guessing, what kind of work do you actually want more
 > of?"
 
-Text them inside five minutes:
-
-> Miles here, good talking to you. Thursday 9am, I'll have that page ready.
-> 310-606-9788
+Text inside five minutes: *"Miles here, good talking to you. Thursday 9am, I'll
+have that page ready. 310-606-9788"*
 
 ---
 
-## 2. Voicemail, then text. This is most of them.
+## 3. Voicemail, then text. This is most of them.
 
-Most will not answer. The voicemail is not the pitch, it is permission for the
-text. The text does the work.
+The voicemail is not the pitch. It is permission for the text. **The text does
+the work.**
 
 **Voicemail:**
 
@@ -116,65 +115,135 @@ text. The text does the work.
 > reviews so that seemed off to me. I wrote up one page on it, want me to send
 > it over? — 310-606-9788
 
-Specific, surprising, and it asks a yes/no that costs them nothing. This text
-will out-convert the call.
+Specific, surprising, and a yes/no that costs them nothing.
 
 ---
 
-## 3. Walk-in, for the 52 in LA
+## 4. The email sequence
 
-Better than calling, and almost nobody does it. They get fifteen calls a day and
-roughly zero visits.
+Three emails, days 1, 3 and 7. Then stop.
+
+### Email 1 — the finding
+
+**Subject:** `I asked ChatGPT about [Business Name]`
+
+> [Name],
+>
+> I looked you up the way a customer would. Typed "best [trade] in [town]" into
+> Google and into ChatGPT.
+>
+> Google had you on page two. ChatGPT named four other shops and didn't mention
+> you. Then I asked it about [Business] by name and it said it has no
+> information about that business.
+>
+> You've got [21] five-star reviews, so that seemed off to me.
+>
+> I wrote up one page showing what I found and why it's happening. Want me to
+> send it over? Free either way, and it's yours whether or not we ever work
+> together.
+>
+> Miles
+> Built for Main Street · 310-606-9788
+
+About a hundred words. No attachment on the first one, no link, nothing to
+trip a spam filter. One ask: can I send it.
+
+### Email 2 — day 3, the report
+
+**Subject:** `re: I asked ChatGPT about [Business Name]`
+
+> [Name] — here's the page I mentioned.
+>
+> [link]
+>
+> Short version: there's no website linked on your Google listing, and the
+> listing itself is missing hours, services and categories. That's most of why
+> you're not turning up.
+>
+> Costs $900 to fix and takes two weeks. After that it's $79 a month to host,
+> and that's the whole thing. No retainer, nothing to manage.
+>
+> Worth ten minutes on the phone? Thursday or Friday?
+>
+> Miles · 310-606-9788
+
+### Email 3 — day 7, the breakup
+
+**Subject:** `closing the file on this`
+
+> [Name], I'll stop bothering you.
+>
+> If it ever moves up your list, the page is still at [link] and my number's
+> below. No hard feelings either way.
+>
+> Good luck with the shop.
+>
+> Miles · 310-606-9788
+
+**The breakup pulls more replies than the first two combined.** Send it.
+
+### Email rules
+
+- Plain text. No logo, no signature block, no HTML. It must look like a person.
+- Subject line lowercase after the first word. Capitalised subjects read as ads.
+- Never attach a PDF to a cold email. Link it or offer to send it.
+- One ask per email. Never two.
+- Reply in the same thread so it threads for them.
+
+---
+
+## 5. Walk-in, for the 18 in LA
 
 > "Are you the owner? I'm Miles, I'm local, over in [area]. I looked you up
 > before I came by and found something odd. Can I show you on my phone real
 > quick? Takes a minute."
 
-Then turn the phone around and show them the check. Same flow from there.
-Sun Valley has thirteen prospects and four auto body shops on one block of
-Branford Street. That is one trip.
+Turn the phone around and show the check. Sun Valley has a cluster and there
+are four auto body shops on one block of Branford Street. That is one trip.
 
 ---
 
-## 4. Objections. Every one goes back to the booking.
+## 6. Objections. Every one goes back to the booking.
 
 | They say | You say |
 |---|---|
-| **"How much?"** | "Eight hundred to build it, then a hundred forty-nine a month. But look at the page first. Then the number makes sense or it doesn't. Thursday or Friday?" |
+| **"How much?"** | "Nine hundred to fix it, then seventy-nine a month to host it. But look at the page first, then the number makes sense or it doesn't. Thursday or Friday?" |
+| **"What's the monthly for?"** | "Hosting and your domain, same as a phone line. It's not a retainer and you're not buying my time. Cancel whenever and I hand you the files." |
 | **"Is this AI stuff?"** | "No. I fix your Google listing and build you a website. The only reason I mentioned ChatGPT is that's where people have started looking." |
-| **"I get all my work from insurance / contractors"** | "That's the best kind of work there is and I'm not trying to replace it. But even the people who get referred to you look you up first to check you're real, and right now there isn't much to find. Ten minutes Thursday?" |
+| **"All my work is insurance / contractors"** | "Best kind of work there is and I'm not replacing it. But even people who get referred to you look you up first to check you're real, and right now there isn't much to find. Ten minutes Thursday?" |
 | **"Word of mouth is all I need"** | Same answer. Referrals still Google you before they call. |
-| **"I'm booked solid"** | "Good problem. Then it's about better jobs, not more of them. Being easy to find lets you be pickier. Worth ten minutes?" |
-| **"I'm too busy right now"** | "Totally, that's why I'm asking about Thursday and not now. Morning or afternoon?" |
-| **"My nephew's building one"** | "Ha, half of them start that way. Usually stalls around eighty percent because he's got his own job. No shade. Let me show you the page anyway, might save him some work." |
-| **"Just send me some info"** | "I'll do better than info, I already made the page about your business specifically. What's your email? And Thursday or Friday to walk through it?" |
+| **"I'm booked solid"** | "Good problem. Then it's about better jobs, not more. Being easy to find lets you be pickier. Worth ten minutes?" |
+| **"Too busy right now"** | "Totally, that's why I'm asking about Thursday and not now. Morning or afternoon?" |
+| **"My nephew's building one"** | "Half of them start that way. Usually stalls around eighty percent because he's got his own job. No shade. Let me show you the page anyway, might save him some work." |
+| **"Just send me info"** | "I'll do better than info, I already made the page about your business specifically. What's your email? And Thursday or Friday to walk through it?" |
 | **"I don't do computers"** | "Good, that's the point. You don't have to. I handle it and you never log into anything." |
+| **"Can you just do it cheaper?"** | "I can do seven hundred if you get me the photos inside a week. That's the lever I've got." |
 | **"Who is this again?"** | "Miles, Built for Main Street. I'm in [area]. I get local businesses found online. That's the whole thing." |
 
 ---
 
-## 5. When to call
+## 7. When to reach them
 
-| Trade | When they answer |
+| Trade | When |
 |---|---|
-| Welding, mobile welding, tree, pool, masonry | **6:30-8am** and **4-6pm.** Midday they are on a job. |
-| Auto body, upholstery, cabinetry, flooring, countertops, glass | **Business hours.** They have a counter and somebody is at it. |
-| National (Fort Wayne, Toledo, Lubbock, Knoxville, Chattanooga, Tulsa, Wichita) | Their local time, not yours. Start Pacific and work east, or you will be calling Indiana at 5am. |
+| Welding, mobile welding, tree, pool, masonry | **6:30-8am** and **4-6pm.** Midday they're on a job. |
+| Auto body, upholstery, cabinetry, flooring, countertops | **Business hours.** They have a counter and somebody's at it. Email reaches the owner, calls reach the counter. |
+| Out of state | **Their** local time. Start Pacific, work east. |
 
-Twenty of the 86 are auto body and eighteen are welding or metal fabrication.
-Those two groups want opposite call times, so sort the list before you start
-dialling rather than working straight down it.
+Fifteen of the 50 are auto body and eleven are welding or metal fabrication.
+Those two want opposite timing, so sort before you start rather than working
+straight down the list.
 
 ---
 
-## 6. What you are actually doing on this call
+## 8. What you are actually doing
 
-Not selling. Reading somebody one true sentence about their own business that
-they have never heard, and then asking if they knew.
+Reading somebody one true sentence about their own business that they have never
+heard, then asking if they knew.
 
 The sentence is "I asked ChatGPT about your business and it said it has no
-information about that business." It is not about rankings or competitors or
-marketing. It says they do not exist as far as the thing answering is concerned,
-and every owner understands that instantly.
+information about that business." Not about rankings, not about marketing. It
+says they do not exist as far as the thing answering is concerned, and every
+owner understands that instantly.
 
 You cannot say it unless you checked. So check first.

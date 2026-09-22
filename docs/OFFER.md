@@ -57,45 +57,72 @@ against people with more staff.
 
 | | Offer | Price |
 |---|---|---|
-| Free | **Visibility Check** | $0 |
-| The product | **Get found** | $800 + $149/mo |
-| Later, on evidence only | **Get more out of it** | +$199/mo |
+| The door | **Visibility Check** | Free |
+| The product | **The fix** | **$900 one-time** |
+| Keeping it up | **Keep it live** | **$79/mo hosting** |
 
-**Included in the build.** Listing claimed or created and fully filled out,
-website linked on it, consistent name address and phone everywhere. A fast
+**The fix, $900, paid once.** Google listing claimed, verified and fully filled
+out, website linked on it, consistent name address and phone everywhere. A fast
 mobile site with a real page per service and per town, details and FAQs marked
 up the way search engines and assistants read them, real job photos. Two weeks
-from the day photos arrive.
+from the day photos arrive. The site and the listing are theirs, in their name,
+permanently.
 
-**The monthly.** Hosting and upkeep, listing kept current, new jobs added, and
-the Visibility Check re-run every month and sent over. That re-run is the
-retention mechanism. Cancelling means giving up a number they can watch move.
+**Keep it live, $79/mo.** Hosting, domain, certificate, and the listing kept
+current so it does not go stale. Cancel any time and they get the files.
 
-**The upsell: "Get more out of it," +$199/mo.** Only after they are getting
-found, and it has two halves that share one principle.
+**Say the monthly is hosting, because it is.** It is not a retainer, they are
+not buying your time, and there is no campaign to report on. Frame it like a
+phone line. That framing is what makes it easy to sell and easy to keep.
 
-1. **Convert what comes in.** Forms that arrived and never became jobs, quotes
-   that went quiet. Follow-up, not answering.
-2. **Take the paperwork off the owner's evening.** The few AI shortcuts that
-   fit how they already work: a voice memo on the drive home turned into a
-   written estimate, finished-job photos turned into listing posts, their own
-   past jobs made searchable so pricing questions get answered from history.
+### On not wanting to manage monthly
 
-The principle under both: **AI goes behind the desk, never in front of the
-customer.** No chatbot talks to the people calling them. Nothing replaces a
-person on the payroll. The point is more work coming in, not fewer staff
-needed. That line separates us from every AI-receptionist reseller calling the
-same shops, so say it out loud.
+Fair, and the offer above respects it. But look at what dropping the monthly
+entirely would cost:
 
-Never pitched on day one, never invented for them. If nothing worth automating
-turns up when you look, say so and do not sell it.
+| Model | To reach $10k/mo |
+|---|---|
+| $900, no recurring | **11 sales every month, forever.** ~715 dials/mo, 166/week. |
+| $900 + $79/mo hosting | 4 builds/mo builds a floor underneath you |
 
-## Why $800 and not $500
+At four builds a month with 3% churn, $79/mo compounds quietly:
 
-Top of the stated range. Identical work, 60% more revenue, and $500 reads as
-"cheap website" where $800 reads as a project. It also leaves room to come down
-to $600 to close on the spot, which is a lever you do not have if you open at
-$500.
+| Month | Clients | Passive/mo | That month |
+|---|---|---|---|
+| 6 | 22 | $1,759 | $5,359 |
+| 12 | 41 | $3,225 | $6,825 |
+| 24 | 69 | $5,462 | $9,062 |
+
+**Without it, month 25 looks exactly like month 1.** That is the treadmill your
+own handoff warned about.
+
+The resolution is not to do more work each month. It is to make the $79 genuinely
+low-touch: templated sites on one host, listing updates batched monthly across
+all clients at once, the Visibility Check re-run by script. Target under ten
+minutes per client per month. At 40 clients that is under seven hours a month
+for roughly $3,200. If it ever grows past that, hand it to a VA rather than
+dropping it.
+
+**And you have to host it anyway.** You cannot build somebody a website and then
+not put it anywhere. Charging for hosting is not a service commitment, it is
+passing on a cost you are already carrying.
+
+### Why $900, not $500
+
+Top of the stated range. Identical work, 80% more revenue, and $500 reads as
+"cheap website" where $900 reads as a project. It also leaves a real discount
+lever: **$700 if they get you photos inside a week.** That trades margin for
+speed, which is the one thing that actually slows delivery.
+
+### What is deliberately NOT in the offer
+
+No retainer. No marketing services. No follow-up-the-leads tier. No social, ads,
+blogs or logos. No chatbot in front of customers, and nothing that replaces a
+person on the payroll.
+
+If a client later wants inquiry follow-up or AI help with paperwork, that is a
+separate conversation you can take or decline. It is not on the price list and
+it is never pitched.
 
 ## The check asks two different questions
 
@@ -123,30 +150,6 @@ The Visibility Check is the whole pricing argument. Show him he is on page two
 and absent from every assistant answer first, and the website stops being a
 brochure and becomes the fix for a problem he just watched happen. Free check
 first, website second, every time.
-
-## What $800 + $149 means for the numbers
-
-Honest version, 4 builds a month at 3% monthly churn, assuming about a third
-eventually take the upsell:
-
-| Month | Clients | Monthly recurring | Total that month |
-|---|---|---|---|
-| 3 | 13 | $2,745 | $5,945 |
-| 6 | 23 | $5,052 | $8,252 |
-| 9 | 33 | $7,156 | $10,356 |
-| 12 | 42 | $9,077 | $12,277 |
-
-$10k/mo lands around month nine at four builds a month. Six builds a month
-brings it to month four. On recurring alone it is 46 clients.
-
-This is now a volume business, which the $1,500 version was not. Four builds a
-month means roughly 55 to 75 dials a week. That trade is defensible on purpose:
-more conversations is exactly the rep Miles is trying to build, and it is only
-survivable because delivery is AI-assisted and near-zero-touch per client.
-
-The thing to watch is support load, not sales. At 40+ clients, 30 minutes each
-per month is 20 hours. Delivery has to stay templated and automated or the
-model eats itself at exactly the point it starts working.
 
 ## The real reason this business exists
 
