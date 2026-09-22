@@ -8,13 +8,36 @@ channel ranking and the call mechanics, which still hold.
 
 ## What we sell
 
-**We make sure a local business shows up when somebody asks, whether they are
-asking Google or asking an AI assistant. Then we show the owner where AI saves
-them hours. We do not sell anything that replaces a person.**
+**We build websites for local businesses. The difference is ours are built so
+Google and the AI assistants can actually find you, and we set up your Google
+listing to match.**
 
-That last sentence is a real constraint, not marketing. It rules out AI
-receptionists, chatbots on their website, and anything that answers a customer
-pretending to be staff. The product augments the owner.
+That is the whole business in two sentences. It is a website company. Not an
+SEO agency, not an online agency, not an AI company.
+
+## Why "website company" and not something cleverer
+
+"Website" is the only word in this space a non-technical owner already
+understands and already believes they need. It is a thing, not a service. They
+know the shape of the purchase: you pay somebody, you get a website, there is a
+monthly for hosting. Nobody has to be educated.
+
+Everything else we do is invisible work: listing claimed, structured data,
+service pages, consistent citations. Invisible work is miserable to sell, hard
+to price, and impossible to explain at a kitchen table. So it stops being a
+separate service and becomes what is *inside* the website.
+
+One product. One price. Nothing to pick from.
+
+## The one condition
+
+Leading with "want a website?" cold puts you back at $500, because that is what
+a website costs at Wix and from their nephew.
+
+The Visibility Check is what protects the price. Show them they are absent from
+the AI answers first, and the website stops being a brochure and becomes the fix
+for a problem they just watched happen. Free check first, website second, every
+time. The order is not a nicety, it is the entire pricing argument.
 
 ## Why this works in 2026
 
@@ -24,28 +47,50 @@ Three observations, all verifiable in about a minute on Google Maps:
    Google Business Profile.
 2. Some have **no profile at all**, or one that was auto-generated and never
    claimed.
-3. The owners are not tech people and know it. They have heard "you should use
-   AI" a hundred times and nobody has shown them anything useful.
+3. The owners are not tech people and know it.
 
-Layered on top: people increasingly ask assistants for local recommendations
-instead of scrolling a results page. Those answers are assembled from Google
-Business Profile data, reviews, structured data on the website, and consistent
-listings elsewhere. A business missing all of that is not ranked low. It is
-absent.
+Layered on top: people increasingly ask assistants for local recommendations.
+Those answers are assembled from Google Business Profile data, reviews,
+structured data on the website, and consistent listings. A business missing all
+of that is not ranked low. It is absent.
 
-That is the wedge, and it is new enough that nobody has pitched them on it yet.
+## The market is narrower than "local businesses"
 
-## The ladder
+It is **local businesses that will never do this themselves.**
 
-| Rung | Offer | Price | Notes |
-|---|---|---|---|
-| 0 | **Visibility Check** | Free | Ask four assistants about their trade in their town, pull up their listing, send one page. |
-| 1 | **Get Found** | $1,500 + $199/mo | Listing built out, website people and machines can read, kept current. Two weeks. |
-| 2 | **Work Smarter** | +$300/mo | Two or three AI helpers around how they already work. Never sold first. |
+A sixteen-year-old starting something will use self-serve software. A
+fifty-eight-year-old gate installer with 21 five-star reviews, no website, and a
+Google listing he has never logged into will not. He will not make an account,
+learn a dashboard, or do it on a Sunday.
 
-**The order is the pitch.** Nobody gets sold AI before they can be found. Say
-that out loud on every call. It is the thing that separates you from everyone
-else calling them this year.
+When Owner.com and others ship this as $99/mo self-serve, they pull the DIY
+crowd out of the funnel for free. That makes the remaining segment sharper, not
+smaller. It is large, aging, holds real money, and is being actively ignored by
+everyone building self-serve tools.
+
+This also settles the pricing question. You cannot charge $1,500 for work
+software does for $99. You charge it because a person drove out, sat at the
+table, and handled it. **Price the person, not the task.**
+
+## The offer
+
+| | Offer | Price |
+|---|---|---|
+| Free | **Visibility Check** | $0 |
+| The product | **A website that gets you found** | $1,500 + $199/mo |
+
+Included in the build, never sold separately:
+
+- The site: fast, mobile, tap to call, a real page per service and per town,
+  details and FAQs marked up the way assistants read them, real job photos
+- The listing: claimed or created, fully filled out, website linked, consistent
+  name address and phone everywhere
+- Monthly: hosting, upkeep, new jobs and photos added, a short note on whether
+  they are turning up yet
+
+Later, for existing clients only, and never raised first: a couple of
+time-saving setups around the owner's paperwork. Not in the lead offer, not on
+the price list, not part of the pitch.
 
 ## The Visibility Check
 
