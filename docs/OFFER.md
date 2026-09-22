@@ -16,20 +16,37 @@ links to is invisible, and a listing with no site attached is a dead end.
 
 ## The category
 
-A website company that fixes the Google listing as part of the build. Not an
-SEO agency, not an online agency, not an AI company, not a content or social
-agency.
+**We get local businesses found. It starts with a website.**
 
-"Website" is the only word here a non-technical owner already understands and
-already believes they need. Everything else we do is invisible work: listing
-claimed, structured data, service and town pages, consistent citations.
-Invisible work is miserable to sell and impossible to explain at a kitchen
-table, so it is not sold separately. It is what is inside the website.
+That is the category and the sequence, in that order, and the order matters.
+"A website service" was ruled out for good reason: it is a commodity that
+competes with Wix and somebody's nephew. What gets sold here is the outcome,
+being found. The website is the first deliverable, not the identity.
+
+Also not: an SEO agency, a Google optimization agency, an online agency, an AI
+company, a content or social agency, an answering service.
+
+The practical reason the website leads anyway: "website" is the only word here
+a non-technical owner already understands and already believes they need, and
+it is a thing rather than an open-ended service, so the shape of the purchase
+is familiar. Everything else is invisible work: listing claimed, structured
+data, service and town pages, consistent citations. Invisible work is miserable
+to sell and impossible to explain at a kitchen table, so it is never priced
+separately. It is what is inside the build.
+
+**On a call, never open with "we build websites."** Say what they get:
+
+> "I make sure that when somebody looks for what you do, you're the one who
+> comes up. Usually that means building the site and fixing the Google listing,
+> because that's what everything reads."
 
 ## Explicitly out of scope
 
 Social media. Blog posts. Ads. Logos and rebrands. Ghostwriting. Chatbots that
-talk to customers. Anything that replaces a person who works there.
+talk to customers. Anything that replaces a person on the payroll.
+
+Note the distinction that matters: AI **behind** the desk is in scope and is
+half the upsell. AI **in front of** the customer never is.
 
 Say this out loud on the page and on the call. Naming what you do not do is a
 faster trust builder than another claim about what you do, and it keeps you out
@@ -42,7 +59,7 @@ against people with more staff.
 |---|---|---|
 | Free | **Visibility Check** | $0 |
 | The product | **Get found** | $800 + $149/mo |
-| Later, on evidence only | **Get them to book** | +$199/mo |
+| Later, on evidence only | **Get more out of it** | +$199/mo |
 
 **Included in the build.** Listing claimed or created and fully filled out,
 website linked on it, consistent name address and phone everywhere. A fast
@@ -54,9 +71,24 @@ from the day photos arrive.
 the Visibility Check re-run every month and sent over. That re-run is the
 retention mechanism. Cancelling means giving up a number they can watch move.
 
-**The upsell.** Only after they are getting found. Forms that came in and never
-turned into jobs, quotes that went quiet. Follow-up, not answering. Never
-pitched on day one and never invented for them.
+**The upsell: "Get more out of it," +$199/mo.** Only after they are getting
+found, and it has two halves that share one principle.
+
+1. **Convert what comes in.** Forms that arrived and never became jobs, quotes
+   that went quiet. Follow-up, not answering.
+2. **Take the paperwork off the owner's evening.** The few AI shortcuts that
+   fit how they already work: a voice memo on the drive home turned into a
+   written estimate, finished-job photos turned into listing posts, their own
+   past jobs made searchable so pricing questions get answered from history.
+
+The principle under both: **AI goes behind the desk, never in front of the
+customer.** No chatbot talks to the people calling them. Nothing replaces a
+person on the payroll. The point is more work coming in, not fewer staff
+needed. That line separates us from every AI-receptionist reseller calling the
+same shops, so say it out loud.
+
+Never pitched on day one, never invented for them. If nothing worth automating
+turns up when you look, say so and do not sell it.
 
 ## Why $800 and not $500
 
@@ -64,6 +96,23 @@ Top of the stated range. Identical work, 60% more revenue, and $500 reads as
 "cheap website" where $800 reads as a project. It also leaves room to come down
 to $600 to close on the spot, which is a lever you do not have if you open at
 $500.
+
+## The check asks two different questions
+
+Both matter, and the second lands hardest.
+
+**The shopping question**, the way a stranger comparing options would ask:
+*"Who installs automatic driveway gates in Sun Valley?"* Missing here loses
+customers who have never heard of them.
+
+**The name question**, the way somebody who already has their card would ask:
+*"What can you tell me about Valley Gate & Iron in Sun Valley?"* An assistant
+replying "I don't have information about that business" is the most
+uncomfortable sentence an owner can read about their own shop. It is not about
+rankings or competitors. It says the business does not exist as far as the
+thing answering is concerned, and every owner gets it instantly.
+
+Run both. Put both on the page.
 
 ## The one condition that protects the price
 

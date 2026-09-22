@@ -69,6 +69,7 @@ scored CSV for a spreadsheet.
 | No website | +30 | Nothing to find, and the core of the offer |
 | Google listing unclaimed | +25 | Never set up, easiest possible win |
 | Named by no assistant | +20 | The gap you are selling |
+| Draws a blank when asked by name | +15 | They do not exist to the assistant at all |
 | Named by some but not all | +8 | Partial, weaker pitch |
 | Outside the top three on Google | +15 | Losing the search too |
 | 10 to 49 reviews | +10 | Established and still hungry |
@@ -81,7 +82,23 @@ business with 150 five-star reviews and no website has had money and been
 pitched a dozen times. They did not do it. That is a revealed preference, not a
 gap.
 
-## 3. Seeded leads
+## 3. The check asks two questions
+
+Both go in the widget, and the second is the one that closes.
+
+**Shopping question:** *"Who are the best [trade] in [town]?"* Missing means
+losing strangers who are comparing.
+
+**Name question:** *"What can you tell me about [business] in [town]?"* Record
+the reply word for word. "I don't have information about that business" is the
+most uncomfortable sentence an owner can read about their own shop, and it is
+the line you read back to them on the call. It is not about rankings or
+competitors. It says they do not exist as far as the thing answering is
+concerned.
+
+Drawing a blank on the name question adds 15 to the score on its own.
+
+## 4. Seeded leads
 
 Five real San Fernando Valley iron and gate shops are already in the call sheet,
 found through public web research. **Every one is marked NOT VERIFIED.** Names,
@@ -92,7 +109,30 @@ number, and check whether a website exists before you dial.
 They are there as a starting point for the first afternoon, not as a vetted
 list.
 
-## 4. The order of work
+## 5. About emails
+
+Asked for phone numbers and emails. Here is the honest result of looking.
+
+**These businesses do not publish email addresses.** Searched the seeded iron
+and gate shops across directories, review sites and business profiles: phone
+numbers everywhere, emails nowhere. That is not a gap in the research, it is
+what this market looks like. A one-truck operation that never built a website
+also never set up a business inbox, and the owner's personal address is not
+listed anywhere public.
+
+So for this segment:
+
+| Channel | Reality |
+|---|---|
+| **Phone** | The channel. Trades answer 6:30-8am and 4-6pm local. Midday they are on a job. |
+| **Walk-in** | Second best. They get fifteen calls a day and roughly zero visits. |
+| **Email** | Only available for businesses that already have a website with a contact form, which is the "bad website" lead type. Use it as a follow-up after a call, never as the opener. |
+
+The finder does pull an email when OpenStreetMap has one tagged, and the call
+sheet has a field for it, so when you do collect one on a call it has a home.
+Do not build a plan around emails you do not have.
+
+## 6. The order of work
 
 1. Run the finder over one town you can drive to.
 2. Import into the call sheet.

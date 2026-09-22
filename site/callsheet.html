@@ -177,7 +177,8 @@
 <script>
 (function(){
   var COL = ['business','trade','phone','city','street','website','email','maps','osm',
-             'gbp_claimed','reviews','rating','google_position','chatgpt','gemini','claude','status','notes'];
+             'gbp_claimed','reviews','rating','google_position','chatgpt','gemini','claude',
+             'name_known','name_reply','status','notes'];
   var STATUSES = ['new','called','booked','dead'];
   var leads = [], selId = null, filter = 'all', db = null, coll = null, ready = false;
 
@@ -199,6 +200,7 @@
     var asked = ['chatgpt','gemini','claude'].filter(function(k){ return l[k]; }).length;
     if(asked && named === 0) s += 20;                         // invisible to assistants
     else if(asked && named < asked) s += 8;
+    if(l.name_known === 'no') s += 15;                        // asked by name, drew a blank
     var pos = parseInt(l.google_position,10);
     if(pos && pos > 3) s += 15;                               // outside the map pack
     var rev = parseInt(l.reviews,10);
@@ -209,7 +211,7 @@
     if(rat >= 4.5) s += 5;                                    // good at the work
     return Math.max(0, Math.min(100, s));
   }
-  function checked(l){ return !!(l.gbp_claimed || l.chatgpt || l.gemini || l.claude || l.google_position); }
+  function checked(l){ return !!(l.gbp_claimed || l.chatgpt || l.gemini || l.claude || l.google_position || l.name_known); }
   function blank(){
     var o = {}; COL.forEach(function(c){ o[c]=''; }); o.status='new'; return o;
   }
@@ -288,10 +290,14 @@
     }
     var q = (l.trade||'') + ' in ' + (l.city||'');
     var ask = 'Who are the best ' + (l.trade||'contractors') + ' in ' + (l.city||'my area') + '?';
+    var askName = 'What can you tell me about ' + (l.business||'this business')
+                + (l.city ? ' in ' + l.city : '') + '?';
     var mapsUrl = l.maps || ('https://www.google.com/maps/search/'+encodeURIComponent((l.business||'')+' '+(l.city||'')));
     var googleUrl = 'https://www.google.com/search?q='+encodeURIComponent(q);
     var gptUrl = 'https://chatgpt.com/?q='+encodeURIComponent(ask);
     var claudeUrl = 'https://claude.ai/new?q='+encodeURIComponent(ask);
+    var gptName = 'https://chatgpt.com/?q='+encodeURIComponent(askName);
+    var claudeName = 'https://claude.ai/new?q='+encodeURIComponent(askName);
 
     var sc = score(l);
     var named = ['chatgpt','gemini','claude'].filter(function(k){ return l[k]==='yes'; }).length;
@@ -303,6 +309,7 @@
       + (l.website?'':'No website. ')
       + (l.gbp_claimed==='no'?'Listing never claimed. ':'')
       + (asked&&!named?'Not named by any assistant. ':'')
+      + (l.name_known==='no'?'Draws a blank when asked by name. ':'')
       + 'Lead with what you found, not with the offer.</small></div>';
     else verdict = '<div class="verdict cold">Low priority<small>'
       + (named?'Assistants already name them. ':'')
@@ -331,19 +338,35 @@
         + '<div><label for="f-rat">Rating</label><input id="f-rat" data-k="rating" type="number" step="0.1" min="0" max="5" placeholder="4.9" value="'+esc(l.rating)+'"></div>'
         + '</div></div>'
 
-      + '<div class="sec"><div class="sec-t">Step 2 · Ask the assistants</div>'
-        + '<div class="q-box">Ask each one: <b>'+esc(ask)+'</b></div>'
+      + '<div class="sec"><div class="sec-t">Step 2 · Ask the shopping question</div>'
+        + '<div class="q-box">The way a stranger comparing options would ask:<br><b>'+esc(ask)+'</b></div>'
         + '<div class="links" style="margin-bottom:11px">'
-        + '<button class="btn sm ghost" id="p-copy">Copy the question</button>'
+        + '<button class="btn sm ghost" data-copy="ask">Copy</button>'
         + '<a class="btn sm ghost" href="'+esc(gptUrl)+'" target="_blank" rel="noopener">ChatGPT</a>'
         + '<a class="btn sm ghost" href="'+esc(claudeUrl)+'" target="_blank" rel="noopener">Claude</a>'
         + '<a class="btn sm ghost" href="https://gemini.google.com/app" target="_blank" rel="noopener">Gemini</a>'
         + '</div>'
         + '<div class="ask">'+seg(l,'chatgpt','ChatGPT')+seg(l,'gemini','Gemini')+seg(l,'claude','Claude')+'</div>'
+        + '</div>'
+
+      + '<div class="sec"><div class="sec-t">Step 3 · Ask about them by name</div>'
+        + '<div class="q-box">The way somebody holding their card would ask:<br><b>'+esc(askName)+'</b></div>'
+        + '<div class="links" style="margin-bottom:11px">'
+        + '<button class="btn sm ghost" data-copy="askName">Copy</button>'
+        + '<a class="btn sm ghost" href="'+esc(gptName)+'" target="_blank" rel="noopener">ChatGPT</a>'
+        + '<a class="btn sm ghost" href="'+esc(claudeName)+'" target="_blank" rel="noopener">Claude</a>'
+        + '</div>'
+        + '<div class="ask"><div class="ask-row"><span>Knows them</span>'
+          + '<div class="seg" data-key="name_known">'
+          + '<button data-v="no" class="'+(l.name_known==='no'?'on':'')+'">Drew a blank</button>'
+          + '<button data-v="yes" class="'+(l.name_known==='yes'?'on yes':'')+'">Knew them</button>'
+          + '</div></div></div>'
+        + '<div style="margin-top:10px"><label for="f-reply">What it said, word for word</label>'
+        + '<textarea id="f-reply" data-k="name_reply" style="min-height:52px" placeholder="&quot;I don\'t have information about that business.&quot; — this is the line you read back to them.">'+esc(l.name_reply)+'</textarea></div>'
         + verdict
         + '</div>'
 
-      + '<div class="sec"><div class="sec-t">Step 3 · Work it</div>'
+      + '<div class="sec"><div class="sec-t">Step 4 · Work it</div>'
         + '<div class="links" style="margin-bottom:11px">'
         + (l.phone?'<a class="btn sm" href="tel:'+esc(l.phone.replace(/[^0-9+]/g,''))+'">Call '+esc(l.phone)+'</a>':'<span class="mono" style="color:var(--ink-3)">No phone on file</span>')
         + (l.email?'<a class="btn sm ghost" href="mailto:'+esc(l.email)+'">Email</a>':'')
@@ -371,7 +394,7 @@
       el.addEventListener(ev, function(){
         l[el.dataset.k] = el.value;
         clearTimeout(el._t);
-        el._t = setTimeout(function(){ save(l); if(['website','reviews','rating','google_position','gbp_claimed'].indexOf(el.dataset.k)>=0) render(); }, 420);
+        el._t = setTimeout(function(){ save(l); if(['website','reviews','rating','google_position','gbp_claimed','name_known'].indexOf(el.dataset.k)>=0) render(); }, 420);
       });
     });
     $('panel').querySelectorAll('.seg').forEach(function(sg){
@@ -389,9 +412,12 @@
     $('p-del').addEventListener('click', function(){
       if(confirm('Delete '+(l.business||'this lead')+'? This cannot be undone.')) removeLead(l.id);
     });
-    $('p-copy').addEventListener('click', function(){
-      navigator.clipboard.writeText(ask).then(function(){ toast('Question copied'); },
-        function(){ toast('Copy failed, select it by hand'); });
+    $('panel').querySelectorAll('[data-copy]').forEach(function(b){
+      b.addEventListener('click', function(){
+        var txt = b.dataset.copy === 'askName' ? askName : ask;
+        navigator.clipboard.writeText(txt).then(function(){ toast('Copied'); },
+          function(){ toast('Copy failed, select it by hand'); });
+      });
     });
   }
 
