@@ -1,116 +1,126 @@
-# Prospecting — how this list was built, and what verification cost
+# Prospecting — the four industries, and what verification cost
 
-## The short version
+## The list
 
-We checked every business by name. **Most of them had a website.**
+**43 businesses across 4 industries. Every one searched by name and confirmed to have
+no website of its own. Every one a single location.**
 
-Of the 50 businesses on the previous call sheet, **13 survived** a real website check.
-Thirty-seven had a domain we simply had not found: `amadomarbleandgranite.com`,
-`decadesflooring.net`, `idnflooring.net`, `graniteshop.biz`, `cedgetops.com`,
-`knoxvillecarpet.com`, `knoxtileinstallation.com`, `arrowfence.org`,
-`losangelescustomgates.com`, `united-iron-works.com`, `benitezwroughtiron.com`,
-`tlcfencellc.com`, `northridgepoolservice.com`, `tulsapoolboys.com`,
-`aquatrolinc.net`, `desertwestpoolservice.com`, `gregspoolservice.com`,
-`swimlubbock.com`, `snyderstreeservices.com`, `smokymountaintree.com`,
-`whitestree.com`, `bestvalleytrees.com`, `alsupholstery.com`,
-`vannuysupholstery.com`, `dametalfabrication.com`, `ironcraftmasters.com`,
-`laserbend.com`, `libertyweldinglubbock.com` and others.
+| Industry | Count | Why it fits the offer |
+|---|---|---|
+| Tree & landscape | 14 | Emergency and planned work, 100% consumer search, $500-5,000 tickets |
+| Upholstery, furniture & cabinetry | 12 | Rare trade, people search it by name, low competition, high margin |
+| Welding, gates & ornamental iron | 10 | Homeowner-driven: gates, fences, railings, mobile repair |
+| Concrete & masonry | 7 | Homeowner-driven, high ticket, photo-led buying decision |
 
-We then verified another 40 businesses from the reserve pool and kept the ones that
-passed. **Final list: 37 businesses, every one searched by name and confirmed to have
-no website of their own.**
+It is 43, not 50. Section **"Why not 50"** below says why, and what it would take.
 
-## What went wrong the first time
+## How the four industries were chosen
 
-The original list came from search-result summaries. When a search for a business
-returned only Yelp, Yellow Pages and BBB, we recorded "no own website found."
+The filter was **does the buyer find them by searching?** That is the whole offer. If
+work arrives through a relationship, a referral network or a contract, a website does
+not change the business and the pitch is a lie.
 
-That is a **hint about search results**, not a fact about the business. A small
-business with a real site can easily be outranked on its own name by the directories,
-especially a site with no SEO — which is exactly the kind of business we were looking
-for. The signal was inverted: the businesses most likely to have a weak-but-real site
-were the ones most likely to look site-less in a search summary.
+**Kept:** trades where a homeowner with a problem opens a phone and types or asks.
+A dead tree, a couch that needs recovering, a sagging gate, a cracked driveway. Nobody
+has a tree guy on retainer.
 
-Compounding it: Google Maps often does not surface a website link that the Google
-Business Profile does show. Two different surfaces, two different answers.
+**Cut, and why:**
 
-## What "verified" means on this list
+- **Auto body (20 verified businesses).** Work comes from insurance DRP programs, tow
+  trucks and dealerships. "I get all my work from State Farm" is a true objection with
+  no answer.
+- **Industrial welding and machine shops (8 verified: Motion Welding, L&S Sheet Metal,
+  Bell Welding, Custom Sheet & Metal Fabricators, LADO Spot, Delta Tech, Kuton, Albert
+  Iron).** These were on the previous sheet and are all genuinely site-less. But the
+  buyer is a purchasing agent or a GC with an RFQ and an existing vendor, not a
+  searcher. Mobile welding and ornamental iron stayed; aerospace-certified fab shops
+  did not.
+- **Pool service (2 verified).** Good fit in theory, but the trade is saturated with
+  marketed operators — 6 of the 8 we checked had real sites, and every replacement
+  did too.
+- **Auto glass, radiator repair, flooring (3 verified).** Fine businesses, wrong
+  shape: one-off orphans that do not make an industry you can build a script around.
 
-For each of the 37, we ran a search of the form `"Business Name" City ST website` and
-read the full result set, not just the top link. A business stays on the list only if:
+Cutting these dropped 33 verified leads. That is the cost of focus and it is the
+right trade: a script, a proof asset and a set of objections that work for one trade
+beat a list twice as long that needs four different pitches.
 
-- No own domain appears anywhere in the results, and
-- No competitor-authored page or directory reveals one, and
-- Any "website" field in a directory listing resolves to nothing, a directory
-  microsite, or a domain belonging to someone else.
+## What "verified" means
 
-Three sub-categories are marked in the notes because they sell differently:
+For each business: a search of the form `"Business Name" City ST website`, reading the
+full result set. It stays only if no own domain appears anywhere — not in the results,
+not behind a directory's "Visit Website" button, not on a competitor-authored page.
 
-| Kind | Count | What they actually have | Why it sells |
+Four sub-categories are flagged in the notes because they sell differently:
+
+| Kind | Count | What they have | The opening line |
 |---|---|---|---|
-| Nothing anywhere | 31 | Yelp, BBB, Yellow Pages listings only | The plain pitch |
-| Directory microsite | 2 | `*.localsearch.com` rented page | They think they have a site. They are renting one they cannot control or move. |
-| Wrong link | 2 | Listing points at someone else's domain | Special Touch Upholstery's listing sends clicks to an Irish company. Padilla's Masonry sends them to a competitor. Fastest yes on the sheet. |
-| Facebook / Instagram only | 2 | A social page and nothing else | Assistants rarely cite a Facebook page as a business's home. |
+| Nothing anywhere | 33 | Yelp, BBB, Yellow Pages listings only | The plain pitch |
+| Social only | 4 | A Facebook or Instagram page | "An assistant won't cite a Facebook page as your home" |
+| Rented microsite | 1 | A `*.localsearch.com` page they don't own | "You're renting that. You can't move it or change it." |
+| Broken or empty | 3 | A link to the wrong company, or a parked domain | Fastest yes on the sheet |
 
-## What "verified" still does not mean
+The broken ones are worth calling first:
+- **Special Touch Upholstery** (Knoxville) — listing points to `specialtouchinteriors.ie`,
+  an Irish company. Every click goes to a stranger.
+- **Padilla's Masonry** (Arleta) — listing points to `frankscompletemasonry.com`,
+  a competitor.
+- **Peter's Tree Trimming** (Lubbock) — owns `peterstreetrimming.com` and it says
+  "site will be available soon." They already decided they need one and paid for the name.
+
+## What verified still does not mean
 
 - **Phone numbers are not confirmed.** They come from directory listings. Dial and
   listen for the business name.
 - **We have not opened their Google Business Profile.** Do it before you call. It is
-  link 1 in the call sheet, and it is the one surface that can still prove us wrong.
+  link 1 in the call sheet and the one surface that can still prove us wrong.
 - **We have not asked the assistants yet.** ChatGPT, Gemini and Claude are the second
-  half of the pitch and they are per-call work, not research we can batch.
+  half of the pitch and that is per-call work, not research we can batch.
 
-## The group floors
+## Why not 50
 
-You asked for five or more per trade group. Four groups meet it. One does not:
+Roughly **one in three** businesses that look site-less in a search actually are. The
+rest own a domain that the directories outrank. Getting to 43 took about 120
+verification searches across eight metros. Getting to 50 needs roughly 25 more, and
+the yield falls as you go, because the obvious candidates in each metro get used up.
 
-| Group | Count |
+The trades are not equally hard:
+
+| Industry | Roughly how many checks per keeper |
 |---|---|
-| Welding & metal fab | 15 |
-| Tree & landscape | 8 |
-| Upholstery, furniture & cabinetry | 5 |
-| Concrete, masonry & flooring | 5 |
-| Pool & shop services | 4 |
+| Upholstery & furniture | 2 |
+| Tree & landscape | 2-3 |
+| Welding, gates & iron | 2-3 |
+| Concrete & masonry | 5+ |
 
-Pool and shop services sits at four because verification killed six of the eight
-pool companies and every replacement we checked (Integrity Pool Service in Tulsa,
-Valley Mobile Auto Glass in Van Nuys) turned out to have a real site. Pool service
-is a well-marketed trade. We are not padding it with a name we have not checked —
-that is the mistake this whole pass exists to correct.
+Concrete and masonry is the laggard and it is structural: that trade buys leads from
+Angi, HomeAdvisor, Thumbtack and Houzz, and the lead-gen companies push everyone into
+having a site. Wichita, Fort Wayne, Chattanooga and Tulsa masonry were all checked and
+all came back mostly marketed.
 
-## What this tells us about the market
+**The last 7 are not worth chasing before the first call.** 43 leads at a 5% close is
+two sales, which is the first month. Dial them, learn which of the four industries
+actually converts, then refill that one instead of all four.
 
-The "local business with no website" is **rarer than the pitch assumes.** Our hit
-rate on unverified hints was about 30%. Plan around that:
+## To refill the list
 
-1. **Do not build a funnel on "no website."** There are not enough of them to reach
-   $10k/mo on that qualification alone. Thirty-seven verified leads is roughly
-   two to four sales, not a pipeline.
-2. **The bigger, verifiable market is the bad site.** Of the 37 we disqualified,
-   many have a site that is one page, has no structured data, no service pages, no
-   GBP alignment, and is invisible to an assistant. That business already believes
-   in having a website — they have paid for one — which makes them a *shorter* sale,
-   not a longer one. "You have a site and it still isn't getting you found" is a
-   stronger opener than "you don't have a site."
-3. **Qualify on the AI answer, not the website.** The one check that separates a
-   prospect from a non-prospect is: ask ChatGPT, Gemini and Claude who to hire for
-   their trade in their city, then ask about them by name. That check does not care
-   whether they have a website. It is per-business work, which is the real
-   bottleneck, and it is the thing the call sheet is built to record.
+The recipe, so this does not need to be rebuilt from scratch:
 
-## Trades that were excluded and why
+1. Pick a metro of 200k-700k people that is not on the current sheet. Toledo, Wichita,
+   Fort Wayne, Knoxville, Lubbock, Tulsa and Chattanooga are used. Try Dayton, Erie,
+   Rockford, Shreveport, Augusta, Youngstown, Mobile, Evansville.
+2. Search `<trade> <metro> Yelp` and take the business names, not the sponsored results.
+3. For each name, search `"Business Name" City ST website` and read the whole result set.
+4. Keep it only if there is no own domain, it has one address, and you have a dialable
+   phone number. A lead you cannot call is not a lead.
+5. Skip any name that shows two locations or reads like a franchise.
 
-- **Auto body (20 businesses).** Work comes from insurance DRP programs, tow trucks
-  and dealerships, not consumer search. "I get all my work from State Farm" is a true
-  objection with no answer.
-- **Garage door repair, appliance repair.** Checked informally and skipped: these
-  are saturated lead-gen categories where essentially every operator has a site.
+Upholstery is the highest-yield trade. Start there when you need volume fast.
 
 ## Email
 
-These businesses do not publish email addresses. Across all 37, exactly two surfaced
-one: JADD Concrete (`Anna.jaddconcrete@gmail.com`) and North Hollywood Auto
-Upholstery (`nohau991@gmail.com`). This is a phone market. The email sequence in
-`SCRIPT.md` is for the follow-up after a call connects, not for cold opening.
+These businesses do not publish email addresses. Across all 43, exactly three surfaced
+one: JADD Concrete (`Anna.jaddconcrete@gmail.com`), North Hollywood Auto Upholstery
+(`nohau991@gmail.com`) and Cortez Tree & Yard Service (`corteztreeservice0@gmail.com`).
+This is a phone market. The email sequence in `SCRIPT.md` is for the follow-up after a
+call connects, not for cold opening.
