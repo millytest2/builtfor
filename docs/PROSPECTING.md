@@ -1,231 +1,116 @@
-# PROSPECTING — finding people to call
+# Prospecting — how this list was built, and what verification cost
 
-Two tools and one rule. The rule: **never dial a number you have not seen on
-the business's own Google listing.** Scraped and searched data goes stale, and
-calling the wrong shop burns the one thing you cannot rebuild.
+## The short version
 
----
+We checked every business by name. **Most of them had a website.**
 
-## 1. The finder
+Of the 50 businesses on the previous call sheet, **13 survived** a real website check.
+Thirty-seven had a domain we simply had not found: `amadomarbleandgranite.com`,
+`decadesflooring.net`, `idnflooring.net`, `graniteshop.biz`, `cedgetops.com`,
+`knoxvillecarpet.com`, `knoxtileinstallation.com`, `arrowfence.org`,
+`losangelescustomgates.com`, `united-iron-works.com`, `benitezwroughtiron.com`,
+`tlcfencellc.com`, `northridgepoolservice.com`, `tulsapoolboys.com`,
+`aquatrolinc.net`, `desertwestpoolservice.com`, `gregspoolservice.com`,
+`swimlubbock.com`, `snyderstreeservices.com`, `smokymountaintree.com`,
+`whitestree.com`, `bestvalleytrees.com`, `alsupholstery.com`,
+`vannuysupholstery.com`, `dametalfabrication.com`, `ironcraftmasters.com`,
+`laserbend.com`, `libertyweldinglubbock.com` and others.
 
-`src/leadfinder/osm_find.py` pulls local trade businesses from OpenStreetMap.
-No API key, no billing, no Google Places quota. It uses two free public
-endpoints: Nominatim to turn a place name into a bounding box, Overpass to
-query businesses inside it.
+We then verified another 40 businesses from the reserve pool and kept the ones that
+passed. **Final list: 37 businesses, every one searched by name and confirmed to have
+no website of their own.**
 
-```bash
-# everything drivable in the valley, default trades
-python -m src.leadfinder.osm_find --where "San Fernando Valley, Los Angeles, CA"
+## What went wrong the first time
 
-# one town, one trade
-python -m src.leadfinder.osm_find --where "Sun Valley, Los Angeles, CA" --trades metal,fence
+The original list came from search-result summaries. When a search for a business
+returned only Yelp, Yellow Pages and BBB, we recorded "no own website found."
 
-# also return businesses that already HAVE a site (often the better lead:
-# they already paid for one and got let down, so intent is proven)
-python -m src.leadfinder.osm_find --where "Pacoima, CA" --include-with-website
+That is a **hint about search results**, not a fact about the business. A small
+business with a real site can easily be outranked on its own name by the directories,
+especially a site with no SEO — which is exactly the kind of business we were looking
+for. The signal was inverted: the businesses most likely to have a weak-but-real site
+were the ones most likely to look site-less in a search summary.
 
-# a box you drew yourself: south,west,north,east
-python -m src.leadfinder.osm_find --bbox 34.15,-118.45,34.30,-118.25
-```
+Compounding it: Google Maps often does not surface a website link that the Google
+Business Profile does show. Two different surfaces, two different answers.
 
-Output lands in `output/prospects_<area>.csv` with businesses that have a phone,
-sorted so the ones with no website come first.
+## What "verified" means on this list
 
-**Why OpenStreetMap works for this.** OSM tags `phone` and `website` as separate
-fields, so "has a phone, has no website" is a query rather than a guess. That is
-the exact filter, available free, which the dead Google Places key was never
-needed for.
+For each of the 37, we ran a search of the form `"Business Name" City ST website` and
+read the full result set, not just the top link. A business stays on the list only if:
 
-**What it will not do.** OSM is volunteer-mapped and thinner than Google,
-especially for one-truck operations. A missing `website` tag is not proof there
-is no website. Treat every row as a lead to verify, never as a vetted prospect.
-Data © OpenStreetMap contributors, ODbL.
+- No own domain appears anywhere in the results, and
+- No competitor-authored page or directory reveals one, and
+- Any "website" field in a directory listing resolves to nothing, a directory
+  microsite, or a domain belonging to someone else.
 
-Available trades: metal, fence, carpenter, electric, plumb, hvac, roof, paint,
-stone, glass, landscape, pool, floor, builder, auto, studio.
+Three sub-categories are marked in the notes because they sell differently:
 
-## 2. The call sheet
+| Kind | Count | What they actually have | Why it sells |
+|---|---|---|---|
+| Nothing anywhere | 31 | Yelp, BBB, Yellow Pages listings only | The plain pitch |
+| Directory microsite | 2 | `*.localsearch.com` rented page | They think they have a site. They are renting one they cannot control or move. |
+| Wrong link | 2 | Listing points at someone else's domain | Special Touch Upholstery's listing sends clicks to an Irish company. Padilla's Masonry sends them to a competitor. Fastest yes on the sheet. |
+| Facebook / Instagram only | 2 | A social page and nothing else | Assistants rarely cite a Facebook page as a business's home. |
 
-The widget where the work actually happens. Import the CSV, then for each lead
-it walks the Visibility Check and records the answer:
+## What "verified" still does not mean
 
-- **Step 1** links straight to their Google Maps listing and to the search a
-  customer would run. You record whether the listing is claimed, where they
-  land in results, review count and rating.
-- **Step 2** gives you the exact question to ask, a copy button, and direct
-  links into ChatGPT and Claude with it pre-filled. You record named or not
-  named for each assistant.
-- **Step 3** is a tap-to-call button, a status, and notes.
+- **Phone numbers are not confirmed.** They come from directory listings. Dial and
+  listen for the business name.
+- **We have not opened their Google Business Profile.** Do it before you call. It is
+  link 1 in the call sheet, and it is the one surface that can still prove us wrong.
+- **We have not asked the assistants yet.** ChatGPT, Gemini and Claude are the second
+  half of the pitch and they are per-call work, not research we can batch.
 
-It scores each lead as you go and tells you whether it is worth calling.
+## The group floors
 
-Everything saves, so you can stop mid-list and come back. Export gives you a
-scored CSV for a spreadsheet.
+You asked for five or more per trade group. Four groups meet it. One does not:
 
-### How the score works
-
-| Signal | Points | Why |
-|---|---|---|
-| No website | +30 | Nothing to find, and the core of the offer |
-| Google listing unclaimed | +25 | Never set up, easiest possible win |
-| Named by no assistant | +20 | The gap you are selling |
-| Draws a blank when asked by name | +15 | They do not exist to the assistant at all |
-| Named by some but not all | +8 | Partial, weaker pitch |
-| Outside the top three on Google | +15 | Losing the search too |
-| 10 to 49 reviews | +10 | Established and still hungry |
-| 50 to 99 reviews | +4 | Busy |
-| 100+ reviews | **−10** | At capacity, and has declined this pitch before |
-| Rating 4.5 or better | +5 | Good at the work, worth helping |
-
-55 or above is worth calling. The negative on 100+ reviews is deliberate: a
-business with 150 five-star reviews and no website has had money and been
-pitched a dozen times. They did not do it. That is a revealed preference, not a
-gap.
-
-## 3. The check asks two questions
-
-Both go in the widget, and the second is the one that closes.
-
-**Shopping question:** *"Who are the best [trade] in [town]?"* Missing means
-losing strangers who are comparing.
-
-**Name question:** *"What can you tell me about [business] in [town]?"* Record
-the reply word for word. "I don't have information about that business" is the
-most uncomfortable sentence an owner can read about their own shop, and it is
-the line you read back to them on the call. It is not about rankings or
-competitors. It says they do not exist as far as the thing answering is
-concerned.
-
-Drawing a blank on the name question adds 15 to the score on its own.
-
-## 4. The list: 86 prospects
-
-`output/prospects_all.csv`. Open the call sheet, hit **Import**, paste the file.
-(`prospects_san_fernando_valley.csv` is the LA-only subset if you want to work
-that alone first.)
-
-| | |
+| Group | Count |
 |---|---|
-| Prospects | 86 |
-| With a phone number | 85 |
-| No own website found in search results | 78 |
-| Los Angeles, drivable | 52 |
-| National, phone only | 34 |
+| Welding & metal fab | 15 |
+| Tree & landscape | 8 |
+| Upholstery, furniture & cabinetry | 5 |
+| Concrete, masonry & flooring | 5 |
+| Pool & shop services | 4 |
 
-**LA metros:** Sun Valley 13, Van Nuys 10, Pacoima 10, Reseda 5, North Hollywood
-4, Sylmar 3, Canoga Park 3, Northridge 2, Arleta 1.
+Pool and shop services sits at four because verification killed six of the eight
+pool companies and every replacement we checked (Integrity Pool Service in Tulsa,
+Valley Mobile Auto Glass in Van Nuys) turned out to have a real site. Pool service
+is a well-marketed trade. We are not padding it with a name we have not checked —
+that is the mistake this whole pass exists to correct.
 
-**National metros:** Fort Wayne IN 7, Toledo OH 6, Lubbock TX 6, Knoxville TN 4,
-Chattanooga TN 4, Tulsa OK 3, Wichita KS 2, Dayton OH 1, Springfield MO 1.
+## What this tells us about the market
 
-**Trades:** auto body 20, welding 9, metal fabrication 9, upholstery 4, sheet
-metal 3, countertops 3, auto glass 3, flooring 3, cabinetry 4, tree 2, masonry
-2, pool 2, appliance 2, garage doors 2, plus ironwork, radiator, transmission
-and nursery.
+The "local business with no website" is **rarer than the pitch assumes.** Our hit
+rate on unverified hints was about 30%. Plan around that:
 
-### How the 50 were chosen
+1. **Do not build a funnel on "no website."** There are not enough of them to reach
+   $10k/mo on that qualification alone. Thirty-seven verified leads is roughly
+   two to four sales, not a pipeline.
+2. **The bigger, verifiable market is the bad site.** Of the 37 we disqualified,
+   many have a site that is one page, has no structured data, no service pages, no
+   GBP alignment, and is invisible to an assistant. That business already believes
+   in having a website — they have paid for one — which makes them a *shorter* sale,
+   not a longer one. "You have a site and it still isn't getting you found" is a
+   stronger opener than "you don't have a site."
+3. **Qualify on the AI answer, not the website.** The one check that separates a
+   prospect from a non-prospect is: ask ChatGPT, Gemini and Claude who to hire for
+   their trade in their city, then ask about them by name. That check does not care
+   whether they have a website. It is per-business work, which is the real
+   bottleneck, and it is the thing the call sheet is built to record.
 
-Two rules, in this order.
+## Trades that were excluded and why
 
-**1. Does a stranger with money find this business by searching?** That is the
-whole offer, so a business whose work arrives another way is a bad prospect no
-matter how broken its listing is. Auto body fails it outright: insurance
-direct-repair programs, tow truck referrals and dealerships bring the work, and
-"I get all my work from State Farm" is a true objection with no answer. All of
-them are out, along with auto glass, radiator, transmission, and the B2B shops
-(sheet metal, plating, anodizing, welding supply, machine shops) that no
-consumer has ever searched for.
+- **Auto body (20 businesses).** Work comes from insurance DRP programs, tow trucks
+  and dealerships, not consumer search. "I get all my work from State Farm" is a true
+  objection with no answer.
+- **Garage door repair, appliance repair.** Checked informally and skipped: these
+  are saturated lead-gen categories where essentially every operator has a site.
 
-**2. At least five per trade, or the trade is dropped.** Calling two pool
-companies teaches you nothing. Calling eight lets you find the rhythm, reuse the
-discovery question and compare answers. Cabinetry (4 available) and masonry (3)
-were dropped on this rule rather than padded out.
+## Email
 
-| Group | In the 50 |
-|---|---|
-| Tree & landscape | 10 |
-| Flooring & countertops | 9 |
-| Welding & metal fab | 9 |
-| Pool service | 8 |
-| Upholstery & furniture | 8 |
-| Gates, iron & fencing | 6 |
-
-41 of the 50 are top-intent trades. The nine welding and metal fab rows are the
-one medium-intent group kept, because they are drivable LA shops and some of
-that work is genuinely consumer-searched.
-
-**Work one group at a time.** Same pitch, same discovery question, same rhythm,
-and by the fifth call you will be good at it.
-
-### What "verified" means, and what it does not
-
-**Verified:** the business name, phone and address appear in public listings
-(Yelp, YellowPages, Nextdoor, HomeAdvisor, TheBlueBook).
-
-**NOT verified, and this is the important one: whether they have a website.**
-
-Our research only records whether a site surfaced in search. That is a hint, not
-proof. **Google Maps frequently hides a website link that the Business Profile
-itself does show.** A business can look siteless on the map card and have a
-perfectly good site one click away.
-
-So before you treat any lead as a no-website prospect, look in **all four**
-places. The call sheet links each one from step 1:
-
-1. **The Business Profile itself**, not the Maps card
-2. **Search their name in quotes** plus the town
-3. **Facebook** — plenty of these shops use a page as their whole web presence
-4. **Their Yelp listing's website field**
-
-Only then mark it. The call sheet now scores it accordingly: an unverified
-"probably no site" is worth 6 points, a verified none-anywhere is worth 30, and
-a business that does have a site scores 10 because intent is already proven and
-the pitch becomes whether the site gets read.
-
-**Also not verified:** that the number still works, the state of their listing,
-and whether any assistant names them. All three are steps in the call sheet.
-
-### A finding about national search
-
-Searching nationally for "businesses with no website" mostly surfaces businesses
-that **do** have websites, because search ranks sites and a shop with no site is
-invisible to it. Broad queries returned SEO-optimised companies every time.
-
-What works is querying a specific metro and trade the way a customer would, so
-directory aggregators surface the small shops. That pattern produced every row
-here. Use it if you expand further, or run the OSM finder, which filters on the
-website tag directly and does not care about ranking.
-
-## 5. About emails
-
-Asked for phone numbers and emails. Here is the honest result of looking.
-
-**These businesses do not publish email addresses.** Searched the seeded iron
-and gate shops across directories, review sites and business profiles: phone
-numbers everywhere, emails nowhere. That is not a gap in the research, it is
-what this market looks like. A one-truck operation that never built a website
-also never set up a business inbox, and the owner's personal address is not
-listed anywhere public.
-
-So for this segment:
-
-| Channel | Reality |
-|---|---|
-| **Phone** | The channel. Trades answer 6:30-8am and 4-6pm local. Midday they are on a job. |
-| **Walk-in** | Second best. They get fifteen calls a day and roughly zero visits. |
-| **Email** | Only available for businesses that already have a website with a contact form, which is the "bad website" lead type. Use it as a follow-up after a call, never as the opener. |
-
-The finder does pull an email when OpenStreetMap has one tagged, and the call
-sheet has a field for it, so when you do collect one on a call it has a home.
-Do not build a plan around emails you do not have.
-
-## 6. The order of work
-
-1. Run the finder over one town you can drive to.
-2. Import into the call sheet.
-3. Run checks until you have ten scoring 55 or above. About twenty minutes each
-   at first, faster once you have the rhythm.
-4. Call those ten. Lead with what you found, never with the offer.
-5. Log what happened in the notes. After thirty checks you will know which
-   trade and which town converts, and that answer picks the niche for you
-   rather than you guessing it upfront.
+These businesses do not publish email addresses. Across all 37, exactly two surfaced
+one: JADD Concrete (`Anna.jaddconcrete@gmail.com`) and North Hollywood Auto
+Upholstery (`nohau991@gmail.com`). This is a phone market. The email sequence in
+`SCRIPT.md` is for the follow-up after a call connects, not for cold opening.
