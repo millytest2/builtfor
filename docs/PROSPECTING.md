@@ -2,17 +2,26 @@
 
 ## The list
 
-**43 businesses across 4 industries. Every one searched by name and confirmed to have
+**50 businesses across 4 industries. Every one searched by name and confirmed to have
 no website of its own. Every one a single location.**
 
 | Industry | Count | Why it fits the offer |
 |---|---|---|
-| Tree & landscape | 14 | Emergency and planned work, 100% consumer search, $500-5,000 tickets |
-| Upholstery, furniture & cabinetry | 12 | Rare trade, people search it by name, low competition, high margin |
-| Welding, gates & ornamental iron | 10 | Homeowner-driven: gates, fences, railings, mobile repair |
-| Concrete & masonry | 7 | Homeowner-driven, high ticket, photo-led buying decision |
+| Upholstery, furniture & cabinetry | 16 | Rare trade, searched by name, low competition, high margin |
+| Tree & landscape | 15 | Emergency and planned work, 100% consumer search, $500-5,000 tickets |
+| Welding, gates & ornamental iron | 11 | Homeowner-driven: gates, fences, railings, mobile repair |
+| Concrete & masonry | 8 | Homeowner-driven, high ticket, photo-led buying decision |
 
-It is 43, not 50. Section **"Why not 50"** below says why, and what it would take.
+Twelve metros: Los Angeles (San Fernando Valley), Fort Wayne, Knoxville, Lubbock,
+Wichita, Tulsa, Chattanooga, Toledo, Dayton, Youngstown, Shreveport, Pacoima/Arleta.
+
+**On the spread.** 16/15/11/8 is not an even split and it should not be. It is a
+measurement, not a choice. Upholstery shops genuinely do not have websites — the trade
+is old, the owners are old, and no lead-gen company targets them. Masonry contractors
+mostly do, because Angi, Thumbtack, HomeAdvisor and Houzz sell them leads and push
+them into having a site as part of the onboarding. Evening the columns out would have
+meant either cutting good upholstery leads or adding masonry names I had not verified.
+Neither is worth a prettier table.
 
 ## How the four industries were chosen
 
@@ -55,9 +64,9 @@ Four sub-categories are flagged in the notes because they sell differently:
 
 | Kind | Count | What they have | The opening line |
 |---|---|---|---|
-| Nothing anywhere | 33 | Yelp, BBB, Yellow Pages listings only | The plain pitch |
+| Nothing anywhere | 38 | Yelp, BBB, Yellow Pages listings only | The plain pitch |
 | Social only | 4 | A Facebook or Instagram page | "An assistant won't cite a Facebook page as your home" |
-| Rented microsite | 1 | A `*.localsearch.com` page they don't own | "You're renting that. You can't move it or change it." |
+| Rented microsite | 5 | A `*.localsearch.com` or free Wix subdomain they don't own | "You're renting that. You can't move it, rank it or change it." |
 | Broken or empty | 3 | A link to the wrong company, or a parked domain | Fastest yes on the sheet |
 
 The broken ones are worth calling first:
@@ -68,6 +77,11 @@ The broken ones are worth calling first:
 - **Peter's Tree Trimming** (Lubbock) — owns `peterstreetrimming.com` and it says
   "site will be available soon." They already decided they need one and paid for the name.
 
+And one that belongs in the same conversation:
+- **Vecchio Masonry & Chimney** (Youngstown) — their "site" is
+  `missbrandy1204.wixsite.com/vecchioconstruction`, a free Wix subdomain carrying
+  somebody's personal username. It cannot rank, cannot be remembered and cannot move.
+
 ## What verified still does not mean
 
 - **Phone numbers are not confirmed.** They come from directory listings. Dial and
@@ -77,12 +91,11 @@ The broken ones are worth calling first:
 - **We have not asked the assistants yet.** ChatGPT, Gemini and Claude are the second
   half of the pitch and that is per-call work, not research we can batch.
 
-## Why not 50
+## What it cost to get here
 
 Roughly **one in three** businesses that look site-less in a search actually are. The
-rest own a domain that the directories outrank. Getting to 43 took about 120
-verification searches across eight metros. Getting to 50 needs roughly 25 more, and
-the yield falls as you go, because the obvious candidates in each metro get used up.
+rest own a domain the directories outrank. Getting to 50 took about 160 verification
+searches across twelve metros.
 
 The trades are not equally hard:
 
@@ -90,17 +103,17 @@ The trades are not equally hard:
 |---|---|
 | Upholstery & furniture | 2 |
 | Tree & landscape | 2-3 |
-| Welding, gates & iron | 2-3 |
+| Welding, gates & iron | 3 |
 | Concrete & masonry | 5+ |
 
 Concrete and masonry is the laggard and it is structural: that trade buys leads from
-Angi, HomeAdvisor, Thumbtack and Houzz, and the lead-gen companies push everyone into
-having a site. Wichita, Fort Wayne, Chattanooga and Tulsa masonry were all checked and
-all came back mostly marketed.
+Angi, HomeAdvisor, Thumbtack and Houzz, and those companies push everyone into having
+a site. Wichita, Fort Wayne, Chattanooga, Tulsa, Knoxville, Toledo, Shreveport and
+Youngstown masonry were all checked. Eight keepers out of about forty checks.
 
-**The last 7 are not worth chasing before the first call.** 43 leads at a 5% close is
-two sales, which is the first month. Dial them, learn which of the four industries
-actually converts, then refill that one instead of all four.
+The last seven leads came from fresh metros — Dayton, Youngstown, Shreveport — because
+the obvious candidates in the first eight were used up. That is the pattern to expect:
+each metro yields five to eight, then you move.
 
 ## To refill the list
 
