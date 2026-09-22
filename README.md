@@ -7,7 +7,7 @@ AI assistants can both actually read them. $800 to build, then $149/mo.
 
 > **Read in this order:** [`docs/OFFER.md`](docs/OFFER.md) for what we sell ·
 > [`docs/PROSPECTING.md`](docs/PROSPECTING.md) for how to find and check
-> prospects · [`docs/STRATEGY_10K.md`](docs/STRATEGY_10K.md) for the funnel and
+> prospects · [`docs/SCRIPT.md`](docs/SCRIPT.md) for what to say · [`docs/STRATEGY_10K.md`](docs/STRATEGY_10K.md) for the funnel and
 > capacity math · [`docs/HANDOFF.md`](docs/HANDOFF.md) for cold-start context.
 
 ---
@@ -39,6 +39,7 @@ payroll. AI goes behind the desk, never in front of the customer.
 | 86 researched prospects | `output/prospects_all.csv` |
 | Lead finder, no API key | `python -m src.leadfinder.osm_find --where "..."` |
 | Service brief, print source | `docs/manual/service_brief.html` |
+| Cold call script | `docs/SCRIPT.md` · print source `docs/manual/call_script.html` |
 
 ## The rest of the toolkit
 
