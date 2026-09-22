@@ -45,10 +45,10 @@ payroll. AI goes behind the desk, never in front of the customer.
 |---|---|
 | Landing page | `site/index.html` (published) |
 | Call sheet, the prospecting tool | `site/callsheet.html` (published) |
-| **Top 50 prospects, ranked** | `output/top50_prospects.csv` (full pool of 86 in `prospects_all.csv`) |
+| **Top 50 prospects, ranked** | `output/top50_prospects.csv` — these 50 and only these 50 are in the call sheet (full pool of 86 in `prospects_all.csv`) |
 | Lead finder, no API key | `python -m src.leadfinder.osm_find --where "..."` |
 | Service brief, print source | `docs/manual/service_brief.html` |
-| Outreach playbook, call + email | `docs/SCRIPT.md` · print source `docs/manual/call_script.html` |
+| Outbound playbook, call + email | `docs/SCRIPT.md` · print source `docs/manual/call_script.html` |
 | Delivery runbook | `docs/DELIVERY.md` · `python -m src.delivery.pack --client ...` |
 
 ## The rest of the toolkit

@@ -1,221 +1,156 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8">
-<title>Built for Main Street — Call Script</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<title>Built for Main Street — Outbound</title>
 <style>
-  @page { size: letter; margin: 0.55in 0.6in; }
-  :root{ --ink:#111315; --ink-2:#464b4d; --ink-3:#767c7e; --rule:#ccd0cd; --hard:#99a09c; --sig:#A82D22; --sunk:#F1F2EF; }
-  *{box-sizing:border-box}
-  body{margin:0;color:var(--ink);background:#fff;font-family:"Libre Franklin","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size:9.6pt;line-height:1.42;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-  h1,h2,h3{margin:0;font-weight:800;line-height:1.1;letter-spacing:-.01em}
-  h1{font-size:21pt}
-  h2{font-size:12pt;margin-top:15pt;margin-bottom:6pt;padding-bottom:3pt;border-bottom:1.5pt solid var(--ink)}
-  h3{font-size:9.6pt;margin-top:10pt;margin-bottom:3pt;color:var(--sig);text-transform:uppercase;letter-spacing:.06em;font-size:8.4pt}
-  p{margin:0 0 6pt}
-  .mono{font-family:"SFMono-Regular",Menlo,Consolas,monospace;font-size:7.6pt;letter-spacing:.07em;text-transform:uppercase}
-  header{border-bottom:2.5pt solid var(--ink);padding-bottom:9pt;margin-bottom:11pt;display:flex;justify-content:space-between;align-items:flex-end}
-  header .mono{color:var(--ink-3)}
-  .sig{color:var(--sig)}
-  .say{border-left:3pt solid var(--sig);background:var(--sunk);padding:8pt 11pt;margin:6pt 0 8pt;font-size:10.4pt;line-height:1.45}
-  .say em{font-style:normal;background:#fff;padding:0 2pt;border-bottom:1pt solid var(--hard)}
-  .stop{font-weight:800;color:var(--sig);font-size:10pt;margin:6pt 0 8pt}
-  .note{font-size:8.4pt;color:var(--ink-2);margin:4pt 0 8pt;line-height:1.4}
-  table{border-collapse:collapse;width:100%;margin:5pt 0 8pt;font-size:8.8pt}
-  th,td{text-align:left;padding:4.5pt 8pt 4.5pt 0;border-bottom:.75pt solid var(--rule);vertical-align:top}
-  thead th{font-family:"SFMono-Regular",Menlo,Consolas,monospace;font-size:7pt;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);border-bottom:1pt solid var(--hard)}
-  td.q{font-weight:700;width:33%}
-  td.q.hot{color:var(--sig)}
-  .rule{border:2pt solid var(--sig);background:#fff;padding:8pt 11pt;margin:9pt 0;font-weight:700;font-size:10pt;line-height:1.35}
-  .two{display:grid;grid-template-columns:1fr 1fr;gap:16pt}
-  .brk{page-break-before:always}
-  h2,h3{break-after:avoid} table,.say,.rule{break-inside:avoid}
-  footer{margin-top:14pt;padding-top:7pt;border-top:1pt solid var(--rule);display:flex;justify-content:space-between}
-  footer .mono{color:var(--ink-3)}
+@page{size:letter;margin:.55in .6in}
+:root{--ink:#111315;--ink2:#464b4d;--ink3:#767c7e;--rule:#ccd0cd;--hard:#99a09c;--sig:#A82D22;--sunk:#F1F2EF}
+*{box-sizing:border-box}
+body{margin:0;color:var(--ink);background:#fff;font-family:"Libre Franklin","Helvetica Neue",Helvetica,Arial,sans-serif;font-size:9.5pt;line-height:1.44;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+h1{font-size:21pt;font-weight:800;margin:0 0 4pt;letter-spacing:-.01em}
+h2{font-size:12pt;font-weight:800;margin:16pt 0 6pt;padding-bottom:3pt;border-bottom:1.5pt solid var(--ink);letter-spacing:-.01em}
+h3{font-size:8.6pt;font-weight:800;margin:11pt 0 3pt;color:var(--sig);text-transform:uppercase;letter-spacing:.06em}
+p{margin:0 0 6pt}
+ul{margin:0 0 7pt;padding-left:13pt}li{margin-bottom:3pt}
+hr{border:none;border-top:1pt solid var(--rule);margin:11pt 0}
+code{font-family:"SFMono-Regular",Menlo,Consolas,monospace;font-size:8.6pt;background:var(--sunk);padding:0 3pt}
+.say{border-left:3pt solid var(--sig);background:var(--sunk);padding:8pt 11pt;margin:6pt 0 8pt;font-size:10.2pt;line-height:1.45}
+table{border-collapse:collapse;width:100%;margin:5pt 0 8pt;font-size:8.7pt}
+th,td{text-align:left;padding:4.5pt 8pt 4.5pt 0;border-bottom:.75pt solid var(--rule);vertical-align:top}
+thead th{font-family:"SFMono-Regular",Menlo,Consolas,monospace;font-size:7pt;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);border-bottom:1pt solid var(--hard)}
+td.q{font-weight:700;width:32%}
+h2,h3{break-after:avoid}table,.say{break-inside:avoid}
+.brk{page-break-before:always}
+footer{margin-top:14pt;padding-top:7pt;border-top:1pt solid var(--rule);display:flex;justify-content:space-between;font-family:"SFMono-Regular",Menlo,Consolas,monospace;font-size:7.6pt;letter-spacing:.07em;text-transform:uppercase;color:var(--ink3)}
 </style></head><body>
-
-<header>
-  <div><h1>The <span class="sig">Outreach</span></h1></div>
-  <div style="text-align:right"><div class="mono">Built for Main Street</div><div class="mono">310.606.9788</div></div>
-</header>
-
-<div class="rule">Never call before you have run the check. The whole script is reading them something true about their own business. With no findings you are just another guy selling websites.</div>
-
-<p class="note"><strong>Goal of the call is ten booked minutes, not a sale.</strong> Nobody buys cold. They agree to look at a page about themselves.</p>
-
-<div class="rule" style="background:var(--sunk)">Never open with the word <strong>website</strong>. Never open with <strong>Google</strong>. Every shop on this list gets called about both most weeks and has learned to say no in four seconds. Open with the thing nobody else is calling them about.</div>
-<table>
-  <thead><tr><th>Never say first</th><th>Say instead</th></tr></thead>
-  <tbody>
-    <tr><td class="q">"I build websites for local businesses"</td><td>"I asked ChatGPT about your business and it said it has no information about that business."</td></tr>
-    <tr><td class="q">"I can fix your Google listing"</td><td>"I looked you up the way a customer would and found something odd."</td></tr>
-    <tr><td class="q">"Do you have a website?"</td><td>Save it — that's the disqualifier, after the observation lands.</td></tr>
-  </tbody>
-</table>
-<p class="note">The website and the listing are what you <em>sell</em>. They are not what you <em>lead with</em>.</p>
-
-<h2>1 · Which channel</h2>
-<table>
-  <thead><tr><th>Situation</th><th>Channel</th></tr></thead>
-  <tbody>
-    <tr><td class="q hot">Drivable (18 of the 50, all LA)</td><td><strong>Walk in.</strong> Highest conversion by far. They get fifteen calls a day and roughly zero visits.</td></tr>
-    <tr><td class="q">Has a website with a contact form</td><td><strong>Email/form first</strong>, call in 2 days. Their form is also a live test of whether anyone reads it.</td></tr>
-    <tr><td class="q">No website, phone only (45 of 50)</td><td><strong>Call</strong>, then voicemail + text. There is no email to find.</td></tr>
-    <tr><td class="q">Front desk answers (auto body, showrooms)</td><td><strong>Email to reach the owner.</strong> The counter won't put a cold caller through.</td></tr>
-  </tbody>
-</table>
-<p class="note"><strong>Email's real job is delivering the report.</strong> The call books the look, the email carries the proof. Most of these 50 publish no email at all — a shop that never built a website never set up an inbox. Collect it on the call.</p>
-
-<h2>2 · Open — twenty seconds</h2>
-<div class="say">"Hey, is this <em>Name</em>? I'll be straight with you, this is a cold call. Give me twenty seconds and then tell me to get lost if you want."</div>
-<p class="note">Wait for them to say fine. The honesty buys the next thirty seconds and stops you sounding like a script.</p>
-
-<h2>3 · The observation — this is the whole call</h2>
-<div class="say">"So before I called I looked you up the way a customer would. Typed 'best <em>trade</em> in <em>town</em>' into Google and into ChatGPT.<br><br>
-Google had you on page <em>two</em>. ChatGPT named <em>four</em> other shops and never mentioned you.<br><br>
-Then I asked ChatGPT about you by name, <em>Business</em> in <em>Town</em>. It said it doesn't have any information about that business.<br><br>
-You've got <em>21</em> five-star reviews, so people clearly like the work. Did you know it looked like that?"</div>
-<div class="stop">→ Then stop talking. Do not fill the silence. The next voice is theirs.</div>
-<p class="note">Bad news, bad news, compliment, question. The compliment before the question is what keeps it from landing as an insult about something they are proud of.</p>
-
-<h2>4 · Disqualify — one question</h2>
-<div class="say">"Quick one before I go further. Has anyone ever built you a website, or just never got around to it?"</div>
-<table>
-  <thead><tr><th>They say</th><th>What it means</th></tr></thead>
-  <tbody>
-    <tr><td class="q hot">"Had one, it was useless"</td><td><strong>Best lead you'll get.</strong> Already paid, already let down.</td></tr>
-    <tr><td class="q">"Been meaning to"</td><td>Live lead. Inertia, not refusal.</td></tr>
-    <tr><td class="q">"My nephew's on it"</td><td>Live. It stalled at 80%. It always does.</td></tr>
-    <tr><td class="q">"Don't need one, booked solid"</td><td>Thank them, hang up. Don't burn twenty minutes.</td></tr>
-  </tbody>
-</table>
-
-<h2>5 · One discovery question — write the answer down</h2>
-<div class="say">"Right now, when somebody who's never met you needs <em>a gate / a bumper fixed / a couch redone</em>, how do they usually find you?"</div>
-<p class="note">If the answer is "word of mouth" or "honestly, they don't," you're in. Sharper by trade: <strong>auto body</strong> — how much is insurance vs. direct? · <strong>welding, metal fab</strong> — contractors calling or homeowners? · <strong>upholstery, cabinetry</strong> — through designers or direct? · <strong>flooring, countertops</strong> — does anyone walk into the showroom who didn't already know you?</p>
-
-<h2>6 · The close — two times, never "when works for you"</h2>
-<div class="say">"Here's all I'd suggest. I already wrote up what I found on one page. Let me send it over, then call you back and walk you through it in ten minutes. Costs you nothing, and if you think it's nonsense you've lost ten minutes.<br><br>
-You around <em>Thursday morning</em>, or is <em>Friday afternoon</em> better?"</div>
-<p class="note">The meeting is to see <strong>their own thing</strong>, it's <strong>ten minutes</strong>, and you gave <strong>two times</strong> instead of an open question.</p>
-
-<h3>Lock it</h3>
-<div class="say">"Perfect, Thursday at nine. What's the best email to send the page to? And real quick so I'm not guessing — what kind of work do you actually want more of?"</div>
-<p class="note">Text inside five minutes: <em>"Miles here, good talking to you. Thursday 9am, I'll have that page ready. 310-606-9788"</em></p>
-
-<h2 class="brk">7 · Voicemail, then text — this is most of them</h2>
-<p class="note">Most won't answer. The voicemail isn't the pitch, it's permission for the text. <strong>The text does the work.</strong></p>
-<h3>Voicemail</h3>
-<div class="say">"Hey <em>Name</em>, Miles here, I'm local over in <em>area</em>. I looked up <em>Business</em> online before I called and found something you'd probably want to know about. Nothing's wrong, nobody's in trouble. Two minutes when you get a second, 310-606-9788. I'll text you what I found."</div>
-<h3>Text, within five minutes</h3>
-<div class="say">Miles here, just left you a voicemail. I asked ChatGPT about <em>Business</em> and it said it has no information about that business. You've got <em>21</em> five-star reviews so that seemed off to me. I wrote up one page on it, want me to send it over? — 310-606-9788</div>
-<p class="note">Specific, surprising, and a yes/no that costs them nothing. This text will out-convert the call.</p>
-
-<h2 class="brk">8 · The second call — where the money happens</h2>
-<p class="note">First contact books ten minutes. <strong>This</strong> is the call that closes. Send the report 24 hours ahead so they've seen it. Have it open.</p>
-<h3>Recap — thirty seconds</h3>
-<div class="say">"So, the page I sent. Did you get a chance to look?"</div>
-<p class="note">Either answer is fine. If no, walk them through it. If yes, ask what they made of it and shut up.</p>
-<h3>Walk the page, not your service</h3>
-<div class="say">"Three things on there. One, your Google listing has no website on it, so there's nowhere for anyone to go. Two, the listing's missing hours, services and categories, so Google doesn't really know what you do. Three, there's nothing online connecting <em>gates</em> to <em>Sun Valley</em> and your name, so when ChatGPT gets asked it's got nothing to go on.<br><br>
-Your reviews are great — that part's already working. Everything else is just blank."</div>
-<h3>Scope it out loud before you name a number</h3>
-<div class="say">"Two quick things so I price this right. Is your Google listing claimed, do you know? And how many different services do you want people finding you for?"</div>
-<table>
-  <thead><tr><th>What you hear</th><th>What you quote</th></tr></thead>
-  <tbody>
-    <tr><td class="q">Listing already claimed and filled in, one or two services</td><td><strong>$500</strong> — site only</td></tr>
-    <tr><td class="q hot">Listing a mess or never claimed, handful of services</td><td><strong>$800</strong> — the usual. Quote this by default.</td></tr>
-    <tr><td class="q">Lots of services, several towns, or more than one location</td><td><strong>$1,000</strong></td></tr>
-  </tbody>
-</table>
-<p class="note">Say the number once, plainly, and never apologise for it.</p>
-<h3>The fix, plainly</h3>
-<div class="say">"What I'd do is claim the listing and fill it out properly, then build you a site that's actually readable, with a page for each thing you want more of. Two weeks from when you send me photos."</div>
-<h3>The two numbers, then stop</h3>
-<div class="say">"Eight hundred to do it, paid once. Then seventy-nine a month to host it, same as a phone line.<br><br>
-The site and the listing are yours, in your name. If you ever want to leave, you take the files with you."</div>
-<div class="stop">→ Then say nothing. Whoever talks first loses the next $200.</div>
-<h3>If they hesitate</h3>
-<table>
-  <thead><tr><th>They say</th><th>You say</th></tr></thead>
-  <tbody>
-    <tr><td class="q">"Let me think about it"</td><td>"Sure — what's the part you want to think about?" Then answer <em>that</em>, and only that.</td></tr>
-    <tr><td class="q">"Let me talk to my wife/partner"</td><td>"Makes sense. What do you think they'll ask?" Then arm them with the answer.</td></tr>
-    <tr><td class="q hot">"That's more than I thought"</td><td>"I can do seven hundred if you get me the photos inside a week. That's the lever I've got."</td></tr>
-<tr><td class="q">"Why eight and not five?"</td><td>"Five is the site on its own. Eight is the site plus your listing claimed and filled out properly — which in your case is most of the problem."</td></tr>
-    <tr><td class="q hot">"Can you do it without the monthly?"</td><td>"The site has to live somewhere, so the hosting is real either way. Seventy-nine is what it costs to keep it up and keep the listing current."</td></tr>
-    <tr><td class="q">"What if it doesn't work?"</td><td>"Then in three months you've got a website and a fixed listing for nine hundred, still cheaper than most. And you'll see the check run again every month, so you'll know either way."</td></tr>
-  </tbody>
-</table>
-<h3>Close it on the call</h3>
-<div class="say">"Easiest thing — I send you a link right now, you put the eight hundred down, and I start tomorrow. Want me to text it to you?"</div>
-<p class="note"><strong>Never "I'll send over a proposal."</strong> Send the payment link while they're still on the phone. A yes that has to survive until evening usually doesn't. Then text what you need: <em>"Sent the link. Three things and I can start: 10-15 photos of your best work, your hours, and the services you want to show."</em></p>
-
-<h2>9 · Walk-in — for the 52 in LA</h2>
-<div class="say">"Are you the owner? I'm Miles, I'm local, over in <em>area</em>. I looked you up before I came by and found something odd. Can I show you on my phone real quick? Takes a minute."</div>
-<p class="note">Turn the phone around and show the check. Same flow from there. They get fifteen calls a day and roughly zero visits. Sun Valley has thirteen prospects and four auto body shops on one block of Branford Street — that's one trip.</p>
-
-<h2>10 · The email sequence — days 1, 3, 7, then stop</h2>
-<h3>Email 1 · the finding</h3>
-<p class="note" style="margin-bottom:3pt"><strong>Subject:</strong> I asked ChatGPT about <em>Business Name</em></p>
-<div class="say"><em>Name</em>,<br><br>
-I looked you up the way a customer would. Typed "best <em>trade</em> in <em>town</em>" into Google and into ChatGPT.<br><br>
-Google had you on page two. ChatGPT named four other shops and didn't mention you. Then I asked it about <em>Business</em> by name and it said it has no information about that business.<br><br>
-You've got <em>21</em> five-star reviews, so that seemed off to me.<br><br>
-I wrote up one page showing what I found and why it's happening. Want me to send it over? Free either way, and it's yours whether or not we ever work together.<br><br>
-Miles<br>Built for Main Street · 310-606-9788</div>
-<p class="note">A hundred words. No attachment, no link, nothing to trip a filter. One ask: can I send it.</p>
-
-<h3>Email 2 · day 3, the report</h3>
-<p class="note" style="margin-bottom:3pt"><strong>Subject:</strong> re: I asked ChatGPT about <em>Business Name</em></p>
-<div class="say"><em>Name</em> — here's the page I mentioned.<br><br>
-<em>link</em><br><br>
-Short version: there's no website linked on your Google listing, and the listing itself is missing hours, services and categories. That's most of why you're not turning up.<br><br>
-Costs $800 to fix in your case and takes two weeks. After that it's $79 a month to host, and that's the whole thing. No retainer, nothing to manage.<br><br>
-Worth ten minutes on the phone? Thursday or Friday?<br><br>
-Miles · 310-606-9788</div>
-
-<h3>Email 3 · day 7, the breakup</h3>
-<p class="note" style="margin-bottom:3pt"><strong>Subject:</strong> closing the file on this</p>
-<div class="say"><em>Name</em>, I'll stop bothering you.<br><br>
-If it ever moves up your list, the page is still at <em>link</em> and my number's below. No hard feelings either way.<br><br>
-Good luck with the shop.<br><br>
-Miles · 310-606-9788</div>
-<p class="note"><strong>The breakup pulls more replies than the first two combined.</strong> Send it. · Rules: plain text, no logo, no HTML. Lowercase subject after the first word. Never attach a PDF cold. One ask per email. Reply in the same thread.</p>
-
-<h2>11 · Objections — every one goes back to the booking</h2>
-<table>
-  <thead><tr><th>They say</th><th>You say</th></tr></thead>
-  <tbody>
-    <tr><td class="q hot">"I get these calls every week"</td><td>"I know — most of them are about websites. I'm calling about something else. Did you know ChatGPT says it has no information about your business? That's the bit nobody's mentioning."</td></tr>
-<tr><td class="q hot">"How much?"</td><td>"Depends what you've got — between five hundred and a thousand, most shops it's eight hundred. Then seventy-nine a month to host. But look at the page first — then the number makes sense or it doesn't. Thursday or Friday?"</td></tr>
-    <tr><td class="q hot">"Is this AI stuff?"</td><td>"No. I fix your Google listing and build you a website. Only reason I mentioned ChatGPT is that's where people have started looking."</td></tr>
-    <tr><td class="q">"All my work's insurance / contractors"</td><td>"Best kind of work there is, and I'm not replacing it. But even the people referred to you look you up first to check you're real, and right now there isn't much to find. Ten minutes Thursday?"</td></tr>
-    <tr><td class="q">"Word of mouth is all I need"</td><td>Same answer. Referrals still Google you before they call.</td></tr>
-    <tr><td class="q">"I'm booked solid"</td><td>"Good problem. Then it's about better jobs, not more. Being easy to find lets you be pickier. Worth ten minutes?"</td></tr>
-    <tr><td class="q">"Too busy right now"</td><td>"Totally — that's why I'm asking about Thursday, not now. Morning or afternoon?"</td></tr>
-    <tr><td class="q">"My nephew's building one"</td><td>"Half of them start that way. Usually stalls around eighty percent because he's got his own job. No shade. Let me show you the page anyway, might save him some work."</td></tr>
-    <tr><td class="q">"Just send me info"</td><td>"I'll do better than info — I already made the page about your business specifically. What's your email? And Thursday or Friday to walk through it?"</td></tr>
-    <tr><td class="q">"I don't do computers"</td><td>"Good, that's the point. You don't have to. I handle it, you never log into anything."</td></tr>
-    <tr><td class="q">"Why is it a range?"</td><td>"Because the work isn't the same for everyone. If your listing's already sorted there's less to do. I'll tell you the number on the call and it won't move."</td></tr>
-<tr><td class="q hot">"What's the monthly for?"</td><td>"Hosting and your domain, same as a phone line. It's not a retainer, you're not buying my time. Cancel whenever and I hand you the files."</td></tr>
-<tr><td class="q">"Can you do it cheaper?"</td><td>"I can do seven hundred if you get me the photos inside a week. That's the lever I've got."</td></tr>
-<tr><td class="q">"Who is this again?"</td><td>"Miles, Built for Main Street. I'm in <em>area</em>. I get local businesses found online. That's the whole thing."</td></tr>
-  </tbody>
-</table>
-
-<h2>12 · When to reach them</h2>
-<table>
-  <thead><tr><th>Trade</th><th>When they answer</th></tr></thead>
-  <tbody>
-    <tr><td class="q">Welding, mobile welding, tree, pool, masonry</td><td><strong>6:30–8am</strong> and <strong>4–6pm.</strong> Midday they're on a job.</td></tr>
-    <tr><td class="q">Auto body, upholstery, cabinetry, flooring, countertops, glass</td><td><strong>Business hours.</strong> They have a counter and somebody's at it.</td></tr>
-    <tr><td class="q">National — Fort Wayne, Toledo, Lubbock, Knoxville, Chattanooga, Tulsa, Wichita</td><td>Their local time, not yours. Start Pacific, work east, or you'll call Indiana at 5am.</td></tr>
-  </tbody>
-</table>
-<p class="note">20 of the 86 are auto body and 18 are welding or metal fab. Those two want opposite call times, so sort the list before you start rather than working straight down it.</p>
-
-<div class="rule">What you're actually doing: reading somebody one true sentence about their own business that they've never heard, then asking if they knew. The sentence is "I asked ChatGPT about your business and it said it has no information about that business." It isn't about rankings or marketing. It says they don't exist as far as the thing answering is concerned, and every owner gets that instantly.</div>
-
-<footer><div class="mono">Built for Main Street · Los Angeles, CA</div><div class="mono">310.606.9788 · hello@builtformainstreet.com</div></footer>
+<h1>OUTBOUND — how to actually talk to these people</h1>
+<p>For the 50 in the call sheet.</p>
+<p>Two rules before anything else.</p>
+<p><strong>Run the check first.</strong> Every word below depends on you having looked. Without findings you are a stranger selling websites and you will sound like one.</p>
+<p><strong>Don't read this out loud.</strong> People can hear a script in about three seconds. What follows is the shape of a conversation and the one fact you need to land. Everything else is you, talking normally.</p>
+<hr>
+<h2>1. Never open with "website" or "Google"</h2>
+<p>Every shop on this list gets called about both most weeks. They say no in four seconds and they're right to. Say "I build websites" and you're the fourth one this month.</p>
+<p>Open with the thing nobody else is calling about.</p>
+<table><thead><tr><th>Never first</th><th>Instead</th></tr></thead><tbody>
+<tr><td class="q">"I build websites for local businesses"</td><td>"I asked ChatGPT about your shop and it said it has no information about that business."</td></tr>
+<tr><td class="q">"I can fix your Google listing"</td><td>"I looked you up the way a customer would and found something weird."</td></tr>
+<tr><td class="q">"Do you have a website?"</td><td>Save it. That's the disqualifier, after the finding lands.</td></tr>
+</tbody></table>
+<p>The website and the listing are what you <strong>sell</strong>. Never what you <strong>open with</strong>.</p>
+<hr>
+<h2>2. The one thing to memorise</h2>
+<p>Not a script. A fact about their business, in your own words:</p>
+<div class="say">I searched [their trade] in [their town]. Google had them on page two.<br>ChatGPT, Gemini and Claude named other shops and not them. Then I asked<br>ChatGPT about them by name and it said it has no information about that<br>business. They have [21] five-star reviews.</div>
+<p>That's it. That's the whole call. If you know those five facts cold you can have this conversation half asleep, and it'll sound like a conversation because it is one.</p>
+<hr>
+<h2>3. The five beats</h2>
+<p>Beats, not lines. Hit them in order, in whatever words come out.</p>
+<p><strong>1 · Admit it's cold.</strong> Three seconds. "I'll be straight with you, this is a cold call, give me twenty seconds and tell me to get lost." Honesty buys you the next thirty seconds because nobody else does it.</p>
+<p><strong>2 · Deliver the finding, then shut up.</strong> Facts first, compliment second, question last. Roughly: <em>page two on Google, three assistants named other shops, asked about you by name and it said it doesn't know you, and you've got 21 five-star reviews so that seemed off.</em> Then: <strong>"Did you know it looked like that?"</strong> And stop. Do not fill the silence. The next voice is theirs.</p>
+<p><strong>3 · Find out if they're real.</strong> "Has anyone ever built you a website, or just never got around to it?"</p>
+<table><thead><tr><th>Answer</th><th>Read</th></tr></thead><tbody>
+<tr><td class="q">"Had one, it was useless"</td><td>Best lead you'll get. Paid once, got burned.</td></tr>
+<tr><td class="q">"Been meaning to"</td><td>Live. Inertia, not refusal.</td></tr>
+<tr><td class="q">"My nephew's on it"</td><td>Live. It stalled at 80%. It always does.</td></tr>
+<tr><td class="q">"Don't need it, I'm booked"</td><td>Thank them, hang up. Don't spend twenty minutes.</td></tr>
+</tbody></table>
+<p><strong>4 · Ask one real question and shut up again.</strong> "When somebody who's never met you needs a bumper fixed, how do they usually find you?" Write down the answer. That answer is the whole rest of the relationship.</p>
+<p><strong>5 · Ask for ten minutes, offer two times.</strong> "I already wrote up what I found on one page. Let me send it, then call you back and walk you through it in ten minutes. Thursday morning, or is Friday better?"</p>
+<p>Then get the email and one last thing: <em>"what kind of work do you actually want more of?"</em></p>
+<hr>
+<h2>4. How to not sound like a robot</h2>
+<p>This is the part that matters more than the words.</p>
+<ul><li><strong>Talk slower than feels right.</strong> Nerves speed you up. Slow is confident.</li><li><strong>React before you continue.</strong> "Huh." "Okay, yeah." "That's fair." Real people respond. Scripts plough on.</li><li><strong>If they interrupt, stop mid-sentence.</strong> Let them talk. Don't finish the thought you were on.</li><li><strong>Use their words back.</strong> They say jobs, you say jobs. Don't upgrade it to "projects" or "clients."</li><li><strong>Leave the silence.</strong> Three seconds feels like ten to you and normal to them. Most people fill it themselves, and what they fill it with is the good part.</li><li><strong>Say you don't know when you don't.</strong> "I'd have to look" beats a guess and builds more trust than anything you could have made up.</li><li><strong>Say their name once, at the start.</strong> More than twice is a telemarketer.</li><li><strong>One idea per sentence, then stop.</strong> Stacking three benefits is the single clearest tell.</li><li><strong>If you're smiling they can hear it.</strong> They also hear when you're reading.</li></ul>
+<h3>Phrases that scream script</h3>
+<p>Cut these entirely.</p>
+<table><thead><tr><th>Never</th><th>Why</th></tr></thead><tbody>
+<tr><td class="q">"How are you doing today?"</td><td>Nobody cold-calling cares and they know it.</td></tr>
+<tr><td class="q">"The reason for my call is..."</td><td>Nobody talks like this.</td></tr>
+<tr><td class="q">"Does that make sense?"</td><td>Asks them to validate you.</td></tr>
+<tr><td class="q">"What I'm hearing is..."</td><td>Sales training, audible from space.</td></tr>
+<tr><td class="q">"Absolutely!"</td><td>Nobody says this in a real conversation.</td></tr>
+<tr><td class="q">"I just wanted to reach out"</td><td>Filler, and apologetic.</td></tr>
+<tr><td class="q">Any sentence over about 20 words</td><td>You're reading.</td></tr>
+</tbody></table>
+<hr>
+<h2>5. What comes back at you</h2>
+<p>All of these go back to the same place: ten minutes to look at their own page.</p>
+<table><thead><tr><th>They say</th><th>Roughly</th></tr></thead><tbody>
+<tr><td class="q"><strong>"I get these calls every week"</strong></td><td>"I know, and most of them are about websites. I'm calling about something else. Did you know ChatGPT says it has no information about your business?"</td></tr>
+<tr><td class="q"><strong>"How much?"</strong></td><td>"Between five and a thousand depending what you've got, most shops it's eight hundred. Then seventy-nine a month to host it. But look at the page first."</td></tr>
+<tr><td class="q"><strong>"Why is it a range?"</strong></td><td>"Because the work isn't the same for everyone. I'll tell you the number on the call and it won't move."</td></tr>
+<tr><td class="q"><strong>"What's the monthly for?"</strong></td><td>"Hosting and your domain. Same as a phone line. Not a retainer, you're not buying my time."</td></tr>
+<tr><td class="q"><strong>"Is this AI stuff?"</strong></td><td>"No. I fix your listing and build you a website. I only mentioned ChatGPT because that's where people started looking."</td></tr>
+<tr><td class="q"><strong>"All my work's insurance"</strong></td><td>"Best kind there is, not trying to replace it. But people referred to you still look you up first, and right now there's not much to find."</td></tr>
+<tr><td class="q"><strong>"Word of mouth is all I need"</strong></td><td>Same answer. Referrals Google you before they call.</td></tr>
+<tr><td class="q"><strong>"I'm booked solid"</strong></td><td>"Good problem. Then it's about better jobs, not more. Being easy to find lets you be pickier."</td></tr>
+<tr><td class="q"><strong>"Too busy right now"</strong></td><td>"That's why I'm asking about Thursday and not now."</td></tr>
+<tr><td class="q"><strong>"My nephew's building one"</strong></td><td>"Half of them start that way. Usually stalls around eighty percent because he's got his own job. No shade."</td></tr>
+<tr><td class="q"><strong>"Just send me info"</strong></td><td>"I'll do better, I already made the page about your business. What's your email?"</td></tr>
+<tr><td class="q"><strong>"I don't do computers"</strong></td><td>"Good, that's the point. You never log into anything."</td></tr>
+</tbody></table>
+<hr>
+<h2 class="brk">6. Voicemail, then text. This is most of them.</h2>
+<p>The voicemail isn't the pitch. It's permission for the text. <strong>The text does the work.</strong></p>
+<p><strong>Voicemail</strong>, thirty seconds, sound like a neighbour not a salesman:</p>
+<div class="say">Hey Mike, Miles here, I'm local over in Burbank. Looked up Alpine Auto Body<br>online before I called and found something you'd probably want to know about.<br>Nothing's wrong, nobody's in trouble. Two minutes when you get a sec,<br>310-606-9788. I'll text you what I found.</div>
+<p><strong>Text, within five minutes:</strong></p>
+<div class="say">Miles here, just left you a voicemail. I asked ChatGPT about Alpine Auto Body<br>and it said it has no information about that business. You've got 21 five-star<br>reviews so that seemed off to me. Wrote up a page on it, want me to send it?</div>
+<p>Lowercase, no punctuation gymnastics, no links in the first one. It should look like a text, because it is one.</p>
+<hr>
+<h2>7. Email</h2>
+<p>Same principle. A templated email gets deleted in the preview pane. Write like you typed it yourself, because you did.</p>
+<h3>Rules</h3>
+<ul><li><strong>Plain text.</strong> No logo, no HTML, no signature block with a graphic.</li><li><strong>Lowercase subject after the first word.</strong> Capitalised subjects read as ads.</li><li><strong>No greeting on its own line.</strong> "Mike," then a line break is fine. "Dear Mr Smith," is not.</li><li><strong>Short paragraphs, one thought each.</strong> Three lines max.</li><li><strong>One ask.</strong> Never two.</li><li><strong>No attachment on the first email.</strong> Offer, don't push.</li><li><strong>Reply in the same thread</strong> so it threads on their phone.</li></ul>
+<h3>Day 1</h3>
+<p><strong>Subject:</strong> <code>I asked ChatGPT about Alpine Auto Body</code></p>
+<div class="say">Mike,<br><br>Looked you up the way a customer would. Typed "best auto body in Sun Valley"<br>into Google and into ChatGPT.<br><br>Google had you on page two. ChatGPT named four other shops and didn't mention<br>you. Then I asked it about Alpine Auto Body by name and it said it has no<br>information about that business.<br><br>You've got 21 five-star reviews, so that seemed off to me.<br><br>I wrote up one page on what I found and why. Want me to send it over? Free<br>either way, yours whether or not we work together.<br><br>Miles<br>Built for Main Street · 310-606-9788</div>
+<h3>Day 3</h3>
+<p><strong>Subject:</strong> <code>re: I asked ChatGPT about Alpine Auto Body</code></p>
+<div class="say">Mike, here's the page I mentioned.<br><br>[link]<br><br>Short version: no website linked on your Google listing, and the listing's<br>missing hours, services and categories. That's most of why you're not turning<br>up.<br><br>Costs $800 to fix in your case, takes two weeks. Then $79 a month to host it.<br>That's the whole thing, no retainer.<br><br>Worth ten minutes on the phone? Thursday or Friday?</div>
+<h3>Day 7 — send this one</h3>
+<p><strong>Subject:</strong> <code>closing the file on this</code></p>
+<div class="say">Mike, I'll stop bothering you.<br><br>If it ever moves up your list the page is still at [link] and my number's<br>below. No hard feelings either way.<br><br>Good luck with the shop.</div>
+<p><strong>The breakup pulls more replies than the first two combined.</strong> People answer it because it asks for nothing.</p>
+<hr>
+<h2>8. Walk in, if they're drivable</h2>
+<p>Twenty of the fifty are in LA. Better than calling and almost nobody does it.</p>
+<div class="say">"You the owner? I'm Miles, I'm local, over in Burbank. Looked you up before I<br>came by and found something odd. Can I show you on my phone? Takes a minute."</div>
+<p>Turn the phone around. Same five beats from there. Sun Valley has a cluster and four auto body shops sit on one block of Branford Street, so that's one trip.</p>
+<hr>
+<h2 class="brk">9. The second call, where money happens</h2>
+<p>Send the report 24 hours ahead. Have it open.</p>
+<p><strong>Recap in thirty seconds.</strong> "Did you get a chance to look?" Either answer's fine.</p>
+<p><strong>Walk their page, not your service.</strong> Three things: no website on the listing, the listing itself is mostly blank, and nothing online connects their trade to their town to their name. Then: <em>"Your reviews are great. That part's already working. Everything else is just empty."</em></p>
+<p><strong>Scope it out loud before you name a number.</strong> "Two quick things so I price this right. Is your listing claimed, do you know? And how many services do you want people finding you for?"</p>
+<table><thead><tr><th>What you hear</th><th>Quote</th></tr></thead><tbody>
+<tr><td class="q">Listing sorted, one or two services</td><td><strong>$500</strong></td></tr>
+<tr><td class="q">Listing a mess, handful of services</td><td><strong>$800</strong> — default to this</td></tr>
+<tr><td class="q">Lots of services, several towns, or multiple locations</td><td><strong>$1,000</strong></td></tr>
+</tbody></table>
+<p><strong>Say both numbers together, then stop talking.</strong></p>
+<div class="say">"Eight hundred to do it, paid once. Then seventy-nine a month to host it, same<br>as a phone line. Site and listing are yours, in your name. You ever want to<br>leave, you take the files."</div>
+<p>Whoever talks first loses the next two hundred dollars. Let it sit.</p>
+<table><thead><tr><th>They hesitate</th><th>Roughly</th></tr></thead><tbody>
+<tr><td class="q">"Let me think about it"</td><td>"Sure. What's the part you want to think about?" Then answer only that.</td></tr>
+<tr><td class="q">"Let me talk to my wife"</td><td>"Makes sense. What do you think she'll ask?" Then arm him with the answer.</td></tr>
+<tr><td class="q">"That's more than I thought"</td><td>"Seven hundred if you get me the photos inside a week. That's the lever I've got."</td></tr>
+<tr><td class="q">"Why eight and not five?"</td><td>"Five's the site on its own. Eight is the site plus your listing done properly, which in your case is most of the problem."</td></tr>
+<tr><td class="q">"Can I skip the monthly?"</td><td>"The site's got to live somewhere, so hosting's real either way. Seventy-nine is what it costs."</td></tr>
+</tbody></table>
+<p><strong>Close by sending the link, not a proposal.</strong></p>
+<div class="say">"Easiest thing, I text you a link right now, you put the eight hundred down,<br>and I start tomorrow. Want me to send it?"</div>
+<p>Never "I'll put together a proposal." A yes that has to survive until evening usually doesn't. Then text:</p>
+<div class="say">Sent the link. Three things and I can start: 10-15 photos of your best work,<br>your hours, and the services you want to show.</div>
+<hr>
+<h2>10. When to call</h2>
+<table><thead><tr><th>Trade</th><th>When</th></tr></thead><tbody>
+<tr><td class="q">Welding, mobile welding, tree, pool, masonry</td><td><strong>6:30-8am</strong> and <strong>4-6pm.</strong> Midday they're on a job.</td></tr>
+<tr><td class="q">Auto body, upholstery, cabinetry, flooring, countertops</td><td><strong>Business hours.</strong> There's a counter and someone's at it. Email reaches the owner, calls reach the counter.</td></tr>
+<tr><td class="q">Out of state</td><td><strong>Their</strong> time, not yours. Start Pacific, work east.</td></tr>
+</tbody></table>
+<p>Sixteen of the fifty are auto body, twelve are welding or metal fab. Opposite timing. Sort the list before you start.</p>
+<hr>
+<h2>The whole thing in one line</h2>
+<p>You're reading somebody one true sentence about their own business that they've never heard, then asking if they knew. Everything else is just being a person about it.</p>
+<footer><div>Built for Main Street · Los Angeles, CA</div><div>310.606.9788 · $500-1,000 + $79/mo</div></footer>
 </body></html>
