@@ -1,33 +1,46 @@
 # Built for Main Street
 
-> **New here? Read [`docs/OFFER.md`](docs/OFFER.md) for what we sell today, then
-> [`docs/STRATEGY_10K.md`](docs/STRATEGY_10K.md) for the math and
-> [`docs/HANDOFF.md`](docs/HANDOFF.md) for context** — it carries the full
-> context, current state, blockers, leads, script, and next actions.
+**We get local businesses found. It starts with a website.**
 
-**Get Found. Get Called. Get Paid.**
+Their Google listing fixed and a website built, together, so search engines and
+AI assistants can both actually read them. $800 to build, then $149/mo.
 
-Productized local-business growth service. Everything here is **config-driven and
-clone-per-client** — no bespoke builds. Swap a config file, redeploy, done.
-
-## The offer (current)
-Not a marketing agency. Not "AI automation." We make a local business **easy to find,
-trust, and reach — and prove it.** Three things, mapped to the tagline:
-
-1. **Get Found — Website Build.** No website (or a dead one) → a fast, high-converting
-   SEO/AEO/GEO site. **$400–700 one-time + $99–199/mo** upkeep. *This is the wedge.*
-2. **Get Called — Full Visibility Fix.** Broken Google presence (one review, wrong info,
-   unmanaged GBP) → claimed, completed, reviews + listings synced. **$300–800.**
-3. **Get Paid — AI Systems.** Existing client ready to scale → missed-call text-back,
-   follow-up, booking. **+$300–700/mo.** The expansion, once trust exists.
-
-**Execution loop:** find no-website leads → call with the script → send the audit as
-proof → build/fix in days → before/after → retainer → expand. Target $3k → $10k → $20k/mo.
-
-Full playbook: `docs/service_delivery.md`. Lead-finding: `docs/lead_finding.md`.
-Site copy: `docs/site_copy.md`. Targeting: `docs/targeting.md`.
+> **Read in this order:** [`docs/OFFER.md`](docs/OFFER.md) for what we sell ·
+> [`docs/PROSPECTING.md`](docs/PROSPECTING.md) for how to find and check
+> prospects · [`docs/STRATEGY_10K.md`](docs/STRATEGY_10K.md) for the funnel and
+> capacity math · [`docs/HANDOFF.md`](docs/HANDOFF.md) for cold-start context.
 
 ---
+
+## The whole thing in one table
+
+| Stage | Offer | Price |
+|---|---|---|
+| The door | **Visibility Check** | Free |
+| The product | **Get found** | $800 + $149/mo |
+| Later, on evidence | **Get more out of it** | +$199/mo |
+
+**Why it works in 2026:** 35.9% of local business locations turn up in Google's
+top three. Only 1.2% get named by ChatGPT. Being good at traditional local
+search no longer carries over, and more than half the businesses winning
+Google's map pack are absent from AI answers entirely.
+(SOCi 2026 Local Visibility Index, 349,000+ locations across 2,751 brands.)
+
+**Out of scope, deliberately:** social media, blog posts, ads, logos, rebrands,
+ghostwriting, chatbots talking to customers, anything replacing a person on the
+payroll. AI goes behind the desk, never in front of the customer.
+
+## Assets
+
+| What | Where |
+|---|---|
+| Landing page | `site/index.html` (published) |
+| Call sheet, the prospecting tool | `site/callsheet.html` (published) |
+| 86 researched prospects | `output/prospects_all.csv` |
+| Lead finder, no API key | `python -m src.leadfinder.osm_find --where "..."` |
+| Service brief, print source | `docs/manual/service_brief.html` |
+
+## The rest of the toolkit
 
 ## What's built so far
 

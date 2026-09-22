@@ -98,31 +98,48 @@ concerned.
 
 Drawing a blank on the name question adds 15 to the score on its own.
 
-## 4. The starter list: 52 San Fernando Valley prospects
+## 4. The list: 86 prospects
 
-`output/prospects_san_fernando_valley.csv` holds 52 businesses, 51 with a phone
-number, all drivable. Open the call sheet, hit **Import**, paste the file.
+`output/prospects_all.csv`. Open the call sheet, hit **Import**, paste the file.
+(`prospects_san_fernando_valley.csv` is the LA-only subset if you want to work
+that alone first.)
 
 | | |
 |---|---|
-| Prospects | 52 |
-| With a phone number | 51 |
-| No own website found in search results | 48 |
-| Already have a website | 4 |
-| With a street address | 43 |
+| Prospects | 86 |
+| With a phone number | 85 |
+| No own website found in search results | 78 |
+| Los Angeles, drivable | 52 |
+| National, phone only | 34 |
 
-**Towns:** Sun Valley 13, Van Nuys 10, Pacoima 10, Reseda 5, North Hollywood 4,
-Sylmar 3, Canoga Park 3, Northridge 2, Arleta 1.
+**LA metros:** Sun Valley 13, Van Nuys 10, Pacoima 10, Reseda 5, North Hollywood
+4, Sylmar 3, Canoga Park 3, Northridge 2, Arleta 1.
 
-**Trades:** auto body 6, welding 5, metal fabrication 4, auto glass 3, flooring
-3, cabinetry 4, countertop fabrication 2, tree service 2, masonry 2, pool 2,
-appliance repair 2, garage doors 2, upholstery 3, plus radiator, transmission,
-nursery and ironwork.
+**National metros:** Fort Wayne IN 7, Toledo OH 6, Lubbock TX 6, Knoxville TN 4,
+Chattanooga TN 4, Tulsa OK 3, Wichita KS 2, Dayton OH 1, Springfield MO 1.
 
-Heavy on metal, auto and stone on purpose. Those shops sit in industrial pockets
-of Sun Valley and Pacoima, do work worth real money, are owner-run, and almost
-none of them have a website. They are also clustered, so you can knock on six
-doors on Branford Street in one trip.
+**Trades:** auto body 20, welding 9, metal fabrication 9, upholstery 4, sheet
+metal 3, countertops 3, auto glass 3, flooring 3, cabinetry 4, tree 2, masonry
+2, pool 2, appliance 2, garage doors 2, plus ironwork, radiator, transmission
+and nursery.
+
+### Why the split, and how to use it
+
+**The 52 in LA are the ones that matter first.** You can drive to them, walk in
+with the check on your phone, and collect a referral from the shop next door.
+Thirteen are in Sun Valley alone, four auto body shops sit on the same block of
+Branford Street. The first closes should come from here, because showing up
+converts and a stranger on the phone does not, yet.
+
+**The 34 national ones are dial volume**, and they exist because the offer is
+100% deliverable remotely. Nothing in the build requires being there. What you
+lose is the walk-in, the referral density and the local story, which is exactly
+why they are second, not first.
+
+Use them once the pitch is proven: after ten LA checks and five LA calls you
+will know what lands, and then national is just more reps of a thing that works.
+Calling Lubbock before you have said the pitch out loud ten times wastes the
+one resource you cannot rebuild, which is your own conviction on the phone.
 
 ### What "verified" means here, exactly
 
@@ -130,27 +147,37 @@ doors on Branford Street in one trip.
 (Yelp, YellowPages, Nextdoor, TheBlueBook, HomeAdvisor), and a search for the
 business surfaced no website of their own, only third-party directory pages.
 
-That second part is the need signal and it is a real one. A business whose entire
-web presence is other people's directories almost certainly has no site. It also
-means that when a customer searches them, the top results are Yelp pages the
-business does not control.
+That second part is the need signal and it is real. **78 of 86 show it.** A
+business whose entire web presence is other people's directories almost
+certainly has no site. It also means that when a customer searches them, the top
+result is a Yelp page the business does not control and cannot fix.
 
-**Not verified, and you must check before dialling:**
+**Not verified, and you check before dialling:**
 
 - That the number still works and belongs to that business
 - The state of their Google listing, claimed or not, filled in or not
 - Whether any assistant names them
 
 Those three are exactly what the call sheet walks you through, so the list is
-built to be checked, not called cold off the page.
+built to be checked rather than called cold off the page.
 
-One flag carried in the notes: **Padilla's Masonry and Landscaping** appears on
-one Yelp listing as CLOSED. Verify before spending a call on it.
+**Flags carried in the notes:** Padilla's Masonry appears as CLOSED on one Yelp
+listing. Special Touch Upholstery had a listed domain that looked mismatched.
 
-The four with websites (Mission Iron Works, Custom Furniture by WM, Van Nuys
-Auto Glass, Blumer Auto Center) are not mistakes. They are the better lead type:
-intent already proven, and the question becomes whether the site they paid for
-is actually getting read.
+The eight with websites are not mistakes. They are the better lead type: intent
+already proven, and the question becomes whether the site they paid for is
+getting read.
+
+### A finding about national search
+
+Searching nationally for "businesses with no website" mostly surfaces businesses
+that **do** have websites, because search ranks sites and a shop with no site is
+invisible to it. Broad queries returned SEO-optimised companies every time.
+
+What works is querying a specific metro and trade the way a customer would, so
+directory aggregators surface the small shops. That pattern produced every row
+here. Use it if you expand further, or run the OSM finder, which filters on the
+website tag directly and does not care about ranking.
 
 ## 5. About emails
 
