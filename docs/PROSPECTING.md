@@ -125,30 +125,37 @@ and nursery.
 
 ### How the 50 were chosen
 
-One question decides it: **does a stranger with money find this business by
-searching?** That is the entire offer, so a business whose work arrives another
-way is a bad prospect no matter how broken their listing is.
+Two rules, in this order.
 
-| Intent | Trades | In the 50 |
-|---|---|---|
-| **High** | Tree, pool, masonry, gates and iron, fencing, cabinetry, countertops, flooring, upholstery, custom furniture | **39** |
-| **Medium** | Mobile welding, metal fabrication, garage doors, appliance repair | 11 |
-| **Excluded** | Auto body, auto glass, auto repair, radiator, transmission | 0 |
-| **Excluded** | Sheet metal, plating, anodizing, welding supply, machine shops | 0 |
+**1. Does a stranger with money find this business by searching?** That is the
+whole offer, so a business whose work arrives another way is a bad prospect no
+matter how broken its listing is. Auto body fails it outright: insurance
+direct-repair programs, tow truck referrals and dealerships bring the work, and
+"I get all my work from State Farm" is a true objection with no answer. All of
+them are out, along with auto glass, radiator, transmission, and the B2B shops
+(sheet metal, plating, anodizing, welding supply, machine shops) that no
+consumer has ever searched for.
 
-**Auto body is why this got rebuilt.** Twenty of them were in the pool and
-sixteen made the previous list. Their work comes from insurance direct-repair
-programs, tow truck referrals and dealerships, not from a homeowner searching.
-The honest objection, "I get all my work from State Farm," is true, and there is
-no good answer to it. They are gone.
+**2. At least five per trade, or the trade is dropped.** Calling two pool
+companies teaches you nothing. Calling eight lets you find the rhythm, reuse the
+discovery question and compare answers. Cabinetry (4 available) and masonry (3)
+were dropped on this rule rather than padded out.
 
-The industrial shops went for the same reason in reverse: sheet metal, plating
-and machine shops sell B2B on contract. No consumer has ever searched for them.
+| Group | In the 50 |
+|---|---|
+| Tree & landscape | 10 |
+| Flooring & countertops | 9 |
+| Welding & metal fab | 9 |
+| Pool service | 8 |
+| Upholstery & furniture | 8 |
+| Gates, iron & fencing | 6 |
 
-What is left is thirteen tree services, six metal fabricators, five upholsterers,
-three flooring, three countertop, two cabinetry, two pool, and a spread of iron
-and gate work. Every one of them gets found by a homeowner typing a problem into
-a phone, and every one has a job worth more than the fix costs.
+41 of the 50 are top-intent trades. The nine welding and metal fab rows are the
+one medium-intent group kept, because they are drivable LA shops and some of
+that work is genuinely consumer-searched.
+
+**Work one group at a time.** Same pitch, same discovery question, same rhythm,
+and by the fifth call you will be good at it.
 
 ### What "verified" means, and what it does not
 
