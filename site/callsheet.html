@@ -1,0 +1,552 @@
+<title>Main Street Call Sheet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=Libre+Franklin:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --paper:#E7E9E4; --raised:#F3F4F0; --sunk:#DDE0DA;
+    --ink:#16191A; --ink-2:#565E5C; --ink-3:#7B8481;
+    --rule:#C4C9C1; --rule-hard:#9BA39D;
+    --signal:#B83227; --signal-soft:#EFDCD8;
+    --good:#2F6B4F; --good-soft:#DCE8E1;
+    --warn:#8A6410; --warn-soft:#EFE6CF;
+    --font-d:'Archivo','Helvetica Neue',Arial,sans-serif;
+    --font-b:'Libre Franklin',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;
+    --font-m:'IBM Plex Mono','SFMono-Regular',Menlo,Consolas,monospace;
+  }
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
+    --paper:#121515; --raised:#1A1E1E; --sunk:#0D1010;
+    --ink:#E9EBE7; --ink-2:#A2ABA7; --ink-3:#7B8480;
+    --rule:#2C3231; --rule-hard:#434A48;
+    --signal:#E2604F; --signal-soft:#3A201C;
+    --good:#69B08C; --good-soft:#1B2E25;
+    --warn:#D6A93C; --warn-soft:#2E2715;
+  }}
+  :root[data-theme="dark"]{
+    --paper:#121515; --raised:#1A1E1E; --sunk:#0D1010;
+    --ink:#E9EBE7; --ink-2:#A2ABA7; --ink-3:#7B8480;
+    --rule:#2C3231; --rule-hard:#434A48;
+    --signal:#E2604F; --signal-soft:#3A201C;
+    --good:#69B08C; --good-soft:#1B2E25;
+    --warn:#D6A93C; --warn-soft:#2E2715;
+  }
+
+  *{box-sizing:border-box}
+  body{background:var(--paper); color:var(--ink); font-family:var(--font-b); font-size:15px; line-height:1.5; margin:0; -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1240px; margin:0 auto; padding-inline:16px}
+  .mono{font-family:var(--font-m); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase}
+  h1,h2,h3{font-family:var(--font-d); font-weight:800; margin:0; line-height:1.1; letter-spacing:-.02em}
+  p{margin:0}
+  button{font-family:inherit; cursor:pointer}
+
+  /* header */
+  .top{border-bottom:2px solid var(--ink); background:var(--paper); position:sticky; top:env(safe-area-inset-top,0px); z-index:20}
+  .top .wrap{display:flex; flex-wrap:wrap; gap:10px 18px; align-items:center; justify-content:space-between; padding-block:11px}
+  .brand{font-family:var(--font-d); font-weight:800; font-size:15px; text-transform:uppercase}
+  .brand span{color:var(--signal)}
+  .tallies{display:flex; gap:14px; flex-wrap:wrap}
+  .tally{font-family:var(--font-m); font-size:11px; letter-spacing:.05em; color:var(--ink-3); white-space:nowrap}
+  .tally b{color:var(--ink); font-weight:500; font-size:13px}
+  .tally.hot b{color:var(--signal)}
+
+  /* buttons */
+  .btn{font-family:var(--font-d); font-weight:800; font-size:11.5px; letter-spacing:.05em; text-transform:uppercase;
+    background:var(--signal); color:#fff; border:1.5px solid var(--signal); padding:8px 13px; border-radius:0; text-decoration:none; display:inline-block}
+  .btn.ghost{background:transparent; color:var(--ink); border-color:var(--rule-hard)}
+  .btn.ghost:hover{border-color:var(--ink)}
+  .btn.sm{padding:6px 10px; font-size:10.5px}
+  .btn[disabled]{opacity:.5; cursor:not-allowed}
+
+  /* layout */
+  .grid{display:grid; grid-template-columns:1fr; gap:20px; padding-block:20px 48px}
+  @media(min-width:980px){ .grid{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr); gap:24px; align-items:start} }
+
+  .bar{display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-bottom:14px}
+  .chip{font-family:var(--font-m); font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; padding:6px 10px;
+    border:1px solid var(--rule-hard); background:transparent; color:var(--ink-2)}
+  .chip.on{background:var(--ink); color:var(--paper); border-color:var(--ink)}
+
+  /* list */
+  .list{border-top:1.5px solid var(--rule-hard)}
+  .row{display:grid; grid-template-columns:34px 1fr auto; gap:11px; padding:11px 10px 11px 0; border-bottom:1px solid var(--rule); align-items:center; cursor:pointer; background:transparent}
+  .row:hover{background:var(--raised)}
+  .row.sel{background:var(--raised); box-shadow:inset 3px 0 0 var(--signal); padding-left:9px}
+  .score{font-family:var(--font-m); font-size:13px; font-weight:500; text-align:center; font-variant-numeric:tabular-nums;
+    padding:3px 0; border:1px solid var(--rule-hard); color:var(--ink-2)}
+  .score.hi{background:var(--signal-soft); border-color:var(--signal); color:var(--signal); font-weight:600}
+  .score.mid{background:var(--warn-soft); border-color:var(--warn); color:var(--warn)}
+  .r-name{font-weight:600; font-size:14.5px; line-height:1.25}
+  .r-meta{font-family:var(--font-m); font-size:10.5px; color:var(--ink-3); letter-spacing:.03em; margin-top:2px}
+  .pill{display:inline-block; font-family:var(--font-m); font-size:9.5px; letter-spacing:.07em; text-transform:uppercase; padding:3px 7px; border:1px solid currentColor; white-space:nowrap}
+  .pill.new{color:var(--ink-3)}
+  .pill.called{color:var(--warn)}
+  .pill.booked{color:var(--good); background:var(--good-soft)}
+  .pill.dead{color:var(--ink-3); opacity:.6}
+  .pill.checked{color:var(--signal)}
+  .empty{padding:34px 0; color:var(--ink-3); font-size:14.5px; border-bottom:1px solid var(--rule)}
+
+  /* panel */
+  .panel{background:var(--raised); border:1px solid var(--rule-hard); box-shadow:4px 4px 0 var(--sunk)}
+  @media(min-width:980px){ .panel{position:sticky; top:74px; max-height:calc(100vh - 96px); overflow-y:auto} }
+  .p-hd{padding:13px 15px; border-bottom:1px solid var(--rule-hard); background:var(--sunk); display:flex; justify-content:space-between; gap:10px; align-items:flex-start}
+  .p-hd h2{font-size:17px}
+  .p-hd .mono{color:var(--ink-3); margin-top:4px}
+  .p-body{padding:15px}
+  .sec{border-top:1px solid var(--rule); padding-top:13px; margin-top:15px}
+  .sec:first-child{border-top:none; padding-top:0; margin-top:0}
+  .sec-t{font-family:var(--font-m); font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--signal); margin-bottom:9px}
+  .links{display:flex; flex-wrap:wrap; gap:7px}
+  .q-box{background:var(--paper); border:1px solid var(--rule); padding:9px 11px; font-size:13.5px; color:var(--ink-2); margin-bottom:9px; line-height:1.4}
+  .q-box b{color:var(--ink); font-weight:600}
+
+  .ask{display:grid; grid-template-columns:1fr; gap:7px; margin-top:4px}
+  .ask-row{display:grid; grid-template-columns:78px 1fr; gap:9px; align-items:center}
+  .ask-row > span{font-family:var(--font-m); font-size:11px; color:var(--ink-2); letter-spacing:.04em}
+  .seg{display:grid; grid-template-columns:1fr 1fr; border:1px solid var(--rule-hard)}
+  .seg button{background:transparent; border:none; padding:7px 4px; font-family:var(--font-m); font-size:10px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-2); border-right:1px solid var(--rule-hard)}
+  .seg button:last-child{border-right:none}
+  .seg button.on{background:var(--signal); color:#fff}
+  .seg button.on.yes{background:var(--good); color:#fff}
+
+  .fields{display:grid; grid-template-columns:1fr 1fr; gap:10px}
+  label{display:block; font-family:var(--font-m); font-size:9.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-2); margin-bottom:4px}
+  input,select,textarea{width:100%; font-family:var(--font-b); font-size:14.5px; color:var(--ink); background:var(--paper);
+    border:1px solid var(--rule-hard); padding:8px 10px; border-radius:0; appearance:none}
+  textarea{resize:vertical; min-height:62px; font-size:14px}
+  input:focus,select:focus,textarea:focus{outline:2px solid var(--signal); outline-offset:1px; border-color:var(--signal)}
+  .statuses{display:grid; grid-template-columns:repeat(2,1fr); gap:6px}
+  @media(min-width:460px){ .statuses{grid-template-columns:repeat(4,1fr)} }
+  .statuses button{border:1px solid var(--rule-hard); background:transparent; padding:8px 4px; font-family:var(--font-m); font-size:10px; letter-spacing:.05em; text-transform:uppercase; color:var(--ink-2)}
+  .statuses button.on{background:var(--ink); color:var(--paper); border-color:var(--ink)}
+
+  .verdict{margin-top:13px; padding:11px 13px; border:2px solid var(--signal); background:var(--signal-soft); color:var(--signal); font-family:var(--font-d); font-weight:800; font-size:14px; line-height:1.3}
+  .verdict.cold{border-color:var(--rule-hard); background:var(--sunk); color:var(--ink-2)}
+  .verdict small{display:block; font-family:var(--font-b); font-weight:400; font-size:12.5px; margin-top:5px; color:var(--ink-2)}
+
+  dialog{border:1px solid var(--rule-hard); background:var(--raised); color:var(--ink); padding:0; max-width:620px; width:calc(100% - 32px); box-shadow:6px 6px 0 rgba(0,0,0,.18)}
+  dialog::backdrop{background:rgba(0,0,0,.42)}
+  .d-hd{padding:13px 16px; border-bottom:1px solid var(--rule-hard); background:var(--sunk); display:flex; justify-content:space-between; align-items:center}
+  .d-body{padding:16px}
+  .hint{font-size:12.5px; color:var(--ink-3); margin-top:8px; line-height:1.5}
+  .banner{background:var(--sunk); border:1px solid var(--rule-hard); padding:11px 13px; font-size:13.5px; color:var(--ink-2); margin-bottom:14px; line-height:1.45}
+  .toast{position:fixed; left:50%; transform:translateX(-50%); bottom:24px; background:var(--ink); color:var(--paper);
+    font-family:var(--font-m); font-size:11px; letter-spacing:.06em; text-transform:uppercase; padding:10px 16px; z-index:60}
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brand">Call <span>Sheet</span></div>
+    <div class="tallies">
+      <div class="tally">Leads <b id="t-all">0</b></div>
+      <div class="tally hot">Worth calling <b id="t-hot">0</b></div>
+      <div class="tally">Checked <b id="t-chk">0</b></div>
+      <div class="tally">Called <b id="t-called">0</b></div>
+      <div class="tally">Booked <b id="t-booked">0</b></div>
+    </div>
+    <div style="display:flex; gap:7px">
+      <button class="btn sm ghost" id="b-import">Import</button>
+      <button class="btn sm ghost" id="b-export">Export</button>
+      <button class="btn sm" id="b-add">Add lead</button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="grid">
+    <div>
+      <div id="banner" class="banner" hidden></div>
+      <div class="bar" id="filters">
+        <button class="chip on" data-f="all">All</button>
+        <button class="chip" data-f="unchecked">Not checked</button>
+        <button class="chip" data-f="hot">Worth calling</button>
+        <button class="chip" data-f="called">Called</button>
+        <button class="chip" data-f="booked">Booked</button>
+      </div>
+      <div class="list" id="list"></div>
+    </div>
+
+    <div class="panel" id="panel"></div>
+  </div>
+</div>
+
+<dialog id="dlg">
+  <div class="d-hd"><h2 id="d-title" style="font-size:15px">Add lead</h2><button class="btn sm ghost" id="d-x">Close</button></div>
+  <div class="d-body" id="d-body"></div>
+</dialog>
+
+<script>
+(function(){
+  var COL = ['business','trade','phone','city','street','website','email','maps','osm',
+             'gbp_claimed','reviews','rating','google_position','chatgpt','gemini','claude','status','notes'];
+  var STATUSES = ['new','called','booked','dead'];
+  var leads = [], selId = null, filter = 'all', db = null, coll = null, ready = false;
+
+  var $ = function(id){ return document.getElementById(id); };
+  function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g, function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+  function toast(msg){
+    var t=document.createElement('div'); t.className='toast'; t.textContent=msg;
+    document.body.appendChild(t); setTimeout(function(){ t.remove(); }, 2200);
+  }
+  function banner(msg){ var b=$('banner'); b.textContent=msg; b.hidden=!msg; }
+
+  // ---- scoring: how badly do they need this, and can they pay ----
+  function score(l){
+    var s = 0;
+    if(!l.website) s += 30;                                   // nothing to find
+    if(l.gbp_claimed === 'no') s += 25;                       // listing never claimed
+    var named = ['chatgpt','gemini','claude'].filter(function(k){ return l[k]==='yes'; }).length;
+    var asked = ['chatgpt','gemini','claude'].filter(function(k){ return l[k]; }).length;
+    if(asked && named === 0) s += 20;                         // invisible to assistants
+    else if(asked && named < asked) s += 8;
+    var pos = parseInt(l.google_position,10);
+    if(pos && pos > 3) s += 15;                               // outside the map pack
+    var rev = parseInt(l.reviews,10);
+    if(rev >= 10 && rev <= 49) s += 10;                       // established, still hungry
+    else if(rev >= 50 && rev <= 99) s += 4;
+    else if(rev >= 100) s -= 10;                              // at capacity, has said no before
+    var rat = parseFloat(l.rating);
+    if(rat >= 4.5) s += 5;                                    // good at the work
+    return Math.max(0, Math.min(100, s));
+  }
+  function checked(l){ return !!(l.gbp_claimed || l.chatgpt || l.gemini || l.claude || l.google_position); }
+  function blank(){
+    var o = {}; COL.forEach(function(c){ o[c]=''; }); o.status='new'; return o;
+  }
+
+  // ---- persistence ----
+  function save(l){
+    if(!coll){ return Promise.resolve(); }
+    var body = {}; COL.forEach(function(c){ body[c] = l[c]||''; });
+    body.updated = new Date().toISOString();
+    return coll.doc(l.id).set(body).catch(function(){ toast('Could not save'); });
+  }
+  function removeLead(id){
+    leads = leads.filter(function(l){ return l.id!==id; });
+    if(selId===id) selId = leads.length ? leads[0].id : null;
+    if(coll) coll.doc(id).delete().catch(function(){});
+    render();
+  }
+
+  // ---- render ----
+  function visible(){
+    return leads.filter(function(l){
+      if(filter==='unchecked') return !checked(l);
+      if(filter==='hot') return score(l) >= 55 && l.status!=='dead';
+      if(filter==='called') return l.status==='called';
+      if(filter==='booked') return l.status==='booked';
+      return true;
+    }).sort(function(a,b){
+      if(a.status==='dead' && b.status!=='dead') return 1;
+      if(b.status==='dead' && a.status!=='dead') return -1;
+      return score(b)-score(a) || a.business.localeCompare(b.business);
+    });
+  }
+
+  function render(){
+    var all = leads.length;
+    $('t-all').textContent = all;
+    $('t-hot').textContent = leads.filter(function(l){ return score(l)>=55 && l.status!=='dead'; }).length;
+    $('t-chk').textContent = leads.filter(checked).length;
+    $('t-called').textContent = leads.filter(function(l){ return l.status==='called'; }).length;
+    $('t-booked').textContent = leads.filter(function(l){ return l.status==='booked'; }).length;
+
+    var rows = visible(), html = '';
+    if(!rows.length){
+      html = '<div class="empty">' + (all
+        ? 'Nothing in this filter yet.'
+        : 'No leads yet. Run the finder, then Import the CSV, or Add lead to type one in.') + '</div>';
+    }
+    rows.forEach(function(l){
+      var sc = score(l), cls = sc>=55?'hi':(sc>=35?'mid':'');
+      var pill = checked(l) && l.status==='new' ? 'checked' : l.status;
+      var pillTxt = checked(l) && l.status==='new' ? 'checked' : l.status;
+      html += '<div class="row'+(l.id===selId?' sel':'')+'" data-id="'+esc(l.id)+'">'
+        + '<div class="score '+cls+'">'+sc+'</div>'
+        + '<div><div class="r-name">'+esc(l.business||'Untitled')+'</div>'
+        + '<div class="r-meta">'+[esc(l.phone||'no phone'), esc(l.city||''), l.website?'has site':'NO SITE']
+            .filter(Boolean).join(' · ')+'</div></div>'
+        + '<span class="pill '+pill+'">'+esc(pillTxt)+'</span></div>';
+    });
+    $('list').innerHTML = html;
+    renderPanel();
+  }
+
+  function seg(l, key, label){
+    return '<div class="ask-row"><span>'+label+'</span><div class="seg" data-key="'+key+'">'
+      + '<button data-v="no" class="'+(l[key]==='no'?'on':'')+'">Not named</button>'
+      + '<button data-v="yes" class="'+(l[key]==='yes'?'on yes':'')+'">Named</button>'
+      + '</div></div>';
+  }
+
+  function renderPanel(){
+    var l = leads.filter(function(x){ return x.id===selId; })[0];
+    if(!l){
+      $('panel').innerHTML = '<div class="p-body"><p style="color:var(--ink-3); font-size:14.5px">'
+        + 'Pick a lead to run its check.</p></div>';
+      return;
+    }
+    var q = (l.trade||'') + ' in ' + (l.city||'');
+    var ask = 'Who are the best ' + (l.trade||'contractors') + ' in ' + (l.city||'my area') + '?';
+    var mapsUrl = l.maps || ('https://www.google.com/maps/search/'+encodeURIComponent((l.business||'')+' '+(l.city||'')));
+    var googleUrl = 'https://www.google.com/search?q='+encodeURIComponent(q);
+    var gptUrl = 'https://chatgpt.com/?q='+encodeURIComponent(ask);
+    var claudeUrl = 'https://claude.ai/new?q='+encodeURIComponent(ask);
+
+    var sc = score(l);
+    var named = ['chatgpt','gemini','claude'].filter(function(k){ return l[k]==='yes'; }).length;
+    var asked = ['chatgpt','gemini','claude'].filter(function(k){ return l[k]; }).length;
+
+    var verdict;
+    if(!checked(l)) verdict = '<div class="verdict cold">Not checked yet<small>Run the three steps above, then the verdict fills in.</small></div>';
+    else if(sc>=55) verdict = '<div class="verdict">Worth calling<small>'
+      + (l.website?'':'No website. ')
+      + (l.gbp_claimed==='no'?'Listing never claimed. ':'')
+      + (asked&&!named?'Not named by any assistant. ':'')
+      + 'Lead with what you found, not with the offer.</small></div>';
+    else verdict = '<div class="verdict cold">Low priority<small>'
+      + (named?'Assistants already name them. ':'')
+      + (parseInt(l.reviews,10)>=100?'Over 100 reviews, likely at capacity and has declined this before. ':'')
+      + 'Spend the call elsewhere.</small></div>';
+
+    $('panel').innerHTML =
+      '<div class="p-hd"><div><h2>'+esc(l.business||'Untitled')+'</h2>'
+        + '<div class="mono">'+[esc(l.trade||''), esc(l.city||'')].filter(Boolean).join(' · ')+'</div></div>'
+        + '<button class="btn sm ghost" id="p-del">Delete</button></div>'
+      + '<div class="p-body">'
+
+      + '<div class="sec"><div class="sec-t">Step 1 · Look them up</div>'
+        + '<div class="links">'
+        + '<a class="btn sm ghost" href="'+esc(mapsUrl)+'" target="_blank" rel="noopener">Google Maps listing</a>'
+        + '<a class="btn sm ghost" href="'+esc(googleUrl)+'" target="_blank" rel="noopener">Search "'+esc(q)+'"</a>'
+        + (l.website?'<a class="btn sm ghost" href="'+esc(l.website)+'" target="_blank" rel="noopener">Their site</a>':'')
+        + '</div>'
+        + '<div class="fields" style="margin-top:11px">'
+        + '<div><label for="f-gbp">Listing claimed?</label><select id="f-gbp" data-k="gbp_claimed">'
+          + '<option value="">Unknown</option>'
+          + '<option value="yes"'+(l.gbp_claimed==='yes'?' selected':'')+'>Yes, claimed</option>'
+          + '<option value="no"'+(l.gbp_claimed==='no'?' selected':'')+'>No / unclaimed</option></select></div>'
+        + '<div><label for="f-pos">Position in results</label><input id="f-pos" data-k="google_position" type="number" min="1" placeholder="1 = top three" value="'+esc(l.google_position)+'"></div>'
+        + '<div><label for="f-rev">Reviews</label><input id="f-rev" data-k="reviews" type="number" min="0" placeholder="e.g. 21" value="'+esc(l.reviews)+'"></div>'
+        + '<div><label for="f-rat">Rating</label><input id="f-rat" data-k="rating" type="number" step="0.1" min="0" max="5" placeholder="4.9" value="'+esc(l.rating)+'"></div>'
+        + '</div></div>'
+
+      + '<div class="sec"><div class="sec-t">Step 2 · Ask the assistants</div>'
+        + '<div class="q-box">Ask each one: <b>'+esc(ask)+'</b></div>'
+        + '<div class="links" style="margin-bottom:11px">'
+        + '<button class="btn sm ghost" id="p-copy">Copy the question</button>'
+        + '<a class="btn sm ghost" href="'+esc(gptUrl)+'" target="_blank" rel="noopener">ChatGPT</a>'
+        + '<a class="btn sm ghost" href="'+esc(claudeUrl)+'" target="_blank" rel="noopener">Claude</a>'
+        + '<a class="btn sm ghost" href="https://gemini.google.com/app" target="_blank" rel="noopener">Gemini</a>'
+        + '</div>'
+        + '<div class="ask">'+seg(l,'chatgpt','ChatGPT')+seg(l,'gemini','Gemini')+seg(l,'claude','Claude')+'</div>'
+        + verdict
+        + '</div>'
+
+      + '<div class="sec"><div class="sec-t">Step 3 · Work it</div>'
+        + '<div class="links" style="margin-bottom:11px">'
+        + (l.phone?'<a class="btn sm" href="tel:'+esc(l.phone.replace(/[^0-9+]/g,''))+'">Call '+esc(l.phone)+'</a>':'<span class="mono" style="color:var(--ink-3)">No phone on file</span>')
+        + (l.email?'<a class="btn sm ghost" href="mailto:'+esc(l.email)+'">Email</a>':'')
+        + '</div>'
+        + '<label>Status</label><div class="statuses" id="p-status">'
+        + STATUSES.map(function(s){ return '<button data-s="'+s+'" class="'+(l.status===s?'on':'')+'">'+s+'</button>'; }).join('')
+        + '</div>'
+        + '<div style="margin-top:11px"><label for="f-notes">Notes</label>'
+        + '<textarea id="f-notes" data-k="notes" placeholder="What they said. Who answers the phone. What work they want more of.">'+esc(l.notes)+'</textarea></div>'
+        + '</div>'
+
+      + '<div class="sec"><div class="sec-t">Details</div>'
+        + '<div class="fields">'
+        + '<div><label for="f-ph">Phone</label><input id="f-ph" data-k="phone" value="'+esc(l.phone)+'"></div>'
+        + '<div><label for="f-em">Email</label><input id="f-em" data-k="email" value="'+esc(l.email)+'"></div>'
+        + '<div><label for="f-ci">City</label><input id="f-ci" data-k="city" value="'+esc(l.city)+'"></div>'
+        + '<div><label for="f-tr">Trade</label><input id="f-tr" data-k="trade" value="'+esc(l.trade)+'"></div>'
+        + '<div style="grid-column:1/-1"><label for="f-web">Website (blank = none)</label><input id="f-web" data-k="website" value="'+esc(l.website)+'"></div>'
+        + '</div></div>'
+      + '</div>';
+
+    // wire panel
+    $('panel').querySelectorAll('[data-k]').forEach(function(el){
+      var ev = el.tagName==='SELECT' ? 'change' : 'input';
+      el.addEventListener(ev, function(){
+        l[el.dataset.k] = el.value;
+        clearTimeout(el._t);
+        el._t = setTimeout(function(){ save(l); if(['website','reviews','rating','google_position','gbp_claimed'].indexOf(el.dataset.k)>=0) render(); }, 420);
+      });
+    });
+    $('panel').querySelectorAll('.seg').forEach(function(sg){
+      sg.addEventListener('click', function(e){
+        var b = e.target.closest('button'); if(!b) return;
+        var k = sg.dataset.key;
+        l[k] = (l[k]===b.dataset.v) ? '' : b.dataset.v;
+        save(l); render();
+      });
+    });
+    $('p-status').addEventListener('click', function(e){
+      var b = e.target.closest('button'); if(!b) return;
+      l.status = b.dataset.s; save(l); render();
+    });
+    $('p-del').addEventListener('click', function(){
+      if(confirm('Delete '+(l.business||'this lead')+'? This cannot be undone.')) removeLead(l.id);
+    });
+    $('p-copy').addEventListener('click', function(){
+      navigator.clipboard.writeText(ask).then(function(){ toast('Question copied'); },
+        function(){ toast('Copy failed, select it by hand'); });
+    });
+  }
+
+  // ---- CSV ----
+  function parseCSV(text){
+    var rows=[], row=[], cur='', q=false;
+    for(var i=0;i<text.length;i++){
+      var c=text[i];
+      if(q){
+        if(c==='"'){ if(text[i+1]==='"'){ cur+='"'; i++; } else q=false; }
+        else cur+=c;
+      } else if(c==='"'){ q=true; }
+      else if(c===','){ row.push(cur); cur=''; }
+      else if(c==='\n'){ row.push(cur); rows.push(row); row=[]; cur=''; }
+      else if(c!=='\r'){ cur+=c; }
+    }
+    if(cur.length||row.length){ row.push(cur); rows.push(row); }
+    return rows.filter(function(r){ return r.some(function(c){ return c.trim(); }); });
+  }
+  function toCSV(){
+    var head = ['score'].concat(COL);
+    var lines = [head.join(',')];
+    visible().forEach(function(l){
+      lines.push(head.map(function(c){
+        var v = c==='score' ? score(l) : (l[c]||'');
+        v = String(v);
+        return /[",\n]/.test(v) ? '"'+v.replace(/"/g,'""')+'"' : v;
+      }).join(','));
+    });
+    return lines.join('\n');
+  }
+
+  function importRows(text){
+    var rows = parseCSV(text);
+    if(rows.length < 2){ toast('Need a header row and at least one lead'); return; }
+    var head = rows[0].map(function(h){ return h.trim().toLowerCase().replace(/\s+/g,'_'); });
+    var alias = {name:'business',company:'business',business_name:'business',
+                 telephone:'phone',phone_number:'phone',town:'city',url:'website',
+                 site:'website',category:'trade',type:'trade'};
+    head = head.map(function(h){ return alias[h] || h; });
+    if(head.indexOf('business') < 0){ toast('No business/name column found'); return; }
+
+    var added = 0;
+    rows.slice(1).forEach(function(r){
+      var o = blank();
+      head.forEach(function(h,i){ if(COL.indexOf(h)>=0) o[h] = (r[i]||'').trim(); });
+      if(!o.business) return;
+      var dupe = leads.some(function(x){
+        return x.business.toLowerCase()===o.business.toLowerCase()
+          && x.phone.replace(/\D/g,'')===o.phone.replace(/\D/g,''); });
+      if(dupe) return;
+      if(!STATUSES.includes(o.status)) o.status = 'new';
+      o.id = 'p' + Date.now().toString(36) + Math.random().toString(36).slice(2,7);
+      leads.push(o); save(o); added++;
+    });
+    if(added && !selId) selId = leads[0].id;
+    render();
+    toast(added ? added+' lead'+(added===1?'':'s')+' imported' : 'Nothing new to import');
+    $('dlg').close();
+  }
+
+  // ---- dialogs ----
+  function openImport(){
+    $('d-title').textContent = 'Import leads';
+    $('d-body').innerHTML =
+      '<p style="font-size:14px; color:var(--ink-2); margin-bottom:10px">Paste the CSV from the finder, '
+      + 'or any sheet with a <b>business</b> column. Phone, city, trade, website and email are picked up if present.</p>'
+      + '<textarea id="imp" style="min-height:190px; font-family:var(--font-m); font-size:12px" '
+      + 'placeholder="business,trade,phone,city,website&#10;Valley Gate &amp; Iron,metal construction,(818) 555-0142,Sun Valley,"></textarea>'
+      + '<p class="hint">Duplicates (same name and phone) are skipped.</p>'
+      + '<div style="margin-top:12px; display:flex; gap:8px"><button class="btn" id="imp-go">Import</button>'
+      + '<button class="btn ghost" id="imp-x">Cancel</button></div>';
+    $('dlg').showModal();
+    $('imp-go').onclick = function(){ importRows($('imp').value); };
+    $('imp-x').onclick = function(){ $('dlg').close(); };
+  }
+  function openAdd(){
+    $('d-title').textContent = 'Add lead';
+    $('d-body').innerHTML =
+      '<div class="fields">'
+      + '<div style="grid-column:1/-1"><label for="a-b">Business name</label><input id="a-b" placeholder="Valley Gate &amp; Iron"></div>'
+      + '<div><label for="a-p">Phone</label><input id="a-p" placeholder="(818) 555-0142"></div>'
+      + '<div><label for="a-c">City</label><input id="a-c" placeholder="Sun Valley"></div>'
+      + '<div><label for="a-t">Trade</label><input id="a-t" placeholder="gates and ironwork"></div>'
+      + '<div><label for="a-w">Website (blank = none)</label><input id="a-w" placeholder=""></div>'
+      + '</div>'
+      + '<div style="margin-top:12px; display:flex; gap:8px"><button class="btn" id="a-go">Add</button>'
+      + '<button class="btn ghost" id="a-x">Cancel</button></div>';
+    $('dlg').showModal();
+    $('a-go').onclick = function(){
+      var o = blank();
+      o.business = $('a-b').value.trim();
+      if(!o.business){ toast('Name it first'); return; }
+      o.phone = $('a-p').value.trim(); o.city = $('a-c').value.trim();
+      o.trade = $('a-t').value.trim(); o.website = $('a-w').value.trim();
+      o.id = 'p' + Date.now().toString(36) + Math.random().toString(36).slice(2,7);
+      leads.push(o); selId = o.id; save(o); render(); $('dlg').close();
+    };
+    $('a-x').onclick = function(){ $('dlg').close(); };
+  }
+  function openExport(){
+    $('d-title').textContent = 'Export';
+    $('d-body').innerHTML =
+      '<p style="font-size:14px; color:var(--ink-2); margin-bottom:10px">'
+      + visible().length + ' lead'+(visible().length===1?'':'s')+' in the current filter, scored and sorted. '
+      + 'Copy this into a spreadsheet.</p>'
+      + '<textarea id="exp" style="min-height:200px; font-family:var(--font-m); font-size:11.5px" readonly></textarea>'
+      + '<div style="margin-top:12px; display:flex; gap:8px"><button class="btn" id="exp-copy">Copy all</button>'
+      + '<button class="btn ghost" id="exp-x">Close</button></div>';
+    $('dlg').showModal();
+    $('exp').value = toCSV();
+    $('exp-copy').onclick = function(){
+      $('exp').select();
+      navigator.clipboard.writeText(toCSV()).then(function(){ toast('Copied'); },
+        function(){ toast('Select it and copy by hand'); });
+    };
+    $('exp-x').onclick = function(){ $('dlg').close(); };
+  }
+
+  // ---- events ----
+  $('list').addEventListener('click', function(e){
+    var r = e.target.closest('.row'); if(!r) return;
+    selId = r.dataset.id; render();
+    if(window.matchMedia('(max-width:979px)').matches) $('panel').scrollIntoView({behavior:'smooth', block:'start'});
+  });
+  $('filters').addEventListener('click', function(e){
+    var b = e.target.closest('.chip'); if(!b) return;
+    filter = b.dataset.f;
+    $('filters').querySelectorAll('.chip').forEach(function(c){ c.classList.toggle('on', c===b); });
+    render();
+  });
+  $('b-add').onclick = openAdd;
+  $('b-import').onclick = openImport;
+  $('b-export').onclick = openExport;
+  $('d-x').onclick = function(){ $('dlg').close(); };
+
+  render();
+  banner('Connecting to your saved list...');
+
+  (async function(){
+    try{
+      db = await window.claude?.use?.('db');
+      if(!db){ banner('Running without storage, so nothing here will be kept. Export before you close the tab.'); return; }
+      coll = db.collection('prospects');
+      coll.limit(1000).onSnapshot(function(snap){
+        var incoming = snap.docs.map(function(d){
+          var o = Object.assign(blank(), d.data()); o.id = d.id; return o;
+        });
+        // keep whatever is being typed right now
+        var localOnly = leads.filter(function(l){ return !incoming.some(function(i){ return i.id===l.id; }); });
+        leads = incoming.concat(localOnly);
+        if(!selId && leads.length) selId = visible()[0] && visible()[0].id;
+        ready = true; banner(''); render();
+      }, function(){ banner('Storage dropped out. Export your list before closing.'); });
+    }catch(e){ banner('Running without storage, so nothing here will be kept. Export before you close the tab.'); }
+  })();
+})();
+</script>

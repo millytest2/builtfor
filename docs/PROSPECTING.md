@@ -1,0 +1,104 @@
+# PROSPECTING — finding people to call
+
+Two tools and one rule. The rule: **never dial a number you have not seen on
+the business's own Google listing.** Scraped and searched data goes stale, and
+calling the wrong shop burns the one thing you cannot rebuild.
+
+---
+
+## 1. The finder
+
+`src/leadfinder/osm_find.py` pulls local trade businesses from OpenStreetMap.
+No API key, no billing, no Google Places quota. It uses two free public
+endpoints: Nominatim to turn a place name into a bounding box, Overpass to
+query businesses inside it.
+
+```bash
+# everything drivable in the valley, default trades
+python -m src.leadfinder.osm_find --where "San Fernando Valley, Los Angeles, CA"
+
+# one town, one trade
+python -m src.leadfinder.osm_find --where "Sun Valley, Los Angeles, CA" --trades metal,fence
+
+# also return businesses that already HAVE a site (often the better lead:
+# they already paid for one and got let down, so intent is proven)
+python -m src.leadfinder.osm_find --where "Pacoima, CA" --include-with-website
+
+# a box you drew yourself: south,west,north,east
+python -m src.leadfinder.osm_find --bbox 34.15,-118.45,34.30,-118.25
+```
+
+Output lands in `output/prospects_<area>.csv` with businesses that have a phone,
+sorted so the ones with no website come first.
+
+**Why OpenStreetMap works for this.** OSM tags `phone` and `website` as separate
+fields, so "has a phone, has no website" is a query rather than a guess. That is
+the exact filter, available free, which the dead Google Places key was never
+needed for.
+
+**What it will not do.** OSM is volunteer-mapped and thinner than Google,
+especially for one-truck operations. A missing `website` tag is not proof there
+is no website. Treat every row as a lead to verify, never as a vetted prospect.
+Data © OpenStreetMap contributors, ODbL.
+
+Available trades: metal, fence, carpenter, electric, plumb, hvac, roof, paint,
+stone, glass, landscape, pool, floor, builder, auto, studio.
+
+## 2. The call sheet
+
+The widget where the work actually happens. Import the CSV, then for each lead
+it walks the Visibility Check and records the answer:
+
+- **Step 1** links straight to their Google Maps listing and to the search a
+  customer would run. You record whether the listing is claimed, where they
+  land in results, review count and rating.
+- **Step 2** gives you the exact question to ask, a copy button, and direct
+  links into ChatGPT and Claude with it pre-filled. You record named or not
+  named for each assistant.
+- **Step 3** is a tap-to-call button, a status, and notes.
+
+It scores each lead as you go and tells you whether it is worth calling.
+
+Everything saves, so you can stop mid-list and come back. Export gives you a
+scored CSV for a spreadsheet.
+
+### How the score works
+
+| Signal | Points | Why |
+|---|---|---|
+| No website | +30 | Nothing to find, and the core of the offer |
+| Google listing unclaimed | +25 | Never set up, easiest possible win |
+| Named by no assistant | +20 | The gap you are selling |
+| Named by some but not all | +8 | Partial, weaker pitch |
+| Outside the top three on Google | +15 | Losing the search too |
+| 10 to 49 reviews | +10 | Established and still hungry |
+| 50 to 99 reviews | +4 | Busy |
+| 100+ reviews | **−10** | At capacity, and has declined this pitch before |
+| Rating 4.5 or better | +5 | Good at the work, worth helping |
+
+55 or above is worth calling. The negative on 100+ reviews is deliberate: a
+business with 150 five-star reviews and no website has had money and been
+pitched a dozen times. They did not do it. That is a revealed preference, not a
+gap.
+
+## 3. Seeded leads
+
+Five real San Fernando Valley iron and gate shops are already in the call sheet,
+found through public web research. **Every one is marked NOT VERIFIED.** Names,
+addresses and phones came from search results and directory listings, not from
+the businesses themselves. Open each one's Google listing first, confirm the
+number, and check whether a website exists before you dial.
+
+They are there as a starting point for the first afternoon, not as a vetted
+list.
+
+## 4. The order of work
+
+1. Run the finder over one town you can drive to.
+2. Import into the call sheet.
+3. Run checks until you have ten scoring 55 or above. About twenty minutes each
+   at first, faster once you have the rhythm.
+4. Call those ten. Lead with what you found, never with the offer.
+5. Log what happened in the notes. After thirty checks you will know which
+   trade and which town converts, and that answer picks the niche for you
+   rather than you guessing it upfront.
