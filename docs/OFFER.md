@@ -1,149 +1,134 @@
-# THE OFFER — current
+# THE OFFER — final
 
-This is the live positioning. It supersedes the offer and targeting in
-`STRATEGY_10K.md` and `HANDOFF.md`. Those are kept for the pricing math, the
-channel ranking and the call mechanics, which still hold.
+The live positioning. Supersedes the offer and targeting in `STRATEGY_10K.md`
+and `HANDOFF.md`. Those keep the channel ranking and the call mechanics.
 
 ---
 
 ## What we sell
 
-**We build websites for local businesses. The difference is ours are built so
-Google and the AI assistants can actually find you, and we set up your Google
-listing to match.**
+**We get local businesses found. Their Google listing fixed and a website
+built, done together, so that search engines and AI assistants can both
+actually read them.**
 
-That is the whole business in two sentences. It is a website company. Not an
-SEO agency, not an online agency, not an AI company.
+One job. Not two services bundled. Neither half works alone: a website nothing
+links to is invisible, and a listing with no site attached is a dead end.
 
-## Why "website company" and not something cleverer
+## The category
 
-"Website" is the only word in this space a non-technical owner already
-understands and already believes they need. It is a thing, not a service. They
-know the shape of the purchase: you pay somebody, you get a website, there is a
-monthly for hosting. Nobody has to be educated.
+A website company that fixes the Google listing as part of the build. Not an
+SEO agency, not an online agency, not an AI company, not a content or social
+agency.
 
-Everything else we do is invisible work: listing claimed, structured data,
-service pages, consistent citations. Invisible work is miserable to sell, hard
-to price, and impossible to explain at a kitchen table. So it stops being a
-separate service and becomes what is *inside* the website.
+"Website" is the only word here a non-technical owner already understands and
+already believes they need. Everything else we do is invisible work: listing
+claimed, structured data, service and town pages, consistent citations.
+Invisible work is miserable to sell and impossible to explain at a kitchen
+table, so it is not sold separately. It is what is inside the website.
 
-One product. One price. Nothing to pick from.
+## Explicitly out of scope
 
-## The one condition
+Social media. Blog posts. Ads. Logos and rebrands. Ghostwriting. Chatbots that
+talk to customers. Anything that replaces a person who works there.
 
-Leading with "want a website?" cold puts you back at $500, because that is what
-a website costs at Wix and from their nephew.
-
-The Visibility Check is what protects the price. Show them they are absent from
-the AI answers first, and the website stops being a brochure and becomes the fix
-for a problem they just watched happen. Free check first, website second, every
-time. The order is not a nicety, it is the entire pricing argument.
-
-## Why this works in 2026
-
-Three observations, all verifiable in about a minute on Google Maps:
-
-1. A large share of good local businesses have **no website linked** on their
-   Google Business Profile.
-2. Some have **no profile at all**, or one that was auto-generated and never
-   claimed.
-3. The owners are not tech people and know it.
-
-Layered on top: people increasingly ask assistants for local recommendations.
-Those answers are assembled from Google Business Profile data, reviews,
-structured data on the website, and consistent listings. A business missing all
-of that is not ranked low. It is absent.
-
-## The market is narrower than "local businesses"
-
-It is **local businesses that will never do this themselves.**
-
-A sixteen-year-old starting something will use self-serve software. A
-fifty-eight-year-old gate installer with 21 five-star reviews, no website, and a
-Google listing he has never logged into will not. He will not make an account,
-learn a dashboard, or do it on a Sunday.
-
-When Owner.com and others ship this as $99/mo self-serve, they pull the DIY
-crowd out of the funnel for free. That makes the remaining segment sharper, not
-smaller. It is large, aging, holds real money, and is being actively ignored by
-everyone building self-serve tools.
-
-This also settles the pricing question. You cannot charge $1,500 for work
-software does for $99. You charge it because a person drove out, sat at the
-table, and handled it. **Price the person, not the task.**
+Say this out loud on the page and on the call. Naming what you do not do is a
+faster trust builder than another claim about what you do, and it keeps you out
+of the content-agency and AI-receptionist categories where you compete on price
+against people with more staff.
 
 ## The offer
 
 | | Offer | Price |
 |---|---|---|
 | Free | **Visibility Check** | $0 |
-| The product | **A website that gets you found** | $1,500 + $199/mo |
+| The product | **Get found** | $800 + $149/mo |
+| Later, on evidence only | **Get them to book** | +$199/mo |
 
-Included in the build, never sold separately:
+**Included in the build.** Listing claimed or created and fully filled out,
+website linked on it, consistent name address and phone everywhere. A fast
+mobile site with a real page per service and per town, details and FAQs marked
+up the way search engines and assistants read them, real job photos. Two weeks
+from the day photos arrive.
 
-- The site: fast, mobile, tap to call, a real page per service and per town,
-  details and FAQs marked up the way assistants read them, real job photos
-- The listing: claimed or created, fully filled out, website linked, consistent
-  name address and phone everywhere
-- Monthly: hosting, upkeep, new jobs and photos added, a short note on whether
-  they are turning up yet
+**The monthly.** Hosting and upkeep, listing kept current, new jobs added, and
+the Visibility Check re-run every month and sent over. That re-run is the
+retention mechanism. Cancelling means giving up a number they can watch move.
 
-Later, for existing clients only, and never raised first: a couple of
-time-saving setups around the owner's paperwork. Not in the lead offer, not on
-the price list, not part of the pitch.
+**The upsell.** Only after they are getting found. Forms that came in and never
+turned into jobs, quotes that went quiet. Follow-up, not answering. Never
+pitched on day one and never invented for them.
 
-## The Visibility Check
+## Why $800 and not $500
 
-Replaces the old Leak Report entirely, and fixes its ethics problem. The old
-method involved posing as a customer, which cost them money on paid lead
-channels and was deceptive. This method touches nothing they pay for.
+Top of the stated range. Identical work, 60% more revenue, and $500 reads as
+"cheap website" where $800 reads as a project. It also leaves room to come down
+to $600 to close on the spot, which is a lever you do not have if you open at
+$500.
 
-1. Ask ChatGPT, Claude, Gemini and Google's AI answer the question a customer
-   would ask: "who installs automatic driveway gates in Sun Valley?"
-2. Record which businesses got named and whether they did.
-3. Pull up their Google Business Profile. Note what is empty: website link,
-   hours, categories, service areas, services, photos.
-4. Search their business name plus their main service. Note whether anything
-   online connects the two.
-5. One page: the answers, what is missing, what is already working.
+## The one condition that protects the price
 
-Always include at least one thing that is working. Reviews usually are. It
-proves you looked and it keeps the page from reading as an attack.
+Leading with "want a website?" cold puts you back at $500, because that is what
+Wix and his nephew cost.
 
-Every input is public and nothing is submitted on their behalf. When they ask
-how you got it, the answer is boring, which is the point.
+The Visibility Check is the whole pricing argument. Show him he is on page two
+and absent from every assistant answer first, and the website stops being a
+brochure and becomes the fix for a problem he just watched happen. Free check
+first, website second, every time.
 
-## Delivery, Rung 1
+## What $800 + $149 means for the numbers
 
-- Claim and verify the Google Business Profile, or build it if missing
-- Fill it out completely: hours, categories, service areas, services, photos,
-  description, Q&A
-- Link the website on the profile
-- Build or rebuild the website with structured data assistants read:
-  LocalBusiness, Service, FAQPage, area served
-- One real page per service they want more of, naming the work and the towns
-- Consistent name, address and phone across listings
+Honest version, 4 builds a month at 3% monthly churn, assuming about a third
+eventually take the upsell:
 
-## Delivery, Rung 2
+| Month | Clients | Monthly recurring | Total that month |
+|---|---|---|---|
+| 3 | 13 | $2,745 | $5,945 |
+| 6 | 23 | $5,052 | $8,252 |
+| 9 | 33 | $7,156 | $10,356 |
+| 12 | 42 | $9,077 | $12,277 |
 
-Built per client, never a template, and only after Rung 1 is live. Patterns
-that have come up:
+$10k/mo lands around month nine at four builds a month. Six builds a month
+brings it to month four. On recurring alone it is 46 clients.
 
-- Voice memo to written estimate
-- Job photos to profile posts
-- Past jobs made searchable, so pricing questions get answered from history
-- Follow-up drafts queued for the owner to send
+This is now a volume business, which the $1,500 version was not. Four builds a
+month means roughly 55 to 75 dials a week. That trade is defensible on purpose:
+more conversations is exactly the rep Miles is trying to build, and it is only
+survivable because delivery is AI-assisted and near-zero-touch per client.
 
-Rule: if nothing worth automating turns up, say so and do not sell Rung 2.
+The thing to watch is support load, not sales. At 40+ clients, 30 minutes each
+per month is 20 hours. Delivery has to stay templated and automated or the
+model eats itself at exactly the point it starts working.
 
-## What changed and why
+## The real reason this business exists
 
-Previous version sold missed-call answering at $1,500 + $500/mo. Dropped for
-two reasons. It replaces front-desk labor, which Miles does not want to build.
-And AI receptionists are a crowded 2026 category where the differentiator is
-price. Visibility is the opposite: unglamorous, checkable, and mostly unclaimed.
+Two skills, both transferable, and they are the actual return:
 
-The monthly is lower now ($199 vs $500), so the client count for $10k/mo is
-higher. Rung 2 at +$300/mo is what closes that gap, and it only exists on top
-of a working Rung 1. Revisit the math in `STRATEGY_10K.md` section 11 once
-there are five real clients and actual attach rates to plug in.
+1. **Sales.** Cold conversations with strangers, at volume, at a price that
+   gets said out loud.
+2. **Ranking, in depth.** How search engines and assistants index, read and
+   cite a site. Why one business gets named in an answer and another does not.
+
+The second one is the sleeper. If Miles can reliably make a local business
+surface for "best X near me" on Google and inside Gemini and ChatGPT, that same
+skill points straight at UPath. Getting a career tool cited when somebody asks
+an assistant for one is the same problem with a bigger prize.
+
+**So instrument it.** Every client, every month, log the exact queries checked,
+the position on Google, and whether each assistant named them. Keep it in one
+sheet across all clients. After thirty businesses that sheet is a dataset
+nobody else has: what actually moves a business into an AI answer, measured
+rather than guessed. That dataset is worth more than the retainers.
+
+The monthly Visibility Check is already the delivery. It is also the
+experiment. Do not let it become a formality.
+
+## Market
+
+Local businesses **that will never do this themselves.** A sixteen-year-old
+starting something will use self-serve software. A fifty-eight-year-old gate
+installer with 21 five-star reviews and a listing he has never logged into will
+not. When Owner.com and others ship this at $99/mo self-serve they pull the DIY
+crowd out of the funnel for free, which sharpens this segment rather than
+shrinking it.
+
+Price the person who drives out, not the task.
