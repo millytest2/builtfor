@@ -123,50 +123,60 @@ metal 3, countertops 3, auto glass 3, flooring 3, cabinetry 4, tree 2, masonry
 2, pool 2, appliance 2, garage doors 2, plus ironwork, radiator, transmission
 and nursery.
 
-### Why the split, and how to use it
+### How the 50 were chosen
 
-**The 52 in LA are the ones that matter first.** You can drive to them, walk in
-with the check on your phone, and collect a referral from the shop next door.
-Thirteen are in Sun Valley alone, four auto body shops sit on the same block of
-Branford Street. The first closes should come from here, because showing up
-converts and a stranger on the phone does not, yet.
+One question decides it: **does a stranger with money find this business by
+searching?** That is the entire offer, so a business whose work arrives another
+way is a bad prospect no matter how broken their listing is.
 
-**The 34 national ones are dial volume**, and they exist because the offer is
-100% deliverable remotely. Nothing in the build requires being there. What you
-lose is the walk-in, the referral density and the local story, which is exactly
-why they are second, not first.
+| Intent | Trades | In the 50 |
+|---|---|---|
+| **High** | Tree, pool, masonry, gates and iron, fencing, cabinetry, countertops, flooring, upholstery, custom furniture | **39** |
+| **Medium** | Mobile welding, metal fabrication, garage doors, appliance repair | 11 |
+| **Excluded** | Auto body, auto glass, auto repair, radiator, transmission | 0 |
+| **Excluded** | Sheet metal, plating, anodizing, welding supply, machine shops | 0 |
 
-Use them once the pitch is proven: after ten LA checks and five LA calls you
-will know what lands, and then national is just more reps of a thing that works.
-Calling Lubbock before you have said the pitch out loud ten times wastes the
-one resource you cannot rebuild, which is your own conviction on the phone.
+**Auto body is why this got rebuilt.** Twenty of them were in the pool and
+sixteen made the previous list. Their work comes from insurance direct-repair
+programs, tow truck referrals and dealerships, not from a homeowner searching.
+The honest objection, "I get all my work from State Farm," is true, and there is
+no good answer to it. They are gone.
 
-### What "verified" means here, exactly
+The industrial shops went for the same reason in reverse: sheet metal, plating
+and machine shops sell B2B on contract. No consumer has ever searched for them.
+
+What is left is thirteen tree services, six metal fabricators, five upholsterers,
+three flooring, three countertop, two cabinetry, two pool, and a spread of iron
+and gate work. Every one of them gets found by a homeowner typing a problem into
+a phone, and every one has a job worth more than the fix costs.
+
+### What "verified" means, and what it does not
 
 **Verified:** the business name, phone and address appear in public listings
-(Yelp, YellowPages, Nextdoor, TheBlueBook, HomeAdvisor), and a search for the
-business surfaced no website of their own, only third-party directory pages.
+(Yelp, YellowPages, Nextdoor, HomeAdvisor, TheBlueBook).
 
-That second part is the need signal and it is real. **78 of 86 show it.** A
-business whose entire web presence is other people's directories almost
-certainly has no site. It also means that when a customer searches them, the top
-result is a Yelp page the business does not control and cannot fix.
+**NOT verified, and this is the important one: whether they have a website.**
 
-**Not verified, and you check before dialling:**
+Our research only records whether a site surfaced in search. That is a hint, not
+proof. **Google Maps frequently hides a website link that the Business Profile
+itself does show.** A business can look siteless on the map card and have a
+perfectly good site one click away.
 
-- That the number still works and belongs to that business
-- The state of their Google listing, claimed or not, filled in or not
-- Whether any assistant names them
+So before you treat any lead as a no-website prospect, look in **all four**
+places. The call sheet links each one from step 1:
 
-Those three are exactly what the call sheet walks you through, so the list is
-built to be checked rather than called cold off the page.
+1. **The Business Profile itself**, not the Maps card
+2. **Search their name in quotes** plus the town
+3. **Facebook** — plenty of these shops use a page as their whole web presence
+4. **Their Yelp listing's website field**
 
-**Flags carried in the notes:** Padilla's Masonry appears as CLOSED on one Yelp
-listing. Special Touch Upholstery had a listed domain that looked mismatched.
+Only then mark it. The call sheet now scores it accordingly: an unverified
+"probably no site" is worth 6 points, a verified none-anywhere is worth 30, and
+a business that does have a site scores 10 because intent is already proven and
+the pitch becomes whether the site gets read.
 
-The eight with websites are not mistakes. They are the better lead type: intent
-already proven, and the question becomes whether the site they paid for is
-getting read.
+**Also not verified:** that the number still works, the state of their listing,
+and whether any assistant names them. All three are steps in the call sheet.
 
 ### A finding about national search
 

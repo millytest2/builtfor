@@ -107,6 +107,10 @@
   .seg button:last-child{border-right:none}
   .seg button.on{background:var(--signal); color:#fff}
   .seg button.on.yes{background:var(--good); color:#fff}
+  .seg.three{grid-template-columns:1fr 1fr 1fr}
+  .seg button.on.neutral{background:var(--rule-hard); color:var(--paper)}
+  .checkbox-note{font-size:12.5px; color:var(--ink-2); background:var(--paper); border:1px solid var(--rule); padding:8px 10px; margin-bottom:9px; line-height:1.45}
+  .checkbox-note b{color:var(--ink)}
 
   .fields{display:grid; grid-template-columns:1fr 1fr; gap:10px}
   label{display:block; font-family:var(--font-m); font-size:9.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-2); margin-bottom:4px}
@@ -158,6 +162,7 @@
       <div class="bar" id="filters">
         <button class="chip on" data-f="all">All</button>
         <button class="chip" data-f="unchecked">Not checked</button>
+        <button class="chip" data-f="nosite">Verified no site</button>
         <button class="chip" data-f="hot">Worth calling</button>
         <button class="chip" data-f="called">Called</button>
         <button class="chip" data-f="booked">Booked</button>
@@ -178,7 +183,7 @@
 (function(){
   var COL = ['business','trade','phone','city','street','website','email','maps','osm',
              'gbp_claimed','reviews','rating','google_position','chatgpt','gemini','claude',
-             'name_known','name_reply','status','notes'];
+             'name_known','name_reply','site_checked','status','notes'];
   var STATUSES = ['new','called','booked','dead'];
   var leads = [], selId = null, filter = 'all', db = null, coll = null, ready = false;
   var serverSeen = Object.create(null);   // every id the server has ever sent us
@@ -195,7 +200,12 @@
   // ---- scoring: how badly do they need this, and can they pay ----
   function score(l){
     var s = 0;
-    if(!l.website) s += 30;                                   // nothing to find
+    // A missing website in our research is a hint, not proof. Google Maps often
+    // hides the link that the Business Profile does show, so this only scores
+    // once you have actually looked in all four places.
+    if(l.site_checked === 'none') s += 30;                    // verified: nothing anywhere
+    else if(l.site_checked === 'has') s += 10;                // has one: the bad-site lead
+    else if(!l.website) s += 6;                               // unverified hint only
     if(l.gbp_claimed === 'no') s += 25;                       // listing never claimed
     var named = ['chatgpt','gemini','claude'].filter(function(k){ return l[k]==='yes'; }).length;
     var asked = ['chatgpt','gemini','claude'].filter(function(k){ return l[k]; }).length;
@@ -212,7 +222,7 @@
     if(rat >= 4.5) s += 5;                                    // good at the work
     return Math.max(0, Math.min(100, s));
   }
-  function checked(l){ return !!(l.gbp_claimed || l.chatgpt || l.gemini || l.claude || l.google_position || l.name_known); }
+  function checked(l){ return !!(l.site_checked || l.gbp_claimed || l.chatgpt || l.gemini || l.claude || l.google_position || l.name_known); }
   function blank(){
     var o = {}; COL.forEach(function(c){ o[c]=''; }); o.status='new'; return o;
   }
@@ -235,6 +245,7 @@
   function visible(){
     return leads.filter(function(l){
       if(filter==='unchecked') return !checked(l);
+      if(filter==='nosite') return l.site_checked === 'none';
       if(filter==='hot') return score(l) >= 55 && l.status!=='dead';
       if(filter==='called') return l.status==='called';
       if(filter==='booked') return l.status==='booked';
@@ -267,7 +278,8 @@
       html += '<div class="row'+(l.id===selId?' sel':'')+'" data-id="'+esc(l.id)+'">'
         + '<div class="score '+cls+'">'+sc+'</div>'
         + '<div><div class="r-name">'+esc(l.business||'Untitled')+'</div>'
-        + '<div class="r-meta">'+[esc(l.phone||'no phone'), esc(l.city||''), l.website?'has site':'NO SITE']
+        + '<div class="r-meta">'+[esc(l.phone||'no phone'), esc(l.city||''),
+            l.site_checked==='none'?'NO SITE ✓':(l.site_checked==='has'?'has site':(l.website?'site?':'no site?'))]
             .filter(Boolean).join(' · ')+'</div></div>'
         + '<span class="pill '+pill+'">'+esc(pillTxt)+'</span></div>';
     });
@@ -294,6 +306,10 @@
     var askName = 'What can you tell me about ' + (l.business||'this business')
                 + (l.city ? ' in ' + l.city : '') + '?';
     var mapsUrl = l.maps || ('https://www.google.com/maps/search/'+encodeURIComponent((l.business||'')+' '+(l.city||'')));
+    var nameSearch = 'https://www.google.com/search?q='+encodeURIComponent('"'+(l.business||'')+'" '+(l.city||''));
+    var gbpUrl = 'https://www.google.com/search?q='+encodeURIComponent((l.business||'')+' '+(l.city||'')+' website');
+    var fbUrl = 'https://www.facebook.com/search/top?q='+encodeURIComponent((l.business||'')+' '+(l.city||''));
+    var yelpUrl = 'https://www.yelp.com/search?find_desc='+encodeURIComponent(l.business||'')+'&find_loc='+encodeURIComponent(l.city||'');
     var googleUrl = 'https://www.google.com/search?q='+encodeURIComponent(q);
     var gptUrl = 'https://chatgpt.com/?q='+encodeURIComponent(ask);
     var claudeUrl = 'https://claude.ai/new?q='+encodeURIComponent(ask);
@@ -305,9 +321,11 @@
     var asked = ['chatgpt','gemini','claude'].filter(function(k){ return l[k]; }).length;
 
     var verdict;
-    if(!checked(l)) verdict = '<div class="verdict cold">Not checked yet<small>Run the three steps above, then the verdict fills in.</small></div>';
+    if(!checked(l)) verdict = '<div class="verdict cold">Not checked yet<small>Run the steps above, then the verdict fills in.</small></div>';
+    else if(!l.site_checked) verdict = '<div class="verdict cold">Check the website first<small>Everything else hinges on it, and our research only hints. Look in all four places in step 1.</small></div>';
     else if(sc>=55) verdict = '<div class="verdict">Worth calling<small>'
-      + (l.website?'':'No website. ')
+      + (l.site_checked==='none'?'No website anywhere, verified. ':'')
+      + (l.site_checked==='has'?'Has a site, so intent is proven. ':'')
       + (l.gbp_claimed==='no'?'Listing never claimed. ':'')
       + (asked&&!named?'Not named by any assistant. ':'')
       + (l.name_known==='no'?'Draws a blank when asked by name. ':'')
@@ -329,7 +347,21 @@
         + '<a class="btn sm ghost" href="'+esc(googleUrl)+'" target="_blank" rel="noopener">Search "'+esc(q)+'"</a>'
         + (l.website?'<a class="btn sm ghost" href="'+esc(l.website)+'" target="_blank" rel="noopener">Their site</a>':'')
         + '</div>'
-        + '<div class="fields" style="margin-top:11px">'
+        + '<div class="checkbox-note">Look in <b>all four</b> before you decide they have no site. '
+        + 'Maps often hides a link the Business Profile shows.</div>'
+        + '<div class="links" style="margin-bottom:9px">'
+        + '<a class="btn sm ghost" href="'+esc(gbpUrl)+'" target="_blank" rel="noopener">1 · Profile, not the Maps card</a>'
+        + '<a class="btn sm ghost" href="'+esc(nameSearch)+'" target="_blank" rel="noopener">2 · Search their name</a>'
+        + '<a class="btn sm ghost" href="'+esc(fbUrl)+'" target="_blank" rel="noopener">3 · Facebook page</a>'
+        + '<a class="btn sm ghost" href="'+esc(yelpUrl)+'" target="_blank" rel="noopener">4 · Yelp listing</a>'
+        + '</div>'
+        + '<div class="ask" style="margin-bottom:11px"><div class="ask-row"><span>Website</span>'
+          + '<div class="seg three" data-key="site_checked">'
+          + '<button data-v="none" class="'+(l.site_checked==='none'?'on':'')+'">None anywhere</button>'
+          + '<button data-v="has" class="'+(l.site_checked==='has'?'on yes':'')+'">Has one</button>'
+          + '<button data-v="" class="'+(!l.site_checked?'on neutral':'')+'">Not checked</button>'
+          + '</div></div></div>'
+        + '<div class="fields">'
         + '<div><label for="f-gbp">Listing claimed?</label><select id="f-gbp" data-k="gbp_claimed">'
           + '<option value="">Unknown</option>'
           + '<option value="yes"'+(l.gbp_claimed==='yes'?' selected':'')+'>Yes, claimed</option>'
@@ -395,7 +427,7 @@
       el.addEventListener(ev, function(){
         l[el.dataset.k] = el.value;
         clearTimeout(el._t);
-        el._t = setTimeout(function(){ save(l); if(['website','reviews','rating','google_position','gbp_claimed','name_known'].indexOf(el.dataset.k)>=0) render(); }, 420);
+        el._t = setTimeout(function(){ save(l); if(['website','reviews','rating','google_position','gbp_claimed','name_known','site_checked'].indexOf(el.dataset.k)>=0) render(); }, 420);
       });
     });
     $('panel').querySelectorAll('.seg').forEach(function(sg){
