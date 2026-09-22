@@ -1,6 +1,8 @@
-# Landing page
+# Website
 
-`index.html` is the whole site. No build step, no dependencies. Fonts come from
+`index.html` is the whole site: six pages (home, what we do, pricing, why now,
+about, free check) with client-side hash routing, so `#pricing` is a real
+shareable link and the back button works. No build step, no dependencies. Fonts come from
 Google Fonts, everything else is inline.
 
 ## Two ways to run it

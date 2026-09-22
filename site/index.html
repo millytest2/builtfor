@@ -194,55 +194,118 @@
   .vs-row.us span{color:var(--ink); font-weight:600}
   .vs-row.us b{color:var(--signal); font-weight:500}
 
+  /* ---------- site nav ---------- */
+  .site{border-bottom:2px solid var(--ink); background:var(--paper); position:sticky; top:env(safe-area-inset-top,0px); z-index:40}
+  .site .wrap{display:flex; flex-wrap:wrap; gap:6px 24px; align-items:center; justify-content:space-between; padding-block:12px}
+  .site .brand{font-family:var(--font-d); font-weight:800; font-size:17px; text-transform:uppercase; text-decoration:none; white-space:nowrap}
+  .site .brand span{color:var(--signal)}
+  nav{display:flex; gap:2px; overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none; margin-inline:-4px}
+  nav::-webkit-scrollbar{display:none}
+  nav a{font-family:var(--font-m); font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-2);
+    text-decoration:none; padding:7px 11px; white-space:nowrap; border-bottom:2px solid transparent}
+  nav a:hover{color:var(--ink)}
+  nav a.on{color:var(--signal); border-bottom-color:var(--signal)}
+  nav a.cta{background:var(--signal); color:#fff; border-bottom-color:var(--signal)}
+  nav a.cta:hover{color:#fff}
+
+  .view[hidden]{display:none!important}
+  .page-hd{border-bottom:1px solid var(--rule); background:var(--sunk)}
+  .page-hd .wrap{padding-block:34px 30px}
+  .page-hd .mono{color:var(--signal); margin-bottom:12px}
+  .page-hd h1{font-size:clamp(28px,4.6vw,42px); max-width:20ch}
+  .page-hd p{color:var(--ink-2); margin-top:14px; font-size:17px; max-width:60ch}
+
+  .teaser{display:grid; grid-template-columns:1fr; gap:0; border-top:1px solid var(--rule); margin-top:6px}
+  @media(min-width:820px){ .teaser{grid-template-columns:repeat(3,1fr); gap:0} }
+  .tz{padding:22px 0; border-bottom:1px solid var(--rule)}
+  @media(min-width:820px){ .tz{padding:24px 26px 24px 0; border-bottom:none; border-right:1px solid var(--rule)} .tz:last-child{border-right:none; padding-right:0} }
+  .tz .mono{color:var(--signal); margin-bottom:9px}
+  .tz h3{font-family:var(--font-d); font-weight:800; font-size:19px; margin-bottom:7px}
+  .tz p{color:var(--ink-2); font-size:14.5px; line-height:1.5}
+
+  .timeline{border-top:1px solid var(--rule); margin-top:24px}
+  .tl{display:grid; grid-template-columns:1fr; gap:4px; padding:16px 0; border-bottom:1px solid var(--rule)}
+  @media(min-width:680px){ .tl{grid-template-columns:118px 1fr; gap:22px; align-items:baseline} }
+  .tl .w{font-family:var(--font-m); font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--signal)}
+  .tl b{font-family:var(--font-d); font-weight:600; font-size:16.5px; display:block; margin-bottom:2px}
+  .tl span{color:var(--ink-2); font-size:14.5px}
+
+  .faq{border-top:1px solid var(--rule); margin-top:26px}
+  .faq details{border-bottom:1px solid var(--rule)}
+  .faq summary{cursor:pointer; padding:15px 0; font-family:var(--font-d); font-weight:600; font-size:16.5px; list-style:none; display:flex; justify-content:space-between; gap:14px; align-items:center}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+"; font-family:var(--font-m); color:var(--signal); font-size:18px; flex:none}
+  .faq details[open] summary::after{content:"\2212"}
+  .faq p{padding:0 0 16px; color:var(--ink-2); font-size:15px; max-width:64ch; line-height:1.55}
+
+  .bio{display:grid; grid-template-columns:1fr; gap:24px; margin-top:26px}
+  @media(min-width:760px){ .bio{grid-template-columns:1fr 1fr; gap:36px} }
+  .bio h3{font-family:var(--font-d); font-weight:800; font-size:18px; margin-bottom:6px}
+  .bio .role{font-family:var(--font-m); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--signal); margin-bottom:9px}
+  .bio p{color:var(--ink-2); font-size:15px; line-height:1.55}
+
+  .endcta{background:var(--sunk); border-top:2px solid var(--ink)}
+  .endcta .wrap{padding-block:40px; display:flex; flex-wrap:wrap; gap:18px 30px; align-items:center; justify-content:space-between}
+  .endcta h2{font-size:clamp(21px,3vw,27px); max-width:22ch}
+  .endcta p{color:var(--ink-2); margin-top:7px; font-size:15px; max-width:44ch}
+
+  footer .fwrap{display:grid; grid-template-columns:1fr; gap:22px; padding-block:34px 18px}
+  @media(min-width:700px){ footer .fwrap{grid-template-columns:1.4fr 1fr 1fr; gap:34px} }
+  footer h4{font-family:var(--font-m); font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3); margin:0 0 10px; font-weight:400}
+  footer ul{list-style:none; margin:0; padding:0; display:grid; gap:7px}
+  footer ul a{color:var(--ink-2); text-decoration:none; font-size:14.5px}
+  footer ul a:hover{color:var(--signal)}
+  footer .blurb{color:var(--ink-2); font-size:14.5px; max-width:36ch; line-height:1.5}
+  footer .base{border-top:1px solid var(--rule); padding-block:16px 30px; display:flex; flex-wrap:wrap; gap:8px 24px; justify-content:space-between}
+  footer .base .mono{color:var(--ink-3)}
+
   @media (prefers-reduced-motion:reduce){ *{transition:none!important} .btn:hover{transform:none} }
 </style>
-
-<header class="top">
+<header class="site">
   <div class="wrap">
-    <div class="brand">Built for <span>Main Street</span></div>
-    <div class="mono">Los Angeles &amp; the Valley · 310.606.9788</div>
+    <a class="brand" href="#home">Built for <span>Main Street</span></a>
+    <nav id="nav">
+      <a href="#home">Home</a>
+      <a href="#fix">What we do</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#why">Why now</a>
+      <a href="#about">About</a>
+      <a href="#check" class="cta">Free check</a>
+    </nav>
   </div>
 </header>
-
-<div class="hero">
-  <div class="wrap">
-    <div>
-      <div class="mono eyebrow">For local businesses that are good at the work</div>
-      <h1>Google barely knows you. ChatGPT doesn't know you at all.</h1>
-      <p class="sub">Your Google listing is half empty or was never claimed. You have no website, or one nobody can find. So when somebody searches your trade in your town, or asks an assistant who to call, <b>somebody else gets the job.</b> We fix the listing, build the site, and make sure both actually get read. Nine hundred to fix it, then seventy-nine a month to keep it live.</p>
-      <div class="cta-row">
-        <a class="btn" href="#check">See where you turn up</a>
-        <a class="btn btn-ghost" href="#how">What you get</a>
+<main>
+<section class="view" id="v-home">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <div class="mono eyebrow">For local businesses that are good at the work</div>
+        <h1>Google barely knows you. ChatGPT doesn't know you at all.</h1>
+        <p class="sub">Your Google listing is half empty or was never claimed. You have no website, or one nobody can find. So when somebody searches your trade in your town, or asks an assistant who to call, <b>somebody else gets the job.</b> We fix the listing, build the site, and make sure both actually get read.</p>
+        <div class="cta-row">
+          <a class="btn" href="#check">See where you turn up</a>
+          <a class="btn btn-ghost" href="#fix">What you get</a>
+        </div>
+        <p class="note">Nine hundred to fix it, then seventy-nine a month to keep it live. The check is free.</p>
       </div>
-      <p class="note">The check is free. We send one page. No call unless you want one.</p>
-    </div>
-
-    <div class="doc">
-      <div class="doc-hd">
-        <div class="mono">Visibility Check · BFMS-0417</div>
-        <div class="mono">Sample</div>
-      </div>
+      <div class="doc">
+      <div class="doc-hd"><div class="mono">Visibility Check · BFMS-0417</div><div class="mono">Sample</div></div>
       <div class="doc-body">
         <div class="sample-tag">Sample check</div>
         <div class="subject">Valley Gate &amp; Iron</div>
         <div class="subject-meta">Sun Valley, CA · 5.0★ (21 reviews) · no website on file</div>
-
         <p class="q">First we asked the way a customer shopping around would: <em>"Who installs automatic driveway gates in Sun Valley?"</em></p>
-
         <div class="log">
           <div class="log-row"><div class="log-t">Google</div><div class="log-e">Page two. <b>Under three shops with fewer reviews than you.</b></div></div>
           <div class="log-row"><div class="log-t">ChatGPT</div><div class="log-e">Named 4 shops. <b>Not you.</b></div></div>
           <div class="log-row"><div class="log-t">Gemini</div><div class="log-e">Named 3 shops. <b>Not you.</b></div></div>
           <div class="log-row"><div class="log-t">Claude</div><div class="log-e">Named 5 shops. <b>Not you.</b></div></div>
         </div>
-
         <p class="q" style="margin-top:15px">Then we asked the way somebody who already has your card would: <em>"What can you tell me about Valley Gate &amp; Iron in Sun Valley?"</em></p>
-
         <div class="log">
           <div class="log-row"><div class="log-t">ChatGPT</div><div class="log-e"><b>"I don't have information about that business."</b></div></div>
           <div class="log-row"><div class="log-t">Gemini</div><div class="log-e">Found the map pin. <b>Nothing about what you do or what it costs.</b></div></div>
         </div>
-
         <div class="why-hd mono">Why you're missing</div>
         <ul class="why">
           <li class="bad">No website linked on your Google listing</li>
@@ -250,109 +313,131 @@
           <li class="bad">Nothing anywhere online connects "automatic gates" to "Sun Valley" and your name</li>
           <li class="ok">21 five-star reviews. This part is already working for you.</li>
         </ul>
+        <div class="stamp"><div class="big">Named in 0<br>of 3 answers</div><div class="amt">Fixable in 14 days</div></div>
+      </div>
+    </div>
+    </div>
+  </div>
 
-        <div class="stamp">
-          <div class="big">Named in 0<br>of 3 answers</div>
-          <div class="amt">Fixable in 14 days</div>
+  <section class="band">
+    <div class="wrap">
+      <div class="sec-hd"><div class="mono">The whole thing</div></div>
+      <h2>One job, three parts.</h2>
+      <div class="teaser">
+        <div class="tz"><div class="mono">01 · Free</div><h3>Find out where you stand</h3>
+          <p>We search your trade in your town, ask three assistants the same thing, then ask them about you by name. One page, about a day. Yours either way.</p></div>
+        <div class="tz"><div class="mono">02 · $900 once</div><h3>Fix the listing, build the site</h3>
+          <p>Google listing claimed and filled out properly, and a website people and assistants can both read. Two weeks. Both in your name, permanently.</p></div>
+        <div class="tz"><div class="mono">03 · $79 a month</div><h3>Keep it live</h3>
+          <p>Hosting, your domain, and the listing kept current so it doesn't go stale. That's a hosting bill, not a retainer. Cancel whenever.</p></div>
+      </div>
+      <div class="cta-row" style="margin-top:26px"><a class="btn btn-ghost" href="#fix">See exactly what's included</a></div>
+    </div>
+  </section>
+
+  <section class="proof">
+    <div class="wrap">
+      <div class="sec-hd"><div class="mono">Why this matters now</div></div>
+      <h2>Winning on Google no longer means you get recommended.</h2>
+      <p class="lede">Somebody studied 349,000 business locations this year. A third of them turn up in Google's top three. Almost none get named when a customer asks ChatGPT the same question.</p>
+      <div class="chart">
+        <div class="chart-hd">Locations that get recommended, by where the customer asks</div>
+        <div class="bars">
+          <div class="bar-row top"><div class="bar-label">Google top three</div><div class="bar-track"><i style="width:100%"></i></div><div class="bar-val">35.9%</div></div>
+          <div class="bar-row"><div class="bar-label">Gemini</div><div class="bar-track"><i style="width:30.6%"></i></div><div class="bar-val">11%</div></div>
+          <div class="bar-row"><div class="bar-label">Perplexity</div><div class="bar-track"><i style="width:20.6%"></i></div><div class="bar-val">7.4%</div></div>
+          <div class="bar-row low"><div class="bar-label">ChatGPT</div><div class="bar-track"><i style="width:3.3%"></i></div><div class="bar-val">1.2%</div></div>
         </div>
+        <div class="chart-src">SOCi 2026 Local Visibility Index. 349,000+ locations across 2,751 brands.</div>
       </div>
+      <div class="cta-row" style="margin-top:24px"><a class="btn btn-ghost" href="#why">The rest of the numbers</a></div>
     </div>
-  </div>
-</div>
-
-<section class="proof">
-  <div class="wrap">
-    <div class="sec-hd"><div class="mono">Why this matters now</div></div>
-    <h2>Winning on Google no longer means you get recommended.</h2>
-    <p class="lede">Somebody studied 349,000 business locations this year. A third of them turn up in Google's top three. Almost none get named when a customer asks ChatGPT the same question. That gap is not a small problem, and nobody has told these owners it exists.</p>
-
-    <div class="chart">
-      <div class="chart-hd">Locations that get recommended, by where the customer asks</div>
-      <div class="bars">
-        <div class="bar-row top"><div class="bar-label">Google top three</div><div class="bar-track"><i style="width:100%"></i></div><div class="bar-val">35.9%</div></div>
-        <div class="bar-row"><div class="bar-label">Gemini</div><div class="bar-track"><i style="width:30.6%"></i></div><div class="bar-val">11%</div></div>
-        <div class="bar-row"><div class="bar-label">Perplexity</div><div class="bar-track"><i style="width:20.6%"></i></div><div class="bar-val">7.4%</div></div>
-        <div class="bar-row low"><div class="bar-label">ChatGPT</div><div class="bar-track"><i style="width:3.3%"></i></div><div class="bar-val">1.2%</div></div>
-      </div>
-      <div class="chart-src">SOCi 2026 Local Visibility Index. 349,000+ locations across 2,751 brands. The same report puts AI visibility at three to thirty times harder to earn than a top Google ranking.</div>
-    </div>
-
-    <div class="stats">
-      <div class="stat">
-        <b>45%</b>
-        <span>of people now use an AI assistant to find local services</span>
-        <em>BrightLocal 2026</em>
-      </div>
-      <div class="stat">
-        <b>27%</b>
-        <span>of US small businesses still have no website at all</span>
-        <em>2026 industry surveys</em>
-      </div>
-      <div class="stat">
-        <b>56%</b>
-        <span>of retailers have never claimed their Google listing</span>
-        <em>2026 industry surveys</em>
-      </div>
-    </div>
-  </div>
+  </section>
 </section>
+<section class="view" id="v-fix" hidden>
+  <div class="page-hd"><div class="wrap">
+    <div class="mono">What we do</div>
+    <h1>One job: we get you found.</h1>
+    <p>Your Google listing and a website, done together, because neither works alone. Everything below is included. There is nothing to add on and nothing to pick from.</p>
+  </div></div>
 
-<section class="band" id="how">
-  <div class="wrap">
-    <div class="sec-hd"><div class="mono">What you get</div></div>
-    <h2>One job: we get you found.</h2>
-    <p class="lede">Your Google listing and a website, done together, because neither one works alone. Everything below is included. There is nothing to add on and nothing to pick from.</p>
-
-    <div class="steps">
+  <section class="band"><div class="wrap">
+    <div class="steps" style="margin-top:0">
       <div class="step">
         <div class="step-when">Your Google listing</div>
-        <div>
-          <ul>
-            <li>Claimed and verified, or set up from scratch if you never had one</li>
-            <li>Hours, categories, service areas, services and photos, all filled in</li>
-            <li>Your new website linked on it, which a surprising number are missing</li>
-            <li>The same name, address and phone everywhere you are listed, so nothing contradicts itself</li>
-          </ul>
-        </div>
+        <div><ul>
+          <li>Claimed and verified, or set up from scratch if you never had one</li>
+          <li>Hours, categories, service areas, services and photos, all filled in</li>
+          <li>Your new website linked on it, which a surprising number are missing</li>
+          <li>The same name, address and phone everywhere you are listed, so nothing contradicts itself</li>
+          <li>Review replies set up so the profile doesn't look abandoned</li>
+        </ul></div>
       </div>
-
       <div class="step">
         <div class="step-when">Your website</div>
-        <div>
-          <ul>
-            <li>Fast, works on a phone, one tap to call you</li>
-            <li>A real page for each job you want more of, naming the work and the towns you cover</li>
-            <li>Your details, services and common questions written the way search engines and assistants read them</li>
-            <li>Photos of your actual work, not stock photos of somebody else's</li>
-            <li>Two weeks from the day you send us your photos, and it is yours</li>
-          </ul>
-        </div>
+        <div><ul>
+          <li>Fast, works on a phone, one tap to call you</li>
+          <li>A real page for each job you want more of, naming the work and the towns you cover</li>
+          <li>Your details, services and common questions written the way search engines and assistants read them</li>
+          <li>Photos of your actual work, not stock photos of somebody else's</li>
+          <li>Your own domain name, registered in your name</li>
+        </ul></div>
       </div>
-
       <div class="step">
         <div class="step-when">Then just hosting</div>
-        <div>
-          <ul>
-            <li>We run the check again and send you the page: where you turn up on Google, whether the assistants name you yet, and what they say when somebody asks about you by name</li>
-            <li>Hosting, your domain and security, for $79 a month</li>
-            <li>The listing kept current, because one left alone goes stale fast</li>
-            <li>New photos and finished jobs added when you send them over</li>
-            <li>Stop whenever you want and we hand you the files. Nothing is held hostage.</li>
-          </ul>
-        </div>
+        <div><ul>
+          <li>Hosting, your domain and the security certificate, $79 a month</li>
+          <li>The listing kept current, because one left alone goes stale fast</li>
+          <li>New photos and finished jobs added when you send them over</li>
+          <li>The check re-run every month so you can watch it working</li>
+          <li>Stop whenever you want and we hand you the files. Nothing is held hostage.</li>
+        </ul></div>
       </div>
     </div>
-  </div>
-</section>
 
-<section class="real">
-  <div class="wrap">
+    <h2 style="margin-top:38px">How the two weeks go.</h2>
+    <p class="lede">Day one starts when your photos arrive, not when you pay. Everything waits on that one thing, so send them early.</p>
+    <div class="timeline">
+      <div class="tl"><div class="w">Day 1-2</div><div><b>We claim the listing</b><span>Google mails a postcard or calls to verify. That clock starts immediately because it's the slowest part.</span></div></div>
+      <div class="tl"><div class="w">Day 2-4</div><div><b>You send photos</b><span>Ten to fifteen shots of real finished work off your phone. Not staged. This is the only thing we need from you.</span></div></div>
+      <div class="tl"><div class="w">Day 4-9</div><div><b>We build</b><span>The site, the service pages, the town pages, and all the structured detail underneath that the assistants read.</span></div></div>
+      <div class="tl"><div class="w">Day 9-11</div><div><b>You look at it</b><span>One round of changes. Wrong phone number, missing service, a photo you hate. We fix it.</span></div></div>
+      <div class="tl"><div class="w">Day 12-14</div><div><b>Live and linked</b><span>Site goes up, listing gets filled out and pointed at it, everything else gets made consistent.</span></div></div>
+      <div class="tl"><div class="w">Day 45</div><div><b>First re-check</b><span>We run the same searches again and send you the page. That's how you see it moving.</span></div></div>
+    </div>
+  </div></section>
+
+  <section class="real"><div class="wrap">
     <div class="sec-hd"><div class="mono">Straight answer</div></div>
     <h2>Here is what we don't do.</h2>
     <p class="lede">No social media. No blog posts. No ads. No logos or rebrands. Those are different businesses and plenty of people will sell them to you.</p>
     <p class="lede"><b>And no chatbot talking to your customers.</b> If we ever put AI anywhere, it goes behind your desk and not in front of the people calling you. Nothing we build replaces a person who works for you. The whole point is to bring you more work, not fewer staff.</p>
     <p class="lede">We do one thing. When somebody goes looking for what you do, we make sure they find you. You can check our work yourself by asking the same questions we did.</p>
+  </div></section>
+</section>
+<section class="view" id="v-pricing" hidden>
+  <div class="page-hd"><div class="wrap">
+    <div class="mono">Pricing</div>
+    <h1>Two numbers, said out loud.</h1>
+    <p>You pay once for the fix. The monthly is hosting, the same way your phone line is a monthly. No packages, no tiers, no retainer, nothing to upgrade to.</p>
+  </div></div>
 
+  <section class="band"><div class="wrap">
+    <div class="tbl-scroll" style="margin-top:0">
+      <table>
+        <thead><tr><th>Service</th><th>Price</th><th>What it is</th></tr></thead>
+        <tbody>
+          <tr class="lead"><td class="t-name">Visibility Check</td><td class="t-price free">Free</td>
+            <td class="t-desc">We search your trade in your town, ask three assistants the same thing, then ask them about you by name. Plus your Google listing. One page, sent over in about a day. Yours whether or not you hire us.</td></tr>
+          <tr><td class="t-name">The fix</td><td class="t-price">$900 one-time</td>
+            <td class="t-desc">Google listing claimed and filled out, website built so people and assistants can both read it. Two weeks from the day you send photos. Paid once. The site and the listing are yours, in your name, forever.</td></tr>
+          <tr><td class="t-name">Keep it live</td><td class="t-price">$79/mo</td>
+            <td class="t-desc">Hosting, your domain, security, and the listing kept current so it doesn't go stale. Stop any time and we hand you the files. This is a hosting bill, not a marketing retainer.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 style="margin-top:36px">What it costs everywhere else.</h2>
     <div class="vs">
       <div class="vs-row"><span>Local SEO agency, ongoing retainer</span><b>$500 to $3,000 / mo</b></div>
       <div class="vs-row"><span>Restaurant marketing platforms, software you run yourself</span><b>$249 to $499 / mo</b></div>
@@ -360,77 +445,138 @@
       <div class="vs-row us"><span>Us, fixed once, then just hosted</span><b>$900, then $79 / mo</b></div>
     </div>
     <p class="note" style="margin-top:14px">Agency rates from 2026 pricing guides. Fifty-six percent of them raised prices this year, citing the extra work of AI search.</p>
-  </div>
-</section>
 
-<section class="band">
-  <div class="wrap">
-    <div class="sec-hd"><div class="mono">Plain pricing</div></div>
-    <h2>Two numbers, said out loud.</h2>
-    <p class="lede">You pay once for the fix. The monthly is hosting, the same way your phone line is a monthly. No packages, no tiers, no retainer, nothing to upgrade to. The site and the listing are yours.</p>
-
-    <div class="tbl-scroll">
-      <table>
-        <thead><tr><th>Service</th><th>Price</th><th>What it is</th></tr></thead>
-        <tbody>
-          <tr class="lead">
-            <td class="t-name">Visibility Check</td>
-            <td class="t-price free">Free</td>
-            <td class="t-desc">We search your trade in your town, ask three assistants the same thing, then ask them about you by name. Plus your Google listing. One page, sent over in about a day. Yours whether or not you hire us.</td>
-          </tr>
-          <tr>
-            <td class="t-name">The fix</td>
-            <td class="t-price">$900 one-time</td>
-            <td class="t-desc">Google listing claimed and filled out, website built so people and assistants can both read it. Two weeks from the day you send photos. Paid once. The site and the listing are yours, in your name, forever.</td>
-          </tr>
-          <tr>
-            <td class="t-name">Keep it live</td>
-            <td class="t-price">$79/mo</td>
-            <td class="t-desc">Hosting, your domain, security, and the listing kept current so it doesn't go stale. Stop any time and we hand you the files. This is a hosting bill, not a marketing retainer.</td>
-          </tr>
-        </tbody>
-      </table>
+    <h2 style="margin-top:38px">Questions we get.</h2>
+    <div class="faq">
+      <details><summary>What exactly is the $79 for?</summary>
+        <p>Hosting, your domain name, the security certificate, and keeping the Google listing current. The site has to live on a server somewhere and somebody has to pay for that. It is not a retainer, you are not buying our time, and there is no campaign to report on. Think of it like the phone line.</p></details>
+      <details><summary>Can I cancel the monthly?</summary>
+        <p>Any time, no notice. We hand you the files and the login for your domain. The Google listing was always in your name, so nothing changes there. We would rather you leave cleanly than feel stuck.</p></details>
+      <details><summary>Do I actually own the website?</summary>
+        <p>Yes. The domain is registered in your business name, the listing is verified to you, and the files are yours on request. Nothing is held hostage, which is more than you can say for most of this industry.</p></details>
+      <details><summary>Is there a cheaper option?</summary>
+        <p>Seven hundred if you get us your photos inside a week of saying yes. Photos are the thing that holds up every build, so that discount buys us speed and it is the only one we do.</p></details>
+      <details><summary>How long until I see something?</summary>
+        <p>Two weeks to live, starting the day your photos arrive. Turning up in search takes longer, usually four to eight weeks, because Google and the assistants have to re-crawl and re-index. We re-run your check at day 45 and every month after so you can watch it move rather than take our word for it.</p></details>
+      <details><summary>What if it doesn't work?</summary>
+        <p>Then you still own a website and a properly filled out Google listing for nine hundred dollars, which is less than most people charge for either one on its own. And because we re-run the check monthly, you will know either way rather than wondering.</p></details>
+      <details><summary>Will you run my ads or post for me?</summary>
+        <p>No. We do not do ads, social media, blog posts, logos or rebrands. Plenty of good people sell those. We do one thing so we can be good at it.</p></details>
+      <details><summary>Do you work outside Los Angeles?</summary>
+        <p>Yes. The work is all remote except the part where we sit at your kitchen table, and plenty of clients skip that. If you are in the Valley we will come out.</p></details>
     </div>
-  </div>
+  </div></section>
 </section>
+<section class="view" id="v-why" hidden>
+  <div class="page-hd"><div class="wrap">
+    <div class="mono">Why now</div>
+    <h1>Customers stopped only searching. They started asking.</h1>
+    <p>The systems that answer them read a record of your business that most local shops simply do not have. That is a new problem, it is about two years old, and almost nobody has told these owners it exists.</p>
+  </div></div>
 
-<section class="band">
-  <div class="wrap">
-    <div class="sec-hd"><div class="mono">Before you fill anything in</div></div>
-    <h2>Who this is for.</h2>
+  <section class="band"><div class="wrap">
+    <div class="chart" style="margin-top:0">
+      <div class="chart-hd">Locations that get recommended, by where the customer asks</div>
+      <div class="bars">
+        <div class="bar-row top"><div class="bar-label">Google top three</div><div class="bar-track"><i style="width:100%"></i></div><div class="bar-val">35.9%</div></div>
+        <div class="bar-row"><div class="bar-label">Gemini</div><div class="bar-track"><i style="width:30.6%"></i></div><div class="bar-val">11%</div></div>
+        <div class="bar-row"><div class="bar-label">Perplexity</div><div class="bar-track"><i style="width:20.6%"></i></div><div class="bar-val">7.4%</div></div>
+        <div class="bar-row low"><div class="bar-label">ChatGPT</div><div class="bar-track"><i style="width:3.3%"></i></div><div class="bar-val">1.2%</div></div>
+      </div>
+      <div class="chart-src">SOCi 2026 Local Visibility Index. 349,000+ locations across 2,751 brands. The same report puts AI visibility at three to thirty times harder to earn than a top Google ranking, and finds more than half the businesses winning Google's map pack are entirely absent from AI answers.</div>
+    </div>
+
+    <p class="lede" style="margin-top:26px"><b>Read that gap again.</b> A third of locations win on Google. One in eighty gets named by ChatGPT. Being good at traditional local search no longer carries over, which means this is new work rather than a crowded fight.</p>
+
+    <div class="stats">
+      <div class="stat"><b>45%</b><span>of people now use an AI assistant to find local services</span><em>BrightLocal 2026</em></div>
+      <div class="stat"><b>27%</b><span>of US small businesses still have no website at all</span><em>2026 industry surveys</em></div>
+      <div class="stat"><b>56%</b><span>of retailers have never claimed their Google listing</span><em>2026 industry surveys</em></div>
+    </div>
+
+    <h2 style="margin-top:38px">What the machines actually read.</h2>
+    <p class="lede">None of this is mysterious. An assistant answering "who should I call" is assembling from a handful of public sources, and a business missing all of them is not ranked low. It is absent.</p>
+    <div class="timeline">
+      <div class="tl"><div class="w">Source 1</div><div><b>Your Google Business Profile</b><span>Hours, categories, service areas, services, photos, and whether a website is linked. Most of the shops we check have three of those eight filled in.</span></div></div>
+      <div class="tl"><div class="w">Source 2</div><div><b>Your reviews</b><span>Count, rating, recency, and what people actually wrote. Usually the one thing already working.</span></div></div>
+      <div class="tl"><div class="w">Source 3</div><div><b>Structured data on your site</b><span>The machine-readable version of your details and services. Invisible to people, decisive for assistants.</span></div></div>
+      <div class="tl"><div class="w">Source 4</div><div><b>Pages that name the work and the place</b><span>Something that connects "driveway gates" to "Sun Valley" to your business name. Without it there is nothing to match on.</span></div></div>
+      <div class="tl"><div class="w">Source 5</div><div><b>Consistent listings elsewhere</b><span>Same name, address and phone across the web. Contradictions make everything trust you less.</span></div></div>
+    </div>
+    <p class="lede" style="margin-top:24px">That list is the whole job. It is unglamorous, it is checkable, and you can verify our work yourself by asking the same questions we did.</p>
+  </div></section>
+</section>
+<section class="view" id="v-about" hidden>
+  <div class="page-hd"><div class="wrap">
+    <div class="mono">About</div>
+    <h1>Two people in Los Angeles who do one thing.</h1>
+    <p>We are not an agency and we are not trying to become one. We get local businesses found, and we would rather do that well for a small number of people than do six things badly for a lot of them.</p>
+  </div></div>
+
+  <section class="band"><div class="wrap">
+    <div class="bio">
+      <div>
+        <div class="role">Founder</div>
+        <h3>Miles Tipton</h3>
+        <p>Spent the last stretch doing local marketing and Google Business Profile work, which is where the pattern became obvious: shop after shop with great reviews, a phone that rings, and nothing at all online for anyone to find. Handles the calls, the builds and the checks. Based in Los Angeles, happy to drive out.</p>
+      </div>
+      <div>
+        <div class="role">Partner</div>
+        <h3>Daniel</h3>
+        <p>Splits the outreach and the first conversations. Between the two of us we can take on a handful of builds a month, which is why the free check list is capped rather than open.</p>
+      </div>
+    </div>
+
+    <h2 style="margin-top:38px">Why only this.</h2>
+    <p class="lede">Every business we call has been pitched by somebody selling social media, somebody selling ads, and lately somebody selling an AI receptionist. Most of it is a tool they will stop opening in three weeks.</p>
+    <p class="lede" style="margin-top:12px">We start somewhere boring instead: making sure you exist where people are looking. It is a real problem, it is fixable in two weeks, and you can check the work yourself. That is a much better place to start a relationship than a dashboard.</p>
+
+    <h2 style="margin-top:34px">How we work.</h2>
     <div class="cols">
       <div class="col">
-        <h3>Worth your time</h3>
+        <h3>What you can count on</h3>
         <ul>
-          <li>You do good work and your Google listing is a mess or was never claimed</li>
-          <li>No website, or one somebody built for you years ago</li>
-          <li>People find you by word of mouth and you know that is the only way</li>
-          <li>Trades, home services, shops, studios, clinics, anybody local</li>
-          <li>You would rather hand this to someone than learn it yourself</li>
+          <li>A real person who picks up, not a ticket queue</li>
+          <li>Both the site and the listing in your name from day one</li>
+          <li>One price, said out loud, before you ask</li>
+          <li>A monthly page showing whether it is working</li>
+          <li>Cancel any time and take the files</li>
         </ul>
       </div>
       <div class="col no">
-        <h3>Don't bother</h3>
+        <h3>What we won't do</h3>
         <ul>
-          <li>You're booked out and turning work away</li>
-          <li>Someone already handles your listing and your site</li>
-          <li>You want social media, blog posts or ads run</li>
-          <li>You want a logo or a rebrand</li>
-          <li>You want a chatbot talking to your customers</li>
+          <li>Lock you into a contract</li>
+          <li>Hold your domain or listing hostage</li>
+          <li>Sell you something we don't think you need</li>
+          <li>Put a chatbot in front of your customers</li>
+          <li>Build anything that replaces someone on your payroll</li>
         </ul>
       </div>
     </div>
-  </div>
-</section>
 
-<section class="list-band" id="check">
-  <div class="wrap" style="padding-block:56px">
+    <h2 style="margin-top:36px">Get hold of us.</h2>
+    <p class="lede">Call or text <a href="tel:+13106069788" style="border-bottom:1px solid var(--rule-hard)">310-606-9788</a>, or email <a href="mailto:hello@builtformainstreet.com" style="border-bottom:1px solid var(--rule-hard)">hello@builtformainstreet.com</a>. A real person reads both.</p>
+  </div></section>
+</section>
+<section class="view" id="v-check" hidden>
+  <div class="page-hd"><div class="wrap">
+    <div class="mono">Free · first 25 businesses</div>
+    <h1>See where you turn up.</h1>
+    <p>Tell us your business and your town. We search it, ask the assistants both ways, pull up your Google listing, and send you one page showing exactly where you stand and what is missing.</p>
+  </div></div>
+
+  <section class="list-band" style="border-top:none"><div class="wrap" style="padding-block:44px">
     <div class="list-grid">
       <div>
-        <div class="sec-hd" style="margin-bottom:14px"><div class="mono">First 25 businesses</div></div>
-        <h2>See where you turn up.</h2>
-        <p class="lede">Tell us your business and your town. We search it, ask the assistants both ways (for your trade, and about you by name), pull up your Google listing, and send you one page showing exactly where you stand and what is missing.</p>
-        <p class="lede" style="margin-top:14px">Two of us do these by hand, so we are taking twenty-five to start and working down the list.</p>
+        <div class="sec-hd" style="margin-bottom:14px"><div class="mono">What you get</div></div>
+        <div class="timeline" style="margin-top:0">
+          <div class="tl"><div class="w">The search</div><div><b>Where you land on Google</b><span>For the thing a customer would actually type, in your town.</span></div></div>
+          <div class="tl"><div class="w">The assistants</div><div><b>Whether ChatGPT, Gemini and Claude name you</b><span>Asked two ways: for your trade, and about you by name.</span></div></div>
+          <div class="tl"><div class="w">The listing</div><div><b>What's empty on your Google profile</b><span>Website link, hours, categories, service areas, services, photos.</span></div></div>
+          <div class="tl"><div class="w">The good news</div><div><b>What's already working</b><span>There always is something. Usually your reviews.</span></div></div>
+        </div>
+        <p class="lede" style="margin-top:20px">Costs nothing, takes us about a day, and the page is yours whether or not you ever hire us. Two of us do these by hand, so we are taking twenty-five to start.</p>
         <div class="counter"><span class="dot"></span><span id="count-text">25 spots open</span></div>
         <div class="meter"><i id="meter-fill"></i></div>
       </div>
@@ -438,40 +584,30 @@
       <div>
         <form id="wl" novalidate>
           <div class="fields">
-            <div class="full">
-              <label for="f-biz">Business name</label>
-              <input id="f-biz" name="biz" type="text" placeholder="Valley Gate &amp; Iron" autocomplete="organization" required>
-            </div>
-            <div>
-              <label for="f-city">City or town</label>
-              <input id="f-city" name="city" type="text" placeholder="Sun Valley, CA" autocomplete="address-level2" required>
-            </div>
-            <div>
-              <label for="f-trade">What you do</label>
+            <div class="full"><label for="f-biz">Business name</label>
+              <input id="f-biz" name="biz" type="text" placeholder="Valley Gate &amp; Iron" autocomplete="organization" required></div>
+            <div><label for="f-city">City or town</label>
+              <input id="f-city" name="city" type="text" placeholder="Sun Valley, CA" autocomplete="address-level2" required></div>
+            <div><label for="f-trade">What you do</label>
               <select id="f-trade" name="trade">
                 <option value="">Pick one</option>
                 <option>Trades and home services</option>
+                <option>Auto repair or body shop</option>
                 <option>Shop or retail</option>
                 <option>Studio, gym or salon</option>
                 <option>Clinic or practice</option>
                 <option>Food or hospitality</option>
                 <option>Something else</option>
-              </select>
-            </div>
-            <div>
-              <label for="f-name">Your name</label>
-              <input id="f-name" name="name" type="text" placeholder="Mike" autocomplete="given-name" required>
-            </div>
-            <div>
-              <label for="f-email">Where to send it</label>
-              <input id="f-email" name="email" type="email" placeholder="mike@valleygate.com" autocomplete="email" required>
-            </div>
+              </select></div>
+            <div><label for="f-name">Your name</label>
+              <input id="f-name" name="name" type="text" placeholder="Mike" autocomplete="given-name" required></div>
+            <div><label for="f-email">Where to send it</label>
+              <input id="f-email" name="email" type="email" placeholder="mike@valleygate.com" autocomplete="email" required></div>
           </div>
           <button class="btn submit" type="submit" id="wl-go">Send me my check</button>
           <p class="err" id="wl-err" hidden></p>
           <p class="fineprint">We only look at what is already public: your Google listing, your website if you have one, and what comes back when we search. Nothing gets submitted anywhere on your behalf and nobody calls you unless you ask us to.</p>
         </form>
-
         <div id="wl-done" class="done" hidden>
           <div class="tick">You're on the list.</div>
           <p>We'll run your check and email the page over. If you'd rather just talk it through, text Miles at 310-606-9788 and skip the queue.</p>
@@ -479,91 +615,121 @@
         </div>
       </div>
     </div>
+  </div></section>
+</section>
+</main>
+
+<section class="endcta" id="endcta">
+  <div class="wrap">
+    <div>
+      <h2>Find out what ChatGPT says about your business.</h2>
+      <p>Free, takes us a day, and you keep the page either way.</p>
+    </div>
+    <a class="btn" href="#check">Get your check</a>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <div class="mono">Built for Main Street · Los Angeles, CA</div>
-    <div class="mono"><a href="tel:+13106069788">310.606.9788</a> · <a href="mailto:hello@builtformainstreet.com">hello@builtformainstreet.com</a></div>
+    <div class="fwrap">
+      <div>
+        <div class="brand" style="font-family:var(--font-d); font-weight:800; font-size:16px; text-transform:uppercase; margin-bottom:10px">Built for <span style="color:var(--signal)">Main Street</span></div>
+        <p class="blurb">We get local businesses found. Google listing fixed and a website built, so search engines and AI assistants can both read you.</p>
+      </div>
+      <div>
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#fix">What we do</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#why">Why now</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#check">Free check</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <ul>
+          <li><a href="tel:+13106069788">310.606.9788</a></li>
+          <li><a href="mailto:hello@builtformainstreet.com">hello@builtformainstreet.com</a></li>
+          <li>Los Angeles &amp; the Valley</li>
+        </ul>
+      </div>
+    </div>
+    <div class="base">
+      <div class="mono">Built for Main Street · Los Angeles, CA</div>
+      <div class="mono">$900 to fix · $79/mo to host</div>
+    </div>
   </div>
 </footer>
-
 <script>
 (function(){
-  var TOTAL = 25;
-  var form = document.getElementById('wl');
-  var go = document.getElementById('wl-go');
-  var errEl = document.getElementById('wl-err');
-  var doneEl = document.getElementById('wl-done');
-  var countText = document.getElementById('count-text');
-  var meter = document.getElementById('meter-fill');
-  var donePos = document.getElementById('done-pos');
-  var dbRef = null;
+  var VIEWS = ['home','fix','pricing','why','about','check'];
+  function show(name){
+    if(VIEWS.indexOf(name) < 0) name = 'home';
+    VIEWS.forEach(function(v){
+      var el = document.getElementById('v-'+v);
+      if(el) el.hidden = (v !== name);
+    });
+    document.querySelectorAll('#nav a').forEach(function(a){
+      a.classList.toggle('on', a.getAttribute('href') === '#'+name && !a.classList.contains('cta'));
+    });
+    var end = document.getElementById('endcta');
+    if(end) end.hidden = (name === 'check');
+    document.title = name === 'home' ? 'Built for Main Street'
+      : ({fix:'What we do',pricing:'Pricing',why:'Why now',about:'About',check:'Free check'}[name]
+         + ' · Built for Main Street');
+  }
+  function route(){
+    var n = (location.hash || '#home').slice(1);
+    show(n);
+    window.scrollTo({top:0, behavior:'instant' in window ? 'instant' : 'auto'});
+  }
+  window.addEventListener('hashchange', route);
+  route();
 
+  // ---- waitlist ----
+  var TOTAL = 25, dbRef = null;
+  var $ = function(id){ return document.getElementById(id); };
   function paint(n){
     var left = Math.max(0, TOTAL - n);
-    countText.textContent = left > 0 ? (left + (left === 1 ? ' spot open' : ' spots open')) : 'List full, we still take names';
-    meter.style.width = Math.min(100, Math.max(4, (n / TOTAL) * 100)) + '%';
+    $('count-text').textContent = left > 0 ? (left + (left === 1 ? ' spot open' : ' spots open')) : 'List full, we still take names';
+    $('meter-fill').style.width = Math.min(100, Math.max(4, (n / TOTAL) * 100)) + '%';
   }
   paint(0);
-
-  function showErr(msg){ errEl.textContent = msg; errEl.hidden = false; }
+  function showErr(m){ $('wl-err').textContent = m; $('wl-err').hidden = false; }
 
   (async function(){
     try{
       var db = await window.claude?.use?.('db');
       if(!db) return;
       dbRef = db.collection('waitlist');
-      dbRef.limit(200).onSnapshot(function(snap){ paint(snap.size); }, function(){});
+      dbRef.limit(200).onSnapshot(function(s){ paint(s.size); }, function(){});
     }catch(e){}
   })();
 
-  form.addEventListener('submit', async function(ev){
+  $('wl').addEventListener('submit', async function(ev){
     ev.preventDefault();
-    errEl.hidden = true;
-
-    var biz = document.getElementById('f-biz').value.trim();
-    var city = document.getElementById('f-city').value.trim();
-    var name = document.getElementById('f-name').value.trim();
-    var email = document.getElementById('f-email').value.trim();
-    var trade = document.getElementById('f-trade').value;
-
+    $('wl-err').hidden = true;
+    var biz=$('f-biz').value.trim(), city=$('f-city').value.trim(),
+        name=$('f-name').value.trim(), email=$('f-email').value.trim(), trade=$('f-trade').value;
     if(!biz || !city || !name || !email){
-      showErr('We need the business name, the town, your name and an email to actually run the check.');
-      return;
-    }
+      showErr('We need the business name, the town, your name and an email to actually run the check.'); return; }
     if(email.indexOf('@') < 1 || email.indexOf('.') < 3){
-      showErr('That email looks off. We need somewhere to send the page.');
-      return;
-    }
-
-    go.disabled = true;
-    go.textContent = 'Sending...';
-
+      showErr('That email looks off. We need somewhere to send the page.'); return; }
+    var go = $('wl-go'); go.disabled = true; go.textContent = 'Sending...';
     if(!dbRef){
-      go.disabled = false;
-      go.textContent = 'Send me my check';
-      showErr('This form is not connected yet. Text Miles at 310-606-9788 with your business name and town and we will run it today.');
-      return;
-    }
-
+      go.disabled = false; go.textContent = 'Send me my check';
+      showErr('This form is not connected yet. Text Miles at 310-606-9788 with your business name and town and we will run it today.'); return; }
     try{
-      await dbRef.doc().set({
-        business: biz, city: city, contact: name, email: email,
-        trade: trade || 'Not given', status: 'new',
-        submitted: new Date().toISOString()
-      });
+      await dbRef.doc().set({ business:biz, city:city, contact:name, email:email,
+        trade: trade || 'Not given', status:'new', submitted:new Date().toISOString() });
       var snap = await dbRef.limit(200).get();
-      form.hidden = true;
-      doneEl.hidden = false;
-      donePos.textContent = 'Number ' + snap.size + ' in the queue';
-      doneEl.scrollIntoView({behavior:'smooth', block:'center'});
+      $('wl').hidden = true; $('wl-done').hidden = false;
+      $('done-pos').textContent = 'Number ' + snap.size + ' in the queue';
     }catch(e){
-      go.disabled = false;
-      go.textContent = 'Send me my check';
-      showErr('That did not save. Text Miles at 310-606-9788 with your business name and town and we will run it today.');
-    }
+      go.disabled = false; go.textContent = 'Send me my check';
+      showErr('That did not save. Text Miles at 310-606-9788 with your business name and town and we will run it today.'); }
   });
 })();
 </script>
