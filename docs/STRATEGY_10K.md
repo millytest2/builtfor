@@ -1,5 +1,10 @@
 # THE $10K REVISION
 
+> **The offer and targeting here are superseded by [`OFFER.md`](OFFER.md).**
+> This file's pricing math, funnel numbers, channel ranking and capacity model
+> still hold and are still the reference. The missed-call product it describes
+> was dropped: it replaces labor, and the category is crowded.
+
 A critique of the current plan and the version that actually reaches $10k/mo.
 Read `HANDOFF.md` first for context. This file supersedes its pricing and
 targeting sections.

@@ -32,7 +32,7 @@ runs before the network call.
 
 Artifact version: the waitlist lives in the `waitlist` collection of the
 artifact's database. Ask Claude to list it, or read it from the artifact tooling.
-Each row holds business, phone, contact, email, trade, status and submitted.
+Each row holds business, city, contact, email, trade, status and submitted.
 
 ## Editing copy
 

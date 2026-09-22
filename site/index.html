@@ -8,7 +8,7 @@
     --ink:#16191A; --ink-2:#565E5C; --ink-3:#7B8481;
     --rule:#C4C9C1; --rule-hard:#9BA39D;
     --signal:#B83227; --signal-soft:#EFDCD8;
-    --steel:#2B4A5A;
+    --good:#2F6B4F;
     --font-d:'Archivo','Helvetica Neue',Arial,sans-serif;
     --font-b:'Libre Franklin',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;
     --font-m:'IBM Plex Mono','SFMono-Regular',Menlo,Consolas,monospace;
@@ -19,7 +19,7 @@
       --ink:#E9EBE7; --ink-2:#A2ABA7; --ink-3:#7B8480;
       --rule:#2C3231; --rule-hard:#434A48;
       --signal:#E2604F; --signal-soft:#3A201C;
-      --steel:#7FAEC6;
+      --good:#69B08C;
     }
   }
   :root[data-theme="dark"]{
@@ -27,129 +27,124 @@
     --ink:#E9EBE7; --ink-2:#A2ABA7; --ink-3:#7B8480;
     --rule:#2C3231; --rule-hard:#434A48;
     --signal:#E2604F; --signal-soft:#3A201C;
-    --steel:#7FAEC6;
+    --good:#69B08C;
   }
 
   *{box-sizing:border-box}
-  body{
-    background:var(--paper); color:var(--ink);
-    font-family:var(--font-b); font-size:16px; line-height:1.55;
-    -webkit-font-smoothing:antialiased; margin:0;
-  }
+  body{background:var(--paper); color:var(--ink); font-family:var(--font-b); font-size:16px; line-height:1.55; -webkit-font-smoothing:antialiased; margin:0}
   .wrap{max-width:1080px; margin:0 auto; padding-inline:20px}
-
   .mono{font-family:var(--font-m); font-size:11px; letter-spacing:.09em; text-transform:uppercase}
-  h1,h2,h3{font-family:var(--font-d); font-weight:800; text-wrap:balance; margin:0; line-height:1.02; letter-spacing:-.02em}
+  h1,h2,h3{font-family:var(--font-d); font-weight:800; text-wrap:balance; margin:0; line-height:1.03; letter-spacing:-.02em}
   p{margin:0}
   a{color:inherit}
 
-  /* ---------- masthead ---------- */
-  .top{border-bottom:2px solid var(--ink); background:var(--paper)}
+  .top{border-bottom:2px solid var(--ink)}
   .top .wrap{display:flex; flex-wrap:wrap; gap:8px 18px; align-items:baseline; justify-content:space-between; padding-block:13px}
-  .brand{font-family:var(--font-d); font-weight:800; font-size:17px; letter-spacing:.01em; text-transform:uppercase}
+  .brand{font-family:var(--font-d); font-weight:800; font-size:17px; text-transform:uppercase}
   .brand span{color:var(--signal)}
   .top .mono{color:var(--ink-3)}
 
-  /* ---------- hero ---------- */
-  .hero .wrap{display:grid; grid-template-columns:1fr; gap:38px; padding-block:52px 46px}
-  @media(min-width:900px){ .hero .wrap{grid-template-columns:1.02fr .98fr; gap:44px; align-items:start; padding-block:66px 58px} }
-
+  .hero .wrap{display:grid; grid-template-columns:1fr; gap:38px; padding-block:50px 46px}
+  @media(min-width:920px){ .hero .wrap{grid-template-columns:1.04fr .96fr; gap:46px; align-items:start; padding-block:64px 56px} }
   .eyebrow{color:var(--signal); margin-bottom:18px}
-  h1{font-size:clamp(34px,6.2vw,58px)}
-  .sub{font-size:clamp(16px,2.1vw,18.5px); color:var(--ink-2); margin-top:20px; max-width:46ch}
+  h1{font-size:clamp(33px,5.9vw,55px)}
+  .sub{font-size:clamp(16px,2.1vw,18.5px); color:var(--ink-2); margin-top:20px; max-width:47ch}
   .sub b{color:var(--ink); font-weight:600}
-
-  .cta-row{display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; align-items:center}
-  .btn{
-    font-family:var(--font-d); font-weight:800; font-size:13.5px; letter-spacing:.05em; text-transform:uppercase;
-    background:var(--signal); color:#fff; border:2px solid var(--signal); padding:13px 20px;
-    text-decoration:none; display:inline-block; cursor:pointer; transition:transform .12s ease
-  }
+  .cta-row{display:flex; flex-wrap:wrap; gap:12px; margin-top:26px; align-items:center}
+  .btn{font-family:var(--font-d); font-weight:800; font-size:13.5px; letter-spacing:.05em; text-transform:uppercase;
+    background:var(--signal); color:#fff; border:2px solid var(--signal); padding:13px 20px; text-decoration:none; display:inline-block; cursor:pointer; transition:transform .12s ease}
   .btn:hover{transform:translate(-1px,-1px)}
-  .btn:active{transform:translate(0,0)}
   .btn-ghost{background:transparent; color:var(--ink); border:2px solid var(--rule-hard)}
-  .note{color:var(--ink-3); font-family:var(--font-m); font-size:11.5px; letter-spacing:.04em}
+  .note{color:var(--ink-3); font-family:var(--font-m); font-size:11.5px; letter-spacing:.04em; margin-top:15px}
 
-  /* ---------- the report ---------- */
-  .doc{background:var(--raised); border:1px solid var(--rule-hard); box-shadow:5px 5px 0 var(--sunk); position:relative}
+  /* ---- the check ---- */
+  .doc{background:var(--raised); border:1px solid var(--rule-hard); box-shadow:5px 5px 0 var(--sunk)}
   .doc-hd{display:flex; justify-content:space-between; gap:10px; align-items:center; padding:11px 15px; border-bottom:1px solid var(--rule-hard); background:var(--sunk)}
   .doc-hd .mono{color:var(--ink-2)}
   .doc-body{padding:17px 15px 19px}
-  .sample-tag{display:inline-block; font-family:var(--font-m); font-size:10px; letter-spacing:.11em; text-transform:uppercase;
-    border:1px solid var(--rule-hard); color:var(--ink-3); padding:2px 7px; margin-bottom:13px}
+  .sample-tag{display:inline-block; font-family:var(--font-m); font-size:10px; letter-spacing:.11em; text-transform:uppercase; border:1px solid var(--rule-hard); color:var(--ink-3); padding:2px 7px; margin-bottom:13px}
   .subject{font-family:var(--font-d); font-weight:800; font-size:19px; margin-bottom:3px}
-  .subject-meta{font-family:var(--font-m); font-size:11.5px; color:var(--ink-3); margin-bottom:17px}
+  .subject-meta{font-family:var(--font-m); font-size:11.5px; color:var(--ink-3); margin-bottom:15px}
+  .q{font-size:13.5px; color:var(--ink-2); border-left:2.5px solid var(--rule-hard); padding-left:11px; margin-bottom:14px; line-height:1.45}
+  .q em{color:var(--ink); font-style:normal; font-weight:600}
 
   .log{border-top:1px solid var(--rule)}
-  .log-row{display:grid; grid-template-columns:86px 1fr; gap:12px; padding:9px 0; border-bottom:1px solid var(--rule); align-items:baseline}
-  .log-t{font-family:var(--font-m); font-size:11px; color:var(--ink-3); letter-spacing:.03em; font-variant-numeric:tabular-nums}
-  .log-e{font-size:13.5px; line-height:1.45}
-  .log-row.dead .log-e{color:var(--signal); font-weight:600}
+  .log-row{display:grid; grid-template-columns:82px 1fr; gap:12px; padding:8px 0; border-bottom:1px solid var(--rule); align-items:baseline}
+  .log-t{font-family:var(--font-m); font-size:11px; color:var(--ink-3); letter-spacing:.03em}
+  .log-e{font-size:13.5px; color:var(--ink-2); font-weight:400}
+  .log-e b{color:var(--signal); font-weight:600}
 
-  .stamp{
-    margin-top:17px; border:2.5px solid var(--signal); color:var(--signal);
-    font-family:var(--font-d); font-weight:800; text-transform:uppercase; letter-spacing:.04em;
-    padding:10px 13px; display:flex; justify-content:space-between; gap:12px; align-items:center;
-    transform:rotate(-1.1deg); background:var(--signal-soft)
-  }
+  .why-hd{color:var(--ink-3); margin:16px 0 7px}
+  .why{list-style:none; margin:0; padding:0}
+  .why li{font-size:13.5px; padding:5px 0 5px 22px; position:relative; color:var(--ink-2); line-height:1.4}
+  .why li::before{position:absolute; left:0; top:5px; font-family:var(--font-m); font-size:12px; font-weight:500}
+  .why li.bad::before{content:"\2715"; color:var(--signal)}
+  .why li.ok::before{content:"\2713"; color:var(--good)}
+  .why li.ok{color:var(--good)}
+
+  .stamp{margin-top:16px; border:2.5px solid var(--signal); color:var(--signal); font-family:var(--font-d); font-weight:800;
+    text-transform:uppercase; letter-spacing:.04em; padding:10px 13px; display:flex; justify-content:space-between; gap:12px; align-items:center;
+    transform:rotate(-1.1deg); background:var(--signal-soft)}
   .stamp .big{font-size:15.5px; line-height:1.15}
-  .stamp .amt{font-family:var(--font-m); font-size:13px; font-weight:500; white-space:nowrap; font-variant-numeric:tabular-nums}
+  .stamp .amt{font-family:var(--font-m); font-size:12px; font-weight:500; white-space:nowrap}
 
-  /* ---------- section frame ---------- */
   section{border-top:1px solid var(--rule)}
-  .sec-hd{display:flex; flex-wrap:wrap; gap:6px 16px; align-items:baseline; margin-bottom:26px}
+  .band .wrap{padding-block:52px}
+  .sec-hd{margin-bottom:8px}
   .sec-hd .mono{color:var(--signal)}
   h2{font-size:clamp(23px,3.4vw,31px)}
-  .lede{color:var(--ink-2); max-width:56ch; margin-top:9px; font-size:16.5px}
+  .lede{color:var(--ink-2); max-width:58ch; margin-top:11px; font-size:16.5px}
 
-  .band .wrap{padding-block:52px}
+  /* ---- the three steps ---- */
+  .steps{margin-top:30px; border-top:1px solid var(--rule)}
+  .step{display:grid; grid-template-columns:1fr; gap:6px; padding:20px 0; border-bottom:1px solid var(--rule)}
+  @media(min-width:760px){ .step{grid-template-columns:148px 1fr; gap:26px} }
+  .step-when{font-family:var(--font-m); font-size:11.5px; letter-spacing:.07em; text-transform:uppercase; color:var(--signal); padding-top:4px}
+  .step h3{font-family:var(--font-d); font-weight:800; font-size:19px; margin-bottom:7px}
+  .step p{color:var(--ink-2); font-size:15px; max-width:56ch}
+  .step ul{list-style:none; margin:11px 0 0; padding:0; display:grid; gap:6px}
+  .step li{font-size:14.5px; color:var(--ink-2); padding-left:16px; position:relative; line-height:1.45}
+  .step li::before{content:"–"; position:absolute; left:0; color:var(--rule-hard)}
+  .step .kicker{color:var(--ink); font-weight:600; font-size:14.5px; margin-top:12px; display:block}
 
-  /* ---------- sequence ---------- */
-  .seq{border-top:1px solid var(--rule); margin-top:4px}
-  .seq-row{display:grid; grid-template-columns:1fr; gap:3px; padding:14px 0; border-bottom:1px solid var(--rule)}
-  @media(min-width:680px){ .seq-row{grid-template-columns:122px 1fr; gap:20px; align-items:baseline} }
-  .seq-t{font-family:var(--font-m); font-size:11.5px; color:var(--signal); letter-spacing:.05em; font-variant-numeric:tabular-nums}
-  .seq-b strong{font-family:var(--font-d); font-weight:600; font-size:16.5px; display:block; margin-bottom:2px}
-  .seq-b span{color:var(--ink-2); font-size:14.5px}
+  /* ---- honesty band ---- */
+  .real{background:var(--sunk)}
+  .real .wrap{padding-block:48px}
+  .real h2{max-width:20ch}
+  .real .lede{max-width:60ch; font-size:17px; margin-top:16px}
 
-  /* ---------- price table ---------- */
-  .tbl-scroll{overflow-x:auto; -webkit-overflow-scrolling:touch}
+  .tbl-scroll{overflow-x:auto; -webkit-overflow-scrolling:touch; margin-top:24px}
   table{border-collapse:collapse; width:100%; min-width:560px}
-  th,td{text-align:left; padding:14px 16px 14px 0; border-bottom:1px solid var(--rule); vertical-align:top}
+  th,td{text-align:left; padding:15px 16px 15px 0; border-bottom:1px solid var(--rule); vertical-align:top}
   thead th{font-family:var(--font-m); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3); border-bottom:1.5px solid var(--rule-hard); padding-bottom:9px}
   .t-name{font-family:var(--font-d); font-weight:800; font-size:16px; white-space:nowrap}
   .t-price{font-family:var(--font-m); font-size:13.5px; white-space:nowrap; font-variant-numeric:tabular-nums}
   .t-price.free{color:var(--signal); font-weight:500}
-  .t-desc{color:var(--ink-2); font-size:14.5px; min-width:250px}
+  .t-desc{color:var(--ink-2); font-size:14.5px; min-width:270px}
   tr.lead .t-name{color:var(--signal)}
 
-  /* ---------- not for you ---------- */
-  .cols{display:grid; grid-template-columns:1fr; gap:26px}
+  .cols{display:grid; grid-template-columns:1fr; gap:26px; margin-top:26px}
   @media(min-width:760px){ .cols{grid-template-columns:1fr 1fr; gap:40px} }
-  .col h3{font-size:15px; font-family:var(--font-d); font-weight:800; text-transform:uppercase; letter-spacing:.04em; padding-bottom:9px; border-bottom:2px solid var(--ink); margin-bottom:4px}
+  .col h3{font-size:15px; text-transform:uppercase; letter-spacing:.04em; padding-bottom:9px; border-bottom:2px solid var(--ink); margin-bottom:4px}
   .col.no h3{border-bottom-color:var(--rule-hard); color:var(--ink-3)}
   .col ul{list-style:none; margin:0; padding:0}
   .col li{padding:10px 0; border-bottom:1px solid var(--rule); font-size:15px}
   .col.no li{color:var(--ink-3)}
 
-  /* ---------- waitlist ---------- */
+  /* ---- waitlist ---- */
   .list-band{background:var(--sunk); border-top:2px solid var(--ink)}
   .list-grid{display:grid; grid-template-columns:1fr; gap:34px}
   @media(min-width:880px){ .list-grid{grid-template-columns:.92fr 1.08fr; gap:52px; align-items:start} }
-
-  .counter{font-family:var(--font-m); font-size:11.5px; letter-spacing:.07em; text-transform:uppercase; color:var(--ink-2); margin-top:18px; display:flex; align-items:center; gap:9px}
+  .counter{font-family:var(--font-m); font-size:11.5px; letter-spacing:.07em; text-transform:uppercase; color:var(--ink-2); margin-top:20px; display:flex; align-items:center; gap:9px}
   .dot{width:8px; height:8px; background:var(--signal); border-radius:50%; flex:none}
   .meter{height:6px; background:var(--rule); margin-top:11px; max-width:280px; overflow:hidden}
-  .meter i{display:block; height:100%; background:var(--signal); width:8%; transition:width .5s ease}
+  .meter i{display:block; height:100%; background:var(--signal); width:4%; transition:width .5s ease}
 
   form{background:var(--raised); border:1px solid var(--rule-hard); padding:22px 20px; box-shadow:5px 5px 0 var(--rule)}
   .fields{display:grid; grid-template-columns:1fr; gap:15px}
-  @media(min-width:560px){ .fields .half{grid-column:span 1} .fields{grid-template-columns:1fr 1fr} .fields .full{grid-column:1/-1} }
+  @media(min-width:560px){ .fields{grid-template-columns:1fr 1fr} .fields .full{grid-column:1/-1} }
   label{display:block; font-family:var(--font-m); font-size:10.5px; letter-spacing:.09em; text-transform:uppercase; color:var(--ink-2); margin-bottom:5px}
-  input,select{
-    width:100%; font-family:var(--font-b); font-size:15.5px; color:var(--ink);
-    background:var(--paper); border:1px solid var(--rule-hard); padding:11px 12px; border-radius:0; appearance:none
-  }
+  input,select{width:100%; font-family:var(--font-b); font-size:15.5px; color:var(--ink); background:var(--paper); border:1px solid var(--rule-hard); padding:11px 12px; border-radius:0; appearance:none}
   select{background-image:linear-gradient(45deg,transparent 50%,var(--ink-2) 50%),linear-gradient(135deg,var(--ink-2) 50%,transparent 50%);
     background-position:calc(100% - 17px) 50%,calc(100% - 12px) 50%; background-size:5px 5px,5px 5px; background-repeat:no-repeat; padding-right:34px}
   input:focus,select:focus{outline:2px solid var(--signal); outline-offset:1px; border-color:var(--signal)}
@@ -158,13 +153,10 @@
   .submit[disabled]{opacity:.55; cursor:not-allowed; transform:none}
   .fineprint{margin-top:13px; font-size:12.5px; color:var(--ink-3); line-height:1.5}
   .err{color:var(--signal); font-size:13.5px; margin-top:12px; font-weight:500}
-
-  .done{text-align:left}
   .done .tick{font-family:var(--font-d); font-weight:800; font-size:21px; color:var(--signal); margin-bottom:9px}
-  .done p{color:var(--ink-2); font-size:15.5px; margin-bottom:9px}
+  .done p{color:var(--ink-2); font-size:15.5px}
   .done .mono{color:var(--ink-3); margin-top:15px; display:block}
 
-  /* ---------- footer ---------- */
   footer{border-top:1px solid var(--rule)}
   footer .wrap{padding-block:28px 34px; display:flex; flex-wrap:wrap; gap:10px 26px; justify-content:space-between; align-items:baseline}
   footer .mono{color:var(--ink-3)}
@@ -184,36 +176,46 @@
 <div class="hero">
   <div class="wrap">
     <div>
-      <div class="mono eyebrow">For contractors who are busier than their phone</div>
-      <h1>You already paid for the call you didn't answer.</h1>
-      <p class="sub">You buy leads. You run ads. Then the phone rings while you're holding a grinder, and that job goes to whoever picked up. <b>We pick up.</b> Every call, every form, inside 60 seconds, and a monthly page showing exactly what came back.</p>
+      <div class="mono eyebrow">For local businesses that are good at the work</div>
+      <h1>People ask AI who to hire now. It isn't saying your name.</h1>
+      <p class="sub">Half the shops we look up have no website on their Google listing. Plenty never set the listing up at all. So when somebody asks ChatGPT or Gemini for someone in your trade, in your town, <b>you are not in the answer.</b> We fix that first. Then we show you where AI saves you a few hours a week. We are not here to replace anybody who works for you.</p>
       <div class="cta-row">
-        <a class="btn" href="#report">Get your leak report</a>
-        <a class="btn btn-ghost" href="#how">See how it works</a>
+        <a class="btn" href="#check">See what AI says about you</a>
+        <a class="btn btn-ghost" href="#how">What we do</a>
       </div>
-      <p class="note" style="margin-top:16px">Free. No call required. We send one page.</p>
+      <p class="note">Free. We send one page. No call unless you want one.</p>
     </div>
 
     <div class="doc">
       <div class="doc-hd">
-        <div class="mono">Leak Report · BFMS-0417</div>
-        <div class="mono">48 hr window</div>
+        <div class="mono">Visibility Check · BFMS-0417</div>
+        <div class="mono">Sample</div>
       </div>
       <div class="doc-body">
-        <div class="sample-tag">Sample report</div>
+        <div class="sample-tag">Sample check</div>
         <div class="subject">Valley Gate &amp; Iron</div>
-        <div class="subject-meta">Sun Valley, CA · 5.0★ (21) · runs Google Local Services ads</div>
+        <div class="subject-meta">Sun Valley, CA · 5.0★ (21 reviews) · no website on file</div>
+
+        <p class="q">We asked four assistants: <em>"Who installs automatic driveway gates in Sun Valley?"</em></p>
 
         <div class="log">
-          <div class="log-row"><div class="log-t">TUE 2:14 PM</div><div class="log-e">Called the number on the Google listing. Six rings, voicemail. Message left with name and callback number.</div></div>
-          <div class="log-row"><div class="log-t">TUE 2:19 PM</div><div class="log-e">Submitted the contact form on the website. 16 ft automatic driveway gate, Sun Valley.</div></div>
-          <div class="log-row dead"><div class="log-t">WED 9:40 AM</div><div class="log-e">No callback. No email. 19 hr 26 min.</div></div>
-          <div class="log-row dead"><div class="log-t">THU 1:05 PM</div><div class="log-e">Still nothing. Form receipt never arrived either.</div></div>
+          <div class="log-row"><div class="log-t">ChatGPT</div><div class="log-e">Named 4 shops. <b>Not you.</b></div></div>
+          <div class="log-row"><div class="log-t">Claude</div><div class="log-e">Named 3 shops. <b>Not you.</b></div></div>
+          <div class="log-row"><div class="log-t">Gemini</div><div class="log-e">Named 5 shops. <b>Not you.</b></div></div>
+          <div class="log-row"><div class="log-t">Google AI</div><div class="log-e">Named 3 shops. <b>Not you.</b></div></div>
         </div>
 
+        <div class="why-hd mono">Why you're missing</div>
+        <ul class="why">
+          <li class="bad">No website linked on your Google listing</li>
+          <li class="bad">Listing has no services, no hours, no categories filled in</li>
+          <li class="bad">Nothing anywhere online connects "automatic gates" to "Sun Valley" and your name</li>
+          <li class="ok">21 five-star reviews. This part is already working for you.</li>
+        </ul>
+
         <div class="stamp">
-          <div class="big">No response<br>47 hours</div>
-          <div class="amt">≈ $6,400 job</div>
+          <div class="big">Named in 0<br>of 4 answers</div>
+          <div class="amt">Fixable in 14 days</div>
         </div>
       </div>
     </div>
@@ -222,21 +224,59 @@
 
 <section class="band" id="how">
   <div class="wrap">
-    <div class="sec-hd">
-      <div class="mono">What happens instead</div>
-    </div>
-    <h2>One missed call, start to finish.</h2>
-    <p class="lede">Real clock times from the moment somebody calls a line we answer. You don't install anything and your number doesn't change.</p>
+    <div class="sec-hd"><div class="mono">What we do</div></div>
+    <h2>Three things, in this order.</h2>
+    <p class="lede">The order matters. Nobody should sell you AI before you can be found. So we don't.</p>
 
-    <div class="seq">
-      <div class="seq-row"><div class="seq-t">0:00</div><div class="seq-b"><strong>The call comes in</strong><span>You're on a roof, under a truck, or mid-weld. It rings your line first, like always.</span></div></div>
-      <div class="seq-row"><div class="seq-t">0:08</div><div class="seq-b"><strong>It rings out, so we take it</strong><span>Nothing changes for callers who reach you. We only catch the ones you'd have lost.</span></div></div>
-      <div class="seq-row"><div class="seq-t">0:22</div><div class="seq-b"><strong>A text goes out in your name</strong><span>Sorry I missed you, this is Mike at Valley Gate. What are you looking to get done? Plain English, your voice, not a robot script.</span></div></div>
-      <div class="seq-row"><div class="seq-t">2:10</div><div class="seq-b"><strong>They write back and we sort it out</strong><span>What the job is, where it is, when they need it. Tire kickers get answered politely. Real jobs get a slot on your calendar.</span></div></div>
-      <div class="seq-row"><div class="seq-t">2:11</div><div class="seq-b"><strong>You get one message</strong><span>Name, number, address, what they want, and the whole conversation. You call back already knowing the job.</span></div></div>
-      <div class="seq-row"><div class="seq-t">Day 3 · 7 · 14 · 30</div><div class="seq-b"><strong>The estimate gets chased</strong><span>Most quotes die from silence, not from price. We keep asking until they say yes or no.</span></div></div>
-      <div class="seq-row"><div class="seq-t">Month end</div><div class="seq-b"><strong>One page, on paper</strong><span>Calls caught, jobs booked, dollars on the calendar. If the number is bad, you'll see it before we do.</span></div></div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-when">First · free</div>
+        <div>
+          <h3>Find out where you stand</h3>
+          <p>We ask the assistants people actually use about your trade in your town, and we pull up your Google listing. Then we send you one page: who got named, whether you did, and exactly what is missing.</p>
+          <span class="kicker">Costs nothing and you keep the page either way.</span>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-when">Then · the work</div>
+        <div>
+          <h3>Get you findable</h3>
+          <p>This is the unglamorous part and it is the part that matters. Most of it is filling in things nobody ever filled in.</p>
+          <ul>
+            <li>Google listing claimed, verified, and actually filled out: hours, categories, service areas, photos, the services you offer</li>
+            <li>Your website linked on the listing, which a surprising number are missing</li>
+            <li>A website built so a person and a machine can both read it, with your details, services and answers marked up the way assistants expect</li>
+            <li>A real page for each job you want more of, naming the work and the towns you cover</li>
+            <li>Same name, address and phone everywhere you are listed, so nothing contradicts itself</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-when">Only then · optional</div>
+        <div>
+          <h3>Look at where AI helps you</h3>
+          <p>Once you exist, we sit down and look at how you actually work. Then we set up two or three things that give you your evening back. Examples from real shops:</p>
+          <ul>
+            <li>Talk into your phone on the drive home, get a written estimate ready to send</li>
+            <li>Photos from a finished job turn into listing posts without you writing anything</li>
+            <li>Ask your own past jobs a question: what did we charge for a 16 ft gate last spring?</li>
+            <li>The follow-up you never get around to, drafted and waiting for you to hit send</li>
+          </ul>
+          <span class="kicker">None of this replaces a person. It replaces the paperwork you do at 9pm.</span>
+        </div>
+      </div>
     </div>
+  </div>
+</section>
+
+<section class="real">
+  <div class="wrap">
+    <div class="sec-hd"><div class="mono">Straight answer</div></div>
+    <h2>Everyone is selling you AI this year.</h2>
+    <p class="lede">Most of it is a chatbot that irritates your customers, or a tool you stop opening after three weeks. We start somewhere boring instead: making sure you exist where people are looking. That is a real problem, it is fixable in two weeks, and you can check our work yourself by asking the same question we did.</p>
+    <p class="lede">After that, if we look at your setup and nothing worth automating turns up, we will tell you that and you will keep your money.</p>
   </div>
 </section>
 
@@ -244,31 +284,26 @@
   <div class="wrap">
     <div class="sec-hd"><div class="mono">Plain pricing</div></div>
     <h2>Two numbers, said out loud.</h2>
-    <p class="lede">Setup, then monthly. We host it and we answer it. Cancel whenever, the number stays yours.</p>
+    <p class="lede">Setup, then monthly. We host it, we keep it current, and the listing stays in your name. Cancel whenever.</p>
 
-    <div class="tbl-scroll" style="margin-top:22px">
+    <div class="tbl-scroll">
       <table>
         <thead><tr><th>Service</th><th>Price</th><th>What it is</th></tr></thead>
         <tbody>
           <tr class="lead">
-            <td class="t-name">Leak Report</td>
+            <td class="t-name">Visibility Check</td>
             <td class="t-price free">Free</td>
-            <td class="t-desc">We call your line and fill out your form like a customer would, then time what comes back. One page, yours whether or not you hire us.</td>
+            <td class="t-desc">We ask four assistants about your trade in your town and check your Google listing. One page, sent over in about a day. Yours whether or not you hire us.</td>
           </tr>
           <tr>
-            <td class="t-name">Answering</td>
-            <td class="t-price">$1,500 + $500/mo</td>
-            <td class="t-desc">Every missed call and web form answered in 60 seconds, qualified, and booked. Tracking number, transcripts, monthly recap.</td>
+            <td class="t-name">Get Found</td>
+            <td class="t-price">$1,500 + $199/mo</td>
+            <td class="t-desc">Google listing built out properly and a website that people and assistants can both read. Two weeks. The monthly keeps it current, because a listing left alone goes stale fast.</td>
           </tr>
           <tr>
-            <td class="t-name">Follow-up</td>
+            <td class="t-name">Work Smarter</td>
             <td class="t-price">+$300/mo</td>
-            <td class="t-desc">Open estimates chased on a schedule. Past customers reached out to when they're due. Added once your own numbers say it's worth it.</td>
-          </tr>
-          <tr>
-            <td class="t-name">New site</td>
-            <td class="t-price">$3,500</td>
-            <td class="t-desc">Built after 60 days of data shows where the old one loses people. We won't sell you this on day one.</td>
+            <td class="t-desc">Two or three AI helpers built around how you already run the job. Added after you are findable, never before, and only where it saves you real hours.</td>
           </tr>
         </tbody>
       </table>
@@ -278,43 +313,43 @@
 
 <section class="band">
   <div class="wrap">
-    <div class="sec-hd"><div class="mono">Straight answer</div></div>
-    <h2>Who this is actually for.</h2>
-    <div class="cols" style="margin-top:24px">
+    <div class="sec-hd"><div class="mono">Before you fill anything in</div></div>
+    <h2>Who this is for.</h2>
+    <div class="cols">
       <div class="col">
         <h3>Worth your time</h3>
         <ul>
-          <li>One job is worth $2,000 or more</li>
-          <li>Gates, iron, fencing, hardscape, ADU, remodel, tree work, restoration</li>
-          <li>Two to fifteen people, owner still answers the phone</li>
-          <li>You already spend on Google, Angi, Yelp or Thumbtack</li>
-          <li>Los Angeles, the Valley, or close enough that we can drive out</li>
+          <li>You do good work and you know your Google listing is a mess</li>
+          <li>No website, or one somebody built for you years ago</li>
+          <li>One job is worth a few hundred dollars or more</li>
+          <li>Trades, home services, shops, studios, clinics, anybody local</li>
+          <li>You keep hearing you should use AI and nobody has shown you anything useful</li>
         </ul>
       </div>
       <div class="col no">
         <h3>Don't bother</h3>
         <ul>
           <li>You're booked out and turning work away</li>
-          <li>Somebody in the office answers every call already</li>
-          <li>Jobs under a few hundred dollars</li>
-          <li>You want a logo, a rebrand, or social media posts</li>
-          <li>You want to buy this today without seeing your own report first</li>
+          <li>You already have someone handling your listing and site</li>
+          <li>You want a logo, a rebrand, or daily social posts</li>
+          <li>You want a chatbot answering your customers</li>
+          <li>You want to hand this over and never look at it again</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<section class="list-band" id="report">
-  <div class="wrap band-inner" style="padding-block:56px">
+<section class="list-band" id="check">
+  <div class="wrap" style="padding-block:56px">
     <div class="list-grid">
       <div>
-        <div class="sec-hd" style="margin-bottom:18px"><div class="mono">First 25 shops</div></div>
-        <h2>Get your leak report.</h2>
-        <p class="lede">We call your business line and fill out your own form like a real customer, then write down exactly what came back and how long it took. It takes us about a day. Costs you nothing and you keep the page either way.</p>
-        <p class="lede" style="margin-top:14px">Two people do this by hand right now, so we're taking twenty-five shops to start. Get in line and we'll work down the list.</p>
+        <div class="sec-hd" style="margin-bottom:14px"><div class="mono">First 25 businesses</div></div>
+        <h2>See what AI says about you.</h2>
+        <p class="lede">Tell us your business and your town. We ask the assistants, pull up your Google listing, and send you one page showing where you stand and what is missing.</p>
+        <p class="lede" style="margin-top:14px">Two of us do these by hand, so we are taking twenty-five to start and working down the list.</p>
         <div class="counter"><span class="dot"></span><span id="count-text">25 spots open</span></div>
-        <div class="meter"><i id="meter-fill" style="width:4%"></i></div>
+        <div class="meter"><i id="meter-fill"></i></div>
       </div>
 
       <div>
@@ -324,39 +359,39 @@
               <label for="f-biz">Business name</label>
               <input id="f-biz" name="biz" type="text" placeholder="Valley Gate &amp; Iron" autocomplete="organization" required>
             </div>
-            <div class="half">
-              <label for="f-phone">Business phone</label>
-              <input id="f-phone" name="phone" type="tel" placeholder="(818) 555-0142" autocomplete="tel" required>
+            <div>
+              <label for="f-city">City or town</label>
+              <input id="f-city" name="city" type="text" placeholder="Sun Valley, CA" autocomplete="address-level2" required>
             </div>
-            <div class="half">
-              <label for="f-trade">Trade</label>
+            <div>
+              <label for="f-trade">What you do</label>
               <select id="f-trade" name="trade">
                 <option value="">Pick one</option>
-                <option>Gates, iron, fencing</option>
-                <option>Hardscape, concrete, pools</option>
-                <option>ADU, remodel, general</option>
-                <option>Tree work, landscape</option>
-                <option>Roofing, solar, restoration</option>
+                <option>Trades and home services</option>
+                <option>Shop or retail</option>
+                <option>Studio, gym or salon</option>
+                <option>Clinic or practice</option>
+                <option>Food or hospitality</option>
                 <option>Something else</option>
               </select>
             </div>
-            <div class="half">
+            <div>
               <label for="f-name">Your name</label>
               <input id="f-name" name="name" type="text" placeholder="Mike" autocomplete="given-name" required>
             </div>
-            <div class="half">
+            <div>
               <label for="f-email">Where to send it</label>
               <input id="f-email" name="email" type="email" placeholder="mike@valleygate.com" autocomplete="email" required>
             </div>
           </div>
-          <button class="btn submit" type="submit" id="wl-go">Put me on the list</button>
+          <button class="btn submit" type="submit" id="wl-go">Send me my check</button>
           <p class="err" id="wl-err" hidden></p>
-          <p class="fineprint">We call your published number and use your own website form. Nothing gets submitted through an ad you pay for, and we say who we are as soon as anyone picks up.</p>
+          <p class="fineprint">We only look at what is already public: your Google listing, your website if you have one, and what the assistants say when asked. Nothing gets submitted anywhere on your behalf and nobody calls you unless you ask us to.</p>
         </form>
 
         <div id="wl-done" class="done" hidden>
           <div class="tick">You're on the list.</div>
-          <p id="done-line">We'll run your report and email it over. If you'd rather just talk, text Miles at 310-606-9788 and skip the queue.</p>
+          <p>We'll run your check and email the page over. If you'd rather just talk it through, text Miles at 310-606-9788 and skip the queue.</p>
           <span class="mono" id="done-pos"></span>
         </div>
       </div>
@@ -385,9 +420,7 @@
 
   function paint(n){
     var left = Math.max(0, TOTAL - n);
-    countText.textContent = left > 0
-      ? (left + (left === 1 ? ' spot open' : ' spots open'))
-      : 'List full, we still take names';
+    countText.textContent = left > 0 ? (left + (left === 1 ? ' spot open' : ' spots open')) : 'List full, we still take names';
     meter.style.width = Math.min(100, Math.max(4, (n / TOTAL) * 100)) + '%';
   }
   paint(0);
@@ -408,13 +441,13 @@
     errEl.hidden = true;
 
     var biz = document.getElementById('f-biz').value.trim();
-    var phone = document.getElementById('f-phone').value.trim();
+    var city = document.getElementById('f-city').value.trim();
     var name = document.getElementById('f-name').value.trim();
     var email = document.getElementById('f-email').value.trim();
     var trade = document.getElementById('f-trade').value;
 
-    if(!biz || !phone || !name || !email){
-      showErr('Fill in the business name, phone, your name and email so we can actually run the report.');
+    if(!biz || !city || !name || !email){
+      showErr('We need the business name, the town, your name and an email to actually run the check.');
       return;
     }
     if(email.indexOf('@') < 1 || email.indexOf('.') < 3){
@@ -427,14 +460,14 @@
 
     if(!dbRef){
       go.disabled = false;
-      go.textContent = 'Put me on the list';
-      showErr('This form is not connected yet. Text Miles at 310-606-9788 with your business name and we will run it today.');
+      go.textContent = 'Send me my check';
+      showErr('This form is not connected yet. Text Miles at 310-606-9788 with your business name and town and we will run it today.');
       return;
     }
 
     try{
       await dbRef.doc().set({
-        business: biz, phone: phone, contact: name, email: email,
+        business: biz, city: city, contact: name, email: email,
         trade: trade || 'Not given', status: 'new',
         submitted: new Date().toISOString()
       });
@@ -445,8 +478,8 @@
       doneEl.scrollIntoView({behavior:'smooth', block:'center'});
     }catch(e){
       go.disabled = false;
-      go.textContent = 'Put me on the list';
-      showErr('That did not save. Text Miles at 310-606-9788 with your business name and we will run it today.');
+      go.textContent = 'Send me my check';
+      showErr('That did not save. Text Miles at 310-606-9788 with your business name and town and we will run it today.');
     }
   });
 })();
