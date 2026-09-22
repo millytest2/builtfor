@@ -98,16 +98,59 @@ concerned.
 
 Drawing a blank on the name question adds 15 to the score on its own.
 
-## 4. Seeded leads
+## 4. The starter list: 52 San Fernando Valley prospects
 
-Five real San Fernando Valley iron and gate shops are already in the call sheet,
-found through public web research. **Every one is marked NOT VERIFIED.** Names,
-addresses and phones came from search results and directory listings, not from
-the businesses themselves. Open each one's Google listing first, confirm the
-number, and check whether a website exists before you dial.
+`output/prospects_san_fernando_valley.csv` holds 52 businesses, 51 with a phone
+number, all drivable. Open the call sheet, hit **Import**, paste the file.
 
-They are there as a starting point for the first afternoon, not as a vetted
-list.
+| | |
+|---|---|
+| Prospects | 52 |
+| With a phone number | 51 |
+| No own website found in search results | 48 |
+| Already have a website | 4 |
+| With a street address | 43 |
+
+**Towns:** Sun Valley 13, Van Nuys 10, Pacoima 10, Reseda 5, North Hollywood 4,
+Sylmar 3, Canoga Park 3, Northridge 2, Arleta 1.
+
+**Trades:** auto body 6, welding 5, metal fabrication 4, auto glass 3, flooring
+3, cabinetry 4, countertop fabrication 2, tree service 2, masonry 2, pool 2,
+appliance repair 2, garage doors 2, upholstery 3, plus radiator, transmission,
+nursery and ironwork.
+
+Heavy on metal, auto and stone on purpose. Those shops sit in industrial pockets
+of Sun Valley and Pacoima, do work worth real money, are owner-run, and almost
+none of them have a website. They are also clustered, so you can knock on six
+doors on Branford Street in one trip.
+
+### What "verified" means here, exactly
+
+**Verified:** the business name, phone and address appear in public listings
+(Yelp, YellowPages, Nextdoor, TheBlueBook, HomeAdvisor), and a search for the
+business surfaced no website of their own, only third-party directory pages.
+
+That second part is the need signal and it is a real one. A business whose entire
+web presence is other people's directories almost certainly has no site. It also
+means that when a customer searches them, the top results are Yelp pages the
+business does not control.
+
+**Not verified, and you must check before dialling:**
+
+- That the number still works and belongs to that business
+- The state of their Google listing, claimed or not, filled in or not
+- Whether any assistant names them
+
+Those three are exactly what the call sheet walks you through, so the list is
+built to be checked, not called cold off the page.
+
+One flag carried in the notes: **Padilla's Masonry and Landscaping** appears on
+one Yelp listing as CLOSED. Verify before spending a call on it.
+
+The four with websites (Mission Iron Works, Custom Furniture by WM, Van Nuys
+Auto Glass, Blumer Auto Center) are not mistakes. They are the better lead type:
+intent already proven, and the question becomes whether the site they paid for
+is actually getting read.
 
 ## 5. About emails
 
