@@ -101,16 +101,16 @@ footer p{margin:0 0 7px}
 <header class="top">
   <div class="eyebrow">Built for Main Street</div>
   <h1>Launch sequence</h1>
-  <p class="sub">Zero dollars to first paying client, then the LLC out of client money. Tap a step when it's done — your progress saves.</p>
+  <p class="sub">$110 sets the business up today. $90 files the LLC on December 17. Tap a step when it's done — your progress saves.</p>
 
   <div class="meter">
     <div class="bar"><i id="fill"></i></div>
-    <b id="count">0 / 21</b>
+    <b id="count">0 / 22</b>
   </div>
   <div class="spend">
     <span>Spent <b id="spent">$0</b></span>
     <span>Still to pay <b id="left">$0</b></span>
-    <span>To first client <b id="toFirst">$0</b></span>
+    <span>Set up now <b id="toFirst">$0</b></span>
   </div>
 </header>
 
@@ -124,13 +124,13 @@ footer p{margin:0 0 7px}
 
 <footer>
   <p><b>The money rule, from the first dollar:</b> business money moves through the business account. Client pays you → business account. Never personal Venmo, Zelle or Cash App. You need money → transfer it and call it a draw. Start this habit as a sole proprietor and the LLC inherits it.</p>
-  <div class="warn"><b>Why the LLC waits for December.</b> California's 15-day rule: an entity formed on or after <b>December 17</b> that conducts no business that year owes no franchise tax for it. File today and you owe $800 for 2026 and $800 for 2027 within four months. File December 17 and you owe one $800, in April 2027. A sole proprietorship is a real business in the meantime — it takes money, signs contracts, holds a bank account. What it lacks is a liability shield, and the exposure here is small: no client premises, no equipment. The cap in your client agreement carries that load until December.<br><br><b>The one alternative:</b> California corporations are exempt from the $800 in their first year, so incorporating costs $125 against the LLC's $890. But an S-corp owes Form 1120-S every year even at zero income — $800–1,200 from a CPA, forever — which makes it cheaper in year one and more expensive in every year after.</div>
+  <div class="warn"><b>Why the LLC waits for December.</b> California's 15-day rule: an entity formed on or after <b>December 17</b> that conducts no business that year owes no franchise tax for it. File today and you owe $800 for 2026 and $800 for 2027 within four months. File December 17 and you owe one $800, in April 2027. A sole proprietorship is a real business in the meantime — it takes money, signs contracts, holds a bank account. What it lacks is a liability shield, and the exposure here is small: no client premises, no equipment. The cap in your client agreement carries that load until December.<br><br><b>Everything else was checked and doesn't work.</b> An LLC that elects S-corp status still owes the $800 — the first-year exemption belongs to entities <i>incorporated</i> as corporations, not to LLCs that choose corporate taxation. No legislation has reinstated the LLC waiver. There is no low-income or hardship exemption. California's veteran waiver covers selling goods, not services. New Mexico ($50, no annual report) and Wyoming ($100/$60) are genuinely the cheapest states, but working from California means registering here as a foreign LLC and paying the $800 anyway, plus theirs.<br><br><b>Incorporating is the one real alternative:</b> $125 year one with $0 franchise tax. But a corporation owes Form 1120-S or 1120 every year even at zero income — $800–1,200 from a CPA — so over two years it runs ~$2,500 against the LLC's ~$1,030. Cheaper in year one, worse in every year after.</div>
 </footer>
 </div>
 
 <script>
 const STEPS = [
- {p:"Start — $0", pd:"Today. You can be legally taking money before you spend a dollar.", items:[
+ {p:"Start — $18", pd:"Today. The EIN is free and you can be legally taking money before anything else clears.", items:[
   {id:"s01", t:"Get your EIN as a sole proprietor", c:0,
    how:"<code>irs.gov/ein</code>, Mon–Fri 7am–10pm ET. Entity type = <b>Sole Proprietor</b>. Free, instant. You don't need an LLC to have one, and it keeps your SSN off every client's W-9. Save the CP 575 PDF the moment it appears — the IRS issues it once.",
    m:["15 min","Free","Do this first"]},
@@ -140,68 +140,71 @@ const STEPS = [
   {id:"s03", t:"Buy the domain", c:11,
    how:"Namecheap is fine — turn on the free WhoisGuard privacy. Move the registrant to the business once it's formed.",
    m:["$11/yr","Already found it"]},
+  {id:"s04", t:"Email on the domain", c:7,
+   how:"Google Workspace, <b>$7/mo</b>. you@builtformainstreet.com. A gmail.com address on a cold call to a 50-year-old shop owner costs you more than $7 a month does.",
+   m:["20 min","$7/mo"]},
  ]},
- {p:"The name — $37", pd:"When you have $37. Needed to operate as Built for Main Street and to open a business bank account.", items:[
-  {id:"s04", t:"File the Fictitious Business Name", c:37,
+ {p:"The name — $92", pd:"Needed to operate as Built for Main Street and to open a business bank account. With $200 you can do both halves now.", items:[
+  {id:"s05", t:"File the Fictitious Business Name", c:37,
    how:"LA County: <code>lavote.gov</code> → Fictitious Business Names. $26 filing + $10.75 online fee. Required to do business under any name that isn't your surname. Good for <b>five years</b>. Other counties are similar — check yours.",
    m:["20 min","$36.75","Lasts 5 years"]},
-  {id:"s05", t:"Publish it in a newspaper", c:55,
+  {id:"s06", t:"Publish it in a newspaper", c:55,
    how:"Four weekly insertions in a county paper. You have <b>45 days from filing</b> to start publication, and another 45 after it finishes to file the affidavit — more room than most guides say. Call two or three papers first; quotes run $40–70.",
-   m:["$40–70","45 days to start"]},
-  {id:"s06", t:"Open the business bank account", c:0,
+   m:["$40–70","45 days to start","Call 2–3 first"]},
+  {id:"s07", t:"Open the business bank account", c:0,
    how:"Novo, Mercury or Relay — all free, no minimum. Bring: FBN filing, EIN letter, driver's licence. Every dollar of business money goes through here from now on.",
    m:["30 min","Free"]},
-  {id:"s07", t:"Set up Stripe", c:0,
+  {id:"s08", t:"Set up Stripe", c:0,
    how:"Sole proprietor + EIN works fine. Build both now: a <b>$1,000 payment link</b> and a <b>$199/mo subscription</b> that bills itself. Add $1,990/yr as a second price.",
    m:["15 min","2.9% + 30¢"]},
  ]},
  {p:"Ready to sell", pd:"Everything you need before the first dial. All free.", items:[
-  {id:"s08", t:"Fill in the client agreement", c:0,
+  {id:"s09", t:"Fill in the client agreement", c:0,
    how:"Use the sole-proprietor party line at the top of the document. Swap the brackets, export as PDF, load into a free e-sign tool. Exhibit A is your scoping worksheet — fill it live on the call.",
    m:["30 min","Free"]},
-  {id:"s09", t:"Run three practice Visibility Checks", c:0,
+  {id:"s10", t:"Run three practice Visibility Checks", c:0,
    how:"Three leads off the call sheet. Ask ChatGPT, Gemini and Claude the shopping question and the by-name question. Screenshot everything. Do this before you do it live.",
    m:["45 min","Free"]},
  ]},
  {p:"First money", pd:"The part that decides whether any of the rest matters.", items:[
-  {id:"s10", t:"First day of dials — 27 calls", c:0,
+  {id:"s11", t:"First day of dials — 27 calls", c:0,
    how:"Straight down the call sheet. Start with the four broken-link leads: Special Touch, Padilla's Masonry, Peter's Tree Trimming, Vecchio Masonry. Their listings point at the wrong company — shortest conversation on the sheet. Fort Wayne is three hours ahead of you and tree services answer their phones.",
    m:["2–3 hrs","4 sales/mo = 27 dials/day"]},
-  {id:"s11", t:"Deliver your first live Visibility Check", c:0,
+  {id:"s12", t:"Deliver your first live Visibility Check", c:0,
    how:"On the phone while they're listening. Lead with the by-name question — <i>“I don’t have information about that business”</i> is the sentence that sells this.",
    m:["10 min on the call"]},
-  {id:"s12", t:"Collect the first $1,000", c:0,
+  {id:"s13", t:"Collect the first $1,000", c:0,
    how:"Payment link on the second call. The two-week clock starts when the money and the photos land. Never build on spec.",
    m:["The one that counts"]},
  ]},
  {p:"First delivery", pd:"About 100 minutes the first time, 65 by the fifth.", items:[
-  {id:"s13", t:"Intake call, then fill the client JSON", c:0,
+  {id:"s14", t:"Intake call, then fill the client JSON", c:0,
    how:"15-minute call for services, towns, reviews, photos. Paste your notes into Claude with the prompt in the build doc. It fills the JSON — it never writes the HTML.",
    m:["20 min"]},
-  {id:"s14", t:"Build and deploy", c:0,
+  {id:"s15", t:"Build and deploy", c:0,
    how:"<code>python3 src/build_site.py clients/name.json</code> → 11 pages with valid schema. Deploy with <code>npx wrangler pages deploy</code>. Cloudflare Pages is free and unlimited.",
    m:["10 min","$0 hosting"]},
-  {id:"s15", t:"Claim the Google Business Profile", c:0,
+  {id:"s16", t:"Claim the Google Business Profile", c:0,
    how:"In <b>their</b> name, never yours — Google requires it and your agreement says so. 750-character description, every service, Q&amp;A filled, new domain linked.",
    m:["45 min","Half the value is here"]},
-  {id:"s16", t:"Send the month-zero baseline report", c:0,
+  {id:"s17", t:"Send the month-zero baseline report", c:0,
    how:"Re-run the Visibility Check the day it goes live and send it. That's the number every future month gets compared against, and it's what makes the $199 renew itself.",
    m:["10 min","Then monthly"]},
  ]},
  {p:"Upgrade to the LLC", pd:"December 17 or later. Filing before that date costs you an extra $800 — see the note at the bottom.", items:[
-  {id:"s17", t:"File the LLC — on or after December 17", c:70, gate:"Do not file before Dec 17",
+  {id:"s18", t:"File the LLC — on or after December 17", c:70, gate:"Do not file before Dec 17",
    how:"<code>bizfileonline.sos.ca.gov</code> → Articles of Organization. Management = <b>All LLC Member(s)</b>, not One Manager. California's 15-day rule means an entity formed Dec 17 or later that does no business that year owes <b>nothing</b> for that tax year. Keep running as a sole proprietor through December and move the business into the LLC on January 1.",
    m:["20 min","$70","Timing saves $800"]},
-  {id:"s18", t:"New EIN for the LLC — optional", c:0,
+  {id:"s19", t:"New EIN for the LLC — optional", c:0,
    how:"<b>Not required.</b> A single-member LLC taxed as a disregarded entity may keep the sole-proprietor EIN. Get a new one anyway (free, 15 min, entity type <b>Limited Liability Company</b>) so the EIN matches the LLC name on bank records — it saves friction later. You <i>will</i> need a new one if you ever elect S-corp.",
    m:["15 min","Free","Recommended, not mandatory"]},
-  {id:"s19", t:"Sign the operating agreement", c:0,
+  {id:"s20", t:"Sign the operating agreement", c:0,
    how:"It's already written — fill every bracket, sign, date, keep it. Read Section 4 twice: commingling is how single-member LLCs lose their shield.",
    m:["20 min","Services charge $200–500"]},
-  {id:"s20", t:"Calendar: Statement of Information", c:20,
+  {id:"s21", t:"Calendar: Statement of Information", c:20,
    how:"Form LLC-12, due within <b>90 days</b> of approval, then every two years. <b>$250 penalty if you miss it.</b>",
    m:["$20"]},
-  {id:"s21", t:"Calendar: the $800 franchise tax", c:800,
+  {id:"s22", t:"Calendar: the $800 franchise tax", c:800,
    how:"FTB Form 3522. Form in December and your first payment isn't due until <b>April 2027</b>. Form today instead and you owe $800 for 2026 <i>and</i> $800 for 2027 within four months of each other — the back-to-back trap.",
    m:["Due April 2027","Not before"]},
  ]},
