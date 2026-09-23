@@ -9,8 +9,19 @@
 
 **This Agreement** is between:
 
-**Built for Main Street LLC**, a California limited liability company
+**[ SOLE PROPRIETOR — use until the LLC exists ]**
+**Miles Tipton**, an individual doing business as **Built for Main Street**
 ("we," "us," "Company")
+
+**[ AFTER THE LLC IS FORMED — swap to this line ]**
+~~**Built for Main Street LLC**, a California limited liability company
+("we," "us," "Company")~~
+
+*Delete whichever line doesn't apply. Everything else in this Agreement works
+unchanged either way — "Company" is defined by whichever line you keep. When
+the LLC is formed, existing clients don't need to re-sign; send a one-line
+email saying the business is now Built for Main Street LLC and the agreement
+carries over.*
 
 and
 
@@ -181,11 +192,12 @@ rest stays in effect.
 
 ## SIGNATURES
 
-**Built for Main Street LLC**
+**Built for Main Street**
 
 Signature: _________________________  Date: ____________
 
-Name: **[YOUR NAME]**  ·  Title: Member
+Name: **Miles Tipton**  ·  Title: Owner
+*(After the LLC: "Built for Main Street LLC" and Title: Member)*
 
 &nbsp;
 
@@ -237,6 +249,8 @@ Fill this in on the scoping call. It becomes part of the Agreement.
   stronger close than a promise you can't keep.
 - **Section 7.1 is why the LLC is not the only thing protecting you.** A cap
   at fees paid means the worst case on a client who paid $3,388 is $3,388.
+  This clause is doing most of the work while you're still a sole proprietor —
+  do not sign a client without it.
 - **Section 2.3 is a real asset.** When you raise new clients to $299, the
   ones at $199 know they're grandfathered. That is what turns them into
   referrers.
