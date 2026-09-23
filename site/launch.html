@@ -110,7 +110,7 @@ footer p{margin:0 0 7px}
 
   <div class="meter">
     <div class="bar"><i id="fill"></i></div>
-    <b id="count">0 / 37</b>
+    <b id="count">0 / 38</b>
   </div>
   <div class="spend">
     <span>Spent <b id="spent">$0</b></span>
@@ -171,15 +171,18 @@ const STEPS = [
  ]},
 
  {p:"Register the name", chip:"COACH STEP 2 CONT.", pd:"California requires this to trade under any name that isn't your surname. The bank needs it.", items:[
+  {id:"s09a", t:"Check whether the May FBN ever completed", c:0,
+   how:"<code>lavote.gov</code> → Fictitious Business Names → Search. Free, no login, covers Feb 2024 onward. Search by <b>your own name as owner</b>, not just the business name. The May 8 order confirmation is <i>not</i> a filing — it says payment still had to clear through VitalChek. Nothing found means it never completed and no money was lost. Found and active means it was paid but never published, so it is dead and ~$37 is gone. <b>Either way you file fresh below.</b>",
+   m:["3 min","Free"]},
   {id:"s09", t:"Call two newspapers for publication quotes", c:0,
    how:"Do this <b>before</b> paying the county. Quotes run $40–70 for the four required weekly insertions. Five-minute call.",
    m:["10 min","Free"]},
   {id:"s10", t:"File the Fictitious Business Name", c:37,
-   how:"LA County: <code>lavote.gov</code> → Fictitious Business Names. $26 + $10.75 online fee. Good for <b>five years</b>.",
+   how:"LA County: <code>lavote.gov</code> → Fictitious Business Names. $26 + $10.75 online fee. Good for <b>five years</b>. <b>You are not filed when the confirmation email arrives.</b> LA County uses VitalChek to verify identity and take payment, and nothing is recorded until that clears. Watch for it, finish it, and save the paid receipt — this is exactly where May died.",
    m:["20 min","$36.75"]},
   {id:"s11", t:"Publish it", c:55,
-   how:"Four weekly insertions. You have <b>45 days from filing</b> to start, and 45 more after it finishes to file the affidavit — more room than most guides say.",
-   m:["$40–70","45-day window"]},
+   how:"Four weekly insertions. Publication must <b>begin within 45 days of filing</b> — no extension, no grace period. Miss it and the statement is dead: you refile and pay again from scratch. Book the paper the same week you file. The affidavit is then due within 45 days of the last insertion. Until it is published, <b>B&amp;P 17918 bars you from suing on any contract signed under this name</b> — which is every client agreement.",
+   m:["$40–70","Hard 45-day deadline"]},
  ]},
 
  {p:"Open the business bank account", chip:"COACH STEP 4", pd:"Exactly as he described, with one document substituted.", items:[
