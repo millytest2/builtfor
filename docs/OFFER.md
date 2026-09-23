@@ -1,210 +1,271 @@
-# THE OFFER — final
+# THE OFFER — v2, continuity model
 
-The live positioning. Supersedes the offer and targeting in `STRATEGY_10K.md`
-and `HANDOFF.md`. Those keep the channel ranking and the call mechanics.
+Supersedes the one-time-fee version. Changed after the 9/22 coaching call:
+the website is now **leased, not sold.**
 
 ---
 
 ## What we sell
 
 **We get local businesses found. Their Google listing fixed and a website
-built, done together, so that search engines and AI assistants can both
-actually read them.**
+built, done together, so search engines and AI assistants can both actually
+read them — then kept working, every month, for a flat fee.**
 
-One job. Not two services bundled. Neither half works alone: a website nothing
-links to is invisible, and a listing with no site attached is a dead end.
+One job. Neither half works alone: a website nothing links to is invisible, and
+a listing with no site attached is a dead end.
 
 ## The category
 
 **We get local businesses found. It starts with a website.**
 
-That is the category and the sequence, in that order, and the order matters.
-"A website service" was ruled out for good reason: it is a commodity that
-competes with Wix and somebody's nephew. What gets sold here is the outcome,
-being found. The website is the first deliverable, not the identity.
+Outcome first, website as the sequence. "A website service" is a commodity that
+competes with Wix and somebody's nephew. Not an SEO agency, not a Google
+agency, not an AI company, not an answering service.
 
-Also not: an SEO agency, a Google optimization agency, an online agency, an AI
-company, a content or social agency, an answering service.
+The website leads anyway because it is the only word a non-technical owner
+already understands and already believes they need. Everything else — listing
+claimed, structured data, service and town pages, consistent citations — is
+invisible work. Invisible work is miserable to sell and impossible to explain
+at a kitchen table, so it is never priced separately. It is what is inside.
 
-The practical reason the website leads anyway: "website" is the only word here
-a non-technical owner already understands and already believes they need, and
-it is a thing rather than an open-ended service, so the shape of the purchase
-is familiar. Everything else is invisible work: listing claimed, structured
-data, service and town pages, consistent citations. Invisible work is miserable
-to sell and impossible to explain at a kitchen table, so it is never priced
-separately. It is what is inside the build.
-
-**On a call, never open with "we build websites."** Say what they get:
+**Never open a call with "we build websites."** Say:
 
 > "I make sure that when somebody looks for what you do, you're the one who
 > comes up. Usually that means building the site and fixing the Google listing,
 > because that's what everything reads."
-
-## The positioning problem, and the fix
-
-Every business on the list gets cold-called about **websites** and about
-**Google** most weeks. They hang up in four seconds and they are right to.
-Nobody is calling them about whether an assistant can find them.
-
-**So the website and the listing are what you sell. They are never what you
-lead with.** Lead with the check. The AI finding is the only part of this pitch
-that is not already background noise to them, and it is the reason the call
-lasts longer than four seconds.
-
-## Explicitly out of scope
-
-Social media. Blog posts. Ads. Logos and rebrands. Ghostwriting. Chatbots that
-talk to customers. Anything that replaces a person on the payroll.
-
-Note the distinction that matters: AI **behind** the desk is in scope and is
-half the upsell. AI **in front of** the customer never is.
-
-Say this out loud on the page and on the call. Naming what you do not do is a
-faster trust builder than another claim about what you do, and it keeps you out
-of the content-agency and AI-receptionist categories where you compete on price
-against people with more staff.
 
 ## The offer
 
 | | Offer | Price |
 |---|---|---|
 | The door | **Visibility Check** | Free |
-| The product | **The fix** | **$500 – $1,000 one-time** |
-| Keeping it up | **Keep it live** | **$79/mo hosting** |
+| Setup | **Build and fix** | **$1,000 one-time** |
+| The lease | **Keep it found** | **$300/mo** |
 
-**Scoped on the call, quoted once, and it does not move after that.**
+**Scoped on the call, quoted once, does not move.**
 
-| Price | When | What's in it |
+**Setup, $1,000.** Google listing claimed, verified, fully filled out, website
+linked on it, name/address/phone consistent everywhere. A fast mobile site with
+a real page per service and per town, details and FAQs marked up the way search
+engines and assistants read them, real job photos. Two weeks from the day
+photos arrive.
+
+**The lease, $300/mo.** Hosting, domain, certificate, unlimited small edits,
+the Google listing kept current, and a monthly report showing where they rank
+on Google and whether ChatGPT, Gemini and Claude name them. Cancel with 30
+days' notice.
+
+### The part you have to say out loud
+
+**We own the site and the domain while they lease it.** Say it on the first
+call, in plain words, before they ask:
+
+> "Here's how it works. I build it and I own it, you lease it. That's why it's
+> a thousand up front instead of four. Long as you're with me it's yours to
+> use, I keep it current, and I keep you findable. If you ever want to own it
+> outright, after a year you can buy it from me for two thousand and I'll hand
+> you the domain and the files."
+
+Three reasons to lead with it rather than bury it:
+1. It explains the low setup fee. $1,000 for a real site plus listing work is
+   cheap, and cheap makes people suspicious until they know why.
+2. It is the leverage. If they stop paying, the site comes down. That is the
+   whole point of the model and it only works if it was never a secret.
+3. Discovering it later feels like a trap and kills the referral.
+
+**The $2,000 buyout after 12 months is not a concession, it is a closer.** It
+turns "so I'm renting forever?" into "no, you've got an option." Most never
+take it. The ones who do have paid $1,000 + $3,600 + $2,000 = $6,600, which is
+a fine outcome.
+
+### Why continuity, in one table
+
+| Model | Clients needed for $10k/mo | Realistically, when |
 |---|---|---|
-| **$500** | Listing already claimed and filled in, or they want it left alone | Site only |
-| **$800** | Listing a mess or never claimed, handful of services | **Quote this by default.** Site + listing done properly |
-| **$1,000** | Lots of services, several towns, or more than one location | The above plus a page per service and per town, review replies |
+| $800 one-time, no recurring | **11 sales every month, forever** | Never stops being month one |
+| $900 + $79/mo hosting | 127 clients | Month 40+ |
+| **$1,000 + $300/mo** | **34 clients** | **~Month 9** |
 
-$700 on the usual job if photos arrive inside a week. That is the only discount
-and it buys the one thing that actually delays delivery.
+At 4 sales a month with 3% monthly churn:
 
-**The fix, paid once.** Google listing claimed, verified and fully filled
-out, website linked on it, consistent name address and phone everywhere. A fast
-mobile site with a real page per service and per town, details and FAQs marked
-up the way search engines and assistants read them, real job photos. Two weeks
-from the day photos arrive. The site and the listing are theirs, in their name,
-permanently.
+| Month | Clients | Recurring | Plus setup fees | That month |
+|---|---|---|---|---|
+| 3 | 12 | $3,500 | $4,000 | $7,500 |
+| 6 | 22 | $6,700 | $4,000 | $10,700 |
+| 9 | 32 | $9,600 | $4,000 | $13,600 |
+| 12 | 41 | $12,200 | $4,000 | $16,200 |
 
-**Keep it live, $79/mo.** Hosting, domain, certificate, and the listing kept
-current so it does not go stale. Cancel any time and they get the files.
+Steady state at that pace is ~133 clients and ~$40k/mo. The coach is right and
+the gap is not close.
 
-**Say the monthly is hosting, because it is.** It is not a retainer, they are
-not buying your time, and there is no campaign to report on. Frame it like a
-phone line. That framing is what makes it easy to sell and easy to keep.
+**What 4 sales a month actually costs you:** about 80 real conversations, which
+is about 530 dials, which is about 27 dials a day. That is the job. The pricing
+change does not reduce the dialing, it just means the dialing compounds.
 
-### On not wanting to manage monthly
+## How the $300 is honest, given you don't want to manage
 
-Fair, and the offer above respects it. But look at what dropping the monthly
-entirely would cost:
+You told me straight: *"I don't really wanna manage of that tbh."* That is still
+true and the model still works, but only if you build it to be true.
 
-| Model | To reach $10k/mo |
-|---|---|
-| $900, no recurring | **11 sales every month, forever.** ~715 dials/mo, 166/week. |
-| $900 + $79/mo hosting | 4 builds/mo builds a floor underneath you |
+$300/mo for hosting alone is not defensible and a client will eventually
+realize it. $300/mo for **hosting + edits + listing + proof they're being
+found** is defensible and renews itself. The difference is about ten minutes
+per client per month:
 
-At four builds a month with 3% churn, $79/mo compounds quietly:
+| Task | Time | How |
+|---|---|---|
+| Re-run the Visibility Check | 2 min | Scripted, same three assistants, same two questions |
+| Push whatever edits they emailed | 5 min | Hours changed, new service, new photos |
+| One listing post or photo | 3 min | Batched from a template |
 
-| Month | Clients | Passive/mo | That month |
-|---|---|---|---|
-| 6 | 22 | $1,759 | $5,359 |
-| 12 | 41 | $3,225 | $6,825 |
-| 24 | 69 | $5,462 | $9,062 |
+**Batch it. One day a month, every client at once.** At 34 clients that is
+about six hours for $10,200. At 60 clients, hand the whole day to a VA at
+$8/hr and it costs you $100.
 
-**Without it, month 25 looks exactly like month 1.** That is the treadmill your
-own handoff warned about.
+The monthly report is the thing that makes renewal automatic. An owner who gets
+an email every month that says *"ChatGPT named you 3 of 3 times this month, up
+from 0 in March"* does not cancel. An owner who gets nothing wonders what he's
+paying for.
 
-The resolution is not to do more work each month. It is to make the $79 genuinely
-low-touch: templated sites on one host, listing updates batched monthly across
-all clients at once, the Visibility Check re-run by script. Target under ten
-minutes per client per month. At 40 clients that is under seven hours a month
-for roughly $3,200. If it ever grows past that, hand it to a VA rather than
-dropping it.
+## What it costs you to run (you asked for cheap)
 
-**And you have to host it anyway.** You cannot build somebody a website and then
-not put it anywhere. Charging for hosting is not a service commitment, it is
-passing on a cost you are already carrying.
+| | Cost | When |
+|---|---|---|
+| Hosting — Cloudflare Pages | **$0** | Unlimited sites, free SSL, free forever |
+| Domains | **~$1/mo each** | $12/yr, registered in your entity's name |
+| Google Workspace | $7/mo | Day one |
+| Go High Level Starter | $97/mo | Day one per your coach — 3 sub-accounts |
+| Go High Level Unlimited | $297/mo | Only once you're past ~10 clients |
+| LLC filing | $50–$500 once | State-dependent |
+| Business bank (Novo) | $0 | Day one |
 
-### Why a range and not one number
+**At 34 clients: roughly $340/mo of cost against $10,200 of revenue.** That is
+a ~97% gross margin, which is the entire reason this business is worth doing
+over an agency that buys ads.
 
-Because the work genuinely is not the same for everyone, and pretending it is
-means either underquoting the hard ones or overquoting the easy ones. Quoting a
-range and then scoping it out loud on the call is how tradespeople quote each
-other, and they respect it.
+Two cheap notes, offered as information and not as an argument with your coach:
 
-**Default to $800.** It is the honest middle, it is what most of these jobs
-are, and $500 exists mainly so the range has a floor that makes $800 sound
-reasonable.
+- **Cloudflare Pages beats GHL for hosting these sites.** Static, free,
+  unlimited, and faster — which matters, because page speed is one of the few
+  ranking inputs you fully control. Use GHL for the CRM and pipeline, which is
+  what it is actually good at.
+- **S-Corp election costs money before it saves money.** Payroll plus a tax
+  return runs $1,000–$2,000 a year. It generally pays off above roughly $50k of
+  net profit. **File the LLC now, elect S-Corp when you clear that.** Same end
+  state, a year cheaper, and the EIN and bank account work is identical either
+  way.
 
-### What is deliberately NOT in the offer
+## Market-first: sell three before you build one
 
-No retainer. No marketing services. No follow-up-the-leads tier. No social, ads,
-blogs or logos. No chatbot in front of customers, and nothing that replaces a
-person on the payroll.
+The 85% figure from your call is real and it comes from one discipline: **you
+do not build anything until somebody has paid.**
 
-If a client later wants inquiry follow-up or AI help with paperwork, that is a
-separate conversation you can take or decline. It is not on the price list and
-it is never pitched.
+Concretely, for this business:
 
-## The check asks two different questions
+1. **Never build a spec site.** Not one. Not as a sample, not to "show what it
+   looks like." Your sample is the Visibility Check on *their* business, which
+   costs you four minutes.
+2. **Take the $1,000 before you start.** Payment link on the second call. The
+   two-week clock starts when the money and the photos arrive, not before.
+3. **Sell three, then build three.** Batching the builds teaches you the
+   template faster than doing one, waiting, doing one.
+4. **The Visibility Check is the validation instrument.** If you run 30 checks
+   and nobody flinches at the result, the offer is wrong and you learn that for
+   free. If they flinch, you have the sale.
 
-Both matter, and the second lands hardest.
+## The check asks two questions
 
-**The shopping question**, the way a stranger comparing options would ask:
-*"Who installs automatic driveway gates in Sun Valley?"* Missing here loses
-customers who have never heard of them.
+**The shopping question**, how a stranger comparing options asks:
+*"Who does furniture reupholstery in Wichita?"*
 
-**The name question**, the way somebody who already has their card would ask:
-*"What can you tell me about Valley Gate & Iron in Sun Valley?"* An assistant
-replying "I don't have information about that business" is the most
-uncomfortable sentence an owner can read about their own shop. It is not about
-rankings or competitors. It says the business does not exist as far as the
-thing answering is concerned, and every owner gets it instantly.
+**The name question**, how somebody holding their card asks:
+*"What can you tell me about Jim's Upholstery on Emporia Street?"*
 
-Run both. Put both on the page.
+An assistant replying *"I don't have information about that business"* is the
+most uncomfortable sentence an owner can read about his own shop. It is not
+about rankings. It says the business does not exist as far as the thing
+answering is concerned, and every owner gets it instantly.
+
+Run both. Screenshot both. Lead with the second one.
 
 ## The one condition that protects the price
 
-Leading with "want a website?" cold puts you back at $500, because that is what
-Wix and his nephew cost.
+Leading with "want a website?" puts you at $500, because that is what Wix and
+his nephew cost. The Visibility Check is the whole pricing argument: show him
+he is on page two and absent from every assistant answer, and the website stops
+being a brochure and becomes the fix for a problem he just watched happen.
 
-The Visibility Check is the whole pricing argument. Show him he is on page two
-and absent from every assistant answer first, and the website stops being a
-brochure and becomes the fix for a problem he just watched happen. Free check
-first, website second, every time.
+Free check first. Price second. Every time.
 
-## The real reason this business exists
+## Explicitly out of scope
 
-Two skills, both transferable, and they are the actual return:
+Social media. Blog posts. Ads. Logos and rebrands. Ghostwriting. Chatbots that
+talk to customers. Anything that replaces a person on the payroll.
 
-1. **Sales.** Cold conversations with strangers, at volume, at a price that
-   gets said out loud.
-2. **Ranking, in depth.** How search engines and assistants index, read and
-   cite a site. Why one business gets named in an answer and another does not.
+AI **behind** the desk is in scope. AI **in front of** the customer never is.
+Say this out loud — naming what you don't do builds trust faster than another
+claim about what you do, and it keeps you out of the categories where you
+compete on price against people with more staff.
 
-The second one is the sleeper. If Miles can reliably make a local business
-surface for "best X near me" on Google and inside Gemini and ChatGPT, that same
-skill points straight at UPath. Getting a career tool cited when somebody asks
-an assistant for one is the same problem with a bigger prize.
+## On the moat, and the conflict nobody flagged
 
-**So instrument it.** Every client, every month, log the exact queries checked,
-the position on Google, and whether each assistant named them. Keep it in one
-sheet across all clients. After thirty businesses that sheet is a dataset
-nobody else has: what actually moves a business into an AI answer, measured
-rather than guessed. That dataset is worth more than the retainers.
+Your coach is right that broadcasting money invites sabotage. But "go private"
+collides with something you have already built: Built for Main Street has a
+public brand, a landing page, a waitlist and a content engine pointed at
+LinkedIn and X.
 
-The monthly Visibility Check is already the delivery. It is also the
-experiment. Do not let it become a formality.
+These are not actually in conflict once you split them:
+
+| Post freely | Never post |
+|---|---|
+| What you're learning about how assistants pick businesses | Revenue, MRR, client count |
+| The craft — structured data, listings, what moved the needle | Client names, logos, screenshots of their sites |
+| The arc of building something from nothing | Purchases, upgrades, anything that reads as a flex |
+| Being wrong in public and correcting it | Your pipeline or who you're about to close |
+
+**The moat is around the numbers and the clients, not the craft.** Teaching what
+you learn is the thing that builds the audience UPath will eventually need, and
+it gives away nothing a competitor could use. The Tesla post is the category to
+avoid, not the whole idea of being visible.
+
+## On the 50/50 with your friend
+
+Your coach's read matches mine and it is the single most expensive item on the
+list. **Revenue share on what he closes, not equity in the company.** Something
+like 20–30% of collected revenue on his accounts for as long as they stay, and
+it stops if he stops selling.
+
+Equity is permanent. His effort is not. If he sells for four months and then
+gets a job, you have handed away half of everything you build for the next
+decade in exchange for four months of dialing. Fix this before the entity is
+formed, because fixing it afterwards requires his signature and his goodwill.
+
+## Why this business exists
+
+Two transferable skills, and they are the actual return:
+
+1. **Sales.** Cold conversations with strangers, at volume, at a price said out loud.
+2. **Ranking, in depth.** How search engines and assistants index, read and cite
+   a site. Why one business gets named in an answer and another does not.
+
+The second is the sleeper. If you can reliably make a local business surface
+inside ChatGPT and Gemini, that same skill points straight at UPath — getting a
+career tool cited when somebody asks an assistant for one is the same problem
+with a bigger prize.
+
+**So instrument it.** Every client, every month, log the exact queries, the
+Google position, and whether each assistant named them. One sheet across all
+clients. After thirty businesses that sheet is a dataset nobody else has: what
+actually moves a business into an AI answer, measured rather than guessed.
+
+That dataset is worth more than the retainers. And the monthly report you're
+already sending is the delivery mechanism — the experiment pays for itself.
 
 ## Market
 
 Local businesses **that will never do this themselves.** A sixteen-year-old
-starting something will use self-serve software. A fifty-eight-year-old gate
-installer with 21 five-star reviews and a listing he has never logged into will
+starting something will use self-serve software. A fifty-eight-year-old
+upholsterer with 40 years of work and a listing he has never logged into will
 not. When Owner.com and others ship this at $99/mo self-serve they pull the DIY
 crowd out of the funnel for free, which sharpens this segment rather than
 shrinking it.
