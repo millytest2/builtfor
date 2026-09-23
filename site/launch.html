@@ -110,7 +110,7 @@ footer p{margin:0 0 7px}
   <div class="spend">
     <span>Spent <b id="spent">$0</b></span>
     <span>Still to pay <b id="left">$0</b></span>
-    <span id="due800">$800 franchise tax due month 4</span>
+    <span>Year one all-in <b id="total">$0</b></span>
   </div>
 </header>
 
@@ -132,12 +132,12 @@ footer p{margin:0 0 7px}
 const STEPS = [
  {p:"Entity", pd:"Today. About an hour of actual work.", items:[
   {id:"s01", t:"Check the name and buy the domain", c:11,
-   how:"Search <code>bizfileonline.sos.ca.gov/search/business</code> for <code>Built for Main Street</code>. Then buy the domain at Cloudflare Registrar (~$11/yr, wholesale, free WHOIS privacy).",
+   how:"Search <code>bizfileonline.sos.ca.gov/search/business</code> for <code>Built for Main Street</code> — you're looking for confusingly similar, not just exact. Buy the domain (Namecheap is fine — turn on the free WhoisGuard privacy). Update the registrant to the LLC once it's approved.",
    m:["15 min","Do this first"]},
   {id:"s02", t:"File the LLC — Form LLC-1", c:70,
    how:"<code>bizfileonline.sos.ca.gov</code> → Articles of Organization. Management = <b>All LLC Member(s)</b>, not One Manager. Don't pay to expedite — standard is clearing in 1–3 business days.",
    m:["20 min","$70 state fee"]},
-  {id:"s03", t:"Pick your registered agent", c:125,
+  {id:"s03", t:"Pick your registered agent", c:125, cd:"$0–125",
    how:"Yourself is free but your home address becomes permanent public record. Northwest Registered Agent is ~$125/yr and doesn't upsell. Recommended — you've moved several times, and an agent address doesn't change when you do.",
    m:["Decide during step 2"]},
   {id:"s04", t:"Fill in and sign the operating agreement", c:0,
@@ -165,15 +165,15 @@ const STEPS = [
   {id:"s10", t:"Calendar: Statement of Information", c:20,
    how:"Form LLC-12, due within <b>90 days</b> of approval, then every two years. Five fields. <b>$250 penalty if you miss it.</b>",
    m:["$20 filing fee"]},
-  {id:"s11", t:"Calendar: the $800 franchise tax", c:0,
+  {id:"s11", t:"Calendar: the $800 franchise tax", c:800,
    how:"FTB Form 3522, due the <b>15th day of the 4th month</b> after formation. Owed whether or not you've made a dollar. This is the one people forget.",
-   m:["$800 — the big one"]},
+   m:["Due month 4","Owed at zero revenue"]},
  ]},
  {p:"Ready to sell", pd:"Everything you need before the first dial.", items:[
   {id:"s12", t:"Fill in the client agreement", c:0,
    how:"Swap the brackets for your details, export as PDF, load it into a free e-sign tool. Exhibit A is your scoping worksheet — fill it live on the call.",
    m:["30 min"]},
-  {id:"s13", t:"Google Workspace on the new domain", c:7,
+  {id:"s13", t:"Google Workspace on the new domain", c:7, cd:"$7/mo",
    how:"you@builtformainstreet.com. A gmail.com address on a cold call costs you more than $7/mo.",
    m:["$7/mo","20 min"]},
   {id:"s14", t:"Run three practice Visibility Checks", c:0,
@@ -229,7 +229,7 @@ STEPS.forEach(g => {
       `<div><div class="title">${s.t}</div><div class="how">${s.how}</div>`+
       `<div class="meta">${s.m.map(x=>`<span>${x}</span>`).join('')}</div>`+
       (s.gate?`<div class="gate">${s.gate}</div>`:'')+`</div>`+
-      `<div class="cost${s.c?'':' free'}">${s.c?'$'+s.c:'Free'}</div>`;
+      `<div class="cost${s.c?'':' free'}">${s.cd || (s.c?'$'+s.c:'Free')}</div>`;
     li.addEventListener('click', () => toggle(s.id));
     li.addEventListener('keydown', e => {
       if(e.key===' '||e.key==='Enter'){ e.preventDefault(); toggle(s.id); }
@@ -253,6 +253,7 @@ function render(){
   document.getElementById('fill').style.width = (n/all.length*100)+'%';
   document.getElementById('spent').textContent = '$'+spent.toLocaleString();
   document.getElementById('left').textContent = '$'+left.toLocaleString();
+  document.getElementById('total').textContent = '$'+(spent+left).toLocaleString();
 
   const next = all.find(s => !done[s.id]);
   const nu = document.getElementById('nextup');
