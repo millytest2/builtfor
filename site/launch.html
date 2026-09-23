@@ -55,7 +55,12 @@ h1{font-family:var(--display);font-weight:800;font-size:clamp(26px,6vw,38px);lin
 
 .phase{margin-bottom:8px;padding-top:18px}
 .phase h2{font-family:var(--display);font-weight:600;font-size:13px;letter-spacing:.04em;text-transform:uppercase;
-  margin:0 0 2px;color:var(--ink)}
+  margin:0 0 3px;color:var(--ink);display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.chip{font-family:var(--mono);font-size:9.5px;letter-spacing:.06em;padding:3px 7px;border-radius:4px;
+  background:var(--sunk);color:var(--ink-3);text-transform:none;font-weight:400;white-space:nowrap}
+.chip.alt{background:var(--sig-soft);color:var(--sig)}
+.flag{font-family:var(--mono);font-size:11px;color:var(--sig);margin-top:6px;padding-left:14px;position:relative;line-height:1.45}
+.flag:before{content:"\203A";position:absolute;left:0;font-weight:700}
 .phase p{margin:0 0 12px;font-size:13px;color:var(--ink-3)}
 
 ol.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px}
@@ -101,11 +106,11 @@ footer p{margin:0 0 7px}
 <header class="top">
   <div class="eyebrow">Built for Main Street</div>
   <h1>Launch sequence</h1>
-  <p class="sub">$110 sets the business up today. $90 files the LLC on December 17. Tap a step when it's done — your progress saves.</p>
+  <p class="sub">Your coach's four steps, in the order they actually have to happen. $110 sets the business up today; $90 files the LLC on December 17. Tap a step when it's done — your progress saves.</p>
 
   <div class="meter">
     <div class="bar"><i id="fill"></i></div>
-    <b id="count">0 / 22</b>
+    <b id="count">0 / 30</b>
   </div>
   <div class="spend">
     <span>Spent <b id="spent">$0</b></span>
@@ -124,88 +129,218 @@ footer p{margin:0 0 7px}
 
 <footer>
   <p><b>The money rule, from the first dollar:</b> business money moves through the business account. Client pays you → business account. Never personal Venmo, Zelle or Cash App. You need money → transfer it and call it a draw. Start this habit as a sole proprietor and the LLC inherits it.</p>
+  <div class="warn"><b>Working remote doesn't change the California piece.</b> States tax the <i>person doing the work</i>, not where the customers are. You're in California, so California has you — even though all 50 leads are in Indiana, Tennessee, Texas, Kansas and Ohio. The good news is the reverse: serving out-of-state clients does <b>not</b> create tax obligations in their states. Economic nexus thresholds run $100k+ of sales into a single state, and website services are generally not sales-taxable. So one state to answer to, not fifty. If you ever physically relocate, the business moves with you and California drops off — but that takes actually moving, not a mailbox.</div>
   <div class="warn"><b>Why the LLC waits for December.</b> California's 15-day rule: an entity formed on or after <b>December 17</b> that conducts no business that year owes no franchise tax for it. File today and you owe $800 for 2026 and $800 for 2027 within four months. File December 17 and you owe one $800, in April 2027. A sole proprietorship is a real business in the meantime — it takes money, signs contracts, holds a bank account. What it lacks is a liability shield, and the exposure here is small: no client premises, no equipment. The cap in your client agreement carries that load until December.<br><br><b>Everything else was checked and doesn't work.</b> An LLC that elects S-corp status still owes the $800 — the first-year exemption belongs to entities <i>incorporated</i> as corporations, not to LLCs that choose corporate taxation. No legislation has reinstated the LLC waiver. There is no low-income or hardship exemption. California's veteran waiver covers selling goods, not services. New Mexico ($50, no annual report) and Wyoming ($100/$60) are genuinely the cheapest states, but working from California means registering here as a foreign LLC and paying the $800 anyway, plus theirs.<br><br><b>Incorporating is the one real alternative:</b> $125 year one with $0 franchise tax. But a corporation owes Form 1120-S or 1120 every year even at zero income — $800–1,200 from a CPA — so over two years it runs ~$2,500 against the LLC's ~$1,030. Cheaper in year one, worse in every year after.</div>
 </footer>
 </div>
 
 <script>
 const STEPS = [
- {p:"Start — $18", pd:"Today. The EIN is free and you can be legally taking money before anything else clears.", items:[
-  {id:"s01", t:"Get your EIN as a sole proprietor", c:0,
-   how:"<code>irs.gov/ein</code>, Mon–Fri 7am–10pm ET. Entity type = <b>Sole Proprietor</b>. Free, instant. You don't need an LLC to have one, and it keeps your SSN off every client's W-9. Save the CP 575 PDF the moment it appears — the IRS issues it once.",
-   m:["15 min","Free","Do this first"]},
-  {id:"s02", t:"You are now a business. Start selling.", c:0,
-   how:"A sole proprietorship exists the moment you do business — no filing, no fee, no franchise tax. Until the name is registered, invoice as <b>Miles Tipton</b> and deposit to your own account. Not elegant. Completely legal. Zero dollars.",
-   m:["$0","No waiting"]},
-  {id:"s03", t:"Buy the domain", c:11,
-   how:"Namecheap is fine — turn on the free WhoisGuard privacy. Move the registrant to the business once it's formed.",
-   m:["$11/yr","Already found it"]},
-  {id:"s04", t:"Email on the domain", c:7,
-   how:"Google Workspace, <b>$7/mo</b>. you@builtformainstreet.com. A gmail.com address on a cold call to a 50-year-old shop owner costs you more than $7 a month does.",
+ {p:"Form the entity", chip:"COACH STEP 2", pd:"Name, domain, entity. Two of his items happen today; two wait for December, for one reason worth $800.", items:[
+  {id:"s01", t:"Check the name with the Secretary of State", c:0,
+   how:"<code>bizfileonline.sos.ca.gov/search/business</code> — search <b>Built for Main Street</b>. You're looking for confusingly similar, not just exact matches.",
+   m:["5 min","Free"]},
+  {id:"s02", t:"Grab the matching domain", c:11,
+   how:"Namecheap, privacy on. Move the registrant to the LLC after December.",
+   m:["10 min","$11/yr"]},
+  {id:"s03", t:"Operate as a sole proprietor until December 17", c:0,
+   flag:"Differs from coach — he said file the LLC now. Filing before Dec 17 costs an extra $800.",
+   how:"A sole proprietorship exists the moment you do business — no filing, no fee, no franchise tax. California's 15-day rule: an entity formed <b>on or after December 17</b> that does no business that year owes nothing for it. File in September instead and you owe $800 for 2026 <i>and</i> $800 for 2027 within four months.",
+   m:["$0","Saves $800"]},
+  {id:"s04", t:"Registered agent — decide in December", c:0,
+   how:"Nothing to name until the LLC exists. Then: yourself is free but your home address becomes permanent public record; a service is ~$125/yr. Lean service — it doesn't change when you move.",
+   m:["December","$0–125/yr"]},
+  {id:"s05", t:"Operating agreement — already written", c:0,
+   how:"<code>docs/legal/OPERATING_AGREEMENT.md</code>. Fill the brackets and sign in December when there's an LLC to attach it to. Your coach is right that you keep it even as the only member.",
+   m:["Ready to go","Services charge $200–500"]},
+  {id:"s06", t:"S-Corp — he's right, and here's the trap", c:0,
+   how:"It's an IRS election (Form 2553), not a state filing, and it shouldn't slow anything down. Worth knowing: an LLC electing S-corp status <b>still owes the $800</b> — that first-year exemption belongs to entities incorporated as corporations, not to LLCs choosing corporate taxation. Revisit above ~$50k net profit.",
+   m:["Later","Don't let it block you"]},
+ ]},
+
+ {p:"Get your EIN", chip:"COACH STEP 3", alt:true, pd:"His rule is right for an LLC. You're not one yet, so the timing flips.", items:[
+  {id:"s07", t:"Apply at IRS.gov as a sole proprietor", c:0,
+   flag:"Differs from coach — he said only after LLC approval. That rule applies when you're forming one.",
+   how:"<code>irs.gov/ein</code>, Mon–Fri 7am–10pm ET. Entity type <b>Sole Proprietor</b>. Free, instant. Every client paying you $600+ sends a W-9 — without an EIN you're writing your SSN on it. And it carries over: a single-member LLC taxed as a disregarded entity may keep this same number.",
+   m:["15 min","Free","Never pay for this"]},
+  {id:"s08", t:"Save the CP 575 as a PDF", c:0,
+   how:"Your coach is dead right. The IRS issues it exactly once — a replacement means calling and holding. Save it in three places. The bank will ask.",
+   m:["2 min","Do it immediately"]},
+ ]},
+
+ {p:"Register the name", chip:"COACH STEP 2 CONT.", pd:"California requires this to trade under any name that isn't your surname. The bank needs it.", items:[
+  {id:"s09", t:"Call two newspapers for publication quotes", c:0,
+   how:"Do this <b>before</b> paying the county. Quotes run $40–70 for the four required weekly insertions. Five-minute call.",
+   m:["10 min","Free"]},
+  {id:"s10", t:"File the Fictitious Business Name", c:37,
+   how:"LA County: <code>lavote.gov</code> → Fictitious Business Names. $26 + $10.75 online fee. Good for <b>five years</b>.",
+   m:["20 min","$36.75"]},
+  {id:"s11", t:"Publish it", c:55,
+   how:"Four weekly insertions. You have <b>45 days from filing</b> to start, and 45 more after it finishes to file the affidavit — more room than most guides say.",
+   m:["$40–70","45-day window"]},
+ ]},
+
+ {p:"Open the business bank account", chip:"COACH STEP 4", pd:"Exactly as he described, with one document substituted.", items:[
+  {id:"s12", t:"Open Novo", c:0,
+   how:"Bring: <b>FBN filing receipt</b> in place of state formation docs, EIN letter, driver's licence. No operating agreement needed until the LLC exists. Free, no minimum, about 30 minutes online.",
+   m:["30 min","Free"]},
+  {id:"s13", t:"Move your seed money in", c:0,
+   how:"Transfer what you're putting in — even $100 — from personal to business and label it. From here, <b>every dollar of business money moves through this account.</b> Client pays you → here. Never personal Venmo, Zelle or Cash App.",
+   m:["Same day","The habit beats the amount"]},
+  {id:"s14", t:"Set up Stripe", c:0,
+   how:"Sole proprietor + EIN works fine. Build both now: a <b>$1,000 payment link</b> and a <b>$199/mo subscription</b> that bills itself, plus $1,990/yr as a second price. This is the account where you watch the continuity offer work.",
+   m:["15 min","2.9% + 30¢"]},
+  {id:"s15", t:"Email on the domain", c:7,
+   how:"Google Workspace, $7/mo. you@builtformainstreet.com. A gmail address calling a 58-year-old upholsterer costs you more than $7 does.",
    m:["20 min","$7/mo"]},
  ]},
- {p:"The name — $92", pd:"Needed to operate as Built for Main Street and to open a business bank account. With $200 you can do both halves now.", items:[
-  {id:"s05", t:"File the Fictitious Business Name", c:37,
-   how:"LA County: <code>lavote.gov</code> → Fictitious Business Names. $26 filing + $10.75 online fee. Required to do business under any name that isn't your surname. Good for <b>five years</b>. Other counties are similar — check yours.",
-   m:["20 min","$36.75","Lasts 5 years"]},
-  {id:"s06", t:"Publish it in a newspaper", c:55,
-   how:"Four weekly insertions in a county paper. You have <b>45 days from filing</b> to start publication, and another 45 after it finishes to file the affidavit — more room than most guides say. Call two or three papers first; quotes run $40–70.",
-   m:["$40–70","45 days to start","Call 2–3 first"]},
-  {id:"s07", t:"Open the business bank account", c:0,
-   how:"Novo, Mercury or Relay — all free, no minimum. Bring: FBN filing, EIN letter, driver's licence. Every dollar of business money goes through here from now on.",
+
+ {p:"Ready to sell", pd:"Not on his list, but nothing above earns a dollar without it.", items:[
+  {id:"s16", t:"Fill in the client agreement", c:0,
+   how:"Use the sole-proprietor party line at the top. Swap the brackets, export as PDF, load into a free e-sign tool. Exhibit A is your scoping worksheet — fill it live on the call. <b>Section 7.1 caps your liability at fees paid</b>, which does the work an LLC would until December. Never sign a client without it.",
    m:["30 min","Free"]},
-  {id:"s08", t:"Set up Stripe", c:0,
-   how:"Sole proprietor + EIN works fine. Build both now: a <b>$1,000 payment link</b> and a <b>$199/mo subscription</b> that bills itself. Add $1,990/yr as a second price.",
-   m:["15 min","2.9% + 30¢"]},
- ]},
- {p:"Ready to sell", pd:"Everything you need before the first dial. All free.", items:[
-  {id:"s09", t:"Fill in the client agreement", c:0,
-   how:"Use the sole-proprietor party line at the top of the document. Swap the brackets, export as PDF, load into a free e-sign tool. Exhibit A is your scoping worksheet — fill it live on the call.",
-   m:["30 min","Free"]},
-  {id:"s10", t:"Run three practice Visibility Checks", c:0,
+  {id:"s17", t:"Run three practice Visibility Checks", c:0,
    how:"Three leads off the call sheet. Ask ChatGPT, Gemini and Claude the shopping question and the by-name question. Screenshot everything. Do this before you do it live.",
    m:["45 min","Free"]},
  ]},
- {p:"First money", pd:"The part that decides whether any of the rest matters.", items:[
-  {id:"s11", t:"First day of dials — 27 calls", c:0,
-   how:"Straight down the call sheet. Start with the four broken-link leads: Special Touch, Padilla's Masonry, Peter's Tree Trimming, Vecchio Masonry. Their listings point at the wrong company — shortest conversation on the sheet. Fort Wayne is three hours ahead of you and tree services answer their phones.",
+
+ {p:"First money", pd:"The part that decides whether any of the rest mattered.", items:[
+  {id:"s18", t:"First day of dials — 27 calls", c:0,
+   how:"Straight down the call sheet. Start with the four broken-link leads: Special Touch, Padilla's Masonry, Peter's Tree Trimming, Vecchio Masonry — their listings point at the wrong company. Fort Wayne is three hours ahead of you and tree services answer their phones.",
    m:["2–3 hrs","4 sales/mo = 27 dials/day"]},
-  {id:"s12", t:"Deliver your first live Visibility Check", c:0,
-   how:"On the phone while they're listening. Lead with the by-name question — <i>“I don’t have information about that business”</i> is the sentence that sells this.",
+  {id:"s19", t:"Deliver your first live Visibility Check", c:0,
+   how:"On the phone while they're listening. Lead with the by-name question — “I don’t have information about that business” is the sentence that sells this.",
    m:["10 min on the call"]},
-  {id:"s13", t:"Collect the first $1,000", c:0,
+  {id:"s20", t:"Collect the first $1,000", c:0,
    how:"Payment link on the second call. The two-week clock starts when the money and the photos land. Never build on spec.",
    m:["The one that counts"]},
  ]},
+
  {p:"First delivery", pd:"About 100 minutes the first time, 65 by the fifth.", items:[
-  {id:"s14", t:"Intake call, then fill the client JSON", c:0,
+  {id:"s21", t:"Intake call, then fill the client JSON", c:0,
    how:"15-minute call for services, towns, reviews, photos. Paste your notes into Claude with the prompt in the build doc. It fills the JSON — it never writes the HTML.",
    m:["20 min"]},
-  {id:"s15", t:"Build and deploy", c:0,
+  {id:"s22", t:"Build and deploy", c:0,
    how:"<code>python3 src/build_site.py clients/name.json</code> → 11 pages with valid schema. Deploy with <code>npx wrangler pages deploy</code>. Cloudflare Pages is free and unlimited.",
    m:["10 min","$0 hosting"]},
-  {id:"s16", t:"Claim the Google Business Profile", c:0,
+  {id:"s23", t:"Claim the Google Business Profile", c:0,
    how:"In <b>their</b> name, never yours — Google requires it and your agreement says so. 750-character description, every service, Q&amp;A filled, new domain linked.",
    m:["45 min","Half the value is here"]},
-  {id:"s17", t:"Send the month-zero baseline report", c:0,
+  {id:"s24", t:"Send the month-zero baseline report", c:0,
    how:"Re-run the Visibility Check the day it goes live and send it. That's the number every future month gets compared against, and it's what makes the $199 renew itself.",
    m:["10 min","Then monthly"]},
  ]},
- {p:"Upgrade to the LLC", pd:"December 17 or later. Filing before that date costs you an extra $800 — see the note at the bottom.", items:[
-  {id:"s18", t:"File the LLC — on or after December 17", c:70, gate:"Do not file before Dec 17",
-   how:"<code>bizfileonline.sos.ca.gov</code> → Articles of Organization. Management = <b>All LLC Member(s)</b>, not One Manager. California's 15-day rule means an entity formed Dec 17 or later that does no business that year owes <b>nothing</b> for that tax year. Keep running as a sole proprietor through December and move the business into the LLC on January 1.",
+
+ {p:"File the LLC", chip:"COACH STEP 2, FINISHED", pd:"December 17 or later. His item, done on the only date that doesn't cost an extra $800.", items:[
+  {id:"s25", t:"File Form LLC-1 — on or after December 17", c:70, gate:"Do not file before Dec 17",
+   how:"<code>bizfileonline.sos.ca.gov</code> → Articles of Organization. Management = <b>All LLC Member(s)</b>, not One Manager. Keep running as a sole proprietor through December, then move the business into the LLC on January 1.",
    m:["20 min","$70","Timing saves $800"]},
-  {id:"s19", t:"New EIN for the LLC — optional", c:0,
-   how:"<b>Not required.</b> A single-member LLC taxed as a disregarded entity may keep the sole-proprietor EIN. Get a new one anyway (free, 15 min, entity type <b>Limited Liability Company</b>) so the EIN matches the LLC name on bank records — it saves friction later. You <i>will</i> need a new one if you ever elect S-corp.",
-   m:["15 min","Free","Recommended, not mandatory"]},
-  {id:"s20", t:"Sign the operating agreement", c:0,
-   how:"It's already written — fill every bracket, sign, date, keep it. Read Section 4 twice: commingling is how single-member LLCs lose their shield.",
-   m:["20 min","Services charge $200–500"]},
-  {id:"s21", t:"Calendar: Statement of Information", c:20,
-   how:"Form LLC-12, due within <b>90 days</b> of approval, then every two years. <b>$250 penalty if you miss it.</b>",
+  {id:"s26", t:"Name the registered agent", c:0, cd:"$0–125",
+   how:"Decided back in step 4. Yourself is free with your address public; a service is ~$125/yr and doesn't change when you move.",
+   m:["During the filing"]},
+  {id:"s27", t:"Sign the operating agreement", c:0,
+   how:"Fill in the entity number and filing date, sign, date, keep it. Read Section 4 twice — commingling is how single-member LLCs lose their shield.",
+   m:["20 min"]},
+  {id:"s28", t:"New EIN — optional", c:0,
+   how:"<b>Not required.</b> A disregarded single-member LLC may keep the sole-proprietor EIN. Get a fresh one anyway (free) so it matches the LLC name on bank records. You <i>will</i> need one if you ever elect S-corp.",
+   m:["15 min","Free","Recommended"]},
+  {id:"s29", t:"Calendar: Statement of Information", c:20,
+   how:"Form LLC-12, within <b>90 days</b> of approval, then every two years. <b>$250 penalty if you miss it.</b>",
    m:["$20"]},
-  {id:"s22", t:"Calendar: the $800 franchise tax", c:800,
-   how:"FTB Form 3522. Form in December and your first payment isn't due until <b>April 2027</b>. Form today instead and you owe $800 for 2026 <i>and</i> $800 for 2027 within four months of each other — the back-to-back trap.",
-   m:["Due April 2027","Not before"]},
+  {id:"s30", t:"Calendar: the $800 franchise tax", c:800,
+   how:"FTB Form 3522. Forming December 17 means your first payment isn't due until <b>April 2027</b> — one payment, not two.",
+   m:["Due April 2027"]},
  ]},
 ];
+
+const all = STEPS.flatMap(g => g.items);
+let done = {};
+
+const list = document.getElementById('list');
+STEPS.forEach(g => {
+  const sec = document.createElement('section');
+  sec.className = 'phase';
+  sec.innerHTML = `<h2>${g.p}${g.chip?`<span class="chip${g.alt?' alt':''}">${g.chip}</span>`:''}</h2><p>${g.pd}</p>`;
+  const ol = document.createElement('ol');
+  ol.className = 'steps';
+  g.items.forEach(s => {
+    const li = document.createElement('li');
+    li.className = 'step';
+    li.tabIndex = 0;
+    li.dataset.id = s.id;
+    li.setAttribute('role','button');
+    li.setAttribute('aria-pressed','false');
+    li.innerHTML =
+      `<span class="box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>`+
+      `<div><div class="title">${s.t}</div><div class="how">${s.how}</div>`+
+      `<div class="meta">${s.m.map(x=>`<span>${x}</span>`).join('')}</div>`+
+      (s.gate?`<div class="gate">${s.gate}</div>`:'')+
+      (s.flag?`<div class="flag">${s.flag}</div>`:'')+`</div>`+
+      `<div class="cost${s.c?'':' free'}">${s.cd || (s.c?'$'+s.c:'Free')}</div>`;
+    li.addEventListener('click', () => toggle(s.id));
+    li.addEventListener('keydown', e => {
+      if(e.key===' '||e.key==='Enter'){ e.preventDefault(); toggle(s.id); }
+    });
+    ol.appendChild(li);
+  });
+  sec.appendChild(ol);
+  list.appendChild(sec);
+});
+
+function render(){
+  let n = 0, spent = 0, left = 0;
+  all.forEach(s => {
+    const on = !!done[s.id];
+    if(on){ n++; spent += s.c; } else { left += s.c; }
+    const li = list.querySelector(`[data-id="${s.id}"]`);
+    li.classList.toggle('on', on);
+    li.setAttribute('aria-pressed', String(on));
+  });
+  document.getElementById('count').textContent = `${n} / ${all.length}`;
+  document.getElementById('fill').style.width = (n/all.length*100)+'%';
+  document.getElementById('spent').textContent = '$'+spent.toLocaleString();
+  document.getElementById('left').textContent = '$'+left.toLocaleString();
+  const pre = all.slice(0, all.findIndex(x=>x.id==='s15')+1).reduce((a,x)=>a+x.c,0);
+  document.getElementById('toFirst').textContent = '$'+pre.toLocaleString();
+
+  const next = all.find(s => !done[s.id]);
+  const nu = document.getElementById('nextup');
+  if(next){
+    nu.hidden = false;
+    document.getElementById('nextT').textContent = next.t;
+    document.getElementById('nextD').innerHTML = next.how;
+  } else {
+    nu.hidden = false;
+    document.getElementById('nextT').textContent = 'All twenty-one done.';
+    document.getElementById('nextD').textContent = 'Entity formed, first client live, baseline sent. Now do it again three more times this month.';
+  }
+}
+
+let dbc = null;
+render();
+
+(async () => {
+  const db = await window.claude?.use?.('db');
+  if(!db) return;
+  dbc = db;
+  try{
+    db.collection('progress').onSnapshot(snap => {
+      const next = {};
+      snap.docs.forEach(d => { if(d.data().done) next[d.id] = true; });
+      done = next;
+      render();
+    });
+  }catch(e){ /* stay local */ }
+})();
+
+async function toggle(id){
+  const on = !done[id];
+  done[id] = on;
+  if(!on) delete done[id];
+  render();
+  if(!dbc) return;
+  try{
+    await dbc.doc('progress/'+id).set({done:on, at:new Date().toISOString()});
+  }catch(e){ /* optimistic UI already updated */ }
+}
+</script>
