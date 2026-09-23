@@ -42,7 +42,7 @@ invoicing a client this week.
 | | Cost |
 |---|---|
 | Fictitious Business Name ("Built for Main Street") — county filing | $26–$60 |
-| Newspaper publication (California requires it, 4 weeks) | $40–$120 |
+| Newspaper publication — 4 weekly insertions, 45 days to start | $40–$70 |
 | EIN from irs.gov | **$0** |
 | Business bank account (Novo accepts sole prop + FBN + EIN) | $0 |
 | **Total to be operating under the business name** | **~$70–$180** |
@@ -53,6 +53,12 @@ No $800. No annual filing. No Statement of Information.
 every client who pays you $600+ will send you a W-9, and you do not want your
 social security number sitting in fifty small-business filing cabinets. The
 EIN is free and takes 15 minutes.
+
+**And it carries over.** A single-member LLC taxed as a disregarded entity may
+keep the sole-proprietor EIN — a new one is only *required* if you add members,
+hire employees, owe excise tax, or elect S-corp. Get a fresh one in December
+anyway, since it is free and makes the EIN match the LLC's name on bank
+records, but nothing is lost by starting now.
 
 ### What you give up, stated honestly
 
