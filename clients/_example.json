@@ -1,0 +1,99 @@
+{
+  "slug": "jims-upholstery",
+  "biz": "Jim's Upholstery Co",
+  "domain": "jimsupholsterytulsa.com",
+  "brand_color": "#8a3324",
+  "phone": "(316) 262-1685",
+  "email": "",
+  "street": "516 N Emporia St",
+  "city": "Wichita",
+  "state": "KS",
+  "zip": "67214",
+  "lat": "37.6959",
+  "lon": "-97.3344",
+  "founded": "1978",
+  "owner": "Jim",
+
+  "trade": "upholstery shop",
+  "trade_plural": "upholstery shops",
+  "tagline": "Furniture reupholstery in Wichita since 1978",
+  "lede": "Sofas, chairs, cushions and leather repair, done in our own shop on North Emporia. Free estimates, and we'll tell you honestly when a piece isn't worth redoing.",
+  "callbar": "Free estimates · Wichita, KS",
+  "about": "Jim's Upholstery has been on North Emporia Street since 1978. We reupholster furniture for homeowners, designers and businesses across Wichita and Sedgwick County. Every piece is stripped, repaired and rebuilt in our shop — nothing gets sent out.",
+
+  "hours": {
+    "Mon": "8:00-16:30", "Tue": "8:00-16:30", "Wed": "8:00-16:30",
+    "Thu": "8:00-16:30", "Fri": "8:00-16:30", "Sat": "Closed", "Sun": "Closed"
+  },
+
+  "services": [
+    {
+      "slug": "sofa-reupholstery",
+      "name": "Sofa & Couch Reupholstery",
+      "short": "Full frame-up rebuild with your fabric or ours.",
+      "body": "We strip the piece to the frame, repair or replace broken joints and springs, replace the foam and webbing, and reupholster in the fabric you choose. Most sofas take two to three weeks depending on fabric lead time.",
+      "price_from": "$650",
+      "faqs": [
+        ["How much does it cost to reupholster a sofa?", "Most sofas run $650 to $1,400 depending on size and fabric. We give you a firm number before we start, not a range."],
+        ["Is it worth reupholstering instead of buying new?", "If the frame is solid hardwood it almost always is. We'll tell you straight when a piece isn't worth the labor."]
+      ]
+    },
+    {
+      "slug": "chair-reupholstery",
+      "name": "Chair & Recliner Reupholstery",
+      "short": "Dining chairs, wingbacks, recliners and antiques.",
+      "body": "Dining seats, wingbacks, club chairs, recliners and antique pieces. Seat-only jobs can often be done in a few days. Full chairs with new springs and foam take one to two weeks.",
+      "price_from": "$180",
+      "faqs": [
+        ["Can you just do the seats on my dining chairs?", "Yes, and it's the cheapest job we do. Bring the seats in, no need to haul the whole chair."]
+      ]
+    },
+    {
+      "slug": "cushion-replacement",
+      "name": "Cushion & Foam Replacement",
+      "short": "New foam, new covers, or both.",
+      "body": "Flattened cushions are usually foam, not fabric. We replace the foam and wrap, reuse your covers if they're still good, and have the piece back to you fast.",
+      "price_from": "$95",
+      "faqs": [
+        ["My cushions sag but the fabric is fine. What's that cost?", "Foam replacement runs $95 to $250 a cushion depending on size and density."]
+      ]
+    },
+    {
+      "slug": "leather-repair",
+      "name": "Leather Repair & Restoration",
+      "short": "Tears, worn seams, colour matching.",
+      "body": "Tears, splits, worn seat edges and failed seams. We match colour and grain where we can, and replace whole panels where we can't.",
+      "price_from": "$225",
+      "faqs": []
+    }
+  ],
+
+  "towns": [
+    {"slug": "wichita", "name": "Wichita", "note": "Our shop is on North Emporia, minutes from downtown."},
+    {"slug": "derby", "name": "Derby", "note": "About 20 minutes south. We pick up and deliver."},
+    {"slug": "andover", "name": "Andover", "note": "Regular customers throughout Andover and east Wichita."},
+    {"slug": "maize", "name": "Maize", "note": "Pickup and delivery available."},
+    {"slug": "haysville", "name": "Haysville", "note": "Pickup and delivery available."},
+    {"slug": "goddard", "name": "Goddard", "note": "Pickup and delivery available."}
+  ],
+
+  "reviews": [
+    {"stars": 5, "text": "Jim redid two wingbacks that belonged to my grandmother. They look better than the day she bought them.", "by": "Karen D.", "src": "Google"},
+    {"stars": 5, "text": "Honest about what was worth doing and what wasn't. Ended up spending less than I expected.", "by": "Mike R.", "src": "Google"},
+    {"stars": 5, "text": "Dropped off six dining seats on a Monday, had them back Thursday. Great work.", "by": "Angela T.", "src": "Yelp"}
+  ],
+
+  "faqs": [
+    ["Do you give free estimates?", "Yes. Send photos or bring the piece in and we'll give you a firm price, not a range."],
+    ["Do you pick up and deliver?", "Yes, throughout Wichita and the surrounding towns. There's a small charge outside Sedgwick County."],
+    ["Can I supply my own fabric?", "Absolutely. Plenty of customers do. We'll tell you how many yards you need before you buy."],
+    ["How long does a job take?", "Seat-only work is a few days. Chairs are one to two weeks. Sofas are two to three, mostly waiting on fabric."]
+  ],
+
+  "photos": [
+    {"src": "photos/1.jpg", "alt": "Reupholstered wingback chair in green velvet"},
+    {"src": "photos/2.jpg", "alt": "Sofa frame stripped to the wood before rebuild"},
+    {"src": "photos/3.jpg", "alt": "Dining chair seats in matching grey linen"},
+    {"src": "photos/4.jpg", "alt": "Leather club chair after seam repair"}
+  ]
+}
