@@ -31,92 +31,79 @@ out-of-state LLC as a foreign LLC in California and pay the $800 anyway — plus
 the other state's fees and a registered agent. It costs more, not less. This is
 the most common expensive mistake in the "cheap LLC" advice online.
 
-## What to actually do
+## What to actually do — the cheap answer
 
-**Form the LLC. Skip the S-Corp election for now.**
+**Don't form anything yet. Operate as a sole proprietor.**
 
-Your coach said S-Corp and he's right about where you're headed, wrong about
-the timing. An S-Corp election means running payroll for yourself and filing an
-1120-S return — roughly **$1,000-$2,000/year** in payroll service and CPA fees.
-That only pays for itself above roughly **$50,000 of net profit**.
+You do not need an LLC to take money legally. A sole proprietorship exists the
+moment you do business. It costs nothing, owes no franchise tax, and you can be
+invoicing a client this week.
 
-At $0 revenue today, electing now costs you $1,500 to save $0.
+| | Cost |
+|---|---|
+| Fictitious Business Name ("Built for Main Street") — county filing | $26–$60 |
+| Newspaper publication (California requires it, 4 weeks) | $40–$120 |
+| EIN from irs.gov | **$0** |
+| Business bank account (Novo accepts sole prop + FBN + EIN) | $0 |
+| **Total to be operating under the business name** | **~$70–$180** |
 
-The good news is it costs nothing to wait: you can file Form 2553 later, and
-the election can be made retroactive to the start of a tax year if you file
-within roughly 2 months and 15 days of that year starting. **File the LLC now,
-elect S-Corp the January after you clear ~$50k net.** Same end state, about
-$1,500 cheaper this year, and the EIN and bank account work is identical either
-way. Say exactly this to your coach — it's a timing disagreement, not a
-strategy one.
+No $800. No annual filing. No Statement of Information.
 
-## The order of operations
+**Get the EIN even as a sole proprietor.** You can legally use your SSN, but
+every client who pays you $600+ will send you a W-9, and you do not want your
+social security number sitting in fifty small-business filing cabinets. The
+EIN is free and takes 15 minutes.
 
-Do these in this order. Reversing steps 2 and 3 means getting two EINs.
+### What you give up, stated honestly
 
-### 1. Form the LLC — $70, ~15 min, online
+No liability shield. Your personal assets are exposed to a business claim.
 
-File **Form LLC-1** directly at `bizfileonline.sos.ca.gov`. Not through
-LegalZoom or ZenBusiness — they charge $100-300 to fill in the same form.
+For this specific business that exposure is small — you are not on their
+property, not driving to jobs, not touching their equipment. The two realistic
+claims are a **contract dispute** and a **copyright claim on an image**. Both
+are cheap to defend against:
 
-- Name: `Built for Main Street LLC` (check availability in the same portal)
-- Member-managed, single member
-- You can be your own registered agent using your own address — free. The
-  tradeoff is that the address is public record. A registered agent service is
-  $50-150/yr if you'd rather it not be.
+1. **One-page contract, with a liability cap at fees paid.** One clause:
+   *"Total liability under this agreement is limited to the amount paid by
+   Client in the preceding twelve months."* That single sentence does most of
+   what an LLC does for a service business this size.
+2. **Only use photos the client gave you.** Which is already the plan. Never
+   pull an image off Google for a client site.
+3. Optional: general liability insurance, $300–600/yr from Hiscox or Next, if
+   you want to sleep better. Not necessary at three clients.
 
-### 2. Get the EIN — **free**, ~15 min, instant
+**One caveat specific to your model:** because you own the site and lease it
+back, a client dispute is more plausible than in a plain build-and-hand-over
+arrangement. The contract carries more weight here than it normally would.
+Don't skip it.
 
-`irs.gov/ein`, Mon-Fri, 7am-10pm Eastern. Free. Instant. You get the number on
-screen at the end.
+### When to form the LLC
 
-**Never pay for an EIN.** Every site charging $50-300 for this is filling in
-the same free form. If a service offers to "handle" your EIN, that's the tell
-that you're overpaying for everything else too.
+**At three clients on the lease, or the first time a client asks who they're
+writing the check to and you hesitate.**
 
-Choose "Limited Liability Company" as the entity type — not Sole Proprietor.
-Do this **after** the LLC is approved so the EIN is issued to the LLC.
+Three clients is $3,000 of setup fees plus $600/mo recurring. The $890 stops
+being a decision and becomes a line item. That is roughly month three, which is
+where your coach wanted you anyway — you are just not paying for it while you
+have no revenue.
 
-### 3. Statement of Information — $20, within 90 days
+### If you're leaving California
 
-Same portal. It's a five-field form. Calendar it — the penalty for missing it
-is $250.
+Your address has moved around a lot. **If there is any chance you relocate in
+the next six months, this is another reason to wait.** Form the LLC where you
+actually land. Forming in California and then moving means registering in the
+new state as well and paying both.
 
-### 4. Business bank account — free
+And to be clear on the thing everyone tries: **forming in Wyoming or Nevada
+does not avoid this.** If you live and work in California, that out-of-state
+LLC has to register in California as a foreign LLC and pay the $800 anyway,
+plus the other state's fees and a registered agent. It costs strictly more.
 
-Novo, Mercury or Relay. Bring: EIN letter, filed Articles, your ID. Takes about
-20 minutes online.
+### What this looks like on the call
 
-**Never run a client payment through your personal account.** Mixing funds is
-the one thing that actually lets someone pierce the LLC, which would make the
-whole $890 pointless.
-
-### 5. Payments — free until you get paid
-
-Stripe. No monthly fee, 2.9% + 30¢. For a $1,000 setup that's $29.30, and for
-the $300/mo it's $9. Use Stripe Subscriptions for the monthly so it bills
-itself — chasing a local business for a $300 check every month will eat the
-margin you built this model for.
-
-### 6. The rest of the stack
-
-| | Cost | When |
-|---|---|---|
-| Cloudflare Pages (hosting) | $0 | Now |
-| Cloudflare Registrar (domains) | ~$10/yr each, at cost | Per client |
-| Google Workspace | $7/mo | Now |
-| Go High Level Starter | $97/mo | Your coach's call — see note |
-| Go High Level Unlimited | $297/mo | Only past ~10 clients |
-
-**On Go High Level:** it's a real CRM and worth it once you have a pipeline.
-But at zero clients, $97/mo is $97/mo. The call sheet you already have handles
-the first ten. If you want to start it now because your coach wants you in the
-same system he uses, that's a legitimate reason — just know you're buying
-coaching alignment, not capability you currently need.
-
-**Don't host client sites in GHL.** Cloudflare Pages is free, unlimited and
-faster, and page speed is a ranking input you control. Use GHL for pipeline and
-follow-up, which is what it's actually good for.
+Nothing changes. You say "Built for Main Street," the check is written to
+Built for Main Street, and it deposits into the Novo account under the FBN. No
+client has ever asked a vendor for their entity type.
 
 ## Running total
 
@@ -129,19 +116,19 @@ follow-up, which is what it's actually good for.
 | Stripe | $0 until paid |
 | Hosting | $0 |
 | Workspace | $7/mo |
-| **Cash to be legally operating** | **~$97** |
-| Franchise tax, due month 4 | $800 |
+| **Cash to be legally operating** | **~$80–$190** |
+| Franchise tax | **$0 — not a California LLC yet** |
 
-**You can be fully set up this week for under $100.** The $800 lands in month
-four, which is three clients' setup fees away. That's the argument for filing
-now rather than waiting.
+**You can be taking money this week for under $200, with no $800 hanging over
+you.** The LLC becomes worth filing at three clients, which is the same month
+your coach wanted it — you just aren't paying $890 while revenue is zero.
 
 ## Your coach's list, with the cost next to each
 
 | Item | Verdict | Cost |
 |---|---|---|
-| S-Corp or LLC | **LLC now, S-Corp election above ~$50k net** | $90 now, $800 in month 4 |
-| New EIN | Yes, after the LLC is approved | **Free — never pay** |
+| S-Corp or LLC | **Sole prop now. LLC at 3 clients. S-Corp above ~$50k net** | $0 now |
+| New EIN | Yes, this week, as a sole proprietor | **Free — never pay** |
 | Business bank (Novo) | Yes, day one | $0 |
 | Go High Level | Fine, but Cloudflare hosts the sites | $97/mo |
 | Send materials via Slack | The offer and the 50 are ready | — |

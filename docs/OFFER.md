@@ -40,7 +40,10 @@ at a kitchen table, so it is never priced separately. It is what is inside.
 |---|---|---|
 | The door | **Visibility Check** | Free |
 | Setup | **Build and fix** | **$1,000 one-time** |
-| The lease | **Keep it found** | **$300/mo** |
+| The lease | **Keep it found** | **$199/mo** |
+
+Annual prepay: **$1,990** (two months free). Take it when offered — it solves
+your cash problem and it eliminates churn for a year.
 
 **Scoped on the call, quoted once, does not move.**
 
@@ -50,7 +53,7 @@ a real page per service and per town, details and FAQs marked up the way search
 engines and assistants read them, real job photos. Two weeks from the day
 photos arrive.
 
-**The lease, $300/mo.** Hosting, domain, certificate, unlimited small edits,
+**The lease, $199/mo.** Hosting, domain, certificate, unlimited small edits,
 the Google listing kept current, and a monthly report showing where they rank
 on Google and whether ChatGPT, Gemini and Claude name them. Cancel with 30
 days' notice.
@@ -75,40 +78,65 @@ Three reasons to lead with it rather than bury it:
 
 **The $2,000 buyout after 12 months is not a concession, it is a closer.** It
 turns "so I'm renting forever?" into "no, you've got an option." Most never
-take it. The ones who do have paid $1,000 + $3,600 + $2,000 = $6,600, which is
+take it. The ones who do have paid $1,000 + $2,388 + $2,000 = $5,388, which is
 a fine outcome.
 
 ### Why continuity, in one table
 
-| Model | Clients needed for $10k/mo | Realistically, when |
+| Model | Clients for $10k recurring | Realistically |
 |---|---|---|
 | $800 one-time, no recurring | **11 sales every month, forever** | Never stops being month one |
 | $900 + $79/mo hosting | 127 clients | Month 40+ |
-| **$1,000 + $300/mo** | **34 clients** | **~Month 9** |
+| **$1,000 + $199/mo** | **50 clients** | **~Month 16** |
 
 At 4 sales a month with 3% monthly churn:
 
-| Month | Clients | Recurring | Plus setup fees | That month |
+| Month | Clients | Recurring | Plus setup fees | **Total that month** |
 |---|---|---|---|---|
-| 3 | 12 | $3,500 | $4,000 | $7,500 |
-| 6 | 22 | $6,700 | $4,000 | $10,700 |
-| 9 | 32 | $9,600 | $4,000 | $13,600 |
-| 12 | 41 | $12,200 | $4,000 | $16,200 |
+| 3 | 12 | $2,400 | $4,000 | $6,400 |
+| 6 | 22 | $4,400 | $4,000 | $8,400 |
+| 9 | 32 | $6,400 | $4,000 | **$10,400** |
+| 12 | 41 | $8,200 | $4,000 | $12,200 |
+| 18 | 55 | $10,900 | $4,000 | $14,900 |
 
-Steady state at that pace is ~133 clients and ~$40k/mo. The coach is right and
-the gap is not close.
+**Total monthly income crosses $10k around month nine either way.** What $199
+changes is how fast the recurring base alone gets there — month 16 instead of
+month 9. That is the real cost of the lower number, and it is worth paying.
+
+### Why $199 and not $300
+
+You said $300 felt high. Trust that. You are the one saying the number out
+loud, and a price the seller does not believe gets discounted on the first
+objection — which means you end up at $199 anyway, but having looked unsure
+getting there.
+
+Three concrete reasons it is the better number right now:
+
+1. **$199 is under two hundred.** For a shop owner doing $200k a year that is
+   a different category of decision than $300. It clears without a spouse
+   conversation.
+2. **You have no proof yet.** $300/mo is a fair price for a result you can
+   point at. You cannot point at one until client three or four. Price to what
+   you can currently prove, not what the model is worth.
+3. **You can raise it; you cannot un-raise it.** New clients go to $299 the
+   month you have one case study showing an assistant naming a client that
+   didn't name them before. Existing clients stay at $199 forever, which makes
+   them loyal and makes them referrers.
+
+**The thing to protect is the setup fee, not the monthly.** $1,000 up front is
+what pays you for the build. Never discount that one.
 
 **What 4 sales a month actually costs you:** about 80 real conversations, which
 is about 530 dials, which is about 27 dials a day. That is the job. The pricing
 change does not reduce the dialing, it just means the dialing compounds.
 
-## How the $300 is honest, given you don't want to manage
+## How the $199 is honest, given you don't want to manage
 
 You told me straight: *"I don't really wanna manage of that tbh."* That is still
 true and the model still works, but only if you build it to be true.
 
-$300/mo for hosting alone is not defensible and a client will eventually
-realize it. $300/mo for **hosting + edits + listing + proof they're being
+$199/mo for hosting alone is not defensible and a client will eventually
+realize it. $199/mo for **hosting + edits + listing + proof they're being
 found** is defensible and renews itself. The difference is about ten minutes
 per client per month:
 
@@ -118,8 +146,8 @@ per client per month:
 | Push whatever edits they emailed | 5 min | Hours changed, new service, new photos |
 | One listing post or photo | 3 min | Batched from a template |
 
-**Batch it. One day a month, every client at once.** At 34 clients that is
-about six hours for $10,200. At 60 clients, hand the whole day to a VA at
+**Batch it. One day a month, every client at once.** At 50 clients that is
+about eight hours for $9,950. At 60 clients, hand the whole day to a VA at
 $8/hr and it costs you $100.
 
 The monthly report is the thing that makes renewal automatic. An owner who gets
@@ -139,8 +167,8 @@ paying for.
 | LLC filing | $50–$500 once | State-dependent |
 | Business bank (Novo) | $0 | Day one |
 
-**At 34 clients: roughly $340/mo of cost against $10,200 of revenue.** That is
-a ~97% gross margin, which is the entire reason this business is worth doing
+**At 50 clients: roughly $360/mo of cost against $9,950 of revenue.** That is
+a ~96% gross margin, which is the entire reason this business is worth doing
 over an agency that buys ads.
 
 Two cheap notes, offered as information and not as an argument with your coach:
