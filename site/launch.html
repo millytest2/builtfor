@@ -1,0 +1,297 @@
+<title>Main Street Launch Sequence</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=Libre+Franklin:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  color-scheme: light;
+  --paper:#f7f8f6; --card:#fff; --sunk:#eef0ec;
+  --ink:#14181a; --ink-2:#4d565b; --ink-3:#7c868c;
+  --line:#dfe3df; --line-2:#c8cfc9;
+  --sig:#b83227; --sig-soft:#f6e9e7;
+  --done:#3d6b4f; --done-soft:#e6efe8;
+  --display:'Archivo',system-ui,sans-serif;
+  --body:'Libre Franklin',system-ui,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    color-scheme: dark;
+    --paper:#111413; --card:#191d1c; --sunk:#232827;
+    --ink:#e8ece9; --ink-2:#a3aeaa; --ink-3:#77827e;
+    --line:#2a302e; --line-2:#3a423f;
+    --sig:#e2604f; --sig-soft:#2e1f1c;
+    --done:#6fae85; --done-soft:#1c2b22;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --paper:#111413; --card:#191d1c; --sunk:#232827;
+  --ink:#e8ece9; --ink-2:#a3aeaa; --ink-3:#77827e;
+  --line:#2a302e; --line-2:#3a423f;
+  --sig:#e2604f; --sig-soft:#2e1f1c;
+  --done:#6fae85; --done-soft:#1c2b22;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.55}
+.wrap{max-width:760px;margin:0 auto;padding-inline:16px;padding-block:26px 64px}
+
+header.top{margin-bottom:22px}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:7px}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(26px,6vw,38px);line-height:1.08;letter-spacing:-.025em;margin:0 0 10px;text-wrap:balance}
+.sub{color:var(--ink-2);margin:0;max-width:56ch}
+
+.meter{margin:20px 0 6px;display:flex;align-items:center;gap:12px}
+.bar{flex:1;height:7px;background:var(--sunk);border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--done);width:0;transition:width .35s ease}
+.meter b{font-family:var(--mono);font-size:12.5px;font-weight:500;color:var(--ink-2);white-space:nowrap;font-variant-numeric:tabular-nums}
+
+.spend{display:flex;gap:18px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;color:var(--ink-3);
+  border-top:1px solid var(--line);padding-top:11px;margin-bottom:26px}
+.spend b{color:var(--ink);font-weight:500}
+
+.nextup{background:var(--sig-soft);border:1px solid var(--sig);border-radius:10px;padding:15px 17px;margin-bottom:26px}
+.nextup .lbl{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--sig);margin-bottom:5px}
+.nextup .t{font-family:var(--display);font-weight:600;font-size:17px;letter-spacing:-.01em;margin-bottom:3px}
+.nextup .d{color:var(--ink-2);font-size:14px}
+
+.phase{margin-bottom:8px;padding-top:18px}
+.phase h2{font-family:var(--display);font-weight:600;font-size:13px;letter-spacing:.04em;text-transform:uppercase;
+  margin:0 0 2px;color:var(--ink)}
+.phase p{margin:0 0 12px;font-size:13px;color:var(--ink-3)}
+
+ol.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px}
+li.step{background:var(--card);border:1px solid var(--line);border-radius:9px;
+  display:grid;grid-template-columns:auto 1fr auto;gap:13px;align-items:start;padding:13px 15px;
+  cursor:pointer;transition:border-color .15s,background .15s}
+li.step:hover{border-color:var(--line-2)}
+li.step:focus-visible{outline:2px solid var(--sig);outline-offset:2px}
+li.step.on{background:var(--done-soft);border-color:transparent}
+li.step.on .title{text-decoration:line-through;text-decoration-thickness:1px;color:var(--ink-3)}
+li.step.on .meta,li.step.on .how{color:var(--ink-3)}
+
+.box{width:21px;height:21px;border:1.5px solid var(--line-2);border-radius:5px;margin-top:1px;
+  display:grid;place-items:center;flex:none;transition:.15s}
+li.step.on .box{background:var(--done);border-color:var(--done)}
+.box svg{width:12px;height:12px;stroke:#fff;stroke-width:2.6;fill:none;opacity:0;transition:opacity .15s}
+li.step.on .box svg{opacity:1}
+
+.title{font-weight:600;letter-spacing:-.005em;margin-bottom:2px}
+.how{font-size:13.5px;color:var(--ink-2);margin-bottom:5px}
+.how code{font-family:var(--mono);font-size:12.5px;background:var(--sunk);padding:1px 5px;border-radius:4px;
+  word-break:break-all}
+.meta{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);display:flex;gap:11px;flex-wrap:wrap}
+.cost{font-family:var(--mono);font-size:12.5px;color:var(--ink-2);white-space:nowrap;text-align:right;
+  font-variant-numeric:tabular-nums;padding-top:1px}
+.cost.free{color:var(--done)}
+
+.gate{font-family:var(--mono);font-size:11px;color:var(--sig);margin-top:5px}
+
+footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);font-size:13px;color:var(--ink-3)}
+footer p{margin:0 0 7px}
+.warn{background:var(--sunk);border-left:2.5px solid var(--sig);padding:11px 14px;border-radius:0 7px 7px 0;
+  font-size:13.5px;color:var(--ink-2);margin-top:14px}
+.warn b{color:var(--ink)}
+
+@media(max-width:480px){
+  li.step{grid-template-columns:auto 1fr;padding:12px 13px}
+  .cost{grid-column:2;text-align:left;padding-top:3px}
+}
+</style>
+
+<div class="wrap">
+<header class="top">
+  <div class="eyebrow">Built for Main Street</div>
+  <h1>Launch sequence</h1>
+  <p class="sub">Formation through first paying client, in order. Tap a step when it's done — your progress saves.</p>
+
+  <div class="meter">
+    <div class="bar"><i id="fill"></i></div>
+    <b id="count">0 / 21</b>
+  </div>
+  <div class="spend">
+    <span>Spent <b id="spent">$0</b></span>
+    <span>Still to pay <b id="left">$0</b></span>
+    <span id="due800">$800 franchise tax due month 4</span>
+  </div>
+</header>
+
+<div class="nextup" id="nextup" hidden>
+  <div class="lbl">Next up</div>
+  <div class="t" id="nextT"></div>
+  <div class="d" id="nextD"></div>
+</div>
+
+<div id="list"></div>
+
+<footer>
+  <p><b>Rule that makes the $890 worth spending:</b> every dollar of business money moves through the business account. Client pays you → business account. Never personal Venmo, Zelle or Cash App. You need money → transfer it and call it a distribution.</p>
+  <div class="warn"><b>Don't skip steps 10 and 11.</b> The Statement of Information carries a $250 penalty if you miss the 90-day window, and the $800 franchise tax arrives in month four — before any revenue does. Put both on a real calendar today, not in your head.</div>
+</footer>
+</div>
+
+<script>
+const STEPS = [
+ {p:"Entity", pd:"Today. About an hour of actual work.", items:[
+  {id:"s01", t:"Check the name and buy the domain", c:11,
+   how:"Search <code>bizfileonline.sos.ca.gov/search/business</code> for <code>Built for Main Street</code>. Then buy the domain at Cloudflare Registrar (~$11/yr, wholesale, free WHOIS privacy).",
+   m:["15 min","Do this first"]},
+  {id:"s02", t:"File the LLC — Form LLC-1", c:70,
+   how:"<code>bizfileonline.sos.ca.gov</code> → Articles of Organization. Management = <b>All LLC Member(s)</b>, not One Manager. Don't pay to expedite — standard is clearing in 1–3 business days.",
+   m:["20 min","$70 state fee"]},
+  {id:"s03", t:"Pick your registered agent", c:125,
+   how:"Yourself is free but your home address becomes permanent public record. Northwest Registered Agent is ~$125/yr and doesn't upsell. Recommended — you've moved several times, and an agent address doesn't change when you do.",
+   m:["Decide during step 2"]},
+  {id:"s04", t:"Fill in and sign the operating agreement", c:0,
+   how:"It's written — fill every bracket, sign, date, keep it. Nobody files this. Read Section 4 twice: commingling is how single-member LLCs lose their shield.",
+   m:["20 min","Services charge $200–500"]},
+ ]},
+ {p:"Money", pd:"This week, once the state approves the filing.", items:[
+  {id:"s05", t:"Get the EIN", c:0, gate:"Wait for state approval first",
+   how:"<code>irs.gov/ein</code>, Mon–Fri 7am–10pm ET. Entity type = <b>Limited Liability Company</b>, not Sole Proprietor. Never pay a site for this.",
+   m:["15 min","Instant"]},
+  {id:"s06", t:"Save the CP 575 letter as a PDF", c:0,
+   how:"It appears on screen once and once only. A replacement means calling the IRS and waiting on hold. Save it in three places.",
+   m:["2 min","Do it immediately"]},
+  {id:"s07", t:"Open the business bank account", c:0,
+   how:"Novo, Mercury or Relay. Bring: stamped Articles, CP 575, signed operating agreement, driver's licence.",
+   m:["30 min","Free, no minimum"]},
+  {id:"s08", t:"Make the initial capital contribution", c:0,
+   how:"Transfer the amount from Section 2.2 of the operating agreement — even $100 — from personal to business. Label it <code>initial capital contribution</code>. Ten seconds, and it documents that the entity was funded.",
+   m:["Same day the account opens"]},
+  {id:"s09", t:"Set up Stripe", c:0,
+   how:"Build both now so you're not scrambling on your first close: a <b>$1,000 payment link</b> for Build &amp; fix, and a <b>$199/mo subscription</b> that bills itself. Add $1,990/yr as a second price.",
+   m:["15 min","2.9% + 30¢, no monthly"]},
+ ]},
+ {p:"Calendar", pd:"Two dates that cost real money if you miss them. Set them today.", items:[
+  {id:"s10", t:"Calendar: Statement of Information", c:20,
+   how:"Form LLC-12, due within <b>90 days</b> of approval, then every two years. Five fields. <b>$250 penalty if you miss it.</b>",
+   m:["$20 filing fee"]},
+  {id:"s11", t:"Calendar: the $800 franchise tax", c:0,
+   how:"FTB Form 3522, due the <b>15th day of the 4th month</b> after formation. Owed whether or not you've made a dollar. This is the one people forget.",
+   m:["$800 — the big one"]},
+ ]},
+ {p:"Ready to sell", pd:"Everything you need before the first dial.", items:[
+  {id:"s12", t:"Fill in the client agreement", c:0,
+   how:"Swap the brackets for your details, export as PDF, load it into a free e-sign tool. Exhibit A is your scoping worksheet — fill it live on the call.",
+   m:["30 min"]},
+  {id:"s13", t:"Google Workspace on the new domain", c:7,
+   how:"you@builtformainstreet.com. A gmail.com address on a cold call costs you more than $7/mo.",
+   m:["$7/mo","20 min"]},
+  {id:"s14", t:"Run three practice Visibility Checks", c:0,
+   how:"Pick three leads off the call sheet. Ask ChatGPT, Gemini and Claude the shopping question and the by-name question. Screenshot everything. You need to have done this before you do it live.",
+   m:["45 min","Free"]},
+ ]},
+ {p:"First money", pd:"The part that actually decides whether this works.", items:[
+  {id:"s15", t:"First day of dials — 27 calls", c:0,
+   how:"Straight down the call sheet. Start with the four broken-link leads: Special Touch, Padilla's Masonry, Peter's Tree Trimming, Vecchio Masonry. Their listings point at the wrong company — shortest conversation on the sheet.",
+   m:["2–3 hrs","4 sales/mo = 27 dials/day"]},
+  {id:"s16", t:"Deliver your first live Visibility Check", c:0,
+   how:"On the phone, while they're listening. Lead with the by-name question — <i>“I don't have information about that business”</i> is the sentence that sells this.",
+   m:["10 min on the call"]},
+  {id:"s17", t:"Collect the first $1,000", c:0,
+   how:"Payment link on the second call. The two-week clock starts when the money and the photos land, not before. Never build on spec.",
+   m:["The one that counts"]},
+ ]},
+ {p:"First delivery", pd:"About 100 minutes of work the first time, 65 by the fifth.", items:[
+  {id:"s18", t:"Intake call, then fill the client JSON", c:0,
+   how:"15-minute call for services, towns, reviews, photos. Paste your notes into Claude with the prompt in the build doc. It fills the JSON — it never writes the HTML.",
+   m:["20 min"]},
+  {id:"s19", t:"Build and deploy", c:0,
+   how:"<code>python3 src/build_site.py clients/name.json</code> → 11 pages with valid schema. Deploy with <code>npx wrangler pages deploy</code>. Cloudflare Pages is free and unlimited.",
+   m:["10 min","$0 hosting"]},
+  {id:"s20", t:"Claim the Google Business Profile", c:0,
+   how:"In <b>their</b> name, never yours — Google requires it and your agreement says so. 750-character description, every service, Q&amp;A filled, new domain linked.",
+   m:["45 min","Where half the value is"]},
+  {id:"s21", t:"Send the month-zero baseline report", c:0,
+   how:"Re-run the Visibility Check the day it goes live and send it. That's the number every future month gets compared against — and it's what makes the $199 renew itself.",
+   m:["10 min","Then monthly"]},
+ ]},
+];
+
+const all = STEPS.flatMap(g => g.items);
+let done = {};
+
+const list = document.getElementById('list');
+STEPS.forEach(g => {
+  const sec = document.createElement('section');
+  sec.className = 'phase';
+  sec.innerHTML = `<h2>${g.p}</h2><p>${g.pd}</p>`;
+  const ol = document.createElement('ol');
+  ol.className = 'steps';
+  g.items.forEach(s => {
+    const li = document.createElement('li');
+    li.className = 'step';
+    li.tabIndex = 0;
+    li.dataset.id = s.id;
+    li.setAttribute('role','button');
+    li.setAttribute('aria-pressed','false');
+    li.innerHTML =
+      `<span class="box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>`+
+      `<div><div class="title">${s.t}</div><div class="how">${s.how}</div>`+
+      `<div class="meta">${s.m.map(x=>`<span>${x}</span>`).join('')}</div>`+
+      (s.gate?`<div class="gate">${s.gate}</div>`:'')+`</div>`+
+      `<div class="cost${s.c?'':' free'}">${s.c?'$'+s.c:'Free'}</div>`;
+    li.addEventListener('click', () => toggle(s.id));
+    li.addEventListener('keydown', e => {
+      if(e.key===' '||e.key==='Enter'){ e.preventDefault(); toggle(s.id); }
+    });
+    ol.appendChild(li);
+  });
+  sec.appendChild(ol);
+  list.appendChild(sec);
+});
+
+function render(){
+  let n = 0, spent = 0, left = 0;
+  all.forEach(s => {
+    const on = !!done[s.id];
+    if(on){ n++; spent += s.c; } else { left += s.c; }
+    const li = list.querySelector(`[data-id="${s.id}"]`);
+    li.classList.toggle('on', on);
+    li.setAttribute('aria-pressed', String(on));
+  });
+  document.getElementById('count').textContent = `${n} / ${all.length}`;
+  document.getElementById('fill').style.width = (n/all.length*100)+'%';
+  document.getElementById('spent').textContent = '$'+spent.toLocaleString();
+  document.getElementById('left').textContent = '$'+left.toLocaleString();
+
+  const next = all.find(s => !done[s.id]);
+  const nu = document.getElementById('nextup');
+  if(next){
+    nu.hidden = false;
+    document.getElementById('nextT').textContent = next.t;
+    document.getElementById('nextD').innerHTML = next.how;
+  } else {
+    nu.hidden = false;
+    document.getElementById('nextT').textContent = 'All twenty-one done.';
+    document.getElementById('nextD').textContent = 'Entity formed, first client live, baseline sent. Now do it again three more times this month.';
+  }
+}
+
+let dbc = null;
+render();
+
+(async () => {
+  const db = await window.claude?.use?.('db');
+  if(!db) return;
+  dbc = db;
+  try{
+    db.collection('progress').onSnapshot(snap => {
+      const next = {};
+      snap.docs.forEach(d => { if(d.data().done) next[d.id] = true; });
+      done = next;
+      render();
+    });
+  }catch(e){ /* stay local */ }
+})();
+
+async function toggle(id){
+  const on = !done[id];
+  done[id] = on;
+  if(!on) delete done[id];
+  render();
+  if(!dbc) return;
+  try{
+    await dbc.doc('progress/'+id).set({done:on, at:new Date().toISOString()});
+  }catch(e){ /* optimistic UI already updated */ }
+}
+</script>
