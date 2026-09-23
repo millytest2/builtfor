@@ -124,7 +124,7 @@ footer p{margin:0 0 7px}
 
 <footer>
   <p><b>The money rule, from the first dollar:</b> business money moves through the business account. Client pays you → business account. Never personal Venmo, Zelle or Cash App. You need money → transfer it and call it a draw. Start this habit as a sole proprietor and the LLC inherits it.</p>
-  <div class="warn"><b>Why the LLC comes last.</b> A sole proprietorship is a real business — it can take money, sign contracts and open a bank account. What it lacks is a liability shield, and for this work the exposure is small: you're not on anyone's property or touching their equipment. The liability cap in your client agreement does most of the job. Form the LLC when a client's money pays for it, not when it takes food off your table.</div>
+  <div class="warn"><b>Why the LLC waits for December.</b> California's 15-day rule: an entity formed on or after <b>December 17</b> that conducts no business that year owes no franchise tax for it. File today and you owe $800 for 2026 and $800 for 2027 within four months. File December 17 and you owe one $800, in April 2027. A sole proprietorship is a real business in the meantime — it takes money, signs contracts, holds a bank account. What it lacks is a liability shield, and the exposure here is small: no client premises, no equipment. The cap in your client agreement carries that load until December.<br><br><b>The one alternative:</b> California corporations are exempt from the $800 in their first year, so incorporating costs $125 against the LLC's $890. But an S-corp owes Form 1120-S every year even at zero income — $800–1,200 from a CPA, forever — which makes it cheaper in year one and more expensive in every year after.</div>
 </footer>
 </div>
 
@@ -188,10 +188,10 @@ const STEPS = [
    how:"Re-run the Visibility Check the day it goes live and send it. That's the number every future month gets compared against, and it's what makes the $199 renew itself.",
    m:["10 min","Then monthly"]},
  ]},
- {p:"Upgrade to the LLC", pd:"Out of client money, not your money. Around client two or three.", items:[
-  {id:"s17", t:"File the LLC — Form LLC-1", c:70, gate:"Wait until a client has paid",
-   how:"<code>bizfileonline.sos.ca.gov</code> → Articles of Organization. Management = <b>All LLC Member(s)</b>, not One Manager. Standard processing is 1–3 business days — don't pay to expedite.",
-   m:["20 min","$70"]},
+ {p:"Upgrade to the LLC", pd:"December 17 or later. Filing before that date costs you an extra $800 — see the note at the bottom.", items:[
+  {id:"s17", t:"File the LLC — on or after December 17", c:70, gate:"Do not file before Dec 17",
+   how:"<code>bizfileonline.sos.ca.gov</code> → Articles of Organization. Management = <b>All LLC Member(s)</b>, not One Manager. California's 15-day rule means an entity formed Dec 17 or later that does no business that year owes <b>nothing</b> for that tax year. Keep running as a sole proprietor through December and move the business into the LLC on January 1.",
+   m:["20 min","$70","Timing saves $800"]},
   {id:"s18", t:"New EIN for the LLC", c:0,
    how:"The sole-proprietor EIN doesn't carry over. Apply again at <code>irs.gov/ein</code>, entity type <b>Limited Liability Company</b>. Free. Then update Stripe and the bank.",
    m:["15 min","Free"]},
@@ -202,7 +202,7 @@ const STEPS = [
    how:"Form LLC-12, due within <b>90 days</b> of approval, then every two years. <b>$250 penalty if you miss it.</b>",
    m:["$20"]},
   {id:"s21", t:"Calendar: the $800 franchise tax", c:800,
-   how:"FTB Form 3522, due the <b>15th day of the 4th month</b> after formation. This is why you form after a client has paid, not before — one setup fee covers it and you never feel it.",
-   m:["Due month 4","Paid out of revenue"]},
+   how:"FTB Form 3522. Form in December and your first payment isn't due until <b>April 2027</b>. Form today instead and you owe $800 for 2026 <i>and</i> $800 for 2027 within four months of each other — the back-to-back trap.",
+   m:["Due April 2027","Not before"]},
  ]},
 ];

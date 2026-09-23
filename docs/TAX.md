@@ -131,9 +131,58 @@ reasons anyway, the tax math is a real thumb on the scale. But it's a life
 decision, not a paperwork one — and you shouldn't stall the business four
 months waiting to decide.
 
+## Two cheap routes that do exist
+
+I said earlier there was no way around the $800. That was wrong in two places.
+
+### 1. Corporations keep the first-year exemption
+
+AB 85 removed the LLC first-year waiver. It never applied to corporations —
+they have their own under **R&TC 23153(f)**, and that one is still in force.
+
+| | LLC | Corporation (S-elected) |
+|---|---|---|
+| Formation | $70 | $100 (Form ARTS-GS) |
+| Statement of Information | $20, every 2 yrs | $25, **annually** |
+| Franchise tax, year one | **$800** | **$0** |
+| **Year one** | **$890** | **$125** |
+
+So a liability shield costs $125 in year one instead of $890.
+
+**The catch is year two and every year after.** An S-corp must file **Form
+1120-S annually even at zero income** — $800–1,200 from a CPA, forever —
+against a Schedule C that costs nothing if you file your own return. Plus
+bylaws, stock issuance, minutes, and payroll once you take money out.
+
+Two-year cost: **LLC ~$1,700. S-corp ~$2,950.** Cheaper in year one, more
+expensive in every year after. Worth it only if you need the shield before
+December and can absorb the return.
+
+### 2. The 15-day rule — worth $800, and the timing is live right now
+
+An entity formed **on or after December 17** that conducts no business in
+those final days owes **nothing** for that tax year.
+
+This makes September the worst month to file:
+
+| Form in September | Form December 17+ |
+|---|---|
+| $800 for tax year 2026, due Jan 2027 | nothing for 2026 |
+| $800 for tax year 2027, due Apr 2027 | $800 for 2027, due Apr 2027 |
+| **$1,600 inside four months** | **$800, seven months out** |
+
+Filing now walks straight into back-to-back payments. Waiting until December
+17 skips one outright. Keep operating as a sole proprietor through December
+and move the business into the LLC on January 1.
+
+**This is the plan:** sole proprietor now at roughly $107 all in, LLC on
+December 17 for $90, first $800 in April 2027.
+
 ## What to actually do
 
-1. **File in California today.** $890 year one. Stop researching this.
+1. **Sole proprietor today, LLC on December 17.** About $107 now, $90 in
+   December, first $800 in April 2027. Filing before December 17 costs an
+   extra $800 for nothing.
 2. **Deduct everything** through the business account from day one.
 3. **Get a CPA at your first $3k month** — $400–800 for the year, and they'll
    find more than they cost.
