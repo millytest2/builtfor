@@ -81,14 +81,17 @@ applies.
 
 **This section is the important one. Read it.**
 
-**3.1 We own the website.** We own the website we build, its code, design and
-files, and we own the domain name we register for you. You are leasing the use
-of it, which is why the setup fee is $1,000 rather than several thousand.
+**3.1 We own the website.** We own the website we build — its code, design and
+files. You are leasing the use of it, which is why the setup fee is $1,000
+rather than several thousand.
 
 **3.2 You own your business.** You own and will always own:
 
 - Your business name, logo and brand
 - Your photos, your text, your customer reviews and anything else you give us
+- **Your domain name**, registered in your name with you as the owner. We set
+  it up and point it at the site, and you keep it no matter what happens
+  between us
 - **Your Google Business Profile**, which is registered in your name, not ours
 
 We manage your Google Business Profile with your permission. You can remove
@@ -99,14 +102,15 @@ not you stay a client.
 exclusive right to use the website as your own, to put the address on your
 truck, your cards and anywhere else.
 
-**3.4 If you leave.** If this Agreement ends, the website comes down and the
-domain stays with us. We will give you copies of everything you gave us —
-your photos, your text — within fourteen days of you asking.
+**3.4 If you leave.** If this Agreement ends, we stop hosting the website and
+it comes down. Your domain, your Google Business Profile and everything you
+gave us stay yours — point the domain wherever you like. We will return copies
+of your photos and text within fourteen days of you asking.
 
 **3.5 Buying it outright.** After **twelve (12) months** of continuous
-payment, you may buy the website and the domain outright for **$2,000**. On
-payment we transfer the domain and the files to you and this Agreement ends,
-with no hard feelings and no further fees.
+payment, you may buy the website outright for **$2,000**. On payment we hand
+over the files and the right to use them however you like, and this Agreement
+ends, with no hard feelings and no further fees.
 
 **3.6 Our tools stay ours.** The underlying templates, code and systems we use
 across all our clients remain ours. Section 3.5 transfers your finished site
@@ -241,8 +245,14 @@ Fill this in on the scoping call. It becomes part of the Agreement.
 - **Section 3.2 matters more than it looks.** The Google Business Profile
   legally belongs to the business, not to you, and Google's terms require it.
   Trying to own a client's listing gets the listing suspended and gets you
-  labelled a bad actor. It also costs you nothing — the lease leverage is the
-  website and the domain, which is plenty.
+  labelled a bad actor.
+- **The domain is theirs on purpose — this changed, and it matters.** Holding
+  a domain that contains a client's business name puts you in cybersquatting
+  territory the moment the relationship sours. A shop trading under one name
+  for forty years has common-law trademark rights in it, and a UDRP complaint
+  costs them about $1,500 and costs you the domain plus your reputation. Your
+  leverage was never the domain — it's the site and the hosting. Without those
+  the domain points at nothing. Give them the address, keep the building.
 - **Section 5.1 is what keeps you out of trouble.** Never promise a ranking on
   a call either. "I'll make sure everything that reads your business can read
   it properly, and I'll show you the numbers every month" is both true and a

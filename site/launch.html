@@ -110,7 +110,7 @@ footer p{margin:0 0 7px}
 
   <div class="meter">
     <div class="bar"><i id="fill"></i></div>
-    <b id="count">0 / 30</b>
+    <b id="count">0 / 37</b>
   </div>
   <div class="spend">
     <span>Spent <b id="spent">$0</b></span>
@@ -220,34 +220,62 @@ const STEPS = [
   {id:"s21", t:"Intake call, then fill the client JSON", c:0,
    how:"15-minute call for services, towns, reviews, photos. Paste your notes into Claude with the prompt in the build doc. It fills the JSON — it never writes the HTML.",
    m:["20 min"]},
-  {id:"s22", t:"Build and deploy", c:0,
+  {id:"s22", t:"Register the client's domain in THEIR name", c:0,
+   how:"Their card, their account, their name on the registration — then you get delegate access to point it. <b>Never register a domain containing a client's business name in your own name.</b> A shop trading under one name for decades has common-law trademark rights; holding that domain after they leave is cybersquatting, and a UDRP complaint costs them $1,500 and costs you the domain. Your leverage is the site and the hosting, not the address.",
+   m:["10 min","~$11 on their card","Legal exposure if you skip this"]},
+  {id:"s23", t:"Build and deploy", c:0,
    how:"<code>python3 src/build_site.py clients/name.json</code> → 11 pages with valid schema. Deploy with <code>npx wrangler pages deploy</code>. Cloudflare Pages is free and unlimited.",
    m:["10 min","$0 hosting"]},
-  {id:"s23", t:"Claim the Google Business Profile", c:0,
+  {id:"s24", t:"Claim the Google Business Profile", c:0,
    how:"In <b>their</b> name, never yours — Google requires it and your agreement says so. 750-character description, every service, Q&amp;A filled, new domain linked.",
    m:["45 min","Half the value is here"]},
-  {id:"s24", t:"Send the month-zero baseline report", c:0,
+  {id:"s25", t:"Send the month-zero baseline report", c:0,
    how:"Re-run the Visibility Check the day it goes live and send it. That's the number every future month gets compared against, and it's what makes the $199 renew itself.",
    m:["10 min","Then monthly"]},
  ]},
 
+ {p:"Monk mode", chip:"COACH STEP 5", pd:"His rule: build quietly. Here is where the line actually falls.", items:[
+  {id:"s26", t:"No announcement posts", c:0,
+   how:"No \u201cexcited to share I started a business\u201d posts, no revenue screenshots, no client names, no logos. Your coach is right about why — broadcasting early invites opinions from people with no stake in the outcome.",
+   m:["Ongoing","Free"]},
+  {id:"s27", t:"What monk mode does not mean", c:0,
+   how:"A landing page existing is not an announcement. Neither is posting what you are <i>learning</i> — how assistants pick which business to name, what moved a client's ranking. Keep the numbers, the client names and the wins private; the craft is fine to talk about and it builds the audience UPath will need. If your coach means total silence, ask him directly rather than guessing.",
+   m:["Worth clarifying at 4pm"]},
+ ]},
+
+ {p:"Report to your coach", chip:"COACH STEP 6", pd:"What he asked for in Slack, and what you can actually send this week.", items:[
+  {id:"s28", t:"Send: business name and current offer", c:0,
+   how:"<b>Built for Main Street.</b> $1,000 setup, $199/mo lease, $1,990/yr prepaid. Free Visibility Check as the door. Send him the offer PDF — note the monthly is $199, not the $300 in his notes.",
+   m:["2 min","Send today"]},
+  {id:"s29", t:"Send: \u201cEIN done\u201d", c:0,
+   how:"Never the number itself — he said so and he's right. Say it's under the sole proprietorship and that the same number carries into the LLC.",
+   m:["Today"]},
+  {id:"s30", t:"Send: \u201cBank open\u201d", c:0,
+   how:"Once Novo clears. Screenshot the dashboard with the account number blurred.",
+   m:["This week"]},
+  {id:"s31", t:"Raise the December 17 timing on the 4pm call", c:0,
+   flag:"His target is LLC filed this week. This is the one place to push back, with numbers.",
+   how:"Filing now costs $800 for 2026 <i>and</i> $800 for 2027 within four months. December 17 costs one payment. <b>Ask him directly:</b> is the entity the point, or the liability shield? If it's the shield, incorporating is $125 with no first-year franchise tax. If it's momentum, you can show him a registered business name, a live EIN, an open bank account and a filled call sheet this week — which is more progress than an LLC certificate.",
+   m:["10 min","Worth $800"]},
+ ]},
+
  {p:"File the LLC", chip:"COACH STEP 2, FINISHED", pd:"December 17 or later. His item, done on the only date that doesn't cost an extra $800.", items:[
-  {id:"s25", t:"File Form LLC-1 — on or after December 17", c:70, gate:"Do not file before Dec 17",
+  {id:"s32", t:"File Form LLC-1 — on or after December 17", c:70, gate:"Do not file before Dec 17",
    how:"<code>bizfileonline.sos.ca.gov</code> → Articles of Organization. Management = <b>All LLC Member(s)</b>, not One Manager. Keep running as a sole proprietor through December, then move the business into the LLC on January 1.",
    m:["20 min","$70","Timing saves $800"]},
-  {id:"s26", t:"Name the registered agent", c:0, cd:"$0–125",
+  {id:"s33", t:"Name the registered agent", c:0, cd:"$0–125",
    how:"Decided back in step 4. Yourself is free with your address public; a service is ~$125/yr and doesn't change when you move.",
    m:["During the filing"]},
-  {id:"s27", t:"Sign the operating agreement", c:0,
+  {id:"s34", t:"Sign the operating agreement", c:0,
    how:"Fill in the entity number and filing date, sign, date, keep it. Read Section 4 twice — commingling is how single-member LLCs lose their shield.",
    m:["20 min"]},
-  {id:"s28", t:"New EIN — optional", c:0,
+  {id:"s35", t:"New EIN — optional", c:0,
    how:"<b>Not required.</b> A disregarded single-member LLC may keep the sole-proprietor EIN. Get a fresh one anyway (free) so it matches the LLC name on bank records. You <i>will</i> need one if you ever elect S-corp.",
    m:["15 min","Free","Recommended"]},
-  {id:"s29", t:"Calendar: Statement of Information", c:20,
+  {id:"s36", t:"Calendar: Statement of Information", c:20,
    how:"Form LLC-12, within <b>90 days</b> of approval, then every two years. <b>$250 penalty if you miss it.</b>",
    m:["$20"]},
-  {id:"s30", t:"Calendar: the $800 franchise tax", c:800,
+  {id:"s37", t:"Calendar: the $800 franchise tax", c:800,
    how:"FTB Form 3522. Forming December 17 means your first payment isn't due until <b>April 2027</b> — one payment, not two.",
    m:["Due April 2027"]},
  ]},
@@ -300,7 +328,7 @@ function render(){
   document.getElementById('fill').style.width = (n/all.length*100)+'%';
   document.getElementById('spent').textContent = '$'+spent.toLocaleString();
   document.getElementById('left').textContent = '$'+left.toLocaleString();
-  const pre = all.slice(0, all.findIndex(x=>x.id==='s15')+1).reduce((a,x)=>a+x.c,0);
+  const pre = STEPS.slice(0,4).flatMap(g=>g.items).reduce((a,x)=>a+x.c,0);
   document.getElementById('toFirst').textContent = '$'+pre.toLocaleString();
 
   const next = all.find(s => !done[s.id]);
