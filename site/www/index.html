@@ -279,6 +279,15 @@ form.ask input::placeholder,form.ask textarea::placeholder{color:rgba(242,236,22
   .cb-n{font-family:var(--mono);font-size:17px;letter-spacing:.01em}
   footer{padding-bottom:calc(52px + env(safe-area-inset-bottom,0px))}
 }
+.handoff{font-family:var(--display);font-size:17.5px;line-height:1.4;font-style:italic;
+  color:var(--ink-2);max-width:46ch;margin:26px auto 0;text-align:center;
+  font-variation-settings:'SOFT' 40,'WONK' 1}
+.street .handoff{color:rgba(242,236,224,.62);max-width:44ch}
+.handoff.in{text-align:left;font-size:16.5px;margin:20px 0 0;padding-top:16px;
+  border-top:1px dashed var(--line-2)}
+h3.subsec{font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--ink-3);font-weight:400;margin:34px 0 16px;padding-top:16px;
+  border-top:1px solid var(--line)}
 footer{margin-top:64px;border-top:1px solid var(--line);padding-block:34px 44px}
 .foot-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;max-width:760px}
 @media(max-width:480px){.foot-grid{grid-template-columns:1fr}}
@@ -327,60 +336,7 @@ footer a:hover{color:var(--signal);border-color:var(--signal)}
     around the longest.</p>
     <div class="cta-row">
       <a class="btn" href="#check">Get the free check</a>
-      <a class="btn ghost" href="#test">See it for yourself</a>
-    </div>
-  </div>
-</div>
-
-<div class="wrap" id="test">
-  <div class="test">
-    <div class="kicker">Try it before you call me</div>
-    <h2>Ask it yourself. Takes a minute.</h2>
-    <p class="sub">Pick your trade, put in your town, and paste these two questions into
-    ChatGPT or Google's AI answer. Nothing here gets sent to me.</p>
-
-    <div class="fields">
-      <div class="field">
-        <label for="trade">Your trade</label>
-        <select id="trade">
-          <option value="reupholstery">Upholstery</option>
-          <option value="tree removal">Tree service</option>
-          <option value="welding and ornamental iron">Welding and iron work</option>
-          <option value="masonry and concrete">Masonry and concrete</option>
-          <option value="cabinetry">Cabinetry</option>
-          <option value="landscaping">Landscaping</option>
-        </select>
-      </div>
-      <div class="field">
-        <label for="town">Your town</label>
-        <input type="text" id="town" placeholder="Fort Wayne" value="" autocomplete="address-level2">
-      </div>
-      <div class="field">
-        <label for="biz">Your business name</label>
-        <input type="text" id="biz" placeholder="your shop's name" value="" autocomplete="organization">
-      </div>
-    </div>
-
-    <div class="qs">
-      <div class="q">
-        <div class="n">Question one, the shopping question</div>
-        <div class="line">
-          <div class="txt" id="q1"></div>
-          <button class="copy" data-for="q1" type="button">Copy</button>
-        </div>
-      </div>
-      <div class="q">
-        <div class="n">Question two, the one that matters</div>
-        <div class="line">
-          <div class="txt" id="q2"></div>
-          <button class="copy" data-for="q2" type="button">Copy</button>
-        </div>
-      </div>
-      <div class="verdict">
-        <b>If it names three shops and none of them are you,</b> you are invisible where
-        people now decide. <b>If it says it has no information about your business,</b>
-        you are not in the index at all. Either one is fixable, and both are what I do.
-      </div>
+      <a class="btn ghost" href="#test">Check your own shop</a>
     </div>
   </div>
 </div>
@@ -463,11 +419,11 @@ footer a:hover{color:var(--signal);border-color:var(--signal)}
       </g>
     </svg>
     <p class="caption">Four lit. One dark. The dark one has the best reviews on the street.</p>
+    <p class="handoff">That is not a drawing of a hypothetical. Here are four of them.</p>
   </div>
 </div>
 
 <div class="wrap">
-
 <section class="band">
   <h2 class="sec">Four things I found last week.</h2>
   <p class="lead">These are real shops. I was building a call list and checking whether
@@ -497,9 +453,81 @@ footer a:hover{color:var(--signal);border-color:var(--signal)}
     </div>
   </div>
   <p class="lead" style="margin-top:22px">Not one of those is a marketing problem. Nobody
-  needs a campaign. Somebody needs to go fix the plumbing, and then tell them it's
-  fixed.</p>
+  needs a campaign. Somebody needs to go fix the plumbing and then tell them it's fixed.</p>
+  <p class="lead"><b>The uncomfortable part is that none of those four owners know.</b> You
+  wouldn't either, unless you went and looked. So go look. It takes a minute and nobody
+  gets told what you find.</p>
 </section>
+</div>
+
+<div class="wrap" id="test">
+  <div class="test">
+    <div class="kicker">Now do yours</div>
+    <h2>Ask it yourself. Takes a minute.</h2>
+    <p class="sub">Put in your trade and your town. Paste the two questions into ChatGPT or
+    Google's AI answer and read what comes back. Nothing here gets sent anywhere.</p>
+
+    <div class="fields">
+      <div class="field">
+        <label for="trade">Your trade</label>
+        <select id="trade">
+          <option value="reupholstery">Upholstery</option>
+          <option value="tree removal">Tree service</option>
+          <option value="welding and ornamental iron">Welding and iron work</option>
+          <option value="masonry and concrete">Masonry and concrete</option>
+          <option value="cabinetry">Cabinetry</option>
+          <option value="landscaping">Landscaping</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="town">Your town</label>
+        <input type="text" id="town" placeholder="Fort Wayne" value="" autocomplete="address-level2">
+      </div>
+      <div class="field">
+        <label for="biz">Your business name</label>
+        <input type="text" id="biz" placeholder="your shop's name" value="" autocomplete="organization">
+      </div>
+    </div>
+
+    <div class="qs">
+      <div class="q">
+        <div class="n">Question one, the shopping question</div>
+        <div class="line">
+          <div class="txt" id="q1"></div>
+          <button class="copy" data-for="q1" type="button">Copy</button>
+        </div>
+      </div>
+      <div class="q">
+        <div class="n">Question two, the one that matters</div>
+        <div class="line">
+          <div class="txt" id="q2"></div>
+          <button class="copy" data-for="q2" type="button">Copy</button>
+        </div>
+      </div>
+      <div class="verdict">
+        <b>If it names three shops and none of them are you,</b> you are invisible where
+        people now decide. <b>If it says it has no information about your business,</b>
+        you are not in the index at all. Either one is fixable, and both are what I do.
+      </div>
+      <p class="handoff in">Whatever came back, the reason is the same, and it is
+      narrower than it looks.</p>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="wrap">
+
+
+
+
+
+
+
+
+
+
 
 <section class="band">
   <h2 class="sec">Where the path breaks.</h2>
@@ -551,11 +579,13 @@ footer a:hover{color:var(--signal);border-color:var(--signal)}
     Steps one, two and five are out of everybody's hands, which is also why I won't sell
     you anything aimed at them.</figcaption>
   </figure>
+  <p class="lead" style="margin-top:20px">So the job is two steps wide. Here is what it
+  takes to fix those two, and what I charge for it.</p>
 </section>
 
 <section class="band">
-  <h2 class="sec">What that takes.</h2>
-  <p class="lead">Two jobs. Neither one is marketing.</p>
+  <h2 class="sec">What I'd actually do.</h2>
+  <p class="lead">Two jobs, and neither one is marketing.</p>
   <div class="pair">
     <div>
       <h3><span>One.</span> Get found</h3>
@@ -572,10 +602,7 @@ footer a:hover{color:var(--signal);border-color:var(--signal)}
       Those customers had already picked you.</p>
     </div>
   </div>
-</section>
-
-<section class="band">
-  <h2 class="sec">How I work.</h2>
+  <h3 class="subsec">What it runs</h3>
   <div class="narrow">
     <p class="lead">I look you up before we talk and show you what I found. That part's free
     and there's no version of it where I pressure you afterward. If everything's already
