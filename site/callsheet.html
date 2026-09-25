@@ -305,6 +305,17 @@
     if(/no URL behind it|'n\/a'/.test(n)) return {k:'blank', tag:'blank link', pts:10};
     return null;
   }
+  // What one job is worth decides whether $1,000 feels cheap. Stamped concrete is thousands; a cushion is not.
+  function tradeOf(l){
+    var n = String(l.notes||'') + ' ' + String(l.trade||'');
+    if(/cabinet|millwork/i.test(String(l.trade||''))) return {pts:8, why:'big-ticket trade'};
+    if(/Concrete & masonry|concrete|masonry|brick/i.test(n)) return {pts:10, why:'big-ticket trade'};
+    if(/Welding|gates|iron|fenc/i.test(n)) return {pts:8, why:'big-ticket trade'};
+    if(/Tree & landscape|tree|stump/i.test(n)) return {pts:8, why:'emergency and big-ticket work'};
+    return {pts:0, why:''};
+  }
+  function paysForLeads(l){ return /HomeAdvisor|Angi\b|Thumbtack|Networx|Groupon/.test(String(l.notes||'')); }
+  function lowRating(l){ return /\b[0-3]\.\d stars/.test(String(l.notes||'')) || (parseFloat(l.rating) && parseFloat(l.rating) < 4); }
   function ownerOf(l){
     var m = String(l.notes||'').match(/[Oo]wner(?:\/operator)?,?\s+([A-Z][a-z]+)/);
     return m ? m[1] : '';
@@ -317,6 +328,9 @@
     else if(l.site_checked === 'has') s += 10;                // has one: the bad-site lead
     else if(!l.website) s += 20;                              // unverified hint only
     var h = hookOf(l); if(h) s += h.pts;                      // a specific thing to say
+    s += tradeOf(l).pts;                                      // one extra job pays for the year
+    if(paysForLeads(l)) s += 5;                               // already spends money to get found
+    if(lowRating(l)) s -= 10;                                 // a listing fix will not fix the reviews
     if(l.gbp_claimed === 'no') s += 10;                       // listing never claimed
     var named = ['chatgpt','gemini','claude'].filter(function(k){ return l[k]==='yes'; }).length;
     var asked = ['chatgpt','gemini','claude'].filter(function(k){ return l[k]; }).length;
@@ -528,6 +542,9 @@
     else verdict = '<div class="verdict">Ready to call<small>'
       + (l.site_checked==='none' ? 'No website anywhere, verified. ' : '')
       + (h ? 'Hook: '+esc(h.tag)+'. ' : '')
+      + (tradeOf(l).why ? 'The trade is '+tradeOf(l).why+'. ' : '')
+      + (paysForLeads(l) ? 'Already pays for leads, so there is a budget. ' : '')
+      + (lowRating(l) ? 'Rating under 4 stars: being found more will not help much. ' : '')
       + (l.name_known==='no' ? 'ChatGPT draws a blank on their name. ' : '')
       + (asked && !named ? 'Not named by any assistant you asked. ' : '')
       + (checked(l) ? 'Open with what ChatGPT said.' : 'Run step 1 first and you open with their own name.')
