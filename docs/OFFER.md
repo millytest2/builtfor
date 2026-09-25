@@ -39,8 +39,46 @@ at a kitchen table, so it is never priced separately. It is what is inside.
 | | Offer | Price |
 |---|---|---|
 | The door | **Visibility Check** | Free |
-| Setup | **Build and fix** | **$1,000 one-time** |
+| Setup | **Build and fix** | **$600 / $1,000 / from $1,500** |
 | The lease | **Keep it found** | **$199/mo** |
+
+### Setup is tiered, and the tier is counted
+
+The work is genuinely not the same. Three services and two towns is not eight
+services and six towns. Charging one price either overcharges the small job or
+underprices the big one.
+
+| Tier | Trigger | Setup | Lease |
+|---|---|---|---|
+| Small | ≤4 services, ≤3 towns, one location | **$600** | **annual prepay only** |
+| Standard | ≤8 services, ≤6 towns | **$1,000** | $199/mo |
+| Bigger | 9+ services, 7+ towns, multi-location | from **$1,500** | $199/mo |
+
+**Ask the two counting questions on the call.** How many services do you offer?
+How many towns will you drive to? The answers pick the tier. You are scoping, not
+discounting, which is why the price still does not move once quoted.
+
+**Never say the range out loud.** "Between $600 and $1,000" is heard as $600,
+every time. Name the one number for the tier they land in.
+
+**Why the $600 tier requires the year up front.** It is a trade, not a
+concession.
+
+| | Collected in month one |
+|---|---|
+| Standard, $1,000 + $199 | $1,199 |
+| Small, $600 + $1,990 | **$2,590** |
+
+The cheaper tier pays more than twice as much on day one and eliminates churn for
+twelve months. Below $1,000 setup on monthly billing, a cancellation at month two
+means a completed build delivered at a loss, and 30 days' notice makes that
+entirely possible. Say it plainly: *"Six hundred instead of a thousand if you take
+the year up front. Costs you less overall and I'd rather have the year."*
+
+**The floor is $600, not $500.** Not for the hundred dollars. A $500 website from
+a stranger on the phone reads to a shop owner as a scam or as worthless. $600
+reads as a real price. If a $500 number is wanted in the conversation, it should
+be what the annual prepay *saves* them, never what the build costs.
 
 Annual prepay: **$1,990** (two months free). Take it when offered — it solves
 your cash problem and it eliminates churn for a year.

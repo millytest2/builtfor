@@ -11,14 +11,28 @@ Sole proprietorship, Miles Tipton, Los Angeles. LLC filed on or after December 1
 Two problems: they cannot be found, and the people who do find them do not turn
 into calls. Never open with "we build websites."
 
-| | | |
-|---|---|---|
-| Visibility Check | the door | Free |
-| Build and fix | setup | **$1,000** |
-| Keep it found | lease | **$199/mo** |
+**Visibility Check** is free, and it is the door.
 
-Annual prepay $1,990. Cancel with 30 days' notice. Buyout of the site at $2,000
-after 12 months. **We own the site; the client owns the domain.**
+Setup is tiered, and the tier is picked by **counting, not by feel**. Ask how many
+services and how many towns on the call; the answer picks the price. This is
+scoping, not discounting, and it is quoted once and does not move.
+
+| Tier | Trigger | Setup | Lease |
+|---|---|---|---|
+| Small | ≤4 services, ≤3 towns, one location | **$600** | **annual prepay $1,990 only** |
+| Standard | ≤8 services, ≤6 towns | **$1,000** | $199/mo |
+| Bigger | 9+ services, 7+ towns, multi-location | quote, from **$1,500** | $199/mo |
+
+**Never quote a range.** A range becomes its floor: say "$600 to $1,000" and the
+client hears $600. Name one number for the tier they land in.
+
+**The $600 tier exists only with annual prepay.** That is a trade, not a
+concession: it collects $2,590 in month one against the standard tier's $1,199,
+and it removes churn risk for a year. Below $1,000 setup with monthly billing, a
+cancellation at month two loses money on a completed build.
+
+Cancel with 30 days' notice. Buyout of the site at $2,000 after 12 months.
+**We own the site; the client owns the domain.**
 
 ## Hard rules
 
@@ -37,6 +51,12 @@ after 12 months. **We own the site; the client owns the domain.**
 - **Never build on spec.** Money and photos first, then the two-week clock starts.
 - **Business money moves through the business account.** Never personal Venmo,
   Zelle or Cash App.
+- **Edits are "reasonable", never "unlimited".** Text, photos, hours, prices,
+  service details. Not new pages, not redesigns. Client-facing copy must match
+  the agreement, because the client will quote whichever is more generous.
+- **Photos have a deadline too.** 30 days from payment, or the build ships with
+  what was supplied. Our 14-day clock cannot start on a date the client controls
+  indefinitely.
 
 ## Where the work lives
 

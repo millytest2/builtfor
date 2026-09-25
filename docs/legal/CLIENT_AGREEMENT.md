@@ -43,11 +43,16 @@ Effective **[DATE]**.
   phone consistent across the major listings
 - Add the structured markup that search engines and AI assistants read
 - Deliver within **14 days** of receiving your photos and completed intake
+- If we have not received your photos within **30 days** of payment, we will
+  build with whatever you have given us and go live, so the work does not sit
+  open indefinitely. You can send photos later and we will add them
 
 **1.2 Ongoing.** For as long as this Agreement is active, we will:
 
 - Host the website, maintain the domain and the security certificate
-- Make reasonable edits you request — hours, services, photos, contact details
+- Make reasonable edits you request: text, hours, services, prices, photos and
+  contact details. Reasonable does not include new pages, a redesign, or a
+  rebuild, which we will quote separately
 - Keep your Google Business Profile current
 - Send you a monthly report showing where you appear in search and whether
   ChatGPT, Gemini and Claude name your business
@@ -60,7 +65,7 @@ is a separate project we would quote separately.
 
 | | |
 |---|---|
-| **Setup fee** | **$1,000**, due before work begins |
+| **Setup fee** | **$__________**, due before work begins |
 | **Monthly fee** | **$199/month**, starting the day the site goes live |
 | **Annual option** | **$1,990/year** paid in advance, in place of monthly |
 
@@ -82,7 +87,7 @@ applies.
 **This section is the important one. Read it.**
 
 **3.1 We own the website.** We own the website we build — its code, design and
-files. You are leasing the use of it, which is why the setup fee is $1,000
+files. You are leasing the use of it, which is why the setup fee is what it is rather than several times that
 rather than several thousand.
 
 **3.2 You own your business.** You own and will always own:
