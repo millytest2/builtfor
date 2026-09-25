@@ -235,6 +235,80 @@ Say this out loud — naming what you don't do builds trust faster than another
 claim about what you do, and it keeps you out of the categories where you
 compete on price against people with more staff.
 
+## The competitor problem: you sound like The Social Hog
+
+Checked 9/25. The Social Hog, Los Angeles, founded 2013. Headline: *"The Best
+Social Media Management Company, brings more business in your doors to buy your
+product or service."* Sells social media management (Facebook, Yelp, LinkedIn),
+mobile-friendly website design, SEO, local listings, directory verification and
+Google AdWords. **From $499/mo.** 888 number, inside sales; employee reviews on
+Glassdoor and Indeed describe quotas and being out the moment you miss one.
+
+**Four of six deliverables overlap.** Website, local listings, directory
+verification, SEO. From the prospect's chair, both of you are a guy on the phone
+selling a website and a Google listing for a monthly fee. The overlap is real
+and pretending otherwise loses calls.
+
+It is worse than similarity. That category has burned people — annual lock-ins,
+billing that continues past the day the owner wanted out, no measurable result.
+**Getting sorted into that bucket loses the call before the second sentence.**
+Not on price. On pattern recognition.
+
+### Where the offer genuinely differs
+
+| | Social Hog | Us |
+|---|---|---|
+| Lead service | Social media management | Getting found |
+| Social posting | Core of the bundle | **We don't do it** |
+| Promise | "More business in your doors" | Named or not named, with a screenshot |
+| Built for | Facebook, Yelp, AdWords, 2013 | Assistant retrieval, structured data |
+| Recurring | From $499/mo | **$199/mo** |
+| Exit | Annual contracts common | **30 days' notice** |
+
+The falsifiable promise is the one that matters. "More business" cannot be
+checked, so it cannot be trusted. "Ask ChatGPT who to hire for reupholstery in
+Wichita and see whether you are named" is binary, and he can watch it resolve.
+
+### The fix is the first fifteen seconds, not more features
+
+Adding deliverables to look different is the amateur move and it raises your cost
+to serve. The offer is already cheaper, narrower and more measurable. What loses
+is the opening line.
+
+**Open with what the machine said about them, not with who you are:**
+
+> "Hi, is this Jim? I asked ChatGPT who the best upholstery shop in Wichita is
+> about an hour ago. It named three. You weren't one of them. I can show you the
+> screenshot if you want to see it."
+
+A quota-driven phone room cannot say that sentence. It requires having looked the
+business up before dialling. That is the demo and the differentiator in one move.
+
+**Then un-bucket yourself in the negative, immediately:**
+
+> "I'm not selling you social media. I don't post for you, I don't run ads, I
+> don't touch Facebook. One thing: when somebody asks a search engine or an AI
+> who to hire for what you do, you come up."
+
+Naming what you do not do is the fastest category separator that exists.
+
+**Move the 30 days forward.** Against anyone who has been burned by an agency,
+"cancel with 30 days' notice, no annual contract" is the strongest card in the
+deck, and it currently sits in a bullet. Say it in the same breath as the price.
+
+**When they say they already have somebody:** ask what they pay. If it is $400 or
+$500 a month for social posting, the comparison makes itself, and you do not have
+to attack the incumbent to win — just re-run the Visibility Check on their name.
+
+### The question you cannot answer yet
+
+"Who else have you done this for?" You have no clients. Do not bluff it. The
+answer is the check itself:
+
+> "Nobody in your trade yet, you'd be the first. That's why it's a thousand
+> instead of four, and why you can walk with thirty days' notice. What I can show
+> you is the problem, right now, on your own name."
+
 ## On the moat, and the conflict nobody flagged
 
 Your coach is right that broadcasting money invites sabotage. But "go private"
