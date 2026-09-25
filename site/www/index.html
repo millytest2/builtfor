@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Built for Main Street</title>
+<!--
+  BEFORE YOU GO LIVE, change three things:
+  1. The phone number. It appears 4 times: masthead link, close-block link,
+     the JSON-LD "telephone" field, and the form fallback message in the script.
+     Search this file for 323 and replace every hit.
+  2. The form. It currently does nothing. Give <form id="askform"> an action
+     (Formspree, Tally, Basin) and delete the submit handler at the bottom.
+  3. Nothing else. No build step, no framework, no dependencies.
+-->
+<meta name="description" content="Ask ChatGPT who does your work in your town. If your shop's name doesn't come up, that's what we fix.">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Libre+Franklin:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  color-scheme: light;
+  --paper:#f5f1e8; --card:#fffdf8; --sunk:#ebe5d8;
+  --ink:#1c1917; --ink-2:#5d554c; --ink-3:#8a8177;
+  --line:#ddd6c8; --line-2:#c9c0ae;
+  --signal:#c0392f; --signal-soft:#f6e6e2;
+  --deep:#1f3a32; --deep-2:#162b25;
+  --glow:#f0b429; --cream:#f2ece0;
+  --display:'Fraunces',Georgia,serif;
+  --body:'Libre Franklin',system-ui,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    color-scheme: dark;
+    --paper:#15201c; --card:#1c2a24; --sunk:#24332c;
+    --sunk:#22302a;
+    --ink:#f0ece2; --ink-2:#aeb8b1; --ink-3:#7f8a83;
+    --line:#2e3d36; --line-2:#3d4e46;
+    --signal:#e2705f; --signal-soft:#2f1f1c;
+    --deep:#101a16; --deep-2:#0b1310;
+    --cream:#f0ece2;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --paper:#15201c; --card:#1c2a24; --sunk:#22302a;
+  --ink:#f0ece2; --ink-2:#aeb8b1; --ink-3:#7f8a83;
+  --line:#2e3d36; --line-2:#3d4e46;
+  --signal:#e2705f; --signal-soft:#2f1f1c;
+  --deep:#101a16; --deep-2:#0b1310;
+  --cream:#f0ece2;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--body);font-size:16px;line-height:1.6;
+  font-variant-ligatures:common-ligatures;-webkit-font-smoothing:antialiased}
+img{max-width:100%}
+[hidden]{display:none!important}
+
+/* paper grain: what flat AI pages never have */
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.5;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.055'/%3E%3C/svg%3E")}
+
+.wrap{max-width:1000px;margin:0 auto;padding-inline:20px;position:relative;z-index:2}
+.narrow{max-width:660px}
+
+/* ---- masthead ---- */
+.mast{display:flex;justify-content:space-between;align-items:center;gap:16px;
+  padding-block:20px 0;flex-wrap:wrap}
+.wordmark{font-family:var(--display);font-weight:800;font-size:15px;letter-spacing:.02em;
+  font-variation-settings:'SOFT' 40,'WONK' 1}
+.wordmark .st{color:var(--signal)}
+.mast .ph{font-family:var(--mono);font-size:13px;color:var(--ink-2);text-decoration:none;
+  border-bottom:1px solid var(--line-2);padding-bottom:1px}
+.mast .ph:hover{color:var(--signal);border-color:var(--signal)}
+
+/* awning stripe rule */
+.awning{height:7px;border-radius:2px;margin-block:18px 0;
+  background:repeating-linear-gradient(90deg,var(--signal) 0 14px,var(--cream) 14px 28px);
+  border:1px solid var(--line)}
+
+/* ---- hero ---- */
+.hero{padding-block:52px 40px}
+h1{font-family:var(--display);font-weight:800;margin:0 0 20px;
+  font-size:clamp(34px,6.6vw,62px);line-height:1.04;letter-spacing:-.022em;
+  font-variation-settings:'SOFT' 50,'WONK' 1;text-wrap:balance;max-width:19ch}
+h1 em{font-style:normal;color:var(--signal)}
+.dek{font-size:clamp(17px,2.2vw,20px);line-height:1.55;color:var(--ink-2);margin:0 0 28px;max-width:46ch}
+.dek b{color:var(--ink);font-weight:600}
+
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:9px;border:1.5px solid var(--ink);
+  background:var(--ink);color:var(--paper);text-decoration:none;
+  font-weight:600;font-size:15px;padding:13px 22px;border-radius:3px;cursor:pointer;
+  font-family:var(--body);transition:transform .12s ease,background .15s}
+.btn:hover{background:var(--signal);border-color:var(--signal);transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line-2)}
+.btn.ghost:hover{background:transparent;color:var(--signal);border-color:var(--signal)}
+.btn:focus-visible,a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible{
+  outline:2.5px solid var(--signal);outline-offset:2px}
+
+/* ---- the test ---- */
+.test{background:var(--card);border:1px solid var(--line);border-radius:4px;
+  padding:26px 24px 24px;margin-block:8px 0;box-shadow:0 1px 0 var(--line-2)}
+.kicker{font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--signal);margin-bottom:9px}
+.test h2{font-family:var(--display);font-weight:600;font-size:23px;line-height:1.2;margin:0 0 6px;
+  letter-spacing:-.012em;font-variation-settings:'SOFT' 40}
+.test .sub{color:var(--ink-2);font-size:15px;margin:0 0 20px;max-width:52ch}
+.fields{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.field{flex:1 1 200px;min-width:0}
+label{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-3);margin-bottom:6px}
+select,input[type=text],input[type=tel],textarea{width:100%;font-family:var(--body);font-size:15.5px;
+  padding:11px 12px;border:1.5px solid var(--line-2);border-radius:3px;
+  background:var(--paper);color:var(--ink)}
+select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%238a8177' stroke-width='1.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 12px center;padding-right:32px}
+
+.qs{border-top:1px dashed var(--line-2);padding-top:18px;margin-top:2px}
+.q{margin-bottom:14px}
+.q .n{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-3);margin-bottom:6px}
+.q .line{display:flex;gap:10px;align-items:flex-start;flex-wrap:wrap}
+.q .txt{flex:1 1 260px;font-family:var(--mono);font-size:14px;line-height:1.5;
+  background:var(--sunk);border-radius:3px;padding:11px 13px;color:var(--ink);
+  border-left:2.5px solid var(--signal);word-break:break-word}
+.copy{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;
+  border:1.5px solid var(--line-2);background:transparent;color:var(--ink-2);
+  padding:9px 13px;border-radius:3px;cursor:pointer;white-space:nowrap;flex:0 0 auto}
+.copy:hover{border-color:var(--signal);color:var(--signal)}
+.copy.done{border-color:var(--deep);color:var(--deep)}
+.verdict{background:var(--signal-soft);border-left:2.5px solid var(--signal);
+  padding:13px 15px;border-radius:0 3px 3px 0;font-size:15px;margin-top:16px;color:var(--ink)}
+.verdict b{font-weight:600}
+
+/* ---- the dark band: main street at dusk ---- */
+.street{background:var(--deep);color:var(--cream);margin-block:64px 0;
+  padding-block:52px 44px;position:relative;overflow:hidden;z-index:2}
+.street:after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:rgba(255,255,255,.08)}
+.street .wrap{max-width:1000px}
+.street h2{font-family:var(--display);font-weight:600;font-size:clamp(23px,3.6vw,32px);
+  line-height:1.12;margin:0 0 12px;letter-spacing:-.015em;color:var(--cream);max-width:20ch;
+  font-variation-settings:'SOFT' 40,'WONK' 1;text-wrap:balance}
+.street p{color:rgba(242,236,224,.72);max-width:50ch;margin:0 0 30px;font-size:16.5px}
+.street .kicker{color:var(--glow)}
+.row-svg{width:100%;height:auto;display:block;max-width:100%}
+.lit{opacity:.1;transition:opacity .5s ease}
+.on .lit{opacity:1}
+.shopname{font-family:var(--mono);font-size:8.5px;letter-spacing:.1em;fill:rgba(242,236,224,.5)}
+.street .caption{max-width:none;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;
+  color:rgba(242,236,224,.45);margin:16px 0 0;text-align:center}
+@media (prefers-reduced-motion:reduce){.lit{transition:none}}
+
+/* ---- sections ---- */
+section.band{padding-block:56px 0}
+h2.sec{font-family:var(--display);font-weight:600;font-size:clamp(24px,3.6vw,34px);
+  line-height:1.1;margin:0 0 14px;letter-spacing:-.016em;font-variation-settings:'SOFT' 40;
+  text-wrap:balance;max-width:20ch}
+.lead{color:var(--ink-2);font-size:17px;max-width:58ch;margin:0 0 16px}
+.lead:last-child{margin-bottom:0}
+.lead b{color:var(--ink);font-weight:600}
+
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:26px}
+@media(max-width:700px){.pair{grid-template-columns:1fr;gap:26px}}
+.pair h3{font-family:var(--display);font-weight:600;font-size:19px;line-height:1.25;margin:0 0 8px;
+  letter-spacing:-.01em;font-variation-settings:'SOFT' 40}
+.pair h3 span{color:var(--signal)}
+.pair p{margin:0;color:var(--ink-2);font-size:15.5px}
+
+ul.tick{list-style:none;padding:0;margin:14px 0 0;display:flex;flex-direction:column;gap:7px}
+ul.tick li{padding-left:22px;position:relative;font-size:15.5px;color:var(--ink-2)}
+ul.tick li:before{content:"";position:absolute;left:0;top:.62em;width:9px;height:9px;
+  border-radius:50%;border:1.5px solid var(--signal)}
+ul.tick li b{color:var(--ink);font-weight:600}
+
+/* price */
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:26px;
+  border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--card)}
+@media(max-width:700px){.tiers{grid-template-columns:1fr}}
+.tier{padding:22px 20px;border-right:1px solid var(--line)}
+.tier:last-child{border-right:0}
+@media(max-width:700px){.tier{border-right:0;border-bottom:1px solid var(--line)}
+  .tier:last-child{border-bottom:0}}
+.tier.mid{background:var(--sunk)}
+.tier .lbl{font-family:var(--mono);font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--ink-3);margin-bottom:9px}
+.tier .amt{font-family:var(--display);font-weight:800;font-size:32px;letter-spacing:-.02em;
+  line-height:1;margin-bottom:7px;font-variation-settings:'SOFT' 50}
+.tier .when{font-size:14.5px;color:var(--ink-2);margin:0}
+.after{display:grid;grid-template-columns:1.9fr 1fr;gap:26px;margin-top:20px;padding-top:18px;
+  border-top:1px solid var(--line);font-size:15.5px;color:var(--ink-2)}
+.after b{color:var(--ink);font-weight:600;font-family:var(--mono);font-size:15px}
+
+/* not for you */
+.nope{background:var(--sunk);border-radius:4px;padding:22px 24px 24px;margin-top:30px}
+.nope ul{list-style:none;padding:0;margin:10px 0 0;display:grid;
+  grid-template-columns:1fr 1fr;gap:6px 24px}
+@media(max-width:560px){.nope ul{grid-template-columns:1fr}}
+.nope li{padding-left:20px;position:relative;color:var(--ink-2);font-size:15px}
+.nope li:before{content:"";position:absolute;left:0;top:.72em;width:11px;height:1.5px;background:var(--ink-3)}
+
+/* steps */
+ol.steps{list-style:none;counter-reset:s;padding:0;margin:26px 0 0;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+@media(max-width:700px){ol.steps{grid-template-columns:1fr;gap:20px}}
+ol.steps li{counter-increment:s;padding-top:16px;border-top:2px solid var(--ink)}
+ol.steps li:before{content:counter(s);font-family:var(--mono);font-size:11.5px;
+  color:var(--signal);display:block;margin-bottom:7px;letter-spacing:.08em}
+@media(max-width:700px){.after{grid-template-columns:1fr;gap:12px}}
+ol.steps h3{font-family:var(--display);font-weight:600;font-size:17.5px;line-height:1.25;margin:0 0 5px;
+  font-variation-settings:'SOFT' 40}
+ol.steps p{margin:0;color:var(--ink-2);font-size:15px}
+
+/* close */
+.close{margin-block:60px 0;background:var(--deep);color:var(--cream);border-radius:4px;
+  padding:38px 32px}
+.close h2{font-family:var(--display);font-weight:700;font-size:clamp(24px,4vw,34px);
+  line-height:1.1;margin:0 0 12px;color:var(--cream);letter-spacing:-.018em;max-width:18ch;
+  font-variation-settings:'SOFT' 50,'WONK' 1;text-wrap:balance}
+.close p{color:rgba(242,236,224,.74);max-width:46ch;margin:0 0 24px;font-size:16.5px}
+.close .btn{background:var(--glow);border-color:var(--glow);color:#1c1405}
+.close .btn:hover{background:var(--cream);border-color:var(--cream);color:var(--deep)}
+.phone-line{margin-top:20px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.phone-line .num{font-family:var(--mono);font-size:19px;color:var(--cream);text-decoration:none;
+  border-bottom:1px solid rgba(242,236,224,.3)}
+.phone-line .num:hover{border-color:var(--glow);color:var(--glow)}
+.phone-line .hint{font-family:var(--mono);font-size:11.5px;color:rgba(242,236,224,.45);
+  letter-spacing:.05em}
+
+form.ask{margin-top:26px;display:grid;gap:12px;grid-template-columns:1fr 1fr}
+@media(max-width:600px){form.ask{grid-template-columns:1fr}}
+form.ask .full{grid-column:1/-1}
+form.ask label{color:rgba(242,236,224,.5)}
+form.ask input,form.ask textarea{background:rgba(0,0,0,.22);border-color:rgba(242,236,224,.22);
+  color:var(--cream)}
+form.ask input::placeholder,form.ask textarea::placeholder{color:rgba(242,236,224,.35)}
+.formnote{grid-column:1/-1;font-family:var(--mono);font-size:12px;color:rgba(242,236,224,.5);margin:0}
+
+footer{padding-block:38px 46px;margin-top:52px;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  font-size:13.5px;color:var(--ink-3)}
+footer a{color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--line)}
+footer a:hover{color:var(--signal);border-color:var(--signal)}
+.built{font-family:var(--mono);font-size:11.5px;letter-spacing:.04em}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="mast">
+    <div class="wordmark">BUILT FOR MAIN <span class="st">STREET</span></div>
+    <a class="ph" href="tel:+13235551234">(323) 555-1234</a>
+  </div>
+  <div class="awning"></div>
+</div>
+
+<div class="wrap">
+  <div class="hero">
+    <h1>Main Street didn't get worse. The place people <em>look</em> changed.</h1>
+    <p class="dek">Thirty years of good work. Five-star reviews. A line out the door on a
+    Saturday. And a machine that has never heard of you. <b>That is not a ranking
+    problem.</b> That is a shop that isn't in the index, and no amount of being good at
+    the work will fix it on its own.</p>
+    <div class="cta-row">
+      <a class="btn" href="#check">Get the free check</a>
+      <a class="btn ghost" href="#test">See it for yourself</a>
+    </div>
+  </div>
+</div>
+
+<div class="wrap" id="test">
+  <div class="test">
+    <div class="kicker">Try it before you call me</div>
+    <h2>Ask it yourself. Takes a minute.</h2>
+    <p class="sub">Pick your trade, put in your town, and paste these two questions into
+    ChatGPT or Google's AI answer. Nothing here gets sent to me.</p>
+
+    <div class="fields">
+      <div class="field">
+        <label for="trade">Your trade</label>
+        <select id="trade">
+          <option value="reupholstery">Upholstery</option>
+          <option value="tree removal">Tree service</option>
+          <option value="welding and ornamental iron">Welding and iron work</option>
+          <option value="masonry and concrete">Masonry and concrete</option>
+          <option value="cabinetry">Cabinetry</option>
+          <option value="landscaping">Landscaping</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="town">Your town</label>
+        <input type="text" id="town" value="Fort Wayne" autocomplete="address-level2">
+      </div>
+      <div class="field">
+        <label for="biz">Your business name</label>
+        <input type="text" id="biz" value="Hoffman &amp; Sons" autocomplete="organization">
+      </div>
+    </div>
+
+    <div class="qs">
+      <div class="q">
+        <div class="n">Question one, the shopping question</div>
+        <div class="line">
+          <div class="txt" id="q1"></div>
+          <button class="copy" data-for="q1" type="button">Copy</button>
+        </div>
+      </div>
+      <div class="q">
+        <div class="n">Question two, the one that matters</div>
+        <div class="line">
+          <div class="txt" id="q2"></div>
+          <button class="copy" data-for="q2" type="button">Copy</button>
+        </div>
+      </div>
+      <div class="verdict">
+        <b>If it names three shops and none of them are you,</b> you are invisible where
+        people now decide. <b>If it says it has no information about your business,</b>
+        you are not in the index at all. Either one is fixable, and both are what I do.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="street" id="street">
+  <div class="wrap">
+    <div class="kicker">Five real shops</div>
+    <h2>Being good at the work used to be enough.</h2>
+    <p>Every shop on this street is family-run and does honest work. Four of them can be
+    found. The fifth one can't, and it has nothing to do with the quality of the work.
+    That is the whole problem, and it is the only one I work on.</p>
+    <svg class="row-svg" viewBox="0 0 1000 220" role="img"
+         aria-label="A row of five storefronts. Four have their lights on; the fifth is dark.">
+      <g stroke="rgba(242,236,224,.34)" stroke-width="1.6" fill="none" stroke-linecap="square">
+        <!-- ground -->
+        <line x1="0" y1="196" x2="1000" y2="196" stroke="rgba(242,236,224,.28)"/>
+
+        <!-- SHOP 1 upholstery -->
+        <g>
+          <rect x="14" y="58" width="176" height="138"/>
+          <path d="M14 58 L102 26 L190 58"/>
+          <rect class="lit" x="34" y="92" width="86" height="64" fill="#f0b429" stroke="none"/>
+          <rect x="34" y="92" width="86" height="64"/>
+          <line x1="77" y1="92" x2="77" y2="156"/>
+          <rect x="140" y="106" width="34" height="90"/>
+          <path d="M14 82 h176" stroke-dasharray="14 14" stroke="#c0392f" stroke-width="5"/>
+        </g>
+        <text class="shopname" x="102" y="182" text-anchor="middle">UPHOLSTERY</text>
+
+        <!-- SHOP 2 tree service -->
+        <g>
+          <rect x="204" y="70" width="176" height="126"/>
+          <rect class="lit" x="224" y="100" width="62" height="58" fill="#f0b429" stroke="none"/>
+          <rect x="224" y="100" width="62" height="58"/>
+          <line x1="255" y1="100" x2="255" y2="158"/>
+          <rect x="306" y="112" width="34" height="84"/>
+          <path d="M204 92 h176" stroke-dasharray="14 14" stroke="#c0392f" stroke-width="5"/>
+          <path d="M360 196 v-40 M360 168 l-16 -18 M360 176 l16 -16"/>
+          <circle cx="360" cy="140" r="21"/>
+        </g>
+        <text class="shopname" x="292" y="182" text-anchor="middle">TREE SERVICE</text>
+
+        <!-- SHOP 3 welding -->
+        <g>
+          <rect x="394" y="52" width="176" height="144"/>
+          <path d="M394 52 h176 v18 h-176 z"/>
+          <rect class="lit" x="414" y="96" width="98" height="64" fill="#f0b429" stroke="none"/>
+          <rect x="414" y="96" width="98" height="64"/>
+          <line x1="414" y1="112" x2="512" y2="112"/>
+          <line x1="414" y1="128" x2="512" y2="128"/>
+          <line x1="414" y1="144" x2="512" y2="144"/>
+          <rect x="530" y="110" width="26" height="86"/>
+          <path d="M394 84 h176" stroke-dasharray="14 14" stroke="#c0392f" stroke-width="5"/>
+        </g>
+        <text class="shopname" x="482" y="182" text-anchor="middle">WELDING</text>
+
+        <!-- SHOP 4 masonry -->
+        <g>
+          <rect x="584" y="64" width="176" height="132"/>
+          <path d="M584 64 h176"/>
+          <line x1="584" y1="84" x2="760" y2="84"/>
+          <line x1="628" y1="64" x2="628" y2="84"/><line x1="672" y1="64" x2="672" y2="84"/>
+          <line x1="716" y1="64" x2="716" y2="84"/>
+          <rect class="lit" x="604" y="104" width="84" height="56" fill="#f0b429" stroke="none"/>
+          <rect x="604" y="104" width="84" height="56"/>
+          <rect x="708" y="110" width="34" height="86"/>
+          <path d="M584 96 h176" stroke-dasharray="14 14" stroke="#c0392f" stroke-width="5"/>
+        </g>
+        <text class="shopname" x="672" y="182" text-anchor="middle">MASONRY</text>
+
+        <!-- SHOP 5 dark -->
+        <g opacity=".55">
+          <rect x="774" y="70" width="176" height="126" stroke-dasharray="6 7"/>
+          <rect x="794" y="102" width="86" height="58" stroke-dasharray="6 7"/>
+          <line x1="837" y1="102" x2="837" y2="160" stroke-dasharray="6 7"/>
+          <rect x="900" y="112" width="34" height="84" stroke-dasharray="6 7"/>
+          <path d="M774 92 h176" stroke-dasharray="10 10" stroke="rgba(242,236,224,.3)" stroke-width="5"/>
+        </g>
+        <text class="shopname" x="862" y="182" text-anchor="middle" style="fill:rgba(242,236,224,.34)">YOURS?</text>
+      </g>
+    </svg>
+    <p class="caption">Four lit. One dark. The dark one has the best reviews on the street.</p>
+  </div>
+</div>
+
+<div class="wrap">
+
+<section class="band">
+  <h2 class="sec">Why I do this one thing.</h2>
+  <div class="narrow">
+    <p class="lead">A town is mostly the people who fix things in it. The man who
+    reupholsters your grandmother's chair. The crew that takes the limb off your roof
+    before it comes through the ceiling. They learned a trade, they stayed, and they got
+    good at it.</p>
+    <p class="lead">None of them signed up for a world where the first answer comes from
+    something that never walked down their street. They are not losing to a better shop.
+    They are losing to not being written down anywhere a machine can read.</p>
+    <p class="lead"><b>That is a solvable problem and it is not an expensive one.</b> It
+    is also not a marketing problem, which is why I don't sell marketing.</p>
+  </div>
+</section>
+
+<section class="band">
+  <h2 class="sec">What that takes.</h2>
+  <p class="lead">Two things, and they are both plumbing rather than promotion.</p>
+  <div class="pair">
+    <div>
+      <h3><span>One.</span> Be findable</h3>
+      <p>A fast site with a real page for every service and every town, written the way
+      search engines and assistants actually read a business. Your Google listing claimed
+      and filled out properly, in your name. Your own job photos, never stock.</p>
+    </div>
+    <div>
+      <h3><span>Two.</span> Be reachable</h3>
+      <p>Your number one tap away. A form that has been tested and actually arrives.
+      Hours that are right in both places. Most shops lose more customers here than in
+      search, because these people already chose you and then gave up.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <h2 class="sec">How I work.</h2>
+  <div class="narrow">
+    <p class="lead">I look you up first and show you what I find, free, before money comes
+    up. If it's already fine I tell you so. If it isn't, the build is <b>$600 to
+    $1,000</b>, depending on how many services you offer and how many towns you drive to.
+    We work it out on the first call and the number doesn't move after that. After it's
+    live it's <b>$199 a month</b> to keep it current, with thirty days' notice to stop.</p>
+    <p class="lead">Every month I re-run the same questions you just ran and send you the
+    answers. Not a rankings promise. The actual answers, so you can check them yourself.</p>
+  </div>
+  <div class="nope">
+    <div class="kicker" style="color:var(--ink-3)">And what I won't do</div>
+    <ul>
+      <li>No social media, blogs or ads</li>
+      <li>No chatbots talking to your customers</li>
+      <li>Nothing that replaces somebody on your payroll</li>
+      <li>No promises about rankings or revenue</li>
+    </ul>
+  </div>
+</section>
+
+<div class="close" id="check">
+  <h2>Find out where you stand.</h2>
+  <p>It costs nothing and it takes ten minutes. Worst case you find out you're fine,
+  which I will tell you plainly, because I would rather be the person who told you that
+  than the person who sold you something you didn't need.</p>
+
+  <div class="phone-line">
+    <a class="num" href="tel:+13235551234">(323) 555-1234</a>
+    <span class="hint">Call or text. A real person, same day.</span>
+  </div>
+
+  <form class="ask" id="askform" novalidate>
+    <div>
+      <label for="f-name">Your name</label>
+      <input type="text" id="f-name" name="name" placeholder="Jim Hoffman">
+    </div>
+    <div>
+      <label for="f-biz">Business</label>
+      <input type="text" id="f-biz" name="business" placeholder="Hoffman &amp; Sons Upholstery">
+    </div>
+    <div>
+      <label for="f-town">Town</label>
+      <input type="text" id="f-town" name="town" placeholder="Fort Wayne, IN">
+    </div>
+    <div>
+      <label for="f-phone">Best number</label>
+      <input type="tel" id="f-phone" name="phone" placeholder="(260) 555-0100">
+    </div>
+    <div class="full">
+      <button class="btn" type="submit">Send it over</button>
+    </div>
+    <p class="formnote" id="formnote">I run the check and call you back. I don't add you to
+    a list and there is nothing to unsubscribe from.</p>
+  </form>
+</div>
+
+<footer>
+  <span>Built for Main Street &middot; Los Angeles, California</span>
+  <span class="built">Built with the same system I'd build yours with.</span>
+</footer>
+
+</div>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"ProfessionalService",
+  "name":"Built for Main Street",
+  "description":"Websites and Google Business Profile work for local trade businesses, so search engines and AI assistants can find them and customers can reach them.",
+  "url":"https://builtformainstreet.com",
+  "telephone":"+1-323-555-1234",
+  "priceRange":"$600-$1500",
+  "areaServed":{"@type":"Country","name":"United States"},
+  "address":{"@type":"PostalAddress","addressLocality":"Los Angeles","addressRegion":"CA","addressCountry":"US"},
+  "knowsAbout":["Local search visibility","Google Business Profile","Structured data","Answer engine optimization"],
+  "hasOfferCatalog":{
+    "@type":"OfferCatalog",
+    "name":"Services",
+    "itemListElement":[
+      {"@type":"Offer","name":"Visibility Check","price":"0","priceCurrency":"USD",
+       "itemOffered":{"@type":"Service","name":"Visibility Check","description":"A report of where a business appears in search and what AI assistants say about it."}},
+      {"@type":"Offer","name":"Build and fix","price":"600","priceCurrency":"USD",
+       "itemOffered":{"@type":"Service","name":"Website build and Google Business Profile setup"}},
+      {"@type":"Offer","name":"Keep it found","price":"199","priceCurrency":"USD",
+       "itemOffered":{"@type":"Service","name":"Hosting, edits, listing upkeep and monthly visibility report"}}
+    ]
+  }
+}
+</script>
+
+<script>
+(function(){
+  var trade=document.getElementById('trade'),
+      town=document.getElementById('town'),
+      biz=document.getElementById('biz'),
+      q1=document.getElementById('q1'), q2=document.getElementById('q2');
+
+  function render(){
+    var t=trade.value,
+        w=(town.value||'').trim()||'your town',
+        b=(biz.value||'').trim()||'your business';
+    q1.textContent='Who should I hire for '+t+' in '+w+'?';
+    q2.textContent='Tell me about '+b+' in '+w+'. What do they do and how do I contact them?';
+  }
+  [trade,town,biz].forEach(function(el){
+    el.addEventListener('input',render); el.addEventListener('change',render);
+  });
+  render();
+
+  document.querySelectorAll('.copy').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var src=document.getElementById(btn.getAttribute('data-for'));
+      var text=src.textContent, done=function(){
+        btn.textContent='Copied'; btn.classList.add('done');
+        setTimeout(function(){btn.textContent='Copy'; btn.classList.remove('done');},1800);
+      };
+      if(navigator.clipboard&&navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(done).catch(function(){select(src);});
+      } else { select(src); }
+    });
+  });
+  function select(el){
+    try{
+      var r=document.createRange(); r.selectNodeContents(el);
+      var s=window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    }catch(e){}
+  }
+
+  // lights come on down the street
+  var street=document.getElementById('street');
+  if(street){
+    var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+    var lits=street.querySelectorAll('.lit');
+    var light=function(){
+      if(reduce){ street.classList.add('on'); return; }
+      Array.prototype.forEach.call(lits,function(el,i){
+        setTimeout(function(){ el.style.opacity='1'; }, 380+i*260);
+      });
+    };
+    if('IntersectionObserver' in window){
+      var io=new IntersectionObserver(function(es){
+        es.forEach(function(e){ if(e.isIntersecting){ light(); io.disconnect(); } });
+      },{threshold:.25});
+      io.observe(street);
+    } else { street.classList.add('on'); }
+  }
+
+  // the form has no server yet; point it somewhere before launch
+  var form=document.getElementById('askform'), note=document.getElementById('formnote');
+  if(form){
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      note.innerHTML='This form has nowhere to send to yet. Call or text '+
+        '<b>(323) 555-1234</b> and I\'ll run the check today.';
+    });
+  }
+})();
+</script>
+</body>
+</html>
