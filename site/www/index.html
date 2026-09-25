@@ -257,9 +257,30 @@ form.ask input::placeholder,form.ask textarea::placeholder{color:rgba(242,236,22
 .sig{font-family:var(--display);font-weight:600;font-size:21px;color:var(--ink);
   font-variation-settings:'SOFT' 60,'WONK' 1;margin-top:4px}
 
+/* the mechanism */
+.figure{margin:24px 0 0;padding:0}
+.pathfig{width:100%;height:auto;max-width:100%;color:var(--ink);display:block}
+.figure figcaption{font-size:14.5px;color:var(--ink-2);margin-top:14px;max-width:62ch;line-height:1.55}
+.figure figcaption b{color:var(--ink);font-weight:600}
+@media(max-width:720px){
+  .figure{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .pathfig{min-width:660px}
+}
+
+/* the site doing its own sermon: on a phone the number never leaves */
+.callbar{display:none}
+@media(max-width:760px){
+  .callbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:40;
+    align-items:baseline;justify-content:center;gap:10px;text-decoration:none;
+    background:var(--signal);color:#fff;
+    padding:13px 16px calc(13px + env(safe-area-inset-bottom,0px));
+    box-shadow:0 -2px 14px rgba(0,0,0,.18)}
+  .cb-l{font-family:var(--body);font-size:13.5px;font-weight:600;opacity:.85}
+  .cb-n{font-family:var(--mono);font-size:17px;letter-spacing:.01em}
+  footer{padding-bottom:calc(52px + env(safe-area-inset-bottom,0px))}
+}
 footer{margin-top:64px;border-top:1px solid var(--line);padding-block:34px 44px}
-.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1.2fr;gap:34px}
-@media(max-width:760px){.foot-grid{grid-template-columns:1fr 1fr;gap:26px}}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;max-width:760px}
 @media(max-width:480px){.foot-grid{grid-template-columns:1fr}}
 .foot-grid h4{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;
   text-transform:uppercase;color:var(--ink-3);margin:0 0 11px;font-weight:400}
@@ -283,6 +304,11 @@ footer a:hover{color:var(--signal);border-color:var(--signal)}
 </style>
 </head>
 <body>
+
+<a class="callbar" href="tel:+13235551234">
+  <span class="cb-l">Call or text</span>
+  <span class="cb-n">(323) 555-1234</span>
+</a>
 
 <div class="wrap">
   <div class="mast">
@@ -327,11 +353,11 @@ footer a:hover{color:var(--signal);border-color:var(--signal)}
       </div>
       <div class="field">
         <label for="town">Your town</label>
-        <input type="text" id="town" value="Fort Wayne" autocomplete="address-level2">
+        <input type="text" id="town" placeholder="Fort Wayne" value="" autocomplete="address-level2">
       </div>
       <div class="field">
         <label for="biz">Your business name</label>
-        <input type="text" id="biz" value="Hoffman &amp; Sons" autocomplete="organization">
+        <input type="text" id="biz" placeholder="your shop's name" value="" autocomplete="organization">
       </div>
     </div>
 
@@ -476,6 +502,58 @@ footer a:hover{color:var(--signal);border-color:var(--signal)}
 </section>
 
 <section class="band">
+  <h2 class="sec">Where the path breaks.</h2>
+  <p class="lead">Somebody needs the work done and somebody gets hired. Between those two
+  things there are five steps, and a shop can fall out at two of them.</p>
+  <figure class="figure">
+    <svg viewBox="0 0 1000 184" role="img" class="pathfig"
+      aria-label="Five steps from a customer needing work to the shop's phone ringing. The path breaks at step three if the shop is not in the answer, and at step four if the customer cannot reach them.">
+      <defs>
+        <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0 0 L10 5 L0 10 z" fill="currentColor"/>
+        </marker>
+        <marker id="arx" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0 0 L10 5 L0 10 z" fill="#c0392f"/>
+        </marker>
+      </defs>
+      <g fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="4"   y="44" width="164" height="54" rx="3"/>
+        <rect x="212" y="44" width="164" height="54" rx="3"/>
+        <rect x="420" y="44" width="164" height="54" rx="3" stroke="#c0392f" stroke-width="2.2"/>
+        <rect x="628" y="44" width="164" height="54" rx="3" stroke="#c0392f" stroke-width="2.2"/>
+        <rect x="836" y="44" width="164" height="54" rx="3"/>
+        <line x1="174" y1="71" x2="200" y2="71" marker-end="url(#ar)"/>
+        <line x1="382" y1="71" x2="408" y2="71" marker-end="url(#ar)"/>
+        <line x1="590" y1="71" x2="616" y2="71" marker-end="url(#ar)"/>
+        <line x1="798" y1="71" x2="824" y2="71" marker-end="url(#ar)"/>
+        <path d="M502 100 V150" stroke="#c0392f" stroke-dasharray="5 5" marker-end="url(#arx)"/>
+        <path d="M710 100 V150" stroke="#c0392f" stroke-dasharray="5 5" marker-end="url(#arx)"/>
+      </g>
+      <g font-family="'Libre Franklin',sans-serif" font-size="12.5" fill="currentColor" text-anchor="middle">
+        <text x="86"  y="66">Somebody needs</text><text x="86"  y="82">the work done</text>
+        <text x="294" y="66">They ask Google</text><text x="294" y="82">or an assistant</text>
+        <text x="502" y="66">You are in</text><text x="502" y="82">the answer</text>
+        <text x="710" y="66">They can reach</text><text x="710" y="82">you in one tap</text>
+        <text x="918" y="66">Your phone</text><text x="918" y="82">rings</text>
+      </g>
+      <g font-family="'IBM Plex Mono',monospace" font-size="10" fill="currentColor" opacity=".62" text-anchor="middle">
+        <text x="187" y="34">types it</text>
+        <text x="395" y="34">gets 2 or 3 names</text>
+        <text x="603" y="34">taps through</text>
+        <text x="811" y="34">taps the number</text>
+      </g>
+      <g font-family="'IBM Plex Mono',monospace" font-size="10.5" fill="#c0392f" text-anchor="middle">
+        <text x="502" y="170">not in it, not in the running</text>
+        <text x="710" y="170">gives up, calls the next one</text>
+      </g>
+    </svg>
+    <figcaption><b>Both red steps are mine to fix, and nothing else on that line is.</b>
+    Steps one, two and five are out of everybody's hands, which is also why I won't sell
+    you anything aimed at them.</figcaption>
+  </figure>
+</section>
+
+<section class="band">
   <h2 class="sec">What that takes.</h2>
   <p class="lead">Two jobs. Neither one is marketing.</p>
   <div class="pair">
@@ -551,7 +629,7 @@ footer a:hover{color:var(--signal);border-color:var(--signal)}
 </section>
 
 <div class="close" id="check">
-  <h2>Find out where you stand.</h2>
+  <h2>Find out what they see.</h2>
   <p>It costs nothing and it takes ten minutes. Worst case you find out you're fine,
   which I will tell you plainly, because I would rather be the person who told you that
   than the person who sold you something you didn't need.</p>
@@ -600,20 +678,9 @@ footer a:hover{color:var(--signal);border-color:var(--signal)}
       <p>Call or text, 8am to 7pm Pacific. I answer texts after that too, I just
       won't pretend otherwise.</p>
     </div>
-    <div>
-      <h4>Where you stand</h4>
-      <ul>
-        <li>Your domain is registered in your name and stays yours</li>
-        <li>Thirty days' notice to stop. No annual contract</li>
-        <li>Your Google listing is claimed in your name, never mine</li>
-        <li>I don't promise rankings. I send you the answers and you check them</li>
-        <li>After a year you can buy the site outright for $2,000</li>
-      </ul>
-    </div>
   </div>
   <div class="foot-bottom">
     <span>&copy; 2026 Built for Main Street &middot; Los Angeles, CA</span>
-    <span>Built with the same system I'd build yours with</span>
   </div>
 </footer>
 
