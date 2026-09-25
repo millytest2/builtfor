@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Built for Main Street</title>
 <!--
-  BEFORE YOU GO LIVE, change three things:
-  1. The phone number. It appears 4 times: masthead link, close-block link,
-     the JSON-LD "telephone" field, and the form fallback message in the script.
-     Search this file for 323 and replace every hit.
-  2. The form. It currently does nothing. Give <form id="askform"> an action
-     (Formspree, Tally, Basin) and delete the submit handler at the bottom.
-  3. Nothing else. No build step, no framework, no dependencies.
+  ONE THING LEFT BEFORE YOU GO LIVE:
+  The form does nothing yet. Give <form id="askform"> an action (Formspree,
+  Tally or Basin all work on a static site) and delete the submit handler at
+  the bottom of this file.
+
+  Everything else is set. No build step, no framework, no dependencies.
+  Phone and email are live throughout.
 -->
 <meta name="description" content="Ask ChatGPT who does your work in your town. If your shop's name doesn't come up, that's what we fix.">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -314,15 +314,15 @@ footer a:hover{color:var(--signal);border-color:var(--signal)}
 </head>
 <body>
 
-<a class="callbar" href="tel:+13235551234">
+<a class="callbar" href="tel:+13106069788">
   <span class="cb-l">Call or text</span>
-  <span class="cb-n">(323) 555-1234</span>
+  <span class="cb-n">(310) 606-9788</span>
 </a>
 
 <div class="wrap">
   <div class="mast">
     <div class="wordmark">BUILT FOR MAIN <span class="st">STREET</span></div>
-    <a class="ph" href="tel:+13235551234">(323) 555-1234</a>
+    <a class="ph" href="tel:+13106069788">(310) 606-9788</a>
   </div>
   <div class="awning"></div>
 </div>
@@ -335,8 +335,8 @@ footer a:hover{color:var(--signal);border-color:var(--signal)}
     like this all day, and the ones missing from it are usually the ones that have been
     around the longest.</p>
     <div class="cta-row">
-      <a class="btn" href="#check">Get the free check</a>
-      <a class="btn ghost" href="#test">Check your own shop</a>
+      <a class="btn" href="#check">Show me what they see</a>
+      <a class="btn ghost" href="#test">Or check it yourself</a>
     </div>
   </div>
 </div>
@@ -419,7 +419,7 @@ footer a:hover{color:var(--signal);border-color:var(--signal)}
       </g>
     </svg>
     <p class="caption">Four lit. One dark. The dark one has the best reviews on the street.</p>
-    <p class="handoff">That is not a drawing of a hypothetical. Here are four of them.</p>
+    <p class="handoff">The dark one is not a hypothetical. Here are four of them.</p>
   </div>
 </div>
 
@@ -505,9 +505,10 @@ footer a:hover{color:var(--signal);border-color:var(--signal)}
         </div>
       </div>
       <div class="verdict">
-        <b>If it names three shops and none of them are you,</b> you are invisible where
-        people now decide. <b>If it says it has no information about your business,</b>
-        you are not in the index at all. Either one is fixable, and both are what I do.
+        <b>Named three shops and none of them were you?</b> You are not in the running
+        for work you would have won. <b>Said it had no information about your
+        business?</b> Then you are not in there at all. I can fix either one, and it is
+        the same fix.
       </div>
       <p class="handoff in">Whatever came back, the reason is the same, and it is
       narrower than it looks.</p>
@@ -657,13 +658,13 @@ footer a:hover{color:var(--signal);border-color:var(--signal)}
 
 <div class="close" id="check">
   <h2>Find out what they see.</h2>
-  <p>It costs nothing and it takes ten minutes. Worst case you find out you're fine,
-  which I will tell you plainly, because I would rather be the person who told you that
-  than the person who sold you something you didn't need.</p>
+  <p>Ten minutes, costs nothing. I will have looked you up before we talk, so you are
+  not sitting through a pitch. If everything is already working I will tell you that and
+  we will hang up, which has happened and will happen again.</p>
 
   <div class="phone-line">
-    <a class="num" href="tel:+13235551234">(323) 555-1234</a>
-    <span class="hint">Call or text. A real person, same day.</span>
+    <a class="num" href="tel:+13106069788">(310) 606-9788</a>
+    <span class="hint">Call or text. It is me, and I answer.</span>
   </div>
 
   <form class="ask" id="askform" novalidate>
@@ -695,13 +696,14 @@ footer a:hover{color:var(--signal);border-color:var(--signal)}
   <div class="foot-grid">
     <div>
       <div class="foot-mark">BUILT FOR MAIN <span class="st">STREET</span></div>
-      <p>Websites and Google listings for shops that do real work. One person, Los
-      Angeles, working with trades across the country.</p>
+      <p>One person in Los Angeles. When somebody goes looking for the work you do, I
+      make sure they find you and can get hold of you. That is the entire business,
+      and I am not planning on adding to it.</p>
     </div>
     <div>
       <h4>Get hold of me</h4>
-      <a class="foot-num" href="tel:+13235551234">(323) 555-1234</a>
-      <p><a href="mailto:miles@builtformainstreet.com">miles@builtformainstreet.com</a></p>
+      <a class="foot-num" href="tel:+13106069788">(310) 606-9788</a>
+      <p><a href="mailto:hello@builtformainstreet.com">hello@builtformainstreet.com</a></p>
       <p>Call or text, 8am to 7pm Pacific. I answer texts after that too, I just
       won't pretend otherwise.</p>
     </div>
@@ -720,7 +722,7 @@ footer a:hover{color:var(--signal);border-color:var(--signal)}
   "name":"Built for Main Street",
   "description":"Websites and Google Business Profile work for local trade businesses, so search engines and AI assistants can find them and customers can reach them.",
   "url":"https://builtformainstreet.com",
-  "telephone":"+1-323-555-1234",
+  "telephone":"+1-310-606-9788",
   "priceRange":"$600-$1500",
   "areaServed":{"@type":"Country","name":"United States"},
   "address":{"@type":"PostalAddress","addressLocality":"Los Angeles","addressRegion":"CA","addressCountry":"US"},
@@ -802,8 +804,8 @@ footer a:hover{color:var(--signal);border-color:var(--signal)}
   if(form){
     form.addEventListener('submit',function(e){
       e.preventDefault();
-      note.innerHTML='This form has nowhere to send to yet. Call or text '+
-        '<b>(323) 555-1234</b> and I\'ll run the check today.';
+      note.innerHTML='This form is not wired up yet. Call or text <b>(310) 606-9788</b> '+
+        'or email <b>hello@builtformainstreet.com</b> and I will look you up today.';
     });
   }
 })();
