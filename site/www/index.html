@@ -27,7 +27,7 @@
   --glow:#f0b429; --cream:#f2ece0;
   --gut:clamp(20px,5vw,40px);
   --measure:min(100%,760px);
-  --wide:min(100%,980px);
+  --wide:min(100%,1060px);
   --display:'Fraunces',Georgia,serif;
   --body:'Libre Franklin',system-ui,sans-serif;
   --mono:'IBM Plex Mono',ui-monospace,monospace;
@@ -66,7 +66,7 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opac
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.055'/%3E%3C/svg%3E")}
 
 .wrap{max-width:1180px;margin:0 auto;padding-inline:var(--gut);position:relative;z-index:2}
-.col,section.band > *{max-width:var(--measure);margin-inline:auto}
+.col{max-width:var(--wide);margin-inline:auto}
 .wide{max-width:var(--wide)!important}
 .narrow{max-width:660px}
 
@@ -91,7 +91,7 @@ h1{font-family:var(--display);font-weight:800;margin:0 0 20px;
   font-size:clamp(34px,6.6vw,62px);line-height:1.04;letter-spacing:-.022em;
   font-variation-settings:'SOFT' 50,'WONK' 1;text-wrap:balance;max-width:19ch}
 h1 em{font-style:normal;color:var(--signal)}
-.dek{font-size:clamp(17px,2.2vw,20px);line-height:1.55;color:var(--ink-2);margin:0 0 28px;max-width:46ch}
+.dek{font-size:clamp(17px,2.2vw,20px);line-height:1.55;color:var(--ink-2);margin:0 0 32px;max-width:58ch}
 .dek b{color:var(--ink);font-weight:600}
 
 .cta-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
@@ -219,10 +219,10 @@ ol.steps h3{font-family:var(--display);font-weight:600;font-size:17.5px;line-hei
 ol.steps p{margin:0;color:var(--ink-2);font-size:15px}
 
 /* close */
-.close{margin-block:60px 0;background:var(--deep);color:var(--cream);border-radius:4px;
+.close{max-width:var(--wide);margin:60px auto 0;background:var(--deep);color:var(--cream);border-radius:4px;
   padding:38px 32px}
-.close h2{font-family:var(--display);font-weight:700;font-size:clamp(24px,4vw,34px);
-  line-height:1.1;margin:0 0 12px;color:var(--cream);letter-spacing:-.018em;max-width:18ch;
+.close h2{font-family:var(--display);font-weight:700;font-size:clamp(26px,4vw,38px);
+  line-height:1.06;margin:0 0 14px;color:var(--cream);letter-spacing:-.02em;max-width:22ch;
   font-variation-settings:'SOFT' 50,'WONK' 1;text-wrap:balance}
 .close p{color:rgba(242,236,224,.74);max-width:46ch;margin:0 0 24px;font-size:16.5px}
 .close .btn{background:var(--glow);border-color:var(--glow);color:#1c1405}
@@ -307,7 +307,7 @@ h3.subsec{font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-trans
 .plab{font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;
   color:rgba(242,236,224,.55);margin:10px 0 12px}
 .pricecol p{color:rgba(242,236,224,.74);font-size:15.5px;margin:0;max-width:38ch}
-.pfoot{color:rgba(242,236,224,.74);font-size:16px;margin:26px 0 0;max-width:56ch}
+.pfoot{color:rgba(242,236,224,.74);font-size:16.5px;margin:28px 0 0;max-width:66ch}
 .pfoot b{color:var(--cream);font-weight:600}
 
 /* awning stripe returns between sections instead of only at the top */
@@ -316,17 +316,18 @@ h3.subsec{font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-trans
 
 
 /* ---------- one column, everything on the same axis ---------- */
-section.band{padding-block:clamp(56px,9vw,104px) 0}
-section.band > h2.sec{margin:0 0 24px;font-size:clamp(26px,4vw,40px);max-width:var(--measure);
-  margin-inline:auto;line-height:1.08}
-.bbody{max-width:var(--measure);margin-inline:auto}
-.bbody > .lead{max-width:none;font-size:clamp(16.5px,1.9vw,18.5px);margin-bottom:24px}
+/* one column at the wide track; prose capped for reading but left-aligned to it */
+section.band{padding-block:clamp(56px,9vw,104px) 0;max-width:var(--wide);margin-inline:auto}
+section.band > h2.sec{margin:0 0 24px;font-size:clamp(26px,4vw,40px);max-width:18ch;
+  line-height:1.06}
+.bbody{max-width:none}
+.bbody > .lead{max-width:66ch;font-size:clamp(16.5px,1.9vw,18.5px);margin-bottom:24px}
 .bbody > .lead:first-child{font-size:clamp(17.5px,2.2vw,21px);color:var(--ink);line-height:1.45}
 .bbody > .lead:last-child{margin-bottom:0}
 
 /* findings: same left edge, stacked, no sprawl */
 ol.finds{list-style:none;counter-reset:fi;padding:0;margin:32px 0 0;
-  display:grid;grid-template-columns:1fr 1fr;column-gap:40px;row-gap:0}
+  display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(32px,5vw,64px);row-gap:0}
 @media(max-width:700px){ol.finds{grid-template-columns:1fr}}
 li.find{counter-increment:fi;padding:24px 0;border-top:1px solid var(--line)}
 li.find .who{font-family:var(--display);font-weight:600;font-size:clamp(17px,2.1vw,19.5px);
@@ -350,14 +351,62 @@ li.find p{margin:0;font-size:15.5px;color:var(--ink-2);line-height:1.6}
 
 .pair{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:32px}
 @media(max-width:640px){.pair{grid-template-columns:1fr;gap:28px}}
-.figure{margin:32px auto 0;max-width:var(--wide)}
-.test{margin:32px auto 0;max-width:var(--measure)}
-.street .wrap > *{max-width:var(--measure);margin-inline:auto}
-.street .row-svg,.street .caption{max-width:var(--wide)}
-.pricegrid,.pfoot{max-width:var(--measure);margin-inline:auto}
+.figure{margin:32px 0 0}
+.test{margin:32px 0 0}
+.street .wrap > *{max-width:var(--wide);margin-inline:auto}
+
+.pricegrid,.pfoot{max-width:var(--wide);margin-inline:auto}
+
+/* ---------- nav ---------- */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;
+  background:color-mix(in srgb,var(--paper) 88%,transparent);
+  backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:1180px;margin:0 auto;padding:12px var(--gut);
+  display:flex;align-items:center;gap:24px}
+.nav .wordmark{text-decoration:none;color:var(--ink);white-space:nowrap;font-size:14px}
+.nav-links{display:flex;gap:22px;margin-left:auto;flex-wrap:wrap}
+.nav-links a{font-size:14px;color:var(--ink-2);text-decoration:none;white-space:nowrap;
+  padding:4px 0;border-bottom:1.5px solid transparent}
+.nav-links a:hover,.nav-links a.here{color:var(--ink);border-bottom-color:var(--signal)}
+.nav-cta{font-size:14px;font-weight:600;color:var(--paper);background:var(--signal);
+  text-decoration:none;padding:9px 16px;border-radius:3px;white-space:nowrap}
+.nav-cta:hover{background:var(--ink)}
+@media(max-width:900px){.nav-links{display:none}.nav-in{gap:14px}.nav-cta{margin-left:auto}}
+html{scroll-behavior:smooth;scroll-padding-top:74px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* ---------- wide bands use the screen instead of leaving it empty ---------- */
+
+
+.deliver{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,56px);margin-top:32px}
+@media(max-width:700px){.deliver{grid-template-columns:1fr;gap:32px}}
+.dhead{display:flex;align-items:baseline;gap:12px;padding-bottom:12px;
+  border-bottom:2px solid var(--ink);margin-bottom:16px}
+.dnum{font-family:var(--mono);font-size:12px;color:var(--signal);letter-spacing:.1em}
+.dhead h3{font-family:var(--display);font-weight:600;font-size:clamp(19px,2.4vw,23px);
+  margin:0;letter-spacing:-.015em;font-variation-settings:'SOFT' 40}
+.dcol ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:11px}
+.dcol li{padding-left:26px;position:relative;font-size:16px;color:var(--ink-2);line-height:1.45}
+.dcol li b{color:var(--ink);font-weight:600}
+.dcol li:before{content:"";position:absolute;left:0;top:.42em;width:12px;height:7px;
+  border-left:2px solid var(--signal);border-bottom:2px solid var(--signal);
+  transform:rotate(-45deg)}
+
+.tenets{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,3vw,44px);margin-top:32px}
+@media(max-width:760px){.tenets{grid-template-columns:1fr;gap:28px}}
+.tenet{border-top:2px solid var(--ink);padding-top:18px}
+.tnum{font-family:var(--display);font-weight:800;font-size:clamp(40px,5.5vw,62px);
+  line-height:.92;letter-spacing:-.04em;color:var(--signal);
+  font-variation-settings:'SOFT' 50,'WONK' 1}
+.tenet h3{font-family:var(--display);font-weight:600;font-size:clamp(17px,2vw,20px);
+  margin:6px 0 10px;letter-spacing:-.01em;font-variation-settings:'SOFT' 40}
+.tenet p{margin:0;font-size:15.5px;color:var(--ink-2);line-height:1.55}
+.tfoot{margin:34px auto 0;font-size:16.5px;color:var(--ink-2);padding-top:20px;
+  border-top:1px solid var(--line)}
+.tfoot b{color:var(--ink);font-weight:600}
 footer{margin-top:96px;border-top:1px solid var(--line);padding-block:34px 44px}
-.foot-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;
-  max-width:var(--measure);margin-inline:auto}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:56px;
+  max-width:var(--wide);margin-inline:auto}
 @media(max-width:480px){.foot-grid{grid-template-columns:1fr}}
 .foot-grid h4{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;
   text-transform:uppercase;color:var(--ink-3);margin:0 0 11px;font-weight:400}
@@ -373,7 +422,7 @@ footer a:hover{color:var(--signal);border-color:var(--signal)}
   border-bottom:1px solid var(--line-2);text-decoration:none;display:inline-block;margin-bottom:5px}
 .foot-num:hover{color:var(--signal);border-color:var(--signal)}
 .foot-bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
-  max-width:var(--measure);margin-inline:auto;margin-top:32px;padding-top:18px;border-top:1px solid var(--line);
+  max-width:var(--wide);margin-inline:auto;margin-top:32px;padding-top:18px;border-top:1px solid var(--line);
   font-family:var(--mono);font-size:11.5px;letter-spacing:.03em;color:var(--ink-3)}
 .foot-mark{font-family:var(--display);font-weight:800;font-size:15px;letter-spacing:.02em;
   color:var(--ink);font-variation-settings:'SOFT' 40,'WONK' 1;margin-bottom:10px}
@@ -382,12 +431,26 @@ footer a:hover{color:var(--signal);border-color:var(--signal)}
 </head>
 <body>
 
+<nav class="nav" id="nav">
+  <div class="nav-in">
+    <a class="wordmark" href="#top">BUILT FOR MAIN <span class="st">STREET</span></a>
+    <div class="nav-links">
+      <a href="#problem">The problem</a>
+      <a href="#check">Check yours</a>
+      <a href="#work">What we do</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#company">Who we are</a>
+    </div>
+    <a class="nav-cta" href="#start">Free check</a>
+  </div>
+</nav>
+
 <a class="callbar" href="tel:+13106069788">
   <span class="cb-l">Call or text</span>
   <span class="cb-n">(310) 606-9788</span>
 </a>
 
-<div class="wrap">
+<div class="wrap" id="top">
   <div class="mast">
     <div class="wordmark">BUILT FOR MAIN <span class="st">STREET</span></div>
     <a class="ph" href="tel:+13106069788">(310) 606-9788</a>
@@ -399,8 +462,8 @@ footer a:hover{color:var(--signal);border-color:var(--signal)}
   <div class="hero col">
     <h1>Your next customer is asking a machine who to <em>call</em>.</h1>
     <p class="dek">Not Google. ChatGPT, or that AI answer sitting on top of the search
-    results. It names two or three shops and that is the whole list. I have spent weeks looking up
-    shops one at a time, and the ones missing from that list are usually the ones that
+    results. It names two or three shops and that is the whole list. We have spent weeks looking up shops
+    one at a time, and the ones missing from that list are usually the ones that
     have been around the longest.</p>
     <div class="cta-row">
       <a class="btn" href="#check">Show me what they see</a>
@@ -490,7 +553,7 @@ footer a:hover{color:var(--signal);border-color:var(--signal)}
 </div>
 
 <div class="wrap">
-<section class="band">
+<section class="band" id="problem">
   <h2 class="sec">Four things I found last week.</h2>
   <div class="bbody">
   <p class="lead">Real shops, found while building a call list.</p>
@@ -568,8 +631,7 @@ footer a:hover{color:var(--signal);border-color:var(--signal)}
       <div class="verdict">
         <b>Named three shops and none of them were you?</b> You are not in the running
         for work you would have won. <b>Said it had no information about your
-        business?</b> Then you are not in there at all. I can fix either one, and it is
-        the same fix.
+        business?</b> Then you are not in there at all. Either one is fixable, and it is the same fix.
       </div>
     </div>
   </div>
@@ -593,11 +655,8 @@ footer a:hover{color:var(--signal);border-color:var(--signal)}
 
 
 
-<section class="band">
-  <h2 class="sec">Where the path breaks.</h2>
-  <div class="bbody">
-  <p class="lead">Five steps between somebody needing the work and somebody getting hired.
-  A shop can fall out at two of them.</p>
+<section class="band wide-band">
+  <h2 class="sec">Five steps. You can fall out at two.</h2>
   <figure class="figure">
     <svg viewBox="0 0 1000 184" role="img" class="pathfig"
       aria-label="Five steps from a customer needing work to the shop's phone ringing. The path breaks at step three if the shop is not in the answer, and at step four if the customer cannot reach them.">
@@ -640,37 +699,50 @@ footer a:hover{color:var(--signal);border-color:var(--signal)}
         <text x="710" y="170">gives up, calls the next one</text>
       </g>
     </svg>
-    <figcaption><b>The two red steps are the only ones anybody can do anything about.</b>
-    That is where a website and a Google listing do their work, and it is all I touch.</figcaption>
+    <figcaption><b>Only two of the five are anybody's to fix.</b>
+    That is where a website and a Google listing do their work, and it is all we touch.</figcaption>
   </figure>
-</div>
 </section>
 
-<section class="band">
-  <h2 class="sec">What I'd actually do.</h2>
-  <div class="bbody">
-  <p class="lead">Two jobs, and neither one is marketing.</p>
-  <div class="pair">
-    <div>
-      <h3><span>One.</span> Get found</h3>
-      <p>A fast site with a real page for every service you offer and every town you drive
-      to, written so the machines can actually read what you do. Google listing claimed
-      and filled out properly, in your name, not mine. Your own job photos. I'm not
-      putting stock pictures of somebody else's work on your site.</p>
+<section class="band wide-band" id="work">
+  <h2 class="sec">What you get, in two weeks.</h2>
+  <div class="deliver">
+    <div class="dcol">
+      <div class="dhead"><span class="dnum">01</span><h3>So they find you</h3></div>
+      <ul>
+        <li>A page for <b>every service</b> you offer</li>
+        <li>A page for <b>every town</b> you drive to</li>
+        <li>Written so <b>AI assistants can read you</b></li>
+        <li>Loads in <b>under a second</b> on a phone</li>
+        <li>Google listing <b>claimed in your name</b></li>
+        <li>Your job photos. Never stock.</li>
+      </ul>
     </div>
-    <div>
-      <h3><span>Two.</span> Get reached</h3>
-      <p>Your number one tap away, so nobody has to write it down. A quote form I
-      actually submitted myself before launch to make sure it lands somewhere you'll see.
-      Hours right in both places. Honestly, more shops lose people here than in search.
-      Those customers had already picked you.</p>
+    <div class="dcol">
+      <div class="dhead"><span class="dnum">02</span><h3>So they reach you</h3></div>
+      <ul>
+        <li><b>Tap to call</b> on every page</li>
+        <li>A quote form <b>we test before launch</b></li>
+        <li>Hours correct <b>on the site and on Google</b></li>
+        <li>Call button switched on in your listing</li>
+        <li><b>Two taps</b> from search to your phone</li>
+        <li>Text option if you want one</li>
+      </ul>
     </div>
   </div>
+  <div class="nope-bare">
+    <div class="kicker" style="color:var(--ink-3)">What we say no to</div>
+    <ul>
+      <li>Social media, blogs, ads</li>
+      <li>Chatbots answering your customers</li>
+      <li>Anything replacing somebody on your payroll</li>
+      <li>Promising you a ranking or a number</li>
+    </ul>
   </div>
 </section>
 </div>
 
-<div class="street money">
+<div class="street money" id="pricing">
   <div class="wrap">
     <div class="kicker">What it runs</div>
     <h2>One number, settled on the first call.</h2>
@@ -689,41 +761,39 @@ footer a:hover{color:var(--signal);border-color:var(--signal)}
         days' notice to stop. There is no contract to sign your way out of.</p>
       </div>
     </div>
-    <p class="pfoot">Every month I run the same two questions you just ran and email you
-    what came back. <b>I will not promise you a ranking.</b> I send the answers and you
-    check them yourself in ten seconds.</p>
+    <p class="pfoot">Every month we run the same two questions you just ran and email
+    you what came back. <b>We will not promise you a ranking.</b> We send the answers and
+    you check them yourself in ten seconds.</p>
   </div>
 </div>
 
 <div class="wrap">
-<section class="band">
-  <h2 class="sec">Who does the work.</h2>
-  <div class="bbody">
-  <div class="who-bare">
-    <svg class="stamp" viewBox="0 0 96 96" role="img" aria-label="A small storefront mark">
-      <g fill="none" stroke="currentColor" stroke-width="2.2" style="color:var(--ink-3)">
-        <rect x="13" y="30" width="70" height="54"/>
-        <path d="M13 30 L48 12 L83 30"/>
-        <rect x="24" y="44" width="28" height="22" style="color:var(--signal)" stroke="currentColor"/>
-        <rect x="62" y="50" width="14" height="34"/>
-        <path d="M13 38 h70" stroke-dasharray="7 7" stroke-width="4" style="color:var(--signal)" stroke="currentColor"/>
-      </g>
-    </svg>
-    <div>
-      <p><b>Built for Main Street is one person, and that is the design, not a stage
-      I am hoping to grow out of.</b> An agency puts an account manager between you and
-      whoever touches your site. There isn't one here. You call the number on this page
-      and I answer it.</p>
-      <p>I claim the listing, write the pages, take the call when your hours change.
-      That means I take on a handful of shops at a time rather than a hundred, and it
-      means the person who built the thing is the person who fixes it.</p>
-      <p>I am early. Built for Main Street is taking its first shops on now, which is
-      worth knowing, and worth something: you would get more of my attention than anyone
-      who signs on next year.</p>
-      <div class="sig">Miles Tipton, Los Angeles</div>
+<section class="band wide-band" id="company">
+  <h2 class="sec">How Built for Main Street is built.</h2>
+  <div class="tenets">
+    <div class="tenet">
+      <div class="tnum">No</div>
+      <h3>account managers</h3>
+      <p>You talk to the person who claims your listing and writes your pages. The
+      number on this page is the number that gets answered.</p>
+    </div>
+    <div class="tenet">
+      <div class="tnum">8</div>
+      <h3>shops at a time</h3>
+      <p>The book stays small on purpose. Every site is built by hand, and the work
+      stops being good the moment it becomes a queue.</p>
+    </div>
+    <div class="tenet">
+      <div class="tnum">30</div>
+      <h3>days to walk</h3>
+      <p>No annual contract, no cancellation fee, no conversation about it. Your
+      domain is registered in your name and stays yours.</p>
     </div>
   </div>
-</div>
+  <p class="tfoot">Built for Main Street works with upholsterers, tree services,
+  welders and masons across the country, from Los Angeles. <b>We are taking on our
+  first shops now</b>, which is worth knowing and worth something: you would get
+  more attention than anyone who signs on next year.</p>
 </section>
 
 <div class="close col" id="check">
@@ -734,10 +804,10 @@ footer a:hover{color:var(--signal);border-color:var(--signal)}
 
   <div class="phone-line">
     <a class="num" href="tel:+13106069788">(310) 606-9788</a>
-    <span class="hint">Call or text. It is me, and I answer.</span>
+    <span class="hint">Call or text. A person answers.</span>
   </div>
 
-  <form class="ask" id="askform" novalidate>
+  <form class="ask" id="askform" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
     <div>
       <label for="f-name">Your name</label>
       <input type="text" id="f-name" name="name" placeholder="Jim Hoffman">
@@ -754,11 +824,15 @@ footer a:hover{color:var(--signal);border-color:var(--signal)}
       <label for="f-phone">Best number</label>
       <input type="tel" id="f-phone" name="phone" placeholder="(260) 555-0100">
     </div>
+    <div>
+      <label for="f-trade">Your trade</label>
+      <input type="text" id="f-trade" name="trade" placeholder="Upholstery">
+    </div>
     <div class="full">
       <button class="btn" type="submit">Send it over</button>
     </div>
-    <p class="formnote" id="formnote">I run the check and call you back. I don't add you to
-    a list and there is nothing to unsubscribe from.</p>
+    <p class="formnote" id="formnote">We run the check and call you back. No list, nothing to
+    unsubscribe from.</p>
   </form>
 </div>
 
@@ -766,15 +840,14 @@ footer a:hover{color:var(--signal);border-color:var(--signal)}
   <div class="foot-grid">
     <div>
       <div class="foot-mark">BUILT FOR MAIN <span class="st">STREET</span></div>
-      <p>When somebody goes looking for the work you do, I make sure they find you and
+      <p>When somebody goes looking for the work you do, we make sure they find you and
       can get hold of you. That is the entire business.</p>
     </div>
     <div>
       <h4>Get hold of me</h4>
       <a class="foot-num" href="tel:+13106069788">(310) 606-9788</a>
       <p><a href="mailto:hello@builtformainstreet.com">hello@builtformainstreet.com</a></p>
-      <p>Call or text, 8am to 7pm Pacific. I answer texts after that too, I just
-      won't pretend otherwise.</p>
+      <p>Call or text, 8am to 7pm Pacific.</p>
     </div>
   </div>
   <div class="foot-bottom">
@@ -850,6 +923,21 @@ footer a:hover{color:var(--signal);border-color:var(--signal)}
   }
 
   // lights come on down the street
+  // nav: mark the section you are in
+  var navlinks=Array.prototype.slice.call(document.querySelectorAll('.nav-links a'));
+  var secs=navlinks.map(function(a){return document.querySelector(a.getAttribute('href'));});
+  if('IntersectionObserver' in window && secs.every(Boolean)){
+    var spy=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){
+          navlinks.forEach(function(a){a.classList.remove('here');});
+          var k=secs.indexOf(e.target); if(k>-1) navlinks[k].classList.add('here');
+        }
+      });
+    },{rootMargin:'-45% 0px -50% 0px'});
+    secs.forEach(function(el){spy.observe(el);});
+  }
+
   var street=document.getElementById('street');
   if(street){
     var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
@@ -872,6 +960,7 @@ footer a:hover{color:var(--signal);border-color:var(--signal)}
   var form=document.getElementById('askform'), note=document.getElementById('formnote');
   if(form){
     form.addEventListener('submit',function(e){
+      if(form.getAttribute('action').indexOf('YOUR_FORM_ID')===-1) return; // real endpoint: let it post
       e.preventDefault();
       note.innerHTML='This form is not wired up yet. Call or text <b>(310) 606-9788</b> '+
         'or email <b>hello@builtformainstreet.com</b> and I will look you up today.';
