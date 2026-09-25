@@ -75,11 +75,11 @@
     fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body})
       .then(function(r){if(!r.ok) throw new Error(r.status);
         form.reset(); note.className='fnote ok';
-        note.textContent='Got it. We will look you up and get back to you, usually the same day.';
+        note.textContent='Got it. We\u2019ll look you up and get back to you, usually the same day.';
         send.textContent='Sent';})
       .catch(function(){
         note.className='fnote';
-        note.innerHTML='That did not go through. Email <b>hello@builtformainstreet.com</b> and we will look you up today.';
+        note.innerHTML='That didn\u2019t go through. Email <b>hello@builtformainstreet.com</b> and we\u2019ll look you up today.';
         send.disabled=false; send.textContent='Send it over';});
   });
 })();

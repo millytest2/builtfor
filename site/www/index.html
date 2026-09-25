@@ -110,7 +110,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 /* ---------- shared type system ---------- */
 .eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
   color:var(--signal);margin-bottom:14px}
-h2{font-family:var(--display);font-weight:600;font-size:var(--h2);line-height:1.04;
+h2{font-family:var(--display);font-weight:600;font-size:var(--h2);line-height:1.04;margin-top:0;
   letter-spacing:-.024em;margin:0 0 20px;max-width:18ch;text-wrap:balance;
   font-variation-settings:'SOFT' 40,'WONK' 1}
 .lead{font-size:clamp(17px,1.9vw,19px);color:var(--ink-2);line-height:1.5;margin:0 0 24px;max-width:44ch}
@@ -145,7 +145,7 @@ h1 em{font-style:normal;color:var(--signal)}
 @media(max-width:980px){.chat{justify-self:start}}
 .chat-top{display:flex;align-items:center;gap:6px;padding-bottom:12px;margin-bottom:14px;border-bottom:1px solid var(--line)}
 .dot{width:8px;height:8px;border-radius:50%;background:var(--line-2)}
-.chat-t{margin-left:8px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--ink-3);text-transform:uppercase}
+.chat-t{margin-left:8px;font-size:13px;color:var(--ink-3)}
 .bubble{border-radius:12px;padding:11px 14px;font-size:15px;line-height:1.45;margin-bottom:10px}
 .ask{background:var(--ink);color:var(--paper);margin-left:auto;max-width:86%;border-bottom-right-radius:4px;width:fit-content}
 .ans{background:var(--sunk);border-bottom-left-radius:4px}
@@ -159,7 +159,7 @@ h1 em{font-style:normal;color:var(--signal)}
 .missing{margin-top:14px;padding:12px 14px;border:1.5px dashed var(--signal);border-radius:10px;
   font-size:14.5px;line-height:1.45;color:var(--ink-2)}
 .missing span{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--signal);margin-bottom:4px}
-.chat figcaption{font-family:var(--mono);font-size:10.5px;color:var(--ink-3);margin-top:12px;letter-spacing:.03em}
+.chat figcaption{font-size:12.5px;color:var(--ink-3);margin-top:12px}
 
 /* ---------- dark bands: the street ---------- */
 .band{background:var(--deep);color:var(--cream);margin-top:var(--sec);padding-block:clamp(48px,7vw,84px)}
@@ -175,10 +175,10 @@ h1 em{font-style:normal;color:var(--signal)}
   padding-top:clamp(22px,3vw,30px);border-top:1px solid rgba(242,236,224,.18)}
 @media(max-width:700px){.why{grid-template-columns:1fr;gap:22px}}
 .why .n{font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;color:var(--glow)}
-.why h3{font-family:var(--display);font-weight:600;font-size:clamp(20px,2.4vw,24px);margin:8px 0 6px;
+.why h3{font-family:var(--display);font-weight:600;font-size:clamp(20px,2.4vw,24px);margin:0 0 6px;
   letter-spacing:-.015em;color:var(--cream);font-variation-settings:'SOFT' 40}
 .why p{margin:0;font-size:16px;line-height:1.5;color:rgba(242,236,224,.72);max-width:38ch}
-.cap{font-family:var(--mono);font-size:12px;letter-spacing:.03em;color:rgba(242,236,224,.46);margin:clamp(24px,3vw,34px) 0 0}
+.cap{font-size:14px;font-style:italic;color:rgba(242,236,224,.52);margin:clamp(24px,3vw,34px) 0 0}
 
 /* ---------- the check ---------- */
 .verdict{background:var(--signal-soft);border-left:3px solid var(--signal);padding:14px 16px;
@@ -189,12 +189,12 @@ h1 em{font-style:normal;color:var(--signal)}
 .fields{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px}
 .fields .span2{grid-column:1/-1}
 @media(max-width:480px){.fields{grid-template-columns:1fr}}
-label{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3);margin-bottom:6px}
+label{display:block;font-family:var(--body);font-size:14px;font-weight:500;color:var(--ink-2);margin-bottom:6px}
 input,select{width:100%;font-family:var(--body);font-size:16px;padding:12px 13px;border:1.5px solid var(--line-2);
   border-radius:3px;background:var(--paper);color:var(--ink)}
 select{appearance:none;padding-right:34px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%238a8177' stroke-width='1.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
   background-repeat:no-repeat;background-position:right 13px center}
-.qlab{font-family:var(--mono);font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3);margin:0 0 7px}
+.qlab{font-family:var(--body);font-size:14px;font-weight:500;color:var(--ink-2);margin:0 0 7px}
 .qrow{display:flex;gap:10px;align-items:stretch;margin-bottom:16px}
 .qrow:last-child{margin-bottom:0}
 .qtxt{flex:1;min-width:0;font-family:var(--mono);font-size:14px;line-height:1.5;background:var(--sunk);
@@ -207,6 +207,10 @@ select{appearance:none;padding-right:34px;background-image:url("data:image/svg+x
 /* ---------- the work order ---------- */
 /* the fix: words stay beside the ticket while you read it */
 #fix .duo{align-items:start}
+@media(min-width:981px){
+  #fix .duo{grid-template-columns:minmax(0,1.08fr) minmax(0,1fr)}
+  #fix .ticket-wrap{order:-1}
+}
 @media(min-width:981px){#fix .words{position:sticky;top:calc(var(--nav) + 40px)}}
 .no{font-size:15.5px;color:var(--ink-2);margin:0;padding-top:18px;border-top:1px solid var(--line);max-width:44ch}
 .no b{color:var(--ink);font-weight:600}
@@ -258,13 +262,13 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:14px;background:rgba(0,0,0,.
   border:1px solid rgba(242,236,224,.14);border-radius:6px;padding:clamp(18px,3vw,26px)}
 @media(max-width:560px){form{grid-template-columns:1fr}}
 form .full{grid-column:1/-1}
-form label{color:rgba(242,236,224,.55)}
+form label{color:rgba(242,236,224,.72)}
 form input{background:rgba(0,0,0,.26);border-color:rgba(242,236,224,.22);color:var(--cream)}
 form input::placeholder{color:rgba(242,236,224,.34)}
 form .btn{width:100%;background:var(--glow);border-color:var(--glow);color:#1c1405}
 form .btn:hover{background:var(--cream);border-color:var(--cream);color:var(--deep)}
 form .btn[disabled]{opacity:.6;cursor:wait}
-.fnote{grid-column:1/-1;font-family:var(--mono);font-size:12px;line-height:1.5;color:rgba(242,236,224,.55);margin:0}
+.fnote{grid-column:1/-1;font-size:13.5px;line-height:1.5;color:rgba(242,236,224,.6);margin:0}
 .fnote.ok{color:var(--glow)}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 
@@ -275,8 +279,8 @@ footer{padding-block:clamp(40px,6vw,64px)}
 .fcontact{display:flex;flex-direction:column;gap:8px;font-size:16px}
 .fcontact a{color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--line-2);width:fit-content}
 .fcontact a:hover{color:var(--signal);border-color:var(--signal)}
-.fcontact span{font-family:var(--mono);font-size:12px;color:var(--ink-3)}
-.fbot{margin-top:36px;padding-top:18px;border-top:1px solid var(--line);font-family:var(--mono);font-size:11.5px;color:var(--ink-3)}
+.fcontact span{font-size:14px;color:var(--ink-3)}
+.fbot{margin-top:36px;padding-top:18px;border-top:1px solid var(--line);font-size:13px;color:var(--ink-3)}
 
 </style>
 </head>
@@ -303,8 +307,8 @@ footer{padding-block:clamp(40px,6vw,64px)}
   <div class="duo">
     <div class="words">
       <h1>Your next customer is asking a machine who to <em>call</em>.</h1>
-      <p class="dek">It names two or three shops, and that is the list. We get yours on it,
-      and make sure the people who find you can reach you in one tap.</p>
+      <p class="dek">It names two or three shops, and that's the list. We get yours on it, and
+      make sure the people who find you can reach you in one tap.</p>
       <div class="cta-row">
         <a class="btn" href="#start">Get a free check</a>
         <a class="btn ghost" href="#check">Check it yourself</a>
@@ -322,14 +326,13 @@ footer{padding-block:clamp(40px,6vw,64px)}
         </ol>
       </div>
       <div class="missing"><span>Not in the answer</span>The shop with thirty years and the best reviews in town.</div>
-      <figcaption>Illustration. Shop names invented.</figcaption>
+      <figcaption>An example. The shop names are made up.</figcaption>
     </figure>
   </div>
 </section>
 
 <section class="band" id="problem">
   <div class="wrap">
-    <div class="eyebrow">Five shops, one street</div>
     <h2>Four of these shops come up. One doesn&rsquo;t.</h2>
     <svg class="st-desk" viewBox="0 0 1000 196" role="img" aria-label="A row of shops on a main street. Four are lit. The fifth, yours, is dark.">
   <g fill="none" stroke="rgba(242,236,224,.36)" stroke-width="1.6" stroke-linecap="square">
@@ -406,10 +409,10 @@ footer{padding-block:clamp(40px,6vw,64px)}
   <text x="102" y="178" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="13" letter-spacing="1" fill="rgba(242,236,224,.62)" stroke="none">UPHOLSTERY</text><text x="262" y="178" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="13" letter-spacing="1" fill="rgba(242,236,224,.62)" stroke="none">TREE SERVICE</text><text x="482" y="178" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="13" letter-spacing="1" fill="rgba(242,236,224,.62)" stroke="none">WELDING</text><text x="672" y="178" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="13" letter-spacing="1" fill="rgba(242,236,224,.62)" stroke="none">MASONRY</text><text x="862" y="178" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="13" letter-spacing="1" fill="rgba(242,236,224,.34)" stroke="none">YOURS?</text>
 </svg>
     <div class="why">
-      <div><span class="n">01</span><h3>They never find you</h3>
-        <p>Your details were never written the way a machine reads them.</p></div>
-      <div><span class="n">02</span><h3>They find you and give up</h3>
-        <p>The number isn&rsquo;t tappable. The form goes nowhere. The hours are wrong.</p></div>
+      <div><h3>They never find you</h3>
+        <p>Google and the AI tools can&rsquo;t tell what you do or where you work, so they skip you.</p></div>
+      <div><h3>They find you and give up</h3>
+        <p>The number won&rsquo;t tap to call, the form doesn&rsquo;t reach anyone, or the hours are wrong, so they call the next shop.</p></div>
     </div>
     <p class="cap">The dark one has the best reviews on the street.</p>
   </div>
@@ -418,13 +421,11 @@ footer{padding-block:clamp(40px,6vw,64px)}
 <section class="wrap" id="check">
   <div class="duo">
     <div class="words">
-      <div class="eyebrow">Ninety seconds</div>
       <h2>Ask it about your own shop.</h2>
-      <p class="lead">Paste these into ChatGPT or Google&rsquo;s AI answer. Nothing here is sent
-      anywhere.</p>
-      <div class="verdict"><b>Not named?</b> You&rsquo;re out of the running for work you&rsquo;d
-      have won. <b>&ldquo;No information&rdquo;?</b> You&rsquo;re not in there at all.
-      Same fix either way.</div>
+      <p class="lead">Paste these into ChatGPT or Google&rsquo;s AI answer and see what comes back.
+      Nothing you type here leaves this page.</p>
+      <div class="verdict">If your shop isn&rsquo;t in the answer, or it says it doesn&rsquo;t have any
+      information about you, <b>that&rsquo;s the thing we fix.</b> It&rsquo;s the same fix either way.</div>
     </div>
     <div class="tool">
       <div class="fields">
@@ -453,12 +454,11 @@ footer{padding-block:clamp(40px,6vw,64px)}
 <section class="wrap" id="fix">
   <div class="duo">
     <div class="words">
-      <div class="eyebrow">The fix</div>
       <h2>One job, written up like any other.</h2>
-      <p class="lead">Everything on the ticket, nothing that isn&rsquo;t. Two weeks from the
-      day your photos land.</p>
-      <p class="no"><b>Not on it:</b> social media, ads, logos, or a chatbot talking to your
-      customers.</p>
+      <p class="lead">Everything we do for you fits on one ticket. It&rsquo;s done two weeks
+      after your photos come in.</p>
+      <p class="no">What&rsquo;s not on it: social media, ads, logos, or a chatbot talking to
+      your customers. We don&rsquo;t do those.</p>
     </div>
     <div class="ticket-wrap">
       <article class="ticket" aria-label="Work order">
@@ -485,9 +485,9 @@ footer{padding-block:clamp(40px,6vw,64px)}
           <div class="ln"><span>Upkeep</span><span class="f"></span><b>$199/mo</b></div>
           <div class="ln"><span>Terms</span><span class="f"></span><b>30 days&rsquo; notice</b></div>
         </div>
-        <p class="t-fine">Build price is set by how many services and towns you have. Agreed on
-        the first call. It doesn&rsquo;t move. Upkeep covers hosting, edits and a monthly
-        report of what the assistants say about you.</p>
+        <p class="t-fine">The build price depends on how many services and towns you have.
+        We settle it on the first call and it doesn&rsquo;t change. Upkeep covers hosting,
+        edits, and a monthly report on what the AI assistants say about you.</p>
         <div class="stamp">No account<br>managers</div>
       </article>
     </div>
@@ -496,7 +496,6 @@ footer{padding-block:clamp(40px,6vw,64px)}
 
 <section class="band end" id="start">
   <div class="wrap">
-    <div class="eyebrow">Last stop</div>
     <h2>Find out where you stand.</h2>
     <svg class="st-desk" viewBox="0 0 1000 196" role="img" aria-label="A row of shops on a main street. All five are lit, including yours.">
   <g fill="none" stroke="rgba(242,236,224,.36)" stroke-width="1.6" stroke-linecap="square">
@@ -581,14 +580,14 @@ footer{padding-block:clamp(40px,6vw,64px)}
       <form id="askform" name="free-check" method="POST" data-netlify="true" netlify-honeypot="company-url">
         <input type="hidden" name="form-name" value="free-check">
         <input type="hidden" name="subject" id="f-subject" data-remove-prefix value="New free check request">
-        <p class="hp"><label for="hp">Leave this empty</label><input id="hp" name="company-url"></p>
+        <p class="hp" aria-hidden="true"><label for="hp">Leave this empty</label><input id="hp" name="company-url" tabindex="-1" autocomplete="off"></p>
         <div><label for="f-name">Your name</label><input type="text" id="f-name" name="name" required placeholder="Jim Hoffman"></div>
         <div><label for="f-biz">Shop</label><input type="text" id="f-biz" name="business" required placeholder="Hoffman &amp; Sons"></div>
         <div><label for="f-town">Town</label><input type="text" id="f-town" name="town" placeholder="Fort Wayne, IN"></div>
         <div><label for="f-phone">Best number</label><input type="tel" id="f-phone" name="phone" required placeholder="(260) 555-0100"></div>
         <div class="full"><label for="f-email">Email (optional)</label><input type="email" id="f-email" name="email" placeholder="jim@hoffmanandsons.com" autocomplete="email"></div>
         <div class="full"><button class="btn" type="submit" id="send">Send it over</button></div>
-        <p class="fnote" id="fnote" aria-live="polite">We run the check and get back to you. No list, nothing to unsubscribe from.</p>
+        <p class="fnote" id="fnote" aria-live="polite">We&rsquo;ll run the check and get back to you. We won&rsquo;t put you on a mailing list.</p>
       </form>
     </div>
   </div>
@@ -605,7 +604,7 @@ footer{padding-block:clamp(40px,6vw,64px)}
     </div>
     <div class="fcontact">
       <a href="mailto:hello@builtformainstreet.com">hello@builtformainstreet.com</a>
-      <span>Los Angeles, working with shops nationwide</span>
+      <span>Based in Los Angeles. We work with shops anywhere in the US.</span>
     </div>
   </div>
   <div class="fbot">&copy; 2026 Built for Main Street &middot; Los Angeles, California</div>
@@ -700,11 +699,11 @@ footer{padding-block:clamp(40px,6vw,64px)}
     fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body})
       .then(function(r){if(!r.ok) throw new Error(r.status);
         form.reset(); note.className='fnote ok';
-        note.textContent='Got it. We will look you up and get back to you, usually the same day.';
+        note.textContent='Got it. We\u2019ll look you up and get back to you, usually the same day.';
         send.textContent='Sent';})
       .catch(function(){
         note.className='fnote';
-        note.innerHTML='That did not go through. Email <b>hello@builtformainstreet.com</b> and we will look you up today.';
+        note.innerHTML='That didn\u2019t go through. Email <b>hello@builtformainstreet.com</b> and we\u2019ll look you up today.';
         send.disabled=false; send.textContent='Send it over';});
   });
 })();

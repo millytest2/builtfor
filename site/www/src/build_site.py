@@ -78,8 +78,8 @@ BODY = f'''
   <div class="duo">
     <div class="words">
       <h1>Your next customer is asking a machine who to <em>call</em>.</h1>
-      <p class="dek">It names two or three shops, and that is the list. We get yours on it,
-      and make sure the people who find you can reach you in one tap.</p>
+      <p class="dek">It names two or three shops, and that's the list. We get yours on it, and
+      make sure the people who find you can reach you in one tap.</p>
       <div class="cta-row">
         <a class="btn" href="#start">Get a free check</a>
         <a class="btn ghost" href="#check">Check it yourself</a>
@@ -97,22 +97,21 @@ BODY = f'''
         </ol>
       </div>
       <div class="missing"><span>Not in the answer</span>The shop with thirty years and the best reviews in town.</div>
-      <figcaption>Illustration. Shop names invented.</figcaption>
+      <figcaption>An example. The shop names are made up.</figcaption>
     </figure>
   </div>
 </section>
 
 <section class="band" id="problem">
   <div class="wrap">
-    <div class="eyebrow">Five shops, one street</div>
     <h2>Four of these shops come up. One doesn&rsquo;t.</h2>
     {top_desk}
     {top_mob}
     <div class="why">
-      <div><span class="n">01</span><h3>They never find you</h3>
-        <p>Your details were never written the way a machine reads them.</p></div>
-      <div><span class="n">02</span><h3>They find you and give up</h3>
-        <p>The number isn&rsquo;t tappable. The form goes nowhere. The hours are wrong.</p></div>
+      <div><h3>They never find you</h3>
+        <p>Google and the AI tools can&rsquo;t tell what you do or where you work, so they skip you.</p></div>
+      <div><h3>They find you and give up</h3>
+        <p>The number won&rsquo;t tap to call, the form doesn&rsquo;t reach anyone, or the hours are wrong, so they call the next shop.</p></div>
     </div>
     <p class="cap">The dark one has the best reviews on the street.</p>
   </div>
@@ -121,13 +120,11 @@ BODY = f'''
 <section class="wrap" id="check">
   <div class="duo">
     <div class="words">
-      <div class="eyebrow">Ninety seconds</div>
       <h2>Ask it about your own shop.</h2>
-      <p class="lead">Paste these into ChatGPT or Google&rsquo;s AI answer. Nothing here is sent
-      anywhere.</p>
-      <div class="verdict"><b>Not named?</b> You&rsquo;re out of the running for work you&rsquo;d
-      have won. <b>&ldquo;No information&rdquo;?</b> You&rsquo;re not in there at all.
-      Same fix either way.</div>
+      <p class="lead">Paste these into ChatGPT or Google&rsquo;s AI answer and see what comes back.
+      Nothing you type here leaves this page.</p>
+      <div class="verdict">If your shop isn&rsquo;t in the answer, or it says it doesn&rsquo;t have any
+      information about you, <b>that&rsquo;s the thing we fix.</b> It&rsquo;s the same fix either way.</div>
     </div>
     <div class="tool">
       <div class="fields">
@@ -156,12 +153,11 @@ BODY = f'''
 <section class="wrap" id="fix">
   <div class="duo">
     <div class="words">
-      <div class="eyebrow">The fix</div>
       <h2>One job, written up like any other.</h2>
-      <p class="lead">Everything on the ticket, nothing that isn&rsquo;t. Two weeks from the
-      day your photos land.</p>
-      <p class="no"><b>Not on it:</b> social media, ads, logos, or a chatbot talking to your
-      customers.</p>
+      <p class="lead">Everything we do for you fits on one ticket. It&rsquo;s done two weeks
+      after your photos come in.</p>
+      <p class="no">What&rsquo;s not on it: social media, ads, logos, or a chatbot talking to
+      your customers. We don&rsquo;t do those.</p>
     </div>
     <div class="ticket-wrap">
       <article class="ticket" aria-label="Work order">
@@ -188,9 +184,9 @@ BODY = f'''
           <div class="ln"><span>Upkeep</span><span class="f"></span><b>$199/mo</b></div>
           <div class="ln"><span>Terms</span><span class="f"></span><b>30 days&rsquo; notice</b></div>
         </div>
-        <p class="t-fine">Build price is set by how many services and towns you have. Agreed on
-        the first call. It doesn&rsquo;t move. Upkeep covers hosting, edits and a monthly
-        report of what the assistants say about you.</p>
+        <p class="t-fine">The build price depends on how many services and towns you have.
+        We settle it on the first call and it doesn&rsquo;t change. Upkeep covers hosting,
+        edits, and a monthly report on what the AI assistants say about you.</p>
         <div class="stamp">No account<br>managers</div>
       </article>
     </div>
@@ -199,7 +195,6 @@ BODY = f'''
 
 <section class="band end" id="start">
   <div class="wrap">
-    <div class="eyebrow">Last stop</div>
     <h2>Find out where you stand.</h2>
     {end_desk}
     {end_mob}
@@ -212,14 +207,14 @@ BODY = f'''
       <form id="askform" name="free-check" method="POST" data-netlify="true" netlify-honeypot="company-url">
         <input type="hidden" name="form-name" value="free-check">
         <input type="hidden" name="subject" id="f-subject" data-remove-prefix value="New free check request">
-        <p class="hp"><label for="hp">Leave this empty</label><input id="hp" name="company-url"></p>
+        <p class="hp" aria-hidden="true"><label for="hp">Leave this empty</label><input id="hp" name="company-url" tabindex="-1" autocomplete="off"></p>
         <div><label for="f-name">Your name</label><input type="text" id="f-name" name="name" required placeholder="Jim Hoffman"></div>
         <div><label for="f-biz">Shop</label><input type="text" id="f-biz" name="business" required placeholder="Hoffman &amp; Sons"></div>
         <div><label for="f-town">Town</label><input type="text" id="f-town" name="town" placeholder="Fort Wayne, IN"></div>
         <div><label for="f-phone">Best number</label><input type="tel" id="f-phone" name="phone" required placeholder="(260) 555-0100"></div>
         <div class="full"><label for="f-email">Email (optional)</label><input type="email" id="f-email" name="email" placeholder="jim@hoffmanandsons.com" autocomplete="email"></div>
         <div class="full"><button class="btn" type="submit" id="send">Send it over</button></div>
-        <p class="fnote" id="fnote" aria-live="polite">We run the check and get back to you. No list, nothing to unsubscribe from.</p>
+        <p class="fnote" id="fnote" aria-live="polite">We&rsquo;ll run the check and get back to you. We won&rsquo;t put you on a mailing list.</p>
       </form>
     </div>
   </div>
@@ -236,7 +231,7 @@ BODY = f'''
     </div>
     <div class="fcontact">
       <a href="mailto:hello@builtformainstreet.com">hello@builtformainstreet.com</a>
-      <span>Los Angeles, working with shops nationwide</span>
+      <span>Based in Los Angeles. We work with shops anywhere in the US.</span>
     </div>
   </div>
   <div class="fbot">&copy; 2026 Built for Main Street &middot; Los Angeles, California</div>
