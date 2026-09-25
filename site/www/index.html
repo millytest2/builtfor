@@ -238,12 +238,48 @@ form.ask input,form.ask textarea{background:rgba(0,0,0,.22);border-color:rgba(24
 form.ask input::placeholder,form.ask textarea::placeholder{color:rgba(242,236,224,.35)}
 .formnote{grid-column:1/-1;font-family:var(--mono);font-size:12px;color:rgba(242,236,224,.5);margin:0}
 
-footer{padding-block:38px 46px;margin-top:52px;border-top:1px solid var(--line);
-  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
-  font-size:13.5px;color:var(--ink-3)}
-footer a{color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--line)}
+.finds{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:22px;
+  background:var(--line);border:1px solid var(--line);border-radius:4px;overflow:hidden}
+@media(max-width:640px){.finds{grid-template-columns:1fr}}
+.find{background:var(--card);padding:19px 20px}
+.find .who{font-family:var(--display);font-weight:600;font-size:16px;margin-bottom:6px;
+  letter-spacing:-.008em;font-variation-settings:'SOFT' 40}
+.find p{margin:0;font-size:15px;color:var(--ink-2);line-height:1.55}
+
+.who-block{display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:start;
+  margin-top:24px;background:var(--card);border:1px solid var(--line);
+  border-radius:4px;padding:26px 26px 24px}
+@media(max-width:640px){.who-block{grid-template-columns:1fr;gap:18px}}
+.stamp{width:96px;height:96px;flex:none}
+.who-block p{margin:0 0 13px;font-size:16.5px;color:var(--ink-2);max-width:56ch}
+.who-block p:last-child{margin-bottom:0}
+.who-block b{color:var(--ink);font-weight:600}
+.sig{font-family:var(--display);font-weight:600;font-size:21px;color:var(--ink);
+  font-variation-settings:'SOFT' 60,'WONK' 1;margin-top:4px}
+
+footer{margin-top:64px;border-top:1px solid var(--line);padding-block:34px 44px}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1.2fr;gap:34px}
+@media(max-width:760px){.foot-grid{grid-template-columns:1fr 1fr;gap:26px}}
+@media(max-width:480px){.foot-grid{grid-template-columns:1fr}}
+.foot-grid h4{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ink-3);margin:0 0 11px;font-weight:400}
+.foot-grid p{font-size:14.5px;color:var(--ink-2);margin:0 0 7px;line-height:1.5}
+.foot-grid li{font-size:14.5px;color:var(--ink-2);margin:0 0 11px;line-height:1.45;
+  padding-left:15px;position:relative}
+.foot-grid li:before{content:"";position:absolute;left:0;top:.6em;width:7px;height:1.5px;
+  background:var(--signal)}
+.foot-grid ul{list-style:none;padding:0;margin:0}
+footer a{color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--line-2)}
 footer a:hover{color:var(--signal);border-color:var(--signal)}
-.built{font-family:var(--mono);font-size:11.5px;letter-spacing:.04em}
+.foot-num{font-family:var(--mono);font-size:17px;color:var(--ink);
+  border-bottom:1px solid var(--line-2);text-decoration:none;display:inline-block;margin-bottom:5px}
+.foot-num:hover{color:var(--signal);border-color:var(--signal)}
+.foot-bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  margin-top:30px;padding-top:18px;border-top:1px solid var(--line);
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.03em;color:var(--ink-3)}
+.foot-mark{font-family:var(--display);font-weight:800;font-size:15px;letter-spacing:.02em;
+  color:var(--ink);font-variation-settings:'SOFT' 40,'WONK' 1;margin-bottom:10px}
+.foot-mark .st{color:var(--signal)}
 </style>
 </head>
 <body>
@@ -258,11 +294,11 @@ footer a:hover{color:var(--signal);border-color:var(--signal)}
 
 <div class="wrap">
   <div class="hero">
-    <h1>Main Street didn't get worse. The place people <em>look</em> changed.</h1>
-    <p class="dek">Thirty years of good work. Five-star reviews. A line out the door on a
-    Saturday. And a machine that has never heard of you. <b>That is not a ranking
-    problem.</b> That is a shop that isn't in the index, and no amount of being good at
-    the work will fix it on its own.</p>
+    <h1>Your next customer is asking a machine who to <em>call</em>.</h1>
+    <p class="dek">Not Google. ChatGPT, or that AI answer sitting on top of the search
+    results. It names two or three shops and that's the whole list. I look businesses up
+    like this all day, and the ones missing from it are usually the ones that have been
+    around the longest.</p>
     <div class="cta-row">
       <a class="btn" href="#check">Get the free check</a>
       <a class="btn ghost" href="#test">See it for yourself</a>
@@ -325,11 +361,11 @@ footer a:hover{color:var(--signal);border-color:var(--signal)}
 
 <div class="street" id="street">
   <div class="wrap">
-    <div class="kicker">Five real shops</div>
-    <h2>Being good at the work used to be enough.</h2>
-    <p>Every shop on this street is family-run and does honest work. Four of them can be
-    found. The fifth one can't, and it has nothing to do with the quality of the work.
-    That is the whole problem, and it is the only one I work on.</p>
+    <div class="kicker">The street</div>
+    <h2>Four of these shops come up. One doesn't.</h2>
+    <p>Same street, same kind of work, all of them family-run. The dark one is not worse
+    at the job. It just never got written down anywhere a machine could read it. That's
+    the only thing I work on.</p>
     <svg class="row-svg" viewBox="0 0 1000 220" role="img"
          aria-label="A row of five storefronts. Four have their lights on; the fifth is dark.">
       <g stroke="rgba(242,236,224,.34)" stroke-width="1.6" fill="none" stroke-linecap="square">
@@ -407,35 +443,55 @@ footer a:hover{color:var(--signal);border-color:var(--signal)}
 <div class="wrap">
 
 <section class="band">
-  <h2 class="sec">Why I do this one thing.</h2>
-  <div class="narrow">
-    <p class="lead">A town is mostly the people who fix things in it. The man who
-    reupholsters your grandmother's chair. The crew that takes the limb off your roof
-    before it comes through the ceiling. They learned a trade, they stayed, and they got
-    good at it.</p>
-    <p class="lead">None of them signed up for a world where the first answer comes from
-    something that never walked down their street. They are not losing to a better shop.
-    They are losing to not being written down anywhere a machine can read.</p>
-    <p class="lead"><b>That is a solvable problem and it is not an expensive one.</b> It
-    is also not a marketing problem, which is why I don't sell marketing.</p>
+  <h2 class="sec">Four things I found last week.</h2>
+  <p class="lead">These are real shops. I was building a call list and checking whether
+  each one could be found. I stopped writing them down after these four because the
+  pattern was obvious.</p>
+  <div class="finds">
+    <div class="find">
+      <div class="who">An upholstery shop in Knoxville</div>
+      <p>Google listing has a website link on it. The link goes to a company in Ireland.
+      Somebody typed it wrong years ago and it has been sending customers there ever
+      since.</p>
+    </div>
+    <div class="find">
+      <div class="who">A masonry outfit outside Los Angeles</div>
+      <p>Their listing points at a competitor's site. Anyone who clicks through to hire
+      them ends up on the other guy's quote form.</p>
+    </div>
+    <div class="find">
+      <div class="who">A tree service in Texas</div>
+      <p>The domain on the listing is parked. It says "coming soon" and has said that
+      long enough that the registrar changed its logo twice.</p>
+    </div>
+    <div class="find">
+      <div class="who">A mason in Ohio, thirty-plus years</div>
+      <p>Website is a free Wix subdomain with a stranger's username in the address. Best
+      reviews of anyone I looked at that day.</p>
+    </div>
   </div>
+  <p class="lead" style="margin-top:22px">Not one of those is a marketing problem. Nobody
+  needs a campaign. Somebody needs to go fix the plumbing, and then tell them it's
+  fixed.</p>
 </section>
 
 <section class="band">
   <h2 class="sec">What that takes.</h2>
-  <p class="lead">Two things, and they are both plumbing rather than promotion.</p>
+  <p class="lead">Two jobs. Neither one is marketing.</p>
   <div class="pair">
     <div>
-      <h3><span>One.</span> Be findable</h3>
-      <p>A fast site with a real page for every service and every town, written the way
-      search engines and assistants actually read a business. Your Google listing claimed
-      and filled out properly, in your name. Your own job photos, never stock.</p>
+      <h3><span>One.</span> Get found</h3>
+      <p>A fast site with a real page for every service you offer and every town you drive
+      to, written so the machines can actually read what you do. Google listing claimed
+      and filled out properly, in your name, not mine. Your own job photos. I'm not
+      putting stock pictures of somebody else's work on your site.</p>
     </div>
     <div>
-      <h3><span>Two.</span> Be reachable</h3>
-      <p>Your number one tap away. A form that has been tested and actually arrives.
-      Hours that are right in both places. Most shops lose more customers here than in
-      search, because these people already chose you and then gave up.</p>
+      <h3><span>Two.</span> Get reached</h3>
+      <p>Your number one tap away, so nobody has to write it down. A quote form I
+      actually submitted myself before launch to make sure it lands somewhere you'll see.
+      Hours right in both places. Honestly, more shops lose people here than in search.
+      Those customers had already picked you.</p>
     </div>
   </div>
 </section>
@@ -443,22 +499,54 @@ footer a:hover{color:var(--signal);border-color:var(--signal)}
 <section class="band">
   <h2 class="sec">How I work.</h2>
   <div class="narrow">
-    <p class="lead">I look you up first and show you what I find, free, before money comes
-    up. If it's already fine I tell you so. If it isn't, the build is <b>$600 to
-    $1,000</b>, depending on how many services you offer and how many towns you drive to.
-    We work it out on the first call and the number doesn't move after that. After it's
-    live it's <b>$199 a month</b> to keep it current, with thirty days' notice to stop.</p>
-    <p class="lead">Every month I re-run the same questions you just ran and send you the
-    answers. Not a rankings promise. The actual answers, so you can check them yourself.</p>
+    <p class="lead">I look you up before we talk and show you what I found. That part's free
+    and there's no version of it where I pressure you afterward. If everything's already
+    working I'll say so, which happens, and then we're done.</p>
+    <p class="lead">If it isn't working, the build runs <b>$600 to $1,000</b>. What
+    decides it is how many services you offer and how many towns you drive to, because
+    that's how many pages I'm writing. We settle it on the first call and I don't move it
+    afterward. Once you're live it's <b>$199 a month</b> and you can stop with thirty
+    days' notice. No contract to sign your way out of.</p>
+    <p class="lead">Every month I run the same two questions you just ran and email you
+    what came back. I'm not going to promise you a ranking. I'll send you the answers and
+    you can check them yourself in ten seconds.</p>
   </div>
   <div class="nope">
-    <div class="kicker" style="color:var(--ink-3)">And what I won't do</div>
+    <div class="kicker" style="color:var(--ink-3)">Things I will say no to</div>
     <ul>
-      <li>No social media, blogs or ads</li>
-      <li>No chatbots talking to your customers</li>
-      <li>Nothing that replaces somebody on your payroll</li>
-      <li>No promises about rankings or revenue</li>
+      <li>Social media, blogs, ads</li>
+      <li>A chatbot answering your customers</li>
+      <li>Anything that replaces somebody on your payroll</li>
+      <li>Promising you a ranking or a number</li>
     </ul>
+  </div>
+</section>
+
+<section class="band">
+  <h2 class="sec">Who you'd actually be dealing with.</h2>
+  <div class="who-block">
+    <svg class="stamp" viewBox="0 0 96 96" role="img" aria-label="A small storefront mark">
+      <g fill="none" stroke="currentColor" stroke-width="2.2" style="color:var(--ink-3)">
+        <rect x="13" y="30" width="70" height="54"/>
+        <path d="M13 30 L48 12 L83 30"/>
+        <rect x="24" y="44" width="28" height="22" style="color:var(--signal)" stroke="currentColor"/>
+        <rect x="62" y="50" width="14" height="34"/>
+        <path d="M13 38 h70" stroke-dasharray="7 7" stroke-width="4" style="color:var(--signal)" stroke="currentColor"/>
+      </g>
+    </svg>
+    <div>
+      <p>I'm Miles. This is one person in Los Angeles, not an agency, and there's no
+      account manager between us. You call, I pick up. Depending on how you feel about
+      agencies that's either the best part or the worst part.</p>
+      <p><b>I'll be straight with you about where I am: this business is new.</b> You'd
+      be among the first shops I do this for. I'd rather you hear that from me than work
+      it out later.</p>
+      <p>Here's what that's worth to you. I show you the problem before I ask for a
+      dollar. You can walk with thirty days' notice and no contract to argue about. And
+      nobody on earth has more reason than I do to make your site the one I point at when
+      the next person asks who I've done this for.</p>
+      <div class="sig">Miles Tipton</div>
+    </div>
   </div>
 </section>
 
@@ -499,8 +587,34 @@ footer a:hover{color:var(--signal);border-color:var(--signal)}
 </div>
 
 <footer>
-  <span>Built for Main Street &middot; Los Angeles, California</span>
-  <span class="built">Built with the same system I'd build yours with.</span>
+  <div class="foot-grid">
+    <div>
+      <div class="foot-mark">BUILT FOR MAIN <span class="st">STREET</span></div>
+      <p>Websites and Google listings for shops that do real work. One person, Los
+      Angeles, working with trades across the country.</p>
+    </div>
+    <div>
+      <h4>Get hold of me</h4>
+      <a class="foot-num" href="tel:+13235551234">(323) 555-1234</a>
+      <p><a href="mailto:miles@builtformainstreet.com">miles@builtformainstreet.com</a></p>
+      <p>Call or text, 8am to 7pm Pacific. I answer texts after that too, I just
+      won't pretend otherwise.</p>
+    </div>
+    <div>
+      <h4>Where you stand</h4>
+      <ul>
+        <li>Your domain is registered in your name and stays yours</li>
+        <li>Thirty days' notice to stop. No annual contract</li>
+        <li>Your Google listing is claimed in your name, never mine</li>
+        <li>I don't promise rankings. I send you the answers and you check them</li>
+        <li>After a year you can buy the site outright for $2,000</li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>&copy; 2026 Built for Main Street &middot; Los Angeles, CA</span>
+    <span>Built with the same system I'd build yours with</span>
+  </div>
 </footer>
 
 </div>
