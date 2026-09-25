@@ -67,6 +67,9 @@
   form.addEventListener('submit',function(e){
     e.preventDefault();
     if(!form.checkValidity()){form.reportValidity();return;}
+    // the notification email arrives titled with the shop, so it can be read from the lock screen
+    var shop=($('#f-biz').value||'').trim(), where=($('#f-town').value||'').trim();
+    $('#f-subject').value='Free check: '+(shop||'new request')+(where?' ('+where+')':'');
     send.disabled=true; send.textContent='Sending...';
     var body=new URLSearchParams(new FormData(form)).toString();
     fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body})

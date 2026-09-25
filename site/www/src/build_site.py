@@ -217,11 +217,13 @@ BODY = f'''
       </div>
       <form id="askform" name="free-check" method="POST" data-netlify="true" netlify-honeypot="company-url">
         <input type="hidden" name="form-name" value="free-check">
+        <input type="hidden" name="subject" id="f-subject" data-remove-prefix value="New free check request">
         <p class="hp"><label for="hp">Leave this empty</label><input id="hp" name="company-url"></p>
         <div><label for="f-name">Your name</label><input type="text" id="f-name" name="name" required placeholder="Jim Hoffman"></div>
         <div><label for="f-biz">Shop</label><input type="text" id="f-biz" name="business" required placeholder="Hoffman &amp; Sons"></div>
         <div><label for="f-town">Town</label><input type="text" id="f-town" name="town" placeholder="Fort Wayne, IN"></div>
         <div><label for="f-phone">Best number</label><input type="tel" id="f-phone" name="phone" required placeholder="(260) 555-0100"></div>
+        <div class="full"><label for="f-email">Email (optional)</label><input type="email" id="f-email" name="email" placeholder="jim@hoffmanandsons.com" autocomplete="email"></div>
         <div class="full"><button class="btn" type="submit" id="send">Send it over</button></div>
         <p class="fnote" id="fnote" aria-live="polite">We run the check and call you back. No list, nothing to unsubscribe from.</p>
       </form>
@@ -265,10 +267,20 @@ BODY = f'''
 
 HEAD_NOTE = '''<!--
   Built for Main Street. One file, no build step.
-  DEPLOY: drag this folder into Netlify (app.netlify.com/drop). The free-check form
-  is a Netlify Form and starts collecting on the first deploy with no setup.
-  Submissions appear under Forms in the Netlify dashboard; turn on email
-  notifications there. Then point builtformainstreet.com at the site.
+
+  GO LIVE
+  1. Drag the site/www folder onto app.netlify.com/drop.
+  2. Netlify: Site configuration > Notifications > Form submission notifications
+     > Add notification > Email notification. Email: hello@builtformainstreet.com.
+     Form: free-check. Save.
+  3. Submit the form once yourself. Confirm the email arrives, check spam, and
+     mark it "not spam" if it landed there.
+  4. Domain management > add builtformainstreet.com, then set the DNS records it
+     shows you at Namecheap.
+
+  Every submission is also stored under Forms in the Netlify dashboard, so a lead
+  is never lost even if an email is. Notification subject is "Free check: <shop>
+  (<town>)" and reply-to is the customer's email when they give one.
 -->
 '''
 art = CSS + BODY
