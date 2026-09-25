@@ -78,8 +78,8 @@ BODY = f'''
   <div class="duo">
     <div class="words">
       <h1>Your next customer is asking a machine who to <em>call</em>.</h1>
-      <p class="dek">It names two or three shops, and that's the list. We get yours on it, and
-      make sure the people who find you can reach you in one tap.</p>
+      <p class="dek">It names two or three shops, and that's the list. We fix what keeps yours
+      off it, and make sure the people who find you can reach you in one tap.</p>
       <div class="cta-row">
         <a class="btn" href="#start">Get a free check</a>
         <a class="btn ghost" href="#check">Check it yourself</a>
@@ -104,7 +104,7 @@ BODY = f'''
 
 <section class="band" id="problem">
   <div class="wrap">
-    <h2>Four of these shops come up. One doesn&rsquo;t.</h2>
+    <h2>Four of these shops come up. <span class="l2">One doesn&rsquo;t.</span></h2>
     {top_desk}
     {top_mob}
     <div class="why">
@@ -180,13 +180,16 @@ BODY = f'''
           <li><i></i>Hours right on the site and on Google</li>
         </ul>
         <div class="t-tot" id="pricing">
-          <div class="ln"><span>Build</span><span class="f"></span><b>$600&ndash;$1,000</b></div>
+          <div class="ln"><span>Build</span><span class="f"></span><b>$1,000</b></div>
           <div class="ln"><span>Upkeep</span><span class="f"></span><b>$199/mo</b></div>
           <div class="ln"><span>Terms</span><span class="f"></span><b>30 days&rsquo; notice</b></div>
         </div>
-        <p class="t-fine">The build price depends on how many services and towns you have.
-        We settle it on the first call and it doesn&rsquo;t change. Upkeep covers hosting,
-        edits, and a monthly report on what the AI assistants say about you.</p>
+        <p class="t-fine">$1,000 covers up to 8 services and 6 towns. Smaller shops are $600
+        with the first year of upkeep paid up front ($1,990). Bigger shops, we quote. We
+        settle it on the first call and it doesn&rsquo;t change.</p>
+        <p class="t-fine">Upkeep covers hosting, edits, and a monthly report on what the AI
+        assistants say about you. We build and host the site; the domain is registered in
+        your name. After a year you can buy the site outright for $2,000.</p>
         <div class="stamp">No account<br>managers</div>
       </article>
     </div>
@@ -204,8 +207,7 @@ BODY = f'''
         send you what we find. If everything&rsquo;s already working, we&rsquo;ll say so.</p>
         <p class="alt">Rather email? <a href="mailto:hello@builtformainstreet.com">hello@builtformainstreet.com</a></p>
       </div>
-      <form id="askform" name="free-check" method="POST" data-netlify="true" netlify-honeypot="company-url">
-        <input type="hidden" name="form-name" value="free-check">
+      <form id="askform" name="free-check" method="POST" target="lead-sink" action="https://script.google.com/macros/s/PASTE_YOUR_SCRIPT_ID/exec">
         <input type="hidden" name="subject" id="f-subject" data-remove-prefix value="New free check request">
         <p class="hp" aria-hidden="true"><label for="hp">Leave this empty</label><input id="hp" name="company-url" tabindex="-1" autocomplete="off"></p>
         <div><label for="f-name">Your name</label><input type="text" id="f-name" name="name" required placeholder="Jim Hoffman"></div>
@@ -216,6 +218,7 @@ BODY = f'''
         <div class="full"><button class="btn" type="submit" id="send">Send it over</button></div>
         <p class="fnote" id="fnote" aria-live="polite">We&rsquo;ll run the check and get back to you. We won&rsquo;t put you on a mailing list.</p>
       </form>
+      <iframe name="lead-sink" id="lead-sink" title="Form receiver" hidden></iframe>
     </div>
   </div>
 </section>
@@ -241,7 +244,7 @@ BODY = f'''
 {{"@context":"https://schema.org","@type":"ProfessionalService","name":"Built for Main Street",
 "description":"Websites and Google Business Profile work for local trade shops, so search engines and AI assistants can find them and customers can reach them.",
 "url":"https://builtformainstreet.com","email":"hello@builtformainstreet.com",
-"priceRange":"$600-$1000","areaServed":{{"@type":"Country","name":"United States"}},
+"priceRange":"$600-$1500","areaServed":{{"@type":"Country","name":"United States"}},
 "address":{{"@type":"PostalAddress","addressLocality":"Los Angeles","addressRegion":"CA","addressCountry":"US"}},
 "hasOfferCatalog":{{"@type":"OfferCatalog","name":"Services","itemListElement":[
 {{"@type":"Offer","name":"Visibility Check","price":"0","priceCurrency":"USD","itemOffered":{{"@type":"Service","name":"Visibility Check"}}}},
@@ -257,18 +260,16 @@ HEAD_NOTE = '''<!--
   Built for Main Street. One file, no build step.
 
   GO LIVE
-  1. Drag the site/www folder onto app.netlify.com/drop.
-  2. Netlify: Site configuration > Notifications > Form submission notifications
-     > Add notification > Email notification. Email: hello@builtformainstreet.com.
-     Form: free-check. Save.
-  3. Submit the form once yourself. Confirm the email arrives, check spam, and
-     mark it "not spam" if it landed there.
-  4. Domain management > add builtformainstreet.com, then set the DNS records it
-     shows you at Namecheap.
-
-  Every submission is also stored under Forms in the Netlify dashboard, so a lead
-  is never lost even if an email is. Notification subject is "Free check: <shop>
-  (<town>)" and reply-to is the customer's email when they give one.
+  1. Leads to your inbox. Open site/www/lead-to-email.gs and follow the five
+     steps at the top. It ends with a URL. Paste it over
+     https://script.google.com/macros/s/PASTE_YOUR_SCRIPT_ID/exec below.
+     Every lead is emailed to hello@builtformainstreet.com from your own Google
+     account and added as a row to a Google Sheet you own.
+  2. Drag the site/www folder onto app.netlify.com/drop.
+  3. Netlify > Domain management > Add a domain > www.builtformainstreet.com.
+     At Namecheap > Advanced DNS: A record, host @, value 75.2.60.5;
+     CNAME record, host www, value <your-site>.netlify.app. Leave MX records alone.
+  4. Fill in the form on the live site once. Confirm the email and the Sheet row.
 -->
 '''
 art = CSS + BODY

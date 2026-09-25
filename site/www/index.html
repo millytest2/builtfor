@@ -7,18 +7,16 @@
   Built for Main Street. One file, no build step.
 
   GO LIVE
-  1. Drag the site/www folder onto app.netlify.com/drop.
-  2. Netlify: Site configuration > Notifications > Form submission notifications
-     > Add notification > Email notification. Email: hello@builtformainstreet.com.
-     Form: free-check. Save.
-  3. Submit the form once yourself. Confirm the email arrives, check spam, and
-     mark it "not spam" if it landed there.
-  4. Domain management > add builtformainstreet.com, then set the DNS records it
-     shows you at Namecheap.
-
-  Every submission is also stored under Forms in the Netlify dashboard, so a lead
-  is never lost even if an email is. Notification subject is "Free check: <shop>
-  (<town>)" and reply-to is the customer's email when they give one.
+  1. Leads to your inbox. Open site/www/lead-to-email.gs and follow the five
+     steps at the top. It ends with a URL. Paste it over
+     https://script.google.com/macros/s/PASTE_YOUR_SCRIPT_ID/exec below.
+     Every lead is emailed to hello@builtformainstreet.com from your own Google
+     account and added as a row to a Google Sheet you own.
+  2. Drag the site/www folder onto app.netlify.com/drop.
+  3. Netlify > Domain management > Add a domain > www.builtformainstreet.com.
+     At Namecheap > Advanced DNS: A record, host @, value 75.2.60.5;
+     CNAME record, host www, value <your-site>.netlify.app. Leave MX records alone.
+  4. Fill in the form on the live site once. Confirm the email and the Sheet row.
 -->
 <title>Built for Main Street</title>
 <meta name="description" content="We get local trade shops named when customers ask Google or an AI assistant who to hire, and make sure those customers can reach you in one tap.">
@@ -111,7 +109,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 .eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
   color:var(--signal);margin-bottom:14px}
 h2{font-family:var(--display);font-weight:600;font-size:var(--h2);line-height:1.04;margin-top:0;
-  letter-spacing:-.024em;margin:0 0 20px;max-width:18ch;text-wrap:balance;
+  letter-spacing:-.024em;margin:0 0 20px;max-width:24ch;text-wrap:balance;
   font-variation-settings:'SOFT' 40,'WONK' 1}
 .lead{font-size:clamp(17px,1.9vw,19px);color:var(--ink-2);line-height:1.5;margin:0 0 24px;max-width:44ch}
 .lead b{color:var(--ink);font-weight:600}
@@ -122,9 +120,10 @@ section{padding-block:var(--sec) 0}
 @media(max-width:980px){.duo{grid-template-columns:1fr;gap:36px}}
 
 /* ---------- hero ---------- */
+@media(min-width:981px){.hero .duo{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(40px,5vw,72px)}}
 .hero{padding-block:clamp(40px,7vw,88px) 0}
-h1{font-family:var(--display);font-weight:800;margin:0 0 22px;font-size:clamp(36px,5.6vw,64px);
-  line-height:1.02;letter-spacing:-.032em;max-width:15ch;text-wrap:balance;
+h1{font-family:var(--display);font-weight:800;margin:0 0 24px;font-size:clamp(36px,5.1vw,62px);
+  line-height:1.02;letter-spacing:-.032em;max-width:17ch;text-wrap:balance;
   font-variation-settings:'SOFT' 50,'WONK' 1}
 h1 em{font-style:normal;color:var(--signal)}
 .dek{font-size:clamp(17.5px,2vw,20.5px);line-height:1.48;color:var(--ink-2);margin:0 0 30px;max-width:40ch}
@@ -163,7 +162,8 @@ h1 em{font-style:normal;color:var(--signal)}
 
 /* ---------- dark bands: the street ---------- */
 .band{background:var(--deep);color:var(--cream);margin-top:var(--sec);padding-block:clamp(48px,7vw,84px)}
-.band h2{color:var(--cream)}
+.band h2{color:var(--cream);max-width:none}
+@media(min-width:701px){h2 .l2{display:block}}
 .band .eyebrow{color:var(--glow)}
 .st-desk,.st-mob{width:100%;height:auto;display:block;margin-top:clamp(20px,3vw,36px)}
 .st-mob{display:none}
@@ -242,9 +242,10 @@ select{appearance:none;padding-right:34px;background-image:url("data:image/svg+x
 .ln .f{flex:1;border-bottom:1.5px dotted var(--line-2);transform:translateY(-4px)}
 .ln b{font-family:var(--display);font-weight:800;font-size:clamp(18px,2.2vw,22px);letter-spacing:-.01em;color:var(--ink);
   font-variation-settings:'SOFT' 50}
-.t-fine{font-size:12.5px;line-height:1.5;color:var(--ink-3);margin:14px 0 0;max-width:34ch}
+.t-fine{font-size:12.5px;line-height:1.5;color:var(--ink-3);margin:12px 0 0}
+.t-fine+.t-fine{margin-top:8px}
 @media(max-width:560px){.t-fine{max-width:none}}
-.stamp{position:absolute;right:clamp(14px,3vw,26px);bottom:clamp(58px,8vw,74px);transform:rotate(-9deg);
+.stamp{position:absolute;right:clamp(14px,3vw,26px);top:148px;transform:rotate(-9deg);
   border:2.5px solid var(--signal);color:var(--signal);font-family:var(--mono);font-weight:500;font-size:11.5px;
   letter-spacing:.12em;text-transform:uppercase;text-align:center;line-height:1.25;padding:7px 10px;border-radius:3px;
   opacity:.82;mix-blend-mode:multiply;pointer-events:none}
@@ -307,8 +308,8 @@ footer{padding-block:clamp(40px,6vw,64px)}
   <div class="duo">
     <div class="words">
       <h1>Your next customer is asking a machine who to <em>call</em>.</h1>
-      <p class="dek">It names two or three shops, and that's the list. We get yours on it, and
-      make sure the people who find you can reach you in one tap.</p>
+      <p class="dek">It names two or three shops, and that's the list. We fix what keeps yours
+      off it, and make sure the people who find you can reach you in one tap.</p>
       <div class="cta-row">
         <a class="btn" href="#start">Get a free check</a>
         <a class="btn ghost" href="#check">Check it yourself</a>
@@ -333,7 +334,7 @@ footer{padding-block:clamp(40px,6vw,64px)}
 
 <section class="band" id="problem">
   <div class="wrap">
-    <h2>Four of these shops come up. One doesn&rsquo;t.</h2>
+    <h2>Four of these shops come up. <span class="l2">One doesn&rsquo;t.</span></h2>
     <svg class="st-desk" viewBox="0 0 1000 196" role="img" aria-label="A row of shops on a main street. Four are lit. The fifth, yours, is dark.">
   <g fill="none" stroke="rgba(242,236,224,.36)" stroke-width="1.6" stroke-linecap="square">
     <line x1="0" y1="190" x2="1000" y2="190" stroke="rgba(242,236,224,.26)"/>
@@ -481,13 +482,16 @@ footer{padding-block:clamp(40px,6vw,64px)}
           <li><i></i>Hours right on the site and on Google</li>
         </ul>
         <div class="t-tot" id="pricing">
-          <div class="ln"><span>Build</span><span class="f"></span><b>$600&ndash;$1,000</b></div>
+          <div class="ln"><span>Build</span><span class="f"></span><b>$1,000</b></div>
           <div class="ln"><span>Upkeep</span><span class="f"></span><b>$199/mo</b></div>
           <div class="ln"><span>Terms</span><span class="f"></span><b>30 days&rsquo; notice</b></div>
         </div>
-        <p class="t-fine">The build price depends on how many services and towns you have.
-        We settle it on the first call and it doesn&rsquo;t change. Upkeep covers hosting,
-        edits, and a monthly report on what the AI assistants say about you.</p>
+        <p class="t-fine">$1,000 covers up to 8 services and 6 towns. Smaller shops are $600
+        with the first year of upkeep paid up front ($1,990). Bigger shops, we quote. We
+        settle it on the first call and it doesn&rsquo;t change.</p>
+        <p class="t-fine">Upkeep covers hosting, edits, and a monthly report on what the AI
+        assistants say about you. We build and host the site; the domain is registered in
+        your name. After a year you can buy the site outright for $2,000.</p>
         <div class="stamp">No account<br>managers</div>
       </article>
     </div>
@@ -577,8 +581,7 @@ footer{padding-block:clamp(40px,6vw,64px)}
         send you what we find. If everything&rsquo;s already working, we&rsquo;ll say so.</p>
         <p class="alt">Rather email? <a href="mailto:hello@builtformainstreet.com">hello@builtformainstreet.com</a></p>
       </div>
-      <form id="askform" name="free-check" method="POST" data-netlify="true" netlify-honeypot="company-url">
-        <input type="hidden" name="form-name" value="free-check">
+      <form id="askform" name="free-check" method="POST" target="lead-sink" action="https://script.google.com/macros/s/PASTE_YOUR_SCRIPT_ID/exec">
         <input type="hidden" name="subject" id="f-subject" data-remove-prefix value="New free check request">
         <p class="hp" aria-hidden="true"><label for="hp">Leave this empty</label><input id="hp" name="company-url" tabindex="-1" autocomplete="off"></p>
         <div><label for="f-name">Your name</label><input type="text" id="f-name" name="name" required placeholder="Jim Hoffman"></div>
@@ -589,6 +592,7 @@ footer{padding-block:clamp(40px,6vw,64px)}
         <div class="full"><button class="btn" type="submit" id="send">Send it over</button></div>
         <p class="fnote" id="fnote" aria-live="polite">We&rsquo;ll run the check and get back to you. We won&rsquo;t put you on a mailing list.</p>
       </form>
+      <iframe name="lead-sink" id="lead-sink" title="Form receiver" hidden></iframe>
     </div>
   </div>
 </section>
@@ -614,7 +618,7 @@ footer{padding-block:clamp(40px,6vw,64px)}
 {"@context":"https://schema.org","@type":"ProfessionalService","name":"Built for Main Street",
 "description":"Websites and Google Business Profile work for local trade shops, so search engines and AI assistants can find them and customers can reach them.",
 "url":"https://builtformainstreet.com","email":"hello@builtformainstreet.com",
-"priceRange":"$600-$1000","areaServed":{"@type":"Country","name":"United States"},
+"priceRange":"$600-$1500","areaServed":{"@type":"Country","name":"United States"},
 "address":{"@type":"PostalAddress","addressLocality":"Los Angeles","addressRegion":"CA","addressCountry":"US"},
 "hasOfferCatalog":{"@type":"OfferCatalog","name":"Services","itemListElement":[
 {"@type":"Offer","name":"Visibility Check","price":"0","priceCurrency":"USD","itemOffered":{"@type":"Service","name":"Visibility Check"}},
@@ -686,25 +690,27 @@ footer{padding-block:clamp(40px,6vw,64px)}
     streets.forEach(function(s){io.observe(s);});
   } else { streets.forEach(lightUp); }
 
-  // the form: Netlify Forms over fetch, with a fallback that still gets them to a person
-  var form=$('#askform'), note=$('#fnote'), send=$('#send');
+  // the form posts straight to your own Google Apps Script, into a hidden frame
+  var form=$('#askform'), note=$('#fnote'), send=$('#send'), sink=$('#lead-sink');
+  function fallback(){
+    note.className='fnote';
+    note.innerHTML='That didn\u2019t go through. Email <b>hello@builtformainstreet.com</b> and we\u2019ll look you up today.';
+    send.disabled=false; send.textContent='Send it over';
+  }
   form.addEventListener('submit',function(e){
-    e.preventDefault();
-    if(!form.checkValidity()){form.reportValidity();return;}
-    // the notification email arrives titled with the shop, so it can be read from the lock screen
+    if(!form.checkValidity()){e.preventDefault();form.reportValidity();return;}
     var shop=($('#f-biz').value||'').trim(), where=($('#f-town').value||'').trim();
     $('#f-subject').value='Free check: '+(shop||'new request')+(where?' ('+where+')':'');
+    if(form.getAttribute('action').indexOf('PASTE_YOUR_SCRIPT_ID')>-1){e.preventDefault();fallback();return;}
     send.disabled=true; send.textContent='Sending...';
-    var body=new URLSearchParams(new FormData(form)).toString();
-    fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body})
-      .then(function(r){if(!r.ok) throw new Error(r.status);
-        form.reset(); note.className='fnote ok';
-        note.textContent='Got it. We\u2019ll look you up and get back to you, usually the same day.';
-        send.textContent='Sent';})
-      .catch(function(){
-        note.className='fnote';
-        note.innerHTML='That didn\u2019t go through. Email <b>hello@builtformainstreet.com</b> and we\u2019ll look you up today.';
-        send.disabled=false; send.textContent='Send it over';});
+    var done=false;
+    sink.addEventListener('load',function once(){
+      sink.removeEventListener('load',once); if(done) return; done=true;
+      form.reset(); note.className='fnote ok';
+      note.textContent='Got it. We\u2019ll look you up and get back to you, usually the same day.';
+      send.textContent='Sent';
+    });
+    setTimeout(function(){ if(!done){ done=true; fallback(); } },15000);
   });
 })();
 

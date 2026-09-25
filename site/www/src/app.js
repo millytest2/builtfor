@@ -62,24 +62,26 @@
     streets.forEach(function(s){io.observe(s);});
   } else { streets.forEach(lightUp); }
 
-  // the form: Netlify Forms over fetch, with a fallback that still gets them to a person
-  var form=$('#askform'), note=$('#fnote'), send=$('#send');
+  // the form posts straight to your own Google Apps Script, into a hidden frame
+  var form=$('#askform'), note=$('#fnote'), send=$('#send'), sink=$('#lead-sink');
+  function fallback(){
+    note.className='fnote';
+    note.innerHTML='That didn\u2019t go through. Email <b>hello@builtformainstreet.com</b> and we\u2019ll look you up today.';
+    send.disabled=false; send.textContent='Send it over';
+  }
   form.addEventListener('submit',function(e){
-    e.preventDefault();
-    if(!form.checkValidity()){form.reportValidity();return;}
-    // the notification email arrives titled with the shop, so it can be read from the lock screen
+    if(!form.checkValidity()){e.preventDefault();form.reportValidity();return;}
     var shop=($('#f-biz').value||'').trim(), where=($('#f-town').value||'').trim();
     $('#f-subject').value='Free check: '+(shop||'new request')+(where?' ('+where+')':'');
+    if(form.getAttribute('action').indexOf('PASTE_YOUR_SCRIPT_ID')>-1){e.preventDefault();fallback();return;}
     send.disabled=true; send.textContent='Sending...';
-    var body=new URLSearchParams(new FormData(form)).toString();
-    fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body})
-      .then(function(r){if(!r.ok) throw new Error(r.status);
-        form.reset(); note.className='fnote ok';
-        note.textContent='Got it. We\u2019ll look you up and get back to you, usually the same day.';
-        send.textContent='Sent';})
-      .catch(function(){
-        note.className='fnote';
-        note.innerHTML='That didn\u2019t go through. Email <b>hello@builtformainstreet.com</b> and we\u2019ll look you up today.';
-        send.disabled=false; send.textContent='Send it over';});
+    var done=false;
+    sink.addEventListener('load',function once(){
+      sink.removeEventListener('load',once); if(done) return; done=true;
+      form.reset(); note.className='fnote ok';
+      note.textContent='Got it. We\u2019ll look you up and get back to you, usually the same day.';
+      send.textContent='Sent';
+    });
+    setTimeout(function(){ if(!done){ done=true; fallback(); } },15000);
   });
 })();
