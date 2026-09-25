@@ -3,26 +3,31 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<!--
-  Built for Main Street. One file, no build step.
-
-  GO LIVE
-  1. Leads to your inbox. Open site/www/lead-to-email.gs and follow the five
-     steps at the top. It ends with a URL. Paste it over
-     https://script.google.com/macros/s/PASTE_YOUR_SCRIPT_ID/exec below.
-     Every lead is emailed to hello@builtformainstreet.com from your own Google
-     account and added as a row to a Google Sheet you own.
-  2. Drag the site/www folder onto app.netlify.com/drop.
-  3. Netlify > Domain management > Add a domain > www.builtformainstreet.com.
-     At Namecheap > Advanced DNS: A record, host @, value 75.2.60.5;
-     CNAME record, host www, value <your-site>.netlify.app. Leave MX records alone.
-  4. Fill in the form on the live site once. Confirm the email and the Sheet row.
--->
 <title>Built for Main Street</title>
-<meta name="description" content="We get local trade shops named when customers ask Google or an AI assistant who to hire, and make sure those customers can reach you in one tap.">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Libre+Franklin:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<meta name="description" content="Your next customer is asking Google or an AI assistant who to call. We fix what keeps local trade shops off that list, and make sure customers can reach you in one tap.">
+<link rel="canonical" href="https://www.builtformainstreet.com/">
+<meta name="theme-color" content="#1f3a32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/libre-franklin.woff2" as="font" type="font/woff2" crossorigin>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Built for Main Street">
+<meta property="og:title" content="Built for Main Street">
+<meta property="og:description" content="Your next customer is asking Google or an AI assistant who to call. We fix what keeps local trade shops off that list, and make sure customers can reach you in one tap.">
+<meta property="og:url" content="https://www.builtformainstreet.com/">
+<meta property="og:image" content="https://www.builtformainstreet.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A row of shops on a main street. Four are lit; the fifth is dark.">
+<meta name="twitter:card" content="summary_large_image">
 <style>
+@font-face{font-family:'Fraunces';src:url(/fonts/fraunces.woff2) format('woff2');font-weight:100 900;font-style:normal;font-display:swap}
+@font-face{font-family:'Libre Franklin';src:url(/fonts/libre-franklin.woff2) format('woff2');font-weight:100 900;font-style:normal;font-display:swap}
+@font-face{font-family:'Libre Franklin';src:url(/fonts/libre-franklin-italic.woff2) format('woff2');font-weight:100 900;font-style:italic;font-display:swap}
+@font-face{font-family:'IBM Plex Mono';src:url(/fonts/plex-mono-400.woff2) format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'IBM Plex Mono';src:url(/fonts/plex-mono-500.woff2) format('woff2');font-weight:500;font-style:normal;font-display:swap}
 :root{
   color-scheme:light;
   --paper:#f5f1e8; --card:#fffdf8; --sunk:#ebe5d8; --ticket:#fffcf3;
@@ -109,7 +114,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 .eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
   color:var(--signal);margin-bottom:14px}
 h2{font-family:var(--display);font-weight:600;font-size:var(--h2);line-height:1.04;margin-top:0;
-  letter-spacing:-.024em;margin:0 0 20px;max-width:24ch;text-wrap:balance;
+  letter-spacing:-.016em;margin:0 0 20px;max-width:24ch;text-wrap:balance;
   font-variation-settings:'SOFT' 40,'WONK' 1}
 .lead{font-size:clamp(17px,1.9vw,19px);color:var(--ink-2);line-height:1.5;margin:0 0 24px;max-width:44ch}
 .lead b{color:var(--ink);font-weight:600}
@@ -123,7 +128,7 @@ section{padding-block:var(--sec) 0}
 @media(min-width:981px){.hero .duo{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(40px,5vw,72px)}}
 .hero{padding-block:clamp(40px,7vw,88px) 0}
 h1{font-family:var(--display);font-weight:800;margin:0 0 24px;font-size:clamp(36px,5.1vw,62px);
-  line-height:1.02;letter-spacing:-.032em;max-width:17ch;text-wrap:balance;
+  line-height:1.03;letter-spacing:-.02em;max-width:17ch;text-wrap:balance;
   font-variation-settings:'SOFT' 50,'WONK' 1}
 h1 em{font-style:normal;color:var(--signal)}
 .dek{font-size:clamp(17.5px,2vw,20.5px);line-height:1.48;color:var(--ink-2);margin:0 0 30px;max-width:40ch}
@@ -283,13 +288,34 @@ footer{padding-block:clamp(40px,6vw,64px)}
 .fcontact span{font-size:14px;color:var(--ink-3)}
 .fbot{margin-top:36px;padding-top:18px;border-top:1px solid var(--line);font-size:13px;color:var(--ink-3)}
 
+/* ---------- privacy ---------- */
+.legal{padding-block:clamp(40px,6vw,80px) 0;max-width:calc(760px + 2*var(--gut))}
+.legal h1{font-size:clamp(36px,5vw,54px);max-width:none;margin-bottom:10px}
+.legal .eff{color:var(--ink-3);font-size:15px;margin:0 0 30px}
+.legal h2{font-size:clamp(21px,2.5vw,26px);margin:38px 0 10px;max-width:none}
+.legal p,.legal li{font-size:17px;color:var(--ink-2);line-height:1.65;max-width:66ch}
+.legal p{margin:0 0 14px}
+.legal ul{padding-left:20px;margin:0 0 14px}
+.legal li{margin-bottom:8px}
+.legal b{color:var(--ink);font-weight:600}
+.legal a:not(.btn){color:var(--ink);text-decoration-color:var(--signal);text-underline-offset:3px}
+.legal .back{margin-top:40px}
+
+/* ---------- 404 ---------- */
+.lost{padding-block:clamp(56px,9vw,112px) 0;text-align:center}
+.lost .closed{width:min(300px,78%);height:auto;color:var(--ink-2);margin:0 auto 28px;display:block}
+.lost h1{margin-inline:auto;max-width:none}
+.lost .dek{margin-inline:auto}
+
+/* footer privacy link and form note link */
+.fcontact a[href$="privacy/"],.fcontact a[href$="privacy/index.html"]{font-size:14px;color:var(--ink-3)}
+.fnote a{color:inherit;text-underline-offset:2px}
 </style>
 </head>
 <body>
-
 <nav class="nav" id="nav">
   <div class="nav-in">
-    <a class="mark" href="#top">BUILT FOR MAIN <span class="st">STREET</span></a>
+    <a class="mark" href="/">BUILT FOR MAIN <span class="st">STREET</span></a>
     <div class="nav-links" id="navlinks">
       <a href="#problem">The problem</a>
       <a href="#check">Check yours</a>
@@ -308,7 +334,7 @@ footer{padding-block:clamp(40px,6vw,64px)}
   <div class="duo">
     <div class="words">
       <h1>Your next customer is asking a machine who to <em>call</em>.</h1>
-      <p class="dek">It names two or three shops, and that's the list. We fix what keeps yours
+      <p class="dek">It names two or three shops, and that’s the list. We fix what keeps yours
       off it, and make sure the people who find you can reach you in one tap.</p>
       <div class="cta-row">
         <a class="btn" href="#start">Get a free check</a>
@@ -317,7 +343,7 @@ footer{padding-block:clamp(40px,6vw,64px)}
     </div>
     <figure class="chat" aria-label="An example of an AI assistant answering a customer's question">
       <div class="chat-top"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="chat-t">AI assistant</span></div>
-      <div class="bubble ask">Who's the best upholstery shop in Fort Wayne?</div>
+      <div class="bubble ask">Who’s the best upholstery shop in Fort Wayne?</div>
       <div class="bubble ans">
         <p>Here are three well-reviewed options:</p>
         <ol>
@@ -370,7 +396,7 @@ footer{padding-block:clamp(40px,6vw,64px)}
       <path d="M774 90 h176" stroke-dasharray="10 10" stroke="rgba(242,236,224,.3)" stroke-width="5"/>
     </g>
   </g>
-  <text x="102" y="178" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11.5" letter-spacing="1" fill="rgba(242,236,224,.62)" stroke="none">UPHOLSTERY</text><text x="262" y="178" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11.5" letter-spacing="1" fill="rgba(242,236,224,.62)" stroke="none">TREE SERVICE</text><text x="482" y="178" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11.5" letter-spacing="1" fill="rgba(242,236,224,.62)" stroke="none">WELDING</text><text x="672" y="178" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11.5" letter-spacing="1" fill="rgba(242,236,224,.62)" stroke="none">MASONRY</text><text x="862" y="178" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11.5" letter-spacing="1" fill="rgba(242,236,224,.34)" stroke="none">YOURS?</text>
+  <text x="88" y="178" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11.5" letter-spacing="1" fill="rgba(242,236,224,.62)" stroke="none">UPHOLSTERY</text><text x="262" y="178" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11.5" letter-spacing="1" fill="rgba(242,236,224,.62)" stroke="none">TREE SERVICE</text><text x="482" y="178" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11.5" letter-spacing="1" fill="rgba(242,236,224,.62)" stroke="none">WELDING</text><text x="672" y="178" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11.5" letter-spacing="1" fill="rgba(242,236,224,.62)" stroke="none">MASONRY</text><text x="862" y="178" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11.5" letter-spacing="1" fill="rgba(242,236,224,.34)" stroke="none">YOURS?</text>
 </svg>
     <svg class="st-mob" viewBox="578 14 384 182" role="img" aria-label="A row of shops on a main street. Four are lit. The fifth, yours, is dark.">
   <g fill="none" stroke="rgba(242,236,224,.36)" stroke-width="1.6" stroke-linecap="square">
@@ -407,7 +433,7 @@ footer{padding-block:clamp(40px,6vw,64px)}
       <path d="M774 90 h176" stroke-dasharray="10 10" stroke="rgba(242,236,224,.3)" stroke-width="5"/>
     </g>
   </g>
-  <text x="102" y="178" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="13" letter-spacing="1" fill="rgba(242,236,224,.62)" stroke="none">UPHOLSTERY</text><text x="262" y="178" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="13" letter-spacing="1" fill="rgba(242,236,224,.62)" stroke="none">TREE SERVICE</text><text x="482" y="178" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="13" letter-spacing="1" fill="rgba(242,236,224,.62)" stroke="none">WELDING</text><text x="672" y="178" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="13" letter-spacing="1" fill="rgba(242,236,224,.62)" stroke="none">MASONRY</text><text x="862" y="178" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="13" letter-spacing="1" fill="rgba(242,236,224,.34)" stroke="none">YOURS?</text>
+  <text x="88" y="178" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="13" letter-spacing="1" fill="rgba(242,236,224,.62)" stroke="none">UPHOLSTERY</text><text x="262" y="178" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="13" letter-spacing="1" fill="rgba(242,236,224,.62)" stroke="none">TREE SERVICE</text><text x="482" y="178" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="13" letter-spacing="1" fill="rgba(242,236,224,.62)" stroke="none">WELDING</text><text x="672" y="178" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="13" letter-spacing="1" fill="rgba(242,236,224,.62)" stroke="none">MASONRY</text><text x="862" y="178" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="13" letter-spacing="1" fill="rgba(242,236,224,.34)" stroke="none">YOURS?</text>
 </svg>
     <div class="why">
       <div><h3>They never find you</h3>
@@ -438,6 +464,8 @@ footer{padding-block:clamp(40px,6vw,64px)}
             <option value="masonry and concrete">Masonry and concrete</option>
             <option value="custom cabinetry">Cabinetry</option>
             <option value="landscaping">Landscaping</option>
+            <option value="fence and gate installation">Fencing and gates</option>
+            <option value="septic tank service">Septic service</option>
           </select></div>
         <div><label for="town">Your town</label>
           <input type="text" id="town" placeholder="Fort Wayne" autocomplete="address-level2"></div>
@@ -536,7 +564,7 @@ footer{padding-block:clamp(40px,6vw,64px)}
       <path d="M774 90 h176" stroke-dasharray="14 14" stroke="#c0392f" stroke-width="5"/>
     </g>
   </g>
-  <text x="102" y="178" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11.5" letter-spacing="1" fill="rgba(242,236,224,.62)" stroke="none">UPHOLSTERY</text><text x="262" y="178" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11.5" letter-spacing="1" fill="rgba(242,236,224,.62)" stroke="none">TREE SERVICE</text><text x="482" y="178" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11.5" letter-spacing="1" fill="rgba(242,236,224,.62)" stroke="none">WELDING</text><text x="672" y="178" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11.5" letter-spacing="1" fill="rgba(242,236,224,.62)" stroke="none">MASONRY</text><text x="862" y="178" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11.5" letter-spacing="1" fill="rgba(242,236,224,.62)" stroke="none">YOURS</text>
+  <text x="88" y="178" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11.5" letter-spacing="1" fill="rgba(242,236,224,.62)" stroke="none">UPHOLSTERY</text><text x="262" y="178" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11.5" letter-spacing="1" fill="rgba(242,236,224,.62)" stroke="none">TREE SERVICE</text><text x="482" y="178" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11.5" letter-spacing="1" fill="rgba(242,236,224,.62)" stroke="none">WELDING</text><text x="672" y="178" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11.5" letter-spacing="1" fill="rgba(242,236,224,.62)" stroke="none">MASONRY</text><text x="862" y="178" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="11.5" letter-spacing="1" fill="rgba(242,236,224,.62)" stroke="none">YOURS</text>
 </svg>
     <svg class="st-mob" viewBox="578 14 384 182" role="img" aria-label="A row of shops on a main street. All five are lit, including yours.">
   <g fill="none" stroke="rgba(242,236,224,.36)" stroke-width="1.6" stroke-linecap="square">
@@ -573,7 +601,7 @@ footer{padding-block:clamp(40px,6vw,64px)}
       <path d="M774 90 h176" stroke-dasharray="14 14" stroke="#c0392f" stroke-width="5"/>
     </g>
   </g>
-  <text x="102" y="178" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="13" letter-spacing="1" fill="rgba(242,236,224,.62)" stroke="none">UPHOLSTERY</text><text x="262" y="178" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="13" letter-spacing="1" fill="rgba(242,236,224,.62)" stroke="none">TREE SERVICE</text><text x="482" y="178" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="13" letter-spacing="1" fill="rgba(242,236,224,.62)" stroke="none">WELDING</text><text x="672" y="178" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="13" letter-spacing="1" fill="rgba(242,236,224,.62)" stroke="none">MASONRY</text><text x="862" y="178" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="13" letter-spacing="1" fill="rgba(242,236,224,.62)" stroke="none">YOURS</text>
+  <text x="88" y="178" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="13" letter-spacing="1" fill="rgba(242,236,224,.62)" stroke="none">UPHOLSTERY</text><text x="262" y="178" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="13" letter-spacing="1" fill="rgba(242,236,224,.62)" stroke="none">TREE SERVICE</text><text x="482" y="178" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="13" letter-spacing="1" fill="rgba(242,236,224,.62)" stroke="none">WELDING</text><text x="672" y="178" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="13" letter-spacing="1" fill="rgba(242,236,224,.62)" stroke="none">MASONRY</text><text x="862" y="178" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="13" letter-spacing="1" fill="rgba(242,236,224,.62)" stroke="none">YOURS</text>
 </svg>
     <div class="duo close">
       <div class="words">
@@ -590,7 +618,7 @@ footer{padding-block:clamp(40px,6vw,64px)}
         <div><label for="f-phone">Best number</label><input type="tel" id="f-phone" name="phone" required placeholder="(260) 555-0100"></div>
         <div class="full"><label for="f-email">Email (optional)</label><input type="email" id="f-email" name="email" placeholder="jim@hoffmanandsons.com" autocomplete="email"></div>
         <div class="full"><button class="btn" type="submit" id="send">Send it over</button></div>
-        <p class="fnote" id="fnote" aria-live="polite">We&rsquo;ll run the check and get back to you. We won&rsquo;t put you on a mailing list.</p>
+        <p class="fnote" id="fnote" aria-live="polite">We&rsquo;ll run the check and get back to you. We won&rsquo;t put you on a mailing list. <a href="/privacy/">Privacy</a></p>
       </form>
       <iframe name="lead-sink" id="lead-sink" title="Form receiver" hidden></iframe>
     </div>
@@ -609,6 +637,7 @@ footer{padding-block:clamp(40px,6vw,64px)}
     <div class="fcontact">
       <a href="mailto:hello@builtformainstreet.com">hello@builtformainstreet.com</a>
       <span>Based in Los Angeles. We work with shops anywhere in the US.</span>
+      <a href="/privacy/">Privacy</a>
     </div>
   </div>
   <div class="fbot">&copy; 2026 Built for Main Street &middot; Los Angeles, California</div>
@@ -617,7 +646,7 @@ footer{padding-block:clamp(40px,6vw,64px)}
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ProfessionalService","name":"Built for Main Street",
 "description":"Websites and Google Business Profile work for local trade shops, so search engines and AI assistants can find them and customers can reach them.",
-"url":"https://builtformainstreet.com","email":"hello@builtformainstreet.com",
+"url":"https://www.builtformainstreet.com/","image":"https://www.builtformainstreet.com/og.png","logo":"https://www.builtformainstreet.com/apple-touch-icon.png","email":"hello@builtformainstreet.com",
 "priceRange":"$600-$1500","areaServed":{"@type":"Country","name":"United States"},
 "address":{"@type":"PostalAddress","addressLocality":"Los Angeles","addressRegion":"CA","addressCountry":"US"},
 "hasOfferCatalog":{"@type":"OfferCatalog","name":"Services","itemListElement":[

@@ -11,7 +11,7 @@
  *    Execute as: Me.   Who has access: Anyone.   Click Deploy.
  * 4. Google asks for permission to send email and edit this sheet. Allow it.
  *    (If it says the app isn't verified: Advanced > Go to project. It's yours.)
- * 5. Copy the Web app URL. In site/www/index.html, replace
+^ * 5. Copy the Web app URL. In site/www/index.html, replace
  *    https://script.google.com/macros/s/PASTE_YOUR_SCRIPT_ID/exec with it.
  *
  * Each lead is emailed to TO below and added as a row to the sheet. The
