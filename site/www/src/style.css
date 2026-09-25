@@ -114,9 +114,6 @@ h1 em{font-style:normal;color:var(--signal)}
 .btn.ghost{background:transparent;color:var(--ink);border-color:var(--line-2)}
 .btn.ghost:hover{color:var(--signal);border-color:var(--signal)}
 @media(max-width:560px){.cta-row{flex-direction:column}.btn{width:100%}}
-.trust{list-style:none;padding:22px 0 0;margin:30px 0 0;border-top:1px solid var(--line);
-  display:flex;flex-wrap:wrap;gap:8px 26px;font-family:var(--mono);font-size:12.5px;color:var(--ink-3)}
-.trust b{color:var(--ink);font-weight:500}
 
 
 /* the AI answer: the most characteristic thing in this world */
@@ -230,13 +227,11 @@ select{appearance:none;padding-right:34px;background-image:url("data:image/svg+x
 :root[data-theme="dark"] .stamp{mix-blend-mode:normal}
 
 /* ---------- the close: the fifth shop lights up ---------- */
-.end .close{margin-top:clamp(28px,4vw,48px);align-items:start}
-.end .lead{color:rgba(242,236,224,.78);max-width:40ch}
-.phone{display:flex;flex-direction:column;gap:6px}
-.phone a{font-family:var(--mono);font-size:clamp(20px,2.4vw,24px);color:var(--cream);text-decoration:none;
-  border-bottom:1px solid rgba(242,236,224,.34);width:fit-content}
-.phone a:hover{color:var(--glow);border-color:var(--glow)}
-.phone span{font-family:var(--mono);font-size:12px;color:rgba(242,236,224,.52)}
+.end .close{margin-top:clamp(28px,4vw,48px);align-items:center}
+.end .lead{color:rgba(242,236,224,.8);max-width:38ch;margin-bottom:18px}
+.alt{font-size:15px;color:rgba(242,236,224,.6);margin:0}
+.alt a{color:var(--cream);text-decoration:none;border-bottom:1px solid rgba(242,236,224,.34)}
+.alt a:hover{color:var(--glow);border-color:var(--glow)}
 form{display:grid;grid-template-columns:1fr 1fr;gap:14px;background:rgba(0,0,0,.18);
   border:1px solid rgba(242,236,224,.14);border-radius:6px;padding:clamp(18px,3vw,26px)}
 @media(max-width:560px){form{grid-template-columns:1fr}}
@@ -255,21 +250,10 @@ form .btn[disabled]{opacity:.6;cursor:wait}
 footer{padding-block:clamp(40px,6vw,64px)}
 .fgrid{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;align-items:flex-start}
 .fgrid p{font-size:15px;color:var(--ink-2);margin:12px 0 0;max-width:40ch}
-.fcontact{display:flex;flex-direction:column;gap:6px;font-size:15px}
+.fcontact{display:flex;flex-direction:column;gap:8px;font-size:16px}
 .fcontact a{color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--line-2);width:fit-content}
 .fcontact a:hover{color:var(--signal);border-color:var(--signal)}
-.fcontact .fnum{font-family:var(--mono);font-size:19px;color:var(--ink)}
 .fcontact span{font-family:var(--mono);font-size:12px;color:var(--ink-3)}
 .fbot{margin-top:36px;padding-top:18px;border-top:1px solid var(--line);font-family:var(--mono);font-size:11.5px;color:var(--ink-3)}
 
-/* ---------- phone: the call is always one tap away ---------- */
-.callbar{display:none}
-@media(max-width:700px){
-  .callbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:70;align-items:baseline;justify-content:center;
-    gap:10px;text-decoration:none;background:var(--signal);color:#fff;
-    padding:13px 16px calc(13px + env(safe-area-inset-bottom,0px))}
-  .callbar b{font-size:14px;font-weight:600;opacity:.9}
-  .callbar span{font-family:var(--mono);font-size:17px}
-  footer{padding-bottom:calc(64px + 52px + env(safe-area-inset-bottom,0px))}
-}
 </style>

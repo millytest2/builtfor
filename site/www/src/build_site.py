@@ -71,7 +71,6 @@ BODY = f'''
   </div>
 </nav>
 
-<a class="callbar" href="tel:+13106069788"><b>Call or text</b><span>(310) 606-9788</span></a>
 
 <main id="top">
 
@@ -85,11 +84,6 @@ BODY = f'''
         <a class="btn" href="#start">Get a free check</a>
         <a class="btn ghost" href="#check">Check it yourself</a>
       </div>
-      <ul class="trust">
-        <li><b>Free</b> check</li>
-        <li><b>No</b> contracts</li>
-        <li><b>Your</b> domain stays yours</li>
-      </ul>
     </div>
     <figure class="chat" aria-label="An example of an AI assistant answering a customer's question">
       <div class="chat-top"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="chat-t">AI assistant</span></div>
@@ -211,9 +205,9 @@ BODY = f'''
     {end_mob}
     <div class="duo close">
       <div class="words">
-        <p class="lead">Ten minutes, free. We look you up before the call, so it isn&rsquo;t a
-        pitch. If everything&rsquo;s already working, we&rsquo;ll say so.</p>
-        <div class="phone"><a href="tel:+13106069788">(310) 606-9788</a><span>Call or text. A person answers.</span></div>
+        <p class="lead">Tell us your shop and your town. We look you up, run the check, and
+        send you what we find. If everything&rsquo;s already working, we&rsquo;ll say so.</p>
+        <p class="alt">Rather email? <a href="mailto:hello@builtformainstreet.com">hello@builtformainstreet.com</a></p>
       </div>
       <form id="askform" name="free-check" method="POST" data-netlify="true" netlify-honeypot="company-url">
         <input type="hidden" name="form-name" value="free-check">
@@ -225,7 +219,7 @@ BODY = f'''
         <div><label for="f-phone">Best number</label><input type="tel" id="f-phone" name="phone" required placeholder="(260) 555-0100"></div>
         <div class="full"><label for="f-email">Email (optional)</label><input type="email" id="f-email" name="email" placeholder="jim@hoffmanandsons.com" autocomplete="email"></div>
         <div class="full"><button class="btn" type="submit" id="send">Send it over</button></div>
-        <p class="fnote" id="fnote" aria-live="polite">We run the check and call you back. No list, nothing to unsubscribe from.</p>
+        <p class="fnote" id="fnote" aria-live="polite">We run the check and get back to you. No list, nothing to unsubscribe from.</p>
       </form>
     </div>
   </div>
@@ -241,9 +235,8 @@ BODY = f'''
       work find it and can reach you.</p>
     </div>
     <div class="fcontact">
-      <a class="fnum" href="tel:+13106069788">(310) 606-9788</a>
       <a href="mailto:hello@builtformainstreet.com">hello@builtformainstreet.com</a>
-      <span>Call or text, 8am to 7pm Pacific</span>
+      <span>Los Angeles, working with shops nationwide</span>
     </div>
   </div>
   <div class="fbot">&copy; 2026 Built for Main Street &middot; Los Angeles, California</div>
@@ -252,7 +245,7 @@ BODY = f'''
 <script type="application/ld+json">
 {{"@context":"https://schema.org","@type":"ProfessionalService","name":"Built for Main Street",
 "description":"Websites and Google Business Profile work for local trade shops, so search engines and AI assistants can find them and customers can reach them.",
-"url":"https://builtformainstreet.com","telephone":"+1-310-606-9788","email":"hello@builtformainstreet.com",
+"url":"https://builtformainstreet.com","email":"hello@builtformainstreet.com",
 "priceRange":"$600-$1000","areaServed":{{"@type":"Country","name":"United States"}},
 "address":{{"@type":"PostalAddress","addressLocality":"Los Angeles","addressRegion":"CA","addressCountry":"US"}},
 "hasOfferCatalog":{{"@type":"OfferCatalog","name":"Services","itemListElement":[
