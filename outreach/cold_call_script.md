@@ -1,3 +1,5 @@
+> **Superseded.** Use `docs/SCRIPT.md` and the call sheet. This version has old pricing and a personal number.
+
 # Outreach — the "nothing to lose" conversation (website-first)
 
 Not a sales script. You're a real local person who looked them up, noticed they've

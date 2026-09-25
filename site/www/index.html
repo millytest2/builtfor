@@ -247,6 +247,11 @@ select{appearance:none;padding-right:34px;background-image:url("data:image/svg+x
 .ln .f{flex:1;border-bottom:1.5px dotted var(--line-2);transform:translateY(-4px)}
 .ln b{font-family:var(--display);font-weight:800;font-size:clamp(18px,2.2vw,22px);letter-spacing:-.01em;color:var(--ink);
   font-variation-settings:'SOFT' 50}
+.tier{padding:4px 0 8px;border-bottom:1px dashed var(--line)}
+.tier:last-child{border-bottom:none}
+.tier .ln{padding:3px 0 2px}
+.tier-d{display:flex;justify-content:space-between;gap:4px 14px;flex-wrap:wrap;font-size:13px;line-height:1.4;color:var(--ink-3)}
+.tier-d span:last-child{color:var(--ink-2)}
 .t-fine{font-size:12.5px;line-height:1.5;color:var(--ink-3);margin:12px 0 0}
 .t-fine+.t-fine{margin-top:8px}
 @media(max-width:560px){.t-fine{max-width:none}}
@@ -494,7 +499,7 @@ footer{padding-block:clamp(40px,6vw,64px)}
     <div class="ticket-wrap">
       <article class="ticket" aria-label="Work order">
         <header class="t-head">
-          <div><div class="t-title">Work order</div><div class="t-sub">Built for Main Street &middot; Los Angeles</div></div>
+          <div><div class="t-title">Work order</div><div class="t-sub">Built for Main Street</div></div>
           <div class="t-no">No. 0001</div>
         </header>
         <div class="t-meta"><span>Customer: <b>your shop</b></span><span>Due: <b>2 weeks</b></span></div>
@@ -512,16 +517,25 @@ footer{padding-block:clamp(40px,6vw,64px)}
           <li><i></i>Hours right on the site and on Google</li>
         </ul>
         <div class="t-tot" id="pricing">
-          <div class="ln"><span>Build</span><span class="f"></span><b>$1,000</b></div>
-          <div class="ln"><span>Upkeep</span><span class="f"></span><b>$199/mo</b></div>
-          <div class="ln"><span>Terms</span><span class="f"></span><b>30 days&rsquo; notice</b></div>
+          <div class="t-group" style="margin-top:0">Price, by the size of your shop</div>
+          <div class="tier">
+            <div class="ln"><span>Small</span><span class="f"></span><b>$600</b></div>
+            <div class="tier-d"><span>Up to 4 services, 3 towns</span><span>+ $1,990 upkeep, first year paid up front</span></div>
+          </div>
+          <div class="tier">
+            <div class="ln"><span>Standard</span><span class="f"></span><b>$1,000</b></div>
+            <div class="tier-d"><span>Up to 8 services, 6 towns</span><span>+ $199 a month upkeep</span></div>
+          </div>
+          <div class="tier">
+            <div class="ln"><span>Bigger</span><span class="f"></span><b>from $1,500</b></div>
+            <div class="tier-d"><span>More than that, or two locations</span><span>+ $199 a month upkeep</span></div>
+          </div>
         </div>
-        <p class="t-fine">$1,000 covers up to 8 services and 6 towns. Smaller shops are $600
-        with the first year of upkeep paid up front ($1,990). Bigger shops, we quote. We
-        settle it on the first call and it doesn&rsquo;t change.</p>
-        <p class="t-fine">Upkeep covers hosting, edits, and a monthly report on what the AI
-        assistants say about you. We build and host the site; the domain is registered in
-        your name. After a year you can buy the site outright for $2,000.</p>
+        <p class="t-fine">We count your services and towns on the first call, and that
+        sets the price. Upkeep is hosting, edits, and a monthly report on what
+        Google and the AI assistants say about you. Cancel with 30 days&rsquo; notice.</p>
+        <p class="t-fine">We build and host the site. The domain is in your name. After a
+        year you can buy the site outright for $2,000.</p>
         <div class="stamp">No account<br>managers</div>
       </article>
     </div>
@@ -638,11 +652,11 @@ footer{padding-block:clamp(40px,6vw,64px)}
     </div>
     <div class="fcontact">
       <a href="mailto:hello@builtformainstreet.com">hello@builtformainstreet.com</a>
-      <span>Based in Los Angeles. We work with shops anywhere in the US.</span>
+      <span>We work with shops anywhere in the US.</span>
       <a href="/privacy/">Privacy</a>
     </div>
   </div>
-  <div class="fbot">&copy; 2026 Built for Main Street &middot; Los Angeles, California</div>
+  <div class="fbot">&copy; 2026 Built for Main Street</div>
 </footer>
 
 <script type="application/ld+json">

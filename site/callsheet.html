@@ -133,6 +133,42 @@
   .d-body{padding:16px}
   .hint{font-size:12.5px; color:var(--ink-3); margin-top:8px; line-height:1.5}
   .banner{background:var(--sunk); border:1px solid var(--rule-hard); padding:11px 13px; font-size:13.5px; color:var(--ink-2); margin-bottom:14px; line-height:1.45}
+  /* call windows */
+  .win{display:inline-flex; align-items:center; gap:5px; white-space:nowrap}
+  .win i{width:7px; height:7px; border-radius:50%; background:var(--ink-3); display:inline-block}
+  .win.best i{background:var(--good)} .win.best{color:var(--good)}
+  .win.ok i{background:var(--warn)} .win.ok{color:var(--warn)}
+  .win.no i{background:transparent; border:1px solid var(--ink-3)}
+  .tag{display:inline-block; font-family:var(--font-m); font-size:9px; letter-spacing:.08em; text-transform:uppercase; color:var(--signal); border:1px solid var(--signal); padding:1px 5px; margin-left:6px; vertical-align:2px; white-space:nowrap}
+  .plan{border:1px solid var(--rule-hard); background:var(--raised); margin-bottom:14px}
+  .plan-hd{display:flex; justify-content:space-between; gap:10px; align-items:baseline; padding:9px 12px; border-bottom:1px solid var(--rule)}
+  .plan-hd b{font-family:var(--font-d); font-size:13.5px}
+  .plan-row{display:grid; grid-template-columns:92px 1fr auto; gap:10px; padding:7px 12px; font-size:13px; border-bottom:1px solid var(--rule); align-items:center}
+  .plan-row:last-child{border-bottom:none}
+  .plan-row .mono{color:var(--ink-2)}
+  .plan-row span:last-child{font-family:var(--font-m); font-size:11px; color:var(--ink-3); white-space:nowrap}
+  @media(max-width:520px){ .plan-row{grid-template-columns:1fr auto} .plan-row .when{grid-column:1/-1; order:3} }
+
+  /* script */
+  .say{border-left:3px solid var(--signal); background:var(--paper); padding:9px 12px; font-size:14.5px; line-height:1.5; margin-bottom:8px}
+  .say .lbl{display:block; font-family:var(--font-m); font-size:9.5px; letter-spacing:.09em; text-transform:uppercase; color:var(--ink-3); margin-bottom:3px}
+  .say q{quotes:none}
+  .stage{font-size:12.5px; color:var(--ink-3); font-style:italic; margin:-2px 0 10px 15px}
+  .todo{font-size:12.5px; color:var(--warn); background:var(--warn-soft); border:1px solid var(--warn); padding:6px 9px; margin-bottom:8px}
+  details.more{margin-top:6px; border:1px solid var(--rule)}
+  details.more summary{cursor:pointer; padding:8px 11px; font-family:var(--font-m); font-size:10.5px; letter-spacing:.07em; text-transform:uppercase; color:var(--ink-2)}
+  details.more > div{padding:4px 11px 11px}
+  .obj{display:grid; grid-template-columns:1fr; gap:2px; padding:8px 0; border-top:1px solid var(--rule); font-size:13.5px}
+  .obj:first-child{border-top:none}
+  .obj b{font-weight:600}
+  .obj span{color:var(--ink-2)}
+  .rules{margin:0; padding-left:18px; font-size:13.5px; line-height:1.55}
+  .rules li{margin-bottom:3px}
+  .d-body h3{font-size:14px; margin:18px 0 8px}
+  .d-body h3:first-child{margin-top:0}
+  dialog.wide{max-width:720px}
+  .d-body{max-height:calc(100vh - 140px); overflow-y:auto}
+
   .toast{position:fixed; left:50%; transform:translateX(-50%); bottom:24px; background:var(--ink); color:var(--paper);
     font-family:var(--font-m); font-size:11px; letter-spacing:.06em; text-transform:uppercase; padding:10px 16px; z-index:60}
 </style>
@@ -142,15 +178,16 @@
     <div class="brand">Call <span>Sheet</span></div>
     <div class="tallies">
       <div class="tally">Leads <b id="t-all">0</b></div>
-      <div class="tally hot">Worth calling <b id="t-hot">0</b></div>
-      <div class="tally">Checked <b id="t-chk">0</b></div>
-      <div class="tally">Called <b id="t-called">0</b></div>
+      <div class="tally hot">Callable now <b id="t-now">0</b></div>
+      <div class="tally">Dialed <b id="t-dialed">0</b></div>
+      <div class="tally">Talked <b id="t-called">0</b></div>
       <div class="tally">Booked <b id="t-booked">0</b></div>
     </div>
-    <div style="display:flex; gap:7px">
+    <div style="display:flex; gap:7px; flex-wrap:wrap">
+      <button class="btn sm" id="b-script">Script</button>
       <button class="btn sm ghost" id="b-import">Import</button>
       <button class="btn sm ghost" id="b-export">Export</button>
-      <button class="btn sm" id="b-add">Add lead</button>
+      <button class="btn sm ghost" id="b-add">Add lead</button>
     </div>
   </div>
 </header>
@@ -159,13 +196,15 @@
   <div class="grid">
     <div>
       <div id="banner" class="banner" hidden></div>
+      <div class="plan" id="plan"></div>
       <div class="bar" id="filters">
-        <button class="chip on" data-f="all">All</button>
-        <button class="chip" data-f="unchecked">Not checked</button>
-        <button class="chip" data-f="nosite">Verified no site</button>
-        <button class="chip" data-f="hot">Worth calling</button>
-        <button class="chip" data-f="called">Called</button>
+        <button class="chip on" data-f="all">Best first</button>
+        <button class="chip" data-f="now">Call now</button>
+        <button class="chip" data-f="hook">Has a hook</button>
+        <button class="chip" data-f="follow">Follow up</button>
+        <button class="chip" data-f="called">Talked</button>
         <button class="chip" data-f="booked">Booked</button>
+        <button class="chip" data-f="dead">Dead</button>
       </div>
       <div class="list" id="list"></div>
     </div>
@@ -184,7 +223,8 @@
   var COL = ['business','trade','phone','city','street','website','email','maps','osm',
              'gbp_claimed','reviews','rating','google_position','chatgpt','gemini','claude',
              'name_known','name_reply','site_checked','status','notes'];
-  var STATUSES = ['new','called','booked','dead'];
+  var STATUSES = ['new','noanswer','vm','called','booked','dead'];
+  var SLABEL = {'new':'new','noanswer':'no answer','vm':'voicemail','called':'talked','booked':'booked','dead':'dead'};
   var leads = [], selId = null, filter = 'all', db = null, coll = null, ready = false;
   var serverSeen = Object.create(null);   // every id the server has ever sent us
 
@@ -197,32 +237,100 @@
   }
   function banner(msg){ var b=$('banner'); b.textContent=msg; b.hidden=!msg; }
 
-  // ---- scoring: how badly do they need this, and can they pay ----
+  // ---- your settings, kept in this browser only ----
+  function pref(k, v){
+    try{ if(v===undefined) return localStorage.getItem('cs_'+k) || ''; localStorage.setItem('cs_'+k, v); }catch(e){}
+    return '';
+  }
+
+  // ---- where they are and whether now is a good time ----
+  var ZONES = {
+    'America/New_York':    {abbr:'Eastern', cities:['fort wayne','knoxville','chattanooga','dayton','toledo','youngstown']},
+    'America/Chicago':     {abbr:'Central', cities:['lubbock','wichita','tulsa','shreveport']},
+    'America/Denver':      {abbr:'Mountain', cities:[]},
+    'America/Los_Angeles': {abbr:'Pacific', cities:['pacoima','north hollywood','van nuys','arleta','sun valley','burbank','los angeles']}
+  };
+  function zoneOf(l){
+    var c = String(l.city||'').toLowerCase().trim();
+    for(var z in ZONES){ if(ZONES[z].cities.indexOf(c) >= 0) return z; }
+    return null;
+  }
+  function clock(tz, d){
+    var p = {};
+    new Intl.DateTimeFormat('en-US', {timeZone:tz, hour:'numeric', minute:'2-digit', weekday:'short', hourCycle:'h23'})
+      .formatToParts(d || new Date()).forEach(function(x){ p[x.type] = x.value; });
+    return {h:+p.hour % 24, m:+p.minute, day:p.weekday};
+  }
+  function fmt(mins){
+    mins = ((mins % 1440) + 1440) % 1440;
+    var h = Math.floor(mins/60), m = mins%60, ap = h<12?'a':'p', h12 = h%12 || 12;
+    return h12 + (m ? ':' + (m<10?'0':'') + m : '') + ap;
+  }
+  // Trades answer before the first job and after the last. Midday they are on a roof or under a truck.
+  // Never before 8am or after 8pm their time (TCPA is 8 to 9; we stop earlier). No Sundays.
+  var BEST = [[8*60,10*60],[15*60+30,17*60+30]];
+  var OK   = [[10*60,15*60+30],[17*60+30,19*60]];
+  function windowOf(l){
+    var tz = zoneOf(l);
+    if(!tz) return {cls:'', txt:'time zone?', rank:1, tz:null};
+    var c = clock(tz), t = c.h*60 + c.m, local = fmt(t);
+    var inAny = function(ws){ return ws.some(function(w){ return t>=w[0] && t<w[1]; }); };
+    if(c.day==='Sun') return {cls:'no', txt:local+' Sun · skip', rank:0, tz:tz};
+    if(c.day==='Sat') return t>=9*60 && t<12*60 ? {cls:'ok', txt:local+' Sat · ok', rank:2, tz:tz} : {cls:'no', txt:local+' Sat · wait', rank:0, tz:tz};
+    if(inAny(BEST)) return {cls:'best', txt:local+' · best', rank:3, tz:tz};
+    if(inAny(OK))   return {cls:'ok', txt:local+' · ok', rank:2, tz:tz};
+    return {cls:'no', txt:local+' · too '+(t<8*60?'early':'late'), rank:0, tz:tz};
+  }
+  // Minutes between their clock and yours, so their windows can be shown on your clock.
+  function lag(tz){
+    var now = new Date(), a = clock(tz, now), b = {h:now.getHours(), m:now.getMinutes()};
+    var d = (a.h*60+a.m) - (b.h*60+b.m);
+    if(d > 720) d -= 1440; if(d < -720) d += 1440;
+    return d;
+  }
+  function nextDay(tz){
+    var d = tz ? clock(tz).day : ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][new Date().getDay()];
+    return (d==='Fri' || d==='Sat') ? 'Monday' : (d==='Sun' ? 'tomorrow' : 'tomorrow');
+  }
+
+  // ---- what the research already found, read out of the notes ----
+  function hookOf(l){
+    var n = String(l.notes||'');
+    var dom = function(re){ var m = n.match(re); return m ? m[1].replace(/[.,;)]+$/,'') : ''; };
+    if(/BROKEN LINK|WRONG LINK/.test(n)) return {k:'wrong', tag:'wrong link', pts:30, dom:dom(/points to (\S+)/)};
+    if(/RENTED (MICROSITE|SUBDOMAIN)/.test(n)) return {k:'rented', tag:'rented page', pts:20, dom:dom(/is (\S+\.(?:com|net)\S*)/),
+      free:/wixsite/.test(n)};
+    if(/EMPTY DOMAIN/.test(n)) return {k:'empty', tag:'empty domain', pts:20, dom:dom(/own (\S+\.com)/)};
+    if(/unrelated|is a different/.test(n)) return {k:'namesake', tag:'name mix-up', pts:15, dom:dom(/\(([a-z0-9-]+\.[a-z.]+) (?:belongs|is)/)};
+    if(/no URL behind it|'n\/a'/.test(n)) return {k:'blank', tag:'blank link', pts:10};
+    return null;
+  }
+  function ownerOf(l){
+    var m = String(l.notes||'').match(/[Oo]wner(?:\/operator)?,?\s+([A-Z][a-z]+)/);
+    return m ? m[1] : '';
+  }
+
+  // ---- priority: how badly do they need this, and is there a reason to call today ----
   function score(l){
     var s = 0;
-    // A missing website in our research is a hint, not proof. Google Maps often
-    // hides the link that the Business Profile does show, so this only scores
-    // once you have actually looked in all four places.
-    if(l.site_checked === 'none') s += 30;                    // verified: nothing anywhere
+    if(l.site_checked === 'none') s += 50;                    // verified: no website anywhere
     else if(l.site_checked === 'has') s += 10;                // has one: the bad-site lead
-    else if(!l.website) s += 6;                               // unverified hint only
-    if(l.gbp_claimed === 'no') s += 25;                       // listing never claimed
+    else if(!l.website) s += 20;                              // unverified hint only
+    var h = hookOf(l); if(h) s += h.pts;                      // a specific thing to say
+    if(l.gbp_claimed === 'no') s += 10;                       // listing never claimed
     var named = ['chatgpt','gemini','claude'].filter(function(k){ return l[k]==='yes'; }).length;
     var asked = ['chatgpt','gemini','claude'].filter(function(k){ return l[k]; }).length;
-    if(asked && named === 0) s += 20;                         // invisible to assistants
-    else if(asked && named < asked) s += 8;
-    if(l.name_known === 'no') s += 15;                        // asked by name, drew a blank
+    if(asked && named === 0) s += 10;                         // invisible to assistants
+    else if(asked && named === asked) s -= 30;                // already named: weak call
+    if(l.name_known === 'no') s += 10;                        // asked by name, drew a blank
     var pos = parseInt(l.google_position,10);
-    if(pos && pos > 3) s += 15;                               // outside the map pack
+    if(pos && pos > 3) s += 5;                                // outside the map pack
     var rev = parseInt(l.reviews,10);
-    if(rev >= 10 && rev <= 49) s += 10;                       // established, still hungry
-    else if(rev >= 50 && rev <= 99) s += 4;
-    else if(rev >= 100) s -= 10;                              // at capacity, has said no before
-    var rat = parseFloat(l.rating);
-    if(rat >= 4.5) s += 5;                                    // good at the work
+    if(rev >= 100) s -= 15;                                   // at capacity, has said no before
     return Math.max(0, Math.min(100, s));
   }
-  function checked(l){ return !!(l.site_checked || l.gbp_claimed || l.chatgpt || l.gemini || l.claude || l.google_position || l.name_known); }
+  function checked(l){ return !!(l.chatgpt || l.gemini || l.claude || l.name_known); }
+  function open(l){ return ['new','noanswer','vm'].indexOf(l.status||'new') >= 0; }
   function blank(){
     var o = {}; COL.forEach(function(c){ o[c]=''; }); o.status='new'; return o;
   }
@@ -232,6 +340,7 @@
     if(!coll){ return Promise.resolve(); }
     var body = {}; COL.forEach(function(c){ body[c] = l[c]||''; });
     body.updated = new Date().toISOString();
+    l.updated = body.updated;
     return coll.doc(l.id).set(body).catch(function(){ toast('Could not save'); });
   }
   function removeLead(id){
@@ -240,52 +349,82 @@
     if(coll) coll.doc(id).delete().catch(function(){});
     render();
   }
+  function ago(iso){
+    if(!iso) return '';
+    var d = (Date.now() - Date.parse(iso)) / 36e5;
+    if(isNaN(d)) return '';
+    if(d < 1) return 'just now';
+    if(d < 24) return Math.round(d) + 'h ago';
+    return Math.round(d/24) + 'd ago';
+  }
 
   // ---- render ----
+  var STAGE = {'new':0,'noanswer':1,'vm':1,'called':2,'booked':3,'dead':4};
   function visible(){
     return leads.filter(function(l){
-      if(filter==='unchecked') return !checked(l);
-      if(filter==='nosite') return l.site_checked === 'none';
-      if(filter==='hot') return score(l) >= 55 && l.status!=='dead';
+      if(filter==='now') return open(l) && windowOf(l).rank >= 2;
+      if(filter==='hook') return !!hookOf(l) && l.status!=='dead';
+      if(filter==='follow') return l.status==='noanswer' || l.status==='vm';
       if(filter==='called') return l.status==='called';
       if(filter==='booked') return l.status==='booked';
+      if(filter==='dead') return l.status==='dead';
       return true;
     }).sort(function(a,b){
-      if(a.status==='dead' && b.status!=='dead') return 1;
-      if(b.status==='dead' && a.status!=='dead') return -1;
-      return score(b)-score(a) || a.business.localeCompare(b.business);
+      var sa = STAGE[a.status||'new']||0, sb = STAGE[b.status||'new']||0;
+      if(filter==='all' || filter==='hook'){ var oa = sa>1?sa:0, ob = sb>1?sb:0; if(oa!==ob) return oa-ob; }
+      if(filter==='now'){ var w = windowOf(b).rank - windowOf(a).rank; if(w) return w; }
+      return score(b)-score(a) || windowOf(b).rank-windowOf(a).rank || String(a.business).localeCompare(String(b.business));
     });
   }
 
-  function render(){
+  function renderPlan(){
+    var zones = {}, now = 0;
+    leads.forEach(function(l){
+      if(!open(l)) return;
+      var tz = zoneOf(l) || '?';
+      zones[tz] = (zones[tz]||0) + 1;
+      if(windowOf(l).rank >= 2) now++;
+    });
+    var order = ['America/New_York','America/Chicago','America/Denver','America/Los_Angeles','?'];
+    var rows = order.filter(function(z){ return zones[z]; }).map(function(z){
+      if(z==='?') return '<div class="plan-row"><b>Unknown</b><span class="when mono">Add the city to place them</span><span>'+zones[z]+' open</span></div>';
+      var d = lag(z);
+      var w = BEST.map(function(b){ return fmt(b[0]-d)+' to '+fmt(b[1]-d); }).join(' and ');
+      return '<div class="plan-row"><b>'+ZONES[z].abbr+'</b><span class="when mono">Best on your clock: '+w+'</span><span>'+zones[z]+' open</span></div>';
+    }).join('');
+    $('plan').innerHTML = '<div class="plan-hd"><b>When to dial</b><span class="mono" style="color:var(--ink-3)">'
+      + now + ' callable right now</span></div>' + rows;
+  }
+
+  function renderList(){
     var all = leads.length;
     $('t-all').textContent = all;
-    $('t-hot').textContent = leads.filter(function(l){ return score(l)>=55 && l.status!=='dead'; }).length;
-    $('t-chk').textContent = leads.filter(checked).length;
-    $('t-called').textContent = leads.filter(function(l){ return l.status==='called'; }).length;
+    $('t-now').textContent = leads.filter(function(l){ return open(l) && windowOf(l).rank>=2; }).length;
+    $('t-dialed').textContent = leads.filter(function(l){ return l.status && l.status!=='new'; }).length;
+    $('t-called').textContent = leads.filter(function(l){ return l.status==='called' || l.status==='booked'; }).length;
     $('t-booked').textContent = leads.filter(function(l){ return l.status==='booked'; }).length;
+    renderPlan();
 
     var rows = visible(), html = '';
     if(!rows.length){
       html = '<div class="empty">' + (all
-        ? 'Nothing in this filter yet.'
-        : 'No leads yet. Run the finder, then Import the CSV, or Add lead to type one in.') + '</div>';
+        ? (filter==='now' ? 'Nobody is in a good window right now. The plan above shows when the next one opens.' : 'Nothing in this filter yet.')
+        : 'No leads yet. Import a CSV, or Add lead to type one in.') + '</div>';
     }
     rows.forEach(function(l){
-      var sc = score(l), cls = sc>=55?'hi':(sc>=35?'mid':'');
-      var pill = checked(l) && l.status==='new' ? 'checked' : l.status;
-      var pillTxt = checked(l) && l.status==='new' ? 'checked' : l.status;
+      var sc = score(l), cls = sc>=65?'hi':(sc>=45?'mid':'');
+      var h = hookOf(l), w = windowOf(l), st = l.status||'new';
       html += '<div class="row'+(l.id===selId?' sel':'')+'" data-id="'+esc(l.id)+'">'
         + '<div class="score '+cls+'">'+sc+'</div>'
-        + '<div><div class="r-name">'+esc(l.business||'Untitled')+'</div>'
+        + '<div><div class="r-name">'+esc(l.business||'Untitled')+(h?'<span class="tag">'+h.tag+'</span>':'')+'</div>'
         + '<div class="r-meta">'+[esc(l.phone||'no phone'), esc(l.city||''),
-            l.site_checked==='none'?'NO SITE ✓':(l.site_checked==='has'?'has site':(l.website?'site?':'no site?'))]
-            .filter(Boolean).join(' · ')+'</div></div>'
-        + '<span class="pill '+pill+'">'+esc(pillTxt)+'</span></div>';
+            '<span class="win '+w.cls+'"><i></i>'+esc(w.txt)+'</span>'].filter(Boolean).join(' · ')+'</div></div>'
+        + '<span class="pill '+(st==='noanswer'||st==='vm'?'called':st)+'">'+esc(SLABEL[st]||st)+'</span></div>';
     });
     $('list').innerHTML = html;
-    renderPanel();
   }
+
+  function render(){ renderList(); renderPanel(); }
 
   function seg(l, key, label){
     return '<div class="ask-row"><span>'+label+'</span><div class="seg" data-key="'+key+'">'
@@ -294,67 +433,164 @@
       + '</div></div>';
   }
 
+  // ---- the script, filled in for this shop ----
+  function trade1(l){ return String(l.trade||'your trade').split(',')[0].trim(); }
+  function add(out, t){ out.push(out.length ? 'And ' + t.charAt(0).toLowerCase() + t.slice(1) : t); }
+  function findingLines(l){
+    var h = hookOf(l), out = [], biz = l.business || 'your shop', city = l.city || 'town', tr = trade1(l);
+    var named = ['chatgpt','gemini','claude'].filter(function(k){ return l[k]==='yes'; }).length;
+    var asked = ['chatgpt','gemini','claude'].filter(function(k){ return l[k]; }).length;
+    if(l.name_reply) out.push('I asked ChatGPT about '+biz+' by name this morning. Here’s what it said, word for word: ‘'+l.name_reply.replace(/^["‘“']|["’”']$/g,'')+'’');
+    else if(l.name_known==='no') out.push('I asked ChatGPT about '+biz+' by name this morning. It had nothing on you.');
+    if(asked && !named) out.push('Then I asked it who to call for '+tr+' in '+city+'. It named other shops. Not you.');
+    if(h && h.k==='wrong') add(out, 'Your Google listing has a website link on it. It goes to '+(h.dom||'another company’s site')+'. That’s a different company. Anybody who taps it from your listing lands on them.');
+    if(h && h.k==='rented') add(out, (h.free
+      ? 'The website on your listing is a free Wix address with a personal username in it. Customers can’t remember it and Google barely counts it.'
+      : 'The website on your listing is '+(h.dom||'a directory page')+'. That page belongs to the directory company, not you. If you stop paying them, it’s gone.'));
+    if(h && h.k==='empty') add(out, 'You own '+(h.dom||'your domain')+', but it still says the site is coming soon. People who type it in hit a dead end.');
+    if(h && h.k==='namesake') add(out, 'When people search your name, '+(h.dom ? h.dom+', a different company,' : 'a different company with a similar name')+' comes up first.');
+    if(h && h.k==='blank') add(out, 'A few directories show a website button for you with nothing behind it. Someone taps it and there’s nowhere to go.');
+    if(!out.length) out.push('When somebody asks Google or ChatGPT who does '+tr+' in '+city+', your shop doesn’t come up. There’s no website for them to read.');
+    return out;
+  }
+  function vmText(l){
+    var cb = pref('cb') || '[your call-back number]';
+    return 'Hi, this is Miles with Built for Main Street. I looked up '+(l.business||'your shop')+' on Google and ChatGPT this morning, and there’s something on your listing you’ll want to see. The check is free. Call me back at '+cb+', or email hello at builtformainstreet dot com. Again, '+cb+'. Thanks.';
+  }
+  function emailText(l){
+    var who = ownerOf(l) || 'there', f = findingLines(l);
+    return 'Subject: ' + (l.business||'Your shop') + ' on Google and ChatGPT\n\n'
+      + 'Hi ' + who + ',\n\n'
+      + 'Miles from Built for Main Street. I tried calling earlier.\n\n'
+      + f.join(' ') + '\n\n'
+      + 'We fix that, and we make sure the people who find you can reach you in one tap. '
+      + 'The free check shows exactly what’s missing. Reply with a good time for a 10-minute call.\n\n'
+      + 'Miles\nBuilt for Main Street\nbuiltformainstreet.com\n'
+      + (pref('addr') || '[your mailing address]') + '\n\n'
+      + 'If you’d rather not hear from us, reply "stop" and you won’t.';
+  }
+  function scriptHTML(l){
+    var who = ownerOf(l), tz = zoneOf(l), day = nextDay(tz);
+    var f = findingLines(l);
+    var needsCheck = !checked(l);
+    return ''
+      + (needsCheck ? '<div class="todo">60 seconds first: run step 1. What ChatGPT says about them by name is the strongest opener you have.</div>' : '')
+      + '<div class="say"><span class="lbl">1 · Open</span>'
+        + (who ? '"Hi, is this '+esc(who)+'?"' : '"Hi, am I speaking with the owner of '+esc(l.business||'the shop')+'?"')
+        + ' "This is Miles with Built for Main Street. I’ll be honest, this is a cold call. Can I have 30 seconds to tell you why, and you can hang up after that?"</div>'
+      + '<div class="say"><span class="lbl">2 · What we saw</span>"'+f.map(esc).join(' ')+'" "Did you know that?"</div>'
+      + '<div class="stage">Now stop talking. Let them react. Whatever they say, the next line is a question.</div>'
+      + '<div class="say"><span class="lbl">3 · One real question</span>"Where does most of your work come from right now?" Then: "What kind of job do you want more of?"</div>'
+      + '<div class="stage">Write the answer in Notes. It goes in the check and on the site.</div>'
+      + '<div class="say"><span class="lbl">4 · The ask</span>"We run a free check on shops like yours. It shows what Google and ChatGPT say when somebody looks for '+esc(trade1(l))+' in '+esc(l.city||'your area')+', and what’s keeping you off the list. I walk you through it in ten minutes. Is '+day+' at 9 or at 4 better, your time?"</div>'
+      + '<div class="stage">Booked: set Booked, write the time and their email in Notes and Details. Then run the check before the call.</div>'
+      + '<details class="more"><summary>If they ask the price</summary><div><div class="say" style="margin-top:6px">"It depends on how many services you offer and how many towns you cover, so I won’t guess. After the check I give you one number, and it doesn’t move."</div>'
+        + '<div class="stage">Never a range. A range becomes its floor.</div></div></details>'
+      + '<details class="more"><summary>Voicemail (20 seconds, then no text)</summary><div><div class="say" style="margin-top:6px">"'+esc(vmText(l))+'"</div>'
+        + '<div class="stage">Set Voicemail. No texts, ever: that is the TCPA rule. '+(l.email ? 'Send the email below.' : 'No email on file, so try again in two days at the other window.')+'</div>'
+        + '<div class="links"><button class="btn sm ghost" data-copy="vm">Copy voicemail</button>'
+        + (l.email ? '<button class="btn sm ghost" data-copy="email">Copy follow-up email</button>' : '') + '</div></div></details>';
+  }
+
   function renderPanel(){
     var l = leads.filter(function(x){ return x.id===selId; })[0];
     if(!l){
       $('panel').innerHTML = '<div class="p-body"><p style="color:var(--ink-3); font-size:14.5px">'
-        + 'Pick a lead to run its check.</p></div>';
+        + 'Pick a lead to see its script.</p></div>';
       return;
     }
-    var q = (l.trade||'') + ' in ' + (l.city||'');
-    var ask = 'Who are the best ' + (l.trade||'contractors') + ' in ' + (l.city||'my area') + '?';
-    var askName = 'What can you tell me about ' + (l.business||'this business')
-                + (l.city ? ' in ' + l.city : '') + '?';
+    // keep the cursor where it was if a save or a sync redraws the panel mid-typing
+    var act = document.activeElement, keep = null;
+    if(act && act.id && $('panel').contains(act)) keep = {id:act.id, a:act.selectionStart, b:act.selectionEnd};
+
+    var trade = trade1(l);
+    var ask = 'Who should I hire for ' + trade + ' in ' + (l.city||'my area') + '?';
+    var askName = 'Tell me about ' + (l.business||'this business')
+                + (l.city ? ' in ' + l.city : '') + '. What do they do and how do I contact them?';
+    var q = trade + ' in ' + (l.city||'');
     var mapsUrl = l.maps || ('https://www.google.com/maps/search/'+encodeURIComponent((l.business||'')+' '+(l.city||'')));
     var nameSearch = 'https://www.google.com/search?q='+encodeURIComponent('"'+(l.business||'')+'" '+(l.city||''));
-    var gbpUrl = 'https://www.google.com/search?q='+encodeURIComponent((l.business||'')+' '+(l.city||'')+' website');
     var fbUrl = 'https://www.facebook.com/search/top?q='+encodeURIComponent((l.business||'')+' '+(l.city||''));
-    var yelpUrl = 'https://www.yelp.com/search?find_desc='+encodeURIComponent(l.business||'')+'&find_loc='+encodeURIComponent(l.city||'');
     var googleUrl = 'https://www.google.com/search?q='+encodeURIComponent(q);
     var gptUrl = 'https://chatgpt.com/?q='+encodeURIComponent(ask);
     var claudeUrl = 'https://claude.ai/new?q='+encodeURIComponent(ask);
     var gptName = 'https://chatgpt.com/?q='+encodeURIComponent(askName);
     var claudeName = 'https://claude.ai/new?q='+encodeURIComponent(askName);
 
-    var sc = score(l);
+    var sc = score(l), h = hookOf(l), w = windowOf(l), who = ownerOf(l);
     var named = ['chatgpt','gemini','claude'].filter(function(k){ return l[k]==='yes'; }).length;
     var asked = ['chatgpt','gemini','claude'].filter(function(k){ return l[k]; }).length;
 
     var verdict;
-    if(!checked(l)) verdict = '<div class="verdict cold">Not checked yet<small>Run the steps above, then the verdict fills in.</small></div>';
-    else if(!l.site_checked) verdict = '<div class="verdict cold">Check the website first<small>Everything else hinges on it, and our research only hints. Look in all four places in step 1.</small></div>';
-    else if(sc>=55) verdict = '<div class="verdict">Worth calling<small>'
-      + (l.site_checked==='none'?'No website anywhere, verified. ':'')
-      + (l.site_checked==='has'?'Has a site, so intent is proven. ':'')
-      + (l.gbp_claimed==='no'?'Listing never claimed. ':'')
-      + (asked&&!named?'Not named by any assistant. ':'')
-      + (l.name_known==='no'?'Draws a blank when asked by name. ':'')
-      + 'Lead with what you found, not with the offer.</small></div>';
-    else verdict = '<div class="verdict cold">Low priority<small>'
-      + (named?'Assistants already name them. ':'')
-      + (parseInt(l.reviews,10)>=100?'Over 100 reviews, likely at capacity and has declined this before. ':'')
-      + 'Spend the call elsewhere.</small></div>';
+    if(l.status==='dead') verdict = '<div class="verdict cold">Dead<small>Do not call again. If they asked to be left alone, that is permanent.</small></div>';
+    else if(asked && named===asked) verdict = '<div class="verdict cold">Weak call<small>Every assistant you asked already names them. Move on unless something else is broken.</small></div>';
+    else if(l.site_checked==='has') verdict = '<div class="verdict cold">Has a site<small>Only call if the site is broken or the assistants miss them anyway.</small></div>';
+    else verdict = '<div class="verdict">Ready to call<small>'
+      + (l.site_checked==='none' ? 'No website anywhere, verified. ' : '')
+      + (h ? 'Hook: '+esc(h.tag)+'. ' : '')
+      + (l.name_known==='no' ? 'ChatGPT draws a blank on their name. ' : '')
+      + (asked && !named ? 'Not named by any assistant you asked. ' : '')
+      + (checked(l) ? 'Open with what ChatGPT said.' : 'Run step 1 first and you open with their own name.')
+      + '</small></div>';
 
     $('panel').innerHTML =
       '<div class="p-hd"><div><h2>'+esc(l.business||'Untitled')+'</h2>'
-        + '<div class="mono">'+[esc(l.trade||''), esc(l.city||'')].filter(Boolean).join(' · ')+'</div></div>'
+        + '<div class="mono">'+[esc(l.trade||''), esc(l.city||'')].filter(Boolean).join(' · ')+'</div>'
+        + '<div class="mono" style="margin-top:6px"><span class="win '+w.cls+'" id="p-clock"><i></i>Their time '+esc(w.txt)+'</span>'
+        + (who ? ' · owner '+esc(who) : '') + (l.updated && l.status!=='new' ? ' · last touch '+ago(l.updated) : '') + '</div></div>'
         + '<button class="btn sm ghost" id="p-del">Delete</button></div>'
       + '<div class="p-body">'
 
-      + '<div class="sec"><div class="sec-t">Step 1 · Look them up</div>'
-        + '<div class="links">'
-        + '<a class="btn sm ghost" href="'+esc(mapsUrl)+'" target="_blank" rel="noopener">Google Maps listing</a>'
-        + '<a class="btn sm ghost" href="'+esc(googleUrl)+'" target="_blank" rel="noopener">Search "'+esc(q)+'"</a>'
-        + (l.website?'<a class="btn sm ghost" href="'+esc(l.website)+'" target="_blank" rel="noopener">Their site</a>':'')
+      + '<div class="sec"><div class="links">'
+        + (l.phone?'<a class="btn" href="tel:'+esc(l.phone.replace(/[^0-9+]/g,''))+'">Call '+esc(l.phone)+'</a>':'<span class="mono" style="color:var(--ink-3)">No phone on file</span>')
+        + (l.email?'<a class="btn ghost" href="mailto:'+esc(l.email)+'">Email</a>':'')
         + '</div>'
-        + '<div class="checkbox-note">Every business on this sheet was already searched by name and '
-        + '<b>verified to have no website anywhere</b> — the four links below are your spot-check before you dial, '
-        + 'not the decision. Maps often hides a link the Business Profile shows, so start with link 1.</div>'
+        + verdict
+        + '</div>'
+
+      + '<div class="sec"><div class="sec-t">Step 1 · Ask about them by name (60 seconds)</div>'
+        + '<div class="q-box">How somebody holding their card would ask:<br><b>'+esc(askName)+'</b></div>'
+        + '<div class="links" style="margin-bottom:11px">'
+        + '<button class="btn sm ghost" data-copy="askName">Copy</button>'
+        + '<a class="btn sm ghost" href="'+esc(gptName)+'" target="_blank" rel="noopener">ChatGPT</a>'
+        + '<a class="btn sm ghost" href="'+esc(claudeName)+'" target="_blank" rel="noopener">Claude</a>'
+        + '</div>'
+        + '<div class="ask"><div class="ask-row"><span>Knows them</span>'
+          + '<div class="seg" data-key="name_known">'
+          + '<button data-v="no" class="'+(l.name_known==='no'?'on':'')+'">Drew a blank</button>'
+          + '<button data-v="yes" class="'+(l.name_known==='yes'?'on yes':'')+'">Knew them</button>'
+          + '</div></div></div>'
+        + '<div style="margin-top:10px"><label for="f-reply">What it said, word for word</label>'
+        + '<textarea id="f-reply" data-k="name_reply" style="min-height:52px" placeholder="I don\'t have information about that business.">'+esc(l.name_reply)+'</textarea>'
+        + '<p class="hint">Paste the line. It drops straight into the script below.</p></div>'
+        + '</div>'
+
+      + '<div class="sec"><div class="sec-t">Step 2 · The call</div>'
+        + scriptHTML(l)
+        + '<div style="margin-top:12px"><label>How it went</label><div class="statuses" id="p-status">'
+        + STATUSES.map(function(s){ return '<button data-s="'+s+'" class="'+(l.status===s?'on':'')+'">'+SLABEL[s]+'</button>'; }).join('')
+        + '</div></div>'
+        + '<div style="margin-top:11px"><label for="f-notes">Notes</label>'
+        + '<textarea id="f-notes" data-k="notes" placeholder="Who answered. Where their work comes from. What job they want more of. Booked time.">'+esc(l.notes)+'</textarea></div>'
+        + '</div>'
+
+      + '<div class="sec"><details class="more" style="margin-top:0"><summary>Optional · Shopping question and spot-check</summary><div>'
+        + '<div class="q-box" style="margin-top:6px">How a stranger comparing shops would ask:<br><b>'+esc(ask)+'</b></div>'
+        + '<div class="links" style="margin-bottom:11px">'
+        + '<button class="btn sm ghost" data-copy="ask">Copy</button>'
+        + '<a class="btn sm ghost" href="'+esc(gptUrl)+'" target="_blank" rel="noopener">ChatGPT</a>'
+        + '<a class="btn sm ghost" href="'+esc(claudeUrl)+'" target="_blank" rel="noopener">Claude</a>'
+        + '<a class="btn sm ghost" href="https://gemini.google.com/app" target="_blank" rel="noopener">Gemini</a>'
+        + '</div>'
+        + '<div class="ask" style="margin-bottom:12px">'+seg(l,'chatgpt','ChatGPT')+seg(l,'gemini','Gemini')+seg(l,'claude','Claude')+'</div>'
+        + '<div class="checkbox-note">All 50 were already searched by name and <b>verified to have no website</b>. '
+        + 'These links are a quick look before you dial, if you want one.</div>'
         + '<div class="links" style="margin-bottom:9px">'
-        + '<a class="btn sm ghost" href="'+esc(gbpUrl)+'" target="_blank" rel="noopener">1 · Profile, not the Maps card</a>'
-        + '<a class="btn sm ghost" href="'+esc(nameSearch)+'" target="_blank" rel="noopener">2 · Search their name</a>'
-        + '<a class="btn sm ghost" href="'+esc(fbUrl)+'" target="_blank" rel="noopener">3 · Facebook page</a>'
-        + '<a class="btn sm ghost" href="'+esc(yelpUrl)+'" target="_blank" rel="noopener">4 · Yelp listing</a>'
+        + '<a class="btn sm ghost" href="'+esc(mapsUrl)+'" target="_blank" rel="noopener">Maps listing</a>'
+        + '<a class="btn sm ghost" href="'+esc(nameSearch)+'" target="_blank" rel="noopener">Search their name</a>'
+        + '<a class="btn sm ghost" href="'+esc(googleUrl)+'" target="_blank" rel="noopener">Search "'+esc(q)+'"</a>'
+        + '<a class="btn sm ghost" href="'+esc(fbUrl)+'" target="_blank" rel="noopener">Facebook</a>'
+        + (l.website?'<a class="btn sm ghost" href="'+esc(l.website)+'" target="_blank" rel="noopener">Their site</a>':'')
         + '</div>'
         + '<div class="ask" style="margin-bottom:11px"><div class="ask-row"><span>Website</span>'
           + '<div class="seg three" data-key="site_checked">'
@@ -370,47 +606,7 @@
         + '<div><label for="f-pos">Position in results</label><input id="f-pos" data-k="google_position" type="number" min="1" placeholder="1 = top three" value="'+esc(l.google_position)+'"></div>'
         + '<div><label for="f-rev">Reviews</label><input id="f-rev" data-k="reviews" type="number" min="0" placeholder="e.g. 21" value="'+esc(l.reviews)+'"></div>'
         + '<div><label for="f-rat">Rating</label><input id="f-rat" data-k="rating" type="number" step="0.1" min="0" max="5" placeholder="4.9" value="'+esc(l.rating)+'"></div>'
-        + '</div></div>'
-
-      + '<div class="sec"><div class="sec-t">Step 2 · Ask the shopping question</div>'
-        + '<div class="q-box">The way a stranger comparing options would ask:<br><b>'+esc(ask)+'</b></div>'
-        + '<div class="links" style="margin-bottom:11px">'
-        + '<button class="btn sm ghost" data-copy="ask">Copy</button>'
-        + '<a class="btn sm ghost" href="'+esc(gptUrl)+'" target="_blank" rel="noopener">ChatGPT</a>'
-        + '<a class="btn sm ghost" href="'+esc(claudeUrl)+'" target="_blank" rel="noopener">Claude</a>'
-        + '<a class="btn sm ghost" href="https://gemini.google.com/app" target="_blank" rel="noopener">Gemini</a>'
-        + '</div>'
-        + '<div class="ask">'+seg(l,'chatgpt','ChatGPT')+seg(l,'gemini','Gemini')+seg(l,'claude','Claude')+'</div>'
-        + '</div>'
-
-      + '<div class="sec"><div class="sec-t">Step 3 · Ask about them by name</div>'
-        + '<div class="q-box">The way somebody holding their card would ask:<br><b>'+esc(askName)+'</b></div>'
-        + '<div class="links" style="margin-bottom:11px">'
-        + '<button class="btn sm ghost" data-copy="askName">Copy</button>'
-        + '<a class="btn sm ghost" href="'+esc(gptName)+'" target="_blank" rel="noopener">ChatGPT</a>'
-        + '<a class="btn sm ghost" href="'+esc(claudeName)+'" target="_blank" rel="noopener">Claude</a>'
-        + '</div>'
-        + '<div class="ask"><div class="ask-row"><span>Knows them</span>'
-          + '<div class="seg" data-key="name_known">'
-          + '<button data-v="no" class="'+(l.name_known==='no'?'on':'')+'">Drew a blank</button>'
-          + '<button data-v="yes" class="'+(l.name_known==='yes'?'on yes':'')+'">Knew them</button>'
-          + '</div></div></div>'
-        + '<div style="margin-top:10px"><label for="f-reply">What it said, word for word</label>'
-        + '<textarea id="f-reply" data-k="name_reply" style="min-height:52px" placeholder="&quot;I don\'t have information about that business.&quot; — this is the line you read back to them.">'+esc(l.name_reply)+'</textarea></div>'
-        + verdict
-        + '</div>'
-
-      + '<div class="sec"><div class="sec-t">Step 4 · Work it</div>'
-        + '<div class="links" style="margin-bottom:11px">'
-        + (l.phone?'<a class="btn sm" href="tel:'+esc(l.phone.replace(/[^0-9+]/g,''))+'">Call '+esc(l.phone)+'</a>':'<span class="mono" style="color:var(--ink-3)">No phone on file</span>')
-        + (l.email?'<a class="btn sm ghost" href="mailto:'+esc(l.email)+'">Email</a>':'')
-        + '</div>'
-        + '<label>Status</label><div class="statuses" id="p-status">'
-        + STATUSES.map(function(s){ return '<button data-s="'+s+'" class="'+(l.status===s?'on':'')+'">'+s+'</button>'; }).join('')
-        + '</div>'
-        + '<div style="margin-top:11px"><label for="f-notes">Notes</label>'
-        + '<textarea id="f-notes" data-k="notes" placeholder="What they said. Who answers the phone. What work they want more of.">'+esc(l.notes)+'</textarea></div>'
-        + '</div>'
+        + '</div></div></details></div>'
 
       + '<div class="sec"><div class="sec-t">Details</div>'
         + '<div class="fields">'
@@ -418,6 +614,7 @@
         + '<div><label for="f-em">Email</label><input id="f-em" data-k="email" value="'+esc(l.email)+'"></div>'
         + '<div><label for="f-ci">City</label><input id="f-ci" data-k="city" value="'+esc(l.city)+'"></div>'
         + '<div><label for="f-tr">Trade</label><input id="f-tr" data-k="trade" value="'+esc(l.trade)+'"></div>'
+        + '<div style="grid-column:1/-1"><label for="f-st">Street</label><input id="f-st" data-k="street" value="'+esc(l.street)+'"></div>'
         + '<div style="grid-column:1/-1"><label for="f-web">Website (blank = none)</label><input id="f-web" data-k="website" value="'+esc(l.website)+'"></div>'
         + '</div></div>'
       + '</div>';
@@ -428,7 +625,7 @@
       el.addEventListener(ev, function(){
         l[el.dataset.k] = el.value;
         clearTimeout(el._t);
-        el._t = setTimeout(function(){ save(l); if(['website','reviews','rating','google_position','gbp_claimed','name_known','site_checked'].indexOf(el.dataset.k)>=0) render(); }, 420);
+        el._t = setTimeout(function(){ save(l); render(); }, 600);
       });
     });
     $('panel').querySelectorAll('.seg').forEach(function(sg){
@@ -442,17 +639,23 @@
     $('p-status').addEventListener('click', function(e){
       var b = e.target.closest('button'); if(!b) return;
       l.status = b.dataset.s; save(l); render();
+      toast(SLABEL[l.status]);
     });
     $('p-del').addEventListener('click', function(){
       if(confirm('Delete '+(l.business||'this lead')+'? This cannot be undone.')) removeLead(l.id);
     });
     $('panel').querySelectorAll('[data-copy]').forEach(function(b){
       b.addEventListener('click', function(){
-        var txt = b.dataset.copy === 'askName' ? askName : ask;
+        var k = b.dataset.copy;
+        var txt = k==='askName' ? askName : k==='vm' ? vmText(l) : k==='email' ? emailText(l) : ask;
         navigator.clipboard.writeText(txt).then(function(){ toast('Copied'); },
           function(){ toast('Copy failed, select it by hand'); });
       });
     });
+    if(keep && $(keep.id)){
+      var el = $(keep.id); el.focus();
+      try{ if(keep.a!=null) el.setSelectionRange(keep.a, keep.b); }catch(e){}
+    }
   }
 
   // ---- CSV ----
@@ -571,6 +774,66 @@
     $('exp-x').onclick = function(){ $('dlg').close(); };
   }
 
+  function openScript(){
+    var O = [
+      ['"How much is it?"', '"Depends on how many services and towns, so I won’t guess. After the check you get one number, and it doesn’t move."'],
+      ['"Just send me something."', '"Sure. What’s the best email? I’ll send your check and call you in two days to walk through it." Save the email in Details.'],
+      ['"Word of mouth keeps me busy."', '"Good, that’s the best customer there is. Those people still look you up before they call. Right now, when they do, [what we saw]."'],
+      ['"I have a Facebook page."', '"That works for people who already follow you. When a stranger asks Google or ChatGPT who to call, Facebook mostly gets skipped."'],
+      ['"My nephew can build me a site."', '"He can. The site’s the easy part. The listing, the details Google and ChatGPT read, and checking every month is the part that slips."'],
+      ['"Is this a scam? How’d you get my number?"', '"Fair question. It’s on your Google listing. We’re at builtformainstreet.com. The check is free and you pay nothing unless you go ahead."'],
+      ['"Too busy for more work."', '"Then which jobs would you rather have? The check shows what comes up for those." If still no, thank them and set Dead.'],
+      ['"Not interested."', '"Understood. Is it the timing, or you don’t want more of this kind of work?" One try. Then thank them and set Dead.'],
+      ['"Don’t call me again."', '"Understood, you’re off the list." Set Dead. Never call that number again.']
+    ];
+    $('d-title').textContent = 'The script';
+    $('dlg').classList.add('wide');
+    $('d-body').innerHTML =
+      '<h3>Rules</h3><ul class="rules">'
+      + '<li>Dial by hand. Only 8am to 8pm <b>their</b> time, never Sunday. The row dots show who is in a window.</li>'
+      + '<li><b>No texts.</b> Not after a voicemail, not ever, until client #10.</li>'
+      + '<li>Never quote a range. Never promise rankings, leads or revenue.</li>'
+      + '<li>Never say "we build websites." We get shops found and make them easy to reach.</li>'
+      + '<li>The goal of call one is a booked 10-minute check. Not a sale.</li>'
+      + '<li>Three tries per shop (morning, afternoon, next week). Then Dead.</li></ul>'
+
+      + '<h3>Call one: book the check</h3>'
+      + '<div class="say"><span class="lbl">1 · Open</span>"Hi, is this [owner]? This is Miles with Built for Main Street. I’ll be honest, this is a cold call. Can I have 30 seconds to tell you why, and you can hang up after that?"</div>'
+      + '<div class="say"><span class="lbl">2 · What we saw</span>"I asked ChatGPT about [shop] by name this morning. Here’s what it said: [their words]. Did you know that?"</div>'
+      + '<div class="stage">Stop talking. Silence does the work.</div>'
+      + '<div class="say"><span class="lbl">3 · One real question</span>"Where does most of your work come from right now?" Then: "What kind of job do you want more of?"</div>'
+      + '<div class="say"><span class="lbl">4 · The ask</span>"We run a free check on shops like yours: what Google and ChatGPT say when somebody looks for [trade] in [town], and what’s keeping you off the list. Ten minutes on the phone. Tomorrow at 9 or at 4, your time?"</div>'
+
+      + '<h3>Call two: the check and the price</h3>'
+      + '<div class="say"><span class="lbl">Show</span>"Here’s what a stranger sees when they look for you." Screen share or send the check. Read their own name answer out loud.</div>'
+      + '<div class="say"><span class="lbl">Count</span>"How many different services do you offer?" "How many towns will you drive to?"</div>'
+      + '<div class="say"><span class="lbl">Name one number</span>'
+        + '<b>Up to 8 services, 6 towns:</b> "It’s $1,000 to build, then $199 a month. Cancel any time with 30 days’ notice."<br>'
+        + '<b>Up to 4 services, 3 towns, one location:</b> "It’s $600 to build if you take the first year of upkeep up front, $1,990. That’s the only way that price exists."<br>'
+        + '<b>Bigger than that:</b> "From $1,500. I’ll send you the exact number today."</div>'
+      + '<div class="say"><span class="lbl">Terms, said plainly</span>"We build and host the site. The domain is registered in your name. Upkeep covers hosting, reasonable edits, and a monthly report on what the AI assistants say about you. After a year you can buy the site outright for $2,000."</div>'
+      + '<div class="say"><span class="lbl">Close</span>"If that works, I’ll send the agreement and the payment link now. When the payment and your photos are in, the two weeks start."</div>'
+      + '<div class="stage">Money and photos first. Nothing gets built on spec. Photos are due within 30 days.</div>'
+      + '<div class="say"><span class="lbl">What we don’t do</span>"No ads, no social media, no chatbots, no long contract. We get you found and make you easy to reach, and we show you the numbers every month."</div>'
+
+      + '<h3>When they push back</h3>'
+      + O.map(function(o){ return '<div class="obj"><b>'+esc(o[0])+'</b><span>'+esc(o[1])+'</span></div>'; }).join('')
+
+      + '<h3>Voicemail</h3>'
+      + '<div class="say">"Hi, this is Miles with Built for Main Street. I looked up [shop] on Google and ChatGPT this morning, and there’s something on your listing you’ll want to see. The check is free. Call me back at [number], or email hello at builtformainstreet dot com. Again, [number]. Thanks."</div>'
+      + '<div class="stage">Then set Voicemail. If there’s an email, send the follow-up from the lead’s script. Never a text.</div>'
+
+      + '<h3>Your details</h3>'
+      + '<div class="fields">'
+      + '<div><label for="s-cb">Call-back number</label><input id="s-cb" placeholder="Google Voice number" value="'+esc(pref('cb'))+'"></div>'
+      + '<div><label for="s-addr">Mailing address</label><input id="s-addr" placeholder="Required in sales emails" value="'+esc(pref('addr'))+'"></div>'
+      + '</div>'
+      + '<p class="hint">Kept in this browser only. Use a free Google Voice number, so your own cell stays private and shows on nobody’s caller ID. The address can be a PO box; the law requires one in sales emails.</p>';
+    $('dlg').showModal();
+    $('s-cb').oninput = function(){ pref('cb', this.value.trim()); renderPanel(); };
+    $('s-addr').oninput = function(){ pref('addr', this.value.trim()); };
+  }
+
   // ---- events ----
   $('list').addEventListener('click', function(e){
     var r = e.target.closest('.row'); if(!r) return;
@@ -583,10 +846,15 @@
     $('filters').querySelectorAll('.chip').forEach(function(c){ c.classList.toggle('on', c===b); });
     render();
   });
+  $('b-script').onclick = openScript;
   $('b-add').onclick = openAdd;
   $('b-import').onclick = openImport;
   $('b-export').onclick = openExport;
   $('d-x').onclick = function(){ $('dlg').close(); };
+  $('dlg').addEventListener('close', function(){ $('dlg').classList.remove('wide'); });
+  // clocks move: redraw the list and the panel clock every minute, never the panel itself (you may be typing)
+  setInterval(function(){ renderList(); var l = leads.filter(function(x){ return x.id===selId; })[0], c = $('p-clock');
+    if(l && c){ var w = windowOf(l); c.className = 'win '+w.cls; c.innerHTML = '<i></i>Their time '+esc(w.txt); } }, 60000);
 
   render();
   banner('Connecting to your saved list...');
