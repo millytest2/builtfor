@@ -235,6 +235,74 @@ Say this out loud — naming what you don't do builds trust faster than another
 claim about what you do, and it keeps you out of the categories where you
 compete on price against people with more staff.
 
+## The promise, resolved
+
+Two problems, not one. Owners do not care about websites, profiles or structured
+data individually. They care that **people cannot find them, and the people who
+do find them do not turn into calls.**
+
+> **Built for Main Street helps local businesses get found, get contacted, and
+> stop losing good leads.**
+
+No AI in that sentence. It stays out.
+
+**The second half is deliverable today with no new product.** What actually leaks
+on the sites we find is a phone number that is not a `tel:` link, a form routing
+to an email nobody opens, missing hours, no text option, a Google listing with no
+call button. All of it is HTML, all of it is already inside the $1,000, and none
+of it needs telephony, automation or a compliance posture.
+
+So the stronger promise costs nothing to make:
+
+> "When someone looks for what you do, they find a credible version of your
+> business and can reach you in one tap."
+
+### Why the price does not drop
+
+Proposed at one point: $800 setup, $79/mo. The arithmetic kills it.
+
+| | Setup | Monthly | Year one | Clients to $10k/mo |
+|---|---|---|---|---|
+| **Hold** | $1,000 | $199 | **$3,388** | **51** |
+| Proposed | $800 | $79 | $1,748 | 127 |
+
+At four sales a month that is 13 months against 32. Proof comes from the free
+Visibility Check, not from a $200 discount. And $79 is a hosting price — hosting
+companies are replaceable; "keeps me found" is not. Flex the setup on a first
+client if something has to move. Never the recurring.
+
+### The AI question, decided
+
+The standing rule: no AI receptionists, no chatbots, nothing that replaces
+labour. Enhance the business, do not replace the people in it.
+
+A proposed five-product automation layer runs against that rule as follows:
+
+| Product | Against the rule |
+|---|---|
+| Missed-call text-back | **Passes.** Nobody answered; waste caught, nothing replaced. |
+| Lead response *and qualification* | **Fails.** Qualifying is the receptionist's job. |
+| Estimate follow-up | Grey. The owner's job, undone. |
+| Old-lead reactivation | Outbound marketing. Different business. |
+| Review requests | **Passes**, and needs no AI. |
+
+Two of five survive. Keep the rule and keep the two.
+
+**And nothing that sends a text gets built before client #10.** TCPA statutory
+damages are $500 per message, $1,500 if willful, uncapped — texting 300 old
+leads without written consent is $150,000 of exposure before anyone argues about
+willfulness. Since January 2026 consent cannot be shared across brands, so an old
+quote list is not consent. Separately, every SMS product needs A2P 10DLC
+registration per client through The Campaign Registry, and since February 2025
+carriers block unregistered business SMS outright rather than throttling it.
+Building that means becoming a compliance operation, which is a different company
+than this one.
+
+The second sale gets justified by measurement, not by a menu: the foundation
+installs analytics, month three shows where calls are still being lost, and the
+leak gets named before anything is sold to fix it. **No named leak, no second
+product.**
+
 ## The competitor problem: you sound like The Social Hog
 
 Checked 9/25. The Social Hog, Los Angeles, founded 2013. Headline: *"The Best
