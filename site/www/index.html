@@ -62,7 +62,7 @@ img{max-width:100%}
 body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.5;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.055'/%3E%3C/svg%3E")}
 
-.wrap{max-width:1000px;margin:0 auto;padding-inline:20px;position:relative;z-index:2}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:clamp(20px,4vw,56px);position:relative;z-index:2}
 .narrow{max-width:660px}
 
 /* ---- masthead ---- */
@@ -136,8 +136,8 @@ select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='ht
 .verdict b{font-weight:600}
 
 /* ---- the dark band: main street at dusk ---- */
-.street{background:var(--deep);color:var(--cream);margin-block:64px 0;
-  padding-block:52px 44px;position:relative;overflow:hidden;z-index:2}
+.street{background:var(--deep);color:var(--cream);margin-block:clamp(44px,6vw,72px) 0;
+  padding-block:clamp(40px,5vw,56px) clamp(34px,4vw,46px);position:relative;overflow:hidden;z-index:2}
 .street:after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:rgba(255,255,255,.08)}
 .street .wrap{max-width:1000px}
 .street h2{font-family:var(--display);font-weight:600;font-size:clamp(23px,3.6vw,32px);
@@ -238,14 +238,6 @@ form.ask input,form.ask textarea{background:rgba(0,0,0,.22);border-color:rgba(24
 form.ask input::placeholder,form.ask textarea::placeholder{color:rgba(242,236,224,.35)}
 .formnote{grid-column:1/-1;font-family:var(--mono);font-size:12px;color:rgba(242,236,224,.5);margin:0}
 
-.finds{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:22px;
-  background:var(--line);border:1px solid var(--line);border-radius:4px;overflow:hidden}
-@media(max-width:640px){.finds{grid-template-columns:1fr}}
-.find{background:var(--card);padding:19px 20px}
-.find .who{font-family:var(--display);font-weight:600;font-size:16px;margin-bottom:6px;
-  letter-spacing:-.008em;font-variation-settings:'SOFT' 40}
-.find p{margin:0;font-size:15px;color:var(--ink-2);line-height:1.55}
-
 .who-block{display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:start;
   margin-top:24px;background:var(--card);border:1px solid var(--line);
   border-radius:4px;padding:26px 26px 24px}
@@ -288,6 +280,76 @@ form.ask input::placeholder,form.ask textarea::placeholder{color:rgba(242,236,22
 h3.subsec{font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;
   color:var(--ink-3);font-weight:400;margin:34px 0 16px;padding-top:16px;
   border-top:1px solid var(--line)}
+/* the storefront language, returning */
+/* second dark band: the money moment */
+.money{margin-block:56px 0;padding-block:48px 44px}
+.money h2{margin-bottom:26px}
+.pricegrid{display:grid;grid-template-columns:1fr 1fr;gap:0;
+  border-top:1px solid rgba(242,236,224,.18)}
+@media(max-width:700px){.pricegrid{grid-template-columns:1fr}}
+.pricecol{padding:24px 30px 24px 0;border-right:1px solid rgba(242,236,224,.18)}
+.pricecol:last-child{border-right:0;padding-left:30px}
+@media(max-width:700px){
+  .pricecol{border-right:0;border-bottom:1px solid rgba(242,236,224,.18);padding:22px 0}
+  .pricecol:last-child{border-bottom:0;padding-left:0}
+}
+.pnum{font-family:var(--display);font-weight:800;font-size:clamp(34px,5.4vw,50px);
+  line-height:1;letter-spacing:-.03em;color:var(--glow);
+  font-variation-settings:'SOFT' 50,'WONK' 1}
+.pnum span{opacity:.45;font-weight:400;padding:0 2px}
+.pnum .per{font-size:.42em;font-family:var(--mono);font-weight:400;letter-spacing:0;
+  opacity:.8;padding-left:3px}
+.plab{font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+  color:rgba(242,236,224,.55);margin:10px 0 12px}
+.pricecol p{color:rgba(242,236,224,.74);font-size:15.5px;margin:0;max-width:38ch}
+.pfoot{color:rgba(242,236,224,.74);font-size:16px;margin:26px 0 0;max-width:56ch}
+.pfoot b{color:var(--cream);font-weight:600}
+
+/* awning stripe returns between sections instead of only at the top */
+.band+.band:before{content:"";display:block;height:5px;border-radius:2px;margin-bottom:44px;
+  background:repeating-linear-gradient(90deg,var(--line-2) 0 10px,transparent 10px 20px)}
+
+/* ---------- the spine: heading rail left, content right ---------- */
+section.band{display:grid;grid-template-columns:minmax(190px,4fr) minmax(0,9fr);
+  column-gap:clamp(32px,5vw,72px);align-items:start;padding-block:clamp(48px,6vw,86px) 0}
+section.band > h2.sec{grid-column:1;margin:0;font-size:clamp(23px,2.5vw,33px);
+  position:sticky;top:clamp(20px,3vw,40px);max-width:13ch}
+section.band > .bbody{grid-column:2;min-width:0}
+@media(max-width:900px){
+  section.band{grid-template-columns:1fr;row-gap:14px;padding-block:46px 0}
+  section.band > h2.sec{position:static;max-width:18ch}
+}
+.bbody > .lead{max-width:62ch;font-size:clamp(16.5px,1.35vw,18.5px)}
+.bbody > .lead:first-child{font-size:clamp(17.5px,1.6vw,21px);color:var(--ink);line-height:1.45}
+
+/* findings: a numbered run, not four boxes */
+ol.finds{list-style:none;counter-reset:fi;padding:0;margin:26px 0 0;
+  display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(28px,4vw,56px);row-gap:0}
+@media(max-width:820px){ol.finds{grid-template-columns:1fr}}
+li.find{counter-increment:fi;padding:20px 0 26px;border-top:1px solid var(--line)}
+li.find .who{font-family:var(--display);font-weight:600;font-size:clamp(17px,1.5vw,20px);
+  line-height:1.22;letter-spacing:-.012em;margin:0 0 5px;color:var(--ink);
+  font-variation-settings:'SOFT' 40}
+li.find .who:before{content:counter(fi,decimal-leading-zero);font-family:var(--mono);
+  font-size:11.5px;color:var(--signal);display:block;margin-bottom:8px;letter-spacing:.1em}
+li.find p{margin:0;font-size:15.5px;color:var(--ink-2);line-height:1.58;max-width:42ch}
+
+/* no more boxes for these two */
+.nope-bare{margin-top:34px;padding-top:20px;border-top:2px solid var(--ink)}
+.nope-bare ul{list-style:none;padding:0;margin:12px 0 0;display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:8px 32px}
+.nope-bare li{padding-left:20px;position:relative;color:var(--ink-2);font-size:15.5px}
+.nope-bare li:before{content:"";position:absolute;left:0;top:.72em;width:11px;height:1.5px;
+  background:var(--ink-3)}
+.who-bare{display:grid;grid-template-columns:auto 1fr;gap:clamp(22px,3vw,40px);align-items:start}
+@media(max-width:620px){.who-bare{grid-template-columns:1fr}}
+.who-bare p{margin:0 0 14px;font-size:clamp(16px,1.35vw,18px);color:var(--ink-2);max-width:60ch}
+.who-bare p:last-of-type{margin-bottom:0}
+.who-bare b{color:var(--ink);font-weight:600}
+
+.pair{grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(26px,3.5vw,48px)}
+.figure{margin-top:26px}
+.test{margin-top:30px}
 footer{margin-top:64px;border-top:1px solid var(--line);padding-block:34px 44px}
 .foot-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;max-width:760px}
 @media(max-width:480px){.foot-grid{grid-template-columns:1fr}}
@@ -424,34 +486,32 @@ footer a:hover{color:var(--signal);border-color:var(--signal)}
 <div class="wrap">
 <section class="band">
   <h2 class="sec">Four things I found last week.</h2>
+  <div class="bbody">
   <p class="lead">Real shops, found while building a call list.</p>
-  <div class="finds">
-    <div class="find">
+  <ol class="finds">
+    <li class="find">
       <div class="who">An upholstery shop in Knoxville</div>
       <p>Google listing has a website link on it. The link goes to a company in Ireland.
       Somebody typed it wrong years ago and it has been sending customers there ever
-      since.</p>
-    </div>
-    <div class="find">
+      since.</p></li>
+    <li class="find">
       <div class="who">A masonry outfit outside Los Angeles</div>
       <p>Their listing points at a competitor's site. Anyone who clicks through to hire
-      them ends up on the other guy's quote form.</p>
-    </div>
-    <div class="find">
+      them ends up on the other guy's quote form.</p></li>
+    <li class="find">
       <div class="who">A tree service in Texas</div>
       <p>The domain on the listing is parked. It says "coming soon" and has said that
-      long enough that the registrar changed its logo twice.</p>
-    </div>
-    <div class="find">
+      long enough that the registrar changed its logo twice.</p></li>
+    <li class="find">
       <div class="who">A mason in Ohio, thirty-plus years</div>
       <p>Website is a free Wix subdomain with a stranger's username in the address. Best
-      reviews of anyone I looked at that day.</p>
-    </div>
-  </div>
-  <p class="lead" style="margin-top:22px">None of that is a marketing problem. It is
+      reviews of anyone I looked at that day.</p></li>
+  </ol>
+  <p class="lead" style="margin-top:26px">None of that is a marketing problem. It is
   plumbing, and somebody has to go fix it.</p>
   <p class="lead"><b>None of those four owners know.</b> You wouldn't either, unless you
   went and looked.</p>
+</div>
 </section>
 </div>
 
@@ -511,7 +571,11 @@ footer a:hover{color:var(--signal);border-color:var(--signal)}
 
 
 
+</div>
+
+
 <div class="wrap">
+
 
 
 
@@ -525,6 +589,7 @@ footer a:hover{color:var(--signal);border-color:var(--signal)}
 
 <section class="band">
   <h2 class="sec">Where the path breaks.</h2>
+  <div class="bbody">
   <p class="lead">Five steps between somebody needing the work and somebody getting hired.
   A shop can fall out at two of them.</p>
   <figure class="figure">
@@ -572,10 +637,12 @@ footer a:hover{color:var(--signal);border-color:var(--signal)}
     <figcaption><b>The two red steps are the only ones anybody can do anything about.</b>
     That is where a website and a Google listing do their work, and it is all I touch.</figcaption>
   </figure>
+</div>
 </section>
 
 <section class="band">
   <h2 class="sec">What I'd actually do.</h2>
+  <div class="bbody">
   <p class="lead">Two jobs, and neither one is marketing.</p>
   <div class="pair">
     <div>
@@ -593,31 +660,40 @@ footer a:hover{color:var(--signal);border-color:var(--signal)}
       Those customers had already picked you.</p>
     </div>
   </div>
-  <h3 class="subsec">What it runs</h3>
-  <div class="narrow">
-    <p class="lead">The build runs <b>$600 to $1,000</b>. What decides it
-    is how many services you offer and how many towns you drive to, because
-    that's how many pages I'm writing. We settle it on the first call and I don't move it
-    afterward. Once you're live it's <b>$199 a month</b> and you can stop with thirty
-    days' notice. No contract to sign your way out of.</p>
-    <p class="lead">Every month I run the same two questions you just ran and email you
-    what came back. I'm not going to promise you a ranking. I'll send you the answers and
-    you can check them yourself in ten seconds.</p>
-  </div>
-  <div class="nope">
-    <div class="kicker" style="color:var(--ink-3)">Things I will say no to</div>
-    <ul>
-      <li>Social media, blogs, ads</li>
-      <li>A chatbot answering your customers</li>
-      <li>Anything that replaces somebody on your payroll</li>
-      <li>Promising you a ranking or a number</li>
-    </ul>
   </div>
 </section>
+</div>
 
+<div class="street money">
+  <div class="wrap">
+    <div class="kicker">What it runs</div>
+    <h2>One number, settled on the first call.</h2>
+    <div class="pricegrid">
+      <div class="pricecol">
+        <div class="pnum">$600<span>&ndash;</span>$1,000</div>
+        <div class="plab">to build it</div>
+        <p>What decides it is how many services you offer and how many towns you drive
+        to, because that is how many pages get written. We settle it on the first call
+        and it does not move afterward.</p>
+      </div>
+      <div class="pricecol">
+        <div class="pnum">$199<span class="per">/mo</span></div>
+        <div class="plab">to keep it working</div>
+        <p>Hosting, edits whenever you need them, your listing kept current. Thirty
+        days' notice to stop. There is no contract to sign your way out of.</p>
+      </div>
+    </div>
+    <p class="pfoot">Every month I run the same two questions you just ran and email you
+    what came back. <b>I will not promise you a ranking.</b> I send the answers and you
+    check them yourself in ten seconds.</p>
+  </div>
+</div>
+
+<div class="wrap">
 <section class="band">
-  <h2 class="sec">Who you'd actually be dealing with.</h2>
-  <div class="who-block">
+  <h2 class="sec">Who does the work.</h2>
+  <div class="bbody">
+  <div class="who-bare">
     <svg class="stamp" viewBox="0 0 96 96" role="img" aria-label="A small storefront mark">
       <g fill="none" stroke="currentColor" stroke-width="2.2" style="color:var(--ink-3)">
         <rect x="13" y="30" width="70" height="54"/>
@@ -628,18 +704,20 @@ footer a:hover{color:var(--signal);border-color:var(--signal)}
       </g>
     </svg>
     <div>
-      <p>I'm Miles. This is one person in Los Angeles, not an agency, and there's no
-      account manager between us. You call, I pick up. Depending on how you feel about
-      agencies that's either the best part or the worst part.</p>
-      <p><b>I'll be straight with you about where I am: this business is new.</b> You'd
-      be among the first shops I do this for. I'd rather you hear that from me than work
-      it out later.</p>
-      <p>What that's worth to you: I show you the problem before I ask for a dollar,
-      you can walk with thirty days' notice, and I have more reason than anybody to make
-      your site the one I point at when the next person asks who I've worked for.</p>
-      <div class="sig">Miles Tipton</div>
+      <p><b>Built for Main Street is one person, and that is the design, not a stage
+      I am hoping to grow out of.</b> An agency puts an account manager between you and
+      whoever touches your site. There isn't one here. You call the number on this page
+      and I answer it.</p>
+      <p>I claim the listing, write the pages, take the call when your hours change.
+      That means I take on a handful of shops at a time rather than a hundred, and it
+      means the person who built the thing is the person who fixes it.</p>
+      <p>I am early. Built for Main Street is taking its first shops on now, which is
+      worth knowing, and worth something: you would get more of my attention than anyone
+      who signs on next year.</p>
+      <div class="sig">Miles Tipton, Los Angeles</div>
     </div>
   </div>
+</div>
 </section>
 
 <div class="close" id="check">
