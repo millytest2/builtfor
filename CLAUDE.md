@@ -62,6 +62,7 @@ Cancel with 30 days' notice. Buyout of the site at $2,000 after 12 months.
 
 | | |
 |---|---|
+| `docs/FOCUS.md` | who we sell to and why: auto shops first, party rental second |
 | `docs/OFFER.md` | the offer, pricing reasoning, objection handling |
 | `docs/BEFORE_AFTER.md` | the measurement spec, both halves |
 | `docs/DELIVERY.md` | how a job gets done, and the two commands |

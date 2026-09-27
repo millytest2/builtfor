@@ -1,0 +1,86 @@
+# Focus: who we sell to, and why
+
+The one-page answer. The models behind it are in `docs/niche_*.py` and
+`docs/service_scorecard.py`. Rerun them when real call numbers replace the guesses.
+
+## The decision
+
+| | |
+|---|---|
+| **Main list** | Independent auto repair shops. Transmission and independent auto body on the same list, same script. |
+| **Second list** | Party and equipment rental. |
+| **Where first** | Southern California, walking in, for clients 1 to 3. |
+| **Where next** | Smaller warm-weather towns by phone, once the pitch is proven. |
+| **Not now** | Home-remodel showrooms, field trades, cleaning and route services, HVAC and plumbing, restaurants. |
+
+## Why auto repair
+
+It is the only business type that came out on top in every test we ran:
+
+| Test | Auto repair |
+|---|---|
+| Fundamentals (afford, reach, supply, pitch pressure, fit, retention, gap) | #1 of 60 |
+| Random weights, 10,000 runs | Top 5 in 100% |
+| Scores off by a point anywhere | Top 5 in 95% |
+| Worst case, after fixes | #1 in 100% |
+| Fit with the services owners value most | #1 (93) |
+| Easy to sell, obvious need, will Miles understand it | #1 (87, tied) |
+| All 11 criteria, 33 business types, 20,000 runs | #1 in 92%, top 5 in 100% |
+
+In plain words:
+
+- **The owner is at the counter all day.** You can walk in, and they pick up.
+- **They can afford it.** One brake job or one collision repair pays the month.
+- **The need is obvious.** "Who's an honest mechanic near me?" is one of the most asked local questions, to Google and to ChatGPT.
+- **Customers come back for years,** so reviews and being found keep paying. That keeps the $199 alive.
+- **Lots of them.** Every town has several. Filtering for the ones with a weak site still leaves plenty.
+- **You already know the customer.** Every driver knows the fear of being ripped off. That fear is the pitch.
+- **It is Main Street.** A storefront on the corner.
+
+## Why not the others
+
+| Group | Why it loses to auto repair |
+|---|---|
+| **Party / equipment rental** (close #2) | Seasonal, owners ask for Instagram, some are side hustles. Wins on insider knowledge (events), so it is the second list, not the first. |
+| **Showrooms** (flooring, windows, countertops) | Good buyers, but few per town, and many flooring stores are buying-group dealers with a corporate site. Far from Miles's life. |
+| **Field trades** (concrete, tree, fencing, welding) | The owner is on a job all day. Reach fails, and reach decides how many conversations happen. |
+| **Cleaning and route services** (pool, window cleaning, pressure washing, gutters, detailing, junk removal) | Mostly solo operators with small jobs, so $1,000 plus $199 feels big. In the field all day. Many are side hustles that quit, and pressure washers and window cleaners are coached by YouTube marketers, so they build their own sites and hear agency pitches constantly. Best of the group is **mobile mechanic** (74), which is just auto repair without the counter. |
+| **Restaurants, bars, gyms** | Miles knows them best, but they want social media, which we do not sell, and many already have sites or close. |
+| **HVAC, plumbing, roofing** | Every agency is already calling them. |
+
+## What we sell them
+
+The website is the vehicle, not the headline. What owners value most, in order:
+
+1. Their own AI visibility check, then a monthly AI report
+2. A monthly report showing they are found and reachable
+3. Review requests at the counter (QR card and email; ask everyone, no rewards, no texts)
+4. Google listing claimed and cleaned up
+5. Review reply drafts the owner approves
+
+Never sold: chatbots, AI receptionists, texts before client #10, social media, ads, SEO retainers, logos.
+
+**Pending decision:** add review requests, review reply drafts and listing upkeep to the $199 upkeep, and make and model pages to auto builds. Prices do not change. Nothing in the offer, agreement or site changes until this is approved.
+
+## The math to $10k a month
+
+About 30 clients on upkeep at $199 is roughly $6,000. Four new builds a month at $1,000 adds $4,000. That is one new shop a week.
+
+## How it runs
+
+| | Auto shops | Party rental |
+|---|---|---|
+| **Best time** | 10 to 11:30am, 1:30 to 3:30pm. Never at drop-off or pickup. | Evenings, when they prep orders |
+| **How** | Walk in. Ask for the owner by name (state repair license lookup, signed review replies). | Phone, then visit the warehouse |
+| **Opener** | "Who's an honest mechanic in [town]?" asked to ChatGPT, on your phone, in front of them | "Party rentals in [town]?" the same way |
+| **Filter** | No site, a supplier template, a rented page, or a broken one | A real address, 3+ years, 50+ reviews |
+| **Rule** | One shop per trade per town | Same |
+
+## What would change this
+
+The whole ranking rests on one guess: how many auto shops have a site we can beat.
+Check 90 shops across three towns. Thirty percent or more with no site, a rented site
+or a broken one: auto repair stays first. Under fifteen percent: party rental leads.
+
+After 25 real conversations per list, replace the judgment scores in the models with
+what actually happened, and rerun.
