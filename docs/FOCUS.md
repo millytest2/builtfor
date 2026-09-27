@@ -84,3 +84,25 @@ or a broken one: auto repair stays first. Under fifteen percent: party rental le
 
 After 25 real conversations per list, replace the judgment scores in the models with
 what actually happened, and rerun.
+
+## Review: party rental vs auto shops (difficulty pass)
+
+Party rental scored higher when Miles's edge (events, bartending) was weighted up.
+The difficulty pass reversed it. The rule that settles it:
+
+> **Choose the niche whose hard part is a skill, not a structure.**
+
+| | Hard part | Kind | Gets easier with reps? |
+|---|---|---|---|
+| Auto repair, transmission | Getting past the counter, sounding credible | Skill | Yes, within 20 conversations |
+| Party rental | Seasonal cash, rental-software sites, side hustles, Instagram asks | Structure | No |
+| Mobile bartending | Small budgets, short-lived businesses | Structure | No |
+
+Money per 100 dials (assumed rates, in `docs/niche_difficulty.py`): auto walk-in
+about $6,400, transmission about $4,000, party rental about $3,100. Worst case,
+same order.
+
+**Practice plan before selling to auto shops:** 5 conversations with mobile
+bartending owners (peers, low stakes), then 5 no-pitch talks with auto shop owners
+("what is your biggest headache right now?") to learn whether their pain is
+customers or technicians. Then sell.
