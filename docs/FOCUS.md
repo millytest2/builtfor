@@ -10,14 +10,19 @@ So the niche is picked for speed to cash, owner reach, and leads already in hand
 
 | # | Niche | Role | Usual tier | Channel |
 |---|---|---|---|---|
-| **1** | **Tree service** (owner-operated, no website) | Cash now. The one niche for the coach. | Standard, $800 + $199 | Cold call, 7 to 8am or 4 to 6pm their time. 20 verified leads in `output/tree_service_20.csv` |
-| 2 | Independent auto repair and transmission | Steady buyers with lots of services | Bigger, $1,000 + $300 | Walk in locally, 10 to 11:30am. Phone elsewhere. 20 verified leads in `output/auto_repair_20.csv` |
-| 3 | Training studios and sports performance, with recovery studios and physical therapy as referrals from them | Proof (client #1) and the world Miles lives in | Small or Standard | Warm referrals first. Ask every client for two intros. 20 cold leads in `output/training_studios_20.csv` |
-| 4 | Independent tutoring and test prep | Education and careers, which feeds UPath | Standard | Email first, then morning calls, once mornings are free. 11 verified leads in `output/tutoring_11.csv` (about 1 in 5 independents has no site) |
+| **1** | **Tree service** (owner-operated, no website) | Cash now. The one niche for the coach. | Standard, $800 + $199 | Cold call, 7 to 8am or 4 to 6pm their time. 8 checked leads in `output/leads_tree.csv` |
+| 2 | Independent auto repair and transmission | Steady buyers with lots of services | Bigger, $1,000 + $300 | Walk in locally, 10 to 11:30am. Phone elsewhere. 11 checked leads in `output/leads_auto.csv` |
+| 3 | Training studios and sports performance, with recovery studios and physical therapy as referrals from them | Proof (client #1) and the world Miles lives in | Small or Standard | Warm referrals first. Ask every client for two intros. 11 cold leads in `output/leads_training.csv` |
+| 4 | Independent tutoring and test prep | Education and careers, which feeds UPath | Standard | Email first, then morning calls, once mornings are free. 6 checked leads in `output/leads_tutoring.csv` (most independents already have a site) |
 
 Locked September 28, 2026. Ruled out on interest: concrete, masonry, party rental,
 mobile bartending, welding, upholstery. Do not reopen this list until 25 real
 conversations are logged.
+
+Lead files: clean leads per niche in `output/leads_*.csv`. Leads with a dead, rented or doubtful site are in
+`output/leads_hooks_to_confirm.csv` (look at the Google listing's Website button first). Leads with a real site
+are in `output/leads_have_websites.csv` so they are never re-added. A name-only search missed 21 of 71 sites;
+always search the name plus "website".
 
 **One niche for the coach: tree service.** The other four are where you go next or
 work in parallel through a different channel, not a second pitch on the same day.
