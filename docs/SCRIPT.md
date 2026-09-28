@@ -54,7 +54,9 @@ goes to Facebook, Yelp or a dead page.
 > mechanic in [town], it names three other shops. Not you. And there's no website
 > for Google to send people to. Did you know that?"
 
-Then **stop talking**. Count to three in your head. Let them react.
+Only say what you actually saw. If ChatGPT did name them, say that instead and ask
+what the website does for them. Then **stop talking**. Count to three in your head.
+Let them react.
 
 **3. One real question**
 > "Where do most of your new customers come from right now?"
@@ -73,7 +75,7 @@ Write the answers down. They go in the check and on the site.
 **5. Lock it in**
 > "Great. What's the best number and email to send it to?"
 
-Set **Booked** on the call sheet with the time.
+Tap **Check booked** on the call sheet and set the next-step date to the check.
 
 If they ask the price on call one:
 > "It depends on how many services and towns you cover, so I won't guess. After the
@@ -101,6 +103,10 @@ ChatGPT said about their name.
 
 **Count.** "How many different services do you do? Brakes, A/C, diagnostics,
 transmission, smog?" "Which towns do your customers come from?"
+
+**Count pages, not every job.** An auto shop's work groups into about 8 pages:
+brakes and suspension, diagnostics, A/C, transmission, oil and maintenance, tires,
+smog, electrical. That is Standard.
 
 **Name one number.** Only the one they land in. Most auto shops land in Standard.
 

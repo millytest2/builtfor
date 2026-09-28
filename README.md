@@ -1,55 +1,40 @@
 # Built for Main Street
 
-**We get local businesses found. It starts with a website.**
+> **Built for Main Street helps local businesses get found, get contacted, and stop
+> losing good leads.**
 
-Their Google listing fixed and a website built, together, so search engines and
-AI assistants can both actually read them. $800 to build, then $149/mo.
-
-> **Read in this order:** [`docs/OFFER.md`](docs/OFFER.md) for what we sell ·
-> [`docs/PROSPECTING.md`](docs/PROSPECTING.md) for how to find and check
-> prospects · [`docs/SCRIPT.md`](docs/SCRIPT.md) for what to say · [`docs/STRATEGY_10K.md`](docs/STRATEGY_10K.md) for the funnel and
-> capacity math · [`docs/HANDOFF.md`](docs/HANDOFF.md) for cold-start context.
-
----
-
-## The whole thing in one table
+Niche: **independent auto repair shops**, San Fernando Valley first.
 
 | Stage | Offer | Price |
 |---|---|---|
 | The door | **Visibility Check** | Free |
-| The product | **The fix** | **$500 – $1,000 once**, most jobs $800 |
-| Keeping it up | **Keep it live** | **$79/mo hosting** |
+| Small | Up to 4 services, 3 towns, one location | $600 + $99/mo |
+| **Standard** | Up to 8 services, 6 towns | **$800 + $199/mo** |
+| Bigger | More, or two locations | $1,000 + $300/mo |
 
-The monthly is hosting, not a retainer. Cancel any time and the files are
-theirs. You have to host the site anyway, so charging for it passes on a cost
-you already carry rather than committing you to manage anything.
+The tier is picked by counting services and towns on the call, quoted once, and
+does not move. Full terms and hard rules: [`CLAUDE.md`](CLAUDE.md).
 
-**Why it works in 2026:** 35.9% of local business locations turn up in Google's
-top three. Only 1.2% get named by ChatGPT. Being good at traditional local
-search no longer carries over, and more than half the businesses winning
-Google's map pack are absent from AI answers entirely.
-(SOCi 2026 Local Visibility Index, 349,000+ locations across 2,751 brands.)
+## Read in this order
 
-**Lead with the check, never the website.** Every prospect gets cold-called
-about websites and about Google most weeks and hangs up in four seconds. Nobody
-is calling them about whether an assistant can find them. That is the only part
-of this pitch that is not already background noise.
+1. [`docs/PLAYBOOK.md`](docs/PLAYBOOK.md): the whole business on one page, with the scorecard
+2. [`docs/SCRIPT.md`](docs/SCRIPT.md): what to say on the phone and at the counter
+3. [`docs/FOCUS.md`](docs/FOCUS.md): why auto repair
+4. [`docs/OFFER.md`](docs/OFFER.md): offer reasoning and objections
+5. [`docs/DELIVERY.md`](docs/DELIVERY.md): how a paid job gets built
 
-**Out of scope, deliberately:** social media, blog posts, ads, logos, rebrands,
-ghostwriting, chatbots talking to customers, anything replacing a person on the
-payroll. AI goes behind the desk, never in front of the customer.
+Older versions of the offer are in `docs/archive/` and are not current.
 
 ## Assets
 
 | What | Where |
 |---|---|
-| Landing page | `site/index.html` (published) |
-| Call sheet, the prospecting tool | `site/callsheet.html` (published) |
-| **Top 50 prospects, ranked** | `output/top50_prospects.csv` — these 50 and only these 50 are in the call sheet (full pool of 86 in `prospects_all.csv`) |
-| Lead finder, no API key | `python -m src.leadfinder.osm_find --where "..."` |
-| Service brief, print source | `docs/manual/service_brief.html` |
-| Outbound playbook, call + email | `docs/SCRIPT.md` · print source `docs/manual/call_script.html` |
-| Delivery runbook | `docs/DELIVERY.md` · `python -m src.delivery.pack --client ...` |
+| Website (source → build) | `site/src/` → `python3 site/src/build_site.py` → `site/www/` |
+| Call sheet: leads, script, scorecard, pipeline | `site/callsheet.html` (published) |
+| The 50 leads, dialing order | `output/call_list_50.csv` |
+| Offer PDF for clients | `output/Built_for_Main_Street_Offer.pdf` (source `src/website/offer_onepager.html`) |
+| Client site builder | `python3 src/build_site.py clients/<slug>.json` |
+| Client agreement | `docs/legal/CLIENT_AGREEMENT.md` |
 
 ## The rest of the toolkit
 
@@ -86,16 +71,15 @@ python -m src.website.build --client config/clients/ace_fence.yaml
 # -> output/websites/<slug>/{mockup.html, build_brief.md, copy.md, schema.json}
 ```
 
-### AI Systems — Missed-Call Text-Back  ✅ (the "Get Paid" expansion)
-Turns every missed call into a captured lead: customer calls → no answer → auto
-text-back → AI receptionist captures the job → owner gets an instant lead alert.
-Highest-margin, stickiest recurring product (+$300–700/mo). Config-per-client.
+### AI Systems — Missed-Call Text-Back  (built, **not sold**)
+Parked. It sends text messages and uses an AI receptionist, and the hard rules say
+no SMS before client #10 and nothing that replaces labour. Kept as code only.
 ```bash
 python -m src.aisystems.missed_call.simulate            # visual phone-mockup demo
 python -m src.aisystems.missed_call.simulate --interactive   # text it yourself
 ```
 Deploy via n8n (no-code) or the included Twilio Flask webhook. Full guide:
-`docs/ai_systems.md`. Runs on a keyless template brain; uses Claude when
+`docs/archive/ai_systems.md`. Runs on a keyless template brain; uses Claude when
 `ANTHROPIC_API_KEY` is set.
 
 ### Item 5 — Client Ops / Retainer Tracker  ✅

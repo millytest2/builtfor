@@ -1,486 +1,257 @@
-# THE OFFER — v2, continuity model
+# The offer
 
-Supersedes the one-time-fee version. Changed after the 9/22 coaching call:
-the website is now **leased, not sold.**
-
----
+Final as of September 28, 2026. Prices, tiers and hard rules live in `CLAUDE.md`; this
+file is the reasoning behind them and how to defend them. The niche is independent
+auto repair (`docs/FOCUS.md`).
 
 ## What we sell
 
-**We get local businesses found. Their Google listing fixed and a website
-built, done together, so search engines and AI assistants can both actually
-read them — then kept working, every month, for a flat fee.**
+> **Built for Main Street helps local businesses get found, get contacted, and stop
+> losing good leads.**
 
-One job. Neither half works alone: a website nothing links to is invisible, and
-a listing with no site attached is a dead end.
+Two problems. People cannot find the shop. And the people who do find it cannot
+easily reach it: a number that won't tap to call, a form nobody reads, wrong hours.
+We fix both and show the before and after.
 
-## The category
-
-**We get local businesses found. It starts with a website.**
-
-Outcome first, website as the sequence. "A website service" is a commodity that
-competes with Wix and somebody's nephew. Not an SEO agency, not a Google
-agency, not an AI company, not an answering service.
-
-The website leads anyway because it is the only word a non-technical owner
-already understands and already believes they need. Everything else — listing
-claimed, structured data, service and town pages, consistent citations — is
-invisible work. Invisible work is miserable to sell and impossible to explain
-at a kitchen table, so it is never priced separately. It is what is inside.
-
-**Never open a call with "we build websites."** Say:
-
-> "I make sure that when somebody looks for what you do, you're the one who
-> comes up. Usually that means building the site and fixing the Google listing,
-> because that's what everything reads."
-
-> **Pricing changed on September 28, 2026.** Current tiers: Small $600 + $99/mo,
-> Standard $800 + $199/mo, Bigger $1,000 + $300/mo, with what each monthly plan
-> includes in `CLAUDE.md`. The reasoning further down about annual prepay and a
-> $1,000 standard setup is kept for history and no longer applies.
+**Never open a call with "we build websites."** A website is a commodity that
+competes with Wix and somebody's nephew. Open with what the machine said about them.
+The website is how the fix gets delivered, not what we sell.
 
 ## The offer
 
 | | Offer | Price |
 |---|---|---|
 | The door | **Visibility Check** | Free |
-| Setup | **Build and fix** | **$600 / $800 / $1,000** |
-| The lease | **Keep it found** | **$99 / $199 / $300 a month** |
+| The build | **Build and fix** | Small $600 · Standard $800 · Bigger $1,000 |
+| The monthly | **Keep it found** | Small $99 · Standard $199 · Bigger $300 |
 
-### Setup is tiered, and the tier is counted
-
-The work is genuinely not the same. Three services and two towns is not eight
-services and six towns. Charging one price either overcharges the small job or
-underprices the big one.
-
-| Tier | Trigger | Setup | Lease |
-|---|---|---|---|
-| Small | ≤4 services, ≤3 towns, one location | **$600** | $99/mo |
-| Standard | ≤8 services, ≤6 towns | **$800** | $199/mo |
-| Bigger | 9+ services, 7+ towns, multi-location | **$1,000** | $300/mo |
-
-**Ask the two counting questions on the call.** How many services do you offer?
-How many towns will you drive to? The answers pick the tier. You are scoping, not
-discounting, which is why the price still does not move once quoted.
-
-**Never say the range out loud.** "Between $600 and $1,000" is heard as $600,
-every time. Name the one number for the tier they land in.
-
-**Why the $600 tier requires the year up front.** It is a trade, not a
-concession.
-
-| | Collected in month one |
-|---|---|
-| Standard, $1,000 + $199 | $1,199 |
-| Small, $600 + $1,990 | **$2,590** |
-
-The cheaper tier pays more than twice as much on day one and eliminates churn for
-twelve months. Below $1,000 setup on monthly billing, a cancellation at month two
-means a completed build delivered at a loss, and 30 days' notice makes that
-entirely possible. Say it plainly: *"Six hundred instead of a thousand if you take
-the year up front. Costs you less overall and I'd rather have the year."*
-
-**The floor is $600, not $500.** Not for the hundred dollars. A $500 website from
-a stranger on the phone reads to a shop owner as a scam or as worthless. $600
-reads as a real price. If a $500 number is wanted in the conversation, it should
-be what the annual prepay *saves* them, never what the build costs.
-
-Annual prepay: **$1,990** (two months free). Take it when offered — it solves
-your cash problem and it eliminates churn for a year.
-
-**Scoped on the call, quoted once, does not move.**
-
-**Setup, $1,000.** Google listing claimed, verified, fully filled out, website
-linked on it, name/address/phone consistent everywhere. A fast mobile site with
-a real page per service and per town, details and FAQs marked up the way search
-engines and assistants read them, real job photos. Two weeks from the day
-photos arrive.
-
-**The lease, $199/mo.** Hosting, domain, certificate, reasonable edits,
-the Google listing kept current, and a monthly report showing where they rank
-on Google and whether ChatGPT, Gemini and Claude name them. Cancel with 30
-days' notice.
-
-### The part you have to say out loud
-
-**We own the site and the domain while they lease it.** Say it on the first
-call, in plain words, before they ask:
-
-> "Here's how it works. I build it and I own it, you lease it. That's why it's
-> a thousand up front instead of four. Long as you're with me it's yours to
-> use, I keep it current, and I keep you findable. If you ever want to own it
-> outright, after a year you can buy it from me for two thousand and I'll hand
-> you the domain and the files."
-
-Three reasons to lead with it rather than bury it:
-1. It explains the low setup fee. $1,000 for a real site plus listing work is
-   cheap, and cheap makes people suspicious until they know why.
-2. It is the leverage. If they stop paying, the site comes down. That is the
-   whole point of the model and it only works if it was never a secret.
-3. Discovering it later feels like a trap and kills the referral.
-
-**The $2,000 buyout after 12 months is not a concession, it is a closer.** It
-turns "so I'm renting forever?" into "no, you've got an option." Most never
-take it. The ones who do have paid $1,000 + $2,388 + $2,000 = $5,388, which is
-a fine outcome.
-
-### Why continuity, in one table
-
-| Model | Clients for $10k recurring | Realistically |
+| Tier | Trigger | The monthly adds |
 |---|---|---|
-| $800 one-time, no recurring | **11 sales every month, forever** | Never stops being month one |
-| $900 + $79/mo hosting | 127 clients | Month 40+ |
-| **$1,000 + $199/mo** | **50 clients** | **~Month 16** |
+| Small | ≤4 services, ≤3 towns, one location | Hosting, reasonable edits, Google listing kept current, a visibility check every quarter |
+| **Standard** | ≤8 services, ≤6 towns | Small, plus a monthly report (search and ChatGPT, Gemini, Claude), review requests by counter QR card and email, review reply drafts the owner approves |
+| Bigger | 9+ services, 7+ towns, or two locations | Standard, plus every lead routed to owner and staff by email with a same-day follow-up draft, past-customer emails, a 15-minute monthly call |
 
-At 4 sales a month with 3% monthly churn:
+Every tier gets the same build: a page per service and per town, the Google listing
+claimed and completed, tap to call, a tested quote form, the markup search engines and
+AI assistants read, and for California repair shops the BAR name, ARD number and phone
+on every page.
 
-| Month | Clients | Recurring | Plus setup fees | **Total that month** |
-|---|---|---|---|---|
-| 3 | 12 | $2,400 | $4,000 | $6,400 |
-| 6 | 22 | $4,400 | $4,000 | $8,400 |
-| 9 | 32 | $6,400 | $4,000 | **$10,400** |
-| 12 | 41 | $8,200 | $4,000 | $12,200 |
-| 18 | 55 | $10,900 | $4,000 | $14,900 |
+### Counting, and how auto shops count
 
-**Total monthly income crosses $10k around month nine either way.** What $199
-changes is how fast the recurring base alone gets there — month 16 instead of
-month 9. That is the real cost of the lower number, and it is worth paying.
+**Ask the two counting questions on the call.** How many services? Which towns do
+customers come from? The answer picks the tier. It is scoping, not discounting, which
+is why the price does not move once quoted.
 
-### Why $199 and not $300
+**For auto shops, count service pages, not every job.** A shop that does 20 kinds of
+work still gets about 8 pages, grouped the way a customer searches:
 
-You said $300 felt high. Trust that. You are the one saying the number out
-loud, and a price the seller does not believe gets discounted on the first
-objection — which means you end up at $199 anyway, but having looked unsure
-getting there.
+1. Brakes and suspension
+2. Engine diagnostics and check engine light
+3. A/C and heating
+4. Transmission
+5. Oil changes and maintenance
+6. Tires and alignment
+7. Smog check
+8. Electrical, batteries, starters and alternators
 
-Three concrete reasons it is the better number right now:
+That is Standard, which is where most auto shops belong. Bigger is for two locations,
+7+ towns, or a shop that truly needs more than 8 pages or wants the lead routing and
+monthly call.
 
-1. **$199 is under two hundred.** For a shop owner doing $200k a year that is
-   a different category of decision than $300. It clears without a spouse
-   conversation.
-2. **You have no proof yet.** $300/mo is a fair price for a result you can
-   point at. You cannot point at one until client three or four. Price to what
-   you can currently prove, not what the model is worth.
-3. **You can raise it; you cannot un-raise it.** New clients go to $299 the
-   month you have one case study showing an assistant naming a client that
-   didn't name them before. Existing clients stay at $199 forever, which makes
-   them loyal and makes them referrers.
+**Never say the range out loud.** "Between $600 and $1,000" is heard as $600, every
+time. Name the one number for the tier they land in.
 
-**The thing to protect is the setup fee, not the monthly.** $1,000 up front is
-what pays you for the build. Never discount that one.
+**If they balk, drop services, never the price.** "If we build it for four services,
+it's Small."
 
-**What 4 sales a month actually costs you:** about 80 real conversations, which
-is about 530 dials, which is about 27 dials a day. That is the job. The pricing
-change does not reduce the dialing, it just means the dialing compounds.
+### Who owns what
 
-## How the $199 is honest, given you don't want to manage
+**We own and host the site. The client owns the domain and the Google listing.** Say
+it plainly on the first call:
 
-You told me straight: *"I don't really wanna manage of that tbh."* That is still
-true and the model still works, but only if you build it to be true.
+> "We build the site and host it, and you use it as long as you're with us. The
+> domain's registered in your name and stays yours. Cancel with 30 days' notice. If
+> you ever want to own the site outright, after a year you can buy it for two
+> thousand."
 
-$199/mo for hosting alone is not defensible and a client will eventually
-realize it. $199/mo for **hosting + edits + listing + proof they're being
-found** is defensible and renews itself. The difference is about ten minutes
-per client per month:
+Why the domain is theirs: a domain with a shop's name in it belongs to the shop.
+Holding it is cybersquatting territory, and a UDRP complaint costs them about $1,500
+and costs us the domain and the reputation. Our leverage is the site and the hosting,
+not the address (`docs/legal/CLIENT_AGREEMENT.md`, section 3).
+
+**The $2,000 buyout is a closer, not a concession.** It turns "so I'm renting
+forever?" into "no, you've got an option." A Standard client who buys out after a year
+has paid $800 + $2,388 + $2,000 = $5,188.
+
+## Why continuity
+
+| Model | Clients for $10k a month | Realistically |
+|---|---|---|
+| $800 one-time, nothing monthly | 12 or more new sales every month, forever | Never stops being month one |
+| Tiered setup + monthly (average about $820 + $209) | about 28 to 33 clients | Month 6 at 6 sales a month, month 10 at 4 |
+
+Month-by-month math is in `docs/PLAYBOOK.md`, section 5 (3% monthly cancellations
+assumed).
+
+## Why the price holds
+
+- **One repair order pays the month.** The most common average repair order at
+  independent shops is $500 to $749; about a third report $250 to $499 (PartsTech
+  survey of 752 shops, via WickedFile, 2026). $199 is under half of one typical job.
+  The $800 build is one or two jobs.
+- **We are the cheap option, not the expensive one.** Auto-shop marketing firms charge
+  $300 to $1,499 a month (askotter, Seota), and shops that buy marketing typically
+  spend $1,250 to $2,250 a month (Shop Marketing Pros). Our leads have no website, so
+  they buy none of that today.
+- **The need is real.** Only 4% of consumers never read online reviews of local
+  businesses, and Google is the review platform they use most (BrightLocal Local
+  Consumer Review Survey 2025). 45% used AI for local recommendations in the past year
+  (BrightLocal 2026, in `docs/FOCUS.md`).
+- **Protect the setup fee.** It pays for the build, so an early cancellation never
+  loses money on the work. Never discount it.
+
+**Raise, never lower.** New clients go to the next price the month there is a case
+study showing an assistant naming a client that didn't name them before. Existing
+clients keep their price (agreement section 2.3), which makes them referrers.
+
+## How $199 stays honest without managing much
+
+$199 for hosting alone is not defensible. $199 for hosting, edits, the listing, review
+requests and proof they're being found is, and it renews itself. About ten minutes per
+client per month:
 
 | Task | Time | How |
 |---|---|---|
-| Re-run the Visibility Check | 2 min | Scripted, same three assistants, same two questions |
-| Push whatever edits they emailed | 5 min | Hours changed, new service, new photos |
+| Re-run the Visibility Check | 2 min | Scripted, same assistants, same questions |
+| Push the edits they emailed | 5 min | Hours, prices, photos |
 | One listing post or photo | 3 min | Batched from a template |
 
-**Batch it. One day a month, every client at once.** At 50 clients that is
-about eight hours for $9,950. At 60 clients, hand the whole day to a VA at
-$8/hr and it costs you $100.
+Batch it: one day a month, every client at once. An owner who gets an email every
+month that says "ChatGPT named you 3 of 3 times, up from 0 in March" does not cancel.
 
-The monthly report is the thing that makes renewal automatic. An owner who gets
-an email every month that says *"ChatGPT named you 3 of 3 times this month, up
-from 0 in March"* does not cancel. An owner who gets nothing wonders what he's
-paying for.
-
-## What it costs you to run (you asked for cheap)
+## What it costs to run
 
 | | Cost | When |
 |---|---|---|
-| Hosting — Cloudflare Pages | **$0** | Unlimited sites, free SSL, free forever |
-| Domains | **~$1/mo each** | $12/yr, registered in your entity's name |
+| Hosting, Cloudflare Pages | $0 | Free SSL, fast static sites |
+| Domains | about $1/mo each | Registered in the client's name, on their card |
 | Google Workspace | $7/mo | Day one |
-| Go High Level Starter | $97/mo | Day one per your coach — 3 sub-accounts |
-| Go High Level Unlimited | $297/mo | Only once you're past ~10 clients |
-| LLC filing | $50–$500 once | State-dependent |
-| Business bank (Novo) | $0 | Day one |
+| Business bank | $0 | Day one |
+| LLC | per `docs/SETUP.md` | File on or after December 17 |
 
-**At 50 clients: roughly $360/mo of cost against $9,950 of revenue.** That is
-a ~96% gross margin, which is the entire reason this business is worth doing
-over an agency that buys ads.
+At 40 clients, running costs are a few hundred dollars a month against roughly $8,000
+of monthly fees.
 
-Two cheap notes, offered as information and not as an argument with your coach:
+## Market-first: sell before you build
 
-- **Cloudflare Pages beats GHL for hosting these sites.** Static, free,
-  unlimited, and faster — which matters, because page speed is one of the few
-  ranking inputs you fully control. Use GHL for the CRM and pipeline, which is
-  what it is actually good at.
-- **S-Corp election costs money before it saves money.** Payroll plus a tax
-  return runs $1,000–$2,000 a year. It generally pays off above roughly $50k of
-  net profit. **File the LLC now, elect S-Corp when you clear that.** Same end
-  state, a year cheaper, and the EIN and bank account work is identical either
-  way.
-
-## Market-first: sell three before you build one
-
-The 85% figure from your call is real and it comes from one discipline: **you
-do not build anything until somebody has paid.**
-
-Concretely, for this business:
-
-1. **Never build a spec site.** Not one. Not as a sample, not to "show what it
-   looks like." Your sample is the Visibility Check on *their* business, which
-   costs you four minutes.
-2. **Take the $1,000 before you start.** Payment link on the second call. The
-   two-week clock starts when the money and the photos arrive, not before.
-3. **Sell three, then build three.** Batching the builds teaches you the
-   template faster than doing one, waiting, doing one.
-4. **The Visibility Check is the validation instrument.** If you run 30 checks
-   and nobody flinches at the result, the offer is wrong and you learn that for
-   free. If they flinch, you have the sale.
+1. **Never build a spec site.** The sample is the Visibility Check on *their* shop.
+2. **Take the setup fee before you start.** The two-week clock starts when money and
+   photos arrive. Photos are due within 30 days of payment.
+3. **The check is the validation instrument.** Run 25 checks. If nobody flinches, the
+   offer is wrong and you learned it for free.
 
 ## The check asks two questions
 
-**The shopping question**, how a stranger comparing options asks:
-*"Who does furniture reupholstery in Wichita?"*
+**The shopping question**, how a stranger asks: *"Who's an honest mechanic in Van
+Nuys?"*
 
-**The name question**, how somebody holding their card asks:
-*"What can you tell me about Jim's Upholstery on Emporia Street?"*
+**The name question**, how someone holding their card asks: *"Tell me about Gio Auto
+Repair in Van Nuys. What do they do and how do I contact them?"*
 
-An assistant replying *"I don't have information about that business"* is the
-most uncomfortable sentence an owner can read about his own shop. It is not
-about rankings. It says the business does not exist as far as the thing
-answering is concerned, and every owner gets it instantly.
-
-Run both. Screenshot both. Lead with the second one.
-
-## The one condition that protects the price
-
-Leading with "want a website?" puts you at $500, because that is what Wix and
-his nephew cost. The Visibility Check is the whole pricing argument: show him
-he is on page two and absent from every assistant answer, and the website stops
-being a brochure and becomes the fix for a problem he just watched happen.
-
-Free check first. Price second. Every time.
+"I don't have information about that business" is the most uncomfortable sentence an
+owner can read about his own shop. Run both, screenshot both, lead with the second.
+**Only say what you actually saw.** Every claim on a call carries a screenshot.
 
 ## Explicitly out of scope
 
-Social media. Blog posts. Ads. Logos and rebrands. Ghostwriting. Chatbots that
-talk to customers. Anything that replaces a person on the payroll.
+Social media. Blog posts. Ads. Logos and rebrands. Chatbots or AI receptionists that
+talk to customers. Anything that replaces a person on the payroll. SEO retainers. "AI
+consulting." Naming what we don't do is the fastest way to stop sounding like every
+agency calling these shops.
 
-AI **behind** the desk is in scope. AI **in front of** the customer never is.
-Say this out loud — naming what you don't do builds trust faster than another
-claim about what you do, and it keeps you out of the categories where you
-compete on price against people with more staff.
-
-## The promise, resolved
-
-Two problems, not one. Owners do not care about websites, profiles or structured
-data individually. They care that **people cannot find them, and the people who
-do find them do not turn into calls.**
-
-> **Built for Main Street helps local businesses get found, get contacted, and
-> stop losing good leads.**
-
-No AI in that sentence. It stays out.
-
-**The second half is deliverable today with no new product.** What actually leaks
-on the sites we find is a phone number that is not a `tel:` link, a form routing
-to an email nobody opens, missing hours, no text option, a Google listing with no
-call button. All of it is HTML, all of it is already inside the $1,000, and none
-of it needs telephony, automation or a compliance posture.
-
-So the stronger promise costs nothing to make:
-
-> "When someone looks for what you do, they find a credible version of your
-> business and can reach you in one tap."
-
-### Why the price does not drop
-
-Proposed at one point: $800 setup, $79/mo. The arithmetic kills it.
-
-| | Setup | Monthly | Year one | Clients to $10k/mo |
-|---|---|---|---|---|
-| **Hold** | $1,000 | $199 | **$3,388** | **51** |
-| Proposed | $800 | $79 | $1,748 | 127 |
-
-At four sales a month that is 13 months against 32. Proof comes from the free
-Visibility Check, not from a $200 discount. And $79 is a hosting price — hosting
-companies are replaceable; "keeps me found" is not. Flex the setup on a first
-client if something has to move. Never the recurring.
-
-### The AI question, decided
-
-The standing rule: no AI receptionists, no chatbots, nothing that replaces
-labour. Enhance the business, do not replace the people in it.
-
-A proposed five-product automation layer runs against that rule as follows:
-
-| Product | Against the rule |
-|---|---|
-| Missed-call text-back | **Passes.** Nobody answered; waste caught, nothing replaced. |
-| Lead response *and qualification* | **Fails.** Qualifying is the receptionist's job. |
-| Estimate follow-up | Grey. The owner's job, undone. |
-| Old-lead reactivation | Outbound marketing. Different business. |
-| Review requests | **Passes**, and needs no AI. |
-
-Two of five survive. Keep the rule and keep the two.
-
-**And nothing that sends a text gets built before client #10.** TCPA statutory
-damages are $500 per message, $1,500 if willful, uncapped — texting 300 old
-leads without written consent is $150,000 of exposure before anyone argues about
-willfulness. Since January 2026 consent cannot be shared across brands, so an old
-quote list is not consent. Separately, every SMS product needs A2P 10DLC
-registration per client through The Campaign Registry, and since February 2025
-carriers block unregistered business SMS outright rather than throttling it.
-Building that means becoming a compliance operation, which is a different company
-than this one.
-
-The second sale gets justified by measurement, not by a menu: the foundation
-installs analytics, month three shows where calls are still being lost, and the
-leak gets named before anything is sold to fix it. **No named leak, no second
-product.**
+**Nothing that sends a text message before client #10.** TCPA damages are $500 per
+message, $1,500 if willful, uncapped. Since January 2026 consent cannot be shared
+across brands, and carriers block unregistered A2P 10DLC traffic outright.
 
 ## The competitor problem: you sound like The Social Hog
 
-Checked 9/25. The Social Hog, Los Angeles, founded 2013. Headline: *"The Best
-Social Media Management Company, brings more business in your doors to buy your
-product or service."* Sells social media management (Facebook, Yelp, LinkedIn),
-mobile-friendly website design, SEO, local listings, directory verification and
-Google AdWords. **From $499/mo.** 888 number, inside sales; employee reviews on
-Glassdoor and Indeed describe quotas and being out the moment you miss one.
-
-**Four of six deliverables overlap.** Website, local listings, directory
-verification, SEO. From the prospect's chair, both of you are a guy on the phone
-selling a website and a Google listing for a monthly fee. The overlap is real
-and pretending otherwise loses calls.
-
-It is worse than similarity. That category has burned people — annual lock-ins,
-billing that continues past the day the owner wanted out, no measurable result.
-**Getting sorted into that bucket loses the call before the second sentence.**
-Not on price. On pattern recognition.
-
-### Where the offer genuinely differs
+The Social Hog sells social media management, websites, SEO and listings from $499 a
+month, usually on annual terms. From the owner's chair, both of you are a guy on the
+phone selling a website and a listing. That bucket has burned people.
 
 | | Social Hog | Us |
 |---|---|---|
-| Lead service | Social media management | Getting found |
+| Lead service | Social media management | Getting found and reached |
 | Social posting | Core of the bundle | **We don't do it** |
 | Promise | "More business in your doors" | Named or not named, with a screenshot |
-| Built for | Facebook, Yelp, AdWords, 2013 | Assistant retrieval, structured data |
-| Recurring | From $499/mo | **$199/mo** |
+| Monthly | From $499 | **$99 to $300** |
 | Exit | Annual contracts common | **30 days' notice** |
 
-The falsifiable promise is the one that matters. "More business" cannot be
-checked, so it cannot be trusted. "Ask ChatGPT who to hire for reupholstery in
-Wichita and see whether you are named" is binary, and he can watch it resolve.
+**The fix is the first fifteen seconds.** Open with what the machine said about them.
+A quota-driven phone room cannot say that sentence, because it requires having looked
+the shop up. Then un-bucket yourself: "I'm not selling you social media. No ads, no
+posting. One thing: when somebody asks Google or ChatGPT for a mechanic, you come up."
+Say "30 days' notice, no annual contract" in the same breath as the price.
 
-### The fix is the first fifteen seconds, not more features
+Never sell Built for Main Street on Social Hog time or to Social Hog leads.
 
-Adding deliverables to look different is the amateur move and it raises your cost
-to serve. The offer is already cheaper, narrower and more measurable. What loses
-is the opening line.
+## The question you can't answer yet
 
-**Open with what the machine said about them, not with who you are:**
+"Who else have you done this for?" Don't bluff.
 
-> "Hi, is this Jim? I asked ChatGPT who the best upholstery shop in Wichita is
-> about an hour ago. It named three. You weren't one of them. I can show you the
-> screenshot if you want to see it."
+> "No auto shop yet, you'd be the first. That's why you can walk with thirty days'
+> notice. What I can show you is the problem, right now, on your own name."
 
-A quota-driven phone room cannot say that sentence. It requires having looked the
-business up before dialling. That is the demo and the differentiator in one move.
+## Pressure test: where this breaks, and what we do about it
 
-**Then un-bucket yourself in the negative, immediately:**
+| Risk | How likely | What we do |
+|---|---|---|
+| Shops with no site are "busy enough" on word of mouth | High | Ask "what job do you want more of?" and sell that. Track it: if more than half of 25 conversations end on "busy enough", move to shops with a broken or rented site (`output/leads_hooks_to_confirm.csv`) |
+| Owner is at the counter but not the decision-maker, or prefers Spanish | Medium in the Valley | Ask for the owner by name; come back at a slow time. If Spanish, keep it short and show the phone. Log it as a lesson |
+| "I'll get my nephew to do it" | Medium | "He can. The listing and checking it every month is the part that slips." |
+| Distrust of cold callers after agency burns | High | Walk-ins first in the Valley; 30 days' notice; the free check with their own name on it |
+| BAR compliance on the site | Certain for California shops | Required, not optional: BAR name, ARD number and phone on every page (BAR rules effective October 1, 2025). The builder prints it from the client file |
+| Most shops count 9+ jobs and land in Bigger | High | Count service pages, grouped into 8 (above). Standard by default |
+| Claiming ChatGPT skipped them without checking | Avoidable | Run the two questions before every dial and quote only what came back |
+| Delivery capacity once sales work | Later | About six hours per build; five builds a month is 30 hours. Batch builds, keep one template |
+| Lead supply runs out | Certain at 75 touches a week | About 25 new leads a week. Add `GOOGLE_PLACES_API_KEY` so the finder does the checking |
 
-> "I'm not selling you social media. I don't post for you, I don't run ads, I
-> don't touch Facebook. One thing: when somebody asks a search engine or an AI
-> who to hire for what you do, you come up."
+**Kill criteria, after 25 real owner conversations:**
 
-Naming what you do not do is the fastest category separator that exists.
+- Fewer than 3 checks booked: the opener is wrong. Change the opener, not the niche.
+- Checks held but no sale after 8 offers: the offer or price is wrong. Test Bigger
+  shops and the report, not a discount.
+- Can't reach owners: the channel is wrong. Walk-ins only.
+- None of the above and still no sales by conversation 50: reopen `docs/FOCUS.md`.
 
-**Move the 30 days forward.** Against anyone who has been burned by an agency,
-"cancel with 30 days' notice, no annual contract" is the strongest card in the
-deck, and it currently sits in a bullet. Say it in the same breath as the price.
-
-**When they say they already have somebody:** ask what they pay. If it is $400 or
-$500 a month for social posting, the comparison makes itself, and you do not have
-to attack the incumbent to win — just re-run the Visibility Check on their name.
-
-### The question you cannot answer yet
-
-"Who else have you done this for?" You have no clients. Do not bluff it. The
-answer is the check itself:
-
-> "Nobody in your trade yet, you'd be the first. That's why it's a thousand
-> instead of four, and why you can walk with thirty days' notice. What I can show
-> you is the problem, right now, on your own name."
-
-## On the moat, and the conflict nobody flagged
-
-Your coach is right that broadcasting money invites sabotage. But "go private"
-collides with something you have already built: Built for Main Street has a
-public brand, a landing page, a waitlist and a content engine pointed at
-LinkedIn and X.
-
-These are not actually in conflict once you split them:
+## On the moat
 
 | Post freely | Never post |
 |---|---|
-| What you're learning about how assistants pick businesses | Revenue, MRR, client count |
-| The craft — structured data, listings, what moved the needle | Client names, logos, screenshots of their sites |
-| The arc of building something from nothing | Purchases, upgrades, anything that reads as a flex |
-| Being wrong in public and correcting it | Your pipeline or who you're about to close |
+| What you're learning about how assistants pick businesses | Revenue, client count |
+| The craft: structured data, listings, what moved the needle | Client names or screenshots without permission |
+| The scorecard's lesson and blocker | Your pipeline |
 
-**The moat is around the numbers and the clients, not the craft.** Teaching what
-you learn is the thing that builds the audience UPath will eventually need, and
-it gives away nothing a competitor could use. The Tesla post is the category to
-avoid, not the whole idea of being visible.
+The moat is around the numbers and the clients, not the craft. Teaching what you learn
+builds the audience UPath will need.
 
-## On the 50/50 with your friend
+## On a sales partner
 
-Your coach's read matches mine and it is the single most expensive item on the
-list. **Revenue share on what he closes, not equity in the company.** Something
-like 20–30% of collected revenue on his accounts for as long as they stay, and
-it stops if he stops selling.
-
-Equity is permanent. His effort is not. If he sells for four months and then
-gets a job, you have handed away half of everything you build for the next
-decade in exchange for four months of dialing. Fix this before the entity is
-formed, because fixing it afterwards requires his signature and his goodwill.
+Revenue share on what they close, not equity. Something like 20 to 30% of collected
+revenue on their accounts while they stay, stopping if they stop selling. Equity is
+permanent; effort isn't. Settle it before the LLC is formed.
 
 ## Why this business exists
 
-Two transferable skills, and they are the actual return:
-
 1. **Sales.** Cold conversations with strangers, at volume, at a price said out loud.
-2. **Ranking, in depth.** How search engines and assistants index, read and cite
-   a site. Why one business gets named in an answer and another does not.
+2. **Getting named by AI assistants.** Log the exact queries, the Google position and
+   whether each assistant named the client, every month, for every client. After
+   thirty businesses that sheet is a dataset nobody else has, and the same skill
+   points straight at UPath.
 
-The second is the sleeper. If you can reliably make a local business surface
-inside ChatGPT and Gemini, that same skill points straight at UPath — getting a
-career tool cited when somebody asks an assistant for one is the same problem
-with a bigger prize.
+## Sources
 
-**So instrument it.** Every client, every month, log the exact queries, the
-Google position, and whether each assistant named them. One sheet across all
-clients. After thirty businesses that sheet is a dataset nobody else has: what
-actually moves a business into an AI answer, measured rather than guessed.
-
-That dataset is worth more than the retainers. And the monthly report you're
-already sending is the delivery mechanism — the experiment pays for itself.
-
-## Market
-
-Local businesses **that will never do this themselves.** A sixteen-year-old
-starting something will use self-serve software. A fifty-eight-year-old
-upholsterer with 40 years of work and a listing he has never logged into will
-not. When Owner.com and others ship this at $99/mo self-serve they pull the DIY
-crowd out of the funnel for free, which sharpens this segment rather than
-shrinking it.
-
-Price the person who drives out, not the task.
+- BAR online advertising rules: bar.ca.gov/pdf/regulatory-actions/mobile-referral-ARD-2025/notice.pdf
+- Average repair order: wickedfile.com/blogs/how-much-does-an-independent-auto-repair-shop-make-in-2026/
+- Auto-shop marketing prices: askotter.ai/industries/auto-repair · seota.com/auto-repair-websites/ · shopmarketingpros.com/what-auto-repair-shops-should-expect-to-invest-in-marketing/
+- Reviews and AI use: BrightLocal Local Consumer Review Survey (2025 and 2026)

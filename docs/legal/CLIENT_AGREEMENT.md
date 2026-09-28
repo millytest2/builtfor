@@ -279,7 +279,8 @@ Fill this in on the scoping call. It becomes part of the Agreement.
   it properly, and I'll show you the numbers every month" is both true and a
   stronger close than a promise you can't keep.
 - **Section 7.1 is why the LLC is not the only thing protecting you.** A cap
-  at fees paid means the worst case on a client who paid $3,388 is $3,388.
+  at fees paid means the worst case on a Standard client after year one
+  ($800 + 12 × $199 = $3,188) is $3,188.
   This clause is doing most of the work while you're still a sole proprietor —
   do not sign a client without it.
 - **Section 2.3 is a real asset.** When you raise new clients to $299, the

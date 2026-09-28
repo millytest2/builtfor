@@ -13,6 +13,7 @@
   "lon": "-97.3344",
   "founded": "1978",
   "owner": "Jim",
+  "license": {"label": "", "number": "", "note": "California auto repair: label 'BAR ARD #', the number from the shop's BAR registration. Required on every page. Leave blank for trades with no license to show."},
 
   "trade": "upholstery shop",
   "trade_plural": "upholstery shops",

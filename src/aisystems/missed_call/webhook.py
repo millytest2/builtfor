@@ -10,7 +10,7 @@ Config is loaded from a client YAML (env MISSED_CALL_CONFIG) so this is the same
 clone-per-client pattern as everything else. Requires: flask, twilio,
 GOOGLE-not-needed; ANTHROPIC_API_KEY for the Claude brain (else template).
 
-Prefer n8n for no-code delivery (see docs/ai_systems.md). This file is here so the
+Prefer n8n for no-code delivery (see docs/archive/ai_systems.md). This file is here so the
 logic is real, testable, and self-hostable when a client needs custom behavior.
 
     pip install flask twilio

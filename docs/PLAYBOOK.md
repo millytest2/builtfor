@@ -61,6 +61,19 @@ The others stay, in a different role:
 > personal trainer, $400). With this exact offer, zero calls so far. That starts this
 > week. Lead list: 50 leads with no website found, 23 of them auto shops."
 
+**Pressure-tested.** The full table is in `docs/OFFER.md`:
+- The most common average repair order at independent shops is $500 to $749, so $199
+  is under half of one job.
+- Auto-shop marketing firms charge $300 to $1,499 a month, so we're the cheap
+  option.
+- The real risks are owners who say they're "busy enough", Spanish-first counters,
+  and lead supply. Each has a plan.
+
+**Kill criteria after 25 owner conversations:**
+- Fewer than 3 checks booked: change the opener.
+- No sale after 8 offers: fix the offer, don't discount.
+- Owners unreachable: walk-ins only.
+
 This is the last niche change until 25 real conversations are logged.
 
 ## 2. The offer
@@ -79,6 +92,8 @@ photos arrive:
 - The Google listing claimed in the owner's name and completed
 - Tap to call on every page, and a quote form tested before launch
 - The markup search engines and AI assistants read
+- For California repair shops: the BAR-registered name, ARD number and phone on every
+  page. BAR has required this in all online repair ads since October 1, 2025
 
 **The monthly** depends on size. We count services and towns on the call, and the
 count picks the price.
@@ -201,8 +216,6 @@ lets the lead finder do that part.
 - **Google Voice number** for calls and the voicemail script. Never your cell.
 - **The site form** needs the Apps Script ID (`PASTE_YOUR_SCRIPT_ID` in
   `site/src/index.body.html`). Until then it falls back to the email address.
-- **The offer PDF** (`output/Built_for_Main_Street_Offer.pdf`) still shows old prices.
-  Don't send it until it's rebuilt.
 - **LLC filing** on or after December 17 (the 15-day rule).
 - **Five phone numbers** differ between directories. Try the second number if the
   first fails:

@@ -1,4 +1,4 @@
-# DELIVERY — how a job actually gets done
+# Delivery: how a job actually gets done
 
 One build is about **six hours of your time**, not a week, if you run it in this
 order. The bottleneck is never the work. It is waiting on photos.
@@ -63,12 +63,17 @@ will ship a page claiming they do something they don't.
 | Photos placed, NAP consistency swept | 45 min |
 | Review round and fixes | 45 min |
 
+**California auto shops:** the site must show the BAR-registered business name, the
+ARD number and a working phone on every page (BAR online advertising rules, October
+1, 2025). Put the number in the client JSON under `license`; the builder prints it in
+the footer of every page. Check it before launch.
+
 Everything else in the two weeks is waiting. On them for photos, on Google for
 verification. Start both on day one.
 
 ---
 
-## Keeping the $79 low-touch
+## Keeping the monthly low-touch
 
 The monthly only works if it stays near-zero effort. Rules:
 
@@ -78,7 +83,7 @@ The monthly only works if it stays near-zero effort. Rules:
    not one client at a time.
 3. **Script the re-check.** Same four searches, same format, generated.
 4. **Target ten minutes per client per month.** At 40 clients that is under
-   seven hours a month for roughly $3,200.
+   seven hours a month for roughly $8,000 of monthly fees.
 5. **Past 40 clients, hire it out rather than dropping it.** A VA can run the
    batch once the template is fixed.
 

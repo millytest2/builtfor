@@ -1,43 +1,20 @@
 # Website
 
-`index.html` is the whole site: four pages (home, what we do, pricing, free check) with client-side hash routing, so `#pricing` is a real
-shareable link and the back button works. No build step, no dependencies. Fonts come from
-Google Fonts, everything else is inline.
+The public site for builtformainstreet.com.
 
-## Two ways to run it
+- **Source:** `site/src/` (`index.body.html`, `style.css`, `app.js`, `footer.html`, `nav.html`, `street.py`)
+- **Build:** `python3 site/src/build_site.py` writes the static site to `site/www/` and a
+  preview copy to `output/preview/` (including `artifact.html` for the published preview)
+- **Deploy:** upload `site/www/` to any static host (Cloudflare Pages is free)
 
-**1. As a Claude Artifact (working now).** Published with the `db` capability,
-so the waitlist form saves real signups and Miles can read them back. Limitation
-worth knowing: an artifact that declares `db` cannot be shared publicly. Only
-signed-in members of the owner's organization can open it and submit. That makes
-it a working internal demo and a way to show the page to Daniel, not the public
-site.
+## The form
 
-**2. On builtformainstreet.com (what customers see).** Drop `index.html` on any
-static host. The form needs a real backend before it will capture anything from
-a stranger. Two one-line options:
+The free-check form posts to a Google Apps Script (`site/lead-to-email.gs`). Until the
+script is deployed and its ID replaces `PASTE_YOUR_SCRIPT_ID` in
+`site/src/index.body.html`, the form falls back to showing the email address.
 
-*Netlify:* add `data-netlify="true"` and `name="waitlist"` to the `<form>` tag,
-add `<input type="hidden" name="form-name" value="waitlist">` inside it, and
-delete the `ev.preventDefault()` line in the script. Submissions land in the
-Netlify dashboard.
+## Other pages here
 
-*Formspree:* set `action="https://formspree.io/f/<your-id>"` and `method="POST"`
-on the `<form>`, then delete the `ev.preventDefault()` line. Submissions arrive
-by email.
-
-Either way the client-side validation above the submit keeps working, because it
-runs before the network call.
-
-## Reading the signups
-
-Artifact version: the waitlist lives in the `waitlist` collection of the
-artifact's database. Ask Claude to list it, or read it from the artifact tooling.
-Each row holds business, city, contact, email, trade, status and submitted.
-
-## Editing copy
-
-Prices are in one table in the pricing section. The sample Leak Report in the
-hero is marked `SAMPLE REPORT` on purpose and uses an invented company. Do not
-put a real prospect's name on the public page saying they do not answer their
-phone.
+- `callsheet.html`: the call sheet. Leads, per-lead script, call windows, status log,
+  weekly scorecard and pipeline. Published as an artifact with a database.
+- `launch.html`: the LLC and launch checklist (file on or after December 17).

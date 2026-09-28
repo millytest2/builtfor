@@ -16,11 +16,15 @@ transcription. Do not ask for them to be tidied first.
 ## Steps
 
 1. **Read `clients/_example.json`** for the exact shape. Top-level keys include
-   slug, biz, domain, phone, street/city/state/zip, lat/lon, owner, trade,
+   slug, biz, domain, phone, street/city/state/zip, lat/lon, owner, license, trade,
    trade_plural, tagline, lede, callbar, about, hours, services[], towns[],
    reviews[], faqs[], photos[]. Service objects take slug, name, short, body,
    price_from and their own faqs; towns take slug, name, note.
-2. **Write `clients/<slug>.json`.** Fill everything the notes support.
+2. **Write `clients/<slug>.json`.** Fill everything the notes support. For a
+   California auto repair shop, `license` is required: label `BAR ARD #` and the
+   number from their BAR registration. BAR rules (October 1, 2025) require the
+   registered name, ARD number and phone in all online ads. If it is not in the
+   notes, it is the first missing question.
 3. **List what is missing** as a short numbered set of questions the user can ask
    in one follow-up text. Do not invent a single fact — not an hour, not a year
    founded, not a service. An invented detail on a real business's website is the

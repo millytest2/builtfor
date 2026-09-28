@@ -115,6 +115,11 @@ def shell(c, *, title, desc, canonical, body, graph, depth):
     addr = f'{e(c["street"])}<br>{e(c["city"])}, {e(c["state"])} {e(c["zip"])}<br>'
     hours = "<br>".join(f'{d} {h}' for d, h in c["hours"].items())
     serving = "Serving " + ", ".join(t["name"] for t in c["towns"])
+    # State license shown on every page. California repair shops must show their
+    # BAR-registered name, ARD number and phone in all online ads (BAR, Oct 1 2025).
+    lic = c.get("license") or {}
+    license_html = (f'<br>{e(lic.get("label", "License"))} {e(lic["number"])}'
+                    if lic.get("number") else "")
     rep = {
         "TITLE": e(title), "META_DESC": e(desc), "CANONICAL": e(canonical),
         "BRAND": c.get("brand_color", "#1f4e79"), "BIZ": e(c["biz"]),
@@ -123,6 +128,7 @@ def shell(c, *, title, desc, canonical, body, graph, depth):
         "NAV": nav, "BODY": body, "JSONLD": jsonld(graph),
         "ADDRESS_HTML": addr, "HOURS_HTML": hours,
         "SERVING": e(serving), "YEAR": str(date.today().year),
+        "LICENSE": license_html,
     }
     out = TPL
     for k, v in rep.items():
