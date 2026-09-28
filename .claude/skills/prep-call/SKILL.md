@@ -1,6 +1,6 @@
 ---
 name: prep-call
-description: Research one lead from the call sheet before dialling and produce the opening line, what is broken, and the objection to expect. Use before any sales call, or when the user names a business from output/call_list_50.csv.
+description: Research one lead from the call sheet before dialling and produce the opening line, what is broken, and the objection to expect. Use before any sales call, or when the user names a business from output/master_call_list.csv.
 ---
 
 # Prep one call
@@ -11,7 +11,7 @@ job in the business: 15 touches a weekday, plus Saturday walk-ins.
 
 ## Input
 
-A business name, or a number (the `n` column), from `output/call_list_50.csv`.
+A business name, or a number (the `n` column), from `output/master_call_list.csv`.
 Read that row first. It already carries niche, trade, city, street, phone, notes
 and the `website_check` result recorded during prospecting.
 

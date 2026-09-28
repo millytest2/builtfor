@@ -31,7 +31,7 @@ Older versions of the offer are in `docs/archive/` and are not current.
 |---|---|
 | Website (source → build) | `site/src/` → `python3 site/src/build_site.py` → `site/www/` |
 | Call sheet: leads, script, scorecard, pipeline | `site/callsheet.html` (published) |
-| The 48 leads, dialing order | `output/call_list_50.csv` |
+| The 48 leads, dialing order | `output/master_call_list.csv` |
 | Offer PDF for clients | `output/Built_for_Main_Street_Offer.pdf` (source `src/website/offer_onepager.html`) |
 | Client site builder | `python3 src/build_site.py clients/<slug>.json` |
 | Client agreement | `docs/legal/CLIENT_AGREEMENT.md` |

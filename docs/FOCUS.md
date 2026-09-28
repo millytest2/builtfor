@@ -27,7 +27,7 @@ Locked September 28, 2026. Ruled out on interest: concrete, masonry, party renta
 mobile bartending, welding, upholstery. Do not reopen this list until 25 real
 conversations are logged.
 
-Lead files: all 48 clean leads in one dialing order in `output/call_list_50.csv` and on
+Lead files: all 48 clean leads in one dialing order in `output/master_call_list.csv` and on
 the call sheet; clean leads per niche in `output/leads_*.csv`. Leads with a dead, rented
 or doubtful site are in `output/leads_hooks_to_confirm.csv` (look at the Google
 listing's Website button first). Leads with a real site are in

@@ -16,7 +16,8 @@ subject "Free check: <shop> (<town>)", and saved as a row in your Google Sheet.
 
 ## 2. Put the site online (2 minutes)
 
-Go to app.netlify.com/drop and drag the `site/www` folder onto it. Sign up with your
+Go to app.netlify.com/drop and drag the `site/www` folder onto it. (Working from a
+computer without the repo? Unzip `output/builtformainstreet_site.zip` and drag its `www` folder.) Sign up with your
 email when it asks. You get a temporary address like `something.netlify.app`.
 
 ## 3. Point your domain at it (10 minutes, then up to a day to take effect)
