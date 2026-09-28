@@ -8,13 +8,16 @@ The one-page answer. The models behind it are in `docs/niche_*.py` and
 Built for Main Street is the cash engine, not the identity. UPath is the mission.
 So the niche is picked for speed to cash, owner reach, and leads already in hand.
 
-| # | Niche | Usual tier | Why | Channel |
+| # | Niche | Role | Usual tier | Channel |
 |---|---|---|---|---|
-| **1** | **Tree service** (owner-operated, 1 to 15 crew) | Standard, $800 + $199 | High-value and emergency jobs; the owner is up a tree when the phone rings, so missed calls are lost jobs; 15 verified no-site leads already on the call sheet | Phone, 7 to 8am or 4 to 6pm their time |
-| 2 | Auto repair and transmission | Bigger, $1,000 + $300 | Most services, steady customers, owner at the counter | Walk in, 10 to 11:30am |
-| 3 | Training studios and sports performance | Small or Standard | The only niche where the offer has sold (client #1) | Warm referrals from client #1 |
-| 4 | Recovery and wellness studios (sauna, cold plunge, stretch, massage), independent | Small or Standard | Same world as training studios, walk-in friendly, new studios need members fast | Walk in mid-afternoon; ask the desk when the owner is in |
-| 5 | Physical therapy and sports rehab, private practice | Standard | Most money per client; trainers and PTs refer to each other, so one warm intro leads to the next | Call noon to 1pm or after 6pm; email first |
+| **1** | **Tree service** (owner-operated, no website) | Cash now. The one niche for the coach. | Standard, $800 + $199 | Cold call, 7 to 8am or 4 to 6pm their time. 20 verified leads in `output/tree_service_20.csv` |
+| 2 | Independent auto repair and transmission | Steady buyers with lots of services | Bigger, $1,000 + $300 | Walk in locally, 10 to 11:30am. Phone elsewhere |
+| 3 | Training studios and sports performance, with recovery studios and physical therapy as referrals from them | Proof (client #1) and the world Miles lives in | Small or Standard | Warm referrals only. Ask every client for two intros |
+| 4 | Independent tutoring and test prep | Education and careers, which feeds UPath | Standard | Email first, then morning calls, once mornings are free |
+
+Locked September 28, 2026. Ruled out on interest: concrete, masonry, party rental,
+mobile bartending, welding, upholstery. Do not reopen this list until 25 real
+conversations are logged.
 
 **One niche for the coach: tree service.** The other four are where you go next or
 work in parallel through a different channel, not a second pitch on the same day.
