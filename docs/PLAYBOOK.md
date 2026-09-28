@@ -213,16 +213,32 @@ lets the lead finder do that part.
 
 ## 7. Still open
 
-- **Google Voice number** for calls and the voicemail script. Never your cell.
-- **The site form** needs the Apps Script ID (`PASTE_YOUR_SCRIPT_ID` in
-  `site/src/index.body.html`). Until then it falls back to the email address.
-- **LLC filing** on or after December 17 (the 15-day rule).
-- **Five phone numbers** differ between directories. Try the second number if the
-  first fails:
-  - Rodriguez Boxing: (323) 963-1035
-  - Affordable Tree: (260) 264-2959
-  - Conquer Tree: (316) 553-3016
-  - Felix Fitness: 305 area code
-  - A Touch of Class: 707 area code
-- **The Google listing itself** was not visible from the verification tools. Open
+Everything left is on the launch checklist
+(https://claude.ai/artifact/CTiJ3dcudAtmjSWhUnFKTa), in order. The short version:
+
+**Tonight, so you can dial tomorrow** (about 90 minutes, $0):
+- **Google Voice number, 818 area code**, on your personal Gmail. Free Google Voice
+  does not work on hello@builtformainstreet.com; that needs Workspace plus Voice
+  Starter at $10 a month, which waits until there are clients. Never your cell.
+- **hello@builtformainstreet.com forwarding** to Gmail at Namecheap. Free,
+  receive-only until Workspace.
+- **The site on the domain** (`site/LAUNCH.md`, steps 2 to 4). "Is this a scam?"
+  is answered with the address.
+- **Call sheet, Script, Your details**: the Voice number, a mailing address, and
+  *Dial with: Google Voice*, so the Call button never shows your cell.
+- **Three practice checks** on the first three Valley shops.
+
+**This week, before the first sale** ($72): EIN, refile the FBN and book the
+publication, Novo, Stripe with three setup links ($600, $800, $1,000; the monthly
+starts at go-live), Google Workspace, the site form script, the agreement.
+
+**December 17 or later**: file the LLC.
+
+**Lead notes**:
+- Phone numbers checked September 28. Conquer Tree's main number is now
+  (316) 553-3016. Rodriguez Boxing's (323) number is the gear store next door, not
+  the gym. Affordable Tree lists two numbers; both are on the sheet.
+- The Google listing itself was not visible from the verification tools. Open
   Maps before each dial and look for a Website button.
+- Lead supply runs out in about two weeks at full pace. Add `GOOGLE_PLACES_API_KEY`
+  in the environment settings before then.

@@ -72,6 +72,7 @@ Cancel with 30 days' notice. Buyout of the site at $2,000 after 12 months.
 | `docs/BEFORE_AFTER.md` | the measurement spec, both halves |
 | `docs/DELIVERY.md` | how a job gets done, and the two commands |
 | `docs/SCRIPT.md` | call script |
+| `site/launch.html` | the open-for-business checklist, tonight to the December LLC (published with saved ticks) |
 | `output/call_list_50.csv` | the 50 leads with no website found, in dialing order (also on the call sheet) |
 | `src/build_site.py` | 11 pages + JSON-LD from one client JSON |
 | `clients/_example.json` | the client data shape |
