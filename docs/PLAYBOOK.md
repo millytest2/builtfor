@@ -29,7 +29,7 @@ went, then **Scorecard → Copy for the coach**. Nothing else to track.
 ## 1. The niche: independent auto repair, San Fernando Valley first
 
 **One niche for the coach: independent auto repair shops.** Start with the 19 in the
-Valley, then the 4 in Amarillo and Wichita.
+Valley, then the 3 in Amarillo and Wichita.
 
 Why this one, from what we found rather than from feel:
 
@@ -59,7 +59,7 @@ The others stay, in a different role:
 > phone in 30 seconds, and one brake job pays for a month of the service. What I've
 > tested: about 20 sales of Google visibility work at Social Hog, and client #1 (a
 > personal trainer, $400). With this exact offer, zero calls so far. That starts this
-> week. Lead list: 50 leads with no website found, 23 of them auto shops."
+> week. Lead list: 48 leads with no website found, 22 of them auto shops."
 
 **Pressure-tested.** The full table is in `docs/OFFER.md`:
 - The most common average repair order at independent shops is $500 to $749, so $199
@@ -235,6 +235,13 @@ starts at go-live), Google Workspace, the site form script, the agreement.
 **December 17 or later**: file the LLC.
 
 **Lead notes**:
+- All 50 were rechecked on the evening of September 28, one by one: still open,
+  phone confirmed, no website of its own. Two had websites after all and are off
+  the list (Barney's Auto Service, Means Tree Service), so it is 48. C & A Auto
+  Service is now Ray's Garage & Performance, new owners, same phone. Signature
+  Automotive's listed website is a parked page, which makes it the best opener on
+  the sheet. Action Auto Center shares its address with a newer business, so
+  confirm the name when they answer.
 - Phone numbers checked September 28. Conquer Tree's main number is now
   (316) 553-3016. Rodriguez Boxing's (323) number is the gear store next door, not
   the gym. Affordable Tree lists two numbers; both are on the sheet.
