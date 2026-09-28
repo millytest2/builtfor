@@ -106,3 +106,20 @@ same order.
 bartending owners (peers, low stakes), then 5 no-pitch talks with auto shop owners
 ("what is your biggest headache right now?") to learn whether their pain is
 customers or technicians. Then sell.
+
+## Evidence check (September 28, 2026)
+
+What outside sources say about the assumptions behind the auto repair pick.
+
+| Assumption | Verdict | Evidence |
+|---|---|---|
+| Auto shops feel customer pain, not only hiring pain | **Holds, stronger than assumed** | Transactions at independent shops fell 9.6% from Jan 2025 to Jan 2026, while they gained share from dealers on price. Tech shortage is cited by 31% of shops, parts prices by 46%. |
+| People ask AI which local business to use | **Holds** | 45% of US consumers used AI for local recommendations in the past year, up from 6%; ChatGPT alone 31% (BrightLocal Local Consumer Review Survey 2026, 1,002 adults). Not broken out for auto repair. |
+| Plenty of shops | **Holds** | Roughly 227,000 to 253,000 US auto repair shops, about three quarters single-owner. |
+| Customers trust independents | **Holds** | Consumer Reports members rate independent shops highest for satisfaction and price. |
+| Few agencies target auto shops | **Wrong** | Auto-specific platforms exist and partner with parts suppliers and shop networks (KUKUI with AutoZone and ACA; NAPA AutoCare). KUKUI is reported at $500 to $2,000+ a month. Established shops may already have a decent site. |
+| Owner names from the California repair license lookup | **Unverified** | The BAR locator confirms a license. Owner names not confirmed. Use signed review replies, or ask. |
+| Party rental sites come from rental software | **Holds** | Goodshuffle sells a website add-on ($79/mo); InflatableOffice sells site packages from $499. |
+| How many auto shops have a site we can beat | **Still unknown** | No study found. Measure it: check 90 shops, and note any "Powered by KUKUI" or network template in the footer. |
+
+**What changes:** the filter. Skip shops already on an auto marketing platform. Target shops with no site, a rented page, or a supplier template, and use the price contrast: $199 a month, no contract, against platforms reported at $500 and up.
