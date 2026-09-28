@@ -47,15 +47,27 @@ Effective **[DATE]**.
   build with whatever you have given us and go live, so the work does not sit
   open indefinitely. You can send photos later and we will add them
 
-**1.2 Ongoing.** For as long as this Agreement is active, we will:
+**1.2 Ongoing.** For as long as this Agreement is active, we will do what your
+plan includes (tick one):
 
-- Host the website, maintain the domain and the security certificate
-- Make reasonable edits you request: text, hours, services, prices, photos and
-  contact details. Reasonable does not include new pages, a redesign, or a
-  rebuild, which we will quote separately
-- Keep your Google Business Profile current
-- Send you a monthly report showing where you appear in search and whether
-  ChatGPT, Gemini and Claude name your business
+- [ ] **Small.** Host the website, maintain the domain and the security
+  certificate. Make reasonable edits you request: text, hours, services, prices,
+  photos and contact details. Reasonable does not include new pages, a redesign,
+  or a rebuild, which we will quote separately. Keep your Google Business
+  Profile current. Check every three months where you appear in search and
+  whether ChatGPT, Gemini and Claude name your business, and send you the result.
+- [ ] **Standard.** Everything in Small, but the search and AI check is sent
+  every month. We also give you a review card for your counter, email your
+  customers (from a list you provide) asking for a review, and draft replies to
+  your reviews for you to approve. We ask every customer the same way. We never
+  offer rewards for reviews and never filter who gets asked.
+- [ ] **Bigger.** Everything in Standard. Every call-back request and form
+  submission is sent by email to you and anyone you name, with a follow-up
+  message drafted the same day for you to send. We email your past customers
+  (from a list you provide) up to four times a year, and we hold a 15-minute
+  call with you each month.
+
+We never send text messages on your behalf under this Agreement.
 
 **1.3 Reasonable edits.** "Reasonable" means changes to existing content and
 ordinary additions. A full redesign, a new brand, or building an online store
@@ -65,9 +77,13 @@ is a separate project we would quote separately.
 
 | | |
 |---|---|
-| **Setup fee** | **$__________**, due before work begins |
-| **Monthly fee** | **$199/month**, starting the day the site goes live |
-| **Annual option** | **$1,990/year** paid in advance, in place of monthly |
+| | Small | Standard | Bigger |
+|---|---|---|---|
+| **Setup fee**, due before work begins | $600 | $800 | $1,000 |
+| **Monthly fee**, starting the day the site goes live | $99 | $199 | $300 |
+
+Your plan: **[Small / Standard / Bigger]**. It is set by the number of services
+and service areas agreed in section 1.1, and it does not change unless those do.
 
 **2.1 Billing.** The monthly fee is charged automatically to the card or bank
 account on file, on the same day each month.
@@ -87,8 +103,8 @@ applies.
 **This section is the important one. Read it.**
 
 **3.1 We own the website.** We own the website we build — its code, design and
-files. You are leasing the use of it, which is why the setup fee is what it is rather than several times that
-rather than several thousand.
+files. You are leasing the use of it, which is why the setup fee is hundreds of
+dollars rather than several thousand.
 
 **3.2 You own your business.** You own and will always own:
 

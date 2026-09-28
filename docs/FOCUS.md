@@ -3,15 +3,24 @@
 The one-page answer. The models behind it are in `docs/niche_*.py` and
 `docs/service_scorecard.py`. Rerun them when real call numbers replace the guesses.
 
-## The decision
+## The decision (September 28, 2026)
 
-| | |
-|---|---|
-| **Main list** | Independent auto repair shops. Transmission and independent auto body on the same list, same script. |
-| **Second list** | Party and equipment rental. |
-| **Where first** | Southern California, walking in, for clients 1 to 3. |
-| **Where next** | Smaller warm-weather towns by phone, once the pitch is proven. |
-| **Not now** | Home-remodel showrooms, field trades, cleaning and route services, HVAC and plumbing, restaurants. |
+Built for Main Street is the cash engine, not the identity. UPath is the mission.
+So the niche is picked for speed to cash, owner reach, and leads already in hand.
+
+| # | Niche | Usual tier | Why | Channel |
+|---|---|---|---|---|
+| **1** | **Tree service** (owner-operated, 1 to 15 crew) | Standard, $800 + $199 | High-value and emergency jobs; the owner is up a tree when the phone rings, so missed calls are lost jobs; 15 verified no-site leads already on the call sheet | Phone, 7 to 8am or 4 to 6pm their time |
+| 2 | Auto repair and transmission | Bigger, $1,000 + $300 | Most services, steady customers, owner at the counter | Walk in, 10 to 11:30am |
+| 3 | Training studios and sports performance | Small or Standard | The only niche where the offer has sold (client #1) | Warm referrals from client #1 |
+| 4 | Party and event rental | Bigger | Many item types across many towns; the owner runs the booking line | Phone, midweek mornings |
+| 5 | Concrete and masonry | Standard | Big jobs, photo-driven; 8 verified no-site leads on the call sheet | Phone, 6:30 to 7:15am or 5 to 6pm |
+
+**One niche for the coach: tree service.** The other four are where you go next or
+work in parallel through a different channel, not a second pitch on the same day.
+
+The sections below are the history of how we got here. The auto repair pick they
+describe is superseded.
 
 ## Why auto repair
 

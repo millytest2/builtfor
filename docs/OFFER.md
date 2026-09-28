@@ -34,13 +34,18 @@ at a kitchen table, so it is never priced separately. It is what is inside.
 > comes up. Usually that means building the site and fixing the Google listing,
 > because that's what everything reads."
 
+> **Pricing changed on September 28, 2026.** Current tiers: Small $600 + $99/mo,
+> Standard $800 + $199/mo, Bigger $1,000 + $300/mo, with what each monthly plan
+> includes in `CLAUDE.md`. The reasoning further down about annual prepay and a
+> $1,000 standard setup is kept for history and no longer applies.
+
 ## The offer
 
 | | Offer | Price |
 |---|---|---|
 | The door | **Visibility Check** | Free |
-| Setup | **Build and fix** | **$600 / $1,000 / from $1,500** |
-| The lease | **Keep it found** | **$199/mo** |
+| Setup | **Build and fix** | **$600 / $800 / $1,000** |
+| The lease | **Keep it found** | **$99 / $199 / $300 a month** |
 
 ### Setup is tiered, and the tier is counted
 
@@ -50,9 +55,9 @@ underprices the big one.
 
 | Tier | Trigger | Setup | Lease |
 |---|---|---|---|
-| Small | ≤4 services, ≤3 towns, one location | **$600** | **annual prepay only** |
-| Standard | ≤8 services, ≤6 towns | **$1,000** | $199/mo |
-| Bigger | 9+ services, 7+ towns, multi-location | from **$1,500** | $199/mo |
+| Small | ≤4 services, ≤3 towns, one location | **$600** | $99/mo |
+| Standard | ≤8 services, ≤6 towns | **$800** | $199/mo |
+| Bigger | 9+ services, 7+ towns, multi-location | **$1,000** | $300/mo |
 
 **Ask the two counting questions on the call.** How many services do you offer?
 How many towns will you drive to? The answers pick the tier. You are scoping, not
@@ -91,7 +96,7 @@ a real page per service and per town, details and FAQs marked up the way search
 engines and assistants read them, real job photos. Two weeks from the day
 photos arrive.
 
-**The lease, $199/mo.** Hosting, domain, certificate, unlimited small edits,
+**The lease, $199/mo.** Hosting, domain, certificate, reasonable edits,
 the Google listing kept current, and a monthly report showing where they rank
 on Google and whether ChatGPT, Gemini and Claude name them. Cancel with 30
 days' notice.

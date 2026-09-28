@@ -17,19 +17,23 @@ Setup is tiered, and the tier is picked by **counting, not by feel**. Ask how ma
 services and how many towns on the call; the answer picks the price. This is
 scoping, not discounting, and it is quoted once and does not move.
 
-| Tier | Trigger | Setup | Lease |
-|---|---|---|---|
-| Small | ≤4 services, ≤3 towns, one location | **$600** | **annual prepay $1,990 only** |
-| Standard | ≤8 services, ≤6 towns | **$1,000** | $199/mo |
-| Bigger | 9+ services, 7+ towns, multi-location | quote, from **$1,500** | $199/mo |
+| Tier | Trigger | Setup | Monthly | What the monthly adds |
+|---|---|---|---|---|
+| Small | ≤4 services, ≤3 towns, one location | **$600** | **$99** | Hosting, reasonable edits, Google listing kept current, a visibility check every quarter |
+| Standard | ≤8 services, ≤6 towns | **$800** | **$199** | Small, plus a monthly report (search and ChatGPT, Gemini, Claude), review requests by counter QR card and email, review reply drafts the owner approves |
+| Bigger | 9+ services, 7+ towns, or two locations | **$1,000** | **$300** | Standard, plus every lead routed to the owner and staff by email with a same-day follow-up draft, past-customer emails, a 15-minute monthly call |
+
+Every tier gets the same build: a page per service and per town, the Google
+listing claimed and completed, tap to call, a tested quote form, and the markup
+search engines and AI assistants read.
 
 **Never quote a range.** A range becomes its floor: say "$600 to $1,000" and the
 client hears $600. Name one number for the tier they land in.
 
-**The $600 tier exists only with annual prepay.** That is a trade, not a
-concession: it collects $2,590 in month one against the standard tier's $1,199,
-and it removes churn risk for a year. Below $1,000 setup with monthly billing, a
-cancellation at month two loses money on a completed build.
+**Push Standard.** Two Small clients earn less a month than one Standard client
+and take twice the work. Small exists for the one-truck owner who would otherwise
+say no. The setup fee covers the build in every tier, so an early cancellation
+does not lose money on the work.
 
 Cancel with 30 days' notice. Buyout of the site at $2,000 after 12 months.
 **We own the site; the client owns the domain.**

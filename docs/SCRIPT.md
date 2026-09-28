@@ -75,14 +75,18 @@ drive to?"
 
 | They have | Say |
 |---|---|
-| Up to 4 services, 3 towns, one location | "It's $600 to build if you take the first year of upkeep up front, $1,990. That's the only way that price exists." |
-| Up to 8 services, 6 towns | "It's $1,000 to build, then $199 a month. Cancel with 30 days' notice." |
-| More than that | "From $1,500. I'll send you the exact number today." |
+| Up to 4 services, 3 towns, one location | "It's $600 to build, then $99 a month. That keeps it hosted, edited and your Google listing right." |
+| Up to 8 services, 6 towns | "It's $800 to build, then $199 a month. That adds a monthly report on what Google and ChatGPT say about you, and we ask your customers for reviews." |
+| More than that, or two locations | "It's $1,000 to build, then $300 a month. That adds follow-up on every lead that comes in, and a call with me every month." |
+
+If they have more than they need for Small but balk at Standard, do not drop the
+price. Drop services from the site: "If we build it for four services, it's
+Small." The tier follows the count, never the haggle.
 
 **Terms, plainly.**
-> "We build and host the site. The domain is registered in your name. Upkeep covers
-> hosting, reasonable edits, and a monthly report on what the AI assistants say
-> about you. After a year you can buy the site outright for $2,000."
+> "We build and host the site. The domain is registered in your name. The monthly
+> covers hosting, reasonable edits and your Google listing, plus what your plan
+> adds. After a year you can buy the site outright for $2,000."
 
 **Close.**
 > "If that works, I'll send the agreement and the payment link now. When the payment
