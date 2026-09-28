@@ -1,0 +1,22 @@
+# Where Miles can walk in. Valley and nearby, where independent studios cluster.
+name: la_fitness
+display_name: "San Fernando Valley, Burbank, Glendale, Pasadena"
+
+location_bias:
+  lat: 34.1808
+  lng: -118.3090
+  radius_m: 35000
+
+areas:
+  - "Burbank, CA"
+  - "Glendale, CA"
+  - "Pasadena, CA"
+  - "North Hollywood, CA"
+  - "Studio City, CA"
+  - "Sherman Oaks, CA"
+  - "Van Nuys, CA"
+  - "Encino, CA"
+  - "Tarzana, CA"
+  - "Woodland Hills, CA"
+  - "Northridge, CA"
+  - "Santa Clarita, CA"

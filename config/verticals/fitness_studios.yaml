@@ -1,0 +1,16 @@
+name: fitness_studios
+display_name: "Independent training studios and sports performance"
+
+# The only niche where the offer has actually sold: client #1 was a personal trainer.
+# Target facilities with an owner-coach and a real address, not solo trainers or franchises.
+search_terms:
+  - "sports performance training"
+  - "speed and agility training"
+  - "strength and conditioning gym"
+  - "personal training studio"
+  - "boxing gym"
+
+primary_keyword: "sports performance training near me"
+
+mock_noun: "Athletics"
+mock_suffixes: ["Performance", "Athletics", "Strength", "Training Lab", "Boxing Club"]
