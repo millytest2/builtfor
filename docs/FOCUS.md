@@ -3,32 +3,38 @@
 The one-page answer. The models behind it are in `docs/niche_*.py` and
 `docs/service_scorecard.py`. Rerun them when real call numbers replace the guesses.
 
-## The decision (September 28, 2026)
+## The decision (September 28, 2026, final)
 
 Built for Main Street is the cash engine, not the identity. UPath is the mission.
 So the niche is picked for speed to cash, owner reach, and leads already in hand.
 
+**One niche for the coach: independent auto repair, San Fernando Valley first.** The
+full reasoning, the offer and the scorecard are in `docs/PLAYBOOK.md`.
+
 | # | Niche | Role | Usual tier | Channel |
 |---|---|---|---|---|
-| **1** | **Tree service** (owner-operated, no website) | Cash now. The one niche for the coach. | Standard, $800 + $199 | Cold call, 7 to 8am or 4 to 6pm their time. 8 checked leads in `output/leads_tree.csv` |
-| 2 | Independent auto repair and transmission | Steady buyers with lots of services | Bigger, $1,000 + $300 | Walk in locally, 10 to 11:30am. Phone elsewhere. 23 checked leads in `output/leads_auto.csv` |
-| 3 | Training studios and sports performance, with recovery studios and physical therapy as referrals from them | Proof (client #1) and the world Miles lives in | Small or Standard | Warm referrals first. Ask every client for two intros. 13 cold leads in `output/leads_training.csv` |
-| 4 | Independent tutoring and test prep | Education and careers, which feeds UPath | Standard | Email first, then morning calls, once mornings are free. 6 checked leads in `output/leads_tutoring.csv` (most independents already have a site) |
+| **1** | **Independent auto repair** | The niche. Owner at the counter, problem shown live on your phone, one brake job pays the month | Standard, $800 + $199 | Walk in to Valley shops 3:15 to 4:15pm and Saturday 9 to noon. Phone the rest. 23 checked leads in `output/leads_auto.csv`, 19 of them in the Valley |
+| 2 | Tree service | Central and Eastern afternoons, when crews are off the job | Standard | Phone, 5 to 7pm their time. 8 checked leads in `output/leads_tree.csv` |
+| 3 | Training studios, with recovery studios and physical therapy as referrals from them | Proof (client #1) and warm referrals | Small or Standard | Warm referrals first. 13 cold leads in `output/leads_training.csv`, best on Saturdays |
+| 4 | Independent tutoring and test prep | Parked. Most independents already have a site | Standard | 6 checked leads in `output/leads_tutoring.csv` |
+
+Why the switch from tree service to auto repair: the strict website check left 11 of
+20 auto shops and 11 of 25 more Valley shops with no site. Every tree crew in Amarillo
+and Lubbock now has one. Tree crews' best hours also fall during Miles's day job, while
+Valley shops can be walked into after 3pm.
 
 Locked September 28, 2026. Ruled out on interest: concrete, masonry, party rental,
 mobile bartending, welding, upholstery. Do not reopen this list until 25 real
 conversations are logged.
 
-Lead files: all 50 clean leads in one dialing order in `output/call_list_50.csv`; clean leads per niche in `output/leads_*.csv`. Leads with a dead, rented or doubtful site are in
-`output/leads_hooks_to_confirm.csv` (look at the Google listing's Website button first). Leads with a real site
-are in `output/leads_have_websites.csv` so they are never re-added. A name-only search missed 21 of 71 sites;
-always search the name plus "website".
+Lead files: all 50 clean leads in one dialing order in `output/call_list_50.csv` and on
+the call sheet; clean leads per niche in `output/leads_*.csv`. Leads with a dead, rented
+or doubtful site are in `output/leads_hooks_to_confirm.csv` (look at the Google
+listing's Website button first). Leads with a real site are in
+`output/leads_have_websites.csv` so they are never re-added. A name-only search missed
+21 of 71 sites; always search the name plus "website".
 
-**One niche for the coach: tree service.** The other four are where you go next or
-work in parallel through a different channel, not a second pitch on the same day.
-
-The sections below are the history of how we got here. The auto repair pick they
-describe is superseded.
+The sections below are the history of how we got here.
 
 ## Why auto repair
 

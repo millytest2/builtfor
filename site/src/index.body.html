@@ -16,16 +16,16 @@
     </div>
     <figure class="chat" aria-label="An example of an AI assistant answering a customer's question">
       <div class="chat-top"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="chat-t">AI assistant</span></div>
-      <div class="bubble ask">Who’s the best upholstery shop in Fort Wayne?</div>
+      <div class="bubble ask">Who’s an honest mechanic in Van Nuys?</div>
       <div class="bubble ans">
         <p>Here are three well-reviewed options:</p>
         <ol>
-          <li><b>Ridgeline Upholstery</b><span>4.8</span></li>
-          <li><b>Carver &amp; Daughters</b><span>4.7</span></li>
-          <li><b>Northside Furniture Repair</b><span>4.6</span></li>
+          <li><b>Ridgeline Auto Care</b><span>4.8</span></li>
+          <li><b>Carver &amp; Sons Automotive</b><span>4.7</span></li>
+          <li><b>Northside Brake &amp; Tire</b><span>4.6</span></li>
         </ol>
       </div>
-      <div class="missing"><span>Not in the answer</span>The shop with thirty years and the best reviews in town.</div>
+      <div class="missing"><span>Not in the answer</span>The shop with thirty years and the best reviews on the street.</div>
       <figcaption>An example. The shop names are made up.</figcaption>
     </figure>
   </div>
@@ -59,21 +59,19 @@
       <div class="fields">
         <div><label for="trade">Your trade</label>
           <select id="trade">
-            <option value="reupholstery">Upholstery</option>
-            <option value="tree removal">Tree service</option>
-            <option value="welding and ornamental iron">Welding and iron</option>
-            <option value="masonry and concrete">Masonry and concrete</option>
-            <option value="custom cabinetry">Cabinetry</option>
-            <option value="landscaping">Landscaping</option>
-            <option value="fence and gate installation">Fencing and gates</option>
-            <option value="septic tank service">Septic service</option>
-            <option value="home remodeling">Remodeling</option>
             <option value="auto repair">Auto repair</option>
+            <option value="transmission repair">Transmission repair</option>
+            <option value="brakes and tires">Brakes and tires</option>
+            <option value="smog checks">Smog checks</option>
+            <option value="tree removal">Tree service</option>
+            <option value="personal training">Personal training</option>
+            <option value="boxing lessons">Boxing gym</option>
+            <option value="tutoring">Tutoring</option>
           </select></div>
         <div><label for="town">Your town</label>
-          <input type="text" id="town" placeholder="Fort Wayne" autocomplete="address-level2"></div>
+          <input type="text" id="town" placeholder="Van Nuys" autocomplete="address-level2"></div>
         <div class="span2"><label for="biz">Your shop&rsquo;s name</label>
-          <input type="text" id="biz" placeholder="Hoffman &amp; Sons" autocomplete="organization"></div>
+          <input type="text" id="biz" placeholder="Garcia Auto Repair" autocomplete="organization"></div>
       </div>
       <div class="qlab">Ask this first</div>
       <div class="qrow"><div class="qtxt" id="q1"></div><button class="copy" type="button" data-for="q1">Copy</button></div>
@@ -128,7 +126,7 @@
           </div>
         </div>
         <p class="t-fine">We count your services and towns on the first call, and that
-        sets the price. Every monthly plan covers hosting, edits, and keeping your
+        sets the price. Every monthly plan covers hosting, reasonable edits, and keeping your
         Google listing right. Standard adds a monthly report on what Google and the AI
         assistants say about you, plus review requests. Bigger adds follow-up on every
         lead and a monthly call. Cancel with 30 days&rsquo; notice.</p>
@@ -154,11 +152,11 @@
       <form id="askform" name="free-check" method="POST" target="lead-sink" action="https://script.google.com/macros/s/PASTE_YOUR_SCRIPT_ID/exec">
         <input type="hidden" name="subject" id="f-subject" data-remove-prefix value="New free check request">
         <p class="hp" aria-hidden="true"><label for="hp">Leave this empty</label><input id="hp" name="company-url" tabindex="-1" autocomplete="off"></p>
-        <div><label for="f-name">Your name</label><input type="text" id="f-name" name="name" required placeholder="Jim Hoffman"></div>
-        <div><label for="f-biz">Shop</label><input type="text" id="f-biz" name="business" required placeholder="Hoffman &amp; Sons"></div>
-        <div><label for="f-town">Town</label><input type="text" id="f-town" name="town" placeholder="Fort Wayne, IN"></div>
-        <div><label for="f-phone">Best number</label><input type="tel" id="f-phone" name="phone" required placeholder="(260) 555-0100"></div>
-        <div class="full"><label for="f-email">Email (optional)</label><input type="email" id="f-email" name="email" placeholder="jim@hoffmanandsons.com" autocomplete="email"></div>
+        <div><label for="f-name">Your name</label><input type="text" id="f-name" name="name" required placeholder="Luis Garcia"></div>
+        <div><label for="f-biz">Shop</label><input type="text" id="f-biz" name="business" required placeholder="Garcia Auto Repair"></div>
+        <div><label for="f-town">Town</label><input type="text" id="f-town" name="town" placeholder="Van Nuys, CA"></div>
+        <div><label for="f-phone">Best number</label><input type="tel" id="f-phone" name="phone" required placeholder="(818) 555-0100"></div>
+        <div class="full"><label for="f-email">Email (optional)</label><input type="email" id="f-email" name="email" placeholder="luis@garciaauto.com" autocomplete="email"></div>
         <div class="full"><button class="btn" type="submit" id="send">Send it over</button></div>
         <p class="fnote" id="fnote" aria-live="polite">We&rsquo;ll run the check and get back to you. We won&rsquo;t put you on a mailing list. <a href="@@P@@privacy/">Privacy</a></p>
       </form>
@@ -173,7 +171,7 @@
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ProfessionalService","name":"Built for Main Street",
-"description":"Websites and Google Business Profile work for local trade shops, so search engines and AI assistants can find them and customers can reach them.",
+"description":"Websites and Google Business Profile work for independent auto repair shops and other local businesses, so search engines and AI assistants can find them and customers can reach them.",
 "url":"https://www.builtformainstreet.com/","image":"https://www.builtformainstreet.com/og.png","logo":"https://www.builtformainstreet.com/apple-touch-icon.png","email":"hello@builtformainstreet.com",
 "priceRange":"$600-$1000","areaServed":{"@type":"Country","name":"United States"},
 "address":{"@type":"PostalAddress","addressLocality":"Los Angeles","addressRegion":"CA","addressCountry":"US"},

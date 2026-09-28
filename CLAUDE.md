@@ -66,12 +66,13 @@ Cancel with 30 days' notice. Buyout of the site at $2,000 after 12 months.
 
 | | |
 |---|---|
-| `docs/FOCUS.md` | who we sell to and why: tree service first, then auto repair, training studios, tutoring |
+| `docs/PLAYBOOK.md` | the whole business on one page: niche, offer, how it connects, path to $10k, scorecard |
+| `docs/FOCUS.md` | who we sell to and why: independent auto repair first, San Fernando Valley |
 | `docs/OFFER.md` | the offer, pricing reasoning, objection handling |
 | `docs/BEFORE_AFTER.md` | the measurement spec, both halves |
 | `docs/DELIVERY.md` | how a job gets done, and the two commands |
 | `docs/SCRIPT.md` | call script |
-| `output/main_street_callsheet.csv` | the 50 verified leads |
+| `output/call_list_50.csv` | the 50 leads with no website found, in dialing order (also on the call sheet) |
 | `src/build_site.py` | 11 pages + JSON-LD from one client JSON |
 | `clients/_example.json` | the client data shape |
 
