@@ -3,7 +3,21 @@
 The one-page answer. The models behind it are in `docs/niche_*.py` and
 `docs/service_scorecard.py`. Rerun them when real call numbers replace the guesses.
 
-## The decision (September 28, 2026, final)
+## Update, September 29, 2026: tree service first
+
+Miles chose tree service crews as the niche to call first, LA area. Reasons: a tree
+crew's phone is its lead line, one removal pays for months, and many already pay Angi,
+HomeAdvisor or Thumbtack for leads. Auto repair is the runner-up and stays on the list.
+**The offer is general**; the niche only decides who gets called first.
+
+What the LA search showed: about 1 in 5 LA tree crews has no website (23 of about 120
+checked). The no-website group is thinner in LA than in smaller cities, so plan on
+adding crews whose site is broken or a free page. 30 tree leads are at the top of
+`output/master_call_list.csv`: 23 LA area, 7 out of state.
+
+Closed until 25 real owner conversations.
+
+## The earlier decision (September 28, 2026)
 
 Built for Main Street is the cash engine, not the identity. UPath is the mission.
 So the niche is picked for speed to cash, owner reach, and leads already in hand.
