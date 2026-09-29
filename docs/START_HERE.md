@@ -8,10 +8,10 @@ Everything for Built for Main Street, in one place. Updated September 28, 2026.
 |---|---|---|
 | **Call sheet** | https://claude.ai/artifact/EuwoYPw6abRTiu6nya8JDw (pinned) | The tracker. Tap a lead, call, tap how it went. The scorecard fills itself |
 | **Launch checklist** | https://claude.ai/artifact/CTiJ3dcudAtmjSWhUnFKTa (pinned) | Every setup step in order, ticks save |
-| **Master call list** | `output/master_call_list.csv` | 71 leads with no website. 30 tree crews first (23 LA area), then auto, gyms, tutors. Owner, opener, call window in their time and yours, status |
-| **Offer** | `output/Built_for_Main_Street_Offer.pdf` | 2 pages for the owner: the two problems, three plans, terms |
+| **Call list, top 50** | `output/master_call_list.csv` and the call sheet | 30 tree crews (23 LA area), then 20 auto shops. No website of their own. Owner, opener, call window, status. Parked leads: `output/leads_parked.csv` |
+| **Offer** | `output/Built_for_Main_Street_Offer.pdf` | 2 pages for the owner: the three problems, three plans, terms. The only offer PDF to send |
 | **Site** | https://claude.ai/artifact/HQkhw7TqgE1Q6Naqp1okwU (preview) | Upload `output/builtformainstreet_site.zip` to put it on builtformainstreet.com |
-| **Call script** | `docs/SCRIPT.md`, and the Script button on the call sheet | Call one books the check, call two names one price |
+| **Script, phone and email** | `docs/SCRIPT.md`, and the Script button on the call sheet | Call one books the check, call two names one price. Four emails from hello@ |
 | **The business on one page** | `docs/PLAYBOOK.md` | Niche, offer, how it connects, path to $10k, scorecard |
 | **Offer reasoning** | `docs/OFFER.md` | Why the price holds, pressure test, kill criteria |
 | **Client agreement** | `docs/legal/CLIENT_AGREEMENT.md` | Fill in before the first sale |
@@ -40,8 +40,8 @@ replaces anyone. See `docs/OFFER.md`.
 
 **Tonight** (about 90 minutes, $0). Ticks on the launch checklist:
 
-1. Google Voice on your personal Gmail, pick an 818 number, record the greeting.
-2. Namecheap: forward hello@builtformainstreet.com to your Gmail.
+1. Google Workspace on hello@builtformainstreet.com plus Voice Starter ($10/mo, records calls). Pick an 818 number, record the greeting.
+2. Send yourself a test email from hello@.
 3. At a computer: unzip `builtformainstreet_site.zip`, drag the `www` folder onto
    app.netlify.com/drop, then add the two DNS records at Namecheap
    (`site/LAUNCH.md`, steps 2 to 4).
@@ -53,9 +53,10 @@ replaces anyone. See `docs/OFFER.md`.
 before they're up a tree and again 3:30 to 5:30pm. Log every one. Zero sales is
 normal. Zero dials is the failure.
 
-**This week, before anyone can pay you** ($72): EIN, refile the FBN and book
-publication, Novo account, Stripe with three setup links, Google Workspace,
-connect the site form (send Claude the Apps Script URL), fill in the agreement.
+**This week, before anyone can pay you**: fix the EIN (yours is a partnership EIN;
+call the IRS for a sole proprietor one), pay the FBN link from VitalChek and book the
+newspaper notice (start by November 7), city business tax registration, Novo, update
+Stripe to the three plans, connect the site form, fill in the agreement.
 
 **Friday**: Scorecard, Copy for the coach.
 
