@@ -27,14 +27,18 @@ calls so I don't miss anything. Cool?"
 > "What kind of jobs do you want more of?"
 
 **BOOK.** A small ask.
-> "Here's what I do. Free check, ten minutes. I show you what people see when they
-> look you up, and what's keeping you off the list. Tomorrow morning or after 4?"
+> "I'm not an agency. It's just me, I'm local, and I do this one business at a time.
+> Free check, ten minutes. I show you what people see when they look you up, and
+> what's keeping you off the list. Tomorrow morning or after 4?"
 > "Cool. Best email to send it to?"
 
 **Price on call one:** "Honestly, it depends on how many services and towns you
 cover. After the check I give you one number, and it doesn't change."
 
-**Four comebacks:**
+**Five comebacks:**
+- "Is this another marketing company?" / "No. No ads, no social media, no contract.
+  It's me. I get you found and make it easy to call you, and you see the numbers
+  every month."
 - "Word of mouth keeps me busy." / "Love that. Those people still look you up before
   they call. Right now they find [what you saw]."
 - "Just send me something." / "Sure. What's your email? I'll send it and call you
