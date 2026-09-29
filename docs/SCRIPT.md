@@ -6,6 +6,55 @@ plumber". Emails go out from hello@builtformainstreet.com.
 **Call one books a free check. It does not sell.** Call two shows the check and
 names one price. Most of the work is being curious and brief.
 
+## Pocket version: HI, SAW, ASK, BOOK
+
+Four beats. Learn these, read the rest once.
+
+**HI.** Be a person.
+> "Hey, is this [name]? Hey [name], it's Miles. I'll be straight with you, this is a
+> cold call. Got 30 seconds, or did I catch you in the middle of something?"
+
+Busy? "No problem. Morning or after 4 better?" If you record: "Heads up, I record my
+calls so I don't miss anything. Cool?"
+
+**SAW.** One thing you actually found. Then stop talking.
+> "So I was looking up [trade] in [town] this morning, like a customer would. Asked
+> Google and ChatGPT. A couple of other companies came up. You didn't. And there's no
+> website for Google to send people to. Did you know that?"
+
+**ASK.** One question. Let them talk.
+> "Where's most of your work coming from right now? Word of mouth? Angi?"
+> "What kind of jobs do you want more of?"
+
+**BOOK.** A small ask.
+> "Here's what I do. Free check, ten minutes. I show you what people see when they
+> look you up, and what's keeping you off the list. Tomorrow morning or after 4?"
+> "Cool. Best email to send it to?"
+
+**Price on call one:** "Honestly, it depends on how many services and towns you
+cover. After the check I give you one number, and it doesn't change."
+
+**Four comebacks:**
+- "Word of mouth keeps me busy." / "Love that. Those people still look you up before
+  they call. Right now they find [what you saw]."
+- "Just send me something." / "Sure. What's your email? I'll send it and call you
+  Thursday."
+- "I use Angi." / "Keep it if it's working. This is for people searching for you
+  directly, so you're not paying per lead for them."
+- "Not interested." / "All good. Is it timing, or you just don't want more of this
+  kind of work?" Then: "Appreciate you. Have a good one."
+
+**Call two, casual:**
+> "Pulled it up. Here's what a stranger sees when they look for you."
+> "How many services do you do? Which towns do most customers come from?"
+> "Okay, that's the Standard plan. $800 to build it, then $199 a month." Stop talking.
+> "Want me to send the agreement and payment link?"
+
+**Voicemail:**
+> "Hey [name], Miles with Built for Main Street. Looked you up this morning and found
+> something you'll want to see. It's free, takes ten minutes. [number]. Again,
+> [number]. Talk soon."
+
 ## Who you are on the call
 
 You looked a business up, found a real problem, and you are telling the owner.
