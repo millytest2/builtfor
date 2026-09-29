@@ -81,7 +81,7 @@ def doc(h, body):
 
 HOME_T = 'Built for Main Street'
 HOME_D = ('Your next customer is asking Google or an AI assistant who to call. We fix what '
-          'keeps local trade shops off that list, and make sure customers can reach you in one tap.')
+          'keeps local businesses off that list, and make sure customers can reach you in one tap.')
 PRIV_T = 'Privacy | Built for Main Street'
 PRIV_D = 'What Built for Main Street collects through this website, what we do with it, and how to reach us about it.'
 LOST_T = 'Page not found | Built for Main Street'

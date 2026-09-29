@@ -44,6 +44,6 @@ def street(cls, viewbox, fifth_lit, label_size, fifth_label):
       {aw5}
     </g>
   </g>
-  {t(88,'AUTO REPAIR')}{t(262,'TIRES')}{t(482,'BRAKES')}{t(672,'SMOG CHECK')}{t(862,fifth_label, dim=not fifth_lit)}
+  {t(88,'TREE SERVICE')}{t(262,'AUTO REPAIR')}{t(482,'PLUMBING')}{t(672,'ROOFING')}{t(862,fifth_label, dim=not fifth_lit)}
 </svg>'''
 
