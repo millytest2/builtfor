@@ -8,8 +8,10 @@ Sole proprietorship, Miles Tipton, Los Angeles. LLC filed on or after December 1
 > Built for Main Street helps local businesses get found, get contacted, and
 > stop losing good leads.
 
-Two problems: they cannot be found, and the people who do find them do not turn
-into calls. Never open with "we build websites."
+Three steps, and we fix the one that is broken: (1) they cannot be found (Google
+listing, what AI assistants know), (2) they have no website or it does not work,
+(3) the people who find them slip away (follow-up, reviews; monthly, and later
+tools behind the counter). Never open with "we build websites."
 
 **Visibility Check** is free, and it is the door.
 

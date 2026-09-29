@@ -1,8 +1,8 @@
 # The offer
 
 Final as of September 28, 2026. Prices, tiers and hard rules live in `CLAUDE.md`; this
-file is the reasoning behind them and how to defend them. The niche is independent
-auto repair (`docs/FOCUS.md`).
+file is the reasoning behind them and how to defend them. The offer is general: any
+local small business. Who we call first is in `docs/FOCUS.md` (tree crews, LA area).
 
 ## What we sell
 

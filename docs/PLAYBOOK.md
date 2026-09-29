@@ -26,7 +26,13 @@ went, then **Scorecard → Copy for the coach**. Nothing else to track.
 - **Offers made**: prices named
 - **Sales**: paid
 
-## 1. The niche: independent auto repair, San Fernando Valley first
+## 1. The niche
+
+**Update, September 29:** Miles chose **tree service crews, LA area** to call
+first; auto repair is the runner-up. The top 50 is 30 tree crews and 20 auto
+shops. Reasons and the LA numbers are in `docs/FOCUS.md`. The auto analysis below
+stays as the runner-up case.
+
 
 **One niche for the coach: independent auto repair shops.** Start with the 19 in the
 Valley, then the 3 in Amarillo and Wichita.

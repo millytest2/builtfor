@@ -19,7 +19,7 @@ Everything for Built for Main Street, in one place. Updated September 28, 2026.
 ## The offer, in one breath
 
 Free Visibility Check. Then one plan, picked by counting services and towns:
-Small $600 + $99 a month, **Standard $800 + $199 a month (most auto shops)**,
+Small $600 + $99 a month, **Standard $800 + $199 a month (most businesses)**,
 Bigger $1,000 + $300 a month. Cancel with 30 days' notice. The client owns the
 domain. Buyout $2,000 after a year.
 
@@ -38,7 +38,7 @@ replaces anyone. See `docs/OFFER.md`.
 
 ## Next steps
 
-**Tonight** (about 90 minutes, $0). Ticks on the launch checklist:
+**Tonight** (about 90 minutes; Workspace and Voice are about $18 a month). Ticks on the launch checklist:
 
 1. Google Workspace on hello@builtformainstreet.com plus Voice Starter ($10/mo, records calls). Pick an 818 number, record the greeting.
 2. Send yourself a test email from hello@.
