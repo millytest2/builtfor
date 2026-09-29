@@ -120,6 +120,12 @@ customers from about 5 towns. It lands in **Standard: $800, then $199 a month**.
 long contracts. We never text before client #10. We never promise rankings, leads or
 revenue.
 
+**Later, the upsell (after client #10):** tools behind the counter that help the
+owner and staff do more with the same hours: estimate drafts, a missed-call list
+by email, paperwork from job notes, a private helper for new hires, past-customer
+check-ins. A person always reviews and sends. Nothing replaces anyone. Details in
+`docs/OFFER.md`, "Later: tools behind the counter".
+
 ## 3. How this helps an owner
 
 A driver in Van Nuys has a grinding noise. She asks her phone, "Who's an honest

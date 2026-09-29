@@ -162,6 +162,36 @@ Repair in Van Nuys. What do they do and how do I contact them?"*
 owner can read about his own shop. Run both, screenshot both, lead with the second.
 **Only say what you actually saw.** Every claim on a call carries a screenshot.
 
+## Later: tools behind the counter (the upsell)
+
+The first sale gets them found and reached. The next sale helps the people already
+working there do more with the same hours. **AI goes behind the counter, never in
+front of the customer.** It drafts; a person decides and sends. Nothing talks to
+customers on its own, and nothing replaces someone on the payroll.
+
+| Add-on | What the owner and staff get | Who it helps |
+|---|---|---|
+| Quote and estimate drafts | A voice memo or job photos turn into a written estimate the owner checks and sends | Owner, office staff |
+| Missed-call list | Every missed call emailed to the owner with the number, the time and a drafted call-back note. A person calls back | Whoever answers the phone |
+| Paperwork from job notes | Notes turn into a work order, invoice text and a thank-you email, ready to review | Crew lead, office |
+| Staff helper | A private assistant that knows the shop's services, prices and policies, so a new hire can answer customer questions without guessing | New staff, owner's time |
+| Past-customer check-ins | Seasonal reminder emails drafted from the customer list, sent by the owner | Repeat business |
+| Monthly owner summary | One page: calls, reviews, what customers asked about, what to fix next | Owner |
+
+**Rules for every add-on:**
+- A person reviews anything before a customer sees it.
+- No chatbot and no AI voice answers customers.
+- No text messages before client #10 (TCPA). Email and the owner's own phone only.
+- Priced as a flat monthly add-on, one number per add-on, never a range.
+
+**When:** not before client #10, and only what current clients ask for. Their
+questions on the monthly call are the product list. Build the first add-on for
+the first three clients who ask for it, then price it.
+
+**Why this is the growth path:** the $10k plan runs on new sales. Add-ons grow
+what each existing client pays, without new leads, and every one makes the
+business more useful to the owner and the people who work there.
+
 ## Explicitly out of scope
 
 Social media. Blog posts. Ads. Logos and rebrands. Chatbots or AI receptionists that
