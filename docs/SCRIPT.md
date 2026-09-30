@@ -8,7 +8,9 @@ names one price. Most of the work is being curious and brief.
 
 ## Pocket version: HI, SAW, ASK, BOOK
 
-Four beats. Learn these, read the rest once.
+Four beats. Learn these, read the rest once. Printable versions:
+`output/Call_Script.pdf` (cold, call two, warm) and `output/Email_Scripts.pdf` (seven
+emails, including the day-7 last touch and the referral ask).
 
 **HI.** Be a person.
 > "Hey, is this [name]? Hey [name], it's Miles. I'll be straight with you, this is a
