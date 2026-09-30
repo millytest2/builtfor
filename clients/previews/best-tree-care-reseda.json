@@ -1,0 +1,132 @@
+{
+  "slug": "best-tree-care-reseda",
+  "biz": "The Best Tree Care Service",
+  "domain": "preview.builtformainstreet.com/best-tree-care-reseda",
+  "brand_color": "#2f5d3a",
+  "phone": "(818) 457-8619",
+  "email": "",
+  "street": "",
+  "city": "Reseda",
+  "state": "CA",
+  "zip": "",
+  "lat": "",
+  "lon": "",
+  "founded": "",
+  "owner": "",
+  "license": {
+    "label": "",
+    "number": ""
+  },
+  "trade": "tree service",
+  "trade_plural": "tree services",
+  "tagline": "Tree service in Reseda, day or night",
+  "lede": "Tree removal, trimming, stump grinding and palms across the West Valley. Open 24 hours, so a fallen tree never has to wait until Monday.",
+  "callbar": "Open 24 hours · Reseda, CA",
+  "about": "The Best Tree Care Service handles tree work across Reseda and nearby towns: tree removal, tree trimming & pruning, stump grinding, palm tree trimming, emergency tree service.",
+  "hours": {
+    "Mon": "00:00-23:59",
+    "Tue": "00:00-23:59",
+    "Wed": "00:00-23:59",
+    "Thu": "00:00-23:59",
+    "Fri": "00:00-23:59",
+    "Sat": "00:00-23:59",
+    "Sun": "00:00-23:59"
+  },
+  "services": [
+    {
+      "slug": "tree-removal",
+      "name": "Tree Removal",
+      "short": "Safe removal of any size tree, cleanup included.",
+      "body": "We take down trees of any size, including tight spots near houses, fences and power lines. We cut it in sections when there's no room to drop it, haul everything away and leave the yard clean.",
+      "price_from": "",
+      "faqs": [
+        [
+          "Do you haul everything away?",
+          "Yes. Branches, logs and debris all go with us unless you want the firewood."
+        ]
+      ]
+    },
+    {
+      "slug": "tree-trimming-pruning",
+      "name": "Tree Trimming & Pruning",
+      "short": "Shape, clearance and healthier trees.",
+      "body": "Trimming keeps branches off the roof and the wires, lets light into the yard and keeps the tree healthy. We cut to the right spot so the tree heals well instead of sprouting back weak.",
+      "price_from": "",
+      "faqs": [
+        [
+          "How often should trees be trimmed?",
+          "Most yard trees every two to three years. Fast growers and trees near the house more often."
+        ]
+      ]
+    },
+    {
+      "slug": "stump-grinding",
+      "name": "Stump Grinding",
+      "short": "Stumps ground below the surface.",
+      "body": "We grind the stump below ground so you can plant grass or build over it, and clean up the chips or leave them as mulch.",
+      "price_from": "",
+      "faqs": []
+    },
+    {
+      "slug": "palm-tree-trimming",
+      "name": "Palm Tree Trimming",
+      "short": "Dead fronds and seed pods cleared.",
+      "body": "Dead fronds are a fire and pest risk. We clear them, remove the seed pods and skin the trunk if you want the clean look.",
+      "price_from": "",
+      "faqs": []
+    },
+    {
+      "slug": "emergency-tree-service",
+      "name": "Emergency Tree Service",
+      "short": "Fallen tree or split limb? Call any time.",
+      "body": "When a tree comes down on a house, a car or the driveway, call right away. We make it safe first, then clear it.",
+      "price_from": "",
+      "faqs": []
+    }
+  ],
+  "towns": [
+    {
+      "slug": "reseda",
+      "name": "Reseda",
+      "note": "Our home base."
+    },
+    {
+      "slug": "tarzana",
+      "name": "Tarzana",
+      "note": "We work in Tarzana regularly."
+    },
+    {
+      "slug": "encino",
+      "name": "Encino",
+      "note": "We work in Encino regularly."
+    },
+    {
+      "slug": "van-nuys",
+      "name": "Van Nuys",
+      "note": "We work in Van Nuys regularly."
+    },
+    {
+      "slug": "northridge",
+      "name": "Northridge",
+      "note": "We work in Northridge regularly."
+    },
+    {
+      "slug": "winnetka",
+      "name": "Winnetka",
+      "note": "We work in Winnetka regularly."
+    }
+  ],
+  "reviews": [],
+  "review_note": "66 reviews on Yelp",
+  "faqs": [
+    [
+      "Do you give free estimates?",
+      "Call and tell us what you've got. We'll come look and give you a price before any work starts."
+    ],
+    [
+      "What areas do you cover?",
+      "Reseda, Tarzana, Encino, Van Nuys, Northridge, Winnetka."
+    ]
+  ],
+  "photos": []
+}

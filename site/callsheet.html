@@ -640,8 +640,10 @@
       + '<div class="say"><span class="lbl">2 · What you noticed</span>"'+esc(noticed(l))+'"</div>'
       + '<div class="stage">Only say "great reviews" if you saw them. Then listen.</div>'
       + '<div class="say"><span class="lbl">3 · Whatever they say</span>"Makes sense." Been meaning to: "It’s always the thing that gets pushed." Busy: "Most crews I talk to are. It’s more about the right work, like the bigger jobs." Someone’s on it: "Nice. How long’s that been in the works?"</div>'
-      + '<div class="say"><span class="lbl">4 · The preview</span>"I build websites for local businesses, and help them show up when people search on Google, ChatGPT and Claude. I could put together a quick preview of what yours could look like. Completely free to take a look. Want to see it?"</div>'
-      + '<div class="stage">Made one ahead? Say instead: "Well, I actually went ahead and put one together... Would you wanna see it?" Only when it exists.</div>'
+      + (/PREVIEW READY/.test(l.notes||'')
+          ? '<div class="say"><span class="lbl">4 · The preview (yours is ready)</span>"Well, I actually went ahead and put one together. I build websites for local businesses, and help them show up when people search on Google, ChatGPT and Claude. Would you wanna see it? Completely free to take a look."</div>'
+          : '<div class="say"><span class="lbl">4 · The preview</span>"I build websites for local businesses, and help them show up when people search on Google, ChatGPT and Claude. I could put together a quick preview of what yours could look like. Completely free to take a look. Want to see it?"</div>'
+            + '<div class="stage">Said yes? Tell Claude the lead number and the preview gets built. Only say "I made one" when it exists.</div>')
       + '<div class="say"><span class="lbl">5 · Book the look</span>"Great. What’s the best email to send it to? ... And I’ll walk you through it, ten minutes. '+day.charAt(0).toUpperCase()+day.slice(1)+' '+(SLOTS[nicheOf(l)]||SLOTS.trade)+', your time, which is better?" ... "Appreciate you. Talk then."</div>'
       + '<div class="stage">Tap Check booked, put the time and email in Notes and Details. Ask Claude for the preview.</div>'
       + '<details class="more"><summary>If they ask the price</summary><div><div class="say" style="margin-top:6px">"Totally fair. Take a look first, and if you like it, I’ll give you one straight price, and it won’t change."</div>'

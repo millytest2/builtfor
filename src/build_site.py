@@ -3,8 +3,10 @@
 Render a complete client site from one JSON file.
 
     python3 src/build_site.py clients/jims-upholstery.json
+    python3 src/build_site.py --preview clients/previews/<slug>.json
 
 Writes dist/<slug>/ — index.html, a page per service, a page per town.
+--preview writes only the homepage to dist/previews/<slug>/, marked as a preview.
 
 The point of this file: the JSON-LD below is what makes an assistant able to
 name the business. It has to be correct and identical on every site we ship.
@@ -156,6 +158,11 @@ def build_home(c, base):
         for r in c.get("reviews", []))
     pics = "".join(f'<img src="{e(p["src"])}" alt="{e(p["alt"])}" loading="lazy" width="800" height="600">'
                    for p in c.get("photos", []))
+    trust = "".join(f"<span>{x}</span>" for x in [
+        ("★ " + e(c["review_note"])) if c.get("review_note")
+        else (f'★ {len(c["reviews"])} reviews' if c.get("reviews") else ""),
+        f'In business since {e(c["founded"])}' if c.get("founded") else "",
+        "Free estimates"] if x)
     body = f"""
 <section class="hero" style="border-top:none"><div class="wrap">
   <h1>{e(c["tagline"])}</h1>
@@ -165,9 +172,7 @@ def build_home(c, base):
     <a class="btn ghost" href="#services">See what we do</a>
   </div>
   <div class="trust">
-    <span>★ {len(c.get("reviews", []))} reviews</span>
-    <span>In business since {e(c.get("founded", ""))}</span>
-    <span>Free estimates</span>
+    {trust}
   </div>
 </div></section>
 
@@ -295,8 +300,34 @@ def build(path):
         print("   ", r)
 
 
+PREVIEW_BAR = ('<div style="background:#16191a;color:#fff;font:14px/1.4 system-ui,sans-serif;'
+               'padding:10px 16px;text-align:center">Preview made for {biz} by Built for Main Street. '
+               'Not live yet. Wording and photos get checked with you first.</div>')
+
+
+def build_preview(path):
+    """The free one-page preview used to sell: homepage only, links that stay on
+    the page, a banner saying it is a preview. Never the full build."""
+    c = json.load(open(path))
+    base = f'https://{c["domain"]}/'
+    out = os.path.join(ROOT, "dist", "previews", c["slug"])
+    os.makedirs(out, exist_ok=True)
+    page = build_home(c, base)
+    page = re.sub(r'href="services/[^"]+"', 'href="#services"', page)
+    page = re.sub(r'href="areas/[^"]+"', 'href="#areas"', page)
+    page = page.replace('<link rel="canonical"', '<meta name="robots" content="noindex"><link rel="canonical"', 1)
+    page = page.replace("<body>", "<body>" + PREVIEW_BAR.format(biz=e(c["biz"])), 1)
+    open(os.path.join(out, "index.html"), "w").write(page)
+    print(f'{c["biz"]} → dist/previews/{c["slug"]}/index.html')
+
+
 if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        sys.exit("usage: python3 src/build_site.py clients/<name>.json")
-    for p in sys.argv[1:]:
-        build(p)
+    args = sys.argv[1:]
+    if not args:
+        sys.exit("usage: python3 src/build_site.py [--preview] clients/<name>.json")
+    if args[0] == "--preview":
+        for p in args[1:]:
+            build_preview(p)
+    else:
+        for p in args:
+            build(p)

@@ -1,0 +1,124 @@
+{
+  "slug": "reyes-tree-services",
+  "biz": "Reyes Tree Services",
+  "domain": "preview.builtformainstreet.com/reyes-tree-services",
+  "brand_color": "#2f5d3a",
+  "phone": "(818) 341-3786",
+  "email": "",
+  "street": "8754 Oak Park Ave",
+  "city": "Northridge",
+  "state": "CA",
+  "zip": "",
+  "lat": "",
+  "lon": "",
+  "founded": "",
+  "owner": "",
+  "license": {
+    "label": "",
+    "number": ""
+  },
+  "trade": "tree service",
+  "trade_plural": "tree services",
+  "tagline": "Family-owned tree service in Northridge for 25 years",
+  "lede": "Removals, trimming, stump grinding and palms, done by the same family for more than 25 years. Call for an estimate.",
+  "callbar": "Family owned · Northridge, CA",
+  "about": "Reyes Tree Services handles tree work across Northridge and nearby towns: tree removal, tree trimming & pruning, stump grinding, palm tree trimming.",
+  "hours": {
+    "Mon": "8:00-17:00",
+    "Tue": "8:00-17:00",
+    "Wed": "8:00-17:00",
+    "Thu": "8:00-17:00",
+    "Fri": "8:00-17:00",
+    "Sat": "8:00-17:00",
+    "Sun": "Closed"
+  },
+  "services": [
+    {
+      "slug": "tree-removal",
+      "name": "Tree Removal",
+      "short": "Safe removal of any size tree, cleanup included.",
+      "body": "We take down trees of any size, including tight spots near houses, fences and power lines. We cut it in sections when there's no room to drop it, haul everything away and leave the yard clean.",
+      "price_from": "",
+      "faqs": [
+        [
+          "Do you haul everything away?",
+          "Yes. Branches, logs and debris all go with us unless you want the firewood."
+        ]
+      ]
+    },
+    {
+      "slug": "tree-trimming-pruning",
+      "name": "Tree Trimming & Pruning",
+      "short": "Shape, clearance and healthier trees.",
+      "body": "Trimming keeps branches off the roof and the wires, lets light into the yard and keeps the tree healthy. We cut to the right spot so the tree heals well instead of sprouting back weak.",
+      "price_from": "",
+      "faqs": [
+        [
+          "How often should trees be trimmed?",
+          "Most yard trees every two to three years. Fast growers and trees near the house more often."
+        ]
+      ]
+    },
+    {
+      "slug": "stump-grinding",
+      "name": "Stump Grinding",
+      "short": "Stumps ground below the surface.",
+      "body": "We grind the stump below ground so you can plant grass or build over it, and clean up the chips or leave them as mulch.",
+      "price_from": "",
+      "faqs": []
+    },
+    {
+      "slug": "palm-tree-trimming",
+      "name": "Palm Tree Trimming",
+      "short": "Dead fronds and seed pods cleared.",
+      "body": "Dead fronds are a fire and pest risk. We clear them, remove the seed pods and skin the trunk if you want the clean look.",
+      "price_from": "",
+      "faqs": []
+    }
+  ],
+  "towns": [
+    {
+      "slug": "northridge",
+      "name": "Northridge",
+      "note": "Our home base."
+    },
+    {
+      "slug": "granada-hills",
+      "name": "Granada Hills",
+      "note": "We work in Granada Hills regularly."
+    },
+    {
+      "slug": "chatsworth",
+      "name": "Chatsworth",
+      "note": "We work in Chatsworth regularly."
+    },
+    {
+      "slug": "porter-ranch",
+      "name": "Porter Ranch",
+      "note": "We work in Porter Ranch regularly."
+    },
+    {
+      "slug": "reseda",
+      "name": "Reseda",
+      "note": "We work in Reseda regularly."
+    },
+    {
+      "slug": "north-hills",
+      "name": "North Hills",
+      "note": "We work in North Hills regularly."
+    }
+  ],
+  "reviews": [],
+  "review_note": "97 reviews on Yelp",
+  "faqs": [
+    [
+      "Do you give free estimates?",
+      "Call and tell us what you've got. We'll come look and give you a price before any work starts."
+    ],
+    [
+      "What areas do you cover?",
+      "Northridge, Granada Hills, Chatsworth, Porter Ranch, Reseda, North Hills."
+    ]
+  ],
+  "photos": []
+}
