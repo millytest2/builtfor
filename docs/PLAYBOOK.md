@@ -120,7 +120,7 @@ customers from about 5 towns. It lands in **Standard: $800, then $199 a month**.
 - Buyout at $2,000 after 12 months.
 - Edits are reasonable, not unlimited.
 - Photos are due within 30 days of payment.
-- Money and photos come first; nothing gets built on spec.
+- Money and photos come first; nothing gets built on spec. A free one-page preview to sell is fine.
 
 **What we don't do**: ads, social media, chatbots, AI receptionists, SEO retainers,
 long contracts. We never text before client #10. We never promise rankings, leads or

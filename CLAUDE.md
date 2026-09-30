@@ -56,6 +56,9 @@ Cancel with 30 days' notice. Buyout of the site at $2,000 after 12 months.
 - **Never re-measure rankings on day one.** They have not moved. Saying so is
   what makes the month-three number believable.
 - **Never build on spec.** Money and photos first, then the two-week clock starts.
+  The one exception is a **free one-page preview** used to sell: the homepage only,
+  from public info, no photos taken from their listings, shared by private link and
+  never on their domain. Say "I put one together" only when it exists.
 - **Business money moves through the business account.** Never personal Venmo,
   Zelle or Cash App.
 - **Edits are "reasonable", never "unlimited".** Text, photos, hours, prices,

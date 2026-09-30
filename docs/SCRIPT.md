@@ -6,50 +6,49 @@ plumber". Emails go out from hello@builtformainstreet.com.
 **Call one books a free check. It does not sell.** Call two shows the check and
 names one price. Most of the work is being curious and brief.
 
-## Pocket version: the flow
+## Pocket version: the heads-up
 
-Four steps, one conversation. Calm, curious, in no rush. Let them talk more than you.
-Printable versions: `output/Call_Script.pdf` and `output/Email_Scripts.pdf`.
+One goal on call one: they say yes to a free preview of their website, and you book
+ten minutes to show it. Printable: `output/Call_Script.pdf` and `output/Email_Scripts.pdf`.
 
-**1. Open.**
-> "Hey, is this [name]? ... Hey [name], Miles here, with Built for Main Street. I'll be
-> honest, it's a cold call, but it's a quick one. Got a sec, or did I catch you in the
-> middle of a job?"
+**1. Open** (alternate A and B, note which in the lead)
+> A: "Hey, is this [name]? ... How's it going, [name]? My name's Miles."
+> B: "[Name], quick question: would you hang up on me if I told you this was a cold
+> call?" ... "Ha, fair. Give me 20 seconds, and if it's not useful, hang up. Deal?"
 
-**2. Why you're calling.**
-> No website: "So I'm local, and I help crews like yours get found online. I was
-> looking up tree removal in [town] this morning, the way a homeowner would, and asked
-> ChatGPT who to call. It gave me [name] and [name]. You didn't come up, which
-> surprised me with the reviews you've got. Is not having a website on purpose, or
-> just something that never made the list?"
+**2. What you noticed**
+> "I was just looking around [town] and noticed you guys have some great reviews, but
+> no website or place to book. Were you gonna get around to that soon?"
+> Site with a problem: "...I was on your site too, and [the problem]. Is someone
+> looking after the site for you?"
 
-> Site with a problem: "I was on your website this morning and noticed [the problem].
-> Figured you'd want to know. Who put the site together for you?"
+Only say "great reviews" if you saw them.
 
-**3. Get curious.**
-> "How are most of your jobs finding you right now?"
-> "If you could get more of one kind of job, what would it be?"
-> "When someone does look you up, do most of them just call, or do some slip through?"
+**3. Whatever they say:** "Makes sense."
 
-**4. Suggest the check.**
-> "Here's what I'd suggest. Let me put together a quick check for you, ten minutes.
-> I'll show you what a homeowner sees when they look you up, who's showing up
-> instead, and what I'd fix first. No cost. Would tomorrow morning work, or is the
-> afternoon better?" ... "Perfect. What's the best email for you?"
+**4. The preview**
+> "I build websites for local businesses, and help them show up when people search on
+> Google, ChatGPT and Claude. I could put together a quick preview of what yours could
+> look like. Completely free to take a look. Want to see it?"
+> Made one ahead: "Well, I actually went ahead and put one together. Would you wanna
+> see it?" Only when it exists.
 
-**If they ask the price:** "Totally fair. It depends on what you actually need, and
-I'd rather not throw out a number before I've looked properly. After the check you'll
-get one straight price, and it won't change."
+**5. Book the look**
+> "Great. What's the best email to send it to? And I'll walk you through it, ten
+> minutes. Would tomorrow morning work, or is the afternoon better?"
 
-**Call two:** walk them through what came up, ask "What do you make of that?", say
-what you'd do, name the one plan you picked before the call, then stay quiet. "The
-domain is yours, no long contract. Want me to send over the agreement and the payment
-link?"
+**If they ask the price:** "Totally fair. Take a look first, and if you like it, I'll
+give you one straight price, and it won't change."
+
+**Call two:** they pull up the preview, you ask "What do you think?", show what ChatGPT
+said about who to call in their town, say what you'd finish, name the one plan you
+picked before the call, then stay quiet. "The domain is yours, no long contract. Want
+me to send over the agreement and the payment link?"
 
 **Voicemail:**
-> "Hey [name], it's Miles with Built for Main Street. I was looking up tree services
-> in [town] this morning and noticed something about how [business] shows up online.
-> Worth a two-minute chat. Give me a call at [number]. Again, [number]. Have a good one."
+> "Hey [name], it's Miles with Built for Main Street. I was looking around [town] and
+> noticed you've got some great reviews but no website. I've got an idea for one, free
+> to take a look. Give me a call at [number]. Again, [number]. Have a good one."
 
 ## Who you are on the call
 
