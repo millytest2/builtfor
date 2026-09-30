@@ -202,6 +202,7 @@
       <div class="tally">Offers <b id="t-off">0</b></div>
       <div class="tally">Sales <b id="t-won">0</b></div>
       <div class="tally sep">Recurring <b id="t-mrr">$0</b>/mo</div>
+      <div class="tally sep" id="t-sheet" hidden></div>
     </div>
     <div style="display:flex; gap:7px; flex-wrap:wrap">
       <button class="btn sm" id="b-score">Scorecard</button>
@@ -249,8 +250,8 @@
              'name_known','name_reply','site_checked','status','notes','state','niche','list','log','next','plan'];
   var PLANS = {small:{name:'Small', setup:600, mo:99}, standard:{name:'Standard', setup:800, mo:199}, bigger:{name:'Bigger', setup:1000, mo:300}};
   var GOAL = 10000;
-  var STATUSES = ['new','noanswer','vm','emailed','called','booked','offered','won','dead'];
-  var SLABEL = {'new':'new','noanswer':'no answer','vm':'voicemail','emailed':'emailed','called':'talked',
+  var STATUSES = ['new','noanswer','vm','hungup','emailed','called','booked','offered','won','dead'];
+  var SLABEL = {'new':'new','noanswer':'no answer','vm':'voicemail','hungup':'hung up','emailed':'emailed','called':'talked',
                 'booked':'check booked','offered':'offer made','won':'sold','dead':'dead'};
   var leads = [], selId = null, filter = 'all', db = null, coll = null, ready = false;
   var scColl = null, scNotes = Object.create(null), scPeriod = 'week';
@@ -415,10 +416,10 @@
     return Math.max(0, Math.min(100, s));
   }
   function checked(l){ return !!(l.chatgpt || l.gemini || l.claude || l.name_known); }
-  function open(l){ return inFocus(l) && ['new','noanswer','vm','emailed'].indexOf(l.status||'new') >= 0; }
+  function open(l){ return inFocus(l) && ['new','noanswer','vm','hungup','emailed'].indexOf(l.status||'new') >= 0; }
 
   // ---- the scorecard: every status tap is logged with a time, and the numbers are counted from that log ----
-  var TOUCH = ['noanswer','vm','emailed','called','booked','offered','won','dead'];
+  var TOUCH = ['noanswer','vm','hungup','emailed','called','booked','offered','won','dead'];
   function logOf(l){ try{ var a = JSON.parse(l.log||'[]'); return Array.isArray(a) ? a : []; }catch(e){ return []; } }
   function dayKey(d){ return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2); }
   function weekStart(d){ var x = new Date(d); x.setHours(0,0,0,0); x.setDate(x.getDate() - ((x.getDay()+6)%7)); return x; }
@@ -464,12 +465,53 @@
     var o = {}; COL.forEach(function(c){ o[c]=''; }); o.status='new'; return o;
   }
 
+  function weekdaysOut(n){
+    var d = new Date(); while(n > 0){ d.setDate(d.getDate()+1); if(d.getDay()!==0 && d.getDay()!==6) n--; }
+    return dayKey(d);
+  }
+
+  // ---- Google Sheet sync: every save also goes to the owner's Apps Script web app ----
+  var SHEET_COLS = ['id','business','phone','city','state','status','touches','last_touch','next','plan','email','website','notes','updated'];
+  function sheetRow(l){
+    var lg = logOf(l), last = lg.length ? lg[lg.length-1].t : '';
+    var o = {};
+    SHEET_COLS.forEach(function(c){ o[c] = String(l[c]||''); });
+    o.status = SLABEL[l.status||'new'] || l.status || 'new';
+    o.touches = String(lg.filter(function(e){ return TOUCH.indexOf(e.s) >= 0; }).length);
+    o.last_touch = last ? last.slice(0,16).replace('T',' ') : '';
+    return o;
+  }
+  function sheetLight(ok, msg){
+    var el = $('t-sheet'); if(!el) return;
+    el.hidden = !pref('sheet');
+    el.innerHTML = 'Sheet <b style="color:'+(ok?'var(--good)':'var(--signal)')+'">'+esc(msg)+'</b>';
+  }
+  function syncSheet(rows){
+    var url = pref('sheet'); if(!url) return Promise.resolve(false);
+    var payload = {k: pref('sheetkey'), rows: rows.map(sheetRow)};
+    var t = new Date().toLocaleTimeString([], {hour:'numeric', minute:'2-digit'});
+    return fetch(url, {method:'POST', mode:'no-cors', headers:{'Content-Type':'text/plain'}, body: JSON.stringify(payload)})
+      .then(function(){ sheetLight(true, 'sent '+t); return true; })
+      .catch(function(){
+        // blocked from posting: try a small GET per row, notes trimmed so the address stays short
+        try{
+          rows.forEach(function(l){
+            var r = sheetRow(l); r.notes = r.notes.slice(0,400);
+            new Image().src = url + (url.indexOf('?')>=0?'&':'?') + 'd=' + encodeURIComponent(JSON.stringify({k: pref('sheetkey'), rows:[r]}));
+          });
+          sheetLight(true, 'sent '+t+' (backup route)');
+          return true;
+        }catch(e){ sheetLight(false, 'not reaching it: use Export, Copy for Google Sheets'); return false; }
+      });
+  }
+
   // ---- persistence ----
   function save(l){
     if(!coll){ return Promise.resolve(); }
     var body = {}; COL.forEach(function(c){ body[c] = l[c]||''; });
     body.updated = new Date().toISOString();
     l.updated = body.updated;
+    syncSheet([l]);
     return coll.doc(l.id).set(body).catch(function(){ toast('Could not save'); });
   }
   function removeLead(id){
@@ -488,14 +530,14 @@
   }
 
   // ---- render ----
-  var STAGE = {'new':0,'noanswer':1,'vm':1,'emailed':1,'called':2,'booked':3,'offered':4,'won':5,'dead':6};
+  var STAGE = {'new':0,'noanswer':1,'vm':1,'hungup':1,'emailed':1,'called':2,'booked':3,'offered':4,'won':5,'dead':6};
   function visible(){
     return leads.filter(function(l){
       if(filter==='old') return !inFocus(l);
       if(!inFocus(l)) return false;
       if(filter==='now') return open(l) && windowOf(l).rank >= 2;
       if(filter==='hook') return !!hookOf(l) && l.status!=='dead';
-      if(filter==='follow') return l.status==='noanswer' || l.status==='vm' || l.status==='emailed';
+      if(filter==='follow') return l.status==='noanswer' || l.status==='vm' || l.status==='hungup' || l.status==='emailed';
       if(filter==='called') return l.status==='called';
       if(filter==='booked') return l.status==='booked';
       if(filter==='offered') return l.status==='offered' || l.status==='won';
@@ -565,7 +607,7 @@
             '<span class="win '+w.cls+'"><i></i>'+esc(w.txt)+'</span>',
             l.next && l.status!=='dead' && l.status!=='won' ? '<span class="'+(isDue(l)?'due':'')+'">next '+esc(shortDate(l.next))+'</span>' : '',
             l.status==='won' && PLANS[l.plan] ? esc(PLANS[l.plan].name)+' $'+PLANS[l.plan].mo+'/mo' : ''].filter(Boolean).join(' · ')+'</div></div>'
-        + '<span class="pill '+(st==='noanswer'||st==='vm'||st==='emailed'?'called':st)+'">'+esc(SLABEL[st]||st)+'</span></div>';
+        + '<span class="pill '+(st==='noanswer'||st==='vm'||st==='hungup'||st==='emailed'?'called':st)+'">'+esc(SLABEL[st]||st)+'</span></div>';
     });
     $('list').innerHTML = html;
   }
@@ -831,8 +873,9 @@
       var b = e.target.closest('button'); if(!b) return;
       l.status = b.dataset.s;
       if(l.status !== 'new'){ var lg = logOf(l); lg.push({s:l.status, t:new Date().toISOString()}); l.log = JSON.stringify(lg); }
+      if(l.status === 'hungup' && !l.next){ l.next = weekdaysOut(3); }
       save(l); render();
-      toast(SLABEL[l.status] + ' · logged');
+      toast(l.status==='hungup' ? 'Hung up · logged. Try again '+shortDate(l.next)+' with the other opener' : SLABEL[l.status] + ' · logged');
     });
     $('panel').querySelectorAll('[data-gv]').forEach(function(a){
       a.addEventListener('click', function(){
@@ -960,10 +1003,19 @@
       + visible().length + ' lead'+(visible().length===1?'':'s')+' in the current filter, scored and sorted. '
       + 'Copy this into a spreadsheet.</p>'
       + '<textarea id="exp" style="min-height:200px; font-family:var(--font-m); font-size:11.5px" readonly></textarea>'
-      + '<div style="margin-top:12px; display:flex; gap:8px"><button class="btn" id="exp-copy">Copy all</button>'
-      + '<button class="btn ghost" id="exp-x">Close</button></div>';
+      + '<div style="margin-top:12px; display:flex; gap:8px; flex-wrap:wrap"><button class="btn" id="exp-copy">Copy all</button>'
+      + '<button class="btn" id="exp-tsv">Copy for Google Sheets</button>'
+      + '<button class="btn ghost" id="exp-x">Close</button></div>'
+      + '<p class="hint">Copy for Google Sheets: click cell A1 in your Sheet and paste. Every lead lands in its own row and column.</p>';
     $('dlg').showModal();
     $('exp').value = toCSV();
+    $('exp-tsv').onclick = function(){
+      var rows = leads.filter(inFocus).map(sheetRow);
+      var tsv = [SHEET_COLS.join('\t')].concat(rows.map(function(r){
+        return SHEET_COLS.map(function(c){ return String(r[c]).replace(/[\t\n\r]+/g,' '); }).join('\t'); })).join('\n');
+      navigator.clipboard.writeText(tsv).then(function(){ toast('Copied '+rows.length+' leads. Paste into cell A1'); },
+        function(){ toast('Copy failed'); });
+    };
     $('exp-copy').onclick = function(){
       $('exp').select();
       navigator.clipboard.writeText(toCSV()).then(function(){ toast('Copied'); },
@@ -1038,13 +1090,24 @@
       + '<div class="fields">'
       + '<div><label for="s-cb">Call-back number</label><input id="s-cb" placeholder="Google Voice number" value="'+esc(pref('cb'))+'"></div>'
       + '<div><label for="s-addr">Mailing address</label><input id="s-addr" placeholder="Required in sales emails" value="'+esc(pref('addr'))+'"></div>'
+      + '<div><label for="s-sheet">Google Sheet sync URL</label><input id="s-sheet" placeholder="https://script.google.com/macros/s/.../exec" value="'+esc(pref('sheet'))+'"></div>'
+      + '<div><label for="s-sheetkey">Sheet key (the word in the script)</label><input id="s-sheetkey" placeholder="your key word" value="'+esc(pref('sheetkey'))+'"></div>'
       + '<div><label for="s-dial">Dial with</label><select id="s-dial"><option value="phone"'+(pref('dial')!=='gv'?' selected':'')+'>Phone app (set it to your business line)</option><option value="gv"'+(pref('dial')==='gv'?' selected':'')+'>Google Voice (once it works)</option></select></div>'
       + '</div>'
+      + '<div style="margin-top:10px"><button class="btn sm" id="s-syncall">Send every lead to the Sheet now</button></div>'
       + '<p class="hint">Kept in this browser only, so set them once on each phone or laptop you use. With Google Voice, the Call button opens Voice with the number filled in and copies it too, so your own cell shows on nobody’s caller ID. The address can be a PO box; the law requires one in sales emails.</p>';
     $('dlg').showModal();
     $('s-cb').oninput = function(){ pref('cb', this.value.trim()); renderPanel(); };
     $('s-addr').oninput = function(){ pref('addr', this.value.trim()); };
     $('s-dial').onchange = function(){ pref('dial', this.value); renderPanel(); };
+    $('s-sheet').oninput = function(){ pref('sheet', this.value.trim()); sheetLight(true, 'set'); };
+    $('s-sheetkey').oninput = function(){ pref('sheetkey', this.value.trim()); };
+    $('s-syncall').onclick = function(){
+      if(!pref('sheet')){ toast('Paste the Sheet sync URL first'); return; }
+      var all = leads.filter(inFocus), i = 0;
+      (function next(){ if(i >= all.length){ toast('Sent '+all.length+' leads to the Sheet'); return; }
+        syncSheet(all.slice(i, i+20)).then(function(){ i += 20; setTimeout(next, 800); }); })();
+    };
   }
 
   // ---- the scorecard, for the coach call ----
@@ -1144,6 +1207,7 @@
     if(l && c){ var w = windowOf(l); c.className = 'win '+w.cls; c.innerHTML = '<i></i>Their time '+esc(w.txt); } }, 60000);
 
   render();
+  if(pref('sheet')) sheetLight(true, 'on');
   banner('Connecting to your saved list...');
 
   (async function(){
