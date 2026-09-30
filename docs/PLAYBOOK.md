@@ -205,6 +205,14 @@ month 7:
   break or Saturday, or skip them. The call sheet's "Call now" filter shows who is
   in a window at any moment.
 
+**Target set September 30, 2026: $10k in one month by late January (day 120).**
+Counting setups and monthly together, that needs about 6 new clients a month starting
+in October, so about 24 clients by then. At about 1 sale per 100 touches that is 600
+touches a month: 30 a weekday, plus warm referrals. At three tries per lead it uses
+about 200 new leads a month, so the lead finder and the "has a site that doesn't work"
+leads both have to be in play by week 3. $10k a month from the monthly alone is about
+50 clients, which is a year-one goal, not a 120-day one.
+
 **The second bottleneck is lead supply.** 75 touches a week at three tries per lead
 uses about 25 new leads a week. At about 1 in 2 qualifying, that means checking 50
 shops a week by hand. Adding `GOOGLE_PLACES_API_KEY` in the environment settings
