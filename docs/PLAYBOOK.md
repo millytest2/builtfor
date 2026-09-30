@@ -205,13 +205,23 @@ month 7:
   break or Saturday, or skip them. The call sheet's "Call now" filter shows who is
   in a window at any moment.
 
-**Target set September 30, 2026: $10k in one month by late January (day 120).**
-Counting setups and monthly together, that needs about 6 new clients a month starting
-in October, so about 24 clients by then. At about 1 sale per 100 touches that is 600
-touches a month: 30 a weekday, plus warm referrals. At three tries per lead it uses
-about 200 new leads a month, so the lead finder and the "has a site that doesn't work"
-leads both have to be in play by week 3. $10k a month from the monthly alone is about
-50 clients, which is a year-one goal, not a 120-day one.
+**Target set September 30, 2026: $10k in one month by late January (month 4).**
+A month's revenue is that month's setup fees plus the monthly fees of clients already
+live (about $820 and $209 on average). The ramp that gets there:
+
+| Month | New clients | Setup fees | Monthly fees | Month total |
+|---|---|---|---|---|
+| October | 3 | $2,460 | $0 | about $2,500 |
+| November | 6 | $4,920 | $627 | about $5,500 |
+| December | 8 | $6,560 | $1,881 | about $8,400 |
+| January | 9 | $7,380 | $3,553 | about $10,900 |
+
+That is 26 clients by the end of January. At about 1 sale per 100 cold touches it
+needs 30 touches a weekday from November, plus Saturday walk-ins and referrals, which
+convert far better. At three tries per lead it uses about 200 new leads a month, so the
+lead finder and the "has a site that doesn't work" leads both have to be in play by
+week 3. At 5 new clients a month, $10k lands around month 6 instead. $10k from the
+monthly fees alone is about 50 clients: a year-one goal.
 
 **The second bottleneck is lead supply.** 75 touches a week at three tries per lead
 uses about 25 new leads a week. At about 1 in 2 qualifying, that means checking 50
