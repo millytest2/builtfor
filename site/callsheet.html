@@ -219,6 +219,7 @@
     <div>
       <div id="banner" class="banner" hidden></div>
       <div class="plan" id="plan"></div>
+      <div style="display:flex; justify-content:flex-end; margin-bottom:10px"><button class="btn" id="b-add2">+ Add lead</button></div>
       <div class="bar" id="filters">
         <button class="chip on" data-f="all">Best first</button>
         <button class="chip" data-f="now">Call now</button>
@@ -291,8 +292,8 @@
   // When the town is not listed, the state decides. Only states that sit in one zone.
   var STATE_TZ = {CA:'America/Los_Angeles', WA:'America/Los_Angeles', NV:'America/Los_Angeles', AZ:'America/Phoenix',
     CO:'America/Denver', UT:'America/Denver', NM:'America/Denver', MT:'America/Denver', WY:'America/Denver',
-    IL:'America/Chicago', OK:'America/Chicago', MS:'America/Chicago', AL:'America/Chicago', IA:'America/Chicago', MO:'America/Chicago', WI:'America/Chicago', MN:'America/Chicago', LA:'America/Chicago', AR:'America/Chicago',
-    NY:'America/New_York', PA:'America/New_York', NJ:'America/New_York', CT:'America/New_York', MA:'America/New_York', NC:'America/New_York', SC:'America/New_York', GA:'America/New_York', VA:'America/New_York', OH:'America/New_York', MD:'America/New_York', ME:'America/New_York', NH:'America/New_York', VT:'America/New_York', RI:'America/New_York', DE:'America/New_York', WV:'America/New_York'};
+    IL:'America/Chicago', KS:'America/Chicago', TX:'America/Chicago', OK:'America/Chicago', MS:'America/Chicago', AL:'America/Chicago', IA:'America/Chicago', MO:'America/Chicago', WI:'America/Chicago', MN:'America/Chicago', LA:'America/Chicago', AR:'America/Chicago',
+    NY:'America/New_York', IN:'America/New_York', MI:'America/New_York', FL:'America/New_York', PA:'America/New_York', NJ:'America/New_York', CT:'America/New_York', MA:'America/New_York', NC:'America/New_York', SC:'America/New_York', GA:'America/New_York', VA:'America/New_York', OH:'America/New_York', MD:'America/New_York', ME:'America/New_York', NH:'America/New_York', VT:'America/New_York', RI:'America/New_York', DE:'America/New_York', WV:'America/New_York'};
   function zoneOf(l){
     var c = String(l.city||'').toLowerCase().trim();
     for(var z in ZONES){ if(ZONES[z].cities.indexOf(c) >= 0) return z; }
@@ -681,7 +682,7 @@
       + '<div class="stage">B, if they say "probably" or laugh: "Ha, fair. Give me 20 seconds, and if it’s not useful, hang up. Deal?" Write A or B in Notes.</div>'
       + '<div class="say"><span class="lbl">2 · What you noticed</span>"'+esc(noticed(l))+'"</div>'
       + '<div class="stage">Only say "great reviews" if you saw them. Then listen.</div>'
-      + '<div class="say"><span class="lbl">3 · Whatever they say</span>"Makes sense." Been meaning to: "It’s always the thing that gets pushed." Busy: "Most crews I talk to are. It’s more about the right work, like the bigger jobs." Someone’s on it: "Nice. How long’s that been in the works?"</div>'
+      + '<div class="say"><span class="lbl">3 · Whatever they say</span>"Makes sense." Been meaning to: "It’s always the thing that gets pushed." Busy: "Most crews I talk to are. It’s more about the right work, like the bigger jobs." Someone’s on it: "Nice. How long’s that been in the works?" Someone already made one (AI, a customer): "Oh nice. When’s it going live? Want a free second look once it’s up?"</div>'
       + (/PREVIEW READY/.test(l.notes||'')
           ? '<div class="say"><span class="lbl">4 · The preview (yours is ready)</span>"Well, I actually went ahead and put one together. I build websites for local businesses, and help them show up when people search on Google, ChatGPT and Claude. Would you wanna see it? Completely free to take a look."</div>'
           : '<div class="say"><span class="lbl">4 · The preview</span>"I build websites for local businesses, and help them show up when people search on Google, ChatGPT and Claude. I could put together a quick preview of what yours could look like. Completely free to take a look. Want to see it?"</div>'
@@ -974,25 +975,43 @@
   }
   function openAdd(){
     $('d-title').textContent = 'Add lead';
+    var opts = STATUSES.map(function(x){ return '<option value="'+x+'">'+SLABEL[x]+'</option>'; }).join('');
     $('d-body').innerHTML =
       '<div class="fields">'
-      + '<div style="grid-column:1/-1"><label for="a-b">Business name</label><input id="a-b" placeholder="Valley Gate &amp; Iron"></div>'
-      + '<div><label for="a-p">Phone</label><input id="a-p" placeholder="(818) 555-0142"></div>'
-      + '<div><label for="a-c">City</label><input id="a-c" placeholder="Sun Valley"></div>'
-      + '<div><label for="a-t">Trade</label><input id="a-t" placeholder="gates and ironwork"></div>'
-      + '<div><label for="a-w">Website (blank = none)</label><input id="a-w" placeholder=""></div>'
+      + '<div style="grid-column:1/-1"><label for="a-b">Business name</label><input id="a-b" placeholder="Ahles Automotive"></div>'
+      + '<div><label for="a-p">Phone</label><input id="a-p" inputmode="tel" placeholder="(316) 555-0142"></div>'
+      + '<div><label for="a-e">Email</label><input id="a-e" inputmode="email" placeholder=""></div>'
+      + '<div><label for="a-c">City</label><input id="a-c" placeholder="Rose Hill"></div>'
+      + '<div><label for="a-s">State</label><input id="a-s" placeholder="KS" maxlength="2" style="text-transform:uppercase"></div>'
+      + '<div><label for="a-n">Kind</label><select id="a-n"><option value="tree">Tree service</option><option value="auto">Auto repair</option><option value="trade">Other local business</option></select></div>'
+      + '<div><label for="a-st">Status</label><select id="a-st">'+opts+'</select></div>'
+      + '<div style="grid-column:1/-1"><label for="a-w">Website (blank = none)</label><input id="a-w" placeholder=""></div>'
+      + '<div style="grid-column:1/-1"><label for="a-m">Maps or search link (optional)</label><input id="a-m" placeholder="Paste the Google Maps link"></div>'
+      + '<div style="grid-column:1/-1"><label for="a-no">Notes</label><textarea id="a-no" placeholder="Who you talked to, what they said, what happens next."></textarea></div>'
+      + '<div><label for="a-nx">Next step on</label><input id="a-nx" type="date"></div>'
       + '</div>'
-      + '<div style="margin-top:12px; display:flex; gap:8px"><button class="btn" id="a-go">Add</button>'
-      + '<button class="btn ghost" id="a-x">Cancel</button></div>';
+      + '<div style="margin-top:12px; display:flex; gap:8px"><button class="btn" id="a-go">Add lead</button>'
+      + '<button class="btn ghost" id="a-x">Cancel</button></div>'
+      + '<p class="hint">Found them on a call or walking by? Add them here. It saves to the list and the Google Sheet.</p>';
     $('dlg').showModal();
     $('a-go').onclick = function(){
       var o = blank();
       o.business = $('a-b').value.trim();
       if(!o.business){ toast('Name it first'); return; }
-      o.phone = $('a-p').value.trim(); o.city = $('a-c').value.trim();
-      o.trade = $('a-t').value.trim(); o.website = $('a-w').value.trim();
+      o.phone = $('a-p').value.trim(); o.email = $('a-e').value.trim();
+      o.city = $('a-c').value.trim(); o.state = $('a-s').value.trim().toUpperCase();
+      o.niche = $('a-n').value; o.trade = {tree:'tree service', auto:'auto repair', trade:''}[o.niche];
+      o.website = $('a-w').value.trim(); o.maps = $('a-m').value.trim();
+      o.notes = $('a-no').value.trim(); o.next = $('a-nx').value; o.list = 'focus';
+      o.site_checked = o.website ? 'has' : '';
+      o.status = $('a-st').value;
+      if(o.status !== 'new') o.log = JSON.stringify([{s:o.status, t:new Date().toISOString()}]);
+      if(o.status === 'hungup' && !o.next) o.next = weekdaysOut(3);
+      var dupe = o.phone && leads.some(function(x){ return x.phone.replace(/\D/g,'') === o.phone.replace(/\D/g,''); });
+      if(dupe){ toast('That phone is already on the list'); return; }
       o.id = 'p' + Date.now().toString(36) + Math.random().toString(36).slice(2,7);
       leads.push(o); selId = o.id; save(o); render(); $('dlg').close();
+      toast('Added ' + o.business);
     };
     $('a-x').onclick = function(){ $('dlg').close(); };
   }
@@ -1032,6 +1051,8 @@
       ['"I use Angi."', '"Makes sense. How’s it been? ... Those leads usually go to a few crews at once. This is about the people already searching for you, so they call you directly."'],
       ['"Just send me something."', '"Happy to. What’s the best email? I’ll send the preview, and give you a quick call Thursday to see what you think."'],
       ['"My nephew handles that."', '"Love that he’s helping. Most of what I look at is the Google side, what ChatGPT says about you, and keeping an eye on it each month. Happy to share what I find with him too."'],
+      ['"Someone already made me one." (a customer, a nephew, AI)', '"Oh nice, that’s great. When’s it going live? ... Want a free second look once it’s up? The part those builders usually skip is the Google listing and what ChatGPT reads about you. Happy to check it." Set a follow-up in two weeks.'],
+      ['"This technology is crazy."', '"It really is. Half my job now is making sure ChatGPT actually knows you exist." Then ask where their work comes from.'],
       ['"I’m up a tree."', '"Ha, go! When are you back on the ground, around 4:30?"'],
       ['"Is this a scam?"', '"Totally fair to ask. I’m at builtformainstreet.com. The preview’s free, and you don’t pay anything unless you want to move forward."'],
       ['"Not interested."', '"No problem at all. Just so I know, is it timing, or not something you need right now?" Then: "Appreciate you taking the call."'],
@@ -1088,7 +1109,7 @@
 
       + '<h3>Your details</h3>'
       + '<div class="fields">'
-      + '<div><label for="s-cb">Call-back number</label><input id="s-cb" placeholder="Google Voice number" value="'+esc(pref('cb'))+'"></div>'
+      + '<div><label for="s-cb">Call-back number</label><input id="s-cb" placeholder="The number you call from" value="'+esc(pref('cb'))+'"></div>'
       + '<div><label for="s-addr">Mailing address</label><input id="s-addr" placeholder="Required in sales emails" value="'+esc(pref('addr'))+'"></div>'
       + '<div><label for="s-sheet">Google Sheet sync URL</label><input id="s-sheet" placeholder="https://script.google.com/macros/s/.../exec" value="'+esc(pref('sheet'))+'"></div>'
       + '<div><label for="s-sheetkey">Sheet key (the word in the script)</label><input id="s-sheetkey" placeholder="your key word" value="'+esc(pref('sheetkey'))+'"></div>'
@@ -1198,6 +1219,7 @@
   $('b-script').onclick = openScript;
   $('b-score').onclick = openScorecard;
   $('b-add').onclick = openAdd;
+  $('b-add2').onclick = openAdd;
   $('b-import').onclick = openImport;
   $('b-export').onclick = openExport;
   $('d-x').onclick = function(){ $('dlg').close(); };

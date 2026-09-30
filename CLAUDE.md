@@ -59,6 +59,9 @@ Cancel with 30 days' notice. Buyout of the site at $2,000 after 12 months.
   The one exception is a **free one-page preview** used to sell: the homepage only,
   from public info, no photos taken from their listings, shared by private link and
   never on their domain. Say "I put one together" only when it exists.
+- **Phone:** until Google Voice or a paid business line works, Miles calls from his
+  cell by choice. His cell number never goes in emails or anything written;
+  emails sign off with hello@ only.
 - **Business money moves through the business account.** Never personal Venmo,
   Zelle or Cash App.
 - **Edits are "reasonable", never "unlimited".** Text, photos, hours, prices,

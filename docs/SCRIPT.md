@@ -25,6 +25,11 @@ ten minutes to show it. Printable: `output/Call_Script.pdf` and `output/Email_Sc
 Only say "great reviews" if you saw them.
 
 **3. Whatever they say:** "Makes sense."
+- "Someone already made me one" (a customer, AI): "Oh nice, that's great. When's it
+  going live? Want a free second look once it's up? The part those builders usually
+  skip is the Google listing and what ChatGPT reads about you." Follow up in two weeks.
+- "This technology is crazy": "It really is. Half my job now is making sure ChatGPT
+  actually knows you exist."
 
 **4. The preview**
 > "I build websites for local businesses, and help them show up when people search on
