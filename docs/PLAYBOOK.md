@@ -205,23 +205,23 @@ month 7:
   break or Saturday, or skip them. The call sheet's "Call now" filter shows who is
   in a window at any moment.
 
-**Target set September 30, 2026: $10k in one month by late January (month 4).**
+**Target set September 30, 2026: $10k in one month, at 60 calls a day.**
+Start at 10 to 20 touches a weekday (consistency first), then 20 the week of Oct 5,
+30 to 40 the week of Oct 12, 50 the week of Oct 19, and 60 or more from Oct 26.
 A month's revenue is that month's setup fees plus the monthly fees of clients already
-live (about $820 and $209 on average). The ramp that gets there:
+live (about $820 and $209 on average). At 60 a day (about 1,200 touches a month),
+when $10k lands depends on how many touches turn into a sale:
 
-| Month | New clients | Setup fees | Monthly fees | Month total |
-|---|---|---|---|---|
-| October | 3 | $2,460 | $0 | about $2,500 |
-| November | 6 | $4,920 | $627 | about $5,500 |
-| December | 8 | $6,560 | $1,881 | about $8,400 |
-| January | 9 | $7,380 | $3,553 | about $10,900 |
+| Sales per touch | October | November | December | January | $10k lands |
+|---|---|---|---|---|---|
+| 1 in 100 | 4 (about $3,300) | 12 (about $10,700) | 12 | 12 | November |
+| 1 in 150 | 3 (about $2,500) | 8 (about $7,200) | 8 (about $8,900) | 8 (about $10,500) | January |
+| 1 in 200 | 2 (about $1,600) | 6 (about $5,300) | 6 (about $6,600) | 6 (about $7,800) | March |
 
-That is 26 clients by the end of January. At about 1 sale per 100 cold touches it
-needs 30 touches a weekday from November, plus Saturday walk-ins and referrals, which
-convert far better. At three tries per lead it uses about 200 new leads a month, so the
-lead finder and the "has a site that doesn't work" leads both have to be in play by
-week 3. At 5 new clients a month, $10k lands around month 6 instead. $10k from the
-monthly fees alone is about 50 clients: a year-one goal.
+The first 100 logged touches say which row is real. 60 a day uses about 400 new leads
+a month, so the lead finder and the research agent have to run by October 12. Twelve
+builds a month is three a week on top of the calls: every build goes through
+`src/build_site.py`, and previews through `--preview`.
 
 **The second bottleneck is lead supply.** 75 touches a week at three tries per lead
 uses about 25 new leads a week. At about 1 in 2 qualifying, that means checking 50

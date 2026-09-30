@@ -270,7 +270,7 @@
   function callBtn(phone){
     var d = phone.replace(/[^0-9]/g,'');
     if(d.length===10) d = '1'+d;
-    if(pref('dial')!=='phone')
+    if(pref('dial')==='gv')
       return '<a class="btn" data-gv="'+esc(phone)+'" href="https://voice.google.com/u/0/calls?a=nc,%2B'+d+'" target="_blank" rel="noopener">Call '+esc(phone)+' in Voice</a>';
     return '<a class="btn" href="tel:+'+d+'">Call '+esc(phone)+'</a>';
   }
@@ -716,7 +716,7 @@
         + (l.phone?callBtn(l.phone):'<span class="mono" style="color:var(--ink-3)">No phone on file</span>')
         + (l.email?'<a class="btn ghost" href="mailto:'+esc(l.email)+'">Email</a>':'')
         + '</div>'
-        + (l.phone && pref('dial')==='phone' ? '<div class="todo" style="margin-top:8px">This dials with your phone app. Make sure it uses your business line (Voice or your second line), never your personal number.</div>' : '')
+        + (l.phone && pref('dial')!=='gv' ? '<div class="todo" style="margin-top:8px">This dials with your phone app. Pick your business line (the second number), never your personal one.</div>' : '')
         + verdict
         + '</div>'
 
@@ -1038,7 +1038,7 @@
       + '<div class="fields">'
       + '<div><label for="s-cb">Call-back number</label><input id="s-cb" placeholder="Google Voice number" value="'+esc(pref('cb'))+'"></div>'
       + '<div><label for="s-addr">Mailing address</label><input id="s-addr" placeholder="Required in sales emails" value="'+esc(pref('addr'))+'"></div>'
-      + '<div><label for="s-dial">Dial with</label><select id="s-dial"><option value="gv"'+(pref('dial')!=='phone'?' selected':'')+'>Google Voice (shows the business number)</option><option value="phone"'+(pref('dial')==='phone'?' selected':'')+'>Phone app (set it to your business line)</option></select></div>'
+      + '<div><label for="s-dial">Dial with</label><select id="s-dial"><option value="phone"'+(pref('dial')!=='gv'?' selected':'')+'>Phone app (set it to your business line)</option><option value="gv"'+(pref('dial')==='gv'?' selected':'')+'>Google Voice (once it works)</option></select></div>'
       + '</div>'
       + '<p class="hint">Kept in this browser only, so set them once on each phone or laptop you use. With Google Voice, the Call button opens Voice with the number filled in and copies it too, so your own cell shows on nobody’s caller ID. The address can be a PO box; the law requires one in sales emails.</p>';
     $('dlg').showModal();
