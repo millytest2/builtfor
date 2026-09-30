@@ -1,0 +1,124 @@
+{
+  "slug": "boling-family-tree-service",
+  "biz": "Boling & Family Tree Service",
+  "domain": "preview.builtformainstreet.com/boling-family-tree-service",
+  "brand_color": "#2f5d3a",
+  "phone": "(865) 385-3441",
+  "email": "",
+  "street": "529 Dry Hollow Rd",
+  "city": "Knoxville",
+  "state": "TN",
+  "zip": "",
+  "lat": "",
+  "lon": "",
+  "founded": "",
+  "owner": "Brandy Boling",
+  "license": {
+    "label": "",
+    "number": ""
+  },
+  "trade": "tree service",
+  "trade_plural": "tree services",
+  "tagline": "Family tree service in Knoxville, day or night",
+  "lede": "Tree removal, trimming and 24-hour emergency work across Knoxville. A family business, 10 years in the trade.",
+  "callbar": "24-hour emergency calls · Knoxville, TN",
+  "about": "Boling & Family Tree Service handles tree work across Knoxville and nearby towns: tree removal, tree trimming and pruning, stump grinding and emergency tree service.",
+  "hours": {
+    "Mon": "00:00-23:59",
+    "Tue": "00:00-23:59",
+    "Wed": "00:00-23:59",
+    "Thu": "00:00-23:59",
+    "Fri": "00:00-23:59",
+    "Sat": "00:00-23:59",
+    "Sun": "00:00-23:59"
+  },
+  "services": [
+    {
+      "slug": "tree-removal",
+      "name": "Tree Removal",
+      "short": "Safe removal of any size tree, cleanup included.",
+      "body": "We take down trees of any size, including tight spots near houses, fences and power lines. We cut it in sections when there's no room to drop it, haul everything away and leave the yard clean.",
+      "price_from": "",
+      "faqs": [
+        [
+          "Do you haul everything away?",
+          "Yes. Branches, logs and debris all go with us unless you want the firewood."
+        ]
+      ]
+    },
+    {
+      "slug": "tree-trimming-pruning",
+      "name": "Tree Trimming & Pruning",
+      "short": "Shape, clearance and healthier trees.",
+      "body": "Trimming keeps branches off the roof and the wires, lets light into the yard and keeps the tree healthy. We cut to the right spot so the tree heals well instead of sprouting back weak.",
+      "price_from": "",
+      "faqs": [
+        [
+          "How often should trees be trimmed?",
+          "Most yard trees every two to three years. Fast growers and trees near the house more often."
+        ]
+      ]
+    },
+    {
+      "slug": "stump-grinding",
+      "name": "Stump Grinding",
+      "short": "Stumps ground below the surface.",
+      "body": "We grind the stump below ground so you can plant grass or build over it, and clean up the chips or leave them as mulch.",
+      "price_from": "",
+      "faqs": []
+    },
+    {
+      "slug": "emergency-tree-service",
+      "name": "Emergency Tree Service",
+      "short": "Fallen tree or split limb? Call any time.",
+      "body": "When a tree comes down on a house, a car or the driveway, call right away. We make it safe first, then clear it.",
+      "price_from": "",
+      "faqs": []
+    }
+  ],
+  "towns": [
+    {
+      "slug": "knoxville",
+      "name": "Knoxville",
+      "note": "Our home base."
+    },
+    {
+      "slug": "farragut",
+      "name": "Farragut",
+      "note": "We work in Farragut regularly."
+    },
+    {
+      "slug": "powell",
+      "name": "Powell",
+      "note": "We work in Powell regularly."
+    },
+    {
+      "slug": "maryville",
+      "name": "Maryville",
+      "note": "We work in Maryville regularly."
+    },
+    {
+      "slug": "halls",
+      "name": "Halls",
+      "note": "We work in Halls regularly."
+    },
+    {
+      "slug": "karns",
+      "name": "Karns",
+      "note": "We work in Karns regularly."
+    }
+  ],
+  "reviews": [],
+  "review_note": "Family owned for 10 years",
+  "faqs": [
+    [
+      "Do you give free estimates?",
+      "Call and tell us what you've got. We'll come look and give you a price before any work starts."
+    ],
+    [
+      "What areas do you cover?",
+      "Knoxville, Farragut, Powell, Maryville, Halls, Karns."
+    ]
+  ],
+  "photos": []
+}
