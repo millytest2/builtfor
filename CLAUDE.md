@@ -15,9 +15,10 @@ tools behind the counter). Never open with "we build websites."
 
 **Visibility Check** is free, and it is the door.
 
-Setup is tiered, and the tier is picked by **counting, not by feel**. Ask how many
-services and how many towns on the call; the answer picks the price. This is
-scoping, not discounting, and it is quoted once and does not move.
+Setup is tiered. **Miles picks the tier before call two** from what he saw (crew
+size, services, how far they travel), using the triggers below as his guide. The
+owner is never asked to count anything; they hear one number, once, and it does
+not move. This is scoping, not discounting.
 
 | Tier | Trigger | Setup | Monthly | What the monthly adds |
 |---|---|---|---|---|

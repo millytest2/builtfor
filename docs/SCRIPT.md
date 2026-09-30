@@ -34,8 +34,8 @@ calls so I don't miss anything. Cool?"
 > what's keeping you off the list. Tomorrow morning or after 4?"
 > "Cool. Best email to send it to?"
 
-**Price on call one:** "Honestly, it depends on how many services and towns you
-cover. After the check I give you one number, and it doesn't change."
+**Price on call one:** "Honestly, it depends on what your business needs. After the
+check I give you one number, and it doesn't change."
 
 **Five comebacks:**
 - "Is this another marketing company?" / "No. No ads, no social media, no contract.
@@ -52,8 +52,8 @@ cover. After the check I give you one number, and it doesn't change."
 
 **Call two, casual:**
 > "Pulled it up. Here's what a stranger sees when they look for you."
-> "How many services do you do? Which towns do most customers come from?"
-> "Okay, that's the Standard plan. $800 to build it, then $199 a month." Stop talking.
+> (You picked the plan before the call from what you saw. Most businesses are Standard.)
+> "For you it's the Standard plan. $800 to build it, then $199 a month." Stop talking.
 > "Want me to send the agreement and payment link?"
 
 **Voicemail:**
@@ -125,27 +125,28 @@ Write the answers down. They go in the check and on the site.
 Tap **Check booked** and set the next-step date.
 
 **If they ask the price on call one:**
-> "It depends on how many services and towns you cover, so I won't guess. After the
-> check you get one number, and it doesn't move."
+> "It depends on what your business needs, so I won't guess. After the check you get
+> one number, and it doesn't move."
 
 ## Call two: show the check, name one price
 
 **Show.** "Here's what a stranger sees when they look for you." Read what ChatGPT
 said about their name.
 
-**Count.** "How many services do you offer?" "Which towns do your customers come
-from?" Count services the way a customer searches, grouped. Most land in Standard.
+**Pick the plan before the call** from what you saw: a one-truck business with a few
+services is Small, most businesses are Standard, a big crew with a wide area or two
+locations is Bigger. The owner never has to count anything.
 
 **Name one number, then stop talking.**
 
-| They have | Say |
+| You picked | Say |
 |---|---|
-| Up to 4 services, 3 towns, one location | "It's $600 to build, then $99 a month. That keeps it hosted, edited, and your Google listing right." |
-| Up to 8 services, 6 towns | "It's $800 to build, then $199 a month. That adds a monthly report on what Google and ChatGPT say about you, and review requests with a card at the counter." |
-| More than that, or two locations | "It's $1,000 to build, then $300 a month. That adds follow-up on every new lead and a call with me every month." |
+| Small | "It's $600 to build, then $99 a month. That keeps it hosted, edited, and your Google listing right." |
+| Standard (most) | "It's $800 to build, then $199 a month. That adds a monthly report on what Google and ChatGPT say about you, and review requests with a card at the counter." |
+| Bigger | "It's $1,000 to build, then $300 a month. That adds follow-up on every new lead and a call with me every month." |
 
-If they want less, drop services from the site, never the price: "If we build it for
-four services, it's the $600 plan."
+If they want less, build fewer pages, never a lower price: "If we keep it to the
+basics, it's the $600 plan."
 
 **Terms, plainly.**
 > "We build and host the site. The domain is in your name. The monthly covers
@@ -164,7 +165,7 @@ four services, it's the $600 plan."
 
 | They say | You say |
 |---|---|
-| "How much?" | "Depends on services and towns, so I won't guess. After the check, one number, and it doesn't move." |
+| "How much?" | "Depends on what your business needs, so I won't guess. After the check, one number, and it doesn't move." |
 | "Just send me something." | "Sure. Best email? I'll send your check and call Thursday to walk through it." |
 | "Word of mouth keeps me busy." | "Good, that's the best customer there is. Those people still look you up before they call. Right now, when they do, [what you found]." |
 | "I'm booked solid." | "Then it's about better jobs, not more. Which jobs do you want more of?" |

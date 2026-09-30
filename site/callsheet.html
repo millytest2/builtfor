@@ -639,7 +639,7 @@
       + '<div class="say"><span class="lbl">4 · The ask</span>"Here’s what I’d suggest. I run a free check on your '+(nicheOf(l)==='auto'?'shop':'business')+': what Google and ChatGPT say when somebody looks for '+esc(askPhrase(l))+' in '+esc(l.city||'your area')+', and what’s keeping you off the list. Ten minutes. '+day.charAt(0).toUpperCase()+day.slice(1)+' '+(SLOTS[nicheOf(l)]||SLOTS.trade)+', your time?"</div>'
       + '<div class="say"><span class="lbl">5 · Lock it in</span>"Great. What’s the best number and email to send it to?"</div>'
       + '<div class="stage">Tap Check booked below and write the time and their email in Notes and Details. Run the check before the call.</div>'
-      + '<details class="more"><summary>If they ask the price</summary><div><div class="say" style="margin-top:6px">"It depends on how many services you offer and how many towns you cover, so I won’t guess. After the check I give you one number, and it doesn’t move."</div>'
+      + '<details class="more"><summary>If they ask the price</summary><div><div class="say" style="margin-top:6px">"Honestly, it depends on what your business needs, so I won’t guess. After the check I give you one number, and it doesn’t move."</div>'
         + '<div class="stage">Never a range. A range becomes its floor.</div></div></details>'
       + '<details class="more"><summary>Voicemail (20 seconds, then no text)</summary><div><div class="say" style="margin-top:6px">"'+esc(vmText(l))+'"</div>'
         + '<div class="stage">Set Voicemail. No texts, ever: that is the TCPA rule. '+(l.email ? 'Send the email below.' : 'No email on file, so try again in two days at the other window.')+'</div>'
@@ -709,7 +709,7 @@
         + (l.phone?callBtn(l.phone):'<span class="mono" style="color:var(--ink-3)">No phone on file</span>')
         + (l.email?'<a class="btn ghost" href="mailto:'+esc(l.email)+'">Email</a>':'')
         + '</div>'
-        + (l.phone && pref('dial')==='phone' ? '<div class="todo" style="margin-top:8px">This dials from your own phone number. Script, then Your details: set Dial with to Google Voice.</div>' : '')
+        + (l.phone && pref('dial')==='phone' ? '<div class="todo" style="margin-top:8px">This dials with your phone app. Make sure it uses your business line (Voice or your second line), never your personal number.</div>' : '')
         + verdict
         + '</div>'
 
@@ -967,7 +967,7 @@
 
   function openScript(){
     var O = [
-      ['"How much is it?"', '"Depends on how many services and towns you cover, so I won’t guess. After the check you get one number, and it doesn’t move."'],
+      ['"How much is it?"', '"Depends on what your business needs, so I won’t guess. After the check you get one number, and it doesn’t move. No contract either."'],
       ['"Just send me something."', '"Sure. What’s the best email? I’ll send your check and call you Thursday to walk through it." Save the email in Details.'],
       ['"Word of mouth keeps me busy."', '"Good, that’s the best customer there is. Those people still look you up before they come in. Right now, when they do, [what you found]."'],
       ['"I have a Facebook page."', '"That works for people who already follow you. When a stranger asks Google or ChatGPT who to call, Facebook mostly gets skipped."'],
@@ -1008,12 +1008,12 @@
 
       + '<h3>Call two: show the check, name one price</h3>'
       + '<div class="say"><span class="lbl">Show</span>"Here’s what a stranger sees when they look for you." Read out what ChatGPT said about their name.</div>'
-      + '<div class="say"><span class="lbl">Count</span>"How many different services do you do?" "Which towns do your customers come from?" Count grouped services, the way a customer searches.</div>'
+      + '<div class="stage">Before this call, you pick the plan from what you saw: a one-truck business with a few services is Small, most businesses are Standard, a big crew with a wide area or two locations is Bigger. The owner never has to count anything.</div>'
       + '<div class="say"><span class="lbl">Name one number</span>'
-        + '<b>Up to 4 services, 3 towns, one location:</b> "It’s $600 to build, then $99 a month. That keeps it hosted, edited and your Google listing right."<br>'
-        + '<b>Up to 8 services, 6 towns:</b> "It’s $800 to build, then $199 a month. That adds a monthly report on what Google and ChatGPT say about you, and we ask your customers for reviews with a card at the counter."<br>'
-        + '<b>More than that, or two locations:</b> "It’s $1,000 to build, then $300 a month. That adds follow-up on every lead and a call with me every month."</div>'
-      + '<div class="stage">Most businesses land in Standard. Then stop talking. If they balk, drop services from the site, never the price. Tap Offer made.</div>'
+        + '<b>Small:</b> "It’s $600 to build, then $99 a month. That keeps it hosted, edited and your Google listing right."<br>'
+        + '<b>Standard (most):</b> "It’s $800 to build, then $199 a month. That adds a monthly report on what Google and ChatGPT say about you, and we ask your customers for reviews with a card at the counter."<br>'
+        + '<b>Bigger:</b> "It’s $1,000 to build, then $300 a month. That adds follow-up on every lead and a call with me every month."</div>'
+      + '<div class="stage">Then stop talking. If they balk, build fewer pages, never a lower price. Tap Offer made.</div>'
       + '<div class="say"><span class="lbl">Terms, said plainly</span>"We build and host the site. The domain is in your name. The monthly covers hosting, reasonable edits and your Google listing, plus what your plan adds. Cancel with 30 days’ notice. After a year you can buy the site outright for $2,000."</div>'
       + '<div class="say"><span class="lbl">Close</span>"If that works, I’ll send the agreement and the payment link now. When the payment and your photos are in, the two weeks start."</div>'
       + '<div class="stage">Money and photos first. Nothing gets built on spec. Photos are due within 30 days. Paid: tap Sold.</div>'
@@ -1030,7 +1030,7 @@
       + '<div class="fields">'
       + '<div><label for="s-cb">Call-back number</label><input id="s-cb" placeholder="Google Voice number" value="'+esc(pref('cb'))+'"></div>'
       + '<div><label for="s-addr">Mailing address</label><input id="s-addr" placeholder="Required in sales emails" value="'+esc(pref('addr'))+'"></div>'
-      + '<div><label for="s-dial">Dial with</label><select id="s-dial"><option value="gv"'+(pref('dial')!=='phone'?' selected':'')+'>Google Voice (shows the business number)</option><option value="phone"'+(pref('dial')==='phone'?' selected':'')+'>Phone app (shows your own number)</option></select></div>'
+      + '<div><label for="s-dial">Dial with</label><select id="s-dial"><option value="gv"'+(pref('dial')!=='phone'?' selected':'')+'>Google Voice (shows the business number)</option><option value="phone"'+(pref('dial')==='phone'?' selected':'')+'>Phone app (set it to your business line)</option></select></div>'
       + '</div>'
       + '<p class="hint">Kept in this browser only, so set them once on each phone or laptop you use. With Google Voice, the Call button opens Voice with the number filled in and copies it too, so your own cell shows on nobody’s caller ID. The address can be a PO box; the law requires one in sales emails.</p>';
     $('dlg').showModal();
