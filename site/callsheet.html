@@ -600,13 +600,20 @@
     if(h && h.k==='empty') add(out, 'You own '+(h.dom||'your domain')+', but it still says the site is coming soon. People who type it in hit a dead end.');
     if(h && h.k==='namesake') add(out, 'When people search your name, '+(h.dom ? h.dom+', a different company,' : 'a different company with a similar name')+' comes up first.');
     if(h && h.k==='blank') add(out, 'A few directories show a website button for you with nothing behind it. Someone taps it and there’s nowhere to go.');
-    if(h && h.say) add(out, 'I was on your website this morning. ' + h.say);
+    if(h && h.say) add(out, 'I was on your website this morning. ' + h.say.replace(/^[A-Z][a-z]+, (\w)/, function(m, c){ return c.toUpperCase(); }));
     if(!out.length) out.push('I looked up '+biz+' this morning. There’s no website for Google or ChatGPT to read, so when someone asks for '+askPhrase(l)+' in '+city+', you’re easy to miss.');
     return out;
   }
+  // end the finding with an easy, curious question instead of a gotcha
+  function curious(l, f){
+    var last = f[f.length-1] || '';
+    if(/\?$/.test(last)) return '';
+    if(l.site_checked==='none' || !hookOf(l)) return 'Is not having a website on purpose, or just something that never made the list?';
+    return 'Figured you’d want to know. Who looks after that for you?';
+  }
   function vmText(l){
     var cb = pref('cb') || '[your call-back number]';
-    return 'Hi, this is Miles with Built for Main Street. I looked up '+(l.business||'your shop')+' on Google and ChatGPT this morning, and there’s something on your '+(l.site_checked==='has'?'website':'listing')+' you’ll want to see. The check is free. Call me back at '+cb+', or email hello at builtformainstreet dot com. Again, '+cb+'. Thanks.';
+    return 'Hey, it’s Miles with Built for Main Street. I was looking up '+askPhrase(l).replace(/^an? /,'')+'s in '+(l.city||'your area')+' this morning and noticed something about how '+(l.business||'your business')+' shows up online. Worth a two-minute chat. Give me a call at '+cb+'. Again, '+cb+'. Have a good one.';
   }
   function emailText(l){
     var who = ownerOf(l) || 'there', f = findingLines(l);
@@ -627,19 +634,20 @@
     return ''
       + (needsCheck ? '<div class="todo">60 seconds first: run step 1. What ChatGPT says about them by name is the strongest opener you have.</div>' : '')
       + '<div class="say"><span class="lbl">1 · Open</span>'
-        + (who ? '"Hey, is this '+esc(who)+'? Hey '+esc(who)+', it’s Miles with Built for Main Street.' : '"Hey, is this the owner of '+esc(l.business||'the shop')+'? It’s Miles with Built for Main Street.')
-        + ' I’ll be straight with you, this is a cold call. Got 30 seconds, or did I catch you in the middle of something?"</div>'
+        + (who ? '"Hey, is this '+esc(who)+'? ... Hey '+esc(who)+', Miles here, with Built for Main Street.' : '"Hey, is this the owner of '+esc(l.business||'the shop')+'? ... Miles here, with Built for Main Street.')
+        + ' I’ll be honest, it’s a cold call, but it’s a quick one. Got a sec, or did I catch you in the middle of a job?"</div>'
       + (nicheOf(l)==='auto' && zoneOf(l)==='America/Los_Angeles'
           ? '<div class="stage">Valley shop: you can walk in instead, 10 to 11:30am or 2 to 4pm. Script → The walk-in.</div>' : '')
-      + '<div class="say"><span class="lbl">2 · What you found, then stop</span>"'+f.map(esc).join(' ')+'"'+(/\?$/.test(f[f.length-1]) ? '' : ' "Did you know that?"')+'</div>'
-      + '<div class="stage">Stop talking. Count to three. Whatever they say, the next line is a question.</div>'
-      + '<div class="say"><span class="lbl">3 · One real question</span>"Where do most of your new '+(nicheOf(l)==='tutoring'?'students':'customers')+' come from right now?" Then: '
-        + (nicheOf(l)==='auto' ? '"What kind of job do you want more of? Brakes, diagnostics, the bigger stuff?"' : '"What kind of work do you want more of?"') + '</div>'
+      + '<div class="say"><span class="lbl">2 · Why you’re calling</span>"So I’m local, and I help businesses like yours get found online. '+[f.map(esc).join(' '), esc(curious(l, f))].filter(Boolean).join(' ')+'"</div>'
+      + '<div class="stage">Then stop and listen. Whatever they say, stay curious.</div>'
+      + '<div class="say"><span class="lbl">3 · Get curious</span>"How are most of your '+(nicheOf(l)==='tutoring'?'students':'jobs')+' finding you right now?" Then: '
+        + (nicheOf(l)==='auto' ? '"If you could get more of one kind of job, what would it be? Brakes, diagnostics, the bigger stuff?"' : '"If you could get more of one kind of job, what would it be?"')
+        + ' And: "When someone does look you up, do most of them just call, or do some slip through?"</div>'
       + '<div class="stage">Write the answers in Notes. They go in the check and on the site.</div>'
-      + '<div class="say"><span class="lbl">4 · The ask</span>"Here’s what I’d suggest. I run a free check on your '+(nicheOf(l)==='auto'?'shop':'business')+': what Google and ChatGPT say when somebody looks for '+esc(askPhrase(l))+' in '+esc(l.city||'your area')+', and what’s keeping you off the list. Ten minutes. '+day.charAt(0).toUpperCase()+day.slice(1)+' '+(SLOTS[nicheOf(l)]||SLOTS.trade)+', your time?"</div>'
-      + '<div class="say"><span class="lbl">5 · Lock it in</span>"Great. What’s the best number and email to send it to?"</div>'
+      + '<div class="say"><span class="lbl">4 · Suggest the check</span>"Here’s what I’d suggest. Let me put together a quick check for you, ten minutes. I’ll show you exactly what a customer sees when they look for '+esc(askPhrase(l))+' in '+esc(l.city||'your area')+', who’s showing up instead, and what I’d fix first. No cost. If it’s useful, great. If not, you’ve lost ten minutes. '+day.charAt(0).toUpperCase()+day.slice(1)+' '+(SLOTS[nicheOf(l)]||SLOTS.trade)+', your time, which is better?"</div>'
+      + '<div class="say"><span class="lbl">5 · Lock it in</span>"Perfect. What’s the best email for you?" ... "Appreciate you. Talk then."</div>'
       + '<div class="stage">Tap Check booked below and write the time and their email in Notes and Details. Run the check before the call.</div>'
-      + '<details class="more"><summary>If they ask the price</summary><div><div class="say" style="margin-top:6px">"Honestly, it depends on what your business needs, so I won’t guess. After the check I give you one number, and it doesn’t move."</div>'
+      + '<details class="more"><summary>If they ask the price</summary><div><div class="say" style="margin-top:6px">"Totally fair. It depends on what you actually need, and I’d rather not throw out a number before I’ve looked properly. After the check you’ll get one straight price, and it won’t change."</div>'
         + '<div class="stage">Never a range. A range becomes its floor.</div></div></details>'
       + '<details class="more"><summary>Voicemail (20 seconds, then no text)</summary><div><div class="say" style="margin-top:6px">"'+esc(vmText(l))+'"</div>'
         + '<div class="stage">Set Voicemail. No texts, ever: that is the TCPA rule. '+(l.email ? 'Send the email below.' : 'No email on file, so try again in two days at the other window.')+'</div>'
@@ -967,15 +975,16 @@
 
   function openScript(){
     var O = [
-      ['"How much is it?"', '"Depends on what your business needs, so I won’t guess. After the check you get one number, and it doesn’t move. No contract either."'],
-      ['"Just send me something."', '"Sure. What’s the best email? I’ll send your check and call you Thursday to walk through it." Save the email in Details.'],
-      ['"Word of mouth keeps me busy."', '"Good, that’s the best customer there is. Those people still look you up before they come in. Right now, when they do, [what you found]."'],
-      ['"I have a Facebook page."', '"That works for people who already follow you. When a stranger asks Google or ChatGPT who to call, Facebook mostly gets skipped."'],
-      ['"My nephew can build it."', '"He can. The site’s the easy part. The listing, what Google and ChatGPT read, and checking it every month is the part that slips."'],
-      ['"Is this a scam?"', '"Fair question. Your number is on your Google listing. We’re at builtformainstreet.com. The check is free and you pay nothing unless you go ahead."'],
-      ['"Too busy."', '"Then which jobs would you rather have? The check shows what comes up for those."'],
-      ['"Not interested."', '"Understood. Is it the timing, or you don’t want more of this kind of work?" One try. Then thank them and tap Dead.'],
-      ['"Don’t call again."', '"Understood, you’re off the list." Tap Dead. Never call that number again.']
+      ['"How much is it?"', '"Totally fair. It depends on what you need, so I’d rather look properly first. After the check you get one straight price, and it won’t change. No contract either."'],
+      ['"Another marketing company?"', '"Ha, you probably get those calls every week. I’m not an agency. No ads, no contract, no big promises. It’s just me, and I start by showing you what’s actually going on, for free."'],
+      ['"Word of mouth keeps me busy."', '"That’s the best kind. Quick question though: when a neighbor passes along your name, what do people do next? Usually they look you up. Right now they find [what you saw]."'],
+      ['"I use Angi."', '"Makes sense. How’s it been? ... Those leads usually go to a few crews at once. This is about the people already searching for you, so they call you directly."'],
+      ['"Just send me something."', '"Happy to. What’s the best email? I’ll send what I found, and give you a quick call Thursday to see if it’s worth a closer look."'],
+      ['"My nephew handles that."', '"Love that he’s helping. Most of what I look at is the Google side, what ChatGPT says about you, and keeping an eye on it each month. Happy to share what I find with him too."'],
+      ['"I’m up a tree."', '"Ha, go! When are you back on the ground, around 4:30?"'],
+      ['"Is this a scam?"', '"Totally fair to ask. I’m at builtformainstreet.com. The check’s free, and you don’t pay anything unless you want to move forward."'],
+      ['"Not interested."', '"No problem at all. Just so I know, is it timing, or not something you need right now?" Then: "Appreciate you taking the call."'],
+      ['"Don’t call again."', '"Understood, I’ll take you off my list. Have a good one." Tap Dead. Never call again.']
     ];
     $('d-title').textContent = 'The script';
     $('dlg').classList.add('wide');
@@ -993,12 +1002,12 @@
       + '<li>Call one books a free 10-minute check. It does not sell.</li>'
       + '<li>Three tries per business (morning, afternoon, next week). Then Dead.</li></ul>'
 
-      + '<h3>Call one: HI, SAW, ASK, BOOK</h3>'
-      + '<div class="say"><span class="lbl">Hi</span>"Hey, is this [name]? Hey [name], it’s Miles. I’ll be straight with you, this is a cold call. Got 30 seconds, or did I catch you in the middle of something?"</div>'
-      + '<div class="say"><span class="lbl">Saw</span>"I was looking up [what you do] in [town] this morning, like a customer would. Asked ChatGPT who’s good around here. It named [name] and [name]. Not you. And there’s no website for Google to send people to. Did you know that?" Has a site with a problem: say the problem you saw instead.</div>'
-      + '<div class="stage">Stop talking. Count to three.</div>'
-      + '<div class="say"><span class="lbl">Ask</span>"Where’s most of your work coming from right now? Word of mouth? Angi?" Then: "What kind of jobs do you want more of?"</div>'
-      + '<div class="say"><span class="lbl">Book</span>"I’m not an agency. It’s just me, I’m local, and I do this one business at a time. Free check, ten minutes. I show you what people see when they look you up. Tomorrow morning or after 4?" Then: "Best email to send it to?" Tap Check booked.</div>'
+      + '<h3>Call one: a quick, friendly heads-up</h3>'
+      + '<div class="say"><span class="lbl">1 · Open</span>"Hey, is this [name]? ... Hey [name], Miles here, with Built for Main Street. I’ll be honest, it’s a cold call, but it’s a quick one. Got a sec, or did I catch you in the middle of a job?"</div>'
+      + '<div class="say"><span class="lbl">2 · Why you’re calling</span>No website: "So I’m local, and I help crews like yours get found online. I was looking up [what you do] in [town] this morning, the way a customer would, and asked ChatGPT who to call. It gave me [name] and [name]. You didn’t come up, which surprised me with the reviews you’ve got. Is not having a website on purpose, or just something that never made the list?"<br><br>Site with a problem: "I was on your website this morning and noticed [the problem]. Figured you’d want to know. Who put the site together for you?"</div>'
+      + '<div class="stage">Then stop and listen. Stay curious.</div>'
+      + '<div class="say"><span class="lbl">3 · Get curious</span>"How are most of your jobs finding you right now?" "If you could get more of one kind of job, what would it be?" "When someone does look you up, do most of them just call, or do some slip through?"</div>'
+      + '<div class="say"><span class="lbl">4 · Suggest the check</span>"Here’s what I’d suggest. Let me put together a quick check for you, ten minutes. I’ll show you what a customer sees when they look you up, who’s showing up instead, and what I’d fix first. No cost. Would tomorrow morning work, or is the afternoon better?" Then: "Perfect. What’s the best email for you?" Tap Check booked.</div>'
 
       + '<h3>The walk-in (businesses with a counter)</h3>'
       + '<div class="say">"Hi, is the owner around? ... I’m Miles, I’m local. I’m not selling anything today. I looked your business up on the way over. Can I show you something? Thirty seconds."</div>'
@@ -1023,7 +1032,7 @@
       + O.map(function(o){ return '<div class="obj"><b>'+esc(o[0])+'</b><span>'+esc(o[1])+'</span></div>'; }).join('')
 
       + '<h3>Voicemail</h3>'
-      + '<div class="say">"Hi, this is Miles with Built for Main Street. I looked up [business] on Google and ChatGPT this morning, and there’s something on your listing you’ll want to see. The check is free. Call me back at [number], or email hello at builtformainstreet dot com. Again, [number]. Thanks."</div>'
+      + '<div class="say">"Hey [name], it’s Miles with Built for Main Street. I was looking up [what you do] in [town] this morning and noticed something about how [business] shows up online. Worth a two-minute chat. Give me a call at [number]. Again, [number]. Have a good one."</div>'
       + '<div class="stage">Then tap Voicemail. If there’s an email, send the follow-up from the lead’s script and tap Emailed. Never a text.</div>'
 
       + '<h3>Your details</h3>'

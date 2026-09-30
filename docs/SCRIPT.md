@@ -6,60 +6,50 @@ plumber". Emails go out from hello@builtformainstreet.com.
 **Call one books a free check. It does not sell.** Call two shows the check and
 names one price. Most of the work is being curious and brief.
 
-## Pocket version: HI, SAW, ASK, BOOK
+## Pocket version: the flow
 
-Four beats. Learn these, read the rest once. Printable versions:
-`output/Call_Script.pdf` (cold, call two, warm) and `output/Email_Scripts.pdf` (seven
-emails, including the day-7 last touch and the referral ask).
+Four steps, one conversation. Calm, curious, in no rush. Let them talk more than you.
+Printable versions: `output/Call_Script.pdf` and `output/Email_Scripts.pdf`.
 
-**HI.** Be a person.
-> "Hey, is this [name]? Hey [name], it's Miles. I'll be straight with you, this is a
-> cold call. Got 30 seconds, or did I catch you in the middle of something?"
+**1. Open.**
+> "Hey, is this [name]? ... Hey [name], Miles here, with Built for Main Street. I'll be
+> honest, it's a cold call, but it's a quick one. Got a sec, or did I catch you in the
+> middle of a job?"
 
-Busy? "No problem. Morning or after 4 better?" If you record: "Heads up, I record my
-calls so I don't miss anything. Cool?"
+**2. Why you're calling.**
+> No website: "So I'm local, and I help crews like yours get found online. I was
+> looking up tree removal in [town] this morning, the way a homeowner would, and asked
+> ChatGPT who to call. It gave me [name] and [name]. You didn't come up, which
+> surprised me with the reviews you've got. Is not having a website on purpose, or
+> just something that never made the list?"
 
-**SAW.** One thing you actually found. Then stop talking.
-> "So I was looking up [trade] in [town] this morning, like a customer would. Asked
-> Google and ChatGPT. A couple of other companies came up. You didn't. And there's no
-> website for Google to send people to. Did you know that?"
+> Site with a problem: "I was on your website this morning and noticed [the problem].
+> Figured you'd want to know. Who put the site together for you?"
 
-**ASK.** One question. Let them talk.
-> "Where's most of your work coming from right now? Word of mouth? Angi?"
-> "What kind of jobs do you want more of?"
+**3. Get curious.**
+> "How are most of your jobs finding you right now?"
+> "If you could get more of one kind of job, what would it be?"
+> "When someone does look you up, do most of them just call, or do some slip through?"
 
-**BOOK.** A small ask.
-> "I'm not an agency. It's just me, I'm local, and I do this one business at a time.
-> Free check, ten minutes. I show you what people see when they look you up, and
-> what's keeping you off the list. Tomorrow morning or after 4?"
-> "Cool. Best email to send it to?"
+**4. Suggest the check.**
+> "Here's what I'd suggest. Let me put together a quick check for you, ten minutes.
+> I'll show you what a homeowner sees when they look you up, who's showing up
+> instead, and what I'd fix first. No cost. Would tomorrow morning work, or is the
+> afternoon better?" ... "Perfect. What's the best email for you?"
 
-**Price on call one:** "Honestly, it depends on what your business needs. After the
-check I give you one number, and it doesn't change."
+**If they ask the price:** "Totally fair. It depends on what you actually need, and
+I'd rather not throw out a number before I've looked properly. After the check you'll
+get one straight price, and it won't change."
 
-**Five comebacks:**
-- "Is this another marketing company?" / "No. No ads, no social media, no contract.
-  It's me. I get you found and make it easy to call you, and you see the numbers
-  every month."
-- "Word of mouth keeps me busy." / "Love that. Those people still look you up before
-  they call. Right now they find [what you saw]."
-- "Just send me something." / "Sure. What's your email? I'll send it and call you
-  Thursday."
-- "I use Angi." / "Keep it if it's working. This is for people searching for you
-  directly, so you're not paying per lead for them."
-- "Not interested." / "All good. Is it timing, or you just don't want more of this
-  kind of work?" Then: "Appreciate you. Have a good one."
-
-**Call two, casual:**
-> "Pulled it up. Here's what a stranger sees when they look for you."
-> (You picked the plan before the call from what you saw. Most businesses are Standard.)
-> "For you it's the Standard plan. $800 to build it, then $199 a month." Stop talking.
-> "Want me to send the agreement and payment link?"
+**Call two:** walk them through what came up, ask "What do you make of that?", say
+what you'd do, name the one plan you picked before the call, then stay quiet. "The
+domain is yours, no long contract. Want me to send over the agreement and the payment
+link?"
 
 **Voicemail:**
-> "Hey [name], Miles with Built for Main Street. Looked you up this morning and found
-> something you'll want to see. It's free, takes ten minutes. [number]. Again,
-> [number]. Talk soon."
+> "Hey [name], it's Miles with Built for Main Street. I was looking up tree services
+> in [town] this morning and noticed something about how [business] shows up online.
+> Worth a two-minute chat. Give me a call at [number]. Again, [number]. Have a good one."
 
 ## Who you are on the call
 
@@ -97,32 +87,9 @@ you actually saw.**
 
 ## Call one: book the check
 
-**1. Hello.**
-> "Hi, is this [owner]? This is Miles with Built for Main Street. Honest heads-up,
-> it's a cold call. Can I have 30 seconds?"
-
-**2. What you found, then stop talking.**
-> "I looked up [business] this morning. When someone asks Google or ChatGPT for
-> [what you do] in [town], other companies come up. Not you. And there's no website
-> for Google to send people to. Did you know that?"
-
-Count to three. Let them answer.
-
-**3. One real question.**
-> "Where do most of your new customers come from right now?"
-> "What kind of job do you want more of?"
-
-Write the answers down. They go in the check and on the site.
-
-**4. The ask.**
-> "I do a free check: what Google and ChatGPT show when someone looks for [what you
-> do] in [town], and what's keeping you off the list. Ten minutes. Tomorrow at 9 or
-> at 4?"
-
-**5. Lock it in.**
-> "What's the best number and email to send it to?"
-
-Tap **Check booked** and set the next-step date.
+Use the flow in the pocket version above. Stop after step 2 and listen; the owner's
+answer to the curious question tells you where to go next. Write their answers down.
+They go in the check and on the site. Tap **Check booked** and set the next-step date.
 
 **If they ask the price on call one:**
 > "It depends on what your business needs, so I won't guess. After the check you get
