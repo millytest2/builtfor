@@ -8,7 +8,7 @@ Everything for Built for Main Street, in one place. Updated September 28, 2026.
 |---|---|---|
 | **Call sheet** | https://claude.ai/artifact/EuwoYPw6abRTiu6nya8JDw (pinned) | The tracker. Tap a lead, call, tap how it went. The scorecard fills itself |
 | **Launch checklist** | https://claude.ai/artifact/CTiJ3dcudAtmjSWhUnFKTa (pinned) | Every setup step in order, ticks save |
-| **Call list, top 50** | `output/master_call_list.csv` and the call sheet | 30 tree crews (23 LA area), then 20 auto shops. No website of their own. Owner, opener, call window, status. Parked leads: `output/leads_parked.csv` |
+| **Call list, 69 leads** | https://claude.ai/artifact/EuwoYPw6abRTiu6nya8JDw, `output/master_call_list.csv`, simple copy `output/call_list_simple.csv` | 1-30 tree crews with no website (23 LA area), 31-50 auto shops, 51-69 tree crews whose website has a problem you can show. Owner, email, opener, call window, status. Parked leads: `output/leads_parked.csv` |
 | **Offer** | `output/Built_for_Main_Street_Offer.pdf` | 2 pages for the owner: the three problems, three plans, terms. The only offer PDF to send |
 | **Site** | https://claude.ai/artifact/HQkhw7TqgE1Q6Naqp1okwU (preview) | Upload `output/builtformainstreet_site.zip` to put it on builtformainstreet.com |
 | **Script, phone and email** | `docs/SCRIPT.md`, and the Script button on the call sheet | Call one books the check, call two names one price. Four emails from hello@ |

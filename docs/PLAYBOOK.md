@@ -29,8 +29,8 @@ went, then **Scorecard → Copy for the coach**. Nothing else to track.
 ## 1. The niche
 
 **Update, September 29:** Miles chose **tree service crews, LA area** to call
-first; auto repair is the runner-up. The top 50 is 30 tree crews and 20 auto
-shops. Reasons and the LA numbers are in `docs/FOCUS.md`. The auto analysis below
+first; auto repair is the runner-up. The list is 30 tree crews and 20 auto
+shops, plus 19 tree crews (Sept 30) whose website has a problem you can show. Reasons and the LA numbers are in `docs/FOCUS.md`. The auto analysis below
 stays as the runner-up case.
 
 

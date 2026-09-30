@@ -76,7 +76,7 @@ Cancel with 30 days' notice. Buyout of the site at $2,000 after 12 months.
 | `docs/DELIVERY.md` | how a job gets done, and the two commands |
 | `docs/SCRIPT.md` | call script |
 | `site/launch.html` | the open-for-business checklist, tonight to the December LLC (published with saved ticks) |
-| `output/master_call_list.csv` | the top 50 to call: 30 tree crews (23 LA area) then 20 auto shops, no website found. Parked leads in `output/leads_parked.csv`, in dialing order, with owner, opener, your-time call window and status (also on the call sheet) |
+| `output/master_call_list.csv` | 69 to call, in dialing order: 1-30 tree crews with no website (23 LA area), 31-50 auto shops, 51-69 tree crews whose site has a problem you can show (#3 Granada too). Owner, email, opener, your-time call window, status. Simple copy: `output/call_list_simple.csv`. Parked leads in `output/leads_parked.csv`. All on the call sheet |
 | `src/build_site.py` | 11 pages + JSON-LD from one client JSON |
 | `clients/_example.json` | the client data shape |
 

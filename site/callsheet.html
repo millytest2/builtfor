@@ -281,16 +281,21 @@
 
   // ---- where they are and whether now is a good time ----
   var ZONES = {
-    'America/New_York':    {abbr:'Eastern', cities:['fort wayne','knoxville','chattanooga','dayton','toledo','youngstown']},
-    'America/Chicago':     {abbr:'Central', cities:['lubbock','wichita','tulsa','shreveport','amarillo','odessa','midland','oklahoma city','dallas','houston','san antonio','austin','kansas city','omaha','memphis','new orleans','abilene','lawton','wichita falls','san angelo']},
+    'America/New_York':    {abbr:'Eastern', cities:['fort wayne','knoxville','chattanooga','dayton','toledo','youngstown','canton','bucks county','bridgeport','hardyston','cresco','raleigh']},
+    'America/Chicago':     {abbr:'Central', cities:['lubbock','wichita','tulsa','shreveport','amarillo','odessa','midland','oklahoma city','dallas','houston','san antonio','austin','kansas city','omaha','memphis','new orleans','abilene','lawton','wichita falls','san angelo','bloomington','pontotoc','paris']},
     'America/Denver':      {abbr:'Mountain', cities:['albuquerque','denver','el paso','colorado springs','salt lake city','boise','las cruces','kuna','pueblo']},
     'America/Phoenix':     {abbr:'Arizona', cities:['yuma','phoenix','tucson']},
-    'America/Los_Angeles': {abbr:'Pacific', cities:['pacoima','north hollywood','van nuys','arleta','sun valley','burbank','los angeles','bakersfield','fresno','sacramento','san diego','riverside','las vegas','portland','seattle','panorama city','north hills','sylmar','san fernando','visalia','hanford','stockton','victorville','merced','tulare','reseda','northridge','granada hills','sunland','simi valley','camarillo','pomona','west covina','norwalk','whittier','south gate','bellflower','long beach','rialto','apple valley']}
+    'America/Los_Angeles': {abbr:'Pacific', cities:['pacoima','north hollywood','van nuys','arleta','sun valley','burbank','los angeles','bakersfield','fresno','sacramento','san diego','riverside','las vegas','portland','seattle','panorama city','north hills','sylmar','san fernando','visalia','hanford','stockton','victorville','merced','tulare','reseda','northridge','granada hills','sunland','simi valley','camarillo','pomona','west covina','norwalk','whittier','south gate','bellflower','long beach','rialto','apple valley','placerville','vista','orange','lompoc']}
   };
+  // When the town is not listed, the state decides. Only states that sit in one zone.
+  var STATE_TZ = {CA:'America/Los_Angeles', WA:'America/Los_Angeles', NV:'America/Los_Angeles', AZ:'America/Phoenix',
+    CO:'America/Denver', UT:'America/Denver', NM:'America/Denver', MT:'America/Denver', WY:'America/Denver',
+    IL:'America/Chicago', OK:'America/Chicago', MS:'America/Chicago', AL:'America/Chicago', IA:'America/Chicago', MO:'America/Chicago', WI:'America/Chicago', MN:'America/Chicago', LA:'America/Chicago', AR:'America/Chicago',
+    NY:'America/New_York', PA:'America/New_York', NJ:'America/New_York', CT:'America/New_York', MA:'America/New_York', NC:'America/New_York', SC:'America/New_York', GA:'America/New_York', VA:'America/New_York', OH:'America/New_York', MD:'America/New_York', ME:'America/New_York', NH:'America/New_York', VT:'America/New_York', RI:'America/New_York', DE:'America/New_York', WV:'America/New_York'};
   function zoneOf(l){
     var c = String(l.city||'').toLowerCase().trim();
     for(var z in ZONES){ if(ZONES[z].cities.indexOf(c) >= 0) return z; }
-    return null;
+    return STATE_TZ[String(l.state||'').toUpperCase().trim()] || null;
   }
   function clock(tz, d){
     var p = {};
@@ -362,6 +367,12 @@
     if(/EMPTY DOMAIN/.test(n)) return {k:'empty', tag:'empty domain', pts:20, dom:dom(/own (\S+\.com)/)};
     if(/unrelated|is a different/.test(n)) return {k:'namesake', tag:'name mix-up', pts:15, dom:dom(/\(([a-z0-9-]+\.[a-z.]+) (?:belongs|is)/)};
     if(/no URL behind it|'n\/a'/.test(n)) return {k:'blank', tag:'blank link', pts:10};
+    // sites that exist but let the customer down: the researched opener is in the notes after SAY:
+    var say = dom(/SAY: (.+?)(?: \|\| |$)/);
+    if(/BROKEN CONTACT/.test(n)) return {k:'contact', tag:'broken contact', pts:30, say:say};
+    if(/UNFINISHED SITE/.test(n)) return {k:'unfinished', tag:'unfinished site', pts:25, say:say};
+    if(/MIXED SIGNALS/.test(n)) return {k:'mixed', tag:'mixed signals', pts:25, say:say};
+    if(/THIN SITE/.test(n)) return {k:'thin', tag:'thin site', pts:15, say:say};
     return null;
   }
   // What one job is worth decides whether $1,000 feels cheap. Stamped concrete is thousands; a cushion is not.
@@ -589,12 +600,13 @@
     if(h && h.k==='empty') add(out, 'You own '+(h.dom||'your domain')+', but it still says the site is coming soon. People who type it in hit a dead end.');
     if(h && h.k==='namesake') add(out, 'When people search your name, '+(h.dom ? h.dom+', a different company,' : 'a different company with a similar name')+' comes up first.');
     if(h && h.k==='blank') add(out, 'A few directories show a website button for you with nothing behind it. Someone taps it and there’s nowhere to go.');
+    if(h && h.say) add(out, 'I was on your website this morning. ' + h.say);
     if(!out.length) out.push('I looked up '+biz+' this morning. There’s no website for Google or ChatGPT to read, so when someone asks for '+askPhrase(l)+' in '+city+', you’re easy to miss.');
     return out;
   }
   function vmText(l){
     var cb = pref('cb') || '[your call-back number]';
-    return 'Hi, this is Miles with Built for Main Street. I looked up '+(l.business||'your shop')+' on Google and ChatGPT this morning, and there’s something on your listing you’ll want to see. The check is free. Call me back at '+cb+', or email hello at builtformainstreet dot com. Again, '+cb+'. Thanks.';
+    return 'Hi, this is Miles with Built for Main Street. I looked up '+(l.business||'your shop')+' on Google and ChatGPT this morning, and there’s something on your '+(l.site_checked==='has'?'website':'listing')+' you’ll want to see. The check is free. Call me back at '+cb+', or email hello at builtformainstreet dot com. Again, '+cb+'. Thanks.';
   }
   function emailText(l){
     var who = ownerOf(l) || 'there', f = findingLines(l);
@@ -619,7 +631,7 @@
         + ' "This is Miles with Built for Main Street. Honest heads-up, this is a cold call. Can I have 30 seconds, and you can hang up after that?"</div>'
       + (nicheOf(l)==='auto' && zoneOf(l)==='America/Los_Angeles'
           ? '<div class="stage">Valley shop: you can walk in instead, 10 to 11:30am or 2 to 4pm. Script → The walk-in.</div>' : '')
-      + '<div class="say"><span class="lbl">2 · What you found, then stop</span>"'+f.map(esc).join(' ')+'" "Did you know that?"</div>'
+      + '<div class="say"><span class="lbl">2 · What you found, then stop</span>"'+f.map(esc).join(' ')+'"'+(/\?$/.test(f[f.length-1]) ? '' : ' "Did you know that?"')+'</div>'
       + '<div class="stage">Stop talking. Count to three. Whatever they say, the next line is a question.</div>'
       + '<div class="say"><span class="lbl">3 · One real question</span>"Where do most of your new '+(nicheOf(l)==='tutoring'?'students':'customers')+' come from right now?" Then: '
         + (nicheOf(l)==='auto' ? '"What kind of job do you want more of? Brakes, diagnostics, the bigger stuff?"' : '"What kind of work do you want more of?"') + '</div>'
@@ -667,9 +679,10 @@
     var verdict;
     if(l.status==='dead') verdict = '<div class="verdict cold">Dead<small>Do not call again. If they asked to be left alone, that is permanent.</small></div>';
     else if(asked && named===asked) verdict = '<div class="verdict cold">Weak call<small>Every assistant you asked already names them. Move on unless something else is broken.</small></div>';
-    else if(l.site_checked==='has') verdict = '<div class="verdict cold">Has a site<small>Only call if the site is broken or the assistants miss them anyway.</small></div>';
+    else if(l.site_checked==='has' && !h) verdict = '<div class="verdict cold">Has a site<small>Only call if the site is broken or the assistants miss them anyway.</small></div>';
     else verdict = '<div class="verdict">Ready to call<small>'
       + (l.site_checked==='none' ? 'No website anywhere, verified. ' : '')
+      + (l.site_checked==='has' ? 'Has a site with a problem you can show them. Open it and see the problem yourself before you say it. ' : '')
       + (h ? 'Hook: '+esc(h.tag)+'. ' : '')
       + (tradeOf(l).why ? 'The trade is '+tradeOf(l).why+'. ' : '')
       + (paysForLeads(l) ? 'Already pays for leads, so there is a budget. ' : '')
@@ -737,7 +750,7 @@
         + '<a class="btn sm ghost" href="https://gemini.google.com/app" target="_blank" rel="noopener">Gemini</a>'
         + '</div>'
         + '<div class="ask" style="margin-bottom:12px">'+seg(l,'chatgpt','ChatGPT')+seg(l,'gemini','Gemini')+seg(l,'claude','Claude')+'</div>'
-        + '<div class="checkbox-note">The 50 focus leads were searched by name plus "website" and <b>no site of their own was found</b>. '
+        + '<div class="checkbox-note">No-website leads were searched by name plus "website" and <b>no site of their own was found</b>. Leads marked "has one" have a site with a problem: see it yourself before you mention it. '
         + 'The one thing that check could not see is the Google listing itself: open Maps listing and look for a Website button before you dial.</div>'
         + '<div class="links" style="margin-bottom:9px">'
         + '<a class="btn sm ghost" href="'+esc(mapsUrl)+'" target="_blank" rel="noopener">Maps listing</a>'
@@ -963,13 +976,12 @@
       + '<li>Call one books a free 10-minute check. It does not sell.</li>'
       + '<li>Three tries per business (morning, afternoon, next week). Then Dead.</li></ul>'
 
-      + '<h3>Call one: book the check</h3>'
-      + '<div class="say"><span class="lbl">1 · Hello</span>"Hi, is this [owner]? This is Miles with Built for Main Street. Honest heads-up, this is a cold call. Can I have 30 seconds, and you can hang up after that?"</div>'
-      + '<div class="say"><span class="lbl">2 · What you found</span>"I looked up [business] this morning. When someone asks Google or ChatGPT for [what you do] in [town], other companies come up. Not you. And there’s no website for Google to send people to. Did you know that?"</div>'
+      + '<h3>Call one: HI, SAW, ASK, BOOK</h3>'
+      + '<div class="say"><span class="lbl">Hi</span>"Hey, is this [name]? Hey [name], it’s Miles. I’ll be straight with you, this is a cold call. Got 30 seconds, or did I catch you in the middle of something?"</div>'
+      + '<div class="say"><span class="lbl">Saw</span>"I was looking up [what you do] in [town] this morning, like a customer would. Asked ChatGPT who’s good around here. It named [name] and [name]. Not you. And there’s no website for Google to send people to. Did you know that?" Has a site with a problem: say the problem you saw instead.</div>'
       + '<div class="stage">Stop talking. Count to three.</div>'
-      + '<div class="say"><span class="lbl">3 · One real question</span>"Where do most of your new customers come from right now?" Then: "What kind of job do you want more of?"</div>'
-      + '<div class="say"><span class="lbl">4 · The ask</span>"Here’s what I’d suggest. I run a free check on your business: what Google and ChatGPT say when somebody looks for [what you do] in [town], and what’s keeping you off the list. Ten minutes. Tomorrow at 9 or at 4?"</div>'
-      + '<div class="say"><span class="lbl">5 · Lock it in</span>"Great. What’s the best number and email to send it to?" Tap Check booked.</div>'
+      + '<div class="say"><span class="lbl">Ask</span>"Where’s most of your work coming from right now? Word of mouth? Angi?" Then: "What kind of jobs do you want more of?"</div>'
+      + '<div class="say"><span class="lbl">Book</span>"I’m not an agency. It’s just me, I’m local, and I do this one business at a time. Free check, ten minutes. I show you what people see when they look you up. Tomorrow morning or after 4?" Then: "Best email to send it to?" Tap Check booked.</div>'
 
       + '<h3>The walk-in (businesses with a counter)</h3>'
       + '<div class="say">"Hi, is the owner around? ... I’m Miles, I’m local. I’m not selling anything today. I looked your business up on the way over. Can I show you something? Thirty seconds."</div>'
