@@ -627,8 +627,8 @@
     return ''
       + (needsCheck ? '<div class="todo">60 seconds first: run step 1. What ChatGPT says about them by name is the strongest opener you have.</div>' : '')
       + '<div class="say"><span class="lbl">1 · Open</span>'
-        + (who ? '"Hi, is this '+esc(who)+'?"' : '"Hi, am I speaking with the owner of '+esc(l.business||'the shop')+'?"')
-        + ' "This is Miles with Built for Main Street. Honest heads-up, this is a cold call. Can I have 30 seconds, and you can hang up after that?"</div>'
+        + (who ? '"Hey, is this '+esc(who)+'? Hey '+esc(who)+', it’s Miles with Built for Main Street.' : '"Hey, is this the owner of '+esc(l.business||'the shop')+'? It’s Miles with Built for Main Street.')
+        + ' I’ll be straight with you, this is a cold call. Got 30 seconds, or did I catch you in the middle of something?"</div>'
       + (nicheOf(l)==='auto' && zoneOf(l)==='America/Los_Angeles'
           ? '<div class="stage">Valley shop: you can walk in instead, 10 to 11:30am or 2 to 4pm. Script → The walk-in.</div>' : '')
       + '<div class="say"><span class="lbl">2 · What you found, then stop</span>"'+f.map(esc).join(' ')+'"'+(/\?$/.test(f[f.length-1]) ? '' : ' "Did you know that?"')+'</div>'
@@ -666,6 +666,11 @@
     var mapsUrl = l.maps || ('https://www.google.com/maps/search/'+encodeURIComponent((l.business||'')+' '+(l.city||'')));
     var nameSearch = 'https://www.google.com/search?q='+encodeURIComponent('"'+(l.business||'')+'" '+(l.city||''));
     var fbUrl = 'https://www.facebook.com/search/top?q='+encodeURIComponent((l.business||'')+' '+(l.city||''));
+    var where = [l.city, l.state].filter(Boolean).join(', ');
+    var findSite = 'https://www.google.com/search?q='+encodeURIComponent('"'+(l.business||'')+'" '+(l.city||l.state||'')+' website');
+    var phoneSearch = 'https://www.google.com/search?q='+encodeURIComponent('"'+String(l.phone||'').replace(/\D/g,'').replace(/^(\d{3})(\d{3})(\d{4})$/,'$1-$2-$3')+'"');
+    var yelpUrl = 'https://www.yelp.com/search?find_desc='+encodeURIComponent(l.business||'')+'&find_loc='+encodeURIComponent(where);
+    var siteUrl = l.website ? (/^https?:/i.test(l.website) ? l.website : 'https://'+l.website) : '';
     var googleUrl = 'https://www.google.com/search?q='+encodeURIComponent(q);
     var gptUrl = 'https://chatgpt.com/?q='+encodeURIComponent(ask);
     var claudeUrl = 'https://claude.ai/new?q='+encodeURIComponent(ask);
@@ -706,6 +711,22 @@
         + '</div>'
         + (l.phone && pref('dial')==='phone' ? '<div class="todo" style="margin-top:8px">This dials from your own phone number. Script, then Your details: set Dial with to Google Voice.</div>' : '')
         + verdict
+        + '</div>'
+
+      + '<div class="sec"><div class="sec-t">Look them up · one tap each</div>'
+        + '<div class="links">'
+        + '<a class="btn sm" href="'+esc(nameSearch)+'" target="_blank" rel="noopener">Google them</a>'
+        + '<a class="btn sm ghost" href="'+esc(mapsUrl)+'" target="_blank" rel="noopener">Maps listing</a>'
+        + (siteUrl
+            ? '<a class="btn sm ghost" href="'+esc(siteUrl)+'" target="_blank" rel="noopener">Their website</a>'
+            : '<a class="btn sm ghost" href="'+esc(findSite)+'" target="_blank" rel="noopener">Find their website</a>')
+        + (l.phone ? '<a class="btn sm ghost" href="'+esc(phoneSearch)+'" target="_blank" rel="noopener">Search the phone</a>' : '')
+        + '<a class="btn sm ghost" href="'+esc(yelpUrl)+'" target="_blank" rel="noopener">Yelp</a>'
+        + '<a class="btn sm ghost" href="'+esc(fbUrl)+'" target="_blank" rel="noopener">Facebook</a>'
+        + '</div>'
+        + '<p class="hint">'+(l.site_checked==='has'
+            ? 'Open their site and screenshot the problem before you call. Found the address? Paste it in Details, Website, and this button opens it next time.'
+            : 'On the Maps listing, look for a Website button. None there means the "no website" opener holds. If they do have one, open Optional below and tap Has one.')+'</p>'
         + '</div>'
 
       + '<div class="sec"><div class="sec-t">Step 1 · Ask about them by name (60 seconds)</div>'
@@ -753,11 +774,7 @@
         + '<div class="checkbox-note">No-website leads were searched by name plus "website" and <b>no site of their own was found</b>. Leads marked "has one" have a site with a problem: see it yourself before you mention it. '
         + 'The one thing that check could not see is the Google listing itself: open Maps listing and look for a Website button before you dial.</div>'
         + '<div class="links" style="margin-bottom:9px">'
-        + '<a class="btn sm ghost" href="'+esc(mapsUrl)+'" target="_blank" rel="noopener">Maps listing</a>'
-        + '<a class="btn sm ghost" href="'+esc(nameSearch)+'" target="_blank" rel="noopener">Search their name</a>'
-        + '<a class="btn sm ghost" href="'+esc(googleUrl)+'" target="_blank" rel="noopener">Search "'+esc(q)+'"</a>'
-        + '<a class="btn sm ghost" href="'+esc(fbUrl)+'" target="_blank" rel="noopener">Facebook</a>'
-        + (l.website?'<a class="btn sm ghost" href="'+esc(l.website)+'" target="_blank" rel="noopener">Their site</a>':'')
+        + '<a class="btn sm ghost" href="'+esc(googleUrl)+'" target="_blank" rel="noopener">Search "'+esc(q)+'" (who shows up instead)</a>'
         + '</div>'
         + '<div class="ask" style="margin-bottom:11px"><div class="ask-row"><span>Website</span>'
           + '<div class="seg three" data-key="site_checked">'
