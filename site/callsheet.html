@@ -472,15 +472,37 @@
   }
 
   // ---- Google Sheet sync: every save also goes to the owner's Apps Script web app ----
-  var SHEET_COLS = ['id','business','phone','city','state','status','touches','last_touch','next','plan','email','website','notes','updated'];
+  var SHEET_COLS = ['Business','Phone','Where','Kind','Status','Calls','Last call','Next step','Plan','Preview','Problem','Email','Notes','id'];
+  // the clean row the Google Sheet shows: no research boilerplate, readable dates
+  function cleanNotes(n){
+    return String(n||'')
+      .replace(/PREVIEW READY: \S+ \(use "[^"]*"\)\.\s*/g,'')
+      .replace(/(LA tree )?#\d+ · (tree|auto) · /g,'')
+      .replace(/LA tree #\d+ · /g,'')
+      .replace(/NO WEBSITE FOUND \([^)]*\)\.\s*/g,'')
+      .replace(/Has a site with a problem · [A-Z ]+ · priority \d+\/10 · found Sept 30[^:]*: open (their site|it) and see it yourself first\.\s*/g,'')
+      .replace(/SAY: [^|]*\|\|\s*/g,'')
+      .replace(/\s+/g,' ').trim().slice(0,300);
+  }
+  function niceTime(iso){
+    var d = new Date(iso); if(isNaN(d)) return '';
+    return d.toLocaleDateString('en-US',{month:'short',day:'numeric'})+' '+d.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
+  }
   function sheetRow(l){
-    var lg = logOf(l), last = lg.length ? lg[lg.length-1].t : '';
-    var o = {};
-    SHEET_COLS.forEach(function(c){ o[c] = String(l[c]||''); });
-    o.status = SLABEL[l.status||'new'] || l.status || 'new';
-    o.touches = String(lg.filter(function(e){ return TOUCH.indexOf(e.s) >= 0; }).length);
-    o.last_touch = last ? last.slice(0,16).replace('T',' ') : '';
-    return o;
+    var lg = logOf(l), last = lg.length ? lg[lg.length-1].t : '', h = hookOf(l);
+    return {
+      'Business': l.business||'', 'Phone': l.phone||'',
+      'Where': [l.city, l.state].filter(Boolean).join(', '),
+      'Kind': {tree:'Tree service', auto:'Auto repair', training:'Studio', tutoring:'Tutor'}[nicheOf(l)] || 'Other',
+      'Status': SLABEL[l.status||'new'] || l.status || 'new',
+      'Calls': String(lg.filter(function(e){ return TOUCH.indexOf(e.s) >= 0; }).length),
+      'Last call': last ? niceTime(last) : '',
+      'Next step': l.next ? shortDate(l.next) : '',
+      'Plan': PLANS[l.plan] ? PLANS[l.plan].name+' $'+PLANS[l.plan].setup+' + $'+PLANS[l.plan].mo+'/mo' : '',
+      'Preview': /PREVIEW READY/.test(l.notes||'') ? 'Ready' : '',
+      'Problem': l.site_checked==='none' ? 'No website' : (h ? h.tag : ''),
+      'Email': l.email||'', 'Notes': cleanNotes(l.notes), 'id': l.id
+    };
   }
   function sheetLight(ok, msg){
     var el = $('t-sheet'); if(!el) return;
@@ -497,7 +519,7 @@
         // blocked from posting: try a small GET per row, notes trimmed so the address stays short
         try{
           rows.forEach(function(l){
-            var r = sheetRow(l); r.notes = r.notes.slice(0,400);
+            var r = sheetRow(l); r['Notes'] = r['Notes'].slice(0,200);
             new Image().src = url + (url.indexOf('?')>=0?'&':'?') + 'd=' + encodeURIComponent(JSON.stringify({k: pref('sheetkey'), rows:[r]}));
           });
           sheetLight(true, 'sent '+t+' (backup route)');
@@ -665,30 +687,31 @@
       + 'If you’d rather not hear from us, reply "stop" and you won’t.';
   }
   // what you noticed, in one easy line that ends on a question
+  function industryOf(l){ return {tree:'tree services', auto:'auto shops', training:'studios', tutoring:'tutors'}[nicheOf(l)] || 'local businesses'; }
   function noticed(l){
     var h = hookOf(l), city = l.city || 'the area';
-    var start = 'I was just looking around '+city+' and noticed you guys have some great reviews';
-    if(h && h.say) return start+'. I was on your site too. '+h.say.replace(/^[A-Z][a-z]+, (\w)/, function(m,c){ return c.toUpperCase(); })+(/\?$/.test(h.say) ? '' : ' Is someone looking after the site for you?');
-    if(h) return start+'. '+findingLines(l).join(' ')+' Is someone looking after that for you?';
-    return start+', but no website or place to book. Were you gonna get around to that soon?';
+    var start = 'So I was looking around '+city+' and saw you guys have some great reviews';
+    if(h && h.say) return start+'. I was on your site too. '+h.say.replace(/^[A-Z][a-z]+, (\w)/, function(m,c){ return c.toUpperCase(); })+(/\?$/.test(h.say) ? '' : ' Were you guys planning on getting that fixed?');
+    if(h) return start+'. '+findingLines(l).join(' ')+' Were you guys planning on getting that fixed?';
+    return start+', but no website or place to book. Were you guys planning on getting that set up?';
   }
   function scriptHTML(l){
     var who = ownerOf(l), tz = zoneOf(l), day = nextDay(tz);
-    var nm = who || '[name]';
+    var nm = who || '[name]', ind = industryOf(l), made = /PREVIEW READY/.test(l.notes||'');
     return ''
-      + '<div class="say"><span class="lbl">1 · Open (alternate A and B)</span>'
-        + '<b>A:</b> "Hey, is this '+esc(who || 'the owner of '+(l.business||'the business'))+'? ... How’s it going, '+esc(nm)+'? My name’s Miles."<br>'
-        + '<b>B:</b> "Hey, is this '+esc(who || 'the owner')+'? ... '+esc(nm)+', quick question: would you hang up on me if I told you this was a cold call?"</div>'
-      + '<div class="stage">B, if they say "probably" or laugh: "Ha, fair. Give me 20 seconds, and if it’s not useful, hang up. Deal?" Write A or B in Notes.</div>'
+      + '<div class="say"><span class="lbl">1 · Open warm (A or B, note which)</span>'
+        + '<b>A:</b> "Hey, is this '+esc(l.business||'the business')+'? ... What’s going on, '+esc(nm)+'? How we doing today?" Then: "You guys staying busy?"<br>'
+        + '<b>B:</b> "Hey '+esc(nm)+', Miles here. Quick one: I came across '+esc(l.business||'your business')+' and saw you’ve got some great reviews. Do most of your new customers find you through word of mouth?"</div>'
+      + '<div class="stage">Let them answer. Be a person for ten seconds before any business.</div>'
       + '<div class="say"><span class="lbl">2 · What you noticed</span>"'+esc(noticed(l))+'"</div>'
-      + '<div class="stage">Only say "great reviews" if you saw them. Then listen.</div>'
-      + '<div class="say"><span class="lbl">3 · Whatever they say</span>"Makes sense." Been meaning to: "It’s always the thing that gets pushed." Busy: "Most crews I talk to are. It’s more about the right work, like the bigger jobs." Someone’s on it: "Nice. How long’s that been in the works?" Someone already made one (AI, a customer): "Oh nice. When’s it going live? Want a free second look once it’s up?"</div>'
-      + (/PREVIEW READY/.test(l.notes||'')
-          ? '<div class="say"><span class="lbl">4 · The preview (yours is ready)</span>"Well, I actually went ahead and put one together. I build websites for local businesses, and help them show up when people search on Google, ChatGPT and Claude. Would you wanna see it? Completely free to take a look."</div>'
-          : '<div class="say"><span class="lbl">4 · The preview</span>"I build websites for local businesses, and help them show up when people search on Google, ChatGPT and Claude. I could put together a quick preview of what yours could look like. Completely free to take a look. Want to see it?"</div>'
+      + '<div class="stage">Only say "great reviews" if you saw them. Brand new? "...saw you guys are pretty new." Then listen.</div>'
+      + '<div class="say"><span class="lbl">3 · Whatever they say</span>"Makes sense." Been meaning to: "It’s always the thing that gets pushed." Busy: "Most crews I talk to are. It’s more about the right work, like the bigger jobs." Someone already made one (AI, a customer): "Oh nice. When’s it going live? Want a free second look once it’s up?"</div>'
+      + (made
+          ? '<div class="say"><span class="lbl">4 · Be honest (yours is ready)</span>"Yeah, well, I’ll be honest, I actually went ahead and made you one, because I wanted to help. I focus on building websites for '+esc(ind)+' like yours. If you’re free tomorrow or next week, I’d be happy to jump on a quick call and show you, or I can just email it over. If you like it, we can talk from there."</div>'
+          : '<div class="say"><span class="lbl">4 · Be honest</span>"Yeah, well, I’ll be honest, I focus on building websites for '+esc(ind)+' like yours, and I’d be happy to put one together for you. No cost to look. I can email it over, and if you like it, we can talk from there."</div>'
             + '<div class="stage">Said yes? Tell Claude the lead number and the preview gets built. Only say "I made one" when it exists.</div>')
-      + '<div class="say"><span class="lbl">5 · Book the look</span>"Great. What’s the best email to send it to? ... And I’ll walk you through it, ten minutes. '+day.charAt(0).toUpperCase()+day.slice(1)+' '+(SLOTS[nicheOf(l)]||SLOTS.trade)+', your time, which is better?" ... "Appreciate you. Talk then."</div>'
-      + '<div class="stage">Tap Check booked, put the time and email in Notes and Details. Ask Claude for the preview.</div>'
+      + '<div class="say"><span class="lbl">5 · Book the look</span>"What’s the best email for you? ... And would '+day+' or early next week be better for a quick call to walk through it? Ten minutes." ... "Appreciate you, '+esc(nm)+'."</div>'
+      + '<div class="stage">Tap Check booked, put the time and email in Notes and Details.</div>'
       + '<details class="more"><summary>If they ask the price</summary><div><div class="say" style="margin-top:6px">"Totally fair. Take a look first, and if you like it, I’ll give you one straight price, and it won’t change."</div>'
         + '<div class="stage">Never a range. You pick the plan before call two.</div></div></details>'
       + '<details class="more"><summary>Voicemail (20 seconds, then no text)</summary><div><div class="say" style="margin-top:6px">"'+esc(vmText(l))+'"</div>'
@@ -1074,12 +1097,12 @@
       + '<li>Call one books a free 10-minute check. It does not sell.</li>'
       + '<li>Three tries per business (morning, afternoon, next week). Then Dead.</li></ul>'
 
-      + '<h3>Call one: the heads-up</h3>'
-      + '<div class="say"><span class="lbl">1 · Open</span><b>A:</b> "Hey, is this [name]? ... How’s it going, [name]? My name’s Miles."<br><b>B:</b> "[Name], quick question: would you hang up on me if I told you this was a cold call?" ... "Ha, fair. Give me 20 seconds, and if it’s not useful, hang up. Deal?"</div>'
-      + '<div class="say"><span class="lbl">2 · What you noticed</span>"I was just looking around [town] and noticed you guys have some great reviews, but no website or place to book. Were you gonna get around to that soon?"<br><br>Site with a problem: "...I was on your site too, and [the problem]. Is someone looking after the site for you?"</div>'
+      + '<h3>Call one: friendly, then the problem, then honest</h3>'
+      + '<div class="say"><span class="lbl">1 · Open warm</span><b>A:</b> "Hey, is this [business]? ... What’s going on, [name]? How we doing today?" Then: "You guys staying busy?"<br><b>B:</b> "Hey [name], Miles here. Quick one: I came across [business] and saw you’ve got some great reviews. Do most of your new customers find you through word of mouth?"</div>'
+      + '<div class="say"><span class="lbl">2 · What you noticed</span>"So I was looking around [town] and saw you guys have some great reviews [or: saw you guys are pretty new], but no website or place to book. Were you guys planning on getting that set up?"</div>'
       + '<div class="say"><span class="lbl">3 · Whatever they say</span>"Makes sense."</div>'
-      + '<div class="say"><span class="lbl">4 · The preview</span>"I build websites for local businesses, and help them show up when people search on Google, ChatGPT and Claude. I could put together a quick preview of what yours could look like. Completely free to take a look. Want to see it?" (Made one ahead: "Well, I actually went ahead and put one together. Would you wanna see it?")</div>'
-      + '<div class="say"><span class="lbl">5 · Book the look</span>"Great. What’s the best email to send it to? And I’ll walk you through it, ten minutes. Would tomorrow morning work, or is the afternoon better?" Tap Check booked.</div>'
+      + '<div class="say"><span class="lbl">4 · Be honest</span>Made one: "Yeah, well, I’ll be honest, I actually went ahead and made you one, because I wanted to help. I focus on building websites for [tree services] like yours. If you’re free tomorrow or next week, happy to jump on a quick call and show you, or I can just email it over. If you like it, we can talk from there."<br><br>Not yet: "...I focus on building websites for [tree services] like yours, and I’d be happy to put one together for you. No cost to look. I can email it over, and if you like it, we can talk from there."</div>'
+      + '<div class="say"><span class="lbl">5 · Book the look</span>"What’s the best email for you? And would tomorrow or early next week be better for a quick call to walk through it? Ten minutes." Tap Check booked.</div>'
 
       + '<h3>The walk-in (businesses with a counter)</h3>'
       + '<div class="say">"Hi, is the owner around? ... I’m Miles, I’m local. I’m not selling anything today. I looked your business up on the way over. Can I show you something? Thirty seconds."</div>'

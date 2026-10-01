@@ -6,54 +6,37 @@ plumber". Emails go out from hello@builtformainstreet.com.
 **Call one books a free check. It does not sell.** Call two shows the check and
 names one price. Most of the work is being curious and brief.
 
-## Pocket version: the heads-up
+## Pocket version: friendly, then the problem, then honest
 
-One goal on call one: they say yes to a free preview of their website, and you book
-ten minutes to show it. Printable: `output/Call_Script.pdf` and `output/Email_Scripts.pdf`.
+What worked on the first real call (Ahles, Sept 30). Printable: `output/Call_Script.pdf`.
 
-**1. Open** (alternate A and B, note which in the lead)
-> A: "Hey, is this [name]? ... How's it going, [name]? My name's Miles."
-> B: "[Name], quick question: would you hang up on me if I told you this was a cold
-> call?" ... "Ha, fair. Give me 20 seconds, and if it's not useful, hang up. Deal?"
+**1. Open warm** (alternate A and B, note which)
+> A: "Hey, is this [business]? ... What's going on, [name]? How we doing today?" ...
+> "You guys staying busy?"
+> B: "Hey [name], Miles here. Quick one: I came across [business] and saw you've got
+> some great reviews. Do most of your new customers find you through word of mouth?"
 
 **2. What you noticed**
-> "I was just looking around [town] and noticed you guys have some great reviews, but
-> no website or place to book. Were you gonna get around to that soon?"
-> Site with a problem: "...I was on your site too, and [the problem]. Is someone
-> looking after the site for you?"
-
-Only say "great reviews" if you saw them.
+> "So I was looking around [town] and saw you guys have some great reviews [or: saw
+> you guys are pretty new], but no website or place to book. Were you guys planning on
+> getting that set up?"
 
 **3. Whatever they say:** "Makes sense."
-- "Someone already made me one" (a customer, AI): "Oh nice, that's great. When's it
-  going live? Want a free second look once it's up? The part those builders usually
-  skip is the Google listing and what ChatGPT reads about you." Follow up in two weeks.
-- "This technology is crazy": "It really is. Half my job now is making sure ChatGPT
-  actually knows you exist."
 
-**4. The preview**
-> "I build websites for local businesses, and help them show up when people search on
-> Google, ChatGPT and Claude. I could put together a quick preview of what yours could
-> look like. Completely free to take a look. Want to see it?"
-> Made one ahead: "Well, I actually went ahead and put one together. Would you wanna
-> see it?" Only when it exists.
+**4. Be honest**
+> Made one: "Yeah, well, I'll be honest, I actually went ahead and made you one,
+> because I wanted to help. I focus on building websites for [tree services] like
+> yours. If you're free tomorrow or next week, I'd be happy to jump on a quick call and
+> show you, or I can just email it over. If you like it, we can talk from there."
+> Not yet: "...I focus on building websites for [tree services] like yours, and I'd be
+> happy to put one together for you. No cost to look. I can email it over."
 
 **5. Book the look**
-> "Great. What's the best email to send it to? And I'll walk you through it, ten
-> minutes. Would tomorrow morning work, or is the afternoon better?"
+> "What's the best email for you? And would tomorrow or early next week be better for
+> a quick call to walk through it? Ten minutes."
 
-**If they ask the price:** "Totally fair. Take a look first, and if you like it, I'll
-give you one straight price, and it won't change."
-
-**Call two:** they pull up the preview, you ask "What do you think?", show what ChatGPT
-said about who to call in their town, say what you'd finish, name the one plan you
-picked before the call, then stay quiet. "The domain is yours, no long contract. Want
-me to send over the agreement and the payment link?"
-
-**Voicemail:**
-> "Hey [name], it's Miles with Built for Main Street. I was looking around [town] and
-> noticed you've got some great reviews but no website. I've got an idea for one, free
-> to take a look. Give me a call at [number]. Again, [number]. Have a good one."
+**Price:** "Totally fair. Take a look first, and if you like it, I'll give you one
+straight price, and it won't change."
 
 ## Who you are on the call
 
