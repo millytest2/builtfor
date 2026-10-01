@@ -83,7 +83,7 @@ Cancel with 30 days' notice. Buyout of the site at $2,000 after 12 months.
 | `docs/DELIVERY.md` | how a job gets done, and the two commands |
 | `docs/SCRIPT.md` | call script |
 | `site/launch.html` | the open-for-business checklist, tonight to the December LLC (published with saved ticks) |
-| `output/master_call_list.csv` | 100 to call, checked Oct 1 against the layup bar (confirmed phone; no website of its own or a glaring site problem; real reviews or years in business; owner-run). 64 in California, 36 across the US. 61 tree, 21 auto, 18 pool. Talked: #3 Granada, #20 Menos, #71 Ahles. #73 and #100 are borderline, call last. Each lead's number shows on the call sheet, which has a find box. Swapped-out leads are in `output/leads_parked.csv`. Simple copy: `output/call_list_simple.csv` |
+| `output/master_call_list.csv` | 47 to call, every one re-checked Oct 1 with a deep web search: no website of its own, or only a free, dead, wrong or directory page. Any lead with a real site was parked. 1-6 already talked to or tried (Granada, Menos, Ahles, Boling, Gary's, Affordable). 7-21 LA tree, 22-38 LA auto, 39 pool, 40-47 tree out of state. 36 in California. Each lead's number shows on the call sheet, which has a find box. Parked leads (with the reason) are in `output/leads_parked.csv`. Simple copy: `output/call_list_simple.csv` |
 | `site/intake.html` | client intake sheet, one per signed client (published: https://claude.ai/artifact/S36dxQUuipm27aXPGoBvvP, db collection `intake`). The intake skill reads it |
 | `src/build_site.py` | 11 pages + JSON-LD from one client JSON |
 | `clients/_example.json` | the client data shape |
