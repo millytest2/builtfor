@@ -671,8 +671,8 @@
   }
   function vmText(l){
     var cb = pref('cb') || '[your call-back number]';
-    var has = l.site_checked==='has' || hookOf(l);
-    return 'Hey, it’s Miles with Built for Main Street. I was looking around '+(l.city||'your area')+' and noticed '+(l.business||'your business')+' has some great reviews'+(has ? ', and a couple of quick fixes on the website' : ' but no website')+'. I’ve got an idea for you, free to take a look. Give me a call at '+cb+'. Again, '+cb+'. Have a good one.';
+    var has = l.site_checked==='has' || hookOf(l), made = /PREVIEW READY/.test(l.notes||'');
+    return 'Hey, it’s Miles with Built for Main Street. I was looking around '+(l.city||'your area')+' and noticed '+(l.business||'your business')+' has some great reviews'+(has ? ', and a couple of quick fixes on the website' : ' but no website')+'. '+(made && !has ? 'So I went ahead and made you one. It’s free to look at.' : 'I’ve got an idea for you, free to take a look.')+' Give me a call at '+cb+'. Again, '+cb+'. Have a good one.';
   }
   function emailText(l){
     var who = ownerOf(l) || 'there', f = findingLines(l);
@@ -680,8 +680,8 @@
       + 'Hi ' + who + ',\n\n'
       + 'Miles from Built for Main Street. I tried calling earlier.\n\n'
       + f.join(' ') + '\n\n'
-      + 'We fix that, and we make sure the people who find you can reach you in one tap. '
-      + 'The free check shows exactly what’s missing. Reply with a good time for a 10-minute call.\n\n'
+      + (/PREVIEW READY/.test(l.notes||'') ? 'So I went ahead and made you a one-page preview of a website. It’s free to look at, and there’s no obligation. ' : 'I build websites for local businesses, and I’d be happy to make you a free one-page preview to look at. ')
+      + 'Reply with your best time for a quick call, or just reply "send it."\n\n'
       + 'Miles\nBuilt for Main Street\nbuiltformainstreet.com\n'
       + (pref('addr') || '[your mailing address]') + '\n\n'
       + 'If you’d rather not hear from us, reply "stop" and you won’t.';
@@ -693,27 +693,30 @@
     var start = 'So I was looking around '+city+' and saw you guys have some great reviews';
     if(h && h.say) return start+'. I was on your site too. '+h.say.replace(/^[A-Z][a-z]+, (\w)/, function(m,c){ return c.toUpperCase(); })+(/\?$/.test(h.say) ? '' : ' Were you guys planning on getting that fixed?');
     if(h) return start+'. '+findingLines(l).join(' ')+' Were you guys planning on getting that fixed?';
-    return start+', but no website or place to book. Were you guys planning on getting that set up?';
+    return start+', but no website. So when someone new looks you up, there’s nowhere to send them. Were you guys planning on getting that set up?';
   }
   function scriptHTML(l){
     var who = ownerOf(l), tz = zoneOf(l), day = nextDay(tz);
     var nm = who || '[name]', ind = industryOf(l), made = /PREVIEW READY/.test(l.notes||'');
     return ''
       + '<div class="say"><span class="lbl">1 · Open warm (A or B, note which)</span>'
-        + '<b>A:</b> "Hey, is this '+esc(l.business||'the business')+'? ... What’s going on, '+esc(nm)+'? How we doing today?" Then: "You guys staying busy?"<br>'
-        + '<b>B:</b> "Hey '+esc(nm)+', Miles here. Quick one: I came across '+esc(l.business||'your business')+' and saw you’ve got some great reviews. Do most of your new customers find you through word of mouth?"</div>'
-      + '<div class="stage">Let them answer. Be a person for ten seconds before any business.</div>'
+        + '<b>A:</b> "Hey, is this '+esc(l.business||'the business')+'? ... Hey '+esc(nm)+', it’s Miles. What’s going on, how we doing today?" Then: "You guys staying busy?"<br>'
+        + '<b>B:</b> "Hey '+esc(nm)+', it’s Miles. Quick one: I came across '+esc(l.business||'your business')+' and saw you’ve got some great reviews. Do most of your new customers find you through word of mouth?"</div>'
+      + '<div class="stage">Say your name in the first five seconds. No name on file? "Hey, it’s Miles, who am I talking with?" Recording? Right after your name: "Heads up, I record my calls so I don’t miss anything." Not the owner? "Is the owner around? When’s a good time to catch them?" Then let them answer. Be a person for ten seconds.</div>'
       + '<div class="say"><span class="lbl">2 · What you noticed</span>"'+esc(noticed(l))+'"</div>'
       + '<div class="stage">Only say "great reviews" if you saw them. Brand new? "...saw you guys are pretty new." Then listen.</div>'
-      + '<div class="say"><span class="lbl">3 · Whatever they say</span>"Makes sense." Been meaning to: "It’s always the thing that gets pushed." Busy: "Most crews I talk to are. It’s more about the right work, like the bigger jobs." Someone already made one (AI, a customer): "Oh nice. When’s it going live? Want a free second look once it’s up?"</div>'
+      + '<div class="say"><span class="lbl">3 · Whatever they say</span>"Makes sense." Been meaning to: "It’s always the thing that gets pushed." Busy: "Good. That’s the best time to have it, when you can pick the jobs you want." Word of mouth: "That’s the best kind. And when a neighbor passes your name along, people look you up first." Someone already made one (AI, a customer): "Oh nice. When’s it going live? Want a free second look once it’s up?"</div>'
       + (made
-          ? '<div class="say"><span class="lbl">4 · Be honest (yours is ready)</span>"Yeah, well, I’ll be honest, I actually went ahead and made you one, because I wanted to help. I focus on building websites for '+esc(ind)+' like yours. If you’re free tomorrow or next week, I’d be happy to jump on a quick call and show you, or I can just email it over. If you like it, we can talk from there."</div>'
-          : '<div class="say"><span class="lbl">4 · Be honest</span>"Yeah, well, I’ll be honest, I focus on building websites for '+esc(ind)+' like yours, and I’d be happy to put one together for you. No cost to look. I can email it over, and if you like it, we can talk from there."</div>'
+          ? '<div class="say"><span class="lbl">4 · Be honest (yours is ready)</span>"Yeah, I’ll be honest with you, this is what I do. I build websites for '+esc(ind)+', and I actually went ahead and made you one, because it’s easier to show you than explain it. No cost to look. Want me to email it over right now?"</div>'
+          : hookOf(l)
+          ? '<div class="say"><span class="lbl">4 · Be honest (they have a site)</span>"Yeah, I’ll be honest with you, this is what I do. I build websites for '+esc(ind)+'. I’d be happy to show you what a fixed-up version looks like, free to look at, and you decide if you like it. Want me to put that together?"</div>'
+          : '<div class="say"><span class="lbl">4 · Be honest</span>"Yeah, I’ll be honest with you, this is what I do. I build websites for '+esc(ind)+'. I’d be happy to put one together for you, free to look at, and you decide if you like it. Want me to make you one?"</div>'
             + '<div class="stage">Said yes? Tell Claude the lead number and the preview gets built. Only say "I made one" when it exists.</div>')
-      + '<div class="say"><span class="lbl">5 · Book the look</span>"What’s the best email for you? ... And would '+day+' or early next week be better for a quick call to walk through it? Ten minutes." ... "Appreciate you, '+esc(nm)+'."</div>'
-      + '<div class="stage">Tap Check booked, put the time and email in Notes and Details.</div>'
-      + '<details class="more"><summary>If they ask the price</summary><div><div class="say" style="margin-top:6px">"Totally fair. Take a look first, and if you like it, I’ll give you one straight price, and it won’t change."</div>'
-        + '<div class="stage">Never a range. You pick the plan before call two.</div></div></details>'
+      + '<div class="say"><span class="lbl">5 · Lock the next call</span>"What’s the best email for you? ... '+(made ? 'Sending it now. Then I’ll give you a quick call '+day : 'I’ll have it to you by '+day+', and I’ll give you a quick call once it’s there')+' to hear what you think. Morning or afternoon better?" ... "Appreciate you, '+esc(nm)+'."</div>'
+      + '<div class="stage">'+(made ? 'Send it while you’re still on the phone. "Did it come through?" If they open it now, walk them through it. ' : '')+'Tap Check booked, put the callback time and email in Notes and Details.</div>'
+      + '<details class="more"><summary>If they ask the price</summary><div><div class="say" style="margin-top:6px">First time: "Totally fair. Take a look first, and if you like it, I’ll give you one straight price, and it won’t change."</div>'
+        + '<div class="say">Ask again: give the one number for the plan you’d pick. Most crews: "For a crew like yours, it’s $800 to set up and $199 a month. No long contract. But look first." Then stop talking.</div>'
+        + '<div class="stage">Never a range. Once you say a number, it doesn’t move.</div></div></details>'
       + '<details class="more"><summary>Voicemail (20 seconds, then no text)</summary><div><div class="say" style="margin-top:6px">"'+esc(vmText(l))+'"</div>'
         + '<div class="stage">Set Voicemail. No texts to businesses. '+(l.email ? 'Send the email below.' : 'No email on file, so try again in two days at the other window.')+'</div>'
         + '<div class="links"><button class="btn sm ghost" data-copy="vm">Copy voicemail</button>'
@@ -1068,11 +1071,11 @@
 
   function openScript(){
     var O = [
-      ['"How much is it?"', '"Totally fair. Take a look first. If you like it, I’ll give you one straight price, and it won’t change. No contract either."'],
+      ['"How much is it?"', '"Totally fair. Take a look first. If you like it, I’ll give you one straight price, and it won’t change." Asked again? The one number for the plan you’d pick: "For a crew like yours, it’s $800 to set up and $199 a month. No long contract."'],
       ['"Another marketing company?"', '"Ha, you probably get those calls every week. I’m not an agency. No ads, no contract, no big promises. It’s just me, and I start by showing you a free preview. You decide from there."'],
       ['"Word of mouth keeps me busy."', '"That’s the best kind. Quick question though: when a neighbor passes along your name, what do people do next? Usually they look you up. Right now they find [what you saw]."'],
       ['"I use Angi."', '"Makes sense. How’s it been? ... Those leads usually go to a few crews at once. This is about the people already searching for you, so they call you directly."'],
-      ['"Just send me something."', '"Happy to. What’s the best email? I’ll send the preview, and give you a quick call Thursday to see what you think."'],
+      ['"Just send me something."', '"Happy to. What’s the best email? I’ll send the preview, and give you a quick call tomorrow to see what you think."'],
       ['"My nephew handles that."', '"Love that he’s helping. Most of what I look at is the Google side, what ChatGPT says about you, and keeping an eye on it each month. Happy to share what I find with him too."'],
       ['"Someone already made me one." (a customer, a nephew, AI)', '"Oh nice, that’s great. When’s it going live? ... Want a free second look once it’s up? The part those builders usually skip is the Google listing and what ChatGPT reads about you. Happy to check it." Set a follow-up in two weeks.'],
       ['"This technology is crazy."', '"It really is. Half my job now is making sure ChatGPT actually knows you exist." Then ask where their work comes from.'],
@@ -1094,15 +1097,16 @@
       + '<li>Dial by hand, 8am to 8pm <b>their</b> time, never Sunday. Tree crews: 8 to 10am or 3:30 to 5:30pm. Auto shops: 10 to 11:30am or 2 to 4pm.</li>'
       + '<li><b>No texts.</b> Not after a voicemail, not ever, until client #10.</li>'
       + '<li>Never quote a range. Never promise rankings, leads or revenue. Never open with "we build websites."</li>'
-      + '<li>Call one books a free 10-minute check. It does not sell.</li>'
+      + '<li>Call one gets a yes to seeing the free preview and a time for the callback. It does not sell.</li>'
+      + '<li>Your cell is fine for now. It never goes in an email or anything written. Recording? Say so right after your name.</li>'
       + '<li>Three tries per business (morning, afternoon, next week). Then Dead.</li></ul>'
 
       + '<h3>Call one: friendly, then the problem, then honest</h3>'
-      + '<div class="say"><span class="lbl">1 · Open warm</span><b>A:</b> "Hey, is this [business]? ... What’s going on, [name]? How we doing today?" Then: "You guys staying busy?"<br><b>B:</b> "Hey [name], Miles here. Quick one: I came across [business] and saw you’ve got some great reviews. Do most of your new customers find you through word of mouth?"</div>'
-      + '<div class="say"><span class="lbl">2 · What you noticed</span>"So I was looking around [town] and saw you guys have some great reviews [or: saw you guys are pretty new], but no website or place to book. Were you guys planning on getting that set up?"</div>'
+      + '<div class="say"><span class="lbl">1 · Open warm</span><b>A:</b> "Hey, is this [business]? ... Hey [name], it’s Miles. What’s going on, how we doing today?" Then: "You guys staying busy?"<br><b>B:</b> "Hey [name], it’s Miles. Quick one: I came across [business] and saw you’ve got some great reviews. Do most of your new customers find you through word of mouth?"</div>'
+      + '<div class="say"><span class="lbl">2 · What you noticed</span>"So I was looking around [town] and saw you guys have some great reviews [or: saw you guys are pretty new], but no website. So when someone new looks you up, there’s nowhere to send them. Were you guys planning on getting that set up?"</div>'
       + '<div class="say"><span class="lbl">3 · Whatever they say</span>"Makes sense."</div>'
-      + '<div class="say"><span class="lbl">4 · Be honest</span>Made one: "Yeah, well, I’ll be honest, I actually went ahead and made you one, because I wanted to help. I focus on building websites for [tree services] like yours. If you’re free tomorrow or next week, happy to jump on a quick call and show you, or I can just email it over. If you like it, we can talk from there."<br><br>Not yet: "...I focus on building websites for [tree services] like yours, and I’d be happy to put one together for you. No cost to look. I can email it over, and if you like it, we can talk from there."</div>'
-      + '<div class="say"><span class="lbl">5 · Book the look</span>"What’s the best email for you? And would tomorrow or early next week be better for a quick call to walk through it? Ten minutes." Tap Check booked.</div>'
+      + '<div class="say"><span class="lbl">4 · Be honest</span>Made one: "Yeah, I’ll be honest with you, this is what I do. I build websites for [tree services], and I actually went ahead and made you one, because it’s easier to show you than explain it. No cost to look. Want me to email it over right now?"<br><br>Not yet: "...I build websites for [tree services]. I’d be happy to put one together for you, free to look at, and you decide if you like it. Want me to make you one?"</div>'
+      + '<div class="say"><span class="lbl">5 · Lock the next call</span>"What’s the best email for you? ... Then I’ll give you a quick call tomorrow to hear what you think. Morning or afternoon better?" Tap Check booked.</div>'
 
       + '<h3>The walk-in (businesses with a counter)</h3>'
       + '<div class="say">"Hi, is the owner around? ... I’m Miles, I’m local. I’m not selling anything today. I looked your business up on the way over. Can I show you something? Thirty seconds."</div>'

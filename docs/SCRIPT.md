@@ -3,40 +3,48 @@
 For any local business. Swap in their trade: "tree removal", "a mechanic", "a
 plumber". Emails go out from hello@builtformainstreet.com.
 
-**Call one books a free check. It does not sell.** Call two shows the check and
-names one price. Most of the work is being curious and brief.
+**Call one gets a yes to seeing the free preview and a time for the callback. It
+does not sell.** Call two walks through the preview and names one price. Most of the work is being curious and brief.
 
 ## Pocket version: friendly, then the problem, then honest
 
 What worked on the first real call (Ahles, Sept 30). Printable: `output/Call_Script.pdf`.
 
 **1. Open warm** (alternate A and B, note which)
-> A: "Hey, is this [business]? ... What's going on, [name]? How we doing today?" ...
-> "You guys staying busy?"
-> B: "Hey [name], Miles here. Quick one: I came across [business] and saw you've got
+> A: "Hey, is this [business]? ... Hey [name], it's Miles. What's going on, how we
+> doing today?" ... "You guys staying busy?"
+> B: "Hey [name], it's Miles. Quick one: I came across [business] and saw you've got
 > some great reviews. Do most of your new customers find you through word of mouth?"
+
+Your name in the first five seconds. No name on file: "Hey, it's Miles, who am I
+talking with?" Recording: "Heads up, I record my calls so I don't miss anything."
 
 **2. What you noticed**
 > "So I was looking around [town] and saw you guys have some great reviews [or: saw
-> you guys are pretty new], but no website or place to book. Were you guys planning on
-> getting that set up?"
+> you guys are pretty new], but no website. So when someone new looks you up, there's
+> nowhere to send them. Were you guys planning on getting that set up?"
 
-**3. Whatever they say:** "Makes sense."
+**3. Whatever they say:** "Makes sense." Busy: "Good. That's the best time to have
+it, when you can pick the jobs you want."
 
 **4. Be honest**
-> Made one: "Yeah, well, I'll be honest, I actually went ahead and made you one,
-> because I wanted to help. I focus on building websites for [tree services] like
-> yours. If you're free tomorrow or next week, I'd be happy to jump on a quick call and
-> show you, or I can just email it over. If you like it, we can talk from there."
-> Not yet: "...I focus on building websites for [tree services] like yours, and I'd be
-> happy to put one together for you. No cost to look. I can email it over."
+> Made one: "Yeah, I'll be honest with you, this is what I do. I build websites for
+> [tree services], and I actually went ahead and made you one, because it's easier to
+> show you than explain it. No cost to look. Want me to email it over right now?"
+> Not yet: "...I build websites for [tree services]. I'd be happy to put one together
+> for you, free to look at, and you decide if you like it. Want me to make you one?"
 
-**5. Book the look**
-> "What's the best email for you? And would tomorrow or early next week be better for
-> a quick call to walk through it? Ten minutes."
+**5. Lock the next call**
+> "What's the best email for you? ... Then I'll give you a quick call tomorrow to hear
+> what you think. Morning or afternoon better?"
 
-**Price:** "Totally fair. Take a look first, and if you like it, I'll give you one
-straight price, and it won't change."
+Preview ready: send it while you're still on the phone. "Did it come through?"
+
+**Price, first ask:** "Totally fair. Take a look first, and if you like it, I'll give
+you one straight price, and it won't change."
+**Price, second ask:** the one number for the plan you'd pick, then stop talking.
+"For a crew like yours, it's $800 to set up and $199 a month. No long contract. But
+look first."
 
 ## Who you are on the call
 
@@ -53,10 +61,10 @@ Same as telling a neighbor their sign is out.
 
 - Call 8am to 8pm **their** time, never Sunday. Tree crews: 8 to 10am or 3:30 to
   5:30pm. Auto shops: 10 to 11:30am or 2 to 4pm.
-- Call from the Google Voice number, never your cell.
+- Your cell is fine for now. It never goes in an email or anything written.
 - **No texts** until client #10.
-- If you record, say so first: "Quick heads-up, I record calls so I don't miss
-  details. That okay?" California requires it.
+- If you record, say so right after your name: "Heads up, I record my calls so I
+  don't miss anything." California requires it.
 - Never quote a range. Never promise rankings, leads or revenue. Never open with
   "we build websites."
 - Three tries per business, then Dead. "Don't call again" is permanent.
@@ -72,15 +80,13 @@ Ask ChatGPT two things and write down the answers:
 Open Google Maps: is there a Website button, and where does it go? **Only say what
 you actually saw.**
 
-## Call one: book the check
+## Call one: get the yes to the preview
 
 Use the flow in the pocket version above. Stop after step 2 and listen; the owner's
 answer to the curious question tells you where to go next. Write their answers down.
 They go in the check and on the site. Tap **Check booked** and set the next-step date.
 
-**If they ask the price on call one:**
-> "It depends on what your business needs, so I won't guess. After the check you get
-> one number, and it doesn't move."
+**If they ask the price on call one:** use the two-step answer in the pocket version.
 
 ## Call two: show the check, name one price
 
@@ -120,7 +126,7 @@ basics, it's the $600 plan."
 | They say | You say |
 |---|---|
 | "How much?" | "Depends on what your business needs, so I won't guess. After the check, one number, and it doesn't move." |
-| "Just send me something." | "Sure. Best email? I'll send your check and call Thursday to walk through it." |
+| "Just send me something." | "Sure. Best email? I'll send the preview and call you tomorrow to hear what you think." |
 | "Word of mouth keeps me busy." | "Good, that's the best customer there is. Those people still look you up before they call. Right now, when they do, [what you found]." |
 | "I'm booked solid." | "Then it's about better jobs, not more. Which jobs do you want more of?" |
 | "I have a Facebook page." | "That works for people who already follow you. When a stranger asks Google or ChatGPT, Facebook mostly gets skipped." |
