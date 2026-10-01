@@ -133,6 +133,7 @@ basics, it's the $600 plan."
 | "My nephew can build it." | "He can. The listing, what Google and ChatGPT read, and checking it every month is the part that slips." |
 | "I pay Angi / HomeAdvisor." | "Keep it if it works. This is the customers who search for you directly, so you're not paying per lead for them." |
 | "Is this a scam?" | "Fair question. We're at builtformainstreet.com. The check is free and you pay nothing unless you go ahead." |
+| "I don't really want one." | "Totally fair. Can I ask, is it that word of mouth keeps you busy, or you got burned by someone before?" ... "Makes sense. Would it hurt if I just emailed you a quick look? If it's not for you, delete it." |
 | "Not interested." | "Understood. Is it timing, or you don't want more of this kind of work?" One try, then thank them. |
 | "Don't call again." | "Understood, you're off the list." Mark Dead. |
 

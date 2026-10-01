@@ -708,7 +708,7 @@
       + '<div class="stage">Say your name in the first five seconds. No name on file? "Hey, it’s Miles, who am I talking with?" Recording? Right after your name: "Heads up, I record my calls so I don’t miss anything." Not the owner? "Is the owner around? When’s a good time to catch them?" Then let them answer. Be a person for ten seconds.</div>'
       + '<div class="say"><span class="lbl">2 · What you noticed</span>"'+esc(noticed(l))+'"</div>'
       + '<div class="stage">Only say "great reviews" if you saw them. Brand new? "...saw you guys are pretty new." Then listen.</div>'
-      + '<div class="say"><span class="lbl">3 · Whatever they say</span>"Makes sense." Been meaning to: "It’s always the thing that gets pushed." Busy: "Good. That’s the best time to have it, when you can pick the jobs you want." Word of mouth: "That’s the best kind. And when a neighbor passes your name along, people look you up first." Someone already made one (AI, a customer): "Oh nice. When’s it going live? Want a free second look once it’s up?"</div>'
+      + '<div class="say"><span class="lbl">3 · Whatever they say</span>"Makes sense." Been meaning to: "It’s always the thing that gets pushed." Busy: "Good. That’s the best time to have it, when you can pick the jobs you want." Word of mouth: "That’s the best kind. And when a neighbor passes your name along, people look you up first." Don’t really want one: "Totally fair. Can I ask, is it that word of mouth keeps you busy, or you got burned by someone before?" ... "Makes sense. Would it hurt if I just emailed you a quick look? If it’s not for you, delete it." Someone already made one (AI, a customer): "Oh nice. When’s it going live? Want a free second look once it’s up?"</div>'
       + (made
           ? '<div class="say"><span class="lbl">4 · Be honest (yours is ready)</span>"Yeah, I’ll be honest with you, this is what I do. I build websites for '+esc(ind)+', and I actually went ahead and made you one, because it’s easier to show you than explain it. No cost to look. Want me to email it over right now?"</div>'
           : hookOf(l)
@@ -1084,6 +1084,7 @@
       ['"This technology is crazy."', '"It really is. Half my job now is making sure ChatGPT actually knows you exist." Then ask where their work comes from.'],
       ['"I’m up a tree."', '"Ha, go! When are you back on the ground, around 4:30?"'],
       ['"Is this a scam?"', '"Totally fair to ask. I’m at builtformainstreet.com. The preview’s free, and you don’t pay anything unless you want to move forward."'],
+      ['"I don’t really want one."', '"Totally fair. Can I ask, is it that word of mouth keeps you busy, or you got burned by someone before?" ... "Makes sense. Would it hurt if I just emailed you a quick look? If it’s not for you, delete it." Froze? Say that line. It always works as a way out.'],
       ['"Not interested."', '"No problem at all. Just so I know, is it timing, or not something you need right now?" Then: "Appreciate you taking the call."'],
       ['"Don’t call again."', '"Understood, I’ll take you off my list. Have a good one." Tap Dead. Never call again.']
     ];
