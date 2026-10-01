@@ -77,13 +77,13 @@ Cancel with 30 days' notice. Buyout of the site at $2,000 after 12 months.
 |---|---|
 | `docs/START_HERE.md` | every deliverable and link in one place, plus next steps |
 | `docs/PLAYBOOK.md` | the whole business on one page: niche, offer, how it connects, path to $10k, scorecard |
-| `docs/FOCUS.md` | who we call first and why: tree service crews, LA area (auto repair is the runner-up). The offer itself is general: any local small business |
+| `docs/FOCUS.md` | who we call first and why: tree service crews, LA area (auto repair is the runner-up; pool service added Oct 1 as the third). The offer itself is general: any local small business |
 | `docs/OFFER.md` | the offer, pricing reasoning, objection handling |
 | `docs/BEFORE_AFTER.md` | the measurement spec, both halves |
 | `docs/DELIVERY.md` | how a job gets done, and the two commands |
 | `docs/SCRIPT.md` | call script |
 | `site/launch.html` | the open-for-business checklist, tonight to the December LLC (published with saved ticks) |
-| `output/master_call_list.csv` | 82 to call: 1-30 tree crews with no website (23 LA area), 31-50 auto shops, 51-69 tree crews whose site has a problem you can show (#3 Granada too), 70 Tree Rite Arborists, 71 Ahles Automotive (talked), 72-82 LA-area tree crews added Oct 1 (78-82 San Fernando Valley; #82 Ralph's needs its phone from Maps). Owner, email, opener, your-time call window, status. Simple copy: `output/call_list_simple.csv`. Parked leads in `output/leads_parked.csv`. All on the call sheet |
+| `output/master_call_list.csv` | 100 to call: 1-30 tree crews with no website (23 LA area), 31-50 auto shops, 51-69 tree crews whose site has a problem you can show (#3 Granada too), 70 Tree Rite Arborists, 71 Ahles Automotive (talked), 72-82 LA-area tree crews added Oct 1 (78-82 San Fernando Valley; #82 Ralph's needs its phone from Maps), 83-100 pool service companies with no website (Valley and Santa Clarita, added Oct 1). Owner, email, opener, your-time call window, status. Simple copy: `output/call_list_simple.csv`. Parked leads in `output/leads_parked.csv`. All on the call sheet |
 | `src/build_site.py` | 11 pages + JSON-LD from one client JSON |
 | `clients/_example.json` | the client data shape |
 

@@ -320,6 +320,7 @@
     training: {best:[[10*60,12*60],[13*60,15*60]],    ok:[[9*60,10*60],[12*60,13*60],[15*60,16*60]],      label:'gyms'},
     tutoring: {best:[[11*60,13*60]],                  ok:[[10*60,11*60],[13*60,14*60]],                    label:'tutors'},
     tree:     {best:BEST, ok:OK, label:'tree crews'},
+    pool:     {best:BEST, ok:OK, label:'pool companies'},
     trade:    {best:BEST, ok:OK, label:'trades'}
   };
   function nicheOf(l){
@@ -329,6 +330,7 @@
     if(/box|gym|train|fitness|strength|studio|muay/i.test(t)) return 'training';
     if(/tutor|learning|test prep/i.test(t)) return 'tutoring';
     if(/tree|stump/i.test(t)) return 'tree';
+    if(/\bpool|\bspa\b/i.test(t)) return 'pool';
     return 'trade';
   }
   function winOf(l){ return WIN[nicheOf(l)] || WIN.trade; }
@@ -384,6 +386,7 @@
     if(/Concrete & masonry|concrete|masonry|brick/i.test(n)) return {pts:10, why:'big-ticket trade'};
     if(/Welding|gates|iron|fenc/i.test(n)) return {pts:8, why:'big-ticket trade'};
     if(/Tree & landscape|tree|stump/i.test(n)) return {pts:8, why:'emergency and big-ticket work'};
+    if(nicheOf(l)==='pool') return {pts:8, why:'monthly route customers, and one equipment repair pays the month'};
     if(nicheOf(l)==='auto') return {pts:8, why:'repeat customers for years, and one brake job pays the month'};
     return {pts:0, why:''};
   }
@@ -493,7 +496,7 @@
     return {
       'Business': l.business||'', 'Phone': l.phone||'',
       'Where': [l.city, l.state].filter(Boolean).join(', '),
-      'Kind': {tree:'Tree service', auto:'Auto repair', training:'Studio', tutoring:'Tutor'}[nicheOf(l)] || 'Other',
+      'Kind': {tree:'Tree service', pool:'Pool service', auto:'Auto repair', training:'Studio', tutoring:'Tutor'}[nicheOf(l)] || 'Other',
       'Status': SLABEL[l.status||'new'] || l.status || 'new',
       'Calls': String(lg.filter(function(e){ return TOUCH.indexOf(e.s) >= 0; }).length),
       'Last call': last ? niceTime(last) : '',
@@ -647,8 +650,8 @@
   // ---- the script, filled in for this shop ----
   function trade1(l){ return String(l.trade||'your trade').split(',')[0].trim(); }
   // how a customer would actually ask, per kind of business
-  var ASKS = {auto:'an honest mechanic', training:'a personal trainer', tutoring:'a tutor', tree:'a tree service'};
-  var SLOTS = {auto:'at 10:30 or at 2', training:'at 10 or at 1', tutoring:'at 11 or at noon', tree:'at 9 or at 4', trade:'at 9 or at 4'};
+  var ASKS = {auto:'an honest mechanic', training:'a personal trainer', tutoring:'a tutor', tree:'a tree service', pool:'a pool guy'};
+  var SLOTS = {auto:'at 10:30 or at 2', training:'at 10 or at 1', tutoring:'at 11 or at noon', tree:'at 9 or at 4', pool:'at 9 or at 4', trade:'at 9 or at 4'};
   function askPhrase(l){ return ASKS[nicheOf(l)] || ('someone for '+trade1(l)); }
   function add(out, t){ out.push(out.length ? 'And ' + t.charAt(0).toLowerCase() + t.slice(1) : t); }
   function findingLines(l){
@@ -687,7 +690,7 @@
       + 'If you’d rather not hear from us, reply "stop" and you won’t.';
   }
   // what you noticed, in one easy line that ends on a question
-  function industryOf(l){ return {tree:'tree services', auto:'auto shops', training:'studios', tutoring:'tutors'}[nicheOf(l)] || 'local businesses'; }
+  function industryOf(l){ return {tree:'tree services', pool:'pool services', auto:'auto shops', training:'studios', tutoring:'tutors'}[nicheOf(l)] || 'local businesses'; }
   function noticed(l){
     var h = hookOf(l), city = l.city || 'the area';
     var start = 'So I was looking around '+city+' and saw you guys have some great reviews';
@@ -1009,7 +1012,7 @@
       + '<div><label for="a-e">Email</label><input id="a-e" inputmode="email" placeholder=""></div>'
       + '<div><label for="a-c">City</label><input id="a-c" placeholder="Rose Hill"></div>'
       + '<div><label for="a-s">State</label><input id="a-s" placeholder="KS" maxlength="2" style="text-transform:uppercase"></div>'
-      + '<div><label for="a-n">Kind</label><select id="a-n"><option value="tree">Tree service</option><option value="auto">Auto repair</option><option value="trade">Other local business</option></select></div>'
+      + '<div><label for="a-n">Kind</label><select id="a-n"><option value="tree">Tree service</option><option value="pool">Pool service</option><option value="auto">Auto repair</option><option value="trade">Other local business</option></select></div>'
       + '<div><label for="a-st">Status</label><select id="a-st">'+opts+'</select></div>'
       + '<div style="grid-column:1/-1"><label for="a-w">Website (blank = none)</label><input id="a-w" placeholder=""></div>'
       + '<div style="grid-column:1/-1"><label for="a-m">Maps or search link (optional)</label><input id="a-m" placeholder="Paste the Google Maps link"></div>'
@@ -1094,7 +1097,7 @@
       + '<li>A "no" is a rep, not a verdict. Tap it. It counts on the scorecard.</li></ul>'
 
       + '<h3>Rules</h3><ul class="rules">'
-      + '<li>Dial by hand, 8am to 8pm <b>their</b> time, never Sunday. Tree crews: 8 to 10am or 3:30 to 5:30pm. Auto shops: 10 to 11:30am or 2 to 4pm.</li>'
+      + '<li>Dial by hand, 8am to 8pm <b>their</b> time, never Sunday. Tree crews and pool companies: 8 to 10am or 3:30 to 5:30pm. Auto shops: 10 to 11:30am or 2 to 4pm.</li>'
       + '<li><b>No texts.</b> Not after a voicemail, not ever, until client #10.</li>'
       + '<li>Never quote a range. Never promise rankings, leads or revenue. Never open with "we build websites."</li>'
       + '<li>Call one gets a yes to seeing the free preview and a time for the callback. It does not sell.</li>'
