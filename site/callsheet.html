@@ -219,7 +219,7 @@
     <div>
       <div id="banner" class="banner" hidden></div>
       <div class="plan" id="plan"></div>
-      <div style="display:flex; justify-content:flex-end; margin-bottom:10px"><button class="btn" id="b-add2">+ Add lead</button></div>
+      <div style="display:flex; gap:8px; margin-bottom:10px"><input id="q" type="search" placeholder="Find: a lead number (79) or a name" aria-label="Find a lead" style="flex:1; min-width:0; font:inherit; padding:8px 10px; border:1px solid var(--rule-hard); border-radius:8px; background:var(--raised); color:inherit"><button class="btn" id="b-add2">+ Add lead</button></div>
       <div class="bar" id="filters">
         <button class="chip on" data-f="all">Best first</button>
         <button class="chip" data-f="now">Call now</button>
@@ -557,7 +557,15 @@
 
   // ---- render ----
   var STAGE = {'new':0,'noanswer':1,'vm':1,'hungup':1,'emailed':1,'called':2,'booked':3,'offered':4,'won':5,'dead':6};
+  var query = '';
+  function matchQ(l){
+    if(!query) return true;
+    var q = query.replace(/^#/,'').trim();
+    if(/^\d+$/.test(q)) return String(l.n||'') === q;
+    return String(l.business||'').toLowerCase().indexOf(q.toLowerCase()) >= 0 || String(l.city||'').toLowerCase().indexOf(q.toLowerCase()) >= 0;
+  }
   function visible(){
+    if(query) return leads.filter(function(l){ return matchQ(l); });
     return leads.filter(function(l){
       if(filter==='old') return !inFocus(l);
       if(!inFocus(l)) return false;
@@ -628,7 +636,7 @@
       var h = hookOf(l), w = windowOf(l), st = l.status||'new';
       html += '<div class="row'+(l.id===selId?' sel':'')+'" data-id="'+esc(l.id)+'">'
         + '<div class="score '+cls+'">'+sc+'</div>'
-        + '<div><div class="r-name">'+esc(l.business||'Untitled')+(h?'<span class="tag">'+h.tag+'</span>':'')+'</div>'
+        + '<div><div class="r-name">'+(l.n?'<span style="opacity:.6;font-variant-numeric:tabular-nums">#'+esc(l.n)+'</span> ':'')+esc(l.business||'Untitled')+(h?'<span class="tag">'+h.tag+'</span>':'')+'</div>'
         + '<div class="r-meta">'+[esc(l.phone||'no phone'), esc(l.city||''),
             '<span class="win '+w.cls+'"><i></i>'+esc(w.txt)+'</span>',
             l.next && l.status!=='dead' && l.status!=='won' ? '<span class="'+(isDue(l)?'due':'')+'">next '+esc(shortDate(l.next))+'</span>' : '',
@@ -777,7 +785,7 @@
       + '</small></div>';
 
     $('panel').innerHTML =
-      '<div class="p-hd"><div><h2>'+esc(l.business||'Untitled')+'</h2>'
+      '<div class="p-hd"><div><h2>'+(l.n?'#'+esc(l.n)+' ':'')+esc(l.business||'Untitled')+'</h2>'
         + '<div class="mono">'+[esc(l.trade||''), esc(l.city||'')].filter(Boolean).join(' · ')+'</div>'
         + '<div class="mono" style="margin-top:6px"><span class="win '+w.cls+'" id="p-clock"><i></i>Their time '+esc(w.txt)+'</span>'
         + (who ? ' · owner '+esc(who) : '') + (l.updated && l.status!=='new' ? ' · last touch '+ago(l.updated) : '') + '</div></div>'
@@ -1029,7 +1037,8 @@
       if(!o.business){ toast('Name it first'); return; }
       o.phone = $('a-p').value.trim(); o.email = $('a-e').value.trim();
       o.city = $('a-c').value.trim(); o.state = $('a-s').value.trim().toUpperCase();
-      o.niche = $('a-n').value; o.trade = {tree:'tree service', auto:'auto repair', trade:''}[o.niche];
+      o.niche = $('a-n').value; o.trade = {tree:'tree service', pool:'pool service', auto:'auto repair', trade:''}[o.niche];
+      o.n = String(leads.reduce(function(m,x){ return Math.max(m, parseInt(x.n,10)||0); }, 0) + 1);
       o.website = $('a-w').value.trim(); o.maps = $('a-m').value.trim();
       o.notes = $('a-no').value.trim(); o.next = $('a-nx').value; o.list = 'focus';
       o.site_checked = o.website ? 'has' : '';
@@ -1251,6 +1260,7 @@
   $('b-score').onclick = openScorecard;
   $('b-add').onclick = openAdd;
   $('b-add2').onclick = openAdd;
+  $('q').addEventListener('input', function(){ query = this.value.trim(); renderList(); });
   $('b-import').onclick = openImport;
   $('b-export').onclick = openExport;
   $('d-x').onclick = function(){ $('dlg').close(); };
