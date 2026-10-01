@@ -8,11 +8,12 @@ Everything for Built for Main Street, in one place. Updated September 28, 2026.
 |---|---|---|
 | **Call sheet** | https://claude.ai/artifact/EuwoYPw6abRTiu6nya8JDw (pinned) | The tracker. Tap a lead, call, tap how it went. The scorecard fills itself |
 | **Google Sheet** | https://docs.google.com/spreadsheets/d/1wvQmQkQkOkwuf0aXPaMURe8UUrV1X3nDPgPmPp7J_z8/edit (hello@'s Drive) | Every lead, one row each. Updates itself from the call sheet once `site/sheet-sync.gs` is attached |
+| **Client intake** | https://claude.ai/artifact/S36dxQUuipm27aXPGoBvvP (private) | One sheet per signed client. Shows what's missing, writes the email to the owner, and Claude builds the site from it |
 | **Launch checklist** | https://claude.ai/artifact/CTiJ3dcudAtmjSWhUnFKTa (pinned) | Every setup step in order, ticks save |
 | **Call list, 70 leads** | https://claude.ai/artifact/EuwoYPw6abRTiu6nya8JDw, `output/master_call_list.csv`, simple copy `output/call_list_simple.csv` | 1-30 tree crews with no website (23 LA area), 31-50 auto shops, 51-69 tree crews whose website has a problem you can show, 70 Tree Rite Arborists (Lancaster). Owner, email, opener, call window, status. Parked leads: `output/leads_parked.csv` |
 | **Offer** | `output/Built_for_Main_Street_Offer.pdf` | 2 pages for the owner: the three problems, three plans, terms. The only offer PDF to send |
 | **Site** | https://claude.ai/artifact/HQkhw7TqgE1Q6Naqp1okwU (preview) | Upload `output/builtformainstreet_site.zip` to put it on builtformainstreet.com |
-| **Script, phone and email** | `docs/SCRIPT.md`, and the Script button on the call sheet | Call one books the check, call two names one price. Four emails from hello@ |
+| **Script, phone and email** | `docs/SCRIPT.md`, and the Script button on the call sheet | Call one gets a yes to the free preview, call two names one price. Four emails from hello@ |
 | **The business on one page** | `docs/PLAYBOOK.md` | Niche, offer, how it connects, path to $10k, scorecard |
 | **Offer reasoning** | `docs/OFFER.md` | Why the price holds, pressure test, kill criteria |
 | **Client agreement** | `docs/legal/CLIENT_AGREEMENT.md` | Fill in before the first sale |

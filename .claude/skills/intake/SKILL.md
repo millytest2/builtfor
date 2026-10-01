@@ -10,8 +10,20 @@ client; everything downstream is this skill's job.
 
 ## Input
 
-Raw notes, in any state. Bullet fragments, a transcript, a voice-memo
-transcription. Do not ask for them to be tidied first.
+Either source, or both:
+
+- **The intake sheet** (preferred): https://claude.ai/artifact/S36dxQUuipm27aXPGoBvvP.
+  Miles fills one sheet per client there. Read it with `ArtifactData` `list` on
+  collection `intake` and pick the client by `biz`. Fields: biz, owner, phone,
+  email, street, city, state, zip, trade, founded, licLabel, licNum, maps, domain,
+  plan, paidOn, photosOn, photosN, services[{name,short,price}], focusJob,
+  towns[{name,note}], hours{Mon..Sun:{o,c,closed}}, emergency, different,
+  faqs[{q,a}], reviews[{by,text,src}], reviewNote, gbp, domainHolder, color, logo,
+  notes. The sheet's "Copy build file" output is the same data already in
+  `clients/_example.json` shape, with `_from_intake` holding what is left to write.
+  Ignore a sheet whose biz ends in "(example)".
+- Raw notes, in any state. Bullet fragments, a transcript, a voice-memo
+  transcription. Do not ask for them to be tidied first.
 
 ## Steps
 

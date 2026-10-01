@@ -1,0 +1,396 @@
+<title>Main Street Client Intake</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: a work order. Client switcher and readiness strip on top, the form as one
+   column of numbered parts (the order you collect them in), outputs at the bottom. */
+:root{
+  --bg:#f3f5f2; --card:#ffffff; --ink:#18231f; --muted:#5b6a64; --line:#d5ddd8;
+  --accent:#0f6b5c; --accent-ink:#ffffff; --need:#b26b00; --need-bg:#fff4e0; --ok:#1f7a3a; --ok-bg:#e6f4ea;
+  --field:#fbfcfb; --focus:#0f6b5c55;
+  --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body:"Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#121815; --card:#1a221e; --ink:#e4ebe7; --muted:#97a69f; --line:#2c3833;
+  --accent:#3fb39c; --accent-ink:#06120f; --need:#f0b14a; --need-bg:#3a2a0e; --ok:#6fcf8a; --ok-bg:#15301f;
+  --field:#151c19; --focus:#3fb39c66; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#121815; --card:#1a221e; --ink:#e4ebe7; --muted:#97a69f; --line:#2c3833;
+  --accent:#3fb39c; --accent-ink:#06120f; --need:#f0b14a; --need-bg:#3a2a0e; --ok:#6fcf8a; --ok-bg:#15301f;
+  --field:#151c19; --focus:#3fb39c66; color-scheme:dark }
+*{box-sizing:border-box}
+body{background:var(--bg); color:var(--ink); font:16px/1.5 var(--body); margin:0}
+.wrap{max-width:860px; margin:0 auto; padding-inline:16px; padding-block:20px 80px; display:grid; gap:18px}
+h1,h2{font-family:var(--display); text-wrap:balance; margin:0; line-height:1.15}
+h1{font-size:1.7rem}
+h2{font-size:1.2rem; display:flex; gap:10px; align-items:baseline}
+h2 .n{font:600 .8rem var(--mono); color:var(--accent); letter-spacing:.04em}
+.sub{color:var(--muted); margin:0; max-width:65ch}
+.top{display:grid; gap:12px}
+.bar{display:flex; flex-wrap:wrap; gap:8px; align-items:center}
+select,input,textarea{font:inherit; color:var(--ink); background:var(--field); border:1px solid var(--line); border-radius:6px; padding:8px 10px; width:100%; min-width:0}
+textarea{min-height:76px; resize:vertical}
+input[type=color]{padding:2px; height:40px; width:64px}
+input[type=checkbox]{width:auto}
+:focus-visible{outline:3px solid var(--focus); outline-offset:1px}
+button{font:600 .95rem var(--body); border-radius:6px; border:1px solid var(--line); background:var(--card); color:var(--ink); padding:8px 14px; cursor:pointer}
+button.primary{background:var(--accent); color:var(--accent-ink); border-color:var(--accent)}
+button.ghost{background:transparent}
+button.x{padding:6px 10px; color:var(--muted)}
+.picker{flex:1 1 240px}
+.status{font:.85rem var(--mono); color:var(--muted)}
+.ready{background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px; display:grid; gap:10px}
+.meter{height:8px; background:var(--line); border-radius:99px; overflow:hidden}
+.meter i{display:block; height:100%; background:var(--accent); width:0; transition:width .3s}
+.chips{display:flex; flex-wrap:wrap; gap:6px}
+.chip{font-size:.85rem; padding:2px 10px; border-radius:99px; background:var(--need-bg); color:var(--need); border:0; cursor:pointer}
+.chip.ok{background:var(--ok-bg); color:var(--ok); cursor:default}
+section{background:var(--card); border:1px solid var(--line); border-radius:10px; padding:18px; display:grid; gap:14px}
+.grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px}
+label{display:grid; gap:4px; font-weight:600; font-size:.92rem; min-width:0}
+label small, .why{font-weight:400; color:var(--muted); font-size:.85rem}
+.why{margin:0}
+.who{font:600 .72rem var(--mono); letter-spacing:.06em; text-transform:uppercase; color:var(--muted)}
+.rows{display:grid; gap:10px}
+.row{display:grid; gap:8px; grid-template-columns:1fr; border:1px dashed var(--line); border-radius:8px; padding:10px}
+.row .head{display:flex; gap:8px; align-items:center}
+.row .head input{flex:1}
+.hours{display:grid; gap:6px}
+.hrow{display:grid; grid-template-columns:48px 1fr 1fr auto; gap:8px; align-items:center}
+.hrow span{font:600 .85rem var(--mono)}
+.hrow label{display:flex; gap:6px; align-items:center; font-weight:400}
+.out{display:grid; gap:10px}
+.btns{display:flex; flex-wrap:wrap; gap:8px}
+pre{font:.8rem/1.45 var(--mono); background:var(--field); border:1px solid var(--line); border-radius:8px; padding:12px; max-height:340px; overflow:auto; white-space:pre-wrap; word-break:break-word; margin:0}
+.flag{background:var(--need-bg); color:var(--need); padding:8px 12px; border-radius:8px; font-size:.9rem}
+.toast{position:fixed; left:50%; bottom:calc(16px + env(safe-area-inset-bottom,0px)); transform:translateX(-50%); background:var(--ink); color:var(--bg); padding:8px 16px; border-radius:99px; font-weight:600}
+.dates{font:.9rem var(--mono); color:var(--muted)}
+@media (max-width:480px){ .hrow{grid-template-columns:40px 1fr 1fr; } .hrow label{grid-column:2/4} }
+@media (prefers-reduced-motion:reduce){ .meter i{transition:none} }
+</style>
+
+<div class="wrap">
+  <div class="top">
+    <h1>Client intake</h1>
+    <p class="sub">One sheet per client. Fill the first part from their Google listing before the call, the rest with the owner on the call. When the top bar says ready, tell Claude "build [business name]" and the site gets built from this.</p>
+    <div class="bar">
+      <select id="pick" class="picker" aria-label="Client"></select>
+      <button id="new" class="primary">+ New client</button>
+      <button id="del" class="ghost">Delete</button>
+      <span id="status" class="status">Loading…</span>
+    </div>
+    <div class="ready" aria-live="polite">
+      <div class="bar" style="justify-content:space-between"><strong id="readyTxt">Ready to build</strong><span id="readyN" class="status"></span></div>
+      <div class="meter"><i id="meter"></i></div>
+      <div id="missing" class="chips"></div>
+    </div>
+    <div id="exflag" class="flag" hidden>This is a made-up example so you can see a filled sheet. Start a real one with + New client.</div>
+  </div>
+
+  <section id="s-basics">
+    <h2><span class="n">PART 1</span> The basics</h2>
+    <p class="why"><span class="who">Before the call · from their listing</span><br>What goes on every page and in the markup Google and ChatGPT read. Copy it exactly as the listing shows it, so everything matches.</p>
+    <div class="grid">
+      <label>Business name<input id="biz" placeholder="Valley Oak Tree Care"></label>
+      <label>Owner first name<input id="owner" placeholder="Rafael"></label>
+      <label>Phone on the site<input id="phone" inputmode="tel" placeholder="(818) 555-0100"></label>
+      <label>Email for quotes<small>Where the quote form sends</small><input id="email" type="email" placeholder="owner@gmail.com"></label>
+    </div>
+    <div class="grid">
+      <label>Street<input id="street"></label>
+      <label>City<input id="city"></label>
+      <label>State<input id="state" maxlength="2" placeholder="CA"></label>
+      <label>ZIP<input id="zip" inputmode="numeric"></label>
+    </div>
+    <div class="grid">
+      <label>What they do, in two words<small>e.g. tree service, pool service, auto repair</small><input id="trade"></label>
+      <label>Year started<input id="founded" inputmode="numeric" placeholder="2008"></label>
+      <label>License label<small>e.g. CSLB #, or BAR ARD # for auto</small><input id="licLabel"></label>
+      <label>License number<input id="licNum"></label>
+    </div>
+    <div class="grid">
+      <label>Google Maps link<input id="maps" type="url"></label>
+      <label>Their domain<small>They own it. Blank if they need one.</small><input id="domain" placeholder="valleyoaktree.com"></label>
+    </div>
+  </section>
+
+  <section id="s-plan">
+    <h2><span class="n">PART 2</span> Plan and money</h2>
+    <p class="why"><span class="who">You fill this</span><br>You pick the plan before call two. The 14-day build starts when payment and photos are both in. Photos are due 30 days after payment.</p>
+    <div class="grid">
+      <label>Plan<select id="plan"><option value="">Not picked</option><option value="Small">Small · $600 + $99/mo</option><option value="Standard">Standard · $800 + $199/mo</option><option value="Bigger">Bigger · $1,000 + $300/mo</option></select></label>
+      <label>Setup paid on<input id="paidOn" type="date"></label>
+      <label>Photos received on<input id="photosOn" type="date"></label>
+      <label>How many photos<input id="photosN" type="number" min="0" inputmode="numeric"></label>
+    </div>
+    <div id="dates" class="dates"></div>
+  </section>
+
+  <section id="s-services">
+    <h2><span class="n">PART 3</span> What they do</h2>
+    <p class="why"><span class="who">On the call</span><br>Each service gets its own page. Ask: "What jobs do you do most? And which one do you wish you got more of?" A starting price is optional; only use one they say out loud.</p>
+    <div id="services" class="rows"></div>
+    <div class="btns"><button id="addSvc">+ Add a service</button></div>
+    <label>The job they want more of<small>It goes first on the homepage</small><input id="focusJob"></label>
+  </section>
+
+  <section id="s-towns">
+    <h2><span class="n">PART 4</span> Where they work</h2>
+    <p class="why"><span class="who">On the call</span><br>Each town gets its own page, and each one has to say something true and different. Ask: "Where do most of your jobs come from? Anything special about working there?"</p>
+    <div id="towns" class="rows"></div>
+    <div class="btns"><button id="addTown">+ Add a town</button></div>
+  </section>
+
+  <section id="s-hours">
+    <h2><span class="n">PART 5</span> Hours</h2>
+    <p class="why"><span class="who">From the listing, confirm on the call</span><br>Assistants answer "are they open now" from this. It has to match Google.</p>
+    <div id="hours" class="hours"></div>
+    <label style="display:flex;gap:8px;align-items:center;font-weight:400"><input id="emergency" type="checkbox"> Takes emergency calls outside these hours</label>
+  </section>
+
+  <section id="s-words">
+    <h2><span class="n">PART 6</span> In their words</h2>
+    <p class="why"><span class="who">On the call · write down what they say</span><br>Claude writes the page copy from these answers. Their own words beat anything made up, and nothing on the site gets invented.</p>
+    <label>"Why do customers pick you over the other guys?"<textarea id="different"></textarea></label>
+    <label>"What do people always ask before they hire you?"<small>Add the question and how they answer it</small></label>
+    <div id="faqs" class="rows"></div>
+    <div class="btns"><button id="addFaq">+ Add a question</button></div>
+    <label>Favorite reviews<small>Paste two or three from Google or Yelp, word for word</small></label>
+    <div id="reviews" class="rows"></div>
+    <div class="btns"><button id="addRev">+ Add a review</button></div>
+    <label>Review line for the top of the site<small>Only what you can see, e.g. "4.8 on 69 Google reviews"</small><input id="reviewNote"></label>
+  </section>
+
+  <section id="s-access">
+    <h2><span class="n">PART 7</span> Access and look</h2>
+    <p class="why"><span class="who">On the call · never ask for a password</span><br>They add hello@builtformainstreet.com as a manager on their Google listing. The domain stays in their name.</p>
+    <div class="grid">
+      <label>Google listing access<select id="gbp"><option value="">Not asked yet</option><option>Asked, waiting</option><option>Manager access granted</option><option>No listing yet, we create it</option></select></label>
+      <label>Who holds the domain<select id="domainHolder"><option value="">Not asked yet</option><option>They own it, will point it</option><option>They need to buy one (we walk them through it)</option><option>Someone else holds it</option></select></label>
+      <label>Brand color<small>From their truck, sign or shirts</small><input id="color" type="color" value="#2f5d3a"></label>
+      <label>Has a logo<select id="logo"><option value="">Not asked</option><option>Yes, sending it</option><option>No, use the name</option></select></label>
+    </div>
+    <label>Notes<textarea id="notes" placeholder="Anything else: who answers the phone, Spanish-speaking customers, jobs they won't take…"></textarea></label>
+  </section>
+
+  <section id="s-out">
+    <h2><span class="n">PART 8</span> Send and build</h2>
+    <div class="out">
+      <p class="why"><strong>Email the owner what's missing.</strong> Plain questions for the gaps above, signed from hello@. Copy it into your email.</p>
+      <div class="btns"><button id="cpEmail" class="primary">Copy email to the owner</button></div>
+      <pre id="emailOut"></pre>
+      <p class="why"><strong>The build file.</strong> Claude can read this sheet directly. This copy is the backup: paste it to Claude, or save it as <code>clients/&lt;name&gt;.json</code>.</p>
+      <div class="btns"><button id="cpJson">Copy build file</button></div>
+      <pre id="jsonOut"></pre>
+    </div>
+  </section>
+</div>
+<div id="toast" class="toast" hidden></div>
+
+<script>
+(function(){
+  var DAYS=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+  var SIMPLE=['biz','owner','phone','email','street','city','state','zip','trade','founded','licLabel','licNum','maps','domain','plan','paidOn','photosOn','photosN','focusJob','different','reviewNote','gbp','domainHolder','color','logo','notes'];
+  var $=function(id){return document.getElementById(id);};
+  var db=null, coll=null, clients={}, cur=null, saveT=null, saving=false, again=false, local=false;
+
+  function blank(){ var h={}; DAYS.forEach(function(d){ h[d]={o:'08:00',c:'17:00',closed:d==='Sun'}; });
+    return {biz:'',services:[{name:'',short:'',price:''}],towns:[{name:'',note:''}],faqs:[],reviews:[],hours:h,color:'#2f5d3a',state:'CA',created:new Date().toISOString()}; }
+  function example(){ var c=blank(); Object.assign(c,{example:true,biz:'Valley Oak Tree Care (example)',owner:'Rafael',phone:'(818) 555-0100',email:'valleyoaktree@gmail.com',street:'',city:'Arleta',state:'CA',zip:'91331',trade:'tree service',founded:'2008',licLabel:'CSLB #',licNum:'000000',plan:'Standard',paidOn:'2026-10-06',photosN:'',focusJob:'Tree removal',
+    different:'Same family since 2008. Rafael is on every job and the crew leaves the yard cleaner than they found it.',reviewNote:'4.8 on 69 Google reviews',gbp:'Asked, waiting',domainHolder:'They need to buy one (we walk them through it)',
+    services:[{name:'Tree Removal',short:'Any size, cleanup included.',price:''},{name:'Tree Trimming',short:'Shaping, thinning, deadwood.',price:''},{name:'Stump Grinding',short:'Below grade, chips hauled or left.',price:''}],
+    towns:[{name:'Arleta',note:'Home base, most jobs are within ten minutes.'},{name:'Pacoima',note:''},{name:'Sun Valley',note:''}],
+    faqs:[{q:'Do you haul everything away?',a:'Yes, every job includes cleanup.'}],reviews:[]}); return c; }
+
+  function toast(t){ var el=$('toast'); el.textContent=t; el.hidden=false; clearTimeout(el._t); el._t=setTimeout(function(){el.hidden=true;},1800); }
+  function slug(s){ return String(s||'').toLowerCase().replace(/\(example\)/,'').replace(/&/g,' and ').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,''); }
+  function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+  function addDays(iso,n){ if(!iso) return ''; var d=new Date(iso+'T12:00:00'); d.setDate(d.getDate()+n); return d.toISOString().slice(0,10); }
+  function nice(iso){ if(!iso) return ''; var d=new Date(iso+'T12:00:00'); return d.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'}); }
+
+  // ---------- render one client into the form ----------
+  function fill(c){
+    SIMPLE.forEach(function(k){ var el=$(k); if(el) el.value=c[k]==null?(k==='color'?'#2f5d3a':''):c[k]; });
+    $('emergency').checked=!!c.emergency;
+    rows('services',c.services,function(s,i){ return '<div class="head"><input data-f="name" placeholder="Service name, e.g. Stump Grinding" value="'+esc(s.name)+'"><button class="x" data-del="'+i+'" aria-label="Remove">✕</button></div>'
+      +'<input data-f="short" placeholder="One line in their words" value="'+esc(s.short)+'"><input data-f="price" placeholder="Starting price, only if they said it (optional)" value="'+esc(s.price)+'">'; });
+    rows('towns',c.towns,function(t,i){ return '<div class="head"><input data-f="name" placeholder="Town" value="'+esc(t.name)+'"><button class="x" data-del="'+i+'" aria-label="Remove">✕</button></div>'
+      +'<input data-f="note" placeholder="Something true about working there" value="'+esc(t.note)+'">'; });
+    rows('faqs',c.faqs,function(f,i){ return '<div class="head"><input data-f="q" placeholder="Question" value="'+esc(f.q)+'"><button class="x" data-del="'+i+'" aria-label="Remove">✕</button></div>'
+      +'<input data-f="a" placeholder="Their answer" value="'+esc(f.a)+'">'; });
+    rows('reviews',c.reviews,function(r,i){ return '<div class="head"><input data-f="by" placeholder="Name as shown, e.g. Karen D." value="'+esc(r.by)+'"><button class="x" data-del="'+i+'" aria-label="Remove">✕</button></div>'
+      +'<textarea data-f="text" placeholder="Review text, word for word">'+esc(r.text)+'</textarea><input data-f="src" placeholder="Google or Yelp" value="'+esc(r.src||'Google')+'">'; });
+    $('hours').innerHTML=DAYS.map(function(d){ var h=(c.hours||{})[d]||{o:'',c:'',closed:false};
+      return '<div class="hrow" data-day="'+d+'"><span>'+d+'</span><input type="time" data-h="o" aria-label="'+d+' opens" value="'+esc(h.o)+'"'+(h.closed?' disabled':'')+'><input type="time" data-h="c" aria-label="'+d+' closes" value="'+esc(h.c)+'"'+(h.closed?' disabled':'')+'><label><input type="checkbox" data-h="closed"'+(h.closed?' checked':'')+'> Closed</label></div>'; }).join('');
+    $('exflag').hidden=!c.example;
+    outputs();
+  }
+  function rows(id,list,tpl){ $(id).innerHTML=(list||[]).map(function(x,i){ return '<div class="row" data-i="'+i+'">'+tpl(x,i)+'</div>'; }).join(''); }
+
+  // ---------- read the form back ----------
+  function read(){
+    var c=Object.assign({},clients[cur]||blank());
+    SIMPLE.forEach(function(k){ var el=$(k); if(el) c[k]=el.value.trim(); });
+    c.emergency=$('emergency').checked;
+    function grab(id,keys){ return [].map.call($(id).querySelectorAll('.row'),function(r){ var o={}; keys.forEach(function(k){ var el=r.querySelector('[data-f="'+k+'"]'); o[k]=el?el.value.trim():''; }); return o; }); }
+    c.services=grab('services',['name','short','price']); c.towns=grab('towns',['name','note']);
+    c.faqs=grab('faqs',['q','a']); c.reviews=grab('reviews',['by','text','src']);
+    c.hours={}; [].forEach.call($('hours').querySelectorAll('.hrow'),function(r){ c.hours[r.dataset.day]={o:r.querySelector('[data-h=o]').value,c:r.querySelector('[data-h=c]').value,closed:r.querySelector('[data-h=closed]').checked}; });
+    if(c.example && c.biz.indexOf('(example)')<0) delete c.example;
+    c.updated=new Date().toISOString();
+    return c;
+  }
+
+  // ---------- what's missing ----------
+  var NEED=[
+    ['biz','Business name','s-basics'],['phone','Phone','s-basics'],['city','City','s-basics'],['trade','What they do','s-basics'],
+    ['email','Quote email','s-basics'],['plan','Plan','s-plan'],['paidOn','Payment','s-plan'],['photos','Photos','s-plan'],
+    ['svc','A service','s-services'],['town','A town','s-towns'],['hrs','Hours','s-hours'],['words','Why they get picked','s-words'],['gbp','Google listing access','s-access']];
+  function missing(c){
+    var have={biz:c.biz,phone:c.phone,city:c.city,trade:c.trade,email:c.email,plan:c.plan,paidOn:c.paidOn,photos:c.photosOn,
+      svc:(c.services||[]).some(function(s){return s.name;}),town:(c.towns||[]).some(function(t){return t.name;}),
+      hrs:DAYS.some(function(d){var h=(c.hours||{})[d]; return h&&!h.closed&&h.o&&h.c;}),words:c.different,gbp:c.gbp==='Manager access granted'||c.gbp==='No listing yet, we create it'};
+    return NEED.filter(function(n){return !have[n[0]];});
+  }
+
+  function outputs(){
+    var c=read(), miss=missing(c), done=NEED.length-miss.length;
+    $('meter').style.width=Math.round(100*done/NEED.length)+'%';
+    $('readyN').textContent=done+' of '+NEED.length;
+    $('readyTxt').textContent=miss.length?'Not ready to build yet':'Ready to build. Tell Claude "build '+(c.biz||'this client')+'"';
+    $('missing').innerHTML=miss.length?miss.map(function(n){return '<button class="chip" data-go="'+n[2]+'">'+n[1]+'</button>';}).join(''):'<span class="chip ok">Everything Claude needs is here</span>';
+    var due=c.paidOn?addDays(c.paidOn,30):'', start=(c.paidOn&&c.photosOn)?(c.photosOn>c.paidOn?c.photosOn:c.paidOn):'';
+    $('dates').textContent=c.paidOn?('Photos due '+nice(due)+(start?'  ·  Site due '+nice(addDays(start,14)):'  ·  Site due 14 days after photos arrive')+(c.plan?'  ·  '+c.plan:'')):'Enter the payment date to see the photo deadline and site due date.';
+    $('emailOut').textContent=emailText(c,miss);
+    $('jsonOut').textContent=JSON.stringify(buildFile(c),null,2);
+  }
+
+  // ---------- the email for the owner ----------
+  function emailText(c,miss){
+    var q=[], name=c.owner||'there';
+    var has=function(k){return miss.some(function(n){return n[0]===k;});};
+    if(has('svc')) q.push('What jobs do you do most? List as many as you like, and tell me which one you want more of.');
+    else if(!c.focusJob) q.push('Of the jobs you do, which one do you want more of? It goes first on the site.');
+    if(has('town')) q.push('Which towns or neighborhoods do most of your jobs come from?');
+    else if((c.towns||[]).some(function(t){return t.name&&!t.note;})) q.push('For each of these towns, anything I should know about working there? '+c.towns.filter(function(t){return t.name&&!t.note;}).map(function(t){return t.name;}).join(', ')+'.');
+    if(has('hrs')) q.push('What are your hours each day? Do you take emergency calls?');
+    if(has('email')) q.push('What email should quote requests go to?');
+    if(has('words')) q.push('Why do your customers pick you over other '+(c.trade||'companies')+'? A sentence or two in your own words is perfect.');
+    if(!(c.faqs||[]).length) q.push('What do customers always ask you before they hire you? Two or three questions and how you answer them.');
+    if(!c.founded) q.push('What year did you start?');
+    if(!c.licNum && c.trade) q.push('What is your license number, if you have one? I put it at the bottom of every page.');
+    if(!c.logo) q.push('Do you have a logo? If so, reply with it attached.');
+    if(c.gbp!=='Manager access granted' && c.gbp!=='No listing yet, we create it') q.push('On your Google listing, please add hello@builtformainstreet.com as a manager. I can walk you through it on a quick call. I never need a password.');
+    if(!c.photosOn) q.push('Please send 6 to 10 photos of your work, your truck or your crew. Phone photos are fine.'+(c.paidOn?' The build starts when they arrive, and they are due by '+nice(addDays(c.paidOn,30))+'.':''));
+    var subj='Subject: A few quick questions for your website\n\n';
+    if(!q.length) return subj.replace('A few quick questions for','All set for')+'Hi '+name+',\n\nI have everything I need. I will send you the site to look at before it goes live.\n\nMiles\nBuilt for Main Street\nhello@builtformainstreet.com';
+    return subj+'Hi '+name+',\n\nThanks again. To build your site I need a few answers. Short is fine, and you can reply right on this email.\n\n'
+      +q.map(function(x,i){return (i+1)+'. '+x;}).join('\n\n')
+      +'\n\nThanks,\nMiles\nBuilt for Main Street\nhello@builtformainstreet.com';
+  }
+
+  // ---------- the build file (clients/_example.json shape) ----------
+  function buildFile(c){
+    var h={}; DAYS.forEach(function(d){ var x=(c.hours||{})[d]; h[d]=(!x||x.closed||!x.o||!x.c)?'Closed':(x.o+'-'+x.c); });
+    var city=c.city||'', st=c.state||'';
+    var svcs=(c.services||[]).filter(function(s){return s.name;});
+    if(c.focusJob){ svcs.sort(function(a,b){ return (b.name.toLowerCase()===c.focusJob.toLowerCase())-(a.name.toLowerCase()===c.focusJob.toLowerCase()); }); }
+    return {
+      slug: slug(c.biz)+(city?'-'+slug(city):''), biz:(c.biz||'').replace(/\s*\(example\)/,''), domain:c.domain||'', brand_color:c.color||'#2f5d3a',
+      phone:c.phone||'', email:c.email||'', street:c.street||'', city:city, state:st, zip:c.zip||'', lat:'', lon:'',
+      founded:c.founded||'', owner:c.owner||'', license:{label:c.licLabel||'',number:c.licNum||''},
+      trade:c.trade||'', trade_plural:c.trade?(/s$/.test(c.trade)?c.trade:c.trade+'s'):'',
+      tagline:'', lede:'', callbar:(c.emergency?'Emergency calls taken':'Free estimates')+(city?' · '+city+(st?', '+st:''):''),
+      about:'', review_note:c.reviewNote||'',
+      hours:h,
+      services:svcs.map(function(s){ return {slug:slug(s.name),name:s.name,short:s.short||'',body:'',price_from:s.price||'',faqs:[]}; }),
+      towns:(c.towns||[]).filter(function(t){return t.name;}).map(function(t){ return {slug:slug(t.name),name:t.name,note:t.note||''}; }),
+      reviews:(c.reviews||[]).filter(function(r){return r.text;}).map(function(r){ return {stars:5,text:r.text,by:r.by||'',src:r.src||'Google'}; }),
+      faqs:(c.faqs||[]).filter(function(f){return f.q&&f.a;}).map(function(f){ return [f.q,f.a]; }),
+      photos:Array.from({length:parseInt(c.photosN,10)||0},function(_,i){ return {src:'photos/'+(i+1)+'.jpg',alt:''}; }),
+      _from_intake:{why_picked:c.different||'',focus_job:c.focusJob||'',plan:c.plan||'',paid_on:c.paidOn||'',photos_on:c.photosOn||'',google_listing:c.gbp||'',domain_holder:c.domainHolder||'',logo:c.logo||'',notes:c.notes||'',
+        to_write:'tagline, lede, about, every service body, town notes left blank: write from why_picked, the services and the notes. Invent nothing.'}
+    };
+  }
+
+  // ---------- storage ----------
+  function setStatus(t){ $('status').textContent=t; }
+  function picker(){
+    var ids=Object.keys(clients).sort(function(a,b){ return String(clients[b].updated||'').localeCompare(String(clients[a].updated||'')); });
+    $('pick').innerHTML=ids.map(function(id){ return '<option value="'+id+'"'+(id===cur?' selected':'')+'>'+esc(clients[id].biz||'New client (no name yet)')+'</option>'; }).join('');
+  }
+  function persistLocal(){ try{ localStorage.setItem('bfms-intake',JSON.stringify(clients)); }catch(e){} }
+  async function save(){
+    if(!cur) return;
+    clients[cur]=read(); picker(); outputs();
+    if(local||!coll){ persistLocal(); setStatus('Saved on this device'); return; }
+    if(saving){ again=true; return; }
+    saving=true; setStatus('Saving…');
+    try{ await coll.doc(cur).set(JSON.parse(JSON.stringify(clients[cur]))); setStatus('Saved'); }
+    catch(e){ persistLocal(); setStatus(e&&e.code==='invalid_argument'?'Read-only for you: saved on this device':'Not saved to the sheet. Saved on this device.'); }
+    saving=false; if(again){ again=false; save(); }
+  }
+  function soon(){ clearTimeout(saveT); setStatus('Typing…'); saveT=setTimeout(save,700); outputs(); }
+  function newId(){ return 'c'+Date.now().toString(36)+Math.random().toString(36).slice(2,6); }
+
+  // ---------- events ----------
+  document.addEventListener('input',function(e){ if(e.target.closest('section')) soon(); });
+  document.addEventListener('change',function(e){
+    var t=e.target;
+    if(t.dataset&&t.dataset.h==='closed'){ var r=t.closest('.hrow'); r.querySelectorAll('input[type=time]').forEach(function(x){x.disabled=t.checked;}); }
+    if(t.closest('section')) soon();
+  });
+  document.addEventListener('click',function(e){
+    var t=e.target.closest('button'); if(!t) return;
+    if(t.dataset.del!=null){ var list=t.closest('.rows'); t.closest('.row').remove(); [].forEach.call(list.querySelectorAll('.row'),function(r,i){ r.dataset.i=i; }); soon(); }
+    if(t.dataset.go){ var s=$(t.dataset.go); s.scrollIntoView({behavior:'smooth',block:'start'}); var f=s.querySelector('input,select,textarea'); if(f) setTimeout(function(){f.focus({preventScroll:true});},350); }
+  });
+  function addRow(key,obj){ var c=read(); c[key]=(c[key]||[]).concat([obj]); clients[cur]=c; fill(c); var rs=$(key).querySelectorAll('.row'); var last=rs[rs.length-1]; if(last){ last.querySelector('input,textarea').focus(); } soon(); }
+  $('addSvc').onclick=function(){ addRow('services',{name:'',short:'',price:''}); };
+  $('addTown').onclick=function(){ addRow('towns',{name:'',note:''}); };
+  $('addFaq').onclick=function(){ addRow('faqs',{q:'',a:''}); };
+  $('addRev').onclick=function(){ addRow('reviews',{by:'',text:'',src:'Google'}); };
+  $('pick').onchange=function(){ if(cur) clients[cur]=read(); cur=this.value; fill(clients[cur]); };
+  $('new').onclick=function(){ if(cur) clients[cur]=read(); cur=newId(); clients[cur]=blank(); picker(); fill(clients[cur]); save(); $('biz').focus(); };
+  var armed=false;
+  $('del').onclick=async function(){
+    if(!cur) return;
+    if(!armed){ armed=true; this.textContent='Tap again to delete'; var b=this; setTimeout(function(){ armed=false; b.textContent='Delete'; },3000); return; }
+    armed=false; this.textContent='Delete';
+    var id=cur; delete clients[id];
+    try{ if(coll&&!local) await coll.doc(id).delete(); }catch(e){}
+    persistLocal(); cur=Object.keys(clients)[0]||null;
+    if(!cur){ cur=newId(); clients[cur]=blank(); }
+    picker(); fill(clients[cur]); toast('Deleted');
+  };
+  function copy(text,btn,label){
+    var done=function(){ toast('Copied'); };
+    try{ navigator.clipboard.writeText(text).then(done,function(){ sel(btn); }); }catch(e){ sel(btn); }
+    function sel(){ var pre=btn.closest('.out').querySelector(label); var r=document.createRange(); r.selectNodeContents(pre); var s=getSelection(); s.removeAllRanges(); s.addRange(r); toast('Selected. Press copy.'); }
+  }
+  $('cpEmail').onclick=function(){ copy($('emailOut').textContent,this,'#emailOut'); };
+  $('cpJson').onclick=function(){ copy($('jsonOut').textContent,this,'#jsonOut'); };
+
+  // ---------- start: show the example right away, then load the real sheets ----------
+  function boot(list){
+    clients={}; list.forEach(function(d){ clients[d.id]=d.data; });
+    if(!Object.keys(clients).length){ cur='example'; clients[cur]=example(); }
+    else if(!clients[cur]) cur=Object.keys(clients).sort(function(a,b){ return String(clients[b].updated||'').localeCompare(String(clients[a].updated||'')); })[0];
+    picker(); fill(clients[cur]);
+  }
+  boot([]); setStatus('Connecting…');
+  (async function(){
+    try{ db=window.claude&&window.claude.use?await window.claude.use('db'):null; }catch(e){ db=null; }
+    if(!db){
+      local=true; var saved={}; try{ saved=JSON.parse(localStorage.getItem('bfms-intake')||'{}')||{}; }catch(e){}
+      boot(Object.keys(saved).map(function(k){return {id:k,data:saved[k]};})); setStatus('Saving on this device only'); return;
+    }
+    coll=db.collection('intake');
+    try{ var snap=await coll.get(); boot(snap.docs.map(function(d){ return {id:d.id,data:Object.assign({},d.data())}; })); setStatus('Saved'); }
+    catch(e){ local=true; setStatus('Could not reach the sheet. Saving on this device.'); }
+  })();
+})();
+</script>
