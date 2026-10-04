@@ -77,7 +77,7 @@ Cancel with 30 days' notice. Buyout of the site at $2,000 after 12 months.
 |---|---|
 | `docs/START_HERE.md` | every deliverable and link in one place, plus next steps |
 | `docs/PLAYBOOK.md` | the whole business on one page: niche, offer, how it connects, path to $10k, scorecard |
-| `docs/FOCUS.md` | who we call first and why: tree service crews, LA area (auto repair is the runner-up; pool service added Oct 1 as the third). The offer itself is general: any local small business |
+| `docs/FOCUS.md` | who we call first and why: independent auto shops and tree crews first (the Oct 1 deep check left more auto layups than tree), trades (upholstery, welding, masonry, concrete) for the Central and Eastern hours, one pool route. The offer itself is general: any local small business |
 | `docs/OFFER.md` | the offer, pricing reasoning, objection handling |
 | `docs/BEFORE_AFTER.md` | the measurement spec, both halves |
 | `docs/DELIVERY.md` | how a job gets done, and the two commands |

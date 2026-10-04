@@ -3,6 +3,22 @@
 The one-page answer. The models behind it are in `docs/niche_*.py` and
 `docs/service_scorecard.py`. Rerun them when real call numbers replace the guesses.
 
+## Update, October 4, 2026: what the deep check changed
+
+A deep web search on Oct 1 found that most "no website" leads, tree crews above all,
+had a real site the quick search missed. Of the first 100, 62 were parked. What is left
+and what was added (97 leads on the call sheet):
+
+| Group | Leads | Why they are on the list |
+|---|---|---|
+| Independent auto shops | 49 (#3, 22-38, 48-76, 81-82) | Owner at the counter, one repair pays the month, and most of the new ones have only a free page a directory made for them (edan.io). Easiest opener on the sheet |
+| Tree crews | 33 | Still the best job size and the most search-driven need. Fewer layups than expected in LA, so many are out of state or have a free or broken page |
+| Trades (upholstery, welding, masonry, concrete) | 14 (#77-78, 84-97) | Ruled out on interest Sept 28, pulled back Oct 1 because they pass the layup bar and owners answer their own phones. Called in the Central and Eastern slots |
+| Pool | 1 (#39) | One-man route, answers his own phone |
+
+The offer does not change by niche. Tree crews and auto shops stay first; trades fill
+the out-of-state hours. Rerun this after 25 real conversations.
+
 ## Update, September 29, 2026: tree service first
 
 Miles chose tree service crews as the niche to call first, LA area. Reasons: a tree
